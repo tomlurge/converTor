@@ -1,4 +1,5 @@
-# mteam
+# converTor
+## part of analytics server project - see https://github.com/tomlurge/mteam
 ### analytics server for Tor measurement data
 
 measurement team is setting up an analytics environment to play with raw metrics data.  

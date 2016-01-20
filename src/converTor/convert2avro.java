@@ -8,13 +8,14 @@ avro schema is not always like json schema (more records/sub-objects)
   -> consequences ?!
 
  */
-package mteam;
+package converTor;
 
 import java.io.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+/* avro */
 import org.apache.avro.file.DataFileReader;
 import org.apache.avro.file.DataFileWriter;
 import org.apache.avro.io.DatumReader;
@@ -26,7 +27,7 @@ import org.apache.avro.specific.SpecificDatumWriter;
 import org.torproject.descriptor.*;
 
 
-public class ConvertToAvro {
+public class Convert2avro {
 
   /*  argument defaults  */
   static String format = "avro";

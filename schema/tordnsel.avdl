@@ -1,0 +1,20 @@
+@namespace("org.torproject.metrics.converTor")
+protocol tordnsel_descriptor {
+
+  @aliases(["exitList"])
+  record Tordnsel {
+
+    string descriptor_type = "tordnsel 1.0";
+    union { null, string } downloaded;
+    union { null, array<Relay> } relays;
+
+  }
+
+  record Relay {
+    union { null, string } fingerprint;
+    union { null, string } published;
+    union { null, string } last_status;
+    union { null, map<string> } exit_list;
+  }
+
+}

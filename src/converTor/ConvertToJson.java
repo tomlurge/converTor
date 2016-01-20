@@ -1,4 +1,4 @@
-package mteam;
+package converTor;
 
 import java.io.*;
 import java.text.DateFormat;
@@ -674,7 +674,7 @@ public class ConvertToJson {
     Boolean router_signature;                                                   // getRouterSignature
     String extra_info_digest;
     String extra_info_digest_sha256;                                            // getExtraInfoDigestSha256
-    String master_key_ed25519;                                                  // getMasterKeyEd25519
+    Boolean master_key_ed25519;                                                  // getMasterKeyEd25519
 
     static String convert(RelayExtraInfoDescriptor desc) {
       JsonRelayExtraInfoDescriptor relayExtra = new JsonRelayExtraInfoDescriptor();
@@ -990,7 +990,7 @@ public class ConvertToJson {
       relayExtra.router_signature = desc.getRouterSignature() != null;
       relayExtra.extra_info_digest = desc.getExtraInfoDigest();
       relayExtra.extra_info_digest_sha256 = desc.getExtraInfoDigestSha256();
-      relayExtra.master_key_ed25519 = desc.getMasterKeyEd25519();
+      relayExtra.master_key_ed25519 = desc.getMasterKeyEd25519() != null;
 
       return ToJson.serialize(relayExtra);
     }
@@ -1087,7 +1087,7 @@ public class ConvertToJson {
     Boolean router_signature;                                                   // getRouterSignature
     String extra_info_digest;
     String extra_info_digest_sha256;                                            // getExtraInfoDigestSha256
-    String master_key_ed25519;                                                  // getMasterKeyEd25519
+    Boolean master_key_ed25519;                                                  // getMasterKeyEd25519
 
     static String convert(BridgeExtraInfoDescriptor desc) {
       JsonBridgeExtraInfoDescriptor bridgeExtra = new JsonBridgeExtraInfoDescriptor();
@@ -1451,7 +1451,7 @@ public class ConvertToJson {
       bridgeExtra.router_signature = desc.getRouterSignature() != null;
       bridgeExtra.extra_info_digest = desc.getExtraInfoDigest();
       bridgeExtra.extra_info_digest_sha256 = desc.getExtraInfoDigestSha256();
-      bridgeExtra.master_key_ed25519 = desc.getMasterKeyEd25519();
+      bridgeExtra.master_key_ed25519 = desc.getMasterKeyEd25519() != null;
 
       return ToJson.serialize(bridgeExtra);
     }
@@ -1473,7 +1473,7 @@ public class ConvertToJson {
       Long vote_seconds;
       Long dist_seconds;
     }
-    List<String> client_version;
+    List<String> client_versions;
     List<String> server_versions;
     SortedSet<String> known_flags;
     Object params;
@@ -1501,7 +1501,7 @@ public class ConvertToJson {
       String nickname;
       String identity;
       String digest;
-      String publication;
+      String published;
       String ip;
       Integer or_port;
       Integer dir_port;
@@ -1544,7 +1544,7 @@ public class ConvertToJson {
       cons.voting_delay.vote_seconds = desc.getVoteSeconds();
       cons.voting_delay.dist_seconds = desc.getDistSeconds();
       if (desc.getRecommendedClientVersions() != null && !desc.getRecommendedClientVersions().isEmpty()) {
-        cons.client_version = desc.getRecommendedClientVersions();
+        cons.client_versions = desc.getRecommendedClientVersions();
       }
       if (desc.getRecommendedServerVersions() != null && !desc.getRecommendedServerVersions().isEmpty()) {
         cons.server_versions = desc.getRecommendedServerVersions();
@@ -1588,7 +1588,7 @@ public class ConvertToJson {
           router.r.nickname = status.getValue().getNickname();
           router.r.identity = status.getValue().getFingerprint();
           router.r.digest = status.getValue().getDescriptor();
-          router.r.publication = dateTimeFormat.format(status.getValue().getPublishedMillis());
+          router.r.published = dateTimeFormat.format(status.getValue().getPublishedMillis());
           router.r.ip = status.getValue().getAddress();
           router.r.or_port = status.getValue().getOrPort();
           router.r.dir_port = status.getValue().getDirPort();
@@ -1653,7 +1653,7 @@ public class ConvertToJson {
     String descriptor_type;
     String published;
     Integer vote_status;
-    List<Integer> consensus_method;
+    List<Integer> consensus_methods;
     String valid_after;
     String fresh_until;
     String valid_until;
@@ -1662,10 +1662,10 @@ public class ConvertToJson {
       Long vote_seconds;
       Long dist_seconds;
     }
-    List<String> client_version;
+    List<String> client_versions;
     List<String> server_versions;
-    FlagTreshold flagTreshold;
-    static class FlagTreshold {
+    FlagTresholds flag_tresholds;
+    static class FlagTresholds {
       Long stable_uptime;
       Long stable_mtbf;
       Integer enough_mtbf;
@@ -1698,7 +1698,7 @@ public class ConvertToJson {
     List<Router> router_status;
     static class Router {
       R r;  // router description
-      List<String> a;  // additinal OR adresses and ports
+      List<String> a;  // additional OR adresses and ports
       List<String> s;  // flags
       String v;  // version
       W w;  // bandwidths
@@ -1709,7 +1709,7 @@ public class ConvertToJson {
       String nickname;
       String identity;
       String digest;
-      String publication;
+      String published;
       String ip;
       Integer or_port;
       Integer dir_port;
@@ -1742,7 +1742,7 @@ public class ConvertToJson {
       vote.published = dateTimeFormat.format(desc.getPublishedMillis());
       vote.vote_status = desc.getNetworkStatusVersion();
       if (desc.getConsensusMethods() != null && !desc.getConsensusMethods().isEmpty()) {
-        vote.consensus_method = desc.getConsensusMethods();
+        vote.consensus_methods = desc.getConsensusMethods();
       }
       vote.valid_after = dateTimeFormat.format(desc.getValidAfterMillis());
       vote.fresh_until = dateTimeFormat.format(desc.getFreshUntilMillis());
@@ -1752,39 +1752,39 @@ public class ConvertToJson {
       vote.voting_delay.dist_seconds = desc.getDistSeconds();
       if (desc.getRecommendedClientVersions() != null &&
               !desc.getRecommendedClientVersions().isEmpty()) {
-        vote.client_version = desc.getRecommendedClientVersions();
+        vote.client_versions = desc.getRecommendedClientVersions();
       }
       if (desc.getRecommendedServerVersions() != null &&
               !desc.getRecommendedServerVersions().isEmpty()) {
         vote.server_versions = desc.getRecommendedServerVersions();
       }
-      vote.flagTreshold = new FlagTreshold();
+      vote.flag_tresholds = new FlagTresholds();
       if (desc.getStableUptime() >= 0) {
-        vote.flagTreshold.stable_uptime = desc.getStableUptime();
+        vote.flag_tresholds.stable_uptime = desc.getStableUptime();
       }
       if (desc.getStableMtbf() >= 0) {
-        vote.flagTreshold.stable_mtbf = desc.getStableMtbf();
+        vote.flag_tresholds.stable_mtbf = desc.getStableMtbf();
       }
       if (desc.getEnoughMtbfInfo() >= 0) {
-        vote.flagTreshold.enough_mtbf = desc.getEnoughMtbfInfo();
+        vote.flag_tresholds.enough_mtbf = desc.getEnoughMtbfInfo();
       }
       if (desc.getFastBandwidth() >= 0) {
-        vote.flagTreshold.fast_speed = desc.getFastBandwidth();
+        vote.flag_tresholds.fast_speed = desc.getFastBandwidth();
       }
       if (desc.getGuardWfu() >= 0) {
-        vote.flagTreshold.guard_wfu = desc.getGuardWfu();
+        vote.flag_tresholds.guard_wfu = desc.getGuardWfu();
       }
       if (desc.getGuardTk() >= 0) {
-        vote.flagTreshold.guard_tk = desc.getGuardTk();
+        vote.flag_tresholds.guard_tk = desc.getGuardTk();
       }
       if (desc.getGuardBandwidthIncludingExits() >= 0) {
-        vote.flagTreshold.guard_bw_inc_exits = desc.getGuardBandwidthIncludingExits();
+        vote.flag_tresholds.guard_bw_inc_exits = desc.getGuardBandwidthIncludingExits();
       }
       if (desc.getGuardBandwidthExcludingExits() >= 0) {
-        vote.flagTreshold.guard_bw_exc_exits = desc.getGuardBandwidthExcludingExits();
+        vote.flag_tresholds.guard_bw_exc_exits = desc.getGuardBandwidthExcludingExits();
       }
       if (desc.getIgnoringAdvertisedBws() >= 0) {
-        vote.flagTreshold.ignoring_advertised = desc.getIgnoringAdvertisedBws();
+        vote.flag_tresholds.ignoring_advertised = desc.getIgnoringAdvertisedBws();
       }
       if (desc.getKnownFlags() != null && !desc.getKnownFlags().isEmpty()) {
         vote.known_flags = desc.getKnownFlags();
@@ -1825,7 +1825,7 @@ public class ConvertToJson {
           router.r.nickname = status.getValue().getNickname();
           router.r.identity = status.getValue().getFingerprint();
           router.r.digest = status.getValue().getDescriptor();
-          router.r.publication = dateTimeFormat.format(status.getValue().getPublishedMillis());
+          router.r.published = dateTimeFormat.format(status.getValue().getPublishedMillis());
           router.r.ip = status.getValue().getAddress();
           router.r.or_port = status.getValue().getOrPort();
           router.r.dir_port = status.getValue().getDirPort();
@@ -1877,8 +1877,8 @@ public class ConvertToJson {
   static class JsonBridgeNetworkStatus extends JsonDescriptor {
     String descriptor_type;
     String published;
-    FlagTreshold flagTreshold;
-    static class FlagTreshold {
+    FlagTresholds flag_tresholds;
+    static class FlagTresholds {
       Long stable_uptime;
       Long stable_mtbf;
       Integer enough_mtbf;
@@ -1902,7 +1902,7 @@ public class ConvertToJson {
       String nickname;
       String identity;
       String digest;
-      String date;
+      String published;
       String ip;
       Integer or_port;
       Integer dir_port;
@@ -1919,33 +1919,33 @@ public class ConvertToJson {
         status.descriptor_type = annotation.substring("@type ".length());
       }
       status.published = dateTimeFormat.format(desc.getPublishedMillis());
-      status.flagTreshold = new FlagTreshold();
+      status.flag_tresholds = new FlagTresholds();
       if (desc.getStableUptime() >= 0) {
-        status.flagTreshold.stable_uptime = desc.getStableUptime();
+        status.flag_tresholds.stable_uptime = desc.getStableUptime();
       }
       if (desc.getStableMtbf() >= 0) {
-        status.flagTreshold.stable_mtbf = desc.getStableMtbf();
+        status.flag_tresholds.stable_mtbf = desc.getStableMtbf();
       }
       if (desc.getEnoughMtbfInfo() >= 0) {
-        status.flagTreshold.enough_mtbf = desc.getEnoughMtbfInfo();
+        status.flag_tresholds.enough_mtbf = desc.getEnoughMtbfInfo();
       }
       if (desc.getFastBandwidth() >= 0) {
-        status.flagTreshold.fast_speed = desc.getFastBandwidth();
+        status.flag_tresholds.fast_speed = desc.getFastBandwidth();
       }
       if (desc.getGuardWfu() >= 0) {
-        status.flagTreshold.guard_wfu = desc.getGuardWfu();
+        status.flag_tresholds.guard_wfu = desc.getGuardWfu();
       }
       if (desc.getGuardTk() >= 0) {
-        status.flagTreshold.guard_tk = desc.getGuardTk();
+        status.flag_tresholds.guard_tk = desc.getGuardTk();
       }
       if (desc.getGuardBandwidthIncludingExits() >= 0) {
-        status.flagTreshold.guard_bw_inc_exits = desc.getGuardBandwidthIncludingExits();
+        status.flag_tresholds.guard_bw_inc_exits = desc.getGuardBandwidthIncludingExits();
       }
       if (desc.getGuardBandwidthExcludingExits() >= 0) {
-        status.flagTreshold.guard_bw_exc_exits = desc.getGuardBandwidthExcludingExits();
+        status.flag_tresholds.guard_bw_exc_exits = desc.getGuardBandwidthExcludingExits();
       }
       if (desc.getIgnoringAdvertisedBws() >= 0) {
-        status.flagTreshold.ignoring_advertised = desc.getIgnoringAdvertisedBws();
+        status.flag_tresholds.ignoring_advertised = desc.getIgnoringAdvertisedBws();
       }
       if (desc.getStatusEntries() != null && !desc.getStatusEntries().isEmpty()) {
         status.bridges = new ArrayList<>();
@@ -1955,7 +1955,7 @@ public class ConvertToJson {
           b.r.nickname = entry.getValue().getNickname();
           b.r.identity = entry.getValue().getDescriptor();
           b.r.digest = entry.getValue().getFingerprint();
-          b.r.date = dateTimeFormat.format(entry.getValue().getPublishedMillis());
+          b.r.published = dateTimeFormat.format(entry.getValue().getPublishedMillis());
           b.r.ip = entry.getValue().getAddress();
           b.r.or_port = entry.getValue().getOrPort();
           b.r.dir_port = entry.getValue().getDirPort();

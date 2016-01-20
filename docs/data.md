@@ -807,7 +807,7 @@ JSON SERIALIZATION
 			}
 			...
 		],
-		// END ONLY BRODGES
+		// END ONLY BRIDGES
 		
 		"dirreq_stats_end":  {
 			"date": "",
@@ -1386,7 +1386,7 @@ JSON SERIALIZATION
 					"nickname": "",               getNickname
 					"identity": "",               getFingerprint
 					"digest": "",                 getDescriptor
-					"publication": "",            long getPublishedMillis
+					"published": "",              long getPublishedMillis
 					"ip": "",                     getAddress
 					"or_port": #,                 int getOrPort
 					"dir_port": #                 int getDirPort
@@ -1396,8 +1396,8 @@ JSON SERIALIZATION
 				"v": "",                        getVersion
 				"w": {                          
 					"bandwidth": #,               long getBandwidth
-					"measured": #                 long getMeasured
-					"unmeasured": boolean         getUnmeasured
+					"measured_bw": #              long getMeasured
+					"unmeasured_bw": boolean      getUnmeasured
 				},                              
 				"p": {
 				  "default_policy": "",         getDefaultPolicy
@@ -1468,39 +1468,41 @@ p                              reject 1-65535
 
 JSON SERIALIZATION
 
-                               metrics-lib class/method
-	{                            BridgeNetworkStatus
+                                   metrics-lib class/method
+	{                                BridgeNetworkStatus
 		"descriptor_type": "bridge-network-status 1.0",
-		"published": "",           long getPublishedMillis
-		"flag_tresholds": [        missing (https://trac.torproject.org/projects/tor/ticket/17617#ticket)
-			{
-			  
-			  see relay status vote
-			  
-			  
-			}
-			...
-		],
-		"bridges": [               BridgeNetworkStatus.getStatusEntries
-			{                        NetworkStatusEntry
-				"r": {                    
-					"nickname": "",,     getNickname
-		 			"identity": "",      getDescriptor
-		 			"digest": "",        getFingerprint
-		 			"date": "",          getPublishedMillis
-		 			"ip": "",            getAddress
-		 			"or_port": #,        int getOrPort
-		 			"dir_port": #        int getDirPort
+		"published": "",                long getPublishedMillis
+		"flag_tresholds": {             missing (https://trac.torproject.org/projects/tor/ticket/17617#ticket)	
+			"stable-uptime": #,           long getStableUptime
+			"stable-mtbf": #,             long getStableMtbf
+			"enough-mtbf": #,             int getEnoughMtbfInfo
+			"fast-speed": #,              long getFastBandwidth
+			"guard-wfu": #,               double getGuardWfu
+			"guard-tk": #,                long getGuardTk
+			"guard-bw-inc-exits": #,      long getGuardBandwidthIncludingExits
+			"guard-bw-exc-exits": #,      long getGuardBandwidthExcludingExits
+			"ignoring-advertised-bws": #  int getIgnoringAdvertisedBws
+			},
+		"bridges": [                    BridgeNetworkStatus.getStatusEntries
+			{                             NetworkStatusEntry
+				"r": {                         
+					"nickname": "",,          getNickname
+		 			"identity": "",           getDescriptor
+		 			"digest": "",             getFingerprint
+		 			"published": "",          getPublishedMillis
+		 			"ip": "",                 getAddress
+		 			"or_port": #,             int getOrPort
+		 			"dir_port": #             int getDirPort
+				},                          
+				"s": ["","",""...],         getFlags
+				"w": {                      
+				  "bandwidth": #,           long getBandwidth 
+					"measured_bw": #,         long getMeasured
+					"unmeasured_bw": boolean  getUnmeasured
 				},                     
-				"s": ["","",""...],    getFlags
-				"w": {                 
-				  "bandwidth": #,      long getBandwidth 
-					"measured_bw": #,    long getMeasured
-					"unmeasured_bw": #   Boolean getUnmeasured
-				},                     
-				"p": "",               getDefaultPolicy
-				"a": "",               getPortList
-				"v": ""                getVersion
+				"p": "",                    getDefaultPolicy
+				"a": "",                    getPortList
+				"v": ""                     getVersion
 			}
 			...
 		]

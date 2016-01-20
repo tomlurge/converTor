@@ -1,0 +1,94 @@
+@namespace("org.torproject.metrics.converTor")
+protocol relay_network_status_vote_3_descriptor {
+
+  @aliases(["relay_network_status_vote_3"])
+  record RelayVote {
+
+    string descriptor_type = "network-status-vote-3 1.0";
+    union { null, string } published;
+    union { null, int } vote_status;
+    union { null, array<int> } consensus_methods;
+    union { null, string } valid_after;
+    union { null, string } fresh_until;
+    union { null, string } valid_until;
+    union { null, Vote } voting_delay;
+    union { null, array<string> } client_versions;
+    union { null, array<string> } server_versions;
+    union { null, FlagTresholds } flag_tresholds;
+    union { null, array<string> } known_flags;
+    union { null, map<int> } params;
+    union { null, Authority } authority;
+    union { null, array<Router> } router_status;
+    union { null, DirFooter } directory_footer;
+
+  }
+
+  record Vote {
+    union { null, long } vote_seconds;
+    union { null, long } dist_seconds;
+  }
+  record FlagTresholds {
+    union { null, long } stable_uptime;
+    union { null, long } stable_mtbf;
+    union { null, int } enough_mtbf;
+    union { null, long } fast_speed;
+    union { null, double } guard_wfu;
+    union { null, long } guard_tk;
+    union { null, long } guard_bw_inc_exits;
+    union { null, long } guard_bw_exc_exits;
+    union { null, int } ignoring_advertised;
+  }
+  record Authority {
+    union { null, string } nickname;
+    union { null, string } identity;
+    union { null, string } adress;
+    union { null, int } dir_port;
+    union { null, int } or_port;
+    union { null, string } contact;
+    union { null, string } legacy_dir_key;
+    union { null, Cert } key_certificate;
+  }
+  record Cert {
+    union { null, int } version;
+    union { null, string } dir_key_published;
+    union { null, string } dir_key_expires;
+    union { null, boolean } dir_signing_key;
+  }
+  record Router {
+    union { null, R } r;
+    union { null, array<string> } a;
+    union { null, array<string> } s;
+    union { null, string } v;
+    union { null, W } w;
+    union { null, Policy } p;
+    union { null, string } id;
+  }
+  record R {
+    union { null, string } nickname;
+    union { null, string } identity;
+    union { null, string } digest;
+    union { null, string } published;
+    union { null, string } ip;
+    union { null, int } or_port;
+    union { null, int } dir_port;
+  }
+  record W {
+    union { null, long } bandwidth;
+    union { null, long } measured_bw;
+    union { null, boolean } unmeasured_bw;
+  }
+  record Policy {
+    union { null, string } default_policy;
+    union { null, string } port_summary;
+  }
+  record DirFooter {
+    union { null, DirSig } directory_signature;
+  }
+  record DirSig {
+    union { null, string } algorithm;
+    union { null, string } identity;
+    union { null, string } signing_key_digest;
+    union { null, boolean } signature;
+  }
+
+}

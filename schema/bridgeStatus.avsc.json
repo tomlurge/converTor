@@ -7,7 +7,7 @@
   "fields": [
     {"name": "descriptor_type", "type": "string", "default": "bridge-network-status 1.0", "doc": ""},
     {"name": "published", "type": ["null", "string"], "doc": ""},
-    {"name": "flagTreshold", "type": "record", "fields":
+    {"name": "flag_tresholds", "type": "record", "fields":
       [
         {"name": "stable_uptime", "type": ["null", "long"]},
         {"name": "stable_mtbf", "type": ["null", "long"]},

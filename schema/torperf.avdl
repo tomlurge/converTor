@@ -1,0 +1,42 @@
+@namespace("org.torproject.metrics.converTor")
+protocol torperf_descriptor {
+
+  @aliases(["torperfResult"])
+  record Torperf {
+
+    string descriptor_type = "torperf 1.0";
+    union { null, string } source;
+    union { null, int } filesize;
+    union { null, string } start;
+    union { null, string } socket;
+    union { null, string } connect;
+    union { null, string } negotiate;
+    union { null, string } request;
+    union { null, string } response;
+    union { null, string } datarequest;
+    union { null, string } dataresponse;
+    union { null, string } datacomplete;
+    union { null, int } writebytes;
+    union { null, int } readbytes;
+    union { null, boolean } didtimeout;
+    union { null, string } dataperc10;
+    union { null, string } dataperc20;
+    union { null, string } dataperc30;
+    union { null, string } dataperc40;
+    union { null, string } dataperc50;
+    union { null, string } dataperc60;
+    union { null, string } dataperc70;
+    union { null, string } dataperc80;
+    union { null, string } dataperc90;
+    union { null, string } launch;
+    union { null, string } used_at;
+    union { null, array<string> } path;
+    union { null, array<long> } buildtimes;
+    union { null, string } timeout;
+    union { null, double } quantile;
+    union { null, int } circ_id;
+    union { null, int } used_by;
+
+   }
+
+}

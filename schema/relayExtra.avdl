@@ -1,0 +1,87 @@
+@namespace("org.torproject.metrics.converTor")
+protocol relay_extra_info_descriptor {
+
+  @aliases(["relay_extra_info"])
+  record RelayExtra {
+
+    string descriptor_type = "extra-info 1.0";
+    union { null, string } nickname;
+    union { null, string } fingerprint;
+    union { null, boolean } identity_ed25519;
+    union { null, string } published;
+    union { null, History } read_history;
+    union { null, History } write_history;
+    union { null, string } geoip_db_digest;
+    union { null, string } geoip6_db_digest;
+    union { null, string } geoip_start_time;
+    union { null, Stats } dirreq_stats_end;
+    union { null, map<int> } dirreq_v2_ips;
+    union { null, map<int> } dirreq_v3_ips;
+    union { null, map<int> } dirreq_v2_reqs;
+    union { null, map<int> } dirreq_v3_reqs;
+    union { null, double } dirreq_v2_share;
+    union { null, double } dirreq_v3_share;
+    union { null, map<int> } dirreq_v2_resp;
+    union { null, map<int> } dirreq_v3_resp;
+    union { null, map<int> } dirreq_v2_direct_dl;
+    union { null, map<int> } dirreq_v3_direct_dl;
+    union { null, map<int> } dirreq_v2_tunneled_dl;
+    union { null, map<int> } dirreq_v3_tunneled_dl;
+    union { null, History } dirreq_read_history;
+    union { null, History } dirreq_write_history;
+    union { null, Stats } entry_stats_end;
+    union { null, map<int> } entry_ips;
+    union { null, Stats } cell_stats_end;
+    union { null, array<int> } cell_processed_cells;
+    union { null, array<double> } cell_queued_cells;
+    union { null, array<int> } cell_time_in_queue;
+    union { null, int } cell_circuits_per_decile;
+    union { null, ConnBiDirect } conn_bi_direct;
+    union { null, Stats } exit_stats_end;
+    union { null, map<int> } exit_kibibytes_written;
+    union { null, map<int> } exit_kibibytes_read;
+    union { null, map<int> } exit_streams_opened;
+    union { null, Stats } hidserv_stats_end;
+    union { null, HidservRendRelayedCells } hidserv_rend_relayed_cells;
+    union { null, HidservDirOnionsSeen } hidserv_dir_onions_seen;
+    union { null, array<Transport> } transport;
+    union { null, boolean } router_sig_ed25519;
+    union { null, boolean } router_signature;
+    union { null, string } extra_info_digest;
+    union { null, string } extra_info_digest_sha256;
+    union { null, boolean } master_key_ed25519;
+  }
+
+  record History {
+    string date;
+    long interval = 86400;
+    array<long> `bytes`;
+  }
+  record Stats {
+    string date;
+    long interval = 86400;
+  }
+  record ConnBiDirect {
+    union { null, string } date;
+    union { null, long } interval = 86400;
+    union { null, int } below;
+    union { null, int } read;
+    union { null, int } write;
+    union { null, int } both;
+  }
+  record HidservRendRelayedCells {
+    int cells;
+    map<int> obfuscation;
+  }
+  record HidservDirOnionsSeen {
+    int onions;
+    map<int> obfuscation;
+  }
+  record Transport {
+    union { null, string } transportname;
+    union { null, string } adress;
+    union { null, int } port;
+    union { null, string } args;
+  }
+
+}

@@ -1,0 +1,51 @@
+@namespace("org.torproject.metrics.converTor")
+protocol bridge_network_status_descriptor {
+
+  @aliases(["bridge_network_status"])
+  record BridgeStatus {
+
+    string descriptor_type = "bridge-network-status 1.0";
+    union { null, string } published;
+    union { null, FlagTresholds } flag_tresholds;
+    union { null, array<Bridge> } bridges;
+
+  }
+
+  record FlagTresholds {
+    union { null, long } stable_uptime;
+    union { null, long } stable_mtbf;
+    union { null, int } enough_mtbf;
+    union { null, long } fast_speed;
+    union { null, double } guard_wfu;
+    union { null, long } guard_tk;
+    union { null, long } guard_bw_inc_exits;
+    union { null, long } guard_bw_exc_exits;
+    union { null, int } ignoring_advertised;
+  }
+
+  record Bridge {
+    union { null, R } r;
+    union { null, array<string> } s;
+    union { null, W } w;
+    union { null, string } p;
+    union { null, string } a;
+    union { null, string } v;
+  }
+
+  record R {
+    union { null, string } nickname;
+    union { null, string } identity;
+    union { null, string } digest;
+    union { null, string } published;
+    union { null, string } ip;
+    union { null, int } or_port;
+    union { null, int } dir_port;
+  }
+
+  record W {
+    union { null, long } bandwidth;
+    union { null, long } measured_bw;
+    union { null, boolean } unmeasured_bw;
+  }
+
+}

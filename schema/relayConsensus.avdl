@@ -1,0 +1,78 @@
+@namespace("org.torproject.metrics.converTor")
+protocol relay_network_status_consensus_3_descriptor {
+
+  @aliases(["relay_network_status_consensus_3"])
+  record RelayConsensus {
+
+    string descriptor_type = "network-status-consensus-3 1.0";
+    union { null, string } published;
+    union { null, int } vote_status;
+    union { null, int } consensus_method;
+    union { null, string } consensus_flavor;
+    union { null, string } valid_after;
+    union { null, string } fresh_until;
+    union { null, string } valid_until;
+    union { null, Vote } voting_delay;
+    union { null, array<string> } client_versions;
+    union { null, array<string> } server_versions;
+    union { null, array<string> } known_flags;
+    union { null, map<int> } params;
+    union { null, array<Authority> } dir_source;
+    union { null, array<Router> } router_status;
+    union { null, DirFooter } directory_footer;
+
+  }
+
+  record Vote {
+    union { null, long } vote_seconds;
+    union { null, long } dist_seconds;
+  }
+  record Authority {
+    union { null, string } nickname;
+    union { null, string } identity;
+    union { null, string } adress;
+    union { null, int } dir_port;
+    union { null, int } or_port;
+    union { null, string } contact;
+    union { null, string } vote_digest;
+    union { null, boolean } legacy;
+  }
+  record Router {
+    union { null, R } r;
+    union { null, array<string> } a;
+    union { null, array<string> } s;
+    union { null, string } v;
+    union { null, W } w;
+    union { null, Policy } p;
+  }
+  record R {
+    union { null, string } nickname;
+    union { null, string } identity;
+    union { null, string } digest;
+    union { null, string } published;
+    union { null, string } ip;
+    union { null, int } or_port;
+    union { null, int } dir_port;
+  }
+  record W {
+    union { null, long } bandwidth;
+    union { null, long } measured_bw;
+    union { null, boolean } unmeasured_bw;
+  }
+  record Policy {
+    union { null, string } default_policy;
+    union { null, string } port_summary;
+  }
+  record DirFooter {
+    union { null, map<int> } bandwidth_weights;
+    union { null, string } consensus_digest;
+    union { null, array<DirSig> } directory_signature;
+  }
+  record DirSig {
+    union { null, string } algorithm;
+    union { null, string } identity;
+    union { null, string } signing_key_digest;
+    union { null, boolean } signature;
+  }
+
+}
