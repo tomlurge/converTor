@@ -1,0 +1,235 @@
+{
+  "protocol" : "relay_network_status_consensus_3_descriptor",
+  "namespace" : "org.torproject.metrics.converTor",
+  "types" : [ {
+    "type" : "record",
+    "name" : "Vote",
+    "fields" : [ {
+      "name" : "vote_seconds",
+      "type" : [ "null", "long" ]
+    }, {
+      "name" : "dist_seconds",
+      "type" : [ "null", "long" ]
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "DirSource",
+    "fields" : [ {
+      "name" : "nickname",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "identity",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "address",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "dir_port",
+      "type" : [ "null", "int" ]
+    }, {
+      "name" : "or_port",
+      "type" : [ "null", "int" ]
+    }, {
+      "name" : "is_legacy",
+      "type" : [ "null", "boolean" ]
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "Authority",
+    "fields" : [ {
+      "name" : "dir_source",
+      "type" : [ "null", "DirSource" ]
+    }, {
+      "name" : "contact",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "vote_digest",
+      "type" : [ "null", "string" ]
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "R",
+    "fields" : [ {
+      "name" : "nickname",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "identity",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "digest",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "publication",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "ip",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "or_port",
+      "type" : [ "null", "int" ]
+    }, {
+      "name" : "dir_port",
+      "type" : [ "null", "int" ]
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "W",
+    "fields" : [ {
+      "name" : "bandwidth",
+      "type" : [ "null", "long" ]
+    }, {
+      "name" : "measured",
+      "type" : [ "null", "long" ]
+    }, {
+      "name" : "unmeasured",
+      "type" : [ "null", "boolean" ]
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "Policy",
+    "fields" : [ {
+      "name" : "default_policy",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "port_summary",
+      "type" : [ "null", "string" ]
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "Router",
+    "fields" : [ {
+      "name" : "r",
+      "type" : [ "null", "R" ]
+    }, {
+      "name" : "a",
+      "type" : [ "null", {
+        "type" : "array",
+        "items" : "string"
+      } ]
+    }, {
+      "name" : "s",
+      "type" : [ "null", {
+        "type" : "array",
+        "items" : "string"
+      } ]
+    }, {
+      "name" : "v",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "w",
+      "type" : [ "null", "W" ]
+    }, {
+      "name" : "p",
+      "type" : [ "null", "Policy" ]
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "DirSig",
+    "fields" : [ {
+      "name" : "algorithm",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "identity",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "signing_key_digest",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "signature",
+      "type" : [ "null", "boolean" ]
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "DirFooter",
+    "fields" : [ {
+      "name" : "bandwidth_weights",
+      "type" : [ "null", {
+        "type" : "map",
+        "values" : "int"
+      } ]
+    }, {
+      "name" : "consensus_digest",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "directory_signature",
+      "type" : [ "null", {
+        "type" : "array",
+        "items" : "DirSig"
+      } ]
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "RelayConsensus",
+    "fields" : [ {
+      "name" : "descriptor_type",
+      "type" : "string",
+      "default" : "network-status-consensus-3 1.0"
+    }, {
+      "name" : "network_status_version",
+      "type" : "int",
+      "default" : 3
+    }, {
+      "name" : "vote_status",
+      "type" : [ "null", "int" ]
+    }, {
+      "name" : "consensus_method",
+      "type" : [ "null", "int" ]
+    }, {
+      "name" : "consensus_flavor",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "valid_after",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "fresh_until",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "valid_until",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "voting_delay",
+      "type" : [ "null", "Vote" ]
+    }, {
+      "name" : "client_versions",
+      "type" : [ "null", {
+        "type" : "array",
+        "items" : "string"
+      } ]
+    }, {
+      "name" : "server_versions",
+      "type" : [ "null", {
+        "type" : "array",
+        "items" : "string"
+      } ]
+    }, {
+      "name" : "known_flags",
+      "type" : [ "null", {
+        "type" : "array",
+        "items" : "string"
+      } ]
+    }, {
+      "name" : "params",
+      "type" : [ "null", {
+        "type" : "map",
+        "values" : "int"
+      } ]
+    }, {
+      "name" : "authorities",
+      "type" : [ "null", {
+        "type" : "array",
+        "items" : "Authority"
+      } ]
+    }, {
+      "name" : "router_status",
+      "type" : [ "null", {
+        "type" : "array",
+        "items" : "Router"
+      } ]
+    }, {
+      "name" : "directory_footer",
+      "type" : [ "null", "DirFooter" ]
+    } ],
+    "aliases" : [ "relay_network_status_consensus_3" ]
+  } ],
+  "messages" : { }
+}

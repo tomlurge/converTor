@@ -1,0 +1,303 @@
+{
+  "protocol" : "relay_extra_info_descriptor",
+  "namespace" : "org.torproject.metrics.converTor",
+  "types" : [ {
+    "type" : "record",
+    "name" : "ExtraInfo",
+    "fields" : [ {
+      "name" : "nickname",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "fingerprint",
+      "type" : [ "null", "string" ]
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "History",
+    "fields" : [ {
+      "name" : "date",
+      "type" : "string"
+    }, {
+      "name" : "interval",
+      "type" : "long"
+    }, {
+      "name" : "bytes",
+      "type" : {
+        "type" : "array",
+        "items" : "long"
+      }
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "Stats",
+    "fields" : [ {
+      "name" : "date",
+      "type" : "string"
+    }, {
+      "name" : "interval",
+      "type" : "long",
+      "default" : 86400
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "ConnBiDirect",
+    "fields" : [ {
+      "name" : "date",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "interval",
+      "type" : "long",
+      "default" : 86400
+    }, {
+      "name" : "below",
+      "type" : [ "null", "int" ]
+    }, {
+      "name" : "read",
+      "type" : [ "null", "int" ]
+    }, {
+      "name" : "write",
+      "type" : [ "null", "int" ]
+    }, {
+      "name" : "both",
+      "type" : [ "null", "int" ]
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "HidservRendRelayedCells",
+    "fields" : [ {
+      "name" : "cells",
+      "type" : "int"
+    }, {
+      "name" : "obfuscation",
+      "type" : {
+        "type" : "map",
+        "values" : "int"
+      }
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "HidservDirOnionsSeen",
+    "fields" : [ {
+      "name" : "onions",
+      "type" : "int"
+    }, {
+      "name" : "obfuscation",
+      "type" : {
+        "type" : "map",
+        "values" : "int"
+      }
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "Transport",
+    "fields" : [ {
+      "name" : "transportname",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "address",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "port",
+      "type" : [ "null", "int" ]
+    }, {
+      "name" : "args",
+      "type" : [ "null", "string" ]
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "RelayExtra",
+    "fields" : [ {
+      "name" : "descriptor_type",
+      "type" : "string",
+      "default" : "extra-info 1.0"
+    }, {
+      "name" : "extra_info",
+      "type" : [ "null", "ExtraInfo" ]
+    }, {
+      "name" : "identity_ed25519",
+      "type" : [ "null", "boolean" ]
+    }, {
+      "name" : "published",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "read_history",
+      "type" : [ "null", "History" ]
+    }, {
+      "name" : "write_history",
+      "type" : [ "null", "History" ]
+    }, {
+      "name" : "geoip_db_digest",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "geoip6_db_digest",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "geoip_start_time",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "dirreq_stats_end",
+      "type" : [ "null", "Stats" ]
+    }, {
+      "name" : "dirreq_v2_ips",
+      "type" : [ "null", {
+        "type" : "map",
+        "values" : "int"
+      } ]
+    }, {
+      "name" : "dirreq_v3_ips",
+      "type" : [ "null", {
+        "type" : "map",
+        "values" : "int"
+      } ]
+    }, {
+      "name" : "dirreq_v2_reqs",
+      "type" : [ "null", {
+        "type" : "map",
+        "values" : "int"
+      } ]
+    }, {
+      "name" : "dirreq_v3_reqs",
+      "type" : [ "null", {
+        "type" : "map",
+        "values" : "int"
+      } ]
+    }, {
+      "name" : "dirreq_v2_share",
+      "type" : [ "null", "double" ]
+    }, {
+      "name" : "dirreq_v3_share",
+      "type" : [ "null", "double" ]
+    }, {
+      "name" : "dirreq_v2_resp",
+      "type" : [ "null", {
+        "type" : "map",
+        "values" : "int"
+      } ]
+    }, {
+      "name" : "dirreq_v3_resp",
+      "type" : [ "null", {
+        "type" : "map",
+        "values" : "int"
+      } ]
+    }, {
+      "name" : "dirreq_v2_direct_dl",
+      "type" : [ "null", {
+        "type" : "map",
+        "values" : "int"
+      } ]
+    }, {
+      "name" : "dirreq_v3_direct_dl",
+      "type" : [ "null", {
+        "type" : "map",
+        "values" : "int"
+      } ]
+    }, {
+      "name" : "dirreq_v2_tunneled_dl",
+      "type" : [ "null", {
+        "type" : "map",
+        "values" : "int"
+      } ]
+    }, {
+      "name" : "dirreq_v3_tunneled_dl",
+      "type" : [ "null", {
+        "type" : "map",
+        "values" : "int"
+      } ]
+    }, {
+      "name" : "dirreq_read_history",
+      "type" : [ "null", "History" ]
+    }, {
+      "name" : "dirreq_write_history",
+      "type" : [ "null", "History" ]
+    }, {
+      "name" : "entry_stats_end",
+      "type" : [ "null", "Stats" ]
+    }, {
+      "name" : "entry_ips",
+      "type" : [ "null", {
+        "type" : "map",
+        "values" : "int"
+      } ]
+    }, {
+      "name" : "cell_stats_end",
+      "type" : [ "null", "Stats" ]
+    }, {
+      "name" : "cell_processed_cells",
+      "type" : [ "null", {
+        "type" : "array",
+        "items" : "int"
+      } ]
+    }, {
+      "name" : "cell_queued_cells",
+      "type" : [ "null", {
+        "type" : "array",
+        "items" : "double"
+      } ]
+    }, {
+      "name" : "cell_time_in_queue",
+      "type" : [ "null", {
+        "type" : "array",
+        "items" : "int"
+      } ]
+    }, {
+      "name" : "cell_circuits_per_decile",
+      "type" : [ "null", "int" ]
+    }, {
+      "name" : "conn_bi_direct",
+      "type" : [ "null", "ConnBiDirect" ]
+    }, {
+      "name" : "exit_stats_end",
+      "type" : [ "null", "Stats" ]
+    }, {
+      "name" : "exit_kibibytes_written",
+      "type" : [ "null", {
+        "type" : "map",
+        "values" : "int"
+      } ]
+    }, {
+      "name" : "exit_kibibytes_read",
+      "type" : [ "null", {
+        "type" : "map",
+        "values" : "int"
+      } ]
+    }, {
+      "name" : "exit_streams_opened",
+      "type" : [ "null", {
+        "type" : "map",
+        "values" : "int"
+      } ]
+    }, {
+      "name" : "hidserv_stats_end",
+      "type" : [ "null", "Stats" ]
+    }, {
+      "name" : "hidserv_rend_relayed_cells",
+      "type" : [ "null", "HidservRendRelayedCells" ]
+    }, {
+      "name" : "hidserv_dir_onions_seen",
+      "type" : [ "null", "HidservDirOnionsSeen" ]
+    }, {
+      "name" : "transport",
+      "type" : [ "null", {
+        "type" : "array",
+        "items" : "Transport"
+      } ]
+    }, {
+      "name" : "router_sig_ed25519",
+      "type" : [ "null", "boolean" ]
+    }, {
+      "name" : "router_signature",
+      "type" : [ "null", "boolean" ]
+    }, {
+      "name" : "extra_info_digest",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "extra_info_digest_sha256",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "master_key_ed25519",
+      "type" : [ "null", "boolean" ]
+    } ],
+    "aliases" : [ "relay_extra_info" ]
+  } ],
+  "messages" : { }
+}

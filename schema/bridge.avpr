@@ -1,0 +1,201 @@
+{
+  "protocol" : "bridge_server_descriptor",
+  "namespace" : "org.torproject.metrics.converTor",
+  "types" : [ {
+    "type" : "record",
+    "name" : "Router",
+    "fields" : [ {
+      "name" : "nickname",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "address",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "or_port",
+      "type" : [ "null", "int" ]
+    }, {
+      "name" : "socks_port",
+      "type" : [ "null", "int" ]
+    }, {
+      "name" : "dir_port",
+      "type" : [ "null", "int" ]
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "Bandwidth",
+    "fields" : [ {
+      "name" : "avg",
+      "type" : [ "null", "int" ]
+    }, {
+      "name" : "burst",
+      "type" : [ "null", "int" ]
+    }, {
+      "name" : "observed",
+      "type" : [ "null", "int" ]
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "OrAddress",
+    "fields" : [ {
+      "name" : "address",
+      "type" : "string"
+    }, {
+      "name" : "port",
+      "type" : "int"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "History",
+    "fields" : [ {
+      "name" : "date",
+      "type" : "string"
+    }, {
+      "name" : "interval",
+      "type" : "long"
+    }, {
+      "name" : "bytes",
+      "type" : {
+        "type" : "array",
+        "items" : "long"
+      }
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "CrossCert",
+    "fields" : [ {
+      "name" : "cert",
+      "type" : "string"
+    }, {
+      "name" : "bit",
+      "type" : "int"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "Bridge",
+    "fields" : [ {
+      "name" : "descriptor_type",
+      "type" : "string",
+      "default" : "server-descriptor 1.0"
+    }, {
+      "name" : "router",
+      "type" : [ "null", "Router" ]
+    }, {
+      "name" : "identity_ed25519",
+      "type" : [ "null", "boolean" ]
+    }, {
+      "name" : "master_key_ed25519",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "bandwidth",
+      "type" : [ "null", "Bandwidth" ]
+    }, {
+      "name" : "platform",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "published",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "fingerprint",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "hibernating",
+      "type" : [ "null", "boolean" ]
+    }, {
+      "name" : "uptime",
+      "type" : [ "null", "long" ]
+    }, {
+      "name" : "onion_key",
+      "type" : [ "null", "boolean" ]
+    }, {
+      "name" : "onion_key_crosscert",
+      "type" : [ "null", "boolean" ]
+    }, {
+      "name" : "ntor_onion_key",
+      "type" : [ "null", "boolean" ]
+    }, {
+      "name" : "ntor_onion_key_crosscert",
+      "type" : [ "null", "CrossCert" ]
+    }, {
+      "name" : "signing_key",
+      "type" : [ "null", "boolean" ]
+    }, {
+      "name" : "exit_policy",
+      "type" : [ "null", {
+        "type" : "array",
+        "items" : "string"
+      } ]
+    }, {
+      "name" : "ipv6_policy",
+      "type" : "string",
+      "default" : "ipv6-policy reject 1-65535"
+    }, {
+      "name" : "ipv6_portlist",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "router_sig_ed25519",
+      "type" : [ "null", "boolean" ]
+    }, {
+      "name" : "contact",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "family",
+      "type" : [ "null", {
+        "type" : "array",
+        "items" : "string"
+      } ]
+    }, {
+      "name" : "read_history",
+      "type" : [ "null", "History" ]
+    }, {
+      "name" : "write_history",
+      "type" : [ "null", "History" ]
+    }, {
+      "name" : "eventdns",
+      "type" : [ "null", "boolean" ]
+    }, {
+      "name" : "caches_extra_info",
+      "type" : [ "null", "boolean" ]
+    }, {
+      "name" : "extra_info_digest",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "extra_info_digest_sha256",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "hidden_service_dir",
+      "type" : [ "null", {
+        "type" : "array",
+        "items" : "int"
+      } ]
+    }, {
+      "name" : "link_protocol_versions",
+      "type" : [ "null", {
+        "type" : "array",
+        "items" : "int"
+      } ]
+    }, {
+      "name" : "circuit_protocol_versions",
+      "type" : [ "null", {
+        "type" : "array",
+        "items" : "int"
+      } ]
+    }, {
+      "name" : "allow_single_hop_exits",
+      "type" : [ "null", "boolean" ]
+    }, {
+      "name" : "or_address",
+      "type" : [ "null", {
+        "type" : "array",
+        "items" : "OrAddress"
+      } ]
+    }, {
+      "name" : "router_digest",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "router_digest_sha256",
+      "type" : [ "null", "string" ]
+    } ],
+    "aliases" : [ "bridge_server" ]
+  } ],
+  "messages" : { }
+}
