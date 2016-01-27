@@ -1,12 +1,46 @@
 @namespace("org.torproject.metrics.converTor")
 protocol relay_extra_info_descriptor {
 
-  @aliases(["relay_extra_info"])
-  record RelayExtra {
-
-    string descriptor_type = "extra-info 1.0";
+  record ExtraInfo {
     union { null, string } nickname;
     union { null, string } fingerprint;
+  }
+  record History {
+    string date;
+    long interval;
+    array<long> `bytes`;
+  }
+  record Stats {
+    string date;
+    long interval = 86400;
+  }
+  record ConnBiDirect {
+    union { null, string } date;
+    long interval = 86400;
+    union { null, int } below;
+    union { null, int } read;
+    union { null, int } write;
+    union { null, int } both;
+  }
+  record HidservRendRelayedCells {
+    int cells;
+    map<int> obfuscation;
+  }
+  record HidservDirOnionsSeen {
+    int onions;
+    map<int> obfuscation;
+  }
+  record Transport {
+    union { null, string } transportname;
+    union { null, string } address;
+    union { null, int } port;
+    union { null, string } args;
+  }
+
+  @aliases(["relay_extra_info"])
+  record RelayExtra {
+    string descriptor_type = "extra-info 1.0";
+    union { null, ExtraInfo } extra_info;
     union { null, boolean } identity_ed25519;
     union { null, string } published;
     union { null, History } read_history;
@@ -50,38 +84,6 @@ protocol relay_extra_info_descriptor {
     union { null, string } extra_info_digest;
     union { null, string } extra_info_digest_sha256;
     union { null, boolean } master_key_ed25519;
-  }
-
-  record History {
-    string date;
-    long interval = 86400;
-    array<long> `bytes`;
-  }
-  record Stats {
-    string date;
-    long interval = 86400;
-  }
-  record ConnBiDirect {
-    union { null, string } date;
-    union { null, long } interval = 86400;
-    union { null, int } below;
-    union { null, int } read;
-    union { null, int } write;
-    union { null, int } both;
-  }
-  record HidservRendRelayedCells {
-    int cells;
-    map<int> obfuscation;
-  }
-  record HidservDirOnionsSeen {
-    int onions;
-    map<int> obfuscation;
-  }
-  record Transport {
-    union { null, string } transportname;
-    union { null, string } adress;
-    union { null, int } port;
-    union { null, string } args;
   }
 
 }

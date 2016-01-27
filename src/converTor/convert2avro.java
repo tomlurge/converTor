@@ -594,7 +594,7 @@ public class Convert2avro {
     static class Authority {
       String nickname;
       String identity;
-      String adress;
+      String address;
       Integer dir_port;
       Integer or_port;
       String contact;
@@ -604,7 +604,7 @@ public class Convert2avro {
     List<Router> router_status;
     static class Router {
       R r;  // router description
-      List<String> a;  // additinal OR adresses and ports
+      List<String> a;  // additinal OR addresses and ports
       List<String> s;  // flags
       String v;  // version
       W w;  // bandwidths
@@ -679,7 +679,7 @@ public class Convert2avro {
           Authority auth = new Authority();
           auth.nickname = mAuth.getValue().getNickname();
           auth.identity = mAuth.getValue().getIdentity();
-          auth.adress = mAuth.getValue().getIp();
+          auth.address = mAuth.getValue().getIp();
           auth.dir_port = mAuth.getValue().getDirPort();
           auth.or_port = mAuth.getValue().getOrPort();
           auth.contact = mAuth.getValue().getContactLine();
@@ -783,7 +783,7 @@ public class Convert2avro {
     static class Authority {
       String nickname;
       String identity;
-      String adress;
+      String address;
       Integer dir_port;
       Integer or_port;
       String contact;
@@ -799,7 +799,7 @@ public class Convert2avro {
     List<Router> router_status;
     static class Router {
       R r;  // router description
-      List<String> a;  // additinal OR adresses and ports
+      List<String> a;  // additinal OR addresses and ports
       List<String> s;  // flags
       String v;  // version
       W w;  // bandwidths
@@ -897,7 +897,7 @@ public class Convert2avro {
       vote.authority = new Authority();
       vote.authority.nickname = desc.getNickname();
       vote.authority.identity = desc.getIdentity();
-      vote.authority.adress = desc.getAddress();
+      vote.authority.address = desc.getAddress();
       vote.authority.dir_port = desc.getDirport();
       vote.authority.or_port = desc.getOrport();
       vote.authority.contact = desc.getContactLine();
@@ -1074,7 +1074,7 @@ public class Convert2avro {
       String published;
       String last_status;
       // TODO List<Exit>
-      Exit exit_adress;
+      Exit exit_address;
     }
     static class Exit {
       String ip;
@@ -1094,9 +1094,9 @@ public class Convert2avro {
           en.fingerprint = entry.getFingerprint();
           en.published = dateTimeFormat.format(entry.getPublishedMillis());
           en.last_status = dateTimeFormat.format(entry.getLastStatusMillis());
-          en.exit_adress = new Exit();
-          en.exit_adress.ip = entry.getExitAddress();
-          en.exit_adress.date = dateTimeFormat.format(entry.getScanMillis());
+          en.exit_address = new Exit();
+          en.exit_address.ip = entry.getExitAddress();
+          en.exit_address.date = dateTimeFormat.format(entry.getScanMillis());
           tordnsel.relays.add(en);
         }
       }

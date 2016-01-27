@@ -1,0 +1,113 @@
+{
+  "namespace" : "org.torproject.metrics.converTor.torperf",
+  "type": "record",
+  "name": "Torperf",
+  "aliases": ["torperfResult", "torperf_descriptor"],
+  "doc": "torperf 1.0",
+  "fields": [
+    {
+      "name" : "descriptor_type",
+      "type" : "string",
+      "default" : "torperf 1.0"
+    }, {
+      "name" : "source",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "filesize",
+      "type" : [ "null", "int" ]
+    }, {
+      "name" : "start",
+      "type" : [ "null", "long" ]
+    }, {
+      "name" : "socket",
+      "type" : [ "null", "long" ]
+    }, {
+      "name" : "connect",
+      "type" : [ "null", "long" ]
+    }, {
+      "name" : "negotiate",
+      "type" : [ "null", "long" ]
+    }, {
+      "name" : "request",
+      "type" : [ "null", "long" ]
+    }, {
+      "name" : "response",
+      "type" : [ "null", "long" ]
+    }, {
+      "name" : "datarequest",
+      "type" : [ "null", "long" ]
+    }, {
+      "name" : "dataresponse",
+      "type" : [ "null", "long" ]
+    }, {
+      "name" : "datacomplete",
+      "type" : [ "null", "long" ]
+    }, {
+      "name" : "writebytes",
+      "type" : [ "null", "int" ]
+    }, {
+      "name" : "readbytes",
+      "type" : [ "null", "int" ]
+    }, {
+      "name" : "didtimeout",
+      "type" : [ "null", "boolean" ]
+    }, {
+      "name" : "dataperc10",
+      "type" : [ "null", "long" ]
+    }, {
+      "name" : "dataperc20",
+      "type" : [ "null", "long" ]
+    }, {
+      "name" : "dataperc30",
+      "type" : [ "null", "long" ]
+    }, {
+      "name" : "dataperc40",
+      "type" : [ "null", "long" ]
+    }, {
+      "name" : "dataperc50",
+      "type" : [ "null", "long" ]
+    }, {
+      "name" : "dataperc60",
+      "type" : [ "null", "long" ]
+    }, {
+      "name" : "dataperc70",
+      "type" : [ "null", "long" ]
+    }, {
+      "name" : "dataperc80",
+      "type" : [ "null", "long" ]
+    }, {
+      "name" : "dataperc90",
+      "type" : [ "null", "long" ]
+    }, {
+      "name" : "launch",
+      "type" : [ "null", "long" ]
+    }, {
+      "name" : "used_at",
+      "type" : [ "null", "long" ]
+    }, {
+      "name" : "path",
+      "type" : [ "null", {
+        "type" : "array",
+        "items" : "string"
+      } ]
+    }, {
+      "name" : "buildtimes",
+      "type" : [ "null", {
+        "type" : "array",
+        "items" : "long"
+      } ]
+    }, {
+      "name" : "timeout",
+      "type" : [ "null", "long" ]
+    }, {
+      "name" : "quantile",
+      "type" : [ "null", "double" ]
+    }, {
+      "name" : "circ_id",
+      "type" : [ "null", "int" ]
+    }, {
+      "name" : "used_by",
+      "type" : [ "null", "int" ]
+    }
+  ]
+}

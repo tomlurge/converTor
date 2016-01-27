@@ -7,9 +7,7 @@
     dirreq-stats-end is an object with 2 fields, not 2 fields alone
       made that right in the schema should fix it in ConvertToJson
     entry-stats-end dito
-
-- bridge network status
-    flag tresholds really not an array?    
+ 
     
         
 * streamline attribute names and structures (at least check for it)

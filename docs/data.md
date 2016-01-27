@@ -1,3 +1,12 @@
+  
+  
+  TODO  most of the times only the flattend version is shown
+          only relay and bridge document both flattened and jagged versions      
+        no defaults
+        no mandatory/optional
+        not always a reference to the metrics-lib method
+        remove all ..Entry
+        
 # data
 
 The aim is to load as much raw data as possible into the analytics server. 
@@ -40,8 +49,8 @@ Most of the documents have nested data structures. Some get quite large.
 	            
 	server-descriptor                    x    v3 2.1.1. Sever description format
 	extra-info                           x    v3 2.1.2. Extra-info document format  
-	network-status-consensus             x    v3 3.4.1. 
 	network-status-vote                  x    v3 3.4.1.
+  network-status-consensus             x    v3 3.4.1. 
 	dir-key-certificate                  x    v3 3.1.   Creating key certificates
 	network-status-microdesc-consensus   x    v3 3.9.2. Microsescriptor consensus
 	bridge-network-status                x    v2 3.0    Network Status Format
@@ -64,8 +73,8 @@ and common attributes (from which to construct a key in HBase, eventually)
 	                             v1| v2| ??|no |                         | published | fingerprint
 	server-descriptor            x |   |   |   |  ServerDescriptor       | x         | x                      
 	extra-info                   x |   |   |   |  ExtraInfoDescriptor    | x         | x                          
-	network-status-consensus     x |   |   |   |  RelayNetworkStatusCons.| -         | -                       
 	network-status-vote          x |   |   |   |  RelayNetworkStatusVote | x         | x                       
+  network-status-consensus     x |   |   |   |  RelayNetworkStatusCons.| -         | -                       
 	dir-key-certificate            |   | x |   |                         | x         | x                        
 	network-status-microdesc-c.    |   |   |x  |                         |           |        
 	microdescriptor                |   |   |x  |                         |           |  
@@ -163,16 +172,20 @@ JSON SERIALIZATION
 		
 	{
 		"descriptor_type": "server-descriptor 1.0",
-		"nickname": "",
-		"address": "",
-		"or_port": #,
-		"socks_port": #,
-		"dir_port": #,
+		"router": {
+      "nickname": "",
+      "address": "",
+      "or_port": #,
+      "socks_port": #,
+      "dir_port": #
+    },
 		"identity_ed25519": boolean           getIdentityEd25519
 		"master_key_ed25519": boolean         getMasterKeyEd25519
-		"bandwidth_avg": #,
-		"bandwidth_burst": #,
-		"bandwidth_observed": #,
+		"bandwidth": {
+      "avg": #,
+      "burst": #,
+      "observed": #
+		},
 		"platform": "",
 		"published": "",
 		"fingerprint": "",
@@ -953,6 +966,255 @@ JSON SERIALIZATION
 	      
 	      
 	          
+######  relayVote - network-status-vote-3 1.0
+
+The directory authorities exchange votes every hour to come up with a common 
+consensus. Vote documents are by far the largest documents provided here. 
+
+	network-status-version        3
+	vote-status                   vote
+	consensus-methods             13 14 15 16 17 18 19 20
+	published                     2015-08-31 23:50:01
+	valid-after                   2015-09-01 00:00:00
+	fresh-until                   2015-09-01 01:00:00
+	valid-until                   2015-09-01 03:00:00
+	voting-delay                  300 300
+	client-versions               0.2.4.23,
+	                              0.2.4.24,
+	                              0.2.4.25,
+	                              0.2.4.26,
+	                              0.2.4.27,
+	                              0.2.5.8-rc,
+	                              0.2.5.9-rc,
+	                              0.2.5.10,
+	                              0.2.5.11,
+	                              0.2.5.12,
+	                              0.2.6.5-rc,
+	                              0.2.6.6,
+	                              0.2.6.7,
+	                              0.2.6.8,
+	                              0.2.6.9,
+	                              0.2.6.10,
+	                              0.2.7.1-alpha,
+	                              0.2.7.2-alpha
+	server-versions               0.2.4.23,
+	                              0.2.4.24,
+	                              0.2.4.25,
+	                              0.2.4.26,
+	                              0.2.4.27,
+	                              0.2.5.8-rc,
+	                              0.2.5.9-rc,
+	                              0.2.5.10,
+	                              0.2.5.11,
+	                              0.2.5.12,
+	                              0.2.6.5-rc,
+	                              0.2.6.6,
+	                              0.2.6.7,
+	                              0.2.6.8,
+	                              0.2.6.9,
+	                              0.2.6.10,
+	                              0.2.7.1-alpha,
+	                              0.2.7.2-alpha
+	known-flags                   Authority 
+	                              BadExit 
+	                              Exit 
+	                              Fast 
+	                              Guard 
+	                              HSDir 
+	                              Running 
+	                              Stable 
+	                              V2Dir 
+	                              Valid
+	flag-thresholds               stable-uptime=1219114 
+	                              stable-mtbf=2098570 
+	                              fast-speed=83000 
+	                              guard-wfu=98.000% 
+	                              guard-tk=691200 
+	                              guard-bw-inc-exits=3072000 
+	                              guard-bw-exc-exits=2457000 
+	                              enough-mtbf=1 
+	                              ignoring-advertised-bws=0
+	params                        CircuitPriorityHalflifeMsec=30000 
+	                              NumDirectoryGuards=3
+	                              NumEntryGuards=1 
+	                              NumNTorsPerTAP=100 
+	                              Support022HiddenServices=0 
+	                              UseNTorHandshake=1 
+	                              bwauthpid=1 
+	                              cbttestfreq=1000 
+	                              pb_disablepct=0 
+	                              usecreatefast=0
+	dir-source                    tor26 
+	                              14C131DFC5C6F93646BE72FA1401C02A8DF2E8B4 
+	                              86.59.21.38 86.59.21.38 
+	                              80 
+	                              443
+	contact                       Peter Palfrader
+	dir-key-certificate-version   3
+	fingerprint                   14C131DFC5C6F93646BE72FA1401C02A8DF2E8B4
+	dir-key-published             2015-06-01 00:00:00
+	dir-key-expires               2015-11-01 00:00:00
+	dir-identity-key              RSA PUBLIC KEY
+	dir-signing-key               RSA PUBLIC KEY
+	dir-key-crosscert             SIGNATURE
+	dir-key-certification         SIGNATURE
+	
+	r                             PDrelay1 
+	                              AAFJ5u9xAqrKlpDW6N0pMhJLlKs 
+	                              0f0NYCcVKbQkJCK2ZdZRfxFXtVU 
+	                              2015-08-31 
+	                              10:53:35 
+	                              95.215.44.189 
+	                              8080 
+	                              0
+	a                             [2a02:7aa0:1619::9847:f57c]:8080
+	s                             Fast 
+	                              Running 
+	                              Stable 
+	                              Valid
+	v                             Tor 0.2.7.2-alpha-dev
+	w                             Bandwidth=627
+	p                             reject 1-65535
+	m                             13 
+	                              sha256=YcMZGgMs9RzjoY7AZlPXzwojYnbENCUKZhedWXZoETs
+	m                             14,
+	                              15 
+	                              sha256=lS5Yg/12NS/Y9bowa1fQ1aCp47S98X/7vnky/MduYFw
+	m                             16,
+	                              17 
+	                              sha256=pZaYWEakwk4GfYzcGvATuhxLAyHQAEf71tZZoD+U2ZA
+	m                             18,
+	                              19,
+	                              20 
+	                              sha256=vXOfevUd3V8WbiM0Svk6wvnavdJRvJ3pxWvRfDrGkjI
+	
+	[[ and so forth ]]
+
+
+JSON SERIALIZATION
+
+                                        metrics-lib class/method
+	{                                     RelayNetworkStatusVote
+		"descriptor_type": "network-status-vote-3 1.0",
+		"vote_status": #,                   int getNetworkStatusVersion
+		"consensus_methods": [#,#,#...],    getConsensusMethods
+		"published": "",                    long getPublishedMillis
+		"valid_after": "",                  long getValidAfterMillis   
+		"flag_thresholds": {                                 
+			"stable-uptime": #,               long getStableUptime
+			"stable-mtbf": #,                 long getStableMtbf
+			"enough-mtbf": #,                 int getEnoughMtbfInfo
+			"fast-speed": #,                  long getFastBandwidth
+			"guard-wfu": #,                   double getGuardWfu
+			"guard-tk": #,                    long getGuardTk
+			"guard-bw-inc-exits": #,          long getGuardBandwidthIncludingExits
+			"guard-bw-exc-exits": #,          long getGuardBandwidthExcludingExits
+			"ignoring-advertised-bws": #      int getIgnoringAdvertisedBws
+		},                              
+		"fresh_until": "",                  long getFreshUntilMillis
+		"valid_until": "",                  long getValidUntilMillis
+		"voting_delay": {                   
+			"vote_seconds": #,                long getVoteSeconds
+			"dist_seconds": #                 long getDistSeconds
+		},                                
+		"client_versions": ["","",""...],   getRecommendedClientVersions
+		"server_versions": ["","",""...],   getRecommendedServerVersions
+		"package": [                        not implemented
+			{                                
+				"package_name": "",            
+				"version": "",                 
+				"url": "",                     
+				"digests": [                   
+					{                            
+						"digest_type": "",         
+						"digest_value": ""         
+					}
+					...
+				]
+			}
+			...
+		],
+		"known_flags": ["","",""...],       getKnownFlags
+		"params": [                         getConsensusParams SortedMap<String, Integer>
+			{                                 
+				"param": "",                    
+				"value": #                      int
+			}                              
+			...                              
+		],                              
+		dir-source: {                        
+			"nickname": "",                   getNickname
+			"identity": "",                   getIdentity
+			"address": "",                    getAddress
+			"dir_port": #,                    int getDirport
+			"or_port": #                      int getOrport
+	  }, 
+		"contact": "",                      getContactLine
+		"legacy_dir_key": ""                getLegacyDirKey    
+		            
+		            
+    "directory_key": {                  // not in spec but in example above
+      "version": #,                     int getDirKeyCertificateVersion
+      "fingerprint": "",                // no method in metrics-lib
+      "dir_key_published": "",          long getDirKeyPublishedMillis
+      "dir_key_expires": "",            long getDirKeyExpiresMillis
+      "dir_identity_key": boolean,      // no method in metrics-lib
+      "dir_signing_key": boolean,       // no method in metrics-lib
+      "dir_key_crosscert": boolean,     // no method in metrics-lib
+      "dir_key_certification": bool.    // no method in metrics-lib
+		},
+		
+		"router_status": [                  SortedMap<String, NetworkStatusEntry> getStatusEntries()
+			{
+			  "key": "",                      the String in SortedMap<String, NetworkStatusEntry>
+			  "descriptor_identity",          getDescriptor
+				"r": {                          
+					"nickname": "",               getNickname
+					"identity": "",               getFingerprint
+					"digest": "",                 getDescriptor
+					"publication": "",            long getPublishedMillis
+					"ip": "",                     getAddress
+					"or_port": #,                 int getOrPort
+					"dir_port": #                 int getDirPort
+				},                              
+				"a": ["","",""...],             getOrAddresses                            
+				"s": ["","",""...],             getFlags
+				"v": "",                        getVersion
+				"w": {                          
+					"bandwidth": #,               long getBandwidth
+					"measured": #                 long getMeasured
+					"unmeasured": boolean         getUnmeasured
+				},                              
+				"p": {
+				  "default_policy": "",         getDefaultPolicy
+				  "port_summary": ""            getPortList
+				}            
+				"m": [                          
+					{                             
+						"methods": [#,#,#...],      
+						"algorithm": "",            
+						"digest": ""                
+					}                             
+					...                           
+				],
+				"id": {
+				  "ed25519": boolean            getMasterKeyEd25519
+				},                            
+			}                                 
+			...                               
+		],                                  
+		"directory_footer": {           
+			"directory_signature": {          getDirectorySignatures SortedMap<String, DirectorySignature>
+				"algorithm": "",                getAlgorithm
+				"identity": "",                 getIdentity
+				"signing_key_digest": "",       getSigningKeyDigest
+				"signature": boolean            getSignature
+			}                                 
+		}                                   
+	}
+	
+	
+	
 ###### relayConsensus - network-status-consensus-3 1.0
 
 
@@ -1113,17 +1375,19 @@ JSON SERIALIZATION
 				"value": #                      
 			}                                 
 			...                               
-		],                                  
-		"dir_source": [                     DirSourceEntry
-			{                                 
-				"nickname": "",                 getNickname
-				"identity": "",                 getIdentity
-				"adress": "",                   getIp
-				"dir_port": #,                  getDirPort
-				"or_port": #                    getOrPort
-				"contact": "",                  getContactLine
-				"vote_digest": ""               getVoteDigest
-				"legacy": boolean               isLegacy
+		],  
+		authorities: [                      // section not in spec, added for convenience
+		  {
+			  "dir_source": {                 DirSource                             
+		  		"nickname": "",               getNickname
+		  		"identity": "",               getIdentity
+		  		"address": "",                getIp
+		  		"dir_port": #,                getDirPort
+		  		"or_port": #                  getOrPort
+		  	},
+		  	"contact": "",                  getContactLine
+		  	"vote_digest": ""               getVoteDigest
+		  	"is_legacy": boolean            isLegacy   // not in spec, but in metrics-lib
 			}                                 
 			...                               
 		],                                  
@@ -1161,7 +1425,6 @@ JSON SERIALIZATION
 				}                               // then an object would be better
 				...                             
 			],                           
-			"consensus_digest: "",            getConsensusDigest
 			"directory_signature": [          DirectorySignature
 				{                               
 					"algorithm": "",              getAlgorithm
@@ -1171,265 +1434,13 @@ JSON SERIALIZATION
 				}                                               
 				...
 			]
+			"consensus_digest: "",            getConsensusDigest  // ??? is this the right place
 		}
 	}
 	
 	
 
-######  relayVote - network-status-vote-3 1.0
 
-The directory authorities exchange votes every hour to come up with a common 
-consensus. Vote documents are by far the largest documents provided here. 
-
-	network-status-version        3
-	vote-status                   vote
-	consensus-methods             13 14 15 16 17 18 19 20
-	published                     2015-08-31 23:50:01
-	valid-after                   2015-09-01 00:00:00
-	fresh-until                   2015-09-01 01:00:00
-	valid-until                   2015-09-01 03:00:00
-	voting-delay                  300 300
-	client-versions               0.2.4.23,
-	                              0.2.4.24,
-	                              0.2.4.25,
-	                              0.2.4.26,
-	                              0.2.4.27,
-	                              0.2.5.8-rc,
-	                              0.2.5.9-rc,
-	                              0.2.5.10,
-	                              0.2.5.11,
-	                              0.2.5.12,
-	                              0.2.6.5-rc,
-	                              0.2.6.6,
-	                              0.2.6.7,
-	                              0.2.6.8,
-	                              0.2.6.9,
-	                              0.2.6.10,
-	                              0.2.7.1-alpha,
-	                              0.2.7.2-alpha
-	server-versions               0.2.4.23,
-	                              0.2.4.24,
-	                              0.2.4.25,
-	                              0.2.4.26,
-	                              0.2.4.27,
-	                              0.2.5.8-rc,
-	                              0.2.5.9-rc,
-	                              0.2.5.10,
-	                              0.2.5.11,
-	                              0.2.5.12,
-	                              0.2.6.5-rc,
-	                              0.2.6.6,
-	                              0.2.6.7,
-	                              0.2.6.8,
-	                              0.2.6.9,
-	                              0.2.6.10,
-	                              0.2.7.1-alpha,
-	                              0.2.7.2-alpha
-	known-flags                   Authority 
-	                              BadExit 
-	                              Exit 
-	                              Fast 
-	                              Guard 
-	                              HSDir 
-	                              Running 
-	                              Stable 
-	                              V2Dir 
-	                              Valid
-	flag-thresholds               stable-uptime=1219114 
-	                              stable-mtbf=2098570 
-	                              fast-speed=83000 
-	                              guard-wfu=98.000% 
-	                              guard-tk=691200 
-	                              guard-bw-inc-exits=3072000 
-	                              guard-bw-exc-exits=2457000 
-	                              enough-mtbf=1 
-	                              ignoring-advertised-bws=0
-	params                        CircuitPriorityHalflifeMsec=30000 
-	                              NumDirectoryGuards=3
-	                              NumEntryGuards=1 
-	                              NumNTorsPerTAP=100 
-	                              Support022HiddenServices=0 
-	                              UseNTorHandshake=1 
-	                              bwauthpid=1 
-	                              cbttestfreq=1000 
-	                              pb_disablepct=0 
-	                              usecreatefast=0
-	dir-source                    tor26 
-	                              14C131DFC5C6F93646BE72FA1401C02A8DF2E8B4 
-	                              86.59.21.38 86.59.21.38 
-	                              80 
-	                              443
-	contact                       Peter Palfrader
-	dir-key-certificate-version   3
-	fingerprint                   14C131DFC5C6F93646BE72FA1401C02A8DF2E8B4
-	dir-key-published             2015-06-01 00:00:00
-	dir-key-expires               2015-11-01 00:00:00
-	dir-identity-key              RSA PUBLIC KEY
-	dir-signing-key               RSA PUBLIC KEY
-	dir-key-crosscert             SIGNATURE
-	dir-key-certification         SIGNATURE
-	
-	r                             PDrelay1 
-	                              AAFJ5u9xAqrKlpDW6N0pMhJLlKs 
-	                              0f0NYCcVKbQkJCK2ZdZRfxFXtVU 
-	                              2015-08-31 
-	                              10:53:35 
-	                              95.215.44.189 
-	                              8080 
-	                              0
-	a                             [2a02:7aa0:1619::9847:f57c]:8080
-	s                             Fast 
-	                              Running 
-	                              Stable 
-	                              Valid
-	v                             Tor 0.2.7.2-alpha-dev
-	w                             Bandwidth=627
-	p                             reject 1-65535
-	m                             13 
-	                              sha256=YcMZGgMs9RzjoY7AZlPXzwojYnbENCUKZhedWXZoETs
-	m                             14,
-	                              15 
-	                              sha256=lS5Yg/12NS/Y9bowa1fQ1aCp47S98X/7vnky/MduYFw
-	m                             16,
-	                              17 
-	                              sha256=pZaYWEakwk4GfYzcGvATuhxLAyHQAEf71tZZoD+U2ZA
-	m                             18,
-	                              19,
-	                              20 
-	                              sha256=vXOfevUd3V8WbiM0Svk6wvnavdJRvJ3pxWvRfDrGkjI
-	
-	[[ and so forth ]]
-
-
-JSON SERIALIZATION
-
-                                       metrics-lib class/method
-	{                                    RelayNetworkStatusVote
-		"descriptor_type": "network-status-vote-3 1.0",
-		"published": "",                   long getPublishedMillis
-		"vote_status": #,                  int getNetworkStatusVersion
-		"consensus_methods": [#,#,#...],   getConsensusMethods
-		"valid_after": "",                 long getValidAfterMillis                                
-		"fresh_until": "",                 long getFreshUntilMillis
-		"valid_until": "",                 long getValidUntilMillis
-		"voting_delay": {                  
-			"vote_seconds": #,               long getVoteSeconds
-			"dist_seconds": #                long getDistSeconds
-		},                               
-		"client_versions": ["","",""...],  getRecommendedClientVersions
-		"server_versions": ["","",""...],  getRecommendedServerVersions
-		"package": [                       
-			{                                
-				"package_name": "",            
-				"version": "",                 
-				"url": "",                     
-				"digests": [                   
-					{                            
-						"digest_type": "",         
-						"digest_value": ""         
-					}
-					...
-				]
-			}
-			...
-		],
-		"flag_thresholds": {                                
-			"stable-uptime": #,              long getStableUptime
-			"stable-mtbf": #,                long getStableMtbf
-			"enough-mtbf": #,                int getEnoughMtbfInfo
-			"fast-speed": #,                 long getFastBandwidth
-			"guard-wfu": #,                  double getGuardWfu
-			"guard-tk": #,                   long getGuardTk
-			"guard-bw-inc-exits": #,         long getGuardBandwidthIncludingExits
-			"guard-bw-exc-exits": #,         long getGuardBandwidthExcludingExits
-			"ignoring-advertised-bws": #     int getIgnoringAdvertisedBws
-		},
-		"known_flags": ["","",""...],      getKnownFlags
-		"params": [                        getConsensusParams SortedMap<String, Integer>
-			{                                
-				"param": "",                   
-				"value": #                     int
-			}                             
-			...                             
-		],                             
-		authority: {                       
-			"nickname": "",                  getNickname
-			"identity": "",                  getIdentity
-			"adress": "",                    getAddress
-			"dir_port": #,                   int getDirport
-			"or_port": #                     int getOrport
-			"contact": "",                   getContactLine
-			"legacy_dir_key": {              getLegacyDirKey
-				"nickname": "",                
-				"identity": "",                
-				"adress": "",                  
-				"ip": "",                      
-				"dir_port": #,                 
-				"or_port": #                   
-			},                             
-			"key_certificate": {             
-				"version": #,                  int getDirKeyCertificateVersion
-				"fingerprint": "",             
-				"dir_key_published": "",       long getDirKeyPublishedMillis
-				"dir_key_expires": "",         long getDirKeyExpiresMillis
-				"dir_identity_key": boolean,   
-				"dir_signing_key": boolean,    getSigningKeyDigest
-				"dir_key_crosscert": boolean,  
-				"dir_key_certification": bool. 
-			}
-		},
-		"router_status": [                  SortedMap<String, NetworkStatusEntry> getStatusEntries()
-			{
-			  "key": "",                      the String in SortedMap<String, NetworkStatusEntry>
-			  "descriptor_identity",          getDescriptor
-				"r": {                          
-					"nickname": "",               getNickname
-					"identity": "",               getFingerprint
-					"digest": "",                 getDescriptor
-					"published": "",              long getPublishedMillis
-					"ip": "",                     getAddress
-					"or_port": #,                 int getOrPort
-					"dir_port": #                 int getDirPort
-				},                              
-				"a": ["","",""...],             getOrAddresses                            
-				"s": ["","",""...],             getFlags
-				"v": "",                        getVersion
-				"w": {                          
-					"bandwidth": #,               long getBandwidth
-					"measured_bw": #              long getMeasured
-					"unmeasured_bw": boolean      getUnmeasured
-				},                              
-				"p": {
-				  "default_policy": "",         getDefaultPolicy
-				  "port_summary": ""            getPortList
-				}            
-				"m": [                          
-					{                             
-						"methods": [#,#,#...],      
-						"algorithm": "",            
-						"digest": ""                
-					}                             
-					...                           
-				],
-				"id": {
-				  "ed25519": boolean            getMasterKeyEd25519
-				},                            
-			}                                 
-			...                               
-		],                                  
-		"directory_footer": {           
-			"directory_signature": {          getDirectorySignatures SortedMap<String, DirectorySignature>
-				"algorithm": "",                getAlgorithm
-				"identity": "",                 getIdentity
-				"signing_key_digest": "",       getSigningKeyDigest
-				"signature": boolean            getSignature
-			}                                 
-		}                                   
-	}
-	
-	
-	
-	
 ###### bridgeStatus - bridge-network-status 1.0
 
 
@@ -1567,7 +1578,7 @@ JSON SERIALIZATION
 	{                            ExitList
 		"descriptor_type": "tordnsel 1.0",
 		"downloaded": "",          getDownloadedMillis
-		"relays": [                Set<ExitList.Entry> getEntries
+		"exit_nodes": [            Set<ExitList.Entry> getEntries
 			{                        
 				"fingerprint": "",     getFingerprint
 				"published": "",       long getPublishedMillis

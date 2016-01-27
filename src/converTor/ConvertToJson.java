@@ -156,15 +156,15 @@ public class ConvertToJson {
           jsonDescriptor = JsonBridgeExtraInfoDescriptor
                   .convert((BridgeExtraInfoDescriptor) descriptor);
         }
-        //  network status consensus
-        if (descriptor instanceof RelayNetworkStatusConsensus) {
-          jsonDescriptor = JsonRelayNetworkStatusConsensus
-                  .convert((RelayNetworkStatusConsensus) descriptor);
-        }
         //  network status vote
         if (descriptor instanceof RelayNetworkStatusVote) {
           jsonDescriptor = JsonRelayNetworkStatusVote
                   .convert((RelayNetworkStatusVote) descriptor);
+        }
+        //  network status consensus
+        if (descriptor instanceof RelayNetworkStatusConsensus) {
+          jsonDescriptor = JsonRelayNetworkStatusConsensus
+                  .convert((RelayNetworkStatusConsensus) descriptor);
         }
         //  bridge network status
         if (descriptor instanceof BridgeNetworkStatus) {
@@ -1458,196 +1458,6 @@ public class ConvertToJson {
   }
 
 
-  //  network status consensus
-  static class JsonRelayNetworkStatusConsensus extends JsonDescriptor {
-    String descriptor_type;
-    String published;
-    Integer vote_status;
-    Integer consensus_method;
-    String consensus_flavor;
-    String valid_after;
-    String fresh_until;
-    String valid_until;
-    Vote voting_delay;
-    static class Vote {
-      Long vote_seconds;
-      Long dist_seconds;
-    }
-    List<String> client_versions;
-    List<String> server_versions;
-    SortedSet<String> known_flags;
-    Object params;
-    List<Authority> dir_source;
-    static class Authority {
-      String nickname;
-      String identity;
-      String adress;
-      Integer dir_port;
-      Integer or_port;
-      String contact;
-      String vote_digest;
-      Boolean legacy;
-    }
-    List<Router> router_status;
-    static class Router {
-      R r;  // router description
-      List<String> a;  // additinal OR adresses and ports
-      List<String> s;  // flags
-      String v;  // version
-      W w;  // bandwidths
-      Policy p;  // policies
-    }
-    static class R {
-      String nickname;
-      String identity;
-      String digest;
-      String published;
-      String ip;
-      Integer or_port;
-      Integer dir_port;
-    }
-    static class W {
-      Long bandwidth;
-      Long measured_bw;
-      Boolean unmeasured_bw;
-    }
-    static class Policy {
-      String default_policy;
-      String port_summary;
-    }
-    DirFooter directory_footer;
-    static class DirFooter {
-      Object bandwidth_weights;
-      String consensus_digest;
-      List<DirSig> directory_signature;
-    }
-    static class DirSig {
-      String algorithm;
-      String identity;
-      String signing_key_digest;
-      Boolean signature;
-    }
-
-    static String convert(RelayNetworkStatusConsensus desc) {
-      JsonRelayNetworkStatusConsensus cons = new JsonRelayNetworkStatusConsensus();
-      for (String annotation : desc.getAnnotations()) {
-        cons.descriptor_type = annotation.substring("@type ".length());
-      }
-      cons.published = dateTimeFormat.format(desc.getValidAfterMillis());
-      cons.vote_status = desc.getNetworkStatusVersion();
-      cons.consensus_method = desc.getConsensusMethod();
-      cons.consensus_flavor = desc.getConsensusFlavor();
-      cons.valid_after = dateTimeFormat.format(desc.getValidAfterMillis());
-      cons.fresh_until = dateTimeFormat.format(desc.getFreshUntilMillis());
-      cons.valid_until = dateTimeFormat.format(desc.getValidUntilMillis());
-      cons.voting_delay = new Vote();
-      cons.voting_delay.vote_seconds = desc.getVoteSeconds();
-      cons.voting_delay.dist_seconds = desc.getDistSeconds();
-      if (desc.getRecommendedClientVersions() != null && !desc.getRecommendedClientVersions().isEmpty()) {
-        cons.client_versions = desc.getRecommendedClientVersions();
-      }
-      if (desc.getRecommendedServerVersions() != null && !desc.getRecommendedServerVersions().isEmpty()) {
-        cons.server_versions = desc.getRecommendedServerVersions();
-      }
-      if (desc.getKnownFlags() != null && !desc.getKnownFlags().isEmpty()) {
-        cons.known_flags = desc.getKnownFlags();
-      }
-      if (desc.getConsensusParams() != null && !desc.getConsensusParams().isEmpty()) {
-        if (jagged) {
-          cons.params = desc.getConsensusParams();
-        } else {
-          ArrayList<StringInt> flatList = new ArrayList<>();
-          cons.params = new ArrayList<>();
-          for(Map.Entry<String,Integer> entry : desc.getConsensusParams().entrySet()) {
-            flatList.add(new StringInt(entry.getKey(), entry.getValue()));
-          }
-          cons.params = flatList;
-        }
-      }
-      if (desc.getDirSourceEntries() != null && !desc.getDirSourceEntries().isEmpty()) {
-        cons.dir_source = new ArrayList<>();
-        for (Map.Entry<String, DirSourceEntry> entry : desc.getDirSourceEntries().entrySet()) {
-          Authority auth = new Authority();
-          auth.nickname = entry.getValue().getNickname();
-          auth.identity = entry.getValue().getIdentity();
-          auth.adress = entry.getValue().getIp();
-          auth.dir_port = entry.getValue().getDirPort();
-          auth.or_port = entry.getValue().getOrPort();
-          auth.contact = entry.getValue().getContactLine();
-          auth.vote_digest = entry.getValue().getVoteDigest();
-          auth.legacy = entry.getValue().isLegacy();
-          cons.dir_source.add(auth);
-        }
-      }
-      if (desc.getStatusEntries() != null && !desc.getStatusEntries().isEmpty()) {
-        cons.router_status = new ArrayList();
-        SortedMap<String,NetworkStatusEntry> statusMap = desc.getStatusEntries();
-        for(Map.Entry<String,NetworkStatusEntry> status : statusMap.entrySet()) {
-          Router router = new Router();
-          router.r = new R();
-          router.r.nickname = status.getValue().getNickname();
-          router.r.identity = status.getValue().getFingerprint();
-          router.r.digest = status.getValue().getDescriptor();
-          router.r.published = dateTimeFormat.format(status.getValue().getPublishedMillis());
-          router.r.ip = status.getValue().getAddress();
-          router.r.or_port = status.getValue().getOrPort();
-          router.r.dir_port = status.getValue().getDirPort();
-          if (status.getValue().getOrAddresses() != null &&
-                  !status.getValue().getOrAddresses().isEmpty()) {
-            router.a = status.getValue().getOrAddresses();
-          }
-          if (status.getValue().getFlags() != null && !status.getValue().getFlags().isEmpty()) {
-            router.s = new ArrayList<>();
-            for (String flag : status.getValue().getFlags()) router.s.add(flag);
-          }
-          router.v = status.getValue().getVersion();
-          router.w = new W();
-          if (status.getValue().getBandwidth() >= 0) {
-            router.w.bandwidth = status.getValue().getBandwidth();
-          }
-          if (status.getValue().getMeasured() >= 0) {
-            router.w.measured_bw = status.getValue().getMeasured();
-          }
-          router.w.unmeasured_bw = status.getValue().getUnmeasured();
-          router.p = new Policy();
-          router.p.default_policy = status.getValue().getDefaultPolicy();
-          router.p.port_summary = status.getValue().getPortList();
-          cons.router_status.add(router);
-        }
-      }
-      if (desc.getDirectorySignatures() != null && !desc.getDirectorySignatures().isEmpty()) {
-        cons.directory_footer = new DirFooter();
-        if (desc.getBandwidthWeights() != null && !desc.getBandwidthWeights().isEmpty()) {
-          if (jagged) {
-            cons.directory_footer.bandwidth_weights = desc.getBandwidthWeights();
-          } else {
-            ArrayList<StringInt> flatList = new ArrayList<>();
-            cons.directory_footer.bandwidth_weights = new ArrayList<> ();
-            for(Map.Entry<String,Integer> entry : desc.getBandwidthWeights().entrySet()) {
-              flatList.add(new StringInt(entry.getKey(), entry.getValue()));
-            }
-            cons.directory_footer.bandwidth_weights = flatList;
-          }
-        }
-        cons.directory_footer.consensus_digest = desc.getConsensusDigest();
-        if (desc.getDirectorySignatures() != null && !desc.getDirectorySignatures().isEmpty()) {
-          cons.directory_footer.directory_signature = new ArrayList<>();
-          SortedMap<String,DirectorySignature> dirSigMap = desc.getDirectorySignatures();
-          for(Map.Entry<String,DirectorySignature> dirSigEntry : dirSigMap.entrySet()) {
-            DirSig dirSig = new DirSig();
-            dirSig.algorithm = dirSigEntry.getValue().getAlgorithm();
-            dirSig.identity = dirSigEntry.getValue().getIdentity();
-            dirSig.signing_key_digest = dirSigEntry.getValue().getSigningKeyDigest();
-            dirSig.signature = dirSigEntry.getValue().getSignature() != null;
-            cons.directory_footer.directory_signature.add(dirSig);
-          }
-        }
-      }
-      return ToJson.serialize(cons);
-    }
-  }
-
-
   //  network status vote
   static class JsonRelayNetworkStatusVote extends JsonDescriptor {
     String descriptor_type;
@@ -1682,7 +1492,7 @@ public class ConvertToJson {
     static class Authority {
       String nickname;
       String identity;
-      String adress;
+      String address;
       Integer dir_port;
       Integer or_port;
       String contact;
@@ -1698,7 +1508,7 @@ public class ConvertToJson {
     List<Router> router_status;
     static class Router {
       R r;  // router description
-      List<String> a;  // additional OR adresses and ports
+      List<String> a;  // additional OR addresses and ports
       List<String> s;  // flags
       String v;  // version
       W w;  // bandwidths
@@ -1804,7 +1614,7 @@ public class ConvertToJson {
       vote.authority = new Authority();
       vote.authority.nickname = desc.getNickname();
       vote.authority.identity = desc.getIdentity();
-      vote.authority.adress = desc.getAddress();
+      vote.authority.address = desc.getAddress();
       vote.authority.dir_port = desc.getDirport();
       vote.authority.or_port = desc.getOrport();
       vote.authority.contact = desc.getContactLine();
@@ -1869,6 +1679,196 @@ public class ConvertToJson {
         }
       }
       return ToJson.serialize(vote);
+    }
+  }
+
+
+  //  network status consensus
+  static class JsonRelayNetworkStatusConsensus extends JsonDescriptor {
+    String descriptor_type;
+    String published;
+    Integer vote_status;
+    Integer consensus_method;
+    String consensus_flavor;
+    String valid_after;
+    String fresh_until;
+    String valid_until;
+    Vote voting_delay;
+    static class Vote {
+      Long vote_seconds;
+      Long dist_seconds;
+    }
+    List<String> client_versions;
+    List<String> server_versions;
+    SortedSet<String> known_flags;
+    Object params;
+    List<Authority> dir_source;
+    static class Authority {
+      String nickname;
+      String identity;
+      String address;
+      Integer dir_port;
+      Integer or_port;
+      String contact;
+      String vote_digest;
+      Boolean legacy;
+    }
+    List<Router> router_status;
+    static class Router {
+      R r;  // router description
+      List<String> a;  // additional OR addresses and ports
+      List<String> s;  // flags
+      String v;  // version
+      W w;  // bandwidths
+      Policy p;  // policies
+    }
+    static class R {
+      String nickname;
+      String identity;
+      String digest;
+      String published;
+      String ip;
+      Integer or_port;
+      Integer dir_port;
+    }
+    static class W {
+      Long bandwidth;
+      Long measured_bw;
+      Boolean unmeasured_bw;
+    }
+    static class Policy {
+      String default_policy;
+      String port_summary;
+    }
+    DirFooter directory_footer;
+    static class DirFooter {
+      Object bandwidth_weights;
+      String consensus_digest;
+      List<DirSig> directory_signature;
+    }
+    static class DirSig {
+      String algorithm;
+      String identity;
+      String signing_key_digest;
+      Boolean signature;
+    }
+
+    static String convert(RelayNetworkStatusConsensus desc) {
+      JsonRelayNetworkStatusConsensus cons = new JsonRelayNetworkStatusConsensus();
+      for (String annotation : desc.getAnnotations()) {
+        cons.descriptor_type = annotation.substring("@type ".length());
+      }
+      cons.published = dateTimeFormat.format(desc.getValidAfterMillis());
+      cons.vote_status = desc.getNetworkStatusVersion();
+      cons.consensus_method = desc.getConsensusMethod();
+      cons.consensus_flavor = desc.getConsensusFlavor();
+      cons.valid_after = dateTimeFormat.format(desc.getValidAfterMillis());
+      cons.fresh_until = dateTimeFormat.format(desc.getFreshUntilMillis());
+      cons.valid_until = dateTimeFormat.format(desc.getValidUntilMillis());
+      cons.voting_delay = new Vote();
+      cons.voting_delay.vote_seconds = desc.getVoteSeconds();
+      cons.voting_delay.dist_seconds = desc.getDistSeconds();
+      if (desc.getRecommendedClientVersions() != null && !desc.getRecommendedClientVersions().isEmpty()) {
+        cons.client_versions = desc.getRecommendedClientVersions();
+      }
+      if (desc.getRecommendedServerVersions() != null && !desc.getRecommendedServerVersions().isEmpty()) {
+        cons.server_versions = desc.getRecommendedServerVersions();
+      }
+      if (desc.getKnownFlags() != null && !desc.getKnownFlags().isEmpty()) {
+        cons.known_flags = desc.getKnownFlags();
+      }
+      if (desc.getConsensusParams() != null && !desc.getConsensusParams().isEmpty()) {
+        if (jagged) {
+          cons.params = desc.getConsensusParams();
+        } else {
+          ArrayList<StringInt> flatList = new ArrayList<>();
+          cons.params = new ArrayList<>();
+          for(Map.Entry<String,Integer> entry : desc.getConsensusParams().entrySet()) {
+            flatList.add(new StringInt(entry.getKey(), entry.getValue()));
+          }
+          cons.params = flatList;
+        }
+      }
+      if (desc.getDirSourceEntries() != null && !desc.getDirSourceEntries().isEmpty()) {
+        cons.dir_source = new ArrayList<>();
+        for (Map.Entry<String, DirSourceEntry> entry : desc.getDirSourceEntries().entrySet()) {
+          Authority auth = new Authority();
+          auth.nickname = entry.getValue().getNickname();
+          auth.identity = entry.getValue().getIdentity();
+          auth.address = entry.getValue().getIp();
+          auth.dir_port = entry.getValue().getDirPort();
+          auth.or_port = entry.getValue().getOrPort();
+          auth.contact = entry.getValue().getContactLine();
+          auth.vote_digest = entry.getValue().getVoteDigest();
+          auth.legacy = entry.getValue().isLegacy();
+          cons.dir_source.add(auth);
+        }
+      }
+      if (desc.getStatusEntries() != null && !desc.getStatusEntries().isEmpty()) {
+        cons.router_status = new ArrayList();
+        SortedMap<String,NetworkStatusEntry> statusMap = desc.getStatusEntries();
+        for(Map.Entry<String,NetworkStatusEntry> status : statusMap.entrySet()) {
+          Router router = new Router();
+          router.r = new R();
+          router.r.nickname = status.getValue().getNickname();
+          router.r.identity = status.getValue().getFingerprint();
+          router.r.digest = status.getValue().getDescriptor();
+          router.r.published = dateTimeFormat.format(status.getValue().getPublishedMillis());
+          router.r.ip = status.getValue().getAddress();
+          router.r.or_port = status.getValue().getOrPort();
+          router.r.dir_port = status.getValue().getDirPort();
+          if (status.getValue().getOrAddresses() != null &&
+                  !status.getValue().getOrAddresses().isEmpty()) {
+            router.a = status.getValue().getOrAddresses();
+          }
+          if (status.getValue().getFlags() != null && !status.getValue().getFlags().isEmpty()) {
+            router.s = new ArrayList<>();
+            for (String flag : status.getValue().getFlags()) router.s.add(flag);
+          }
+          router.v = status.getValue().getVersion();
+          router.w = new W();
+          if (status.getValue().getBandwidth() >= 0) {
+            router.w.bandwidth = status.getValue().getBandwidth();
+          }
+          if (status.getValue().getMeasured() >= 0) {
+            router.w.measured_bw = status.getValue().getMeasured();
+          }
+          router.w.unmeasured_bw = status.getValue().getUnmeasured();
+          router.p = new Policy();
+          router.p.default_policy = status.getValue().getDefaultPolicy();
+          router.p.port_summary = status.getValue().getPortList();
+          cons.router_status.add(router);
+        }
+      }
+      if (desc.getDirectorySignatures() != null && !desc.getDirectorySignatures().isEmpty()) {
+        cons.directory_footer = new DirFooter();
+        if (desc.getBandwidthWeights() != null && !desc.getBandwidthWeights().isEmpty()) {
+          if (jagged) {
+            cons.directory_footer.bandwidth_weights = desc.getBandwidthWeights();
+          } else {
+            ArrayList<StringInt> flatList = new ArrayList<>();
+            cons.directory_footer.bandwidth_weights = new ArrayList<> ();
+            for(Map.Entry<String,Integer> entry : desc.getBandwidthWeights().entrySet()) {
+              flatList.add(new StringInt(entry.getKey(), entry.getValue()));
+            }
+            cons.directory_footer.bandwidth_weights = flatList;
+          }
+        }
+        cons.directory_footer.consensus_digest = desc.getConsensusDigest();
+        if (desc.getDirectorySignatures() != null && !desc.getDirectorySignatures().isEmpty()) {
+          cons.directory_footer.directory_signature = new ArrayList<>();
+          SortedMap<String,DirectorySignature> dirSigMap = desc.getDirectorySignatures();
+          for(Map.Entry<String,DirectorySignature> dirSigEntry : dirSigMap.entrySet()) {
+            DirSig dirSig = new DirSig();
+            dirSig.algorithm = dirSigEntry.getValue().getAlgorithm();
+            dirSig.identity = dirSigEntry.getValue().getIdentity();
+            dirSig.signing_key_digest = dirSigEntry.getValue().getSigningKeyDigest();
+            dirSig.signature = dirSigEntry.getValue().getSignature() != null;
+            cons.directory_footer.directory_signature.add(dirSig);
+          }
+        }
+      }
+      return ToJson.serialize(cons);
     }
   }
 
@@ -2017,17 +2017,17 @@ public class ConvertToJson {
             if (jagged) {
               entry.exit_list = new HashMap<String, String>();
               HashMap<String, String> jaggedList = new HashMap<>();
-              for (Map.Entry<String, Long> exitAdress : exitEntry.getExitAddresses().entrySet()) {
-                jaggedList.put(exitAdress.getKey(), dateTimeFormat.format(exitAdress.getValue()));
+              for (Map.Entry<String, Long> exitAddress : exitEntry.getExitAddresses().entrySet()) {
+                jaggedList.put(exitAddress.getKey(), dateTimeFormat.format(exitAddress.getValue()));
               }
               entry.exit_list = jaggedList;
             } else {
               entry.exit_list = new ArrayList<Exit>();
                 ArrayList<Exit> flatExit = new ArrayList<>();
-                for (Map.Entry<String, Long> exitAdress : exitEntry.getExitAddresses().entrySet()) {
+                for (Map.Entry<String, Long> exitAddress : exitEntry.getExitAddresses().entrySet()) {
                   Exit exit = new Exit();
-                  exit.ip = exitAdress.getKey();
-                  exit.date = dateTimeFormat.format(exitAdress.getValue());
+                  exit.ip = exitAddress.getKey();
+                  exit.date = dateTimeFormat.format(exitAddress.getValue());
                   flatExit.add(exit);
                 }
                 entry.exit_list = flatExit;

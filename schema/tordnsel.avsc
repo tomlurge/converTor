@@ -1,0 +1,50 @@
+{
+  "namespace": "org.torproject.metrics.converTor.tordnsel",
+  "type": "record",
+  "name": "Tordnsel",
+  "aliases": [
+    "exitList"
+  ],
+  "doc": "tordnsel 1.0",
+  "fields": [
+    {
+      "name": "descriptor_type",
+      "type": "string",
+      "default": "tordnsel 1.0"
+    },
+    {
+      "name": "downloaded",
+      "type": [ "null", "string" ]
+    },
+    {
+      "name": "exit_nodes",
+      "type": [ "null",
+        {
+          "type": "array",
+          "items": {
+            "type" : "record",
+            "name" : "ExitNode",
+            "fields" : [
+              {
+                "name" : "fingerprint",
+                "type" : [ "null", "string" ]
+              }, {
+                "name" : "published",
+                "type" : [ "null", "string" ]
+              }, {
+                "name" : "last_status",
+                "type" : [ "null", "string" ]
+              }, {
+                "name" : "exit_list",
+                "type" : [ "null", {
+                  "type" : "map",
+                  "values" : "string"
+                } ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

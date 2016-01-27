@@ -1,3 +1,26 @@
+
+
+    defining a schema for avro is possible in two ways
+      JSON  verbose, cumbersome
+      IDL   concise, tidy, lucid
+    obviously IDL is the way to go
+    but automatic building of the Java classes neede to use the schemata 
+      only works with JSON schemata
+    there is a tool to convert IDL to JSON but it generates a slightly 
+      different JSON than the one needed to generate classes
+      and has to be tweaked a little (cumbersome again, but still better than
+      building JSON schemata from scratch
+    so the workflow is:
+      define schemata in IDL (eg schema.avdl)
+      convert ID to JSON (eg java -jar avro-tools-1.7.7.jar idl schema.avdl schema.avpr)
+      tweak schema according to spec (then eg save as schema.avsc)
+      generate builder classes (eg java -jar avro-tools-1.7.7.jar schema compile schema.avsc .)
+      
+      
+      
+      
+
+
 spec: https://avro.apache.org/docs/1.7.7/spec.html  
 intro: https://avro.apache.org/docs/current/gettingstartedjava.html    
 good example of a complex schema: https://stackoverflow.com/questions/28163225/how-to-define-avro-schema-for-complex-json-document    
@@ -31,7 +54,7 @@ TYPES
     bytes
     string
     array     items
-    map       values
+    map       values, key is always of type string
     record    fields
     enum      symbols
     fixed

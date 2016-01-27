@@ -2,46 +2,6 @@
 protocol relay_server_descriptor {
 
   // server-descriptor 1.0 - same as bridge but additional field 'router_signature'
-  record Relay {
-
-    string descriptor_type = "server-descriptor 1.0";
-    union { null, boolean } router_signature;
-    union { null, string } published;
-    union { null, string } fingerprint;
-    union { null, Router } router;
-    union { null, Bandwidth } bandwidth;
-    union { null, boolean } onion_key;
-    union { null, boolean } signing_key;
-    union { null, array<string> } exit_policy;
-    union { null, array<OrAddress> } or_addresses;
-    union { null, string } platform;
-    union { null, boolean } hibernating;
-    union { null, long } uptime;
-    union { null, string } ipv6_policy;
-    union { null, string } contact;
-    union { null, array<string> } family;
-    union { null, History } read_history;
-    union { null, History } write_history;
-    union { null, boolean } eventdns;
-    union { null, boolean } caches_extra_info;
-    union { null, string } extra_info_digest;
-    union { null, array<int> } hidden_service_dir_versions;
-    union { null, array<int> } link_protocol_versions;
-    union { null, array<int> } circuit_protocol_versions;
-    union { null, boolean } allow_single_hop_exits;
-    union { null, boolean } ntor_onion_key;
-    union { null, string } router_digest;
-
-    union { null, boolean } identity_ed25519;
-    union { null, string } master_key_ed25519;
-    union { null, boolean } onion_key_crosscert;
-    union { null, CrossCert } ntor_onion_key_crosscert;
-    union { null, string } ipv6_portlist;
-    union { null, boolean } router_sig_ed25519;
-    union { null, string } extra_info_digest_sha256;
-    union { null, string } router_digest_sha256;
-
-  }
 
   record Router {
     union { null, string } nickname;
@@ -58,7 +18,7 @@ protocol relay_server_descriptor {
   }
 
   record OrAddress {
-    string adress;
+    string address;
     int port;
   }
 
@@ -71,6 +31,45 @@ protocol relay_server_descriptor {
   record CrossCert {
     string cert;
     int bit;
+  }
+
+  @aliases(["relay_server"])
+  record Relay {
+    string descriptor_type = "server-descriptor 1.0";
+    union { null, Router } router;
+    union { null, boolean } identity_ed25519;
+    union { null, string } master_key_ed25519;
+    union { null, Bandwidth } bandwidth;
+    union { null, string } platform;
+    union { null, string } published;
+    union { null, string } fingerprint;
+    union { null, boolean } hibernating;
+    union { null, long } uptime;
+    union { null, boolean } onion_key;
+    union { null, boolean } onion_key_crosscert;
+    union { null, boolean } ntor_onion_key;
+    union { null, CrossCert } ntor_onion_key_crosscert;
+    union { null, boolean } signing_key;
+    union { null, array<string> } exit_policy;
+    string ipv6_policy = "ipv6-policy reject 1-65535";
+    union { null, string } ipv6_portlist;
+    union { null, boolean } router_sig_ed25519;
+    union { null, boolean } router_signature;
+    union { null, string } contact;
+    union { null, array<string> } family;
+    union { null, History } read_history;
+    union { null, History } write_history;
+    union { null, boolean } eventdns;
+    union { null, boolean } caches_extra_info;
+    union { null, string } extra_info_digest;
+    union { null, string } extra_info_digest_sha256;
+    union { null, array<int> } hidden_service_dir;
+    union { null, array<int> } link_protocol_versions;
+    union { null, array<int> } circuit_protocol_versions;
+    union { null, boolean } allow_single_hop_exits;
+    union { null, array<OrAddress> } or_address;
+    union { null, string } router_digest;
+    union { null, string } router_digest_sha256;
   }
 
 }
