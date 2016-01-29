@@ -1,5 +1,9 @@
 
 
+    INTRO
+    https://avro.apache.org/docs/current/gettingstartedjava.html
+    
+    SCHEMA 
     defining a schema for avro is possible in two ways
       JSON  verbose, cumbersome
       IDL   concise, tidy, lucid
@@ -18,7 +22,13 @@
       
       
       
-      
+    IMPORTS
+    import org.apache.avro.file.DataFileReader;
+    import org.apache.avro.file.DataFileWriter;
+    import org.apache.avro.io.DatumReader;
+    import org.apache.avro.io.DatumWriter;
+    import org.apache.avro.specific.SpecificDatumReader;
+    import org.apache.avro.specific.SpecificDatumWriter;
 
 
 spec: https://avro.apache.org/docs/1.7.7/spec.html  
@@ -144,7 +154,7 @@ serialize record to output stream
 ## Avro TOOLS commands
 
     compile a schema
-    % java -jar avro-tools-1.7.7.jar compile schema ~/desc.avsc /desc
+    % java -jar avro-tools-1.7.7.jar compile schema ~/desc.avsc ~/desc
     
     convert .avro to JSON
     % java -jar $AVRO_HOME/avro-tools-*.jar tojson myFile.avro
@@ -207,10 +217,11 @@ You may run the following command to create the Book class needed from the schem
 The Avro schema is:
 
     {
-    "type": "record",
-    "name": "StringPair", "doc": "A pair of strings.", "fields": [
-    {"name": "left", "type": "string"},
-    {"name": "right", "type": "string"} ]
+      "type": "record",
+      "name": "StringPair", "doc": "A pair of strings.", "fields": [
+        {"name": "left", "type": "string"},
+        {"name": "right", "type": "string"} 
+      ]
     }
 
 We create a schema instance and a generic record with:
@@ -272,11 +283,20 @@ not cause an error until the object is serialized. However, using constructors
 directly generally offers better performance, as builders create a copy of the 
 datastructure before it is written. 
 
-Builder
-  
-  - automatically set any default values specified in the schema
-  - validate the data as it's set
-  - however less performant
+  Builder
     
+    - validate the data as it's set
+    - automatically set any default values specified in the schema
+    - requires to set all fields even if they are null
+    - however less performant
+    
+  Constructor
+  
+    - validates when serializing which is sufficient in our case
+    - doesn't provide defaults but we do already
+    - fields don't need to be set explicitely if a default value is given (as we always do)
+    - is more performant which is nice with as much data as we have
+    
+Conclusion: we should use _**constructor**_s!
     
     
