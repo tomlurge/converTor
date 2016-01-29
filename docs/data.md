@@ -173,18 +173,18 @@ JSON SERIALIZATION
 	{
 		"descriptor_type": "server-descriptor 1.0",
 		"router": {
-      "nickname": "",
-      "address": "",
-      "or_port": #,
-      "socks_port": #,
-      "dir_port": #
-    },
+			"nickname": "",
+			"address": "",
+			"or_port": #,
+			"socks_port": #,
+			"dir_port": #
+		},
 		"identity_ed25519": boolean           getIdentityEd25519
 		"master_key_ed25519": boolean         getMasterKeyEd25519
 		"bandwidth": {
-      "avg": #,
-      "burst": #,
-      "observed": #
+			"avg": #,
+			"burst": #,
+			"observed": #
 		},
 		"platform": "",
 		"published": "",
@@ -225,19 +225,19 @@ JSON SERIALIZATION
 		"circuit_protocol_versions": [#,#,#...],
 		"allow_single_hop_exits": boolean,
 		"or_address": 
-		  // jagged
-		  { 
-		    "adress": #port 
-		     ...
-		  },
-		  // flattened
-		  [
-        {
-          "adress": "",
-          "port": #
-        },
-        ...
-      ]
+			// jagged
+			{ 
+				"adress": #port 
+				 ...
+			},
+			// flattened
+			[
+				{
+					"adress": "",
+					"port": #
+				},
+				...
+			]
 		,
 		"router_digest": "",
 		"router_digest_sha256": ""
@@ -290,67 +290,76 @@ JSON SERIALIZATION
  
 	                                      
 	{
-	  "descriptor_type": "bridge_server_descriptor 1.1",       
-		"nickname": "",                     req
-		"adress": "",                       req
-		"or_port": #,                       req
-		"socks_port": #,                    req
-		"dir_port": #,                      req     
-		"identity_ed25519": boolean
-		"master_key_ed25519": string,   
-		"bandwidth_avg": #,                 req
-		"bandwidth_burst": #,               req
-		"bandwidth_observed": #,            opt
-		"or_addresses":
-		  // jagged
-		  { 
-		    "adress": #port 
-		     ...
-		  },
-		  // flattened
-		  [
-        {
-          "adress": "",
-          "port": #
-        },
-        ...
-      ]
-		,                              
-		"platform": "",                     opt
-		"published": "",                    
-		"fingerprint": "",                  
-		"hibernating": boolean,             opt
-		"uptime": #,                        opt
-		"onion_key": boolean,               req           
-		"onion_key_crosscert": boolean,               
-		"ntor_onion_key": boolean,          
-		"ntor_onion_key_crosscert": boolean,    
-		"signing_key": boolean,             req
-		"exit_policy": ["","",""...],       req 
-		"ipv6_policy": "",                  opt
-		"ipv6_portlist": "",
-		"router_sig_ed25519": boolean,
-		"contact": "",                      opt
-		"family": ["","",""...],            opt
-		"read_history": {                   opt
-			"date": "",                       req
-			"interval": #,                    req
-			"bytes": [#,#,#...]               req
+	  "descriptor_type": "bridge_server_descriptor 1.1",  
+		"router": {
+			"nickname": "",
+			"address": "",
+			"or_port": #,
+			"socks_port": #,
+			"dir_port": #
 		},
-		"write_history":  {                 opt
-			"date": "",                       req
-			"interval": #,                    req
-			"bytes": [#,#,#...]               req
-		},                   
-		"eventdns": boolean,                  
-		"caches_extra_info": boolean,   
-		"extra_info_digest": "",            opt       
-		"hidden_service_dir_versions": [#,#,#...], 
-		"link_protocol_versions": [#,#,#...],      
-		"circuit_protocol_versions": [#,#,#...],   
-		"allow_single_hop_exits": boolean,      
-		"router_digest": ""              
-	}         
+		"identity_ed25519": boolean           getIdentityEd25519
+		"master_key_ed25519": boolean         getMasterKeyEd25519
+		"bandwidth": {
+			"avg": #,
+			"burst": #,
+			"observed": #
+		},
+		"platform": "",
+		"published": "",
+		"fingerprint": "",
+		"hibernating": boolean,
+		"uptime": #,
+		"onion_key": boolean,
+		"onion_key_crosscert":                boolean getOnionKeyCrosscert
+		"ntor_onion_key": "",
+		"ntor_onion_key_crosscert": {
+			"cert": boolean                     getNtorOnionKeyCrosscert
+			"bit": int                          getNtorOnionKeyCrosscertSign
+		},
+		"signing_key": boolean,
+		"exit-policy": ["","",""...],
+		"ipv6_policy": "",
+		"ipv6_portlist": "",
+		"router_sig_ed25519": boolean         getRouterSignatureEd25519
+		"contact": "",
+		"family": ["","",""...],
+		"read_history": {
+			"date": "",
+			"interval": #,
+			"bytes": [#,#,#...]
+		},
+		"write_history":  {
+			"date": "",
+			"interval": #,
+			"bytes": [#,#,#...]
+		},
+		"eventdns": boolean,
+		"caches_extra_info": boolean,
+		"extra_info_digest": "",
+		"extra_info_digest_sha256": boolean   getExtraInfoDigestSha256
+		"hidden_service_dir": [#,#,#...],
+		"link_protocol_versions": [#,#,#...],
+		"circuit_protocol_versions": [#,#,#...],
+		"allow_single_hop_exits": boolean,
+		"or_address": 
+			// jagged
+			{ 
+				"adress": #port 
+				 ...
+			},
+			// flattened
+			[
+				{
+					"adress": "",
+					"port": #
+				},
+				...
+			]
+		,
+		"router_digest": "",
+		"router_digest_sha256": ""
+	}
 		       
 	NEVER
 		"router_signature"
