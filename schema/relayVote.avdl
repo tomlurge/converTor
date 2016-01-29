@@ -69,7 +69,7 @@ protocol relay_network_status_vote_3_descriptor {
   record RelayVote {
     string descriptor_type = "network-status-vote-3 1.0";
     int network_status_version = 3;
-    union { null, int } vote_status;
+    union { null, string } vote_status = "vote";
     array<int> consensus_methods;
     union { null, string } published;
     union { null, string } valid_after;

@@ -16,7 +16,8 @@
       "default" : 3
     }, {
       "name" : "vote_status",
-      "type" : [ "null", "int" ]
+      "type": "string",
+      "default": "vote"
     }, {
       "name" : "consensus_methods",
       "type" : {

@@ -60,7 +60,7 @@ protocol relay_network_status_consensus_3_descriptor {
   record RelayConsensus {
     string descriptor_type = "network-status-consensus-3 1.0";
     int network_status_version = 3;
-    union { null, int } vote_status;
+    union { null, string } vote_status = "consensus";
     union { null, int } consensus_method;
     union { null, string } consensus_flavor;
     union { null, string } valid_after;

@@ -19,7 +19,8 @@
     },
     {
       "name": "vote_status",
-      "type": [ "null",  "int" ]
+      "type": "string",
+      "default": "consensus"
     },
     {
       "name": "consensus_method",
