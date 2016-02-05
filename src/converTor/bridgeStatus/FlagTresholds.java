@@ -3,20 +3,30 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.bridgeStatus;
+package converTor.bridgeStatus;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FlagTresholds\",\"namespace\":\"converTor.bridgeStatus\",\"fields\":[{\"name\":\"stable_uptime\",\"type\":[\"null\",\"long\"]},{\"name\":\"stable_mtbf\",\"type\":[\"null\",\"long\"]},{\"name\":\"enough_mtbf\",\"type\":[\"null\",\"int\"]},{\"name\":\"fast_speed\",\"type\":[\"null\",\"long\"]},{\"name\":\"guard_wfu\",\"type\":[\"null\",\"double\"]},{\"name\":\"guard_tk\",\"type\":[\"null\",\"long\"]},{\"name\":\"guard_bw_inc_exits\",\"type\":[\"null\",\"long\"]},{\"name\":\"guard_bw_exc_exits\",\"type\":[\"null\",\"long\"]},{\"name\":\"ignoring_advertised\",\"type\":[\"null\",\"int\"]}]}");
+  private static final long serialVersionUID = 6251493812304936910L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FlagTresholds\",\"namespace\":\"converTor.bridgeStatus\",\"fields\":[{\"name\":\"stable_uptime\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getStableUptime()\"},{\"name\":\"stable_mtbf\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getStableMtbf()\"},{\"name\":\"enough_mtbf\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: int getEnoughMtbfInfo()\"},{\"name\":\"fast_speed\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getFastBandwidth()\"},{\"name\":\"guard_wfu\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: double getGuardWfu()\"},{\"name\":\"guard_tk\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getGuardTk()\"},{\"name\":\"guard_bw_inc_exits\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getGuardBandwidthIncludingExits()\"},{\"name\":\"guard_bw_exc_exits\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getGuardBandwidthExcludingExits()\"},{\"name\":\"ignoring_advertised\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: int getIgnoringAdvertisedBws()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
+  /** metrics-lib/BridgeNetworkStatus: long getStableUptime() */
   @Deprecated public java.lang.Long stable_uptime;
+  /** metrics-lib/BridgeNetworkStatus: long getStableMtbf() */
   @Deprecated public java.lang.Long stable_mtbf;
+  /** metrics-lib/BridgeNetworkStatus: int getEnoughMtbfInfo() */
   @Deprecated public java.lang.Integer enough_mtbf;
+  /** metrics-lib/BridgeNetworkStatus: long getFastBandwidth() */
   @Deprecated public java.lang.Long fast_speed;
+  /** metrics-lib/BridgeNetworkStatus: double getGuardWfu() */
   @Deprecated public java.lang.Double guard_wfu;
+  /** metrics-lib/BridgeNetworkStatus: long getGuardTk() */
   @Deprecated public java.lang.Long guard_tk;
+  /** metrics-lib/BridgeNetworkStatus: long getGuardBandwidthIncludingExits() */
   @Deprecated public java.lang.Long guard_bw_inc_exits;
+  /** metrics-lib/BridgeNetworkStatus: long getGuardBandwidthExcludingExits() */
   @Deprecated public java.lang.Long guard_bw_exc_exits;
+  /** metrics-lib/BridgeNetworkStatus: int getIgnoringAdvertisedBws() */
   @Deprecated public java.lang.Integer ignoring_advertised;
 
   /**
@@ -28,6 +38,15 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
 
   /**
    * All-args constructor.
+   * @param stable_uptime metrics-lib/BridgeNetworkStatus: long getStableUptime()
+   * @param stable_mtbf metrics-lib/BridgeNetworkStatus: long getStableMtbf()
+   * @param enough_mtbf metrics-lib/BridgeNetworkStatus: int getEnoughMtbfInfo()
+   * @param fast_speed metrics-lib/BridgeNetworkStatus: long getFastBandwidth()
+   * @param guard_wfu metrics-lib/BridgeNetworkStatus: double getGuardWfu()
+   * @param guard_tk metrics-lib/BridgeNetworkStatus: long getGuardTk()
+   * @param guard_bw_inc_exits metrics-lib/BridgeNetworkStatus: long getGuardBandwidthIncludingExits()
+   * @param guard_bw_exc_exits metrics-lib/BridgeNetworkStatus: long getGuardBandwidthExcludingExits()
+   * @param ignoring_advertised metrics-lib/BridgeNetworkStatus: int getIgnoringAdvertisedBws()
    */
   public FlagTresholds(java.lang.Long stable_uptime, java.lang.Long stable_mtbf, java.lang.Integer enough_mtbf, java.lang.Long fast_speed, java.lang.Double guard_wfu, java.lang.Long guard_tk, java.lang.Long guard_bw_inc_exits, java.lang.Long guard_bw_exc_exits, java.lang.Integer ignoring_advertised) {
     this.stable_uptime = stable_uptime;
@@ -76,6 +95,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
 
   /**
    * Gets the value of the 'stable_uptime' field.
+   * @return metrics-lib/BridgeNetworkStatus: long getStableUptime()
    */
   public java.lang.Long getStableUptime() {
     return stable_uptime;
@@ -83,6 +103,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
 
   /**
    * Sets the value of the 'stable_uptime' field.
+   * metrics-lib/BridgeNetworkStatus: long getStableUptime()
    * @param value the value to set.
    */
   public void setStableUptime(java.lang.Long value) {
@@ -91,6 +112,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
 
   /**
    * Gets the value of the 'stable_mtbf' field.
+   * @return metrics-lib/BridgeNetworkStatus: long getStableMtbf()
    */
   public java.lang.Long getStableMtbf() {
     return stable_mtbf;
@@ -98,6 +120,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
 
   /**
    * Sets the value of the 'stable_mtbf' field.
+   * metrics-lib/BridgeNetworkStatus: long getStableMtbf()
    * @param value the value to set.
    */
   public void setStableMtbf(java.lang.Long value) {
@@ -106,6 +129,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
 
   /**
    * Gets the value of the 'enough_mtbf' field.
+   * @return metrics-lib/BridgeNetworkStatus: int getEnoughMtbfInfo()
    */
   public java.lang.Integer getEnoughMtbf() {
     return enough_mtbf;
@@ -113,6 +137,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
 
   /**
    * Sets the value of the 'enough_mtbf' field.
+   * metrics-lib/BridgeNetworkStatus: int getEnoughMtbfInfo()
    * @param value the value to set.
    */
   public void setEnoughMtbf(java.lang.Integer value) {
@@ -121,6 +146,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
 
   /**
    * Gets the value of the 'fast_speed' field.
+   * @return metrics-lib/BridgeNetworkStatus: long getFastBandwidth()
    */
   public java.lang.Long getFastSpeed() {
     return fast_speed;
@@ -128,6 +154,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
 
   /**
    * Sets the value of the 'fast_speed' field.
+   * metrics-lib/BridgeNetworkStatus: long getFastBandwidth()
    * @param value the value to set.
    */
   public void setFastSpeed(java.lang.Long value) {
@@ -136,6 +163,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
 
   /**
    * Gets the value of the 'guard_wfu' field.
+   * @return metrics-lib/BridgeNetworkStatus: double getGuardWfu()
    */
   public java.lang.Double getGuardWfu() {
     return guard_wfu;
@@ -143,6 +171,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
 
   /**
    * Sets the value of the 'guard_wfu' field.
+   * metrics-lib/BridgeNetworkStatus: double getGuardWfu()
    * @param value the value to set.
    */
   public void setGuardWfu(java.lang.Double value) {
@@ -151,6 +180,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
 
   /**
    * Gets the value of the 'guard_tk' field.
+   * @return metrics-lib/BridgeNetworkStatus: long getGuardTk()
    */
   public java.lang.Long getGuardTk() {
     return guard_tk;
@@ -158,6 +188,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
 
   /**
    * Sets the value of the 'guard_tk' field.
+   * metrics-lib/BridgeNetworkStatus: long getGuardTk()
    * @param value the value to set.
    */
   public void setGuardTk(java.lang.Long value) {
@@ -166,6 +197,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
 
   /**
    * Gets the value of the 'guard_bw_inc_exits' field.
+   * @return metrics-lib/BridgeNetworkStatus: long getGuardBandwidthIncludingExits()
    */
   public java.lang.Long getGuardBwIncExits() {
     return guard_bw_inc_exits;
@@ -173,6 +205,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
 
   /**
    * Sets the value of the 'guard_bw_inc_exits' field.
+   * metrics-lib/BridgeNetworkStatus: long getGuardBandwidthIncludingExits()
    * @param value the value to set.
    */
   public void setGuardBwIncExits(java.lang.Long value) {
@@ -181,6 +214,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
 
   /**
    * Gets the value of the 'guard_bw_exc_exits' field.
+   * @return metrics-lib/BridgeNetworkStatus: long getGuardBandwidthExcludingExits()
    */
   public java.lang.Long getGuardBwExcExits() {
     return guard_bw_exc_exits;
@@ -188,6 +222,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
 
   /**
    * Sets the value of the 'guard_bw_exc_exits' field.
+   * metrics-lib/BridgeNetworkStatus: long getGuardBandwidthExcludingExits()
    * @param value the value to set.
    */
   public void setGuardBwExcExits(java.lang.Long value) {
@@ -196,6 +231,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
 
   /**
    * Gets the value of the 'ignoring_advertised' field.
+   * @return metrics-lib/BridgeNetworkStatus: int getIgnoringAdvertisedBws()
    */
   public java.lang.Integer getIgnoringAdvertised() {
     return ignoring_advertised;
@@ -203,23 +239,35 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
 
   /**
    * Sets the value of the 'ignoring_advertised' field.
+   * metrics-lib/BridgeNetworkStatus: int getIgnoringAdvertisedBws()
    * @param value the value to set.
    */
   public void setIgnoringAdvertised(java.lang.Integer value) {
     this.ignoring_advertised = value;
   }
 
-  /** Creates a new FlagTresholds RecordBuilder */
+  /**
+   * Creates a new FlagTresholds RecordBuilder.
+   * @return A new FlagTresholds RecordBuilder
+   */
   public static converTor.bridgeStatus.FlagTresholds.Builder newBuilder() {
     return new converTor.bridgeStatus.FlagTresholds.Builder();
   }
   
-  /** Creates a new FlagTresholds RecordBuilder by copying an existing Builder */
+  /**
+   * Creates a new FlagTresholds RecordBuilder by copying an existing Builder.
+   * @param other The existing builder to copy.
+   * @return A new FlagTresholds RecordBuilder
+   */
   public static converTor.bridgeStatus.FlagTresholds.Builder newBuilder(converTor.bridgeStatus.FlagTresholds.Builder other) {
     return new converTor.bridgeStatus.FlagTresholds.Builder(other);
   }
   
-  /** Creates a new FlagTresholds RecordBuilder by copying an existing FlagTresholds instance */
+  /**
+   * Creates a new FlagTresholds RecordBuilder by copying an existing FlagTresholds instance.
+   * @param other The existing instance to copy.
+   * @return A new FlagTresholds RecordBuilder
+   */
   public static converTor.bridgeStatus.FlagTresholds.Builder newBuilder(converTor.bridgeStatus.FlagTresholds other) {
     return new converTor.bridgeStatus.FlagTresholds.Builder(other);
   }
@@ -230,14 +278,23 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<FlagTresholds>
     implements org.apache.avro.data.RecordBuilder<FlagTresholds> {
 
+    /** metrics-lib/BridgeNetworkStatus: long getStableUptime() */
     private java.lang.Long stable_uptime;
+    /** metrics-lib/BridgeNetworkStatus: long getStableMtbf() */
     private java.lang.Long stable_mtbf;
+    /** metrics-lib/BridgeNetworkStatus: int getEnoughMtbfInfo() */
     private java.lang.Integer enough_mtbf;
+    /** metrics-lib/BridgeNetworkStatus: long getFastBandwidth() */
     private java.lang.Long fast_speed;
+    /** metrics-lib/BridgeNetworkStatus: double getGuardWfu() */
     private java.lang.Double guard_wfu;
+    /** metrics-lib/BridgeNetworkStatus: long getGuardTk() */
     private java.lang.Long guard_tk;
+    /** metrics-lib/BridgeNetworkStatus: long getGuardBandwidthIncludingExits() */
     private java.lang.Long guard_bw_inc_exits;
+    /** metrics-lib/BridgeNetworkStatus: long getGuardBandwidthExcludingExits() */
     private java.lang.Long guard_bw_exc_exits;
+    /** metrics-lib/BridgeNetworkStatus: int getIgnoringAdvertisedBws() */
     private java.lang.Integer ignoring_advertised;
 
     /** Creates a new Builder */
@@ -245,7 +302,10 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
       super(converTor.bridgeStatus.FlagTresholds.SCHEMA$);
     }
     
-    /** Creates a Builder by copying an existing Builder */
+    /**
+     * Creates a Builder by copying an existing Builder.
+     * @param other The existing Builder to copy.
+     */
     private Builder(converTor.bridgeStatus.FlagTresholds.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.stable_uptime)) {
@@ -286,7 +346,10 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
       }
     }
     
-    /** Creates a Builder by copying an existing FlagTresholds instance */
+    /**
+     * Creates a Builder by copying an existing FlagTresholds instance
+     * @param other The existing instance to copy.
+     */
     private Builder(converTor.bridgeStatus.FlagTresholds other) {
             super(converTor.bridgeStatus.FlagTresholds.SCHEMA$);
       if (isValidValue(fields()[0], other.stable_uptime)) {
@@ -327,225 +390,387 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
       }
     }
 
-    /** Gets the value of the 'stable_uptime' field */
+    /**
+      * Gets the value of the 'stable_uptime' field.
+      * metrics-lib/BridgeNetworkStatus: long getStableUptime()
+      * @return The value.
+      */
     public java.lang.Long getStableUptime() {
       return stable_uptime;
     }
-    
-    /** Sets the value of the 'stable_uptime' field */
+
+    /**
+      * Sets the value of the 'stable_uptime' field.
+      * metrics-lib/BridgeNetworkStatus: long getStableUptime()
+      * @param value The value of 'stable_uptime'.
+      * @return This builder.
+      */
     public converTor.bridgeStatus.FlagTresholds.Builder setStableUptime(java.lang.Long value) {
       validate(fields()[0], value);
       this.stable_uptime = value;
       fieldSetFlags()[0] = true;
       return this; 
     }
-    
-    /** Checks whether the 'stable_uptime' field has been set */
+
+    /**
+      * Checks whether the 'stable_uptime' field has been set.
+      * metrics-lib/BridgeNetworkStatus: long getStableUptime()
+      * @return True if the 'stable_uptime' field has been set, false otherwise.
+      */
     public boolean hasStableUptime() {
       return fieldSetFlags()[0];
     }
-    
-    /** Clears the value of the 'stable_uptime' field */
+
+
+    /**
+      * Clears the value of the 'stable_uptime' field.
+      * metrics-lib/BridgeNetworkStatus: long getStableUptime()
+      * @return This builder.
+      */
     public converTor.bridgeStatus.FlagTresholds.Builder clearStableUptime() {
       stable_uptime = null;
       fieldSetFlags()[0] = false;
       return this;
     }
 
-    /** Gets the value of the 'stable_mtbf' field */
+    /**
+      * Gets the value of the 'stable_mtbf' field.
+      * metrics-lib/BridgeNetworkStatus: long getStableMtbf()
+      * @return The value.
+      */
     public java.lang.Long getStableMtbf() {
       return stable_mtbf;
     }
-    
-    /** Sets the value of the 'stable_mtbf' field */
+
+    /**
+      * Sets the value of the 'stable_mtbf' field.
+      * metrics-lib/BridgeNetworkStatus: long getStableMtbf()
+      * @param value The value of 'stable_mtbf'.
+      * @return This builder.
+      */
     public converTor.bridgeStatus.FlagTresholds.Builder setStableMtbf(java.lang.Long value) {
       validate(fields()[1], value);
       this.stable_mtbf = value;
       fieldSetFlags()[1] = true;
       return this; 
     }
-    
-    /** Checks whether the 'stable_mtbf' field has been set */
+
+    /**
+      * Checks whether the 'stable_mtbf' field has been set.
+      * metrics-lib/BridgeNetworkStatus: long getStableMtbf()
+      * @return True if the 'stable_mtbf' field has been set, false otherwise.
+      */
     public boolean hasStableMtbf() {
       return fieldSetFlags()[1];
     }
-    
-    /** Clears the value of the 'stable_mtbf' field */
+
+
+    /**
+      * Clears the value of the 'stable_mtbf' field.
+      * metrics-lib/BridgeNetworkStatus: long getStableMtbf()
+      * @return This builder.
+      */
     public converTor.bridgeStatus.FlagTresholds.Builder clearStableMtbf() {
       stable_mtbf = null;
       fieldSetFlags()[1] = false;
       return this;
     }
 
-    /** Gets the value of the 'enough_mtbf' field */
+    /**
+      * Gets the value of the 'enough_mtbf' field.
+      * metrics-lib/BridgeNetworkStatus: int getEnoughMtbfInfo()
+      * @return The value.
+      */
     public java.lang.Integer getEnoughMtbf() {
       return enough_mtbf;
     }
-    
-    /** Sets the value of the 'enough_mtbf' field */
+
+    /**
+      * Sets the value of the 'enough_mtbf' field.
+      * metrics-lib/BridgeNetworkStatus: int getEnoughMtbfInfo()
+      * @param value The value of 'enough_mtbf'.
+      * @return This builder.
+      */
     public converTor.bridgeStatus.FlagTresholds.Builder setEnoughMtbf(java.lang.Integer value) {
       validate(fields()[2], value);
       this.enough_mtbf = value;
       fieldSetFlags()[2] = true;
       return this; 
     }
-    
-    /** Checks whether the 'enough_mtbf' field has been set */
+
+    /**
+      * Checks whether the 'enough_mtbf' field has been set.
+      * metrics-lib/BridgeNetworkStatus: int getEnoughMtbfInfo()
+      * @return True if the 'enough_mtbf' field has been set, false otherwise.
+      */
     public boolean hasEnoughMtbf() {
       return fieldSetFlags()[2];
     }
-    
-    /** Clears the value of the 'enough_mtbf' field */
+
+
+    /**
+      * Clears the value of the 'enough_mtbf' field.
+      * metrics-lib/BridgeNetworkStatus: int getEnoughMtbfInfo()
+      * @return This builder.
+      */
     public converTor.bridgeStatus.FlagTresholds.Builder clearEnoughMtbf() {
       enough_mtbf = null;
       fieldSetFlags()[2] = false;
       return this;
     }
 
-    /** Gets the value of the 'fast_speed' field */
+    /**
+      * Gets the value of the 'fast_speed' field.
+      * metrics-lib/BridgeNetworkStatus: long getFastBandwidth()
+      * @return The value.
+      */
     public java.lang.Long getFastSpeed() {
       return fast_speed;
     }
-    
-    /** Sets the value of the 'fast_speed' field */
+
+    /**
+      * Sets the value of the 'fast_speed' field.
+      * metrics-lib/BridgeNetworkStatus: long getFastBandwidth()
+      * @param value The value of 'fast_speed'.
+      * @return This builder.
+      */
     public converTor.bridgeStatus.FlagTresholds.Builder setFastSpeed(java.lang.Long value) {
       validate(fields()[3], value);
       this.fast_speed = value;
       fieldSetFlags()[3] = true;
       return this; 
     }
-    
-    /** Checks whether the 'fast_speed' field has been set */
+
+    /**
+      * Checks whether the 'fast_speed' field has been set.
+      * metrics-lib/BridgeNetworkStatus: long getFastBandwidth()
+      * @return True if the 'fast_speed' field has been set, false otherwise.
+      */
     public boolean hasFastSpeed() {
       return fieldSetFlags()[3];
     }
-    
-    /** Clears the value of the 'fast_speed' field */
+
+
+    /**
+      * Clears the value of the 'fast_speed' field.
+      * metrics-lib/BridgeNetworkStatus: long getFastBandwidth()
+      * @return This builder.
+      */
     public converTor.bridgeStatus.FlagTresholds.Builder clearFastSpeed() {
       fast_speed = null;
       fieldSetFlags()[3] = false;
       return this;
     }
 
-    /** Gets the value of the 'guard_wfu' field */
+    /**
+      * Gets the value of the 'guard_wfu' field.
+      * metrics-lib/BridgeNetworkStatus: double getGuardWfu()
+      * @return The value.
+      */
     public java.lang.Double getGuardWfu() {
       return guard_wfu;
     }
-    
-    /** Sets the value of the 'guard_wfu' field */
+
+    /**
+      * Sets the value of the 'guard_wfu' field.
+      * metrics-lib/BridgeNetworkStatus: double getGuardWfu()
+      * @param value The value of 'guard_wfu'.
+      * @return This builder.
+      */
     public converTor.bridgeStatus.FlagTresholds.Builder setGuardWfu(java.lang.Double value) {
       validate(fields()[4], value);
       this.guard_wfu = value;
       fieldSetFlags()[4] = true;
       return this; 
     }
-    
-    /** Checks whether the 'guard_wfu' field has been set */
+
+    /**
+      * Checks whether the 'guard_wfu' field has been set.
+      * metrics-lib/BridgeNetworkStatus: double getGuardWfu()
+      * @return True if the 'guard_wfu' field has been set, false otherwise.
+      */
     public boolean hasGuardWfu() {
       return fieldSetFlags()[4];
     }
-    
-    /** Clears the value of the 'guard_wfu' field */
+
+
+    /**
+      * Clears the value of the 'guard_wfu' field.
+      * metrics-lib/BridgeNetworkStatus: double getGuardWfu()
+      * @return This builder.
+      */
     public converTor.bridgeStatus.FlagTresholds.Builder clearGuardWfu() {
       guard_wfu = null;
       fieldSetFlags()[4] = false;
       return this;
     }
 
-    /** Gets the value of the 'guard_tk' field */
+    /**
+      * Gets the value of the 'guard_tk' field.
+      * metrics-lib/BridgeNetworkStatus: long getGuardTk()
+      * @return The value.
+      */
     public java.lang.Long getGuardTk() {
       return guard_tk;
     }
-    
-    /** Sets the value of the 'guard_tk' field */
+
+    /**
+      * Sets the value of the 'guard_tk' field.
+      * metrics-lib/BridgeNetworkStatus: long getGuardTk()
+      * @param value The value of 'guard_tk'.
+      * @return This builder.
+      */
     public converTor.bridgeStatus.FlagTresholds.Builder setGuardTk(java.lang.Long value) {
       validate(fields()[5], value);
       this.guard_tk = value;
       fieldSetFlags()[5] = true;
       return this; 
     }
-    
-    /** Checks whether the 'guard_tk' field has been set */
+
+    /**
+      * Checks whether the 'guard_tk' field has been set.
+      * metrics-lib/BridgeNetworkStatus: long getGuardTk()
+      * @return True if the 'guard_tk' field has been set, false otherwise.
+      */
     public boolean hasGuardTk() {
       return fieldSetFlags()[5];
     }
-    
-    /** Clears the value of the 'guard_tk' field */
+
+
+    /**
+      * Clears the value of the 'guard_tk' field.
+      * metrics-lib/BridgeNetworkStatus: long getGuardTk()
+      * @return This builder.
+      */
     public converTor.bridgeStatus.FlagTresholds.Builder clearGuardTk() {
       guard_tk = null;
       fieldSetFlags()[5] = false;
       return this;
     }
 
-    /** Gets the value of the 'guard_bw_inc_exits' field */
+    /**
+      * Gets the value of the 'guard_bw_inc_exits' field.
+      * metrics-lib/BridgeNetworkStatus: long getGuardBandwidthIncludingExits()
+      * @return The value.
+      */
     public java.lang.Long getGuardBwIncExits() {
       return guard_bw_inc_exits;
     }
-    
-    /** Sets the value of the 'guard_bw_inc_exits' field */
+
+    /**
+      * Sets the value of the 'guard_bw_inc_exits' field.
+      * metrics-lib/BridgeNetworkStatus: long getGuardBandwidthIncludingExits()
+      * @param value The value of 'guard_bw_inc_exits'.
+      * @return This builder.
+      */
     public converTor.bridgeStatus.FlagTresholds.Builder setGuardBwIncExits(java.lang.Long value) {
       validate(fields()[6], value);
       this.guard_bw_inc_exits = value;
       fieldSetFlags()[6] = true;
       return this; 
     }
-    
-    /** Checks whether the 'guard_bw_inc_exits' field has been set */
+
+    /**
+      * Checks whether the 'guard_bw_inc_exits' field has been set.
+      * metrics-lib/BridgeNetworkStatus: long getGuardBandwidthIncludingExits()
+      * @return True if the 'guard_bw_inc_exits' field has been set, false otherwise.
+      */
     public boolean hasGuardBwIncExits() {
       return fieldSetFlags()[6];
     }
-    
-    /** Clears the value of the 'guard_bw_inc_exits' field */
+
+
+    /**
+      * Clears the value of the 'guard_bw_inc_exits' field.
+      * metrics-lib/BridgeNetworkStatus: long getGuardBandwidthIncludingExits()
+      * @return This builder.
+      */
     public converTor.bridgeStatus.FlagTresholds.Builder clearGuardBwIncExits() {
       guard_bw_inc_exits = null;
       fieldSetFlags()[6] = false;
       return this;
     }
 
-    /** Gets the value of the 'guard_bw_exc_exits' field */
+    /**
+      * Gets the value of the 'guard_bw_exc_exits' field.
+      * metrics-lib/BridgeNetworkStatus: long getGuardBandwidthExcludingExits()
+      * @return The value.
+      */
     public java.lang.Long getGuardBwExcExits() {
       return guard_bw_exc_exits;
     }
-    
-    /** Sets the value of the 'guard_bw_exc_exits' field */
+
+    /**
+      * Sets the value of the 'guard_bw_exc_exits' field.
+      * metrics-lib/BridgeNetworkStatus: long getGuardBandwidthExcludingExits()
+      * @param value The value of 'guard_bw_exc_exits'.
+      * @return This builder.
+      */
     public converTor.bridgeStatus.FlagTresholds.Builder setGuardBwExcExits(java.lang.Long value) {
       validate(fields()[7], value);
       this.guard_bw_exc_exits = value;
       fieldSetFlags()[7] = true;
       return this; 
     }
-    
-    /** Checks whether the 'guard_bw_exc_exits' field has been set */
+
+    /**
+      * Checks whether the 'guard_bw_exc_exits' field has been set.
+      * metrics-lib/BridgeNetworkStatus: long getGuardBandwidthExcludingExits()
+      * @return True if the 'guard_bw_exc_exits' field has been set, false otherwise.
+      */
     public boolean hasGuardBwExcExits() {
       return fieldSetFlags()[7];
     }
-    
-    /** Clears the value of the 'guard_bw_exc_exits' field */
+
+
+    /**
+      * Clears the value of the 'guard_bw_exc_exits' field.
+      * metrics-lib/BridgeNetworkStatus: long getGuardBandwidthExcludingExits()
+      * @return This builder.
+      */
     public converTor.bridgeStatus.FlagTresholds.Builder clearGuardBwExcExits() {
       guard_bw_exc_exits = null;
       fieldSetFlags()[7] = false;
       return this;
     }
 
-    /** Gets the value of the 'ignoring_advertised' field */
+    /**
+      * Gets the value of the 'ignoring_advertised' field.
+      * metrics-lib/BridgeNetworkStatus: int getIgnoringAdvertisedBws()
+      * @return The value.
+      */
     public java.lang.Integer getIgnoringAdvertised() {
       return ignoring_advertised;
     }
-    
-    /** Sets the value of the 'ignoring_advertised' field */
+
+    /**
+      * Sets the value of the 'ignoring_advertised' field.
+      * metrics-lib/BridgeNetworkStatus: int getIgnoringAdvertisedBws()
+      * @param value The value of 'ignoring_advertised'.
+      * @return This builder.
+      */
     public converTor.bridgeStatus.FlagTresholds.Builder setIgnoringAdvertised(java.lang.Integer value) {
       validate(fields()[8], value);
       this.ignoring_advertised = value;
       fieldSetFlags()[8] = true;
       return this; 
     }
-    
-    /** Checks whether the 'ignoring_advertised' field has been set */
+
+    /**
+      * Checks whether the 'ignoring_advertised' field has been set.
+      * metrics-lib/BridgeNetworkStatus: int getIgnoringAdvertisedBws()
+      * @return True if the 'ignoring_advertised' field has been set, false otherwise.
+      */
     public boolean hasIgnoringAdvertised() {
       return fieldSetFlags()[8];
     }
-    
-    /** Clears the value of the 'ignoring_advertised' field */
+
+
+    /**
+      * Clears the value of the 'ignoring_advertised' field.
+      * metrics-lib/BridgeNetworkStatus: int getIgnoringAdvertisedBws()
+      * @return This builder.
+      */
     public converTor.bridgeStatus.FlagTresholds.Builder clearIgnoringAdvertised() {
       ignoring_advertised = null;
       fieldSetFlags()[8] = false;
@@ -571,4 +796,21 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
       }
     }
   }
+
+  private static final org.apache.avro.io.DatumWriter
+    WRITER$ = new org.apache.avro.specific.SpecificDatumWriter(SCHEMA$);  
+
+  @Override public void writeExternal(java.io.ObjectOutput out)
+    throws java.io.IOException {
+    WRITER$.write(this, org.apache.avro.specific.SpecificData.getEncoder(out));
+  }
+
+  private static final org.apache.avro.io.DatumReader
+    READER$ = new org.apache.avro.specific.SpecificDatumReader(SCHEMA$);  
+
+  @Override public void readExternal(java.io.ObjectInput in)
+    throws java.io.IOException {
+    READER$.read(this, org.apache.avro.specific.SpecificData.getDecoder(in));
+  }
+
 }

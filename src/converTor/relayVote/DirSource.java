@@ -3,16 +3,22 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.relayVote;
+package converTor.relayVote;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class DirSource extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DirSource\",\"namespace\":\"converTor.relayVote\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",\"string\"]},{\"name\":\"identity\",\"type\":[\"null\",\"string\"]},{\"name\":\"address\",\"type\":[\"null\",\"string\"]},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"]},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"]}]}");
+  private static final long serialVersionUID = 103223195250341570L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DirSource\",\"namespace\":\"converTor.relayVote\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getIdentity(\"},{\"name\":\"address\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getAddress()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getDirport()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getOrport()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
+  /** metrics-lib/RelayNetworkStatusVote: String getNickname() */
   @Deprecated public java.lang.CharSequence nickname;
+  /** metrics-lib/RelayNetworkStatusVote: String getIdentity( */
   @Deprecated public java.lang.CharSequence identity;
+  /** metrics-lib/RelayNetworkStatusVote: String getAddress() */
   @Deprecated public java.lang.CharSequence address;
+  /** metrics-lib/RelayNetworkStatusVote: int getDirport() */
   @Deprecated public java.lang.Integer dir_port;
+  /** metrics-lib/RelayNetworkStatusVote: int getOrport() */
   @Deprecated public java.lang.Integer or_port;
 
   /**
@@ -24,6 +30,11 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * All-args constructor.
+   * @param nickname metrics-lib/RelayNetworkStatusVote: String getNickname()
+   * @param identity metrics-lib/RelayNetworkStatusVote: String getIdentity(
+   * @param address metrics-lib/RelayNetworkStatusVote: String getAddress()
+   * @param dir_port metrics-lib/RelayNetworkStatusVote: int getDirport()
+   * @param or_port metrics-lib/RelayNetworkStatusVote: int getOrport()
    */
   public DirSource(java.lang.CharSequence nickname, java.lang.CharSequence identity, java.lang.CharSequence address, java.lang.Integer dir_port, java.lang.Integer or_port) {
     this.nickname = nickname;
@@ -60,6 +71,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Gets the value of the 'nickname' field.
+   * @return metrics-lib/RelayNetworkStatusVote: String getNickname()
    */
   public java.lang.CharSequence getNickname() {
     return nickname;
@@ -67,6 +79,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Sets the value of the 'nickname' field.
+   * metrics-lib/RelayNetworkStatusVote: String getNickname()
    * @param value the value to set.
    */
   public void setNickname(java.lang.CharSequence value) {
@@ -75,6 +88,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Gets the value of the 'identity' field.
+   * @return metrics-lib/RelayNetworkStatusVote: String getIdentity(
    */
   public java.lang.CharSequence getIdentity() {
     return identity;
@@ -82,6 +96,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Sets the value of the 'identity' field.
+   * metrics-lib/RelayNetworkStatusVote: String getIdentity(
    * @param value the value to set.
    */
   public void setIdentity(java.lang.CharSequence value) {
@@ -90,6 +105,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Gets the value of the 'address' field.
+   * @return metrics-lib/RelayNetworkStatusVote: String getAddress()
    */
   public java.lang.CharSequence getAddress() {
     return address;
@@ -97,6 +113,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Sets the value of the 'address' field.
+   * metrics-lib/RelayNetworkStatusVote: String getAddress()
    * @param value the value to set.
    */
   public void setAddress(java.lang.CharSequence value) {
@@ -105,6 +122,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Gets the value of the 'dir_port' field.
+   * @return metrics-lib/RelayNetworkStatusVote: int getDirport()
    */
   public java.lang.Integer getDirPort() {
     return dir_port;
@@ -112,6 +130,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Sets the value of the 'dir_port' field.
+   * metrics-lib/RelayNetworkStatusVote: int getDirport()
    * @param value the value to set.
    */
   public void setDirPort(java.lang.Integer value) {
@@ -120,6 +139,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Gets the value of the 'or_port' field.
+   * @return metrics-lib/RelayNetworkStatusVote: int getOrport()
    */
   public java.lang.Integer getOrPort() {
     return or_port;
@@ -127,23 +147,35 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Sets the value of the 'or_port' field.
+   * metrics-lib/RelayNetworkStatusVote: int getOrport()
    * @param value the value to set.
    */
   public void setOrPort(java.lang.Integer value) {
     this.or_port = value;
   }
 
-  /** Creates a new DirSource RecordBuilder */
+  /**
+   * Creates a new DirSource RecordBuilder.
+   * @return A new DirSource RecordBuilder
+   */
   public static converTor.relayVote.DirSource.Builder newBuilder() {
     return new converTor.relayVote.DirSource.Builder();
   }
   
-  /** Creates a new DirSource RecordBuilder by copying an existing Builder */
+  /**
+   * Creates a new DirSource RecordBuilder by copying an existing Builder.
+   * @param other The existing builder to copy.
+   * @return A new DirSource RecordBuilder
+   */
   public static converTor.relayVote.DirSource.Builder newBuilder(converTor.relayVote.DirSource.Builder other) {
     return new converTor.relayVote.DirSource.Builder(other);
   }
   
-  /** Creates a new DirSource RecordBuilder by copying an existing DirSource instance */
+  /**
+   * Creates a new DirSource RecordBuilder by copying an existing DirSource instance.
+   * @param other The existing instance to copy.
+   * @return A new DirSource RecordBuilder
+   */
   public static converTor.relayVote.DirSource.Builder newBuilder(converTor.relayVote.DirSource other) {
     return new converTor.relayVote.DirSource.Builder(other);
   }
@@ -154,10 +186,15 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<DirSource>
     implements org.apache.avro.data.RecordBuilder<DirSource> {
 
+    /** metrics-lib/RelayNetworkStatusVote: String getNickname() */
     private java.lang.CharSequence nickname;
+    /** metrics-lib/RelayNetworkStatusVote: String getIdentity( */
     private java.lang.CharSequence identity;
+    /** metrics-lib/RelayNetworkStatusVote: String getAddress() */
     private java.lang.CharSequence address;
+    /** metrics-lib/RelayNetworkStatusVote: int getDirport() */
     private java.lang.Integer dir_port;
+    /** metrics-lib/RelayNetworkStatusVote: int getOrport() */
     private java.lang.Integer or_port;
 
     /** Creates a new Builder */
@@ -165,7 +202,10 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
       super(converTor.relayVote.DirSource.SCHEMA$);
     }
     
-    /** Creates a Builder by copying an existing Builder */
+    /**
+     * Creates a Builder by copying an existing Builder.
+     * @param other The existing Builder to copy.
+     */
     private Builder(converTor.relayVote.DirSource.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.nickname)) {
@@ -190,7 +230,10 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
       }
     }
     
-    /** Creates a Builder by copying an existing DirSource instance */
+    /**
+     * Creates a Builder by copying an existing DirSource instance
+     * @param other The existing instance to copy.
+     */
     private Builder(converTor.relayVote.DirSource other) {
             super(converTor.relayVote.DirSource.SCHEMA$);
       if (isValidValue(fields()[0], other.nickname)) {
@@ -215,125 +258,215 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
       }
     }
 
-    /** Gets the value of the 'nickname' field */
+    /**
+      * Gets the value of the 'nickname' field.
+      * metrics-lib/RelayNetworkStatusVote: String getNickname()
+      * @return The value.
+      */
     public java.lang.CharSequence getNickname() {
       return nickname;
     }
-    
-    /** Sets the value of the 'nickname' field */
+
+    /**
+      * Sets the value of the 'nickname' field.
+      * metrics-lib/RelayNetworkStatusVote: String getNickname()
+      * @param value The value of 'nickname'.
+      * @return This builder.
+      */
     public converTor.relayVote.DirSource.Builder setNickname(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.nickname = value;
       fieldSetFlags()[0] = true;
       return this; 
     }
-    
-    /** Checks whether the 'nickname' field has been set */
+
+    /**
+      * Checks whether the 'nickname' field has been set.
+      * metrics-lib/RelayNetworkStatusVote: String getNickname()
+      * @return True if the 'nickname' field has been set, false otherwise.
+      */
     public boolean hasNickname() {
       return fieldSetFlags()[0];
     }
-    
-    /** Clears the value of the 'nickname' field */
+
+
+    /**
+      * Clears the value of the 'nickname' field.
+      * metrics-lib/RelayNetworkStatusVote: String getNickname()
+      * @return This builder.
+      */
     public converTor.relayVote.DirSource.Builder clearNickname() {
       nickname = null;
       fieldSetFlags()[0] = false;
       return this;
     }
 
-    /** Gets the value of the 'identity' field */
+    /**
+      * Gets the value of the 'identity' field.
+      * metrics-lib/RelayNetworkStatusVote: String getIdentity(
+      * @return The value.
+      */
     public java.lang.CharSequence getIdentity() {
       return identity;
     }
-    
-    /** Sets the value of the 'identity' field */
+
+    /**
+      * Sets the value of the 'identity' field.
+      * metrics-lib/RelayNetworkStatusVote: String getIdentity(
+      * @param value The value of 'identity'.
+      * @return This builder.
+      */
     public converTor.relayVote.DirSource.Builder setIdentity(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.identity = value;
       fieldSetFlags()[1] = true;
       return this; 
     }
-    
-    /** Checks whether the 'identity' field has been set */
+
+    /**
+      * Checks whether the 'identity' field has been set.
+      * metrics-lib/RelayNetworkStatusVote: String getIdentity(
+      * @return True if the 'identity' field has been set, false otherwise.
+      */
     public boolean hasIdentity() {
       return fieldSetFlags()[1];
     }
-    
-    /** Clears the value of the 'identity' field */
+
+
+    /**
+      * Clears the value of the 'identity' field.
+      * metrics-lib/RelayNetworkStatusVote: String getIdentity(
+      * @return This builder.
+      */
     public converTor.relayVote.DirSource.Builder clearIdentity() {
       identity = null;
       fieldSetFlags()[1] = false;
       return this;
     }
 
-    /** Gets the value of the 'address' field */
+    /**
+      * Gets the value of the 'address' field.
+      * metrics-lib/RelayNetworkStatusVote: String getAddress()
+      * @return The value.
+      */
     public java.lang.CharSequence getAddress() {
       return address;
     }
-    
-    /** Sets the value of the 'address' field */
+
+    /**
+      * Sets the value of the 'address' field.
+      * metrics-lib/RelayNetworkStatusVote: String getAddress()
+      * @param value The value of 'address'.
+      * @return This builder.
+      */
     public converTor.relayVote.DirSource.Builder setAddress(java.lang.CharSequence value) {
       validate(fields()[2], value);
       this.address = value;
       fieldSetFlags()[2] = true;
       return this; 
     }
-    
-    /** Checks whether the 'address' field has been set */
+
+    /**
+      * Checks whether the 'address' field has been set.
+      * metrics-lib/RelayNetworkStatusVote: String getAddress()
+      * @return True if the 'address' field has been set, false otherwise.
+      */
     public boolean hasAddress() {
       return fieldSetFlags()[2];
     }
-    
-    /** Clears the value of the 'address' field */
+
+
+    /**
+      * Clears the value of the 'address' field.
+      * metrics-lib/RelayNetworkStatusVote: String getAddress()
+      * @return This builder.
+      */
     public converTor.relayVote.DirSource.Builder clearAddress() {
       address = null;
       fieldSetFlags()[2] = false;
       return this;
     }
 
-    /** Gets the value of the 'dir_port' field */
+    /**
+      * Gets the value of the 'dir_port' field.
+      * metrics-lib/RelayNetworkStatusVote: int getDirport()
+      * @return The value.
+      */
     public java.lang.Integer getDirPort() {
       return dir_port;
     }
-    
-    /** Sets the value of the 'dir_port' field */
+
+    /**
+      * Sets the value of the 'dir_port' field.
+      * metrics-lib/RelayNetworkStatusVote: int getDirport()
+      * @param value The value of 'dir_port'.
+      * @return This builder.
+      */
     public converTor.relayVote.DirSource.Builder setDirPort(java.lang.Integer value) {
       validate(fields()[3], value);
       this.dir_port = value;
       fieldSetFlags()[3] = true;
       return this; 
     }
-    
-    /** Checks whether the 'dir_port' field has been set */
+
+    /**
+      * Checks whether the 'dir_port' field has been set.
+      * metrics-lib/RelayNetworkStatusVote: int getDirport()
+      * @return True if the 'dir_port' field has been set, false otherwise.
+      */
     public boolean hasDirPort() {
       return fieldSetFlags()[3];
     }
-    
-    /** Clears the value of the 'dir_port' field */
+
+
+    /**
+      * Clears the value of the 'dir_port' field.
+      * metrics-lib/RelayNetworkStatusVote: int getDirport()
+      * @return This builder.
+      */
     public converTor.relayVote.DirSource.Builder clearDirPort() {
       dir_port = null;
       fieldSetFlags()[3] = false;
       return this;
     }
 
-    /** Gets the value of the 'or_port' field */
+    /**
+      * Gets the value of the 'or_port' field.
+      * metrics-lib/RelayNetworkStatusVote: int getOrport()
+      * @return The value.
+      */
     public java.lang.Integer getOrPort() {
       return or_port;
     }
-    
-    /** Sets the value of the 'or_port' field */
+
+    /**
+      * Sets the value of the 'or_port' field.
+      * metrics-lib/RelayNetworkStatusVote: int getOrport()
+      * @param value The value of 'or_port'.
+      * @return This builder.
+      */
     public converTor.relayVote.DirSource.Builder setOrPort(java.lang.Integer value) {
       validate(fields()[4], value);
       this.or_port = value;
       fieldSetFlags()[4] = true;
       return this; 
     }
-    
-    /** Checks whether the 'or_port' field has been set */
+
+    /**
+      * Checks whether the 'or_port' field has been set.
+      * metrics-lib/RelayNetworkStatusVote: int getOrport()
+      * @return True if the 'or_port' field has been set, false otherwise.
+      */
     public boolean hasOrPort() {
       return fieldSetFlags()[4];
     }
-    
-    /** Clears the value of the 'or_port' field */
+
+
+    /**
+      * Clears the value of the 'or_port' field.
+      * metrics-lib/RelayNetworkStatusVote: int getOrport()
+      * @return This builder.
+      */
     public converTor.relayVote.DirSource.Builder clearOrPort() {
       or_port = null;
       fieldSetFlags()[4] = false;
@@ -355,4 +488,21 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
       }
     }
   }
+
+  private static final org.apache.avro.io.DatumWriter
+    WRITER$ = new org.apache.avro.specific.SpecificDatumWriter(SCHEMA$);  
+
+  @Override public void writeExternal(java.io.ObjectOutput out)
+    throws java.io.IOException {
+    WRITER$.write(this, org.apache.avro.specific.SpecificData.getEncoder(out));
+  }
+
+  private static final org.apache.avro.io.DatumReader
+    READER$ = new org.apache.avro.specific.SpecificDatumReader(SCHEMA$);  
+
+  @Override public void readExternal(java.io.ObjectInput in)
+    throws java.io.IOException {
+    READER$.read(this, org.apache.avro.specific.SpecificData.getDecoder(in));
+  }
+
 }

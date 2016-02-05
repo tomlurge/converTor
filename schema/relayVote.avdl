@@ -1,92 +1,175 @@
-@namespace("org.torproject.metrics.converTor")
+@namespace("converTor.relayVote")
 protocol relay_network_status_vote_3_descriptor {
 
-  record Vote {
-    union { null, long } vote_seconds;
-    union { null, long } dist_seconds;
-  }
   record FlagTresholds {
+    /** metrics-lib/RelayNetworkStatusVote: long getStableUptime() */
     union { null, long } stable_uptime;
+    /** metrics-lib/RelayNetworkStatusVote: long getStableMtbf() */
     union { null, long } stable_mtbf;
+    /** metrics-lib/RelayNetworkStatusVote: int getEnoughMtbfInfo() */
     union { null, int } enough_mtbf;
+    /** metrics-lib/RelayNetworkStatusVote: long getFastBandwidth() */
     union { null, long } fast_speed;
+    /** metrics-lib/RelayNetworkStatusVote: double getGuardWfu() */
     union { null, double } guard_wfu;
+    /** metrics-lib/RelayNetworkStatusVote: long getGuardTk() */
     union { null, long } guard_tk;
+    /** metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthIncludingExits() */
     union { null, long } guard_bw_inc_exits;
+    /** metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthExcludingExits() */
     union { null, long } guard_bw_exc_exits;
+    /** metrics-lib/RelayNetworkStatusVote: int getIgnoringAdvertisedBws() */
     union { null, int } ignoring_advertised_bws;
   }
+
+  record Vote {
+    /** metrics-lib/RelayNetworkStatusVote: long getVoteSeconds() */
+    union { null, long } vote_seconds;
+    /** metrics-lib/RelayNetworkStatusVote: long getDistSeconds() */
+    union { null, long } dist_seconds;
+  }
+
   record DirSource {
+    /** metrics-lib/RelayNetworkStatusVote: String getNickname() */
     union { null, string } nickname;
+    /** metrics-lib/RelayNetworkStatusVote: String getIdentity( */
     union { null, string } identity;
+    /** metrics-lib/RelayNetworkStatusVote: String getAddress() */
     union { null, string } address;
+    /** metrics-lib/RelayNetworkStatusVote: int getDirport() */
     union { null, int } dir_port;
+    /** metrics-lib/RelayNetworkStatusVote: int getOrport() */
     union { null, int } or_port;
   }
+
   record DirKey {
+    /** metrics-lib/RelayNetworkStatusVote: int getDirKeyCertificateVersion() */
     union { null, int } version;
+    /** metrics-lib/RelayNetworkStatusVote: long getDirKeyPublishedMillis() */
     union { null, string } dir_key_published;
+    /** metrics-lib/RelayNetworkStatusVote: long getDirKeyExpiresMillis() */
     union { null, string } dir_key_expires;
   }
+
   record R {
+    /** metrics-lib/NetworkStatusEntry: String getNickname() */
     union { null, string } nickname;
+    /** metrics-lib/NetworkStatusEntry: String getDescriptor() */
     union { null, string } identity;
-    union { null, string } digest;
+    /** metrics-lib/NetworkStatusEntry: Set<String> getMicrodescriptorDigests() */
+    union { null, array<string> } digest;
+    /** metrics-lib/NetworkStatusEntry: long getPublishedMillis() */
     union { null, string } publication;
+    /** metrics-lib/NetworkStatusEntry: String getAddress() */
     union { null, string } ip;
+    /** metrics-lib/NetworkStatusEntry: int getOrPort() */
     union { null, int } or_port;
+    /** metrics-lib/NetworkStatusEntry: int getDirPort() */
     union { null, int } dir_port;
+    /** metrics-lib/NetworkStatusEntry: String getFingerprint() - not in spec, but in metrics-lib */
+    union { null, string } fingerprint;
   }
+
   record W {
+    /** metrics-lib/NetworkStatusEntry: long getBandwidth() */
     union { null, long } bandwidth;
+    /** metrics-lib/NetworkStatusEntry: long getMeasured() */
     union { null, long } measured;
+    /** metrics-lib/NetworkStatusEntry: boolean getUnmeasured() */
     union { null, boolean } unmeasured;
   }
+
   record Policy {
+    /** metrics-lib/NetworkStatusEntry: String getDefaultPolicy() */
     union { null, string } default_policy;
+    /** metrics-lib/NetworkStatusEntry: String getPortList() */
     union { null, string } port_summary;
   }
-  record Router {
-    union { null, R } r;
-    union { null, array<string> } a;
-    union { null, array<string> } s;
-    union { null, string } v;
-    union { null, W } w;
-    union { null, Policy } p;
-    union { null, string } id;
+
+  record ID {
+    /** metrics-lib/NetworkStatusEntry: String getMasterKeyEd25519() */
+    union { null, boolean } ed25519;
   }
+
+  record Status {
+    // see above
+    union { null, R } r;
+    /** metrics-lib/NetworkStatusEntry: getOrAddresses() */
+    union { null, array<string> } a;
+    /** metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags() */
+    union { null, array<string> } s;
+    /** metrics-lib/NetworkStatusEntry: String getVersion() */
+    union { null, string } v;
+    /** see above */
+    union { null, W } w;
+    /** see above */
+    union { null, Policy } p;
+    /** see above */
+    union { null, ID } id;
+  }
+
   record DirSig {
+    /** metrics-lib/DirectorySignature: String getAlgorithm() */
     union { null, string } algorithm;
+    /** metrics-lib/DirectorySignature: String getIdentity() */
     union { null, string } identity;
+    /** metrics-lib/DirectorySignature: String getSigningKeyDigest() */
     union { null, string } signing_key_digest;
+    /** metrics-lib/DirectorySignature: String getSignature() */
     union { null, boolean } signature;
   }
+
   record DirFooter {
+    /** metrics-lib/RelayNetworkStatusVote: SortedMap<String, DirectorySignature> getDirectorySignatures() */
     union { null, DirSig } directory_signature;
   }
 
+
   @aliases(["relay_network_status_vote_3"])
   record RelayVote {
+    /** metrics-lib/RelayNetworkStatusVote:  */
     string descriptor_type = "network-status-vote-3 1.0";
+    /** metrics-lib/RelayNetworkStatusVote: int getNetworkStatusVersion() */
     int network_status_version = 3;
+    /** "vote" per definition, no getter */
     union { null, string } vote_status = "vote";
+    /** metrics-lib/RelayNetworkStatusVote: List<Integer> getConsensusMethods() */
     array<int> consensus_methods;
+    /** metrics-lib/RelayNetworkStatusVote: long getPublishedMillis() */
     union { null, string } published;
+    /** metrics-lib/RelayNetworkStatusVote: long getValidAfterMillis() */
     union { null, string } valid_after;
+    /** see above */
     union { null, FlagTresholds } flag_tresholds;
+    /** metrics-lib/RelayNetworkStatusVote: long getFreshUntilMillis() */
     union { null, string } fresh_until;
+    /** metrics-lib/RelayNetworkStatusVote: long getValidUntilMillis() */
     union { null, string } valid_until;
+    /** see above */
     union { null, Vote } voting_delay;
+    /** metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedClientVersions() */
     union { null, array<string> } client_versions;
+    /** metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedServerVersions() */
     union { null, array<string> } server_versions;
+    /** metrics-lib/RelayNetworkStatusVote: SortedSet<String> getKnownFlags() */
     union { null, array<string> } known_flags;
+    /** metrics-lib/RelayNetworkStatusVote: SortedMap<String, Integer> getConsensusParams() */
     union { null, map<int> } params;
+    /** see above */
     union { null, DirSource } dir_source;
+    /** metrics-lib/RelayNetworkStatusVote: String getContactLine() */
     union { null, string } contact;
+    /** metrics-lib/RelayNetworkStatusVote: String getLegacyDirKey() */
     union { null, string } legacy_dir_key;
-    union { null, DirKey } directory_key;     //  not in spec, but in metrics-lib
-    union { null, array<Router> } router_status;
+    /** see above */
+    union { null, DirKey } directory_key;
+    /** metrics-lib/RelayNetworkStatusVote: SortedMap<String, NetworkStatusEntry> getStatusEntries() */
+    union { null, array<Status> } status;
+    /** see above */
     union { null, DirFooter } directory_footer;
+    /** metrics-lib/RelayNetworkStatusVote: String getSigningKeyDigest()*/
+    //  TODO check with KL if this makes sense
+    union { null, string } signing_key_digest;
   }
 
 

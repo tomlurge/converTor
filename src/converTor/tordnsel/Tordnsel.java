@@ -3,15 +3,17 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.tordnsel;
+package converTor.tordnsel;  
 @SuppressWarnings("all")
-/** tordnsel 1.0 */
 @org.apache.avro.specific.AvroGenerated
 public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Tordnsel\",\"namespace\":\"converTor.tordnsel\",\"doc\":\"tordnsel 1.0\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":\"string\",\"default\":\"tordnsel 1.0\"},{\"name\":\"downloaded\",\"type\":[\"null\",\"string\"]},{\"name\":\"exit_nodes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"ExitNode\",\"fields\":[{\"name\":\"fingerprint\",\"type\":[\"null\",\"string\"]},{\"name\":\"published\",\"type\":[\"null\",\"string\"]},{\"name\":\"last_status\",\"type\":[\"null\",\"string\"]},{\"name\":\"exit_list\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"string\"}]}]}}]}],\"aliases\":[\"exitList\"]}");
+  private static final long serialVersionUID = 8833912851736395696L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Tordnsel\",\"namespace\":\"converTor.tordnsel\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":\"string\",\"default\":\"tordnsel 1.0\"},{\"name\":\"downloaded\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ExitList: long getDownloadedMillis()\"},{\"name\":\"exit_nodes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"ExitNode\",\"fields\":[{\"name\":\"fingerprint\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ExitList.Entry: String getFingerprint()\"},{\"name\":\"published\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ExitList.Entry: long getPublishedMillis()\"},{\"name\":\"last_status\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ExitList.Entry: long getLastStatusMillis()\"},{\"name\":\"exit_adresses\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"long\"}],\"doc\":\"metrics-lib/ExitList.Entry: Map<String, Long> getExitAddresses()\"}]}}],\"doc\":\"metrics-lib/ExitList: Set<ExitList.Entry> getEntries()\"}],\"aliases\":[\"exitList\"]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   @Deprecated public java.lang.CharSequence descriptor_type;
+  /** metrics-lib/ExitList: long getDownloadedMillis() */
   @Deprecated public java.lang.CharSequence downloaded;
+  /** metrics-lib/ExitList: Set<ExitList.Entry> getEntries() */
   @Deprecated public java.util.List<converTor.tordnsel.ExitNode> exit_nodes;
 
   /**
@@ -23,6 +25,8 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
 
   /**
    * All-args constructor.
+   * @param downloaded metrics-lib/ExitList: long getDownloadedMillis()
+   * @param exit_nodes metrics-lib/ExitList: Set<ExitList.Entry> getEntries()
    */
   public Tordnsel(java.lang.CharSequence descriptor_type, java.lang.CharSequence downloaded, java.util.List<converTor.tordnsel.ExitNode> exit_nodes) {
     this.descriptor_type = descriptor_type;
@@ -68,6 +72,7 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
 
   /**
    * Gets the value of the 'downloaded' field.
+   * @return metrics-lib/ExitList: long getDownloadedMillis()
    */
   public java.lang.CharSequence getDownloaded() {
     return downloaded;
@@ -75,6 +80,7 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
 
   /**
    * Sets the value of the 'downloaded' field.
+   * metrics-lib/ExitList: long getDownloadedMillis()
    * @param value the value to set.
    */
   public void setDownloaded(java.lang.CharSequence value) {
@@ -83,6 +89,7 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
 
   /**
    * Gets the value of the 'exit_nodes' field.
+   * @return metrics-lib/ExitList: Set<ExitList.Entry> getEntries()
    */
   public java.util.List<converTor.tordnsel.ExitNode> getExitNodes() {
     return exit_nodes;
@@ -90,23 +97,35 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
 
   /**
    * Sets the value of the 'exit_nodes' field.
+   * metrics-lib/ExitList: Set<ExitList.Entry> getEntries()
    * @param value the value to set.
    */
   public void setExitNodes(java.util.List<converTor.tordnsel.ExitNode> value) {
     this.exit_nodes = value;
   }
 
-  /** Creates a new Tordnsel RecordBuilder */
+  /**
+   * Creates a new Tordnsel RecordBuilder.
+   * @return A new Tordnsel RecordBuilder
+   */
   public static converTor.tordnsel.Tordnsel.Builder newBuilder() {
     return new converTor.tordnsel.Tordnsel.Builder();
   }
   
-  /** Creates a new Tordnsel RecordBuilder by copying an existing Builder */
+  /**
+   * Creates a new Tordnsel RecordBuilder by copying an existing Builder.
+   * @param other The existing builder to copy.
+   * @return A new Tordnsel RecordBuilder
+   */
   public static converTor.tordnsel.Tordnsel.Builder newBuilder(converTor.tordnsel.Tordnsel.Builder other) {
     return new converTor.tordnsel.Tordnsel.Builder(other);
   }
   
-  /** Creates a new Tordnsel RecordBuilder by copying an existing Tordnsel instance */
+  /**
+   * Creates a new Tordnsel RecordBuilder by copying an existing Tordnsel instance.
+   * @param other The existing instance to copy.
+   * @return A new Tordnsel RecordBuilder
+   */
   public static converTor.tordnsel.Tordnsel.Builder newBuilder(converTor.tordnsel.Tordnsel other) {
     return new converTor.tordnsel.Tordnsel.Builder(other);
   }
@@ -118,7 +137,9 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
     implements org.apache.avro.data.RecordBuilder<Tordnsel> {
 
     private java.lang.CharSequence descriptor_type;
+    /** metrics-lib/ExitList: long getDownloadedMillis() */
     private java.lang.CharSequence downloaded;
+    /** metrics-lib/ExitList: Set<ExitList.Entry> getEntries() */
     private java.util.List<converTor.tordnsel.ExitNode> exit_nodes;
 
     /** Creates a new Builder */
@@ -126,7 +147,10 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
       super(converTor.tordnsel.Tordnsel.SCHEMA$);
     }
     
-    /** Creates a Builder by copying an existing Builder */
+    /**
+     * Creates a Builder by copying an existing Builder.
+     * @param other The existing Builder to copy.
+     */
     private Builder(converTor.tordnsel.Tordnsel.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.descriptor_type)) {
@@ -143,7 +167,10 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
       }
     }
     
-    /** Creates a Builder by copying an existing Tordnsel instance */
+    /**
+     * Creates a Builder by copying an existing Tordnsel instance
+     * @param other The existing instance to copy.
+     */
     private Builder(converTor.tordnsel.Tordnsel other) {
             super(converTor.tordnsel.Tordnsel.SCHEMA$);
       if (isValidValue(fields()[0], other.descriptor_type)) {
@@ -160,75 +187,125 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
       }
     }
 
-    /** Gets the value of the 'descriptor_type' field */
+    /**
+      * Gets the value of the 'descriptor_type' field.
+      * @return The value.
+      */
     public java.lang.CharSequence getDescriptorType() {
       return descriptor_type;
     }
-    
-    /** Sets the value of the 'descriptor_type' field */
+
+    /**
+      * Sets the value of the 'descriptor_type' field.
+      * @param value The value of 'descriptor_type'.
+      * @return This builder.
+      */
     public converTor.tordnsel.Tordnsel.Builder setDescriptorType(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.descriptor_type = value;
       fieldSetFlags()[0] = true;
       return this; 
     }
-    
-    /** Checks whether the 'descriptor_type' field has been set */
+
+    /**
+      * Checks whether the 'descriptor_type' field has been set.
+      * @return True if the 'descriptor_type' field has been set, false otherwise.
+      */
     public boolean hasDescriptorType() {
       return fieldSetFlags()[0];
     }
-    
-    /** Clears the value of the 'descriptor_type' field */
+
+
+    /**
+      * Clears the value of the 'descriptor_type' field.
+      * @return This builder.
+      */
     public converTor.tordnsel.Tordnsel.Builder clearDescriptorType() {
       descriptor_type = null;
       fieldSetFlags()[0] = false;
       return this;
     }
 
-    /** Gets the value of the 'downloaded' field */
+    /**
+      * Gets the value of the 'downloaded' field.
+      * metrics-lib/ExitList: long getDownloadedMillis()
+      * @return The value.
+      */
     public java.lang.CharSequence getDownloaded() {
       return downloaded;
     }
-    
-    /** Sets the value of the 'downloaded' field */
+
+    /**
+      * Sets the value of the 'downloaded' field.
+      * metrics-lib/ExitList: long getDownloadedMillis()
+      * @param value The value of 'downloaded'.
+      * @return This builder.
+      */
     public converTor.tordnsel.Tordnsel.Builder setDownloaded(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.downloaded = value;
       fieldSetFlags()[1] = true;
       return this; 
     }
-    
-    /** Checks whether the 'downloaded' field has been set */
+
+    /**
+      * Checks whether the 'downloaded' field has been set.
+      * metrics-lib/ExitList: long getDownloadedMillis()
+      * @return True if the 'downloaded' field has been set, false otherwise.
+      */
     public boolean hasDownloaded() {
       return fieldSetFlags()[1];
     }
-    
-    /** Clears the value of the 'downloaded' field */
+
+
+    /**
+      * Clears the value of the 'downloaded' field.
+      * metrics-lib/ExitList: long getDownloadedMillis()
+      * @return This builder.
+      */
     public converTor.tordnsel.Tordnsel.Builder clearDownloaded() {
       downloaded = null;
       fieldSetFlags()[1] = false;
       return this;
     }
 
-    /** Gets the value of the 'exit_nodes' field */
+    /**
+      * Gets the value of the 'exit_nodes' field.
+      * metrics-lib/ExitList: Set<ExitList.Entry> getEntries()
+      * @return The value.
+      */
     public java.util.List<converTor.tordnsel.ExitNode> getExitNodes() {
       return exit_nodes;
     }
-    
-    /** Sets the value of the 'exit_nodes' field */
+
+    /**
+      * Sets the value of the 'exit_nodes' field.
+      * metrics-lib/ExitList: Set<ExitList.Entry> getEntries()
+      * @param value The value of 'exit_nodes'.
+      * @return This builder.
+      */
     public converTor.tordnsel.Tordnsel.Builder setExitNodes(java.util.List<converTor.tordnsel.ExitNode> value) {
       validate(fields()[2], value);
       this.exit_nodes = value;
       fieldSetFlags()[2] = true;
       return this; 
     }
-    
-    /** Checks whether the 'exit_nodes' field has been set */
+
+    /**
+      * Checks whether the 'exit_nodes' field has been set.
+      * metrics-lib/ExitList: Set<ExitList.Entry> getEntries()
+      * @return True if the 'exit_nodes' field has been set, false otherwise.
+      */
     public boolean hasExitNodes() {
       return fieldSetFlags()[2];
     }
-    
-    /** Clears the value of the 'exit_nodes' field */
+
+
+    /**
+      * Clears the value of the 'exit_nodes' field.
+      * metrics-lib/ExitList: Set<ExitList.Entry> getEntries()
+      * @return This builder.
+      */
     public converTor.tordnsel.Tordnsel.Builder clearExitNodes() {
       exit_nodes = null;
       fieldSetFlags()[2] = false;
@@ -248,4 +325,21 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
       }
     }
   }
+
+  private static final org.apache.avro.io.DatumWriter
+    WRITER$ = new org.apache.avro.specific.SpecificDatumWriter(SCHEMA$);  
+
+  @Override public void writeExternal(java.io.ObjectOutput out)
+    throws java.io.IOException {
+    WRITER$.write(this, org.apache.avro.specific.SpecificData.getEncoder(out));
+  }
+
+  private static final org.apache.avro.io.DatumReader
+    READER$ = new org.apache.avro.specific.SpecificDatumReader(SCHEMA$);  
+
+  @Override public void readExternal(java.io.ObjectInput in)
+    throws java.io.IOException {
+    READER$.read(this, org.apache.avro.specific.SpecificData.getDecoder(in));
+  }
+
 }

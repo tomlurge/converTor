@@ -3,14 +3,18 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.relay;
+package converTor.relay;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Bandwidth extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Bandwidth\",\"namespace\":\"converTor.relay\",\"fields\":[{\"name\":\"avg\",\"type\":[\"null\",\"int\"]},{\"name\":\"burst\",\"type\":[\"null\",\"int\"]},{\"name\":\"observed\",\"type\":[\"null\",\"int\"]}]}");
+  private static final long serialVersionUID = -6763909072189938951L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Bandwidth\",\"namespace\":\"converTor.relay\",\"fields\":[{\"name\":\"avg\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getBandwidthRate()\"},{\"name\":\"burst\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getBandwidthBurst()\"},{\"name\":\"observed\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getBandwidthObserved()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
+  /** metrics-lib/ServerDescriptor: int getBandwidthRate() */
   @Deprecated public java.lang.Integer avg;
+  /** metrics-lib/ServerDescriptor: int getBandwidthBurst() */
   @Deprecated public java.lang.Integer burst;
+  /** metrics-lib/ServerDescriptor: int getBandwidthObserved() */
   @Deprecated public java.lang.Integer observed;
 
   /**
@@ -22,6 +26,9 @@ public class Bandwidth extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * All-args constructor.
+   * @param avg metrics-lib/ServerDescriptor: int getBandwidthRate()
+   * @param burst metrics-lib/ServerDescriptor: int getBandwidthBurst()
+   * @param observed metrics-lib/ServerDescriptor: int getBandwidthObserved()
    */
   public Bandwidth(java.lang.Integer avg, java.lang.Integer burst, java.lang.Integer observed) {
     this.avg = avg;
@@ -52,6 +59,7 @@ public class Bandwidth extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Gets the value of the 'avg' field.
+   * @return metrics-lib/ServerDescriptor: int getBandwidthRate()
    */
   public java.lang.Integer getAvg() {
     return avg;
@@ -59,6 +67,7 @@ public class Bandwidth extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Sets the value of the 'avg' field.
+   * metrics-lib/ServerDescriptor: int getBandwidthRate()
    * @param value the value to set.
    */
   public void setAvg(java.lang.Integer value) {
@@ -67,6 +76,7 @@ public class Bandwidth extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Gets the value of the 'burst' field.
+   * @return metrics-lib/ServerDescriptor: int getBandwidthBurst()
    */
   public java.lang.Integer getBurst() {
     return burst;
@@ -74,6 +84,7 @@ public class Bandwidth extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Sets the value of the 'burst' field.
+   * metrics-lib/ServerDescriptor: int getBandwidthBurst()
    * @param value the value to set.
    */
   public void setBurst(java.lang.Integer value) {
@@ -82,6 +93,7 @@ public class Bandwidth extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Gets the value of the 'observed' field.
+   * @return metrics-lib/ServerDescriptor: int getBandwidthObserved()
    */
   public java.lang.Integer getObserved() {
     return observed;
@@ -89,23 +101,35 @@ public class Bandwidth extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Sets the value of the 'observed' field.
+   * metrics-lib/ServerDescriptor: int getBandwidthObserved()
    * @param value the value to set.
    */
   public void setObserved(java.lang.Integer value) {
     this.observed = value;
   }
 
-  /** Creates a new Bandwidth RecordBuilder */
+  /**
+   * Creates a new Bandwidth RecordBuilder.
+   * @return A new Bandwidth RecordBuilder
+   */
   public static converTor.relay.Bandwidth.Builder newBuilder() {
     return new converTor.relay.Bandwidth.Builder();
   }
   
-  /** Creates a new Bandwidth RecordBuilder by copying an existing Builder */
+  /**
+   * Creates a new Bandwidth RecordBuilder by copying an existing Builder.
+   * @param other The existing builder to copy.
+   * @return A new Bandwidth RecordBuilder
+   */
   public static converTor.relay.Bandwidth.Builder newBuilder(converTor.relay.Bandwidth.Builder other) {
     return new converTor.relay.Bandwidth.Builder(other);
   }
   
-  /** Creates a new Bandwidth RecordBuilder by copying an existing Bandwidth instance */
+  /**
+   * Creates a new Bandwidth RecordBuilder by copying an existing Bandwidth instance.
+   * @param other The existing instance to copy.
+   * @return A new Bandwidth RecordBuilder
+   */
   public static converTor.relay.Bandwidth.Builder newBuilder(converTor.relay.Bandwidth other) {
     return new converTor.relay.Bandwidth.Builder(other);
   }
@@ -116,8 +140,11 @@ public class Bandwidth extends org.apache.avro.specific.SpecificRecordBase imple
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Bandwidth>
     implements org.apache.avro.data.RecordBuilder<Bandwidth> {
 
+    /** metrics-lib/ServerDescriptor: int getBandwidthRate() */
     private java.lang.Integer avg;
+    /** metrics-lib/ServerDescriptor: int getBandwidthBurst() */
     private java.lang.Integer burst;
+    /** metrics-lib/ServerDescriptor: int getBandwidthObserved() */
     private java.lang.Integer observed;
 
     /** Creates a new Builder */
@@ -125,7 +152,10 @@ public class Bandwidth extends org.apache.avro.specific.SpecificRecordBase imple
       super(converTor.relay.Bandwidth.SCHEMA$);
     }
     
-    /** Creates a Builder by copying an existing Builder */
+    /**
+     * Creates a Builder by copying an existing Builder.
+     * @param other The existing Builder to copy.
+     */
     private Builder(converTor.relay.Bandwidth.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.avg)) {
@@ -142,7 +172,10 @@ public class Bandwidth extends org.apache.avro.specific.SpecificRecordBase imple
       }
     }
     
-    /** Creates a Builder by copying an existing Bandwidth instance */
+    /**
+     * Creates a Builder by copying an existing Bandwidth instance
+     * @param other The existing instance to copy.
+     */
     private Builder(converTor.relay.Bandwidth other) {
             super(converTor.relay.Bandwidth.SCHEMA$);
       if (isValidValue(fields()[0], other.avg)) {
@@ -159,75 +192,129 @@ public class Bandwidth extends org.apache.avro.specific.SpecificRecordBase imple
       }
     }
 
-    /** Gets the value of the 'avg' field */
+    /**
+      * Gets the value of the 'avg' field.
+      * metrics-lib/ServerDescriptor: int getBandwidthRate()
+      * @return The value.
+      */
     public java.lang.Integer getAvg() {
       return avg;
     }
-    
-    /** Sets the value of the 'avg' field */
+
+    /**
+      * Sets the value of the 'avg' field.
+      * metrics-lib/ServerDescriptor: int getBandwidthRate()
+      * @param value The value of 'avg'.
+      * @return This builder.
+      */
     public converTor.relay.Bandwidth.Builder setAvg(java.lang.Integer value) {
       validate(fields()[0], value);
       this.avg = value;
       fieldSetFlags()[0] = true;
       return this; 
     }
-    
-    /** Checks whether the 'avg' field has been set */
+
+    /**
+      * Checks whether the 'avg' field has been set.
+      * metrics-lib/ServerDescriptor: int getBandwidthRate()
+      * @return True if the 'avg' field has been set, false otherwise.
+      */
     public boolean hasAvg() {
       return fieldSetFlags()[0];
     }
-    
-    /** Clears the value of the 'avg' field */
+
+
+    /**
+      * Clears the value of the 'avg' field.
+      * metrics-lib/ServerDescriptor: int getBandwidthRate()
+      * @return This builder.
+      */
     public converTor.relay.Bandwidth.Builder clearAvg() {
       avg = null;
       fieldSetFlags()[0] = false;
       return this;
     }
 
-    /** Gets the value of the 'burst' field */
+    /**
+      * Gets the value of the 'burst' field.
+      * metrics-lib/ServerDescriptor: int getBandwidthBurst()
+      * @return The value.
+      */
     public java.lang.Integer getBurst() {
       return burst;
     }
-    
-    /** Sets the value of the 'burst' field */
+
+    /**
+      * Sets the value of the 'burst' field.
+      * metrics-lib/ServerDescriptor: int getBandwidthBurst()
+      * @param value The value of 'burst'.
+      * @return This builder.
+      */
     public converTor.relay.Bandwidth.Builder setBurst(java.lang.Integer value) {
       validate(fields()[1], value);
       this.burst = value;
       fieldSetFlags()[1] = true;
       return this; 
     }
-    
-    /** Checks whether the 'burst' field has been set */
+
+    /**
+      * Checks whether the 'burst' field has been set.
+      * metrics-lib/ServerDescriptor: int getBandwidthBurst()
+      * @return True if the 'burst' field has been set, false otherwise.
+      */
     public boolean hasBurst() {
       return fieldSetFlags()[1];
     }
-    
-    /** Clears the value of the 'burst' field */
+
+
+    /**
+      * Clears the value of the 'burst' field.
+      * metrics-lib/ServerDescriptor: int getBandwidthBurst()
+      * @return This builder.
+      */
     public converTor.relay.Bandwidth.Builder clearBurst() {
       burst = null;
       fieldSetFlags()[1] = false;
       return this;
     }
 
-    /** Gets the value of the 'observed' field */
+    /**
+      * Gets the value of the 'observed' field.
+      * metrics-lib/ServerDescriptor: int getBandwidthObserved()
+      * @return The value.
+      */
     public java.lang.Integer getObserved() {
       return observed;
     }
-    
-    /** Sets the value of the 'observed' field */
+
+    /**
+      * Sets the value of the 'observed' field.
+      * metrics-lib/ServerDescriptor: int getBandwidthObserved()
+      * @param value The value of 'observed'.
+      * @return This builder.
+      */
     public converTor.relay.Bandwidth.Builder setObserved(java.lang.Integer value) {
       validate(fields()[2], value);
       this.observed = value;
       fieldSetFlags()[2] = true;
       return this; 
     }
-    
-    /** Checks whether the 'observed' field has been set */
+
+    /**
+      * Checks whether the 'observed' field has been set.
+      * metrics-lib/ServerDescriptor: int getBandwidthObserved()
+      * @return True if the 'observed' field has been set, false otherwise.
+      */
     public boolean hasObserved() {
       return fieldSetFlags()[2];
     }
-    
-    /** Clears the value of the 'observed' field */
+
+
+    /**
+      * Clears the value of the 'observed' field.
+      * metrics-lib/ServerDescriptor: int getBandwidthObserved()
+      * @return This builder.
+      */
     public converTor.relay.Bandwidth.Builder clearObserved() {
       observed = null;
       fieldSetFlags()[2] = false;
@@ -247,4 +334,21 @@ public class Bandwidth extends org.apache.avro.specific.SpecificRecordBase imple
       }
     }
   }
+
+  private static final org.apache.avro.io.DatumWriter
+    WRITER$ = new org.apache.avro.specific.SpecificDatumWriter(SCHEMA$);  
+
+  @Override public void writeExternal(java.io.ObjectOutput out)
+    throws java.io.IOException {
+    WRITER$.write(this, org.apache.avro.specific.SpecificData.getEncoder(out));
+  }
+
+  private static final org.apache.avro.io.DatumReader
+    READER$ = new org.apache.avro.specific.SpecificDatumReader(SCHEMA$);  
+
+  @Override public void readExternal(java.io.ObjectInput in)
+    throws java.io.IOException {
+    READER$.read(this, org.apache.avro.specific.SpecificData.getDecoder(in));
+  }
+
 }

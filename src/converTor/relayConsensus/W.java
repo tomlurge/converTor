@@ -3,14 +3,18 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.relayConsensus;
+package converTor.relayConsensus;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class W extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"W\",\"namespace\":\"converTor.relayConsensus\",\"fields\":[{\"name\":\"bandwidth\",\"type\":[\"null\",\"long\"]},{\"name\":\"measured\",\"type\":[\"null\",\"long\"]},{\"name\":\"unmeasured\",\"type\":[\"null\",\"boolean\"]}]}");
+  private static final long serialVersionUID = 5122448187484273710L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"W\",\"namespace\":\"converTor.relayConsensus\",\"fields\":[{\"name\":\"bandwidth\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getBandwidth()\"},{\"name\":\"measured\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getMeasured()\"},{\"name\":\"unmeasured\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/NetworkStatusEntry: boolean getUnmeasured()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
+  /** metrics-lib/NetworkStatusEntry: long getBandwidth() */
   @Deprecated public java.lang.Long bandwidth;
+  /** metrics-lib/NetworkStatusEntry: long getMeasured() */
   @Deprecated public java.lang.Long measured;
+  /** metrics-lib/NetworkStatusEntry: boolean getUnmeasured() */
   @Deprecated public java.lang.Boolean unmeasured;
 
   /**
@@ -22,6 +26,9 @@ public class W extends org.apache.avro.specific.SpecificRecordBase implements or
 
   /**
    * All-args constructor.
+   * @param bandwidth metrics-lib/NetworkStatusEntry: long getBandwidth()
+   * @param measured metrics-lib/NetworkStatusEntry: long getMeasured()
+   * @param unmeasured metrics-lib/NetworkStatusEntry: boolean getUnmeasured()
    */
   public W(java.lang.Long bandwidth, java.lang.Long measured, java.lang.Boolean unmeasured) {
     this.bandwidth = bandwidth;
@@ -52,6 +59,7 @@ public class W extends org.apache.avro.specific.SpecificRecordBase implements or
 
   /**
    * Gets the value of the 'bandwidth' field.
+   * @return metrics-lib/NetworkStatusEntry: long getBandwidth()
    */
   public java.lang.Long getBandwidth() {
     return bandwidth;
@@ -59,6 +67,7 @@ public class W extends org.apache.avro.specific.SpecificRecordBase implements or
 
   /**
    * Sets the value of the 'bandwidth' field.
+   * metrics-lib/NetworkStatusEntry: long getBandwidth()
    * @param value the value to set.
    */
   public void setBandwidth(java.lang.Long value) {
@@ -67,6 +76,7 @@ public class W extends org.apache.avro.specific.SpecificRecordBase implements or
 
   /**
    * Gets the value of the 'measured' field.
+   * @return metrics-lib/NetworkStatusEntry: long getMeasured()
    */
   public java.lang.Long getMeasured() {
     return measured;
@@ -74,6 +84,7 @@ public class W extends org.apache.avro.specific.SpecificRecordBase implements or
 
   /**
    * Sets the value of the 'measured' field.
+   * metrics-lib/NetworkStatusEntry: long getMeasured()
    * @param value the value to set.
    */
   public void setMeasured(java.lang.Long value) {
@@ -82,6 +93,7 @@ public class W extends org.apache.avro.specific.SpecificRecordBase implements or
 
   /**
    * Gets the value of the 'unmeasured' field.
+   * @return metrics-lib/NetworkStatusEntry: boolean getUnmeasured()
    */
   public java.lang.Boolean getUnmeasured() {
     return unmeasured;
@@ -89,23 +101,35 @@ public class W extends org.apache.avro.specific.SpecificRecordBase implements or
 
   /**
    * Sets the value of the 'unmeasured' field.
+   * metrics-lib/NetworkStatusEntry: boolean getUnmeasured()
    * @param value the value to set.
    */
   public void setUnmeasured(java.lang.Boolean value) {
     this.unmeasured = value;
   }
 
-  /** Creates a new W RecordBuilder */
+  /**
+   * Creates a new W RecordBuilder.
+   * @return A new W RecordBuilder
+   */
   public static converTor.relayConsensus.W.Builder newBuilder() {
     return new converTor.relayConsensus.W.Builder();
   }
   
-  /** Creates a new W RecordBuilder by copying an existing Builder */
+  /**
+   * Creates a new W RecordBuilder by copying an existing Builder.
+   * @param other The existing builder to copy.
+   * @return A new W RecordBuilder
+   */
   public static converTor.relayConsensus.W.Builder newBuilder(converTor.relayConsensus.W.Builder other) {
     return new converTor.relayConsensus.W.Builder(other);
   }
   
-  /** Creates a new W RecordBuilder by copying an existing W instance */
+  /**
+   * Creates a new W RecordBuilder by copying an existing W instance.
+   * @param other The existing instance to copy.
+   * @return A new W RecordBuilder
+   */
   public static converTor.relayConsensus.W.Builder newBuilder(converTor.relayConsensus.W other) {
     return new converTor.relayConsensus.W.Builder(other);
   }
@@ -116,8 +140,11 @@ public class W extends org.apache.avro.specific.SpecificRecordBase implements or
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<W>
     implements org.apache.avro.data.RecordBuilder<W> {
 
+    /** metrics-lib/NetworkStatusEntry: long getBandwidth() */
     private java.lang.Long bandwidth;
+    /** metrics-lib/NetworkStatusEntry: long getMeasured() */
     private java.lang.Long measured;
+    /** metrics-lib/NetworkStatusEntry: boolean getUnmeasured() */
     private java.lang.Boolean unmeasured;
 
     /** Creates a new Builder */
@@ -125,7 +152,10 @@ public class W extends org.apache.avro.specific.SpecificRecordBase implements or
       super(converTor.relayConsensus.W.SCHEMA$);
     }
     
-    /** Creates a Builder by copying an existing Builder */
+    /**
+     * Creates a Builder by copying an existing Builder.
+     * @param other The existing Builder to copy.
+     */
     private Builder(converTor.relayConsensus.W.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.bandwidth)) {
@@ -142,7 +172,10 @@ public class W extends org.apache.avro.specific.SpecificRecordBase implements or
       }
     }
     
-    /** Creates a Builder by copying an existing W instance */
+    /**
+     * Creates a Builder by copying an existing W instance
+     * @param other The existing instance to copy.
+     */
     private Builder(converTor.relayConsensus.W other) {
             super(converTor.relayConsensus.W.SCHEMA$);
       if (isValidValue(fields()[0], other.bandwidth)) {
@@ -159,75 +192,129 @@ public class W extends org.apache.avro.specific.SpecificRecordBase implements or
       }
     }
 
-    /** Gets the value of the 'bandwidth' field */
+    /**
+      * Gets the value of the 'bandwidth' field.
+      * metrics-lib/NetworkStatusEntry: long getBandwidth()
+      * @return The value.
+      */
     public java.lang.Long getBandwidth() {
       return bandwidth;
     }
-    
-    /** Sets the value of the 'bandwidth' field */
+
+    /**
+      * Sets the value of the 'bandwidth' field.
+      * metrics-lib/NetworkStatusEntry: long getBandwidth()
+      * @param value The value of 'bandwidth'.
+      * @return This builder.
+      */
     public converTor.relayConsensus.W.Builder setBandwidth(java.lang.Long value) {
       validate(fields()[0], value);
       this.bandwidth = value;
       fieldSetFlags()[0] = true;
       return this; 
     }
-    
-    /** Checks whether the 'bandwidth' field has been set */
+
+    /**
+      * Checks whether the 'bandwidth' field has been set.
+      * metrics-lib/NetworkStatusEntry: long getBandwidth()
+      * @return True if the 'bandwidth' field has been set, false otherwise.
+      */
     public boolean hasBandwidth() {
       return fieldSetFlags()[0];
     }
-    
-    /** Clears the value of the 'bandwidth' field */
+
+
+    /**
+      * Clears the value of the 'bandwidth' field.
+      * metrics-lib/NetworkStatusEntry: long getBandwidth()
+      * @return This builder.
+      */
     public converTor.relayConsensus.W.Builder clearBandwidth() {
       bandwidth = null;
       fieldSetFlags()[0] = false;
       return this;
     }
 
-    /** Gets the value of the 'measured' field */
+    /**
+      * Gets the value of the 'measured' field.
+      * metrics-lib/NetworkStatusEntry: long getMeasured()
+      * @return The value.
+      */
     public java.lang.Long getMeasured() {
       return measured;
     }
-    
-    /** Sets the value of the 'measured' field */
+
+    /**
+      * Sets the value of the 'measured' field.
+      * metrics-lib/NetworkStatusEntry: long getMeasured()
+      * @param value The value of 'measured'.
+      * @return This builder.
+      */
     public converTor.relayConsensus.W.Builder setMeasured(java.lang.Long value) {
       validate(fields()[1], value);
       this.measured = value;
       fieldSetFlags()[1] = true;
       return this; 
     }
-    
-    /** Checks whether the 'measured' field has been set */
+
+    /**
+      * Checks whether the 'measured' field has been set.
+      * metrics-lib/NetworkStatusEntry: long getMeasured()
+      * @return True if the 'measured' field has been set, false otherwise.
+      */
     public boolean hasMeasured() {
       return fieldSetFlags()[1];
     }
-    
-    /** Clears the value of the 'measured' field */
+
+
+    /**
+      * Clears the value of the 'measured' field.
+      * metrics-lib/NetworkStatusEntry: long getMeasured()
+      * @return This builder.
+      */
     public converTor.relayConsensus.W.Builder clearMeasured() {
       measured = null;
       fieldSetFlags()[1] = false;
       return this;
     }
 
-    /** Gets the value of the 'unmeasured' field */
+    /**
+      * Gets the value of the 'unmeasured' field.
+      * metrics-lib/NetworkStatusEntry: boolean getUnmeasured()
+      * @return The value.
+      */
     public java.lang.Boolean getUnmeasured() {
       return unmeasured;
     }
-    
-    /** Sets the value of the 'unmeasured' field */
+
+    /**
+      * Sets the value of the 'unmeasured' field.
+      * metrics-lib/NetworkStatusEntry: boolean getUnmeasured()
+      * @param value The value of 'unmeasured'.
+      * @return This builder.
+      */
     public converTor.relayConsensus.W.Builder setUnmeasured(java.lang.Boolean value) {
       validate(fields()[2], value);
       this.unmeasured = value;
       fieldSetFlags()[2] = true;
       return this; 
     }
-    
-    /** Checks whether the 'unmeasured' field has been set */
+
+    /**
+      * Checks whether the 'unmeasured' field has been set.
+      * metrics-lib/NetworkStatusEntry: boolean getUnmeasured()
+      * @return True if the 'unmeasured' field has been set, false otherwise.
+      */
     public boolean hasUnmeasured() {
       return fieldSetFlags()[2];
     }
-    
-    /** Clears the value of the 'unmeasured' field */
+
+
+    /**
+      * Clears the value of the 'unmeasured' field.
+      * metrics-lib/NetworkStatusEntry: boolean getUnmeasured()
+      * @return This builder.
+      */
     public converTor.relayConsensus.W.Builder clearUnmeasured() {
       unmeasured = null;
       fieldSetFlags()[2] = false;
@@ -247,4 +334,21 @@ public class W extends org.apache.avro.specific.SpecificRecordBase implements or
       }
     }
   }
+
+  private static final org.apache.avro.io.DatumWriter
+    WRITER$ = new org.apache.avro.specific.SpecificDatumWriter(SCHEMA$);  
+
+  @Override public void writeExternal(java.io.ObjectOutput out)
+    throws java.io.IOException {
+    WRITER$.write(this, org.apache.avro.specific.SpecificData.getEncoder(out));
+  }
+
+  private static final org.apache.avro.io.DatumReader
+    READER$ = new org.apache.avro.specific.SpecificDatumReader(SCHEMA$);  
+
+  @Override public void readExternal(java.io.ObjectInput in)
+    throws java.io.IOException {
+    READER$.read(this, org.apache.avro.specific.SpecificData.getDecoder(in));
+  }
+
 }

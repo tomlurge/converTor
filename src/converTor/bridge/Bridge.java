@@ -3,47 +3,78 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.bridge;
+package converTor.bridge;  
 @SuppressWarnings("all")
-/** server-descriptor 1.0 - same as relay but missing field 'router_signature' */
+/** server-descriptor 1.0 - same as relay but without field 'router_signature' */
 @org.apache.avro.specific.AvroGenerated
 public class Bridge extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Bridge\",\"namespace\":\"converTor.bridge\",\"doc\":\"server-descriptor 1.0 - same as relay but missing field 'router_signature'\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":\"string\",\"default\":\"server-descriptor 1.0\"},{\"name\":\"router\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Router\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",\"string\"]},{\"name\":\"address\",\"type\":[\"null\",\"string\"]},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"]},{\"name\":\"socks_port\",\"type\":[\"null\",\"int\"]},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"]}]}]},{\"name\":\"identity_ed25519\",\"type\":[\"null\",\"boolean\"]},{\"name\":\"master_key_ed25519\",\"type\":[\"null\",\"string\"]},{\"name\":\"bandwidth\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Bandwidth\",\"fields\":[{\"name\":\"avg\",\"type\":[\"null\",\"int\"]},{\"name\":\"burst\",\"type\":[\"null\",\"int\"]},{\"name\":\"observed\",\"type\":[\"null\",\"int\"]}]}]},{\"name\":\"platform\",\"type\":[\"null\",\"string\"]},{\"name\":\"published\",\"type\":[\"null\",\"string\"]},{\"name\":\"fingerprint\",\"type\":[\"null\",\"string\"]},{\"name\":\"hibernating\",\"type\":[\"null\",\"boolean\"]},{\"name\":\"uptime\",\"type\":[\"null\",\"long\"]},{\"name\":\"onion_key\",\"type\":[\"null\",\"boolean\"]},{\"name\":\"onion_key_crosscert\",\"type\":[\"null\",\"boolean\"]},{\"name\":\"ntor_onion_key\",\"type\":[\"null\",\"boolean\"]},{\"name\":\"ntor_onion_key_crosscert\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"CrossCert\",\"fields\":[{\"name\":\"cert\",\"type\":\"string\"},{\"name\":\"bit\",\"type\":\"int\"}]}]},{\"name\":\"signing_key\",\"type\":[\"null\",\"boolean\"]},{\"name\":\"exit_policy\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}]},{\"name\":\"ipv6_policy\",\"type\":\"string\",\"default\":\"ipv6-policy reject 1-65535\"},{\"name\":\"ipv6_portlist\",\"type\":[\"null\",\"string\"]},{\"name\":\"router_sig_ed25519\",\"type\":[\"null\",\"boolean\"]},{\"name\":\"contact\",\"type\":[\"null\",\"string\"]},{\"name\":\"family\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}]},{\"name\":\"read_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ReadHistory\",\"fields\":[{\"name\":\"date\",\"type\":\"string\"},{\"name\":\"interval\",\"type\":\"long\"},{\"name\":\"bytes\",\"type\":{\"type\":\"array\",\"items\":\"long\"}}]}]},{\"name\":\"write_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"WriteHistory\",\"fields\":[{\"name\":\"date\",\"type\":\"string\"},{\"name\":\"interval\",\"type\":\"long\"},{\"name\":\"bytes\",\"type\":{\"type\":\"array\",\"items\":\"long\"}}]}]},{\"name\":\"eventdns\",\"type\":[\"null\",\"boolean\"]},{\"name\":\"caches_extra_info\",\"type\":[\"null\",\"boolean\"]},{\"name\":\"extra_info_digest\",\"type\":[\"null\",\"string\"]},{\"name\":\"extra_info_digest_sha256\",\"type\":[\"null\",\"string\"]},{\"name\":\"hidden_service_dir\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}]},{\"name\":\"link_protocol_versions\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}]},{\"name\":\"circuit_protocol_versions\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}]},{\"name\":\"allow_single_hop_exits\",\"type\":[\"null\",\"boolean\"]},{\"name\":\"or_address\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"OrAddress\",\"fields\":[{\"name\":\"adress\",\"type\":\"string\"},{\"name\":\"port\",\"type\":\"int\"}]}}]},{\"name\":\"router_digest\",\"type\":[\"null\",\"string\"]},{\"name\":\"router_digest_sha256\",\"type\":[\"null\",\"string\"]}],\"aliases\":[\"bridge_server_descriptor\",\"bridge_server\"]}");
+  private static final long serialVersionUID = -7277671666637710069L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Bridge\",\"namespace\":\"converTor.bridge\",\"doc\":\"server-descriptor 1.0 - same as relay but without field 'router_signature'\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":\"string\",\"default\":\"server-descriptor 1.0\"},{\"name\":\"server_descriptor_digest\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ServerDescriptor: String getServerDescriptorDigest()\"},{\"name\":\"server_descriptor_sha256\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ServerDescriptor: String getServerDescriptorDigestSha256()\"},{\"name\":\"router\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Router\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ServerDescriptor: String getNickname()\"},{\"name\":\"address\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ServerDescriptor: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getOrPort()\"},{\"name\":\"socks_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getSocksPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getDirPort()\"}]}]},{\"name\":\"identity_ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getIdentityEd25519()\"},{\"name\":\"master_key_ed25519\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ServerDescriptor: String getMasterKeyEd25519()\"},{\"name\":\"bandwidth\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Bandwidth\",\"fields\":[{\"name\":\"avg\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getBandwidthRate()\"},{\"name\":\"burst\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getBandwidthBurst()\"},{\"name\":\"observed\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getBandwidthObserved()\"}]}]},{\"name\":\"platform\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ServerDescriptor: String getPlatform()\"},{\"name\":\"published\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ServerDescriptor: long getPublishedMillis()\"},{\"name\":\"fingerprint\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ServerDescriptor: String getFingerprint()\"},{\"name\":\"hibernating\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: boolean isHibernating()\"},{\"name\":\"uptime\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ServerDescriptor: Long getUptime()\"},{\"name\":\"onion_key\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getOnionKey()\"},{\"name\":\"onion_key_crosscert\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getOnionKeyCrosscert()\"},{\"name\":\"ntor_onion_key\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getNtorOnionKey()\"},{\"name\":\"ntor_onion_key_crosscert\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"NtorCrossCert\",\"fields\":[{\"name\":\"cert\",\"type\":\"string\",\"doc\":\"metrics-lib/ServerDescriptor: String getNtorOnionKeyCrosscert()\"},{\"name\":\"bit\",\"type\":\"int\",\"doc\":\"metrics-lib/ServerDescriptor: int getNtorOnionKeyCrosscertSign()\"}]}]},{\"name\":\"signing_key\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getSigningKey()\"},{\"name\":\"exit_policy\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/ServerDescriptor: List<String> getExitPolicyLines()\"},{\"name\":\"ipv6_policy\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getIpv6DefaultPolicy()\"},{\"name\":\"ipv6_portlist\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ServerDescriptor: String getIpv6PortList()\"},{\"name\":\"router_sig_ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getRouterSignatureEd25519()\"},{\"name\":\"contact\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ServerDescriptor: String getContact()\"},{\"name\":\"family\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/ServerDescriptor: List<String> getFamilyEntries()\"},{\"name\":\"read_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ReadHistory\",\"fields\":[{\"name\":\"date\",\"type\":\"string\",\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":{\"type\":\"array\",\"items\":\"long\"},\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ServerDescriptor: BandwidthHistory getReadHistory()\"},{\"name\":\"write_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"WriteHistory\",\"fields\":[{\"name\":\"date\",\"type\":\"string\",\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":{\"type\":\"array\",\"items\":\"long\"},\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ServerDescriptor: BandwidthHistory getWriteHistory()\"},{\"name\":\"eventdns\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: boolean getUsesEnhancedDnsLogic()\"},{\"name\":\"caches_extra_info\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: boolean getCachesExtraInfo()\"},{\"name\":\"extra_info_digest\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ServerDescriptor: String getExtraInfoDigest()\"},{\"name\":\"extra_info_digest_sha256\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ServerDescriptor: String getExtraInfoDigestSha256()\"},{\"name\":\"hidden_service_dir\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}],\"doc\":\"metrics-lib/ServerDescriptor: List<Integer> getHiddenServiceDirVersions()\"},{\"name\":\"link_protocol_versions\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}],\"doc\":\"metrics-lib/ServerDescriptor: List<Integer> getLinkProtocolVersions()\"},{\"name\":\"circuit_protocol_versions\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}],\"doc\":\"metrics-lib/ServerDescriptor: List<Integer> getCircuitProtocolVersions()\"},{\"name\":\"allow_single_hop_exits\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: boolean getAllowSingleHopExits()\"},{\"name\":\"or_address\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"OrAddress\",\"fields\":[{\"name\":\"address\",\"type\":\"string\",\"doc\":\"implementation specific\"},{\"name\":\"port\",\"type\":\"int\",\"doc\":\"implementation specific\"}]}}],\"doc\":\"metrics-lib/ServerDescriptor: List<String> getOrAddresses()\"}],\"aliases\":[\"bridge_server\"]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   @Deprecated public java.lang.CharSequence descriptor_type;
+  /** metrics-lib/ServerDescriptor: String getServerDescriptorDigest() */
+  @Deprecated public java.lang.CharSequence server_descriptor_digest;
+  /** metrics-lib/ServerDescriptor: String getServerDescriptorDigestSha256() */
+  @Deprecated public java.lang.CharSequence server_descriptor_sha256;
   @Deprecated public converTor.bridge.Router router;
+  /** metrics-lib/ServerDescriptor: String getIdentityEd25519() */
   @Deprecated public java.lang.Boolean identity_ed25519;
+  /** metrics-lib/ServerDescriptor: String getMasterKeyEd25519() */
   @Deprecated public java.lang.CharSequence master_key_ed25519;
   @Deprecated public converTor.bridge.Bandwidth bandwidth;
+  /** metrics-lib/ServerDescriptor: String getPlatform() */
   @Deprecated public java.lang.CharSequence platform;
+  /** metrics-lib/ServerDescriptor: long getPublishedMillis() */
   @Deprecated public java.lang.CharSequence published;
+  /** metrics-lib/ServerDescriptor: String getFingerprint() */
   @Deprecated public java.lang.CharSequence fingerprint;
+  /** metrics-lib/ServerDescriptor: boolean isHibernating() */
   @Deprecated public java.lang.Boolean hibernating;
+  /** metrics-lib/ServerDescriptor: Long getUptime() */
   @Deprecated public java.lang.Long uptime;
+  /** metrics-lib/ServerDescriptor: String getOnionKey() */
   @Deprecated public java.lang.Boolean onion_key;
+  /** metrics-lib/ServerDescriptor: String getOnionKeyCrosscert() */
   @Deprecated public java.lang.Boolean onion_key_crosscert;
+  /** metrics-lib/ServerDescriptor: String getNtorOnionKey() */
   @Deprecated public java.lang.Boolean ntor_onion_key;
-  @Deprecated public converTor.bridge.CrossCert ntor_onion_key_crosscert;
+  @Deprecated public converTor.bridge.NtorCrossCert ntor_onion_key_crosscert;
+  /** metrics-lib/ServerDescriptor: String getSigningKey() */
   @Deprecated public java.lang.Boolean signing_key;
+  /** metrics-lib/ServerDescriptor: List<String> getExitPolicyLines() */
   @Deprecated public java.util.List<java.lang.CharSequence> exit_policy;
-  @Deprecated public java.lang.CharSequence ipv6_policy;
+  /** metrics-lib/ServerDescriptor: String getIpv6DefaultPolicy() */
+  @Deprecated public java.util.List<java.lang.CharSequence> ipv6_policy;
+  /** metrics-lib/ServerDescriptor: String getIpv6PortList() */
   @Deprecated public java.lang.CharSequence ipv6_portlist;
+  /** metrics-lib/ServerDescriptor: String getRouterSignatureEd25519() */
   @Deprecated public java.lang.Boolean router_sig_ed25519;
+  /** metrics-lib/ServerDescriptor: String getContact() */
   @Deprecated public java.lang.CharSequence contact;
+  /** metrics-lib/ServerDescriptor: List<String> getFamilyEntries() */
   @Deprecated public java.util.List<java.lang.CharSequence> family;
+  /** metrics-lib/ServerDescriptor: BandwidthHistory getReadHistory() */
   @Deprecated public converTor.bridge.ReadHistory read_history;
+  /** metrics-lib/ServerDescriptor: BandwidthHistory getWriteHistory() */
   @Deprecated public converTor.bridge.WriteHistory write_history;
+  /** metrics-lib/ServerDescriptor: boolean getUsesEnhancedDnsLogic() */
   @Deprecated public java.lang.Boolean eventdns;
+  /** metrics-lib/ServerDescriptor: boolean getCachesExtraInfo() */
   @Deprecated public java.lang.Boolean caches_extra_info;
+  /** metrics-lib/ServerDescriptor: String getExtraInfoDigest() */
   @Deprecated public java.lang.CharSequence extra_info_digest;
+  /** metrics-lib/ServerDescriptor: String getExtraInfoDigestSha256() */
   @Deprecated public java.lang.CharSequence extra_info_digest_sha256;
+  /** metrics-lib/ServerDescriptor: List<Integer> getHiddenServiceDirVersions() */
   @Deprecated public java.util.List<java.lang.Integer> hidden_service_dir;
+  /** metrics-lib/ServerDescriptor: List<Integer> getLinkProtocolVersions() */
   @Deprecated public java.util.List<java.lang.Integer> link_protocol_versions;
+  /** metrics-lib/ServerDescriptor: List<Integer> getCircuitProtocolVersions() */
   @Deprecated public java.util.List<java.lang.Integer> circuit_protocol_versions;
+  /** metrics-lib/ServerDescriptor: boolean getAllowSingleHopExits() */
   @Deprecated public java.lang.Boolean allow_single_hop_exits;
+  /** metrics-lib/ServerDescriptor: List<String> getOrAddresses() */
   @Deprecated public java.util.List<converTor.bridge.OrAddress> or_address;
-  @Deprecated public java.lang.CharSequence router_digest;
-  @Deprecated public java.lang.CharSequence router_digest_sha256;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -54,9 +85,41 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * All-args constructor.
+   * @param server_descriptor_digest metrics-lib/ServerDescriptor: String getServerDescriptorDigest()
+   * @param server_descriptor_sha256 metrics-lib/ServerDescriptor: String getServerDescriptorDigestSha256()
+   * @param identity_ed25519 metrics-lib/ServerDescriptor: String getIdentityEd25519()
+   * @param master_key_ed25519 metrics-lib/ServerDescriptor: String getMasterKeyEd25519()
+   * @param platform metrics-lib/ServerDescriptor: String getPlatform()
+   * @param published metrics-lib/ServerDescriptor: long getPublishedMillis()
+   * @param fingerprint metrics-lib/ServerDescriptor: String getFingerprint()
+   * @param hibernating metrics-lib/ServerDescriptor: boolean isHibernating()
+   * @param uptime metrics-lib/ServerDescriptor: Long getUptime()
+   * @param onion_key metrics-lib/ServerDescriptor: String getOnionKey()
+   * @param onion_key_crosscert metrics-lib/ServerDescriptor: String getOnionKeyCrosscert()
+   * @param ntor_onion_key metrics-lib/ServerDescriptor: String getNtorOnionKey()
+   * @param signing_key metrics-lib/ServerDescriptor: String getSigningKey()
+   * @param exit_policy metrics-lib/ServerDescriptor: List<String> getExitPolicyLines()
+   * @param ipv6_policy metrics-lib/ServerDescriptor: String getIpv6DefaultPolicy()
+   * @param ipv6_portlist metrics-lib/ServerDescriptor: String getIpv6PortList()
+   * @param router_sig_ed25519 metrics-lib/ServerDescriptor: String getRouterSignatureEd25519()
+   * @param contact metrics-lib/ServerDescriptor: String getContact()
+   * @param family metrics-lib/ServerDescriptor: List<String> getFamilyEntries()
+   * @param read_history metrics-lib/ServerDescriptor: BandwidthHistory getReadHistory()
+   * @param write_history metrics-lib/ServerDescriptor: BandwidthHistory getWriteHistory()
+   * @param eventdns metrics-lib/ServerDescriptor: boolean getUsesEnhancedDnsLogic()
+   * @param caches_extra_info metrics-lib/ServerDescriptor: boolean getCachesExtraInfo()
+   * @param extra_info_digest metrics-lib/ServerDescriptor: String getExtraInfoDigest()
+   * @param extra_info_digest_sha256 metrics-lib/ServerDescriptor: String getExtraInfoDigestSha256()
+   * @param hidden_service_dir metrics-lib/ServerDescriptor: List<Integer> getHiddenServiceDirVersions()
+   * @param link_protocol_versions metrics-lib/ServerDescriptor: List<Integer> getLinkProtocolVersions()
+   * @param circuit_protocol_versions metrics-lib/ServerDescriptor: List<Integer> getCircuitProtocolVersions()
+   * @param allow_single_hop_exits metrics-lib/ServerDescriptor: boolean getAllowSingleHopExits()
+   * @param or_address metrics-lib/ServerDescriptor: List<String> getOrAddresses()
    */
-  public Bridge(java.lang.CharSequence descriptor_type, converTor.bridge.Router router, java.lang.Boolean identity_ed25519, java.lang.CharSequence master_key_ed25519, converTor.bridge.Bandwidth bandwidth, java.lang.CharSequence platform, java.lang.CharSequence published, java.lang.CharSequence fingerprint, java.lang.Boolean hibernating, java.lang.Long uptime, java.lang.Boolean onion_key, java.lang.Boolean onion_key_crosscert, java.lang.Boolean ntor_onion_key, converTor.bridge.CrossCert ntor_onion_key_crosscert, java.lang.Boolean signing_key, java.util.List<java.lang.CharSequence> exit_policy, java.lang.CharSequence ipv6_policy, java.lang.CharSequence ipv6_portlist, java.lang.Boolean router_sig_ed25519, java.lang.CharSequence contact, java.util.List<java.lang.CharSequence> family, converTor.bridge.ReadHistory read_history, converTor.bridge.WriteHistory write_history, java.lang.Boolean eventdns, java.lang.Boolean caches_extra_info, java.lang.CharSequence extra_info_digest, java.lang.CharSequence extra_info_digest_sha256, java.util.List<java.lang.Integer> hidden_service_dir, java.util.List<java.lang.Integer> link_protocol_versions, java.util.List<java.lang.Integer> circuit_protocol_versions, java.lang.Boolean allow_single_hop_exits, java.util.List<converTor.bridge.OrAddress> or_address, java.lang.CharSequence router_digest, java.lang.CharSequence router_digest_sha256) {
+  public Bridge(java.lang.CharSequence descriptor_type, java.lang.CharSequence server_descriptor_digest, java.lang.CharSequence server_descriptor_sha256, converTor.bridge.Router router, java.lang.Boolean identity_ed25519, java.lang.CharSequence master_key_ed25519, converTor.bridge.Bandwidth bandwidth, java.lang.CharSequence platform, java.lang.CharSequence published, java.lang.CharSequence fingerprint, java.lang.Boolean hibernating, java.lang.Long uptime, java.lang.Boolean onion_key, java.lang.Boolean onion_key_crosscert, java.lang.Boolean ntor_onion_key, converTor.bridge.NtorCrossCert ntor_onion_key_crosscert, java.lang.Boolean signing_key, java.util.List<java.lang.CharSequence> exit_policy, java.util.List<java.lang.CharSequence> ipv6_policy, java.lang.CharSequence ipv6_portlist, java.lang.Boolean router_sig_ed25519, java.lang.CharSequence contact, java.util.List<java.lang.CharSequence> family, converTor.bridge.ReadHistory read_history, converTor.bridge.WriteHistory write_history, java.lang.Boolean eventdns, java.lang.Boolean caches_extra_info, java.lang.CharSequence extra_info_digest, java.lang.CharSequence extra_info_digest_sha256, java.util.List<java.lang.Integer> hidden_service_dir, java.util.List<java.lang.Integer> link_protocol_versions, java.util.List<java.lang.Integer> circuit_protocol_versions, java.lang.Boolean allow_single_hop_exits, java.util.List<converTor.bridge.OrAddress> or_address) {
     this.descriptor_type = descriptor_type;
+    this.server_descriptor_digest = server_descriptor_digest;
+    this.server_descriptor_sha256 = server_descriptor_sha256;
     this.router = router;
     this.identity_ed25519 = identity_ed25519;
     this.master_key_ed25519 = master_key_ed25519;
@@ -88,8 +151,6 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
     this.circuit_protocol_versions = circuit_protocol_versions;
     this.allow_single_hop_exits = allow_single_hop_exits;
     this.or_address = or_address;
-    this.router_digest = router_digest;
-    this.router_digest_sha256 = router_digest_sha256;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -97,39 +158,39 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
   public java.lang.Object get(int field$) {
     switch (field$) {
     case 0: return descriptor_type;
-    case 1: return router;
-    case 2: return identity_ed25519;
-    case 3: return master_key_ed25519;
-    case 4: return bandwidth;
-    case 5: return platform;
-    case 6: return published;
-    case 7: return fingerprint;
-    case 8: return hibernating;
-    case 9: return uptime;
-    case 10: return onion_key;
-    case 11: return onion_key_crosscert;
-    case 12: return ntor_onion_key;
-    case 13: return ntor_onion_key_crosscert;
-    case 14: return signing_key;
-    case 15: return exit_policy;
-    case 16: return ipv6_policy;
-    case 17: return ipv6_portlist;
-    case 18: return router_sig_ed25519;
-    case 19: return contact;
-    case 20: return family;
-    case 21: return read_history;
-    case 22: return write_history;
-    case 23: return eventdns;
-    case 24: return caches_extra_info;
-    case 25: return extra_info_digest;
-    case 26: return extra_info_digest_sha256;
-    case 27: return hidden_service_dir;
-    case 28: return link_protocol_versions;
-    case 29: return circuit_protocol_versions;
-    case 30: return allow_single_hop_exits;
-    case 31: return or_address;
-    case 32: return router_digest;
-    case 33: return router_digest_sha256;
+    case 1: return server_descriptor_digest;
+    case 2: return server_descriptor_sha256;
+    case 3: return router;
+    case 4: return identity_ed25519;
+    case 5: return master_key_ed25519;
+    case 6: return bandwidth;
+    case 7: return platform;
+    case 8: return published;
+    case 9: return fingerprint;
+    case 10: return hibernating;
+    case 11: return uptime;
+    case 12: return onion_key;
+    case 13: return onion_key_crosscert;
+    case 14: return ntor_onion_key;
+    case 15: return ntor_onion_key_crosscert;
+    case 16: return signing_key;
+    case 17: return exit_policy;
+    case 18: return ipv6_policy;
+    case 19: return ipv6_portlist;
+    case 20: return router_sig_ed25519;
+    case 21: return contact;
+    case 22: return family;
+    case 23: return read_history;
+    case 24: return write_history;
+    case 25: return eventdns;
+    case 26: return caches_extra_info;
+    case 27: return extra_info_digest;
+    case 28: return extra_info_digest_sha256;
+    case 29: return hidden_service_dir;
+    case 30: return link_protocol_versions;
+    case 31: return circuit_protocol_versions;
+    case 32: return allow_single_hop_exits;
+    case 33: return or_address;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -138,39 +199,39 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
     case 0: descriptor_type = (java.lang.CharSequence)value$; break;
-    case 1: router = (converTor.bridge.Router)value$; break;
-    case 2: identity_ed25519 = (java.lang.Boolean)value$; break;
-    case 3: master_key_ed25519 = (java.lang.CharSequence)value$; break;
-    case 4: bandwidth = (converTor.bridge.Bandwidth)value$; break;
-    case 5: platform = (java.lang.CharSequence)value$; break;
-    case 6: published = (java.lang.CharSequence)value$; break;
-    case 7: fingerprint = (java.lang.CharSequence)value$; break;
-    case 8: hibernating = (java.lang.Boolean)value$; break;
-    case 9: uptime = (java.lang.Long)value$; break;
-    case 10: onion_key = (java.lang.Boolean)value$; break;
-    case 11: onion_key_crosscert = (java.lang.Boolean)value$; break;
-    case 12: ntor_onion_key = (java.lang.Boolean)value$; break;
-    case 13: ntor_onion_key_crosscert = (converTor.bridge.CrossCert)value$; break;
-    case 14: signing_key = (java.lang.Boolean)value$; break;
-    case 15: exit_policy = (java.util.List<java.lang.CharSequence>)value$; break;
-    case 16: ipv6_policy = (java.lang.CharSequence)value$; break;
-    case 17: ipv6_portlist = (java.lang.CharSequence)value$; break;
-    case 18: router_sig_ed25519 = (java.lang.Boolean)value$; break;
-    case 19: contact = (java.lang.CharSequence)value$; break;
-    case 20: family = (java.util.List<java.lang.CharSequence>)value$; break;
-    case 21: read_history = (converTor.bridge.ReadHistory)value$; break;
-    case 22: write_history = (converTor.bridge.WriteHistory)value$; break;
-    case 23: eventdns = (java.lang.Boolean)value$; break;
-    case 24: caches_extra_info = (java.lang.Boolean)value$; break;
-    case 25: extra_info_digest = (java.lang.CharSequence)value$; break;
-    case 26: extra_info_digest_sha256 = (java.lang.CharSequence)value$; break;
-    case 27: hidden_service_dir = (java.util.List<java.lang.Integer>)value$; break;
-    case 28: link_protocol_versions = (java.util.List<java.lang.Integer>)value$; break;
-    case 29: circuit_protocol_versions = (java.util.List<java.lang.Integer>)value$; break;
-    case 30: allow_single_hop_exits = (java.lang.Boolean)value$; break;
-    case 31: or_address = (java.util.List<converTor.bridge.OrAddress>)value$; break;
-    case 32: router_digest = (java.lang.CharSequence)value$; break;
-    case 33: router_digest_sha256 = (java.lang.CharSequence)value$; break;
+    case 1: server_descriptor_digest = (java.lang.CharSequence)value$; break;
+    case 2: server_descriptor_sha256 = (java.lang.CharSequence)value$; break;
+    case 3: router = (converTor.bridge.Router)value$; break;
+    case 4: identity_ed25519 = (java.lang.Boolean)value$; break;
+    case 5: master_key_ed25519 = (java.lang.CharSequence)value$; break;
+    case 6: bandwidth = (converTor.bridge.Bandwidth)value$; break;
+    case 7: platform = (java.lang.CharSequence)value$; break;
+    case 8: published = (java.lang.CharSequence)value$; break;
+    case 9: fingerprint = (java.lang.CharSequence)value$; break;
+    case 10: hibernating = (java.lang.Boolean)value$; break;
+    case 11: uptime = (java.lang.Long)value$; break;
+    case 12: onion_key = (java.lang.Boolean)value$; break;
+    case 13: onion_key_crosscert = (java.lang.Boolean)value$; break;
+    case 14: ntor_onion_key = (java.lang.Boolean)value$; break;
+    case 15: ntor_onion_key_crosscert = (converTor.bridge.NtorCrossCert)value$; break;
+    case 16: signing_key = (java.lang.Boolean)value$; break;
+    case 17: exit_policy = (java.util.List<java.lang.CharSequence>)value$; break;
+    case 18: ipv6_policy = (java.util.List<java.lang.CharSequence>)value$; break;
+    case 19: ipv6_portlist = (java.lang.CharSequence)value$; break;
+    case 20: router_sig_ed25519 = (java.lang.Boolean)value$; break;
+    case 21: contact = (java.lang.CharSequence)value$; break;
+    case 22: family = (java.util.List<java.lang.CharSequence>)value$; break;
+    case 23: read_history = (converTor.bridge.ReadHistory)value$; break;
+    case 24: write_history = (converTor.bridge.WriteHistory)value$; break;
+    case 25: eventdns = (java.lang.Boolean)value$; break;
+    case 26: caches_extra_info = (java.lang.Boolean)value$; break;
+    case 27: extra_info_digest = (java.lang.CharSequence)value$; break;
+    case 28: extra_info_digest_sha256 = (java.lang.CharSequence)value$; break;
+    case 29: hidden_service_dir = (java.util.List<java.lang.Integer>)value$; break;
+    case 30: link_protocol_versions = (java.util.List<java.lang.Integer>)value$; break;
+    case 31: circuit_protocol_versions = (java.util.List<java.lang.Integer>)value$; break;
+    case 32: allow_single_hop_exits = (java.lang.Boolean)value$; break;
+    case 33: or_address = (java.util.List<converTor.bridge.OrAddress>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -191,6 +252,40 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
   }
 
   /**
+   * Gets the value of the 'server_descriptor_digest' field.
+   * @return metrics-lib/ServerDescriptor: String getServerDescriptorDigest()
+   */
+  public java.lang.CharSequence getServerDescriptorDigest() {
+    return server_descriptor_digest;
+  }
+
+  /**
+   * Sets the value of the 'server_descriptor_digest' field.
+   * metrics-lib/ServerDescriptor: String getServerDescriptorDigest()
+   * @param value the value to set.
+   */
+  public void setServerDescriptorDigest(java.lang.CharSequence value) {
+    this.server_descriptor_digest = value;
+  }
+
+  /**
+   * Gets the value of the 'server_descriptor_sha256' field.
+   * @return metrics-lib/ServerDescriptor: String getServerDescriptorDigestSha256()
+   */
+  public java.lang.CharSequence getServerDescriptorSha256() {
+    return server_descriptor_sha256;
+  }
+
+  /**
+   * Sets the value of the 'server_descriptor_sha256' field.
+   * metrics-lib/ServerDescriptor: String getServerDescriptorDigestSha256()
+   * @param value the value to set.
+   */
+  public void setServerDescriptorSha256(java.lang.CharSequence value) {
+    this.server_descriptor_sha256 = value;
+  }
+
+  /**
    * Gets the value of the 'router' field.
    */
   public converTor.bridge.Router getRouter() {
@@ -207,6 +302,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'identity_ed25519' field.
+   * @return metrics-lib/ServerDescriptor: String getIdentityEd25519()
    */
   public java.lang.Boolean getIdentityEd25519() {
     return identity_ed25519;
@@ -214,6 +310,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'identity_ed25519' field.
+   * metrics-lib/ServerDescriptor: String getIdentityEd25519()
    * @param value the value to set.
    */
   public void setIdentityEd25519(java.lang.Boolean value) {
@@ -222,6 +319,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'master_key_ed25519' field.
+   * @return metrics-lib/ServerDescriptor: String getMasterKeyEd25519()
    */
   public java.lang.CharSequence getMasterKeyEd25519() {
     return master_key_ed25519;
@@ -229,6 +327,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'master_key_ed25519' field.
+   * metrics-lib/ServerDescriptor: String getMasterKeyEd25519()
    * @param value the value to set.
    */
   public void setMasterKeyEd25519(java.lang.CharSequence value) {
@@ -252,6 +351,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'platform' field.
+   * @return metrics-lib/ServerDescriptor: String getPlatform()
    */
   public java.lang.CharSequence getPlatform() {
     return platform;
@@ -259,6 +359,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'platform' field.
+   * metrics-lib/ServerDescriptor: String getPlatform()
    * @param value the value to set.
    */
   public void setPlatform(java.lang.CharSequence value) {
@@ -267,6 +368,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'published' field.
+   * @return metrics-lib/ServerDescriptor: long getPublishedMillis()
    */
   public java.lang.CharSequence getPublished() {
     return published;
@@ -274,6 +376,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'published' field.
+   * metrics-lib/ServerDescriptor: long getPublishedMillis()
    * @param value the value to set.
    */
   public void setPublished(java.lang.CharSequence value) {
@@ -282,6 +385,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'fingerprint' field.
+   * @return metrics-lib/ServerDescriptor: String getFingerprint()
    */
   public java.lang.CharSequence getFingerprint() {
     return fingerprint;
@@ -289,6 +393,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'fingerprint' field.
+   * metrics-lib/ServerDescriptor: String getFingerprint()
    * @param value the value to set.
    */
   public void setFingerprint(java.lang.CharSequence value) {
@@ -297,6 +402,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'hibernating' field.
+   * @return metrics-lib/ServerDescriptor: boolean isHibernating()
    */
   public java.lang.Boolean getHibernating() {
     return hibernating;
@@ -304,6 +410,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'hibernating' field.
+   * metrics-lib/ServerDescriptor: boolean isHibernating()
    * @param value the value to set.
    */
   public void setHibernating(java.lang.Boolean value) {
@@ -312,6 +419,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'uptime' field.
+   * @return metrics-lib/ServerDescriptor: Long getUptime()
    */
   public java.lang.Long getUptime() {
     return uptime;
@@ -319,6 +427,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'uptime' field.
+   * metrics-lib/ServerDescriptor: Long getUptime()
    * @param value the value to set.
    */
   public void setUptime(java.lang.Long value) {
@@ -327,6 +436,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'onion_key' field.
+   * @return metrics-lib/ServerDescriptor: String getOnionKey()
    */
   public java.lang.Boolean getOnionKey() {
     return onion_key;
@@ -334,6 +444,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'onion_key' field.
+   * metrics-lib/ServerDescriptor: String getOnionKey()
    * @param value the value to set.
    */
   public void setOnionKey(java.lang.Boolean value) {
@@ -342,6 +453,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'onion_key_crosscert' field.
+   * @return metrics-lib/ServerDescriptor: String getOnionKeyCrosscert()
    */
   public java.lang.Boolean getOnionKeyCrosscert() {
     return onion_key_crosscert;
@@ -349,6 +461,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'onion_key_crosscert' field.
+   * metrics-lib/ServerDescriptor: String getOnionKeyCrosscert()
    * @param value the value to set.
    */
   public void setOnionKeyCrosscert(java.lang.Boolean value) {
@@ -357,6 +470,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'ntor_onion_key' field.
+   * @return metrics-lib/ServerDescriptor: String getNtorOnionKey()
    */
   public java.lang.Boolean getNtorOnionKey() {
     return ntor_onion_key;
@@ -364,6 +478,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'ntor_onion_key' field.
+   * metrics-lib/ServerDescriptor: String getNtorOnionKey()
    * @param value the value to set.
    */
   public void setNtorOnionKey(java.lang.Boolean value) {
@@ -373,7 +488,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
   /**
    * Gets the value of the 'ntor_onion_key_crosscert' field.
    */
-  public converTor.bridge.CrossCert getNtorOnionKeyCrosscert() {
+  public converTor.bridge.NtorCrossCert getNtorOnionKeyCrosscert() {
     return ntor_onion_key_crosscert;
   }
 
@@ -381,12 +496,13 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
    * Sets the value of the 'ntor_onion_key_crosscert' field.
    * @param value the value to set.
    */
-  public void setNtorOnionKeyCrosscert(converTor.bridge.CrossCert value) {
+  public void setNtorOnionKeyCrosscert(converTor.bridge.NtorCrossCert value) {
     this.ntor_onion_key_crosscert = value;
   }
 
   /**
    * Gets the value of the 'signing_key' field.
+   * @return metrics-lib/ServerDescriptor: String getSigningKey()
    */
   public java.lang.Boolean getSigningKey() {
     return signing_key;
@@ -394,6 +510,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'signing_key' field.
+   * metrics-lib/ServerDescriptor: String getSigningKey()
    * @param value the value to set.
    */
   public void setSigningKey(java.lang.Boolean value) {
@@ -402,6 +519,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'exit_policy' field.
+   * @return metrics-lib/ServerDescriptor: List<String> getExitPolicyLines()
    */
   public java.util.List<java.lang.CharSequence> getExitPolicy() {
     return exit_policy;
@@ -409,6 +527,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'exit_policy' field.
+   * metrics-lib/ServerDescriptor: List<String> getExitPolicyLines()
    * @param value the value to set.
    */
   public void setExitPolicy(java.util.List<java.lang.CharSequence> value) {
@@ -417,21 +536,24 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'ipv6_policy' field.
+   * @return metrics-lib/ServerDescriptor: String getIpv6DefaultPolicy()
    */
-  public java.lang.CharSequence getIpv6Policy() {
+  public java.util.List<java.lang.CharSequence> getIpv6Policy() {
     return ipv6_policy;
   }
 
   /**
    * Sets the value of the 'ipv6_policy' field.
+   * metrics-lib/ServerDescriptor: String getIpv6DefaultPolicy()
    * @param value the value to set.
    */
-  public void setIpv6Policy(java.lang.CharSequence value) {
+  public void setIpv6Policy(java.util.List<java.lang.CharSequence> value) {
     this.ipv6_policy = value;
   }
 
   /**
    * Gets the value of the 'ipv6_portlist' field.
+   * @return metrics-lib/ServerDescriptor: String getIpv6PortList()
    */
   public java.lang.CharSequence getIpv6Portlist() {
     return ipv6_portlist;
@@ -439,6 +561,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'ipv6_portlist' field.
+   * metrics-lib/ServerDescriptor: String getIpv6PortList()
    * @param value the value to set.
    */
   public void setIpv6Portlist(java.lang.CharSequence value) {
@@ -447,6 +570,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'router_sig_ed25519' field.
+   * @return metrics-lib/ServerDescriptor: String getRouterSignatureEd25519()
    */
   public java.lang.Boolean getRouterSigEd25519() {
     return router_sig_ed25519;
@@ -454,6 +578,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'router_sig_ed25519' field.
+   * metrics-lib/ServerDescriptor: String getRouterSignatureEd25519()
    * @param value the value to set.
    */
   public void setRouterSigEd25519(java.lang.Boolean value) {
@@ -462,6 +587,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'contact' field.
+   * @return metrics-lib/ServerDescriptor: String getContact()
    */
   public java.lang.CharSequence getContact() {
     return contact;
@@ -469,6 +595,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'contact' field.
+   * metrics-lib/ServerDescriptor: String getContact()
    * @param value the value to set.
    */
   public void setContact(java.lang.CharSequence value) {
@@ -477,6 +604,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'family' field.
+   * @return metrics-lib/ServerDescriptor: List<String> getFamilyEntries()
    */
   public java.util.List<java.lang.CharSequence> getFamily() {
     return family;
@@ -484,6 +612,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'family' field.
+   * metrics-lib/ServerDescriptor: List<String> getFamilyEntries()
    * @param value the value to set.
    */
   public void setFamily(java.util.List<java.lang.CharSequence> value) {
@@ -492,6 +621,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'read_history' field.
+   * @return metrics-lib/ServerDescriptor: BandwidthHistory getReadHistory()
    */
   public converTor.bridge.ReadHistory getReadHistory() {
     return read_history;
@@ -499,6 +629,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'read_history' field.
+   * metrics-lib/ServerDescriptor: BandwidthHistory getReadHistory()
    * @param value the value to set.
    */
   public void setReadHistory(converTor.bridge.ReadHistory value) {
@@ -507,6 +638,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'write_history' field.
+   * @return metrics-lib/ServerDescriptor: BandwidthHistory getWriteHistory()
    */
   public converTor.bridge.WriteHistory getWriteHistory() {
     return write_history;
@@ -514,6 +646,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'write_history' field.
+   * metrics-lib/ServerDescriptor: BandwidthHistory getWriteHistory()
    * @param value the value to set.
    */
   public void setWriteHistory(converTor.bridge.WriteHistory value) {
@@ -522,6 +655,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'eventdns' field.
+   * @return metrics-lib/ServerDescriptor: boolean getUsesEnhancedDnsLogic()
    */
   public java.lang.Boolean getEventdns() {
     return eventdns;
@@ -529,6 +663,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'eventdns' field.
+   * metrics-lib/ServerDescriptor: boolean getUsesEnhancedDnsLogic()
    * @param value the value to set.
    */
   public void setEventdns(java.lang.Boolean value) {
@@ -537,6 +672,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'caches_extra_info' field.
+   * @return metrics-lib/ServerDescriptor: boolean getCachesExtraInfo()
    */
   public java.lang.Boolean getCachesExtraInfo() {
     return caches_extra_info;
@@ -544,6 +680,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'caches_extra_info' field.
+   * metrics-lib/ServerDescriptor: boolean getCachesExtraInfo()
    * @param value the value to set.
    */
   public void setCachesExtraInfo(java.lang.Boolean value) {
@@ -552,6 +689,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'extra_info_digest' field.
+   * @return metrics-lib/ServerDescriptor: String getExtraInfoDigest()
    */
   public java.lang.CharSequence getExtraInfoDigest() {
     return extra_info_digest;
@@ -559,6 +697,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'extra_info_digest' field.
+   * metrics-lib/ServerDescriptor: String getExtraInfoDigest()
    * @param value the value to set.
    */
   public void setExtraInfoDigest(java.lang.CharSequence value) {
@@ -567,6 +706,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'extra_info_digest_sha256' field.
+   * @return metrics-lib/ServerDescriptor: String getExtraInfoDigestSha256()
    */
   public java.lang.CharSequence getExtraInfoDigestSha256() {
     return extra_info_digest_sha256;
@@ -574,6 +714,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'extra_info_digest_sha256' field.
+   * metrics-lib/ServerDescriptor: String getExtraInfoDigestSha256()
    * @param value the value to set.
    */
   public void setExtraInfoDigestSha256(java.lang.CharSequence value) {
@@ -582,6 +723,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'hidden_service_dir' field.
+   * @return metrics-lib/ServerDescriptor: List<Integer> getHiddenServiceDirVersions()
    */
   public java.util.List<java.lang.Integer> getHiddenServiceDir() {
     return hidden_service_dir;
@@ -589,6 +731,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'hidden_service_dir' field.
+   * metrics-lib/ServerDescriptor: List<Integer> getHiddenServiceDirVersions()
    * @param value the value to set.
    */
   public void setHiddenServiceDir(java.util.List<java.lang.Integer> value) {
@@ -597,6 +740,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'link_protocol_versions' field.
+   * @return metrics-lib/ServerDescriptor: List<Integer> getLinkProtocolVersions()
    */
   public java.util.List<java.lang.Integer> getLinkProtocolVersions() {
     return link_protocol_versions;
@@ -604,6 +748,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'link_protocol_versions' field.
+   * metrics-lib/ServerDescriptor: List<Integer> getLinkProtocolVersions()
    * @param value the value to set.
    */
   public void setLinkProtocolVersions(java.util.List<java.lang.Integer> value) {
@@ -612,6 +757,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'circuit_protocol_versions' field.
+   * @return metrics-lib/ServerDescriptor: List<Integer> getCircuitProtocolVersions()
    */
   public java.util.List<java.lang.Integer> getCircuitProtocolVersions() {
     return circuit_protocol_versions;
@@ -619,6 +765,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'circuit_protocol_versions' field.
+   * metrics-lib/ServerDescriptor: List<Integer> getCircuitProtocolVersions()
    * @param value the value to set.
    */
   public void setCircuitProtocolVersions(java.util.List<java.lang.Integer> value) {
@@ -627,6 +774,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'allow_single_hop_exits' field.
+   * @return metrics-lib/ServerDescriptor: boolean getAllowSingleHopExits()
    */
   public java.lang.Boolean getAllowSingleHopExits() {
     return allow_single_hop_exits;
@@ -634,6 +782,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'allow_single_hop_exits' field.
+   * metrics-lib/ServerDescriptor: boolean getAllowSingleHopExits()
    * @param value the value to set.
    */
   public void setAllowSingleHopExits(java.lang.Boolean value) {
@@ -642,6 +791,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'or_address' field.
+   * @return metrics-lib/ServerDescriptor: List<String> getOrAddresses()
    */
   public java.util.List<converTor.bridge.OrAddress> getOrAddress() {
     return or_address;
@@ -649,6 +799,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'or_address' field.
+   * metrics-lib/ServerDescriptor: List<String> getOrAddresses()
    * @param value the value to set.
    */
   public void setOrAddress(java.util.List<converTor.bridge.OrAddress> value) {
@@ -656,46 +807,27 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
   }
 
   /**
-   * Gets the value of the 'router_digest' field.
+   * Creates a new Bridge RecordBuilder.
+   * @return A new Bridge RecordBuilder
    */
-  public java.lang.CharSequence getRouterDigest() {
-    return router_digest;
-  }
-
-  /**
-   * Sets the value of the 'router_digest' field.
-   * @param value the value to set.
-   */
-  public void setRouterDigest(java.lang.CharSequence value) {
-    this.router_digest = value;
-  }
-
-  /**
-   * Gets the value of the 'router_digest_sha256' field.
-   */
-  public java.lang.CharSequence getRouterDigestSha256() {
-    return router_digest_sha256;
-  }
-
-  /**
-   * Sets the value of the 'router_digest_sha256' field.
-   * @param value the value to set.
-   */
-  public void setRouterDigestSha256(java.lang.CharSequence value) {
-    this.router_digest_sha256 = value;
-  }
-
-  /** Creates a new Bridge RecordBuilder */
   public static converTor.bridge.Bridge.Builder newBuilder() {
     return new converTor.bridge.Bridge.Builder();
   }
   
-  /** Creates a new Bridge RecordBuilder by copying an existing Builder */
+  /**
+   * Creates a new Bridge RecordBuilder by copying an existing Builder.
+   * @param other The existing builder to copy.
+   * @return A new Bridge RecordBuilder
+   */
   public static converTor.bridge.Bridge.Builder newBuilder(converTor.bridge.Bridge.Builder other) {
     return new converTor.bridge.Bridge.Builder(other);
   }
   
-  /** Creates a new Bridge RecordBuilder by copying an existing Bridge instance */
+  /**
+   * Creates a new Bridge RecordBuilder by copying an existing Bridge instance.
+   * @param other The existing instance to copy.
+   * @return A new Bridge RecordBuilder
+   */
   public static converTor.bridge.Bridge.Builder newBuilder(converTor.bridge.Bridge other) {
     return new converTor.bridge.Bridge.Builder(other);
   }
@@ -707,1173 +839,2006 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
     implements org.apache.avro.data.RecordBuilder<Bridge> {
 
     private java.lang.CharSequence descriptor_type;
+    /** metrics-lib/ServerDescriptor: String getServerDescriptorDigest() */
+    private java.lang.CharSequence server_descriptor_digest;
+    /** metrics-lib/ServerDescriptor: String getServerDescriptorDigestSha256() */
+    private java.lang.CharSequence server_descriptor_sha256;
     private converTor.bridge.Router router;
+    private converTor.bridge.Router.Builder routerBuilder;
+    /** metrics-lib/ServerDescriptor: String getIdentityEd25519() */
     private java.lang.Boolean identity_ed25519;
+    /** metrics-lib/ServerDescriptor: String getMasterKeyEd25519() */
     private java.lang.CharSequence master_key_ed25519;
     private converTor.bridge.Bandwidth bandwidth;
+    private converTor.bridge.Bandwidth.Builder bandwidthBuilder;
+    /** metrics-lib/ServerDescriptor: String getPlatform() */
     private java.lang.CharSequence platform;
+    /** metrics-lib/ServerDescriptor: long getPublishedMillis() */
     private java.lang.CharSequence published;
+    /** metrics-lib/ServerDescriptor: String getFingerprint() */
     private java.lang.CharSequence fingerprint;
+    /** metrics-lib/ServerDescriptor: boolean isHibernating() */
     private java.lang.Boolean hibernating;
+    /** metrics-lib/ServerDescriptor: Long getUptime() */
     private java.lang.Long uptime;
+    /** metrics-lib/ServerDescriptor: String getOnionKey() */
     private java.lang.Boolean onion_key;
+    /** metrics-lib/ServerDescriptor: String getOnionKeyCrosscert() */
     private java.lang.Boolean onion_key_crosscert;
+    /** metrics-lib/ServerDescriptor: String getNtorOnionKey() */
     private java.lang.Boolean ntor_onion_key;
-    private converTor.bridge.CrossCert ntor_onion_key_crosscert;
+    private converTor.bridge.NtorCrossCert ntor_onion_key_crosscert;
+    private converTor.bridge.NtorCrossCert.Builder ntor_onion_key_crosscertBuilder;
+    /** metrics-lib/ServerDescriptor: String getSigningKey() */
     private java.lang.Boolean signing_key;
+    /** metrics-lib/ServerDescriptor: List<String> getExitPolicyLines() */
     private java.util.List<java.lang.CharSequence> exit_policy;
-    private java.lang.CharSequence ipv6_policy;
+    /** metrics-lib/ServerDescriptor: String getIpv6DefaultPolicy() */
+    private java.util.List<java.lang.CharSequence> ipv6_policy;
+    /** metrics-lib/ServerDescriptor: String getIpv6PortList() */
     private java.lang.CharSequence ipv6_portlist;
+    /** metrics-lib/ServerDescriptor: String getRouterSignatureEd25519() */
     private java.lang.Boolean router_sig_ed25519;
+    /** metrics-lib/ServerDescriptor: String getContact() */
     private java.lang.CharSequence contact;
+    /** metrics-lib/ServerDescriptor: List<String> getFamilyEntries() */
     private java.util.List<java.lang.CharSequence> family;
+    /** metrics-lib/ServerDescriptor: BandwidthHistory getReadHistory() */
     private converTor.bridge.ReadHistory read_history;
+    private converTor.bridge.ReadHistory.Builder read_historyBuilder;
+    /** metrics-lib/ServerDescriptor: BandwidthHistory getWriteHistory() */
     private converTor.bridge.WriteHistory write_history;
+    private converTor.bridge.WriteHistory.Builder write_historyBuilder;
+    /** metrics-lib/ServerDescriptor: boolean getUsesEnhancedDnsLogic() */
     private java.lang.Boolean eventdns;
+    /** metrics-lib/ServerDescriptor: boolean getCachesExtraInfo() */
     private java.lang.Boolean caches_extra_info;
+    /** metrics-lib/ServerDescriptor: String getExtraInfoDigest() */
     private java.lang.CharSequence extra_info_digest;
+    /** metrics-lib/ServerDescriptor: String getExtraInfoDigestSha256() */
     private java.lang.CharSequence extra_info_digest_sha256;
+    /** metrics-lib/ServerDescriptor: List<Integer> getHiddenServiceDirVersions() */
     private java.util.List<java.lang.Integer> hidden_service_dir;
+    /** metrics-lib/ServerDescriptor: List<Integer> getLinkProtocolVersions() */
     private java.util.List<java.lang.Integer> link_protocol_versions;
+    /** metrics-lib/ServerDescriptor: List<Integer> getCircuitProtocolVersions() */
     private java.util.List<java.lang.Integer> circuit_protocol_versions;
+    /** metrics-lib/ServerDescriptor: boolean getAllowSingleHopExits() */
     private java.lang.Boolean allow_single_hop_exits;
+    /** metrics-lib/ServerDescriptor: List<String> getOrAddresses() */
     private java.util.List<converTor.bridge.OrAddress> or_address;
-    private java.lang.CharSequence router_digest;
-    private java.lang.CharSequence router_digest_sha256;
 
     /** Creates a new Builder */
     private Builder() {
       super(converTor.bridge.Bridge.SCHEMA$);
     }
     
-    /** Creates a Builder by copying an existing Builder */
+    /**
+     * Creates a Builder by copying an existing Builder.
+     * @param other The existing Builder to copy.
+     */
     private Builder(converTor.bridge.Bridge.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.descriptor_type)) {
         this.descriptor_type = data().deepCopy(fields()[0].schema(), other.descriptor_type);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.router)) {
-        this.router = data().deepCopy(fields()[1].schema(), other.router);
+      if (isValidValue(fields()[1], other.server_descriptor_digest)) {
+        this.server_descriptor_digest = data().deepCopy(fields()[1].schema(), other.server_descriptor_digest);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.identity_ed25519)) {
-        this.identity_ed25519 = data().deepCopy(fields()[2].schema(), other.identity_ed25519);
+      if (isValidValue(fields()[2], other.server_descriptor_sha256)) {
+        this.server_descriptor_sha256 = data().deepCopy(fields()[2].schema(), other.server_descriptor_sha256);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.master_key_ed25519)) {
-        this.master_key_ed25519 = data().deepCopy(fields()[3].schema(), other.master_key_ed25519);
+      if (isValidValue(fields()[3], other.router)) {
+        this.router = data().deepCopy(fields()[3].schema(), other.router);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.bandwidth)) {
-        this.bandwidth = data().deepCopy(fields()[4].schema(), other.bandwidth);
+      if (other.hasRouterBuilder()) {
+        this.routerBuilder = converTor.bridge.Router.newBuilder(other.getRouterBuilder());
+      }
+      if (isValidValue(fields()[4], other.identity_ed25519)) {
+        this.identity_ed25519 = data().deepCopy(fields()[4].schema(), other.identity_ed25519);
         fieldSetFlags()[4] = true;
       }
-      if (isValidValue(fields()[5], other.platform)) {
-        this.platform = data().deepCopy(fields()[5].schema(), other.platform);
+      if (isValidValue(fields()[5], other.master_key_ed25519)) {
+        this.master_key_ed25519 = data().deepCopy(fields()[5].schema(), other.master_key_ed25519);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.published)) {
-        this.published = data().deepCopy(fields()[6].schema(), other.published);
+      if (isValidValue(fields()[6], other.bandwidth)) {
+        this.bandwidth = data().deepCopy(fields()[6].schema(), other.bandwidth);
         fieldSetFlags()[6] = true;
       }
-      if (isValidValue(fields()[7], other.fingerprint)) {
-        this.fingerprint = data().deepCopy(fields()[7].schema(), other.fingerprint);
+      if (other.hasBandwidthBuilder()) {
+        this.bandwidthBuilder = converTor.bridge.Bandwidth.newBuilder(other.getBandwidthBuilder());
+      }
+      if (isValidValue(fields()[7], other.platform)) {
+        this.platform = data().deepCopy(fields()[7].schema(), other.platform);
         fieldSetFlags()[7] = true;
       }
-      if (isValidValue(fields()[8], other.hibernating)) {
-        this.hibernating = data().deepCopy(fields()[8].schema(), other.hibernating);
+      if (isValidValue(fields()[8], other.published)) {
+        this.published = data().deepCopy(fields()[8].schema(), other.published);
         fieldSetFlags()[8] = true;
       }
-      if (isValidValue(fields()[9], other.uptime)) {
-        this.uptime = data().deepCopy(fields()[9].schema(), other.uptime);
+      if (isValidValue(fields()[9], other.fingerprint)) {
+        this.fingerprint = data().deepCopy(fields()[9].schema(), other.fingerprint);
         fieldSetFlags()[9] = true;
       }
-      if (isValidValue(fields()[10], other.onion_key)) {
-        this.onion_key = data().deepCopy(fields()[10].schema(), other.onion_key);
+      if (isValidValue(fields()[10], other.hibernating)) {
+        this.hibernating = data().deepCopy(fields()[10].schema(), other.hibernating);
         fieldSetFlags()[10] = true;
       }
-      if (isValidValue(fields()[11], other.onion_key_crosscert)) {
-        this.onion_key_crosscert = data().deepCopy(fields()[11].schema(), other.onion_key_crosscert);
+      if (isValidValue(fields()[11], other.uptime)) {
+        this.uptime = data().deepCopy(fields()[11].schema(), other.uptime);
         fieldSetFlags()[11] = true;
       }
-      if (isValidValue(fields()[12], other.ntor_onion_key)) {
-        this.ntor_onion_key = data().deepCopy(fields()[12].schema(), other.ntor_onion_key);
+      if (isValidValue(fields()[12], other.onion_key)) {
+        this.onion_key = data().deepCopy(fields()[12].schema(), other.onion_key);
         fieldSetFlags()[12] = true;
       }
-      if (isValidValue(fields()[13], other.ntor_onion_key_crosscert)) {
-        this.ntor_onion_key_crosscert = data().deepCopy(fields()[13].schema(), other.ntor_onion_key_crosscert);
+      if (isValidValue(fields()[13], other.onion_key_crosscert)) {
+        this.onion_key_crosscert = data().deepCopy(fields()[13].schema(), other.onion_key_crosscert);
         fieldSetFlags()[13] = true;
       }
-      if (isValidValue(fields()[14], other.signing_key)) {
-        this.signing_key = data().deepCopy(fields()[14].schema(), other.signing_key);
+      if (isValidValue(fields()[14], other.ntor_onion_key)) {
+        this.ntor_onion_key = data().deepCopy(fields()[14].schema(), other.ntor_onion_key);
         fieldSetFlags()[14] = true;
       }
-      if (isValidValue(fields()[15], other.exit_policy)) {
-        this.exit_policy = data().deepCopy(fields()[15].schema(), other.exit_policy);
+      if (isValidValue(fields()[15], other.ntor_onion_key_crosscert)) {
+        this.ntor_onion_key_crosscert = data().deepCopy(fields()[15].schema(), other.ntor_onion_key_crosscert);
         fieldSetFlags()[15] = true;
       }
-      if (isValidValue(fields()[16], other.ipv6_policy)) {
-        this.ipv6_policy = data().deepCopy(fields()[16].schema(), other.ipv6_policy);
+      if (other.hasNtorOnionKeyCrosscertBuilder()) {
+        this.ntor_onion_key_crosscertBuilder = converTor.bridge.NtorCrossCert.newBuilder(other.getNtorOnionKeyCrosscertBuilder());
+      }
+      if (isValidValue(fields()[16], other.signing_key)) {
+        this.signing_key = data().deepCopy(fields()[16].schema(), other.signing_key);
         fieldSetFlags()[16] = true;
       }
-      if (isValidValue(fields()[17], other.ipv6_portlist)) {
-        this.ipv6_portlist = data().deepCopy(fields()[17].schema(), other.ipv6_portlist);
+      if (isValidValue(fields()[17], other.exit_policy)) {
+        this.exit_policy = data().deepCopy(fields()[17].schema(), other.exit_policy);
         fieldSetFlags()[17] = true;
       }
-      if (isValidValue(fields()[18], other.router_sig_ed25519)) {
-        this.router_sig_ed25519 = data().deepCopy(fields()[18].schema(), other.router_sig_ed25519);
+      if (isValidValue(fields()[18], other.ipv6_policy)) {
+        this.ipv6_policy = data().deepCopy(fields()[18].schema(), other.ipv6_policy);
         fieldSetFlags()[18] = true;
       }
-      if (isValidValue(fields()[19], other.contact)) {
-        this.contact = data().deepCopy(fields()[19].schema(), other.contact);
+      if (isValidValue(fields()[19], other.ipv6_portlist)) {
+        this.ipv6_portlist = data().deepCopy(fields()[19].schema(), other.ipv6_portlist);
         fieldSetFlags()[19] = true;
       }
-      if (isValidValue(fields()[20], other.family)) {
-        this.family = data().deepCopy(fields()[20].schema(), other.family);
+      if (isValidValue(fields()[20], other.router_sig_ed25519)) {
+        this.router_sig_ed25519 = data().deepCopy(fields()[20].schema(), other.router_sig_ed25519);
         fieldSetFlags()[20] = true;
       }
-      if (isValidValue(fields()[21], other.read_history)) {
-        this.read_history = data().deepCopy(fields()[21].schema(), other.read_history);
+      if (isValidValue(fields()[21], other.contact)) {
+        this.contact = data().deepCopy(fields()[21].schema(), other.contact);
         fieldSetFlags()[21] = true;
       }
-      if (isValidValue(fields()[22], other.write_history)) {
-        this.write_history = data().deepCopy(fields()[22].schema(), other.write_history);
+      if (isValidValue(fields()[22], other.family)) {
+        this.family = data().deepCopy(fields()[22].schema(), other.family);
         fieldSetFlags()[22] = true;
       }
-      if (isValidValue(fields()[23], other.eventdns)) {
-        this.eventdns = data().deepCopy(fields()[23].schema(), other.eventdns);
+      if (isValidValue(fields()[23], other.read_history)) {
+        this.read_history = data().deepCopy(fields()[23].schema(), other.read_history);
         fieldSetFlags()[23] = true;
       }
-      if (isValidValue(fields()[24], other.caches_extra_info)) {
-        this.caches_extra_info = data().deepCopy(fields()[24].schema(), other.caches_extra_info);
+      if (other.hasReadHistoryBuilder()) {
+        this.read_historyBuilder = converTor.bridge.ReadHistory.newBuilder(other.getReadHistoryBuilder());
+      }
+      if (isValidValue(fields()[24], other.write_history)) {
+        this.write_history = data().deepCopy(fields()[24].schema(), other.write_history);
         fieldSetFlags()[24] = true;
       }
-      if (isValidValue(fields()[25], other.extra_info_digest)) {
-        this.extra_info_digest = data().deepCopy(fields()[25].schema(), other.extra_info_digest);
+      if (other.hasWriteHistoryBuilder()) {
+        this.write_historyBuilder = converTor.bridge.WriteHistory.newBuilder(other.getWriteHistoryBuilder());
+      }
+      if (isValidValue(fields()[25], other.eventdns)) {
+        this.eventdns = data().deepCopy(fields()[25].schema(), other.eventdns);
         fieldSetFlags()[25] = true;
       }
-      if (isValidValue(fields()[26], other.extra_info_digest_sha256)) {
-        this.extra_info_digest_sha256 = data().deepCopy(fields()[26].schema(), other.extra_info_digest_sha256);
+      if (isValidValue(fields()[26], other.caches_extra_info)) {
+        this.caches_extra_info = data().deepCopy(fields()[26].schema(), other.caches_extra_info);
         fieldSetFlags()[26] = true;
       }
-      if (isValidValue(fields()[27], other.hidden_service_dir)) {
-        this.hidden_service_dir = data().deepCopy(fields()[27].schema(), other.hidden_service_dir);
+      if (isValidValue(fields()[27], other.extra_info_digest)) {
+        this.extra_info_digest = data().deepCopy(fields()[27].schema(), other.extra_info_digest);
         fieldSetFlags()[27] = true;
       }
-      if (isValidValue(fields()[28], other.link_protocol_versions)) {
-        this.link_protocol_versions = data().deepCopy(fields()[28].schema(), other.link_protocol_versions);
+      if (isValidValue(fields()[28], other.extra_info_digest_sha256)) {
+        this.extra_info_digest_sha256 = data().deepCopy(fields()[28].schema(), other.extra_info_digest_sha256);
         fieldSetFlags()[28] = true;
       }
-      if (isValidValue(fields()[29], other.circuit_protocol_versions)) {
-        this.circuit_protocol_versions = data().deepCopy(fields()[29].schema(), other.circuit_protocol_versions);
+      if (isValidValue(fields()[29], other.hidden_service_dir)) {
+        this.hidden_service_dir = data().deepCopy(fields()[29].schema(), other.hidden_service_dir);
         fieldSetFlags()[29] = true;
       }
-      if (isValidValue(fields()[30], other.allow_single_hop_exits)) {
-        this.allow_single_hop_exits = data().deepCopy(fields()[30].schema(), other.allow_single_hop_exits);
+      if (isValidValue(fields()[30], other.link_protocol_versions)) {
+        this.link_protocol_versions = data().deepCopy(fields()[30].schema(), other.link_protocol_versions);
         fieldSetFlags()[30] = true;
       }
-      if (isValidValue(fields()[31], other.or_address)) {
-        this.or_address = data().deepCopy(fields()[31].schema(), other.or_address);
+      if (isValidValue(fields()[31], other.circuit_protocol_versions)) {
+        this.circuit_protocol_versions = data().deepCopy(fields()[31].schema(), other.circuit_protocol_versions);
         fieldSetFlags()[31] = true;
       }
-      if (isValidValue(fields()[32], other.router_digest)) {
-        this.router_digest = data().deepCopy(fields()[32].schema(), other.router_digest);
+      if (isValidValue(fields()[32], other.allow_single_hop_exits)) {
+        this.allow_single_hop_exits = data().deepCopy(fields()[32].schema(), other.allow_single_hop_exits);
         fieldSetFlags()[32] = true;
       }
-      if (isValidValue(fields()[33], other.router_digest_sha256)) {
-        this.router_digest_sha256 = data().deepCopy(fields()[33].schema(), other.router_digest_sha256);
+      if (isValidValue(fields()[33], other.or_address)) {
+        this.or_address = data().deepCopy(fields()[33].schema(), other.or_address);
         fieldSetFlags()[33] = true;
       }
     }
     
-    /** Creates a Builder by copying an existing Bridge instance */
+    /**
+     * Creates a Builder by copying an existing Bridge instance
+     * @param other The existing instance to copy.
+     */
     private Builder(converTor.bridge.Bridge other) {
             super(converTor.bridge.Bridge.SCHEMA$);
       if (isValidValue(fields()[0], other.descriptor_type)) {
         this.descriptor_type = data().deepCopy(fields()[0].schema(), other.descriptor_type);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.router)) {
-        this.router = data().deepCopy(fields()[1].schema(), other.router);
+      if (isValidValue(fields()[1], other.server_descriptor_digest)) {
+        this.server_descriptor_digest = data().deepCopy(fields()[1].schema(), other.server_descriptor_digest);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.identity_ed25519)) {
-        this.identity_ed25519 = data().deepCopy(fields()[2].schema(), other.identity_ed25519);
+      if (isValidValue(fields()[2], other.server_descriptor_sha256)) {
+        this.server_descriptor_sha256 = data().deepCopy(fields()[2].schema(), other.server_descriptor_sha256);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.master_key_ed25519)) {
-        this.master_key_ed25519 = data().deepCopy(fields()[3].schema(), other.master_key_ed25519);
+      if (isValidValue(fields()[3], other.router)) {
+        this.router = data().deepCopy(fields()[3].schema(), other.router);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.bandwidth)) {
-        this.bandwidth = data().deepCopy(fields()[4].schema(), other.bandwidth);
+      this.routerBuilder = null;
+      if (isValidValue(fields()[4], other.identity_ed25519)) {
+        this.identity_ed25519 = data().deepCopy(fields()[4].schema(), other.identity_ed25519);
         fieldSetFlags()[4] = true;
       }
-      if (isValidValue(fields()[5], other.platform)) {
-        this.platform = data().deepCopy(fields()[5].schema(), other.platform);
+      if (isValidValue(fields()[5], other.master_key_ed25519)) {
+        this.master_key_ed25519 = data().deepCopy(fields()[5].schema(), other.master_key_ed25519);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.published)) {
-        this.published = data().deepCopy(fields()[6].schema(), other.published);
+      if (isValidValue(fields()[6], other.bandwidth)) {
+        this.bandwidth = data().deepCopy(fields()[6].schema(), other.bandwidth);
         fieldSetFlags()[6] = true;
       }
-      if (isValidValue(fields()[7], other.fingerprint)) {
-        this.fingerprint = data().deepCopy(fields()[7].schema(), other.fingerprint);
+      this.bandwidthBuilder = null;
+      if (isValidValue(fields()[7], other.platform)) {
+        this.platform = data().deepCopy(fields()[7].schema(), other.platform);
         fieldSetFlags()[7] = true;
       }
-      if (isValidValue(fields()[8], other.hibernating)) {
-        this.hibernating = data().deepCopy(fields()[8].schema(), other.hibernating);
+      if (isValidValue(fields()[8], other.published)) {
+        this.published = data().deepCopy(fields()[8].schema(), other.published);
         fieldSetFlags()[8] = true;
       }
-      if (isValidValue(fields()[9], other.uptime)) {
-        this.uptime = data().deepCopy(fields()[9].schema(), other.uptime);
+      if (isValidValue(fields()[9], other.fingerprint)) {
+        this.fingerprint = data().deepCopy(fields()[9].schema(), other.fingerprint);
         fieldSetFlags()[9] = true;
       }
-      if (isValidValue(fields()[10], other.onion_key)) {
-        this.onion_key = data().deepCopy(fields()[10].schema(), other.onion_key);
+      if (isValidValue(fields()[10], other.hibernating)) {
+        this.hibernating = data().deepCopy(fields()[10].schema(), other.hibernating);
         fieldSetFlags()[10] = true;
       }
-      if (isValidValue(fields()[11], other.onion_key_crosscert)) {
-        this.onion_key_crosscert = data().deepCopy(fields()[11].schema(), other.onion_key_crosscert);
+      if (isValidValue(fields()[11], other.uptime)) {
+        this.uptime = data().deepCopy(fields()[11].schema(), other.uptime);
         fieldSetFlags()[11] = true;
       }
-      if (isValidValue(fields()[12], other.ntor_onion_key)) {
-        this.ntor_onion_key = data().deepCopy(fields()[12].schema(), other.ntor_onion_key);
+      if (isValidValue(fields()[12], other.onion_key)) {
+        this.onion_key = data().deepCopy(fields()[12].schema(), other.onion_key);
         fieldSetFlags()[12] = true;
       }
-      if (isValidValue(fields()[13], other.ntor_onion_key_crosscert)) {
-        this.ntor_onion_key_crosscert = data().deepCopy(fields()[13].schema(), other.ntor_onion_key_crosscert);
+      if (isValidValue(fields()[13], other.onion_key_crosscert)) {
+        this.onion_key_crosscert = data().deepCopy(fields()[13].schema(), other.onion_key_crosscert);
         fieldSetFlags()[13] = true;
       }
-      if (isValidValue(fields()[14], other.signing_key)) {
-        this.signing_key = data().deepCopy(fields()[14].schema(), other.signing_key);
+      if (isValidValue(fields()[14], other.ntor_onion_key)) {
+        this.ntor_onion_key = data().deepCopy(fields()[14].schema(), other.ntor_onion_key);
         fieldSetFlags()[14] = true;
       }
-      if (isValidValue(fields()[15], other.exit_policy)) {
-        this.exit_policy = data().deepCopy(fields()[15].schema(), other.exit_policy);
+      if (isValidValue(fields()[15], other.ntor_onion_key_crosscert)) {
+        this.ntor_onion_key_crosscert = data().deepCopy(fields()[15].schema(), other.ntor_onion_key_crosscert);
         fieldSetFlags()[15] = true;
       }
-      if (isValidValue(fields()[16], other.ipv6_policy)) {
-        this.ipv6_policy = data().deepCopy(fields()[16].schema(), other.ipv6_policy);
+      this.ntor_onion_key_crosscertBuilder = null;
+      if (isValidValue(fields()[16], other.signing_key)) {
+        this.signing_key = data().deepCopy(fields()[16].schema(), other.signing_key);
         fieldSetFlags()[16] = true;
       }
-      if (isValidValue(fields()[17], other.ipv6_portlist)) {
-        this.ipv6_portlist = data().deepCopy(fields()[17].schema(), other.ipv6_portlist);
+      if (isValidValue(fields()[17], other.exit_policy)) {
+        this.exit_policy = data().deepCopy(fields()[17].schema(), other.exit_policy);
         fieldSetFlags()[17] = true;
       }
-      if (isValidValue(fields()[18], other.router_sig_ed25519)) {
-        this.router_sig_ed25519 = data().deepCopy(fields()[18].schema(), other.router_sig_ed25519);
+      if (isValidValue(fields()[18], other.ipv6_policy)) {
+        this.ipv6_policy = data().deepCopy(fields()[18].schema(), other.ipv6_policy);
         fieldSetFlags()[18] = true;
       }
-      if (isValidValue(fields()[19], other.contact)) {
-        this.contact = data().deepCopy(fields()[19].schema(), other.contact);
+      if (isValidValue(fields()[19], other.ipv6_portlist)) {
+        this.ipv6_portlist = data().deepCopy(fields()[19].schema(), other.ipv6_portlist);
         fieldSetFlags()[19] = true;
       }
-      if (isValidValue(fields()[20], other.family)) {
-        this.family = data().deepCopy(fields()[20].schema(), other.family);
+      if (isValidValue(fields()[20], other.router_sig_ed25519)) {
+        this.router_sig_ed25519 = data().deepCopy(fields()[20].schema(), other.router_sig_ed25519);
         fieldSetFlags()[20] = true;
       }
-      if (isValidValue(fields()[21], other.read_history)) {
-        this.read_history = data().deepCopy(fields()[21].schema(), other.read_history);
+      if (isValidValue(fields()[21], other.contact)) {
+        this.contact = data().deepCopy(fields()[21].schema(), other.contact);
         fieldSetFlags()[21] = true;
       }
-      if (isValidValue(fields()[22], other.write_history)) {
-        this.write_history = data().deepCopy(fields()[22].schema(), other.write_history);
+      if (isValidValue(fields()[22], other.family)) {
+        this.family = data().deepCopy(fields()[22].schema(), other.family);
         fieldSetFlags()[22] = true;
       }
-      if (isValidValue(fields()[23], other.eventdns)) {
-        this.eventdns = data().deepCopy(fields()[23].schema(), other.eventdns);
+      if (isValidValue(fields()[23], other.read_history)) {
+        this.read_history = data().deepCopy(fields()[23].schema(), other.read_history);
         fieldSetFlags()[23] = true;
       }
-      if (isValidValue(fields()[24], other.caches_extra_info)) {
-        this.caches_extra_info = data().deepCopy(fields()[24].schema(), other.caches_extra_info);
+      this.read_historyBuilder = null;
+      if (isValidValue(fields()[24], other.write_history)) {
+        this.write_history = data().deepCopy(fields()[24].schema(), other.write_history);
         fieldSetFlags()[24] = true;
       }
-      if (isValidValue(fields()[25], other.extra_info_digest)) {
-        this.extra_info_digest = data().deepCopy(fields()[25].schema(), other.extra_info_digest);
+      this.write_historyBuilder = null;
+      if (isValidValue(fields()[25], other.eventdns)) {
+        this.eventdns = data().deepCopy(fields()[25].schema(), other.eventdns);
         fieldSetFlags()[25] = true;
       }
-      if (isValidValue(fields()[26], other.extra_info_digest_sha256)) {
-        this.extra_info_digest_sha256 = data().deepCopy(fields()[26].schema(), other.extra_info_digest_sha256);
+      if (isValidValue(fields()[26], other.caches_extra_info)) {
+        this.caches_extra_info = data().deepCopy(fields()[26].schema(), other.caches_extra_info);
         fieldSetFlags()[26] = true;
       }
-      if (isValidValue(fields()[27], other.hidden_service_dir)) {
-        this.hidden_service_dir = data().deepCopy(fields()[27].schema(), other.hidden_service_dir);
+      if (isValidValue(fields()[27], other.extra_info_digest)) {
+        this.extra_info_digest = data().deepCopy(fields()[27].schema(), other.extra_info_digest);
         fieldSetFlags()[27] = true;
       }
-      if (isValidValue(fields()[28], other.link_protocol_versions)) {
-        this.link_protocol_versions = data().deepCopy(fields()[28].schema(), other.link_protocol_versions);
+      if (isValidValue(fields()[28], other.extra_info_digest_sha256)) {
+        this.extra_info_digest_sha256 = data().deepCopy(fields()[28].schema(), other.extra_info_digest_sha256);
         fieldSetFlags()[28] = true;
       }
-      if (isValidValue(fields()[29], other.circuit_protocol_versions)) {
-        this.circuit_protocol_versions = data().deepCopy(fields()[29].schema(), other.circuit_protocol_versions);
+      if (isValidValue(fields()[29], other.hidden_service_dir)) {
+        this.hidden_service_dir = data().deepCopy(fields()[29].schema(), other.hidden_service_dir);
         fieldSetFlags()[29] = true;
       }
-      if (isValidValue(fields()[30], other.allow_single_hop_exits)) {
-        this.allow_single_hop_exits = data().deepCopy(fields()[30].schema(), other.allow_single_hop_exits);
+      if (isValidValue(fields()[30], other.link_protocol_versions)) {
+        this.link_protocol_versions = data().deepCopy(fields()[30].schema(), other.link_protocol_versions);
         fieldSetFlags()[30] = true;
       }
-      if (isValidValue(fields()[31], other.or_address)) {
-        this.or_address = data().deepCopy(fields()[31].schema(), other.or_address);
+      if (isValidValue(fields()[31], other.circuit_protocol_versions)) {
+        this.circuit_protocol_versions = data().deepCopy(fields()[31].schema(), other.circuit_protocol_versions);
         fieldSetFlags()[31] = true;
       }
-      if (isValidValue(fields()[32], other.router_digest)) {
-        this.router_digest = data().deepCopy(fields()[32].schema(), other.router_digest);
+      if (isValidValue(fields()[32], other.allow_single_hop_exits)) {
+        this.allow_single_hop_exits = data().deepCopy(fields()[32].schema(), other.allow_single_hop_exits);
         fieldSetFlags()[32] = true;
       }
-      if (isValidValue(fields()[33], other.router_digest_sha256)) {
-        this.router_digest_sha256 = data().deepCopy(fields()[33].schema(), other.router_digest_sha256);
+      if (isValidValue(fields()[33], other.or_address)) {
+        this.or_address = data().deepCopy(fields()[33].schema(), other.or_address);
         fieldSetFlags()[33] = true;
       }
     }
 
-    /** Gets the value of the 'descriptor_type' field */
+    /**
+      * Gets the value of the 'descriptor_type' field.
+      * @return The value.
+      */
     public java.lang.CharSequence getDescriptorType() {
       return descriptor_type;
     }
-    
-    /** Sets the value of the 'descriptor_type' field */
+
+    /**
+      * Sets the value of the 'descriptor_type' field.
+      * @param value The value of 'descriptor_type'.
+      * @return This builder.
+      */
     public converTor.bridge.Bridge.Builder setDescriptorType(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.descriptor_type = value;
       fieldSetFlags()[0] = true;
       return this; 
     }
-    
-    /** Checks whether the 'descriptor_type' field has been set */
+
+    /**
+      * Checks whether the 'descriptor_type' field has been set.
+      * @return True if the 'descriptor_type' field has been set, false otherwise.
+      */
     public boolean hasDescriptorType() {
       return fieldSetFlags()[0];
     }
-    
-    /** Clears the value of the 'descriptor_type' field */
+
+
+    /**
+      * Clears the value of the 'descriptor_type' field.
+      * @return This builder.
+      */
     public converTor.bridge.Bridge.Builder clearDescriptorType() {
       descriptor_type = null;
       fieldSetFlags()[0] = false;
       return this;
     }
 
-    /** Gets the value of the 'router' field */
-    public converTor.bridge.Router getRouter() {
-      return router;
+    /**
+      * Gets the value of the 'server_descriptor_digest' field.
+      * metrics-lib/ServerDescriptor: String getServerDescriptorDigest()
+      * @return The value.
+      */
+    public java.lang.CharSequence getServerDescriptorDigest() {
+      return server_descriptor_digest;
     }
-    
-    /** Sets the value of the 'router' field */
-    public converTor.bridge.Bridge.Builder setRouter(converTor.bridge.Router value) {
+
+    /**
+      * Sets the value of the 'server_descriptor_digest' field.
+      * metrics-lib/ServerDescriptor: String getServerDescriptorDigest()
+      * @param value The value of 'server_descriptor_digest'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setServerDescriptorDigest(java.lang.CharSequence value) {
       validate(fields()[1], value);
-      this.router = value;
+      this.server_descriptor_digest = value;
       fieldSetFlags()[1] = true;
       return this; 
     }
-    
-    /** Checks whether the 'router' field has been set */
-    public boolean hasRouter() {
+
+    /**
+      * Checks whether the 'server_descriptor_digest' field has been set.
+      * metrics-lib/ServerDescriptor: String getServerDescriptorDigest()
+      * @return True if the 'server_descriptor_digest' field has been set, false otherwise.
+      */
+    public boolean hasServerDescriptorDigest() {
       return fieldSetFlags()[1];
     }
-    
-    /** Clears the value of the 'router' field */
-    public converTor.bridge.Bridge.Builder clearRouter() {
-      router = null;
+
+
+    /**
+      * Clears the value of the 'server_descriptor_digest' field.
+      * metrics-lib/ServerDescriptor: String getServerDescriptorDigest()
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearServerDescriptorDigest() {
+      server_descriptor_digest = null;
       fieldSetFlags()[1] = false;
       return this;
     }
 
-    /** Gets the value of the 'identity_ed25519' field */
-    public java.lang.Boolean getIdentityEd25519() {
-      return identity_ed25519;
+    /**
+      * Gets the value of the 'server_descriptor_sha256' field.
+      * metrics-lib/ServerDescriptor: String getServerDescriptorDigestSha256()
+      * @return The value.
+      */
+    public java.lang.CharSequence getServerDescriptorSha256() {
+      return server_descriptor_sha256;
     }
-    
-    /** Sets the value of the 'identity_ed25519' field */
-    public converTor.bridge.Bridge.Builder setIdentityEd25519(java.lang.Boolean value) {
+
+    /**
+      * Sets the value of the 'server_descriptor_sha256' field.
+      * metrics-lib/ServerDescriptor: String getServerDescriptorDigestSha256()
+      * @param value The value of 'server_descriptor_sha256'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setServerDescriptorSha256(java.lang.CharSequence value) {
       validate(fields()[2], value);
-      this.identity_ed25519 = value;
+      this.server_descriptor_sha256 = value;
       fieldSetFlags()[2] = true;
       return this; 
     }
-    
-    /** Checks whether the 'identity_ed25519' field has been set */
-    public boolean hasIdentityEd25519() {
+
+    /**
+      * Checks whether the 'server_descriptor_sha256' field has been set.
+      * metrics-lib/ServerDescriptor: String getServerDescriptorDigestSha256()
+      * @return True if the 'server_descriptor_sha256' field has been set, false otherwise.
+      */
+    public boolean hasServerDescriptorSha256() {
       return fieldSetFlags()[2];
     }
-    
-    /** Clears the value of the 'identity_ed25519' field */
-    public converTor.bridge.Bridge.Builder clearIdentityEd25519() {
-      identity_ed25519 = null;
+
+
+    /**
+      * Clears the value of the 'server_descriptor_sha256' field.
+      * metrics-lib/ServerDescriptor: String getServerDescriptorDigestSha256()
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearServerDescriptorSha256() {
+      server_descriptor_sha256 = null;
       fieldSetFlags()[2] = false;
       return this;
     }
 
-    /** Gets the value of the 'master_key_ed25519' field */
-    public java.lang.CharSequence getMasterKeyEd25519() {
-      return master_key_ed25519;
+    /**
+      * Gets the value of the 'router' field.
+      * @return The value.
+      */
+    public converTor.bridge.Router getRouter() {
+      return router;
     }
-    
-    /** Sets the value of the 'master_key_ed25519' field */
-    public converTor.bridge.Bridge.Builder setMasterKeyEd25519(java.lang.CharSequence value) {
+
+    /**
+      * Sets the value of the 'router' field.
+      * @param value The value of 'router'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setRouter(converTor.bridge.Router value) {
       validate(fields()[3], value);
-      this.master_key_ed25519 = value;
+      this.routerBuilder = null;
+      this.router = value;
       fieldSetFlags()[3] = true;
       return this; 
     }
-    
-    /** Checks whether the 'master_key_ed25519' field has been set */
-    public boolean hasMasterKeyEd25519() {
+
+    /**
+      * Checks whether the 'router' field has been set.
+      * @return True if the 'router' field has been set, false otherwise.
+      */
+    public boolean hasRouter() {
       return fieldSetFlags()[3];
     }
-    
-    /** Clears the value of the 'master_key_ed25519' field */
-    public converTor.bridge.Bridge.Builder clearMasterKeyEd25519() {
-      master_key_ed25519 = null;
+
+    /**
+     * Gets the Builder instance for the 'router' field and creates one if it doesn't exist yet.
+     * @return This builder.
+     */
+    public converTor.bridge.Router.Builder getRouterBuilder() {
+      if (routerBuilder == null) {
+        if (hasRouter()) {
+          setRouterBuilder(converTor.bridge.Router.newBuilder(router));
+        } else {
+          setRouterBuilder(converTor.bridge.Router.newBuilder());
+        }
+      }
+      return routerBuilder;
+    }
+
+    /**
+     * Sets the Builder instance for the 'router' field
+     * @return This builder.
+     */
+    public converTor.bridge.Bridge.Builder setRouterBuilder(converTor.bridge.Router.Builder value) {
+      clearRouter();
+      routerBuilder = value;
+      return this;
+    }
+
+    /**
+     * Checks whether the 'router' field has an active Builder instance
+     * @return True if the 'router' field has an active Builder instance
+     */
+    public boolean hasRouterBuilder() {
+      return routerBuilder != null;
+    }
+
+    /**
+      * Clears the value of the 'router' field.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearRouter() {
+      router = null;
+      routerBuilder = null;
       fieldSetFlags()[3] = false;
       return this;
     }
 
-    /** Gets the value of the 'bandwidth' field */
-    public converTor.bridge.Bandwidth getBandwidth() {
-      return bandwidth;
+    /**
+      * Gets the value of the 'identity_ed25519' field.
+      * metrics-lib/ServerDescriptor: String getIdentityEd25519()
+      * @return The value.
+      */
+    public java.lang.Boolean getIdentityEd25519() {
+      return identity_ed25519;
     }
-    
-    /** Sets the value of the 'bandwidth' field */
-    public converTor.bridge.Bridge.Builder setBandwidth(converTor.bridge.Bandwidth value) {
+
+    /**
+      * Sets the value of the 'identity_ed25519' field.
+      * metrics-lib/ServerDescriptor: String getIdentityEd25519()
+      * @param value The value of 'identity_ed25519'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setIdentityEd25519(java.lang.Boolean value) {
       validate(fields()[4], value);
-      this.bandwidth = value;
+      this.identity_ed25519 = value;
       fieldSetFlags()[4] = true;
       return this; 
     }
-    
-    /** Checks whether the 'bandwidth' field has been set */
-    public boolean hasBandwidth() {
+
+    /**
+      * Checks whether the 'identity_ed25519' field has been set.
+      * metrics-lib/ServerDescriptor: String getIdentityEd25519()
+      * @return True if the 'identity_ed25519' field has been set, false otherwise.
+      */
+    public boolean hasIdentityEd25519() {
       return fieldSetFlags()[4];
     }
-    
-    /** Clears the value of the 'bandwidth' field */
-    public converTor.bridge.Bridge.Builder clearBandwidth() {
-      bandwidth = null;
+
+
+    /**
+      * Clears the value of the 'identity_ed25519' field.
+      * metrics-lib/ServerDescriptor: String getIdentityEd25519()
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearIdentityEd25519() {
+      identity_ed25519 = null;
       fieldSetFlags()[4] = false;
       return this;
     }
 
-    /** Gets the value of the 'platform' field */
-    public java.lang.CharSequence getPlatform() {
-      return platform;
+    /**
+      * Gets the value of the 'master_key_ed25519' field.
+      * metrics-lib/ServerDescriptor: String getMasterKeyEd25519()
+      * @return The value.
+      */
+    public java.lang.CharSequence getMasterKeyEd25519() {
+      return master_key_ed25519;
     }
-    
-    /** Sets the value of the 'platform' field */
-    public converTor.bridge.Bridge.Builder setPlatform(java.lang.CharSequence value) {
+
+    /**
+      * Sets the value of the 'master_key_ed25519' field.
+      * metrics-lib/ServerDescriptor: String getMasterKeyEd25519()
+      * @param value The value of 'master_key_ed25519'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setMasterKeyEd25519(java.lang.CharSequence value) {
       validate(fields()[5], value);
-      this.platform = value;
+      this.master_key_ed25519 = value;
       fieldSetFlags()[5] = true;
       return this; 
     }
-    
-    /** Checks whether the 'platform' field has been set */
-    public boolean hasPlatform() {
+
+    /**
+      * Checks whether the 'master_key_ed25519' field has been set.
+      * metrics-lib/ServerDescriptor: String getMasterKeyEd25519()
+      * @return True if the 'master_key_ed25519' field has been set, false otherwise.
+      */
+    public boolean hasMasterKeyEd25519() {
       return fieldSetFlags()[5];
     }
-    
-    /** Clears the value of the 'platform' field */
-    public converTor.bridge.Bridge.Builder clearPlatform() {
-      platform = null;
+
+
+    /**
+      * Clears the value of the 'master_key_ed25519' field.
+      * metrics-lib/ServerDescriptor: String getMasterKeyEd25519()
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearMasterKeyEd25519() {
+      master_key_ed25519 = null;
       fieldSetFlags()[5] = false;
       return this;
     }
 
-    /** Gets the value of the 'published' field */
-    public java.lang.CharSequence getPublished() {
-      return published;
+    /**
+      * Gets the value of the 'bandwidth' field.
+      * @return The value.
+      */
+    public converTor.bridge.Bandwidth getBandwidth() {
+      return bandwidth;
     }
-    
-    /** Sets the value of the 'published' field */
-    public converTor.bridge.Bridge.Builder setPublished(java.lang.CharSequence value) {
+
+    /**
+      * Sets the value of the 'bandwidth' field.
+      * @param value The value of 'bandwidth'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setBandwidth(converTor.bridge.Bandwidth value) {
       validate(fields()[6], value);
-      this.published = value;
+      this.bandwidthBuilder = null;
+      this.bandwidth = value;
       fieldSetFlags()[6] = true;
       return this; 
     }
-    
-    /** Checks whether the 'published' field has been set */
-    public boolean hasPublished() {
+
+    /**
+      * Checks whether the 'bandwidth' field has been set.
+      * @return True if the 'bandwidth' field has been set, false otherwise.
+      */
+    public boolean hasBandwidth() {
       return fieldSetFlags()[6];
     }
-    
-    /** Clears the value of the 'published' field */
-    public converTor.bridge.Bridge.Builder clearPublished() {
-      published = null;
+
+    /**
+     * Gets the Builder instance for the 'bandwidth' field and creates one if it doesn't exist yet.
+     * @return This builder.
+     */
+    public converTor.bridge.Bandwidth.Builder getBandwidthBuilder() {
+      if (bandwidthBuilder == null) {
+        if (hasBandwidth()) {
+          setBandwidthBuilder(converTor.bridge.Bandwidth.newBuilder(bandwidth));
+        } else {
+          setBandwidthBuilder(converTor.bridge.Bandwidth.newBuilder());
+        }
+      }
+      return bandwidthBuilder;
+    }
+
+    /**
+     * Sets the Builder instance for the 'bandwidth' field
+     * @return This builder.
+     */
+    public converTor.bridge.Bridge.Builder setBandwidthBuilder(converTor.bridge.Bandwidth.Builder value) {
+      clearBandwidth();
+      bandwidthBuilder = value;
+      return this;
+    }
+
+    /**
+     * Checks whether the 'bandwidth' field has an active Builder instance
+     * @return True if the 'bandwidth' field has an active Builder instance
+     */
+    public boolean hasBandwidthBuilder() {
+      return bandwidthBuilder != null;
+    }
+
+    /**
+      * Clears the value of the 'bandwidth' field.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearBandwidth() {
+      bandwidth = null;
+      bandwidthBuilder = null;
       fieldSetFlags()[6] = false;
       return this;
     }
 
-    /** Gets the value of the 'fingerprint' field */
-    public java.lang.CharSequence getFingerprint() {
-      return fingerprint;
+    /**
+      * Gets the value of the 'platform' field.
+      * metrics-lib/ServerDescriptor: String getPlatform()
+      * @return The value.
+      */
+    public java.lang.CharSequence getPlatform() {
+      return platform;
     }
-    
-    /** Sets the value of the 'fingerprint' field */
-    public converTor.bridge.Bridge.Builder setFingerprint(java.lang.CharSequence value) {
+
+    /**
+      * Sets the value of the 'platform' field.
+      * metrics-lib/ServerDescriptor: String getPlatform()
+      * @param value The value of 'platform'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setPlatform(java.lang.CharSequence value) {
       validate(fields()[7], value);
-      this.fingerprint = value;
+      this.platform = value;
       fieldSetFlags()[7] = true;
       return this; 
     }
-    
-    /** Checks whether the 'fingerprint' field has been set */
-    public boolean hasFingerprint() {
+
+    /**
+      * Checks whether the 'platform' field has been set.
+      * metrics-lib/ServerDescriptor: String getPlatform()
+      * @return True if the 'platform' field has been set, false otherwise.
+      */
+    public boolean hasPlatform() {
       return fieldSetFlags()[7];
     }
-    
-    /** Clears the value of the 'fingerprint' field */
-    public converTor.bridge.Bridge.Builder clearFingerprint() {
-      fingerprint = null;
+
+
+    /**
+      * Clears the value of the 'platform' field.
+      * metrics-lib/ServerDescriptor: String getPlatform()
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearPlatform() {
+      platform = null;
       fieldSetFlags()[7] = false;
       return this;
     }
 
-    /** Gets the value of the 'hibernating' field */
-    public java.lang.Boolean getHibernating() {
-      return hibernating;
+    /**
+      * Gets the value of the 'published' field.
+      * metrics-lib/ServerDescriptor: long getPublishedMillis()
+      * @return The value.
+      */
+    public java.lang.CharSequence getPublished() {
+      return published;
     }
-    
-    /** Sets the value of the 'hibernating' field */
-    public converTor.bridge.Bridge.Builder setHibernating(java.lang.Boolean value) {
+
+    /**
+      * Sets the value of the 'published' field.
+      * metrics-lib/ServerDescriptor: long getPublishedMillis()
+      * @param value The value of 'published'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setPublished(java.lang.CharSequence value) {
       validate(fields()[8], value);
-      this.hibernating = value;
+      this.published = value;
       fieldSetFlags()[8] = true;
       return this; 
     }
-    
-    /** Checks whether the 'hibernating' field has been set */
-    public boolean hasHibernating() {
+
+    /**
+      * Checks whether the 'published' field has been set.
+      * metrics-lib/ServerDescriptor: long getPublishedMillis()
+      * @return True if the 'published' field has been set, false otherwise.
+      */
+    public boolean hasPublished() {
       return fieldSetFlags()[8];
     }
-    
-    /** Clears the value of the 'hibernating' field */
-    public converTor.bridge.Bridge.Builder clearHibernating() {
-      hibernating = null;
+
+
+    /**
+      * Clears the value of the 'published' field.
+      * metrics-lib/ServerDescriptor: long getPublishedMillis()
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearPublished() {
+      published = null;
       fieldSetFlags()[8] = false;
       return this;
     }
 
-    /** Gets the value of the 'uptime' field */
-    public java.lang.Long getUptime() {
-      return uptime;
+    /**
+      * Gets the value of the 'fingerprint' field.
+      * metrics-lib/ServerDescriptor: String getFingerprint()
+      * @return The value.
+      */
+    public java.lang.CharSequence getFingerprint() {
+      return fingerprint;
     }
-    
-    /** Sets the value of the 'uptime' field */
-    public converTor.bridge.Bridge.Builder setUptime(java.lang.Long value) {
+
+    /**
+      * Sets the value of the 'fingerprint' field.
+      * metrics-lib/ServerDescriptor: String getFingerprint()
+      * @param value The value of 'fingerprint'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setFingerprint(java.lang.CharSequence value) {
       validate(fields()[9], value);
-      this.uptime = value;
+      this.fingerprint = value;
       fieldSetFlags()[9] = true;
       return this; 
     }
-    
-    /** Checks whether the 'uptime' field has been set */
-    public boolean hasUptime() {
+
+    /**
+      * Checks whether the 'fingerprint' field has been set.
+      * metrics-lib/ServerDescriptor: String getFingerprint()
+      * @return True if the 'fingerprint' field has been set, false otherwise.
+      */
+    public boolean hasFingerprint() {
       return fieldSetFlags()[9];
     }
-    
-    /** Clears the value of the 'uptime' field */
-    public converTor.bridge.Bridge.Builder clearUptime() {
-      uptime = null;
+
+
+    /**
+      * Clears the value of the 'fingerprint' field.
+      * metrics-lib/ServerDescriptor: String getFingerprint()
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearFingerprint() {
+      fingerprint = null;
       fieldSetFlags()[9] = false;
       return this;
     }
 
-    /** Gets the value of the 'onion_key' field */
-    public java.lang.Boolean getOnionKey() {
-      return onion_key;
+    /**
+      * Gets the value of the 'hibernating' field.
+      * metrics-lib/ServerDescriptor: boolean isHibernating()
+      * @return The value.
+      */
+    public java.lang.Boolean getHibernating() {
+      return hibernating;
     }
-    
-    /** Sets the value of the 'onion_key' field */
-    public converTor.bridge.Bridge.Builder setOnionKey(java.lang.Boolean value) {
+
+    /**
+      * Sets the value of the 'hibernating' field.
+      * metrics-lib/ServerDescriptor: boolean isHibernating()
+      * @param value The value of 'hibernating'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setHibernating(java.lang.Boolean value) {
       validate(fields()[10], value);
-      this.onion_key = value;
+      this.hibernating = value;
       fieldSetFlags()[10] = true;
       return this; 
     }
-    
-    /** Checks whether the 'onion_key' field has been set */
-    public boolean hasOnionKey() {
+
+    /**
+      * Checks whether the 'hibernating' field has been set.
+      * metrics-lib/ServerDescriptor: boolean isHibernating()
+      * @return True if the 'hibernating' field has been set, false otherwise.
+      */
+    public boolean hasHibernating() {
       return fieldSetFlags()[10];
     }
-    
-    /** Clears the value of the 'onion_key' field */
-    public converTor.bridge.Bridge.Builder clearOnionKey() {
-      onion_key = null;
+
+
+    /**
+      * Clears the value of the 'hibernating' field.
+      * metrics-lib/ServerDescriptor: boolean isHibernating()
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearHibernating() {
+      hibernating = null;
       fieldSetFlags()[10] = false;
       return this;
     }
 
-    /** Gets the value of the 'onion_key_crosscert' field */
-    public java.lang.Boolean getOnionKeyCrosscert() {
-      return onion_key_crosscert;
+    /**
+      * Gets the value of the 'uptime' field.
+      * metrics-lib/ServerDescriptor: Long getUptime()
+      * @return The value.
+      */
+    public java.lang.Long getUptime() {
+      return uptime;
     }
-    
-    /** Sets the value of the 'onion_key_crosscert' field */
-    public converTor.bridge.Bridge.Builder setOnionKeyCrosscert(java.lang.Boolean value) {
+
+    /**
+      * Sets the value of the 'uptime' field.
+      * metrics-lib/ServerDescriptor: Long getUptime()
+      * @param value The value of 'uptime'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setUptime(java.lang.Long value) {
       validate(fields()[11], value);
-      this.onion_key_crosscert = value;
+      this.uptime = value;
       fieldSetFlags()[11] = true;
       return this; 
     }
-    
-    /** Checks whether the 'onion_key_crosscert' field has been set */
-    public boolean hasOnionKeyCrosscert() {
+
+    /**
+      * Checks whether the 'uptime' field has been set.
+      * metrics-lib/ServerDescriptor: Long getUptime()
+      * @return True if the 'uptime' field has been set, false otherwise.
+      */
+    public boolean hasUptime() {
       return fieldSetFlags()[11];
     }
-    
-    /** Clears the value of the 'onion_key_crosscert' field */
-    public converTor.bridge.Bridge.Builder clearOnionKeyCrosscert() {
-      onion_key_crosscert = null;
+
+
+    /**
+      * Clears the value of the 'uptime' field.
+      * metrics-lib/ServerDescriptor: Long getUptime()
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearUptime() {
+      uptime = null;
       fieldSetFlags()[11] = false;
       return this;
     }
 
-    /** Gets the value of the 'ntor_onion_key' field */
-    public java.lang.Boolean getNtorOnionKey() {
-      return ntor_onion_key;
+    /**
+      * Gets the value of the 'onion_key' field.
+      * metrics-lib/ServerDescriptor: String getOnionKey()
+      * @return The value.
+      */
+    public java.lang.Boolean getOnionKey() {
+      return onion_key;
     }
-    
-    /** Sets the value of the 'ntor_onion_key' field */
-    public converTor.bridge.Bridge.Builder setNtorOnionKey(java.lang.Boolean value) {
+
+    /**
+      * Sets the value of the 'onion_key' field.
+      * metrics-lib/ServerDescriptor: String getOnionKey()
+      * @param value The value of 'onion_key'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setOnionKey(java.lang.Boolean value) {
       validate(fields()[12], value);
-      this.ntor_onion_key = value;
+      this.onion_key = value;
       fieldSetFlags()[12] = true;
       return this; 
     }
-    
-    /** Checks whether the 'ntor_onion_key' field has been set */
-    public boolean hasNtorOnionKey() {
+
+    /**
+      * Checks whether the 'onion_key' field has been set.
+      * metrics-lib/ServerDescriptor: String getOnionKey()
+      * @return True if the 'onion_key' field has been set, false otherwise.
+      */
+    public boolean hasOnionKey() {
       return fieldSetFlags()[12];
     }
-    
-    /** Clears the value of the 'ntor_onion_key' field */
-    public converTor.bridge.Bridge.Builder clearNtorOnionKey() {
-      ntor_onion_key = null;
+
+
+    /**
+      * Clears the value of the 'onion_key' field.
+      * metrics-lib/ServerDescriptor: String getOnionKey()
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearOnionKey() {
+      onion_key = null;
       fieldSetFlags()[12] = false;
       return this;
     }
 
-    /** Gets the value of the 'ntor_onion_key_crosscert' field */
-    public converTor.bridge.CrossCert getNtorOnionKeyCrosscert() {
-      return ntor_onion_key_crosscert;
+    /**
+      * Gets the value of the 'onion_key_crosscert' field.
+      * metrics-lib/ServerDescriptor: String getOnionKeyCrosscert()
+      * @return The value.
+      */
+    public java.lang.Boolean getOnionKeyCrosscert() {
+      return onion_key_crosscert;
     }
-    
-    /** Sets the value of the 'ntor_onion_key_crosscert' field */
-    public converTor.bridge.Bridge.Builder setNtorOnionKeyCrosscert(converTor.bridge.CrossCert value) {
+
+    /**
+      * Sets the value of the 'onion_key_crosscert' field.
+      * metrics-lib/ServerDescriptor: String getOnionKeyCrosscert()
+      * @param value The value of 'onion_key_crosscert'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setOnionKeyCrosscert(java.lang.Boolean value) {
       validate(fields()[13], value);
-      this.ntor_onion_key_crosscert = value;
+      this.onion_key_crosscert = value;
       fieldSetFlags()[13] = true;
       return this; 
     }
-    
-    /** Checks whether the 'ntor_onion_key_crosscert' field has been set */
-    public boolean hasNtorOnionKeyCrosscert() {
+
+    /**
+      * Checks whether the 'onion_key_crosscert' field has been set.
+      * metrics-lib/ServerDescriptor: String getOnionKeyCrosscert()
+      * @return True if the 'onion_key_crosscert' field has been set, false otherwise.
+      */
+    public boolean hasOnionKeyCrosscert() {
       return fieldSetFlags()[13];
     }
-    
-    /** Clears the value of the 'ntor_onion_key_crosscert' field */
-    public converTor.bridge.Bridge.Builder clearNtorOnionKeyCrosscert() {
-      ntor_onion_key_crosscert = null;
+
+
+    /**
+      * Clears the value of the 'onion_key_crosscert' field.
+      * metrics-lib/ServerDescriptor: String getOnionKeyCrosscert()
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearOnionKeyCrosscert() {
+      onion_key_crosscert = null;
       fieldSetFlags()[13] = false;
       return this;
     }
 
-    /** Gets the value of the 'signing_key' field */
-    public java.lang.Boolean getSigningKey() {
-      return signing_key;
+    /**
+      * Gets the value of the 'ntor_onion_key' field.
+      * metrics-lib/ServerDescriptor: String getNtorOnionKey()
+      * @return The value.
+      */
+    public java.lang.Boolean getNtorOnionKey() {
+      return ntor_onion_key;
     }
-    
-    /** Sets the value of the 'signing_key' field */
-    public converTor.bridge.Bridge.Builder setSigningKey(java.lang.Boolean value) {
+
+    /**
+      * Sets the value of the 'ntor_onion_key' field.
+      * metrics-lib/ServerDescriptor: String getNtorOnionKey()
+      * @param value The value of 'ntor_onion_key'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setNtorOnionKey(java.lang.Boolean value) {
       validate(fields()[14], value);
-      this.signing_key = value;
+      this.ntor_onion_key = value;
       fieldSetFlags()[14] = true;
       return this; 
     }
-    
-    /** Checks whether the 'signing_key' field has been set */
-    public boolean hasSigningKey() {
+
+    /**
+      * Checks whether the 'ntor_onion_key' field has been set.
+      * metrics-lib/ServerDescriptor: String getNtorOnionKey()
+      * @return True if the 'ntor_onion_key' field has been set, false otherwise.
+      */
+    public boolean hasNtorOnionKey() {
       return fieldSetFlags()[14];
     }
-    
-    /** Clears the value of the 'signing_key' field */
-    public converTor.bridge.Bridge.Builder clearSigningKey() {
-      signing_key = null;
+
+
+    /**
+      * Clears the value of the 'ntor_onion_key' field.
+      * metrics-lib/ServerDescriptor: String getNtorOnionKey()
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearNtorOnionKey() {
+      ntor_onion_key = null;
       fieldSetFlags()[14] = false;
       return this;
     }
 
-    /** Gets the value of the 'exit_policy' field */
-    public java.util.List<java.lang.CharSequence> getExitPolicy() {
-      return exit_policy;
+    /**
+      * Gets the value of the 'ntor_onion_key_crosscert' field.
+      * @return The value.
+      */
+    public converTor.bridge.NtorCrossCert getNtorOnionKeyCrosscert() {
+      return ntor_onion_key_crosscert;
     }
-    
-    /** Sets the value of the 'exit_policy' field */
-    public converTor.bridge.Bridge.Builder setExitPolicy(java.util.List<java.lang.CharSequence> value) {
+
+    /**
+      * Sets the value of the 'ntor_onion_key_crosscert' field.
+      * @param value The value of 'ntor_onion_key_crosscert'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setNtorOnionKeyCrosscert(converTor.bridge.NtorCrossCert value) {
       validate(fields()[15], value);
-      this.exit_policy = value;
+      this.ntor_onion_key_crosscertBuilder = null;
+      this.ntor_onion_key_crosscert = value;
       fieldSetFlags()[15] = true;
       return this; 
     }
-    
-    /** Checks whether the 'exit_policy' field has been set */
-    public boolean hasExitPolicy() {
+
+    /**
+      * Checks whether the 'ntor_onion_key_crosscert' field has been set.
+      * @return True if the 'ntor_onion_key_crosscert' field has been set, false otherwise.
+      */
+    public boolean hasNtorOnionKeyCrosscert() {
       return fieldSetFlags()[15];
     }
-    
-    /** Clears the value of the 'exit_policy' field */
-    public converTor.bridge.Bridge.Builder clearExitPolicy() {
-      exit_policy = null;
+
+    /**
+     * Gets the Builder instance for the 'ntor_onion_key_crosscert' field and creates one if it doesn't exist yet.
+     * @return This builder.
+     */
+    public converTor.bridge.NtorCrossCert.Builder getNtorOnionKeyCrosscertBuilder() {
+      if (ntor_onion_key_crosscertBuilder == null) {
+        if (hasNtorOnionKeyCrosscert()) {
+          setNtorOnionKeyCrosscertBuilder(converTor.bridge.NtorCrossCert.newBuilder(ntor_onion_key_crosscert));
+        } else {
+          setNtorOnionKeyCrosscertBuilder(converTor.bridge.NtorCrossCert.newBuilder());
+        }
+      }
+      return ntor_onion_key_crosscertBuilder;
+    }
+
+    /**
+     * Sets the Builder instance for the 'ntor_onion_key_crosscert' field
+     * @return This builder.
+     */
+    public converTor.bridge.Bridge.Builder setNtorOnionKeyCrosscertBuilder(converTor.bridge.NtorCrossCert.Builder value) {
+      clearNtorOnionKeyCrosscert();
+      ntor_onion_key_crosscertBuilder = value;
+      return this;
+    }
+
+    /**
+     * Checks whether the 'ntor_onion_key_crosscert' field has an active Builder instance
+     * @return True if the 'ntor_onion_key_crosscert' field has an active Builder instance
+     */
+    public boolean hasNtorOnionKeyCrosscertBuilder() {
+      return ntor_onion_key_crosscertBuilder != null;
+    }
+
+    /**
+      * Clears the value of the 'ntor_onion_key_crosscert' field.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearNtorOnionKeyCrosscert() {
+      ntor_onion_key_crosscert = null;
+      ntor_onion_key_crosscertBuilder = null;
       fieldSetFlags()[15] = false;
       return this;
     }
 
-    /** Gets the value of the 'ipv6_policy' field */
-    public java.lang.CharSequence getIpv6Policy() {
-      return ipv6_policy;
+    /**
+      * Gets the value of the 'signing_key' field.
+      * metrics-lib/ServerDescriptor: String getSigningKey()
+      * @return The value.
+      */
+    public java.lang.Boolean getSigningKey() {
+      return signing_key;
     }
-    
-    /** Sets the value of the 'ipv6_policy' field */
-    public converTor.bridge.Bridge.Builder setIpv6Policy(java.lang.CharSequence value) {
+
+    /**
+      * Sets the value of the 'signing_key' field.
+      * metrics-lib/ServerDescriptor: String getSigningKey()
+      * @param value The value of 'signing_key'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setSigningKey(java.lang.Boolean value) {
       validate(fields()[16], value);
-      this.ipv6_policy = value;
+      this.signing_key = value;
       fieldSetFlags()[16] = true;
       return this; 
     }
-    
-    /** Checks whether the 'ipv6_policy' field has been set */
-    public boolean hasIpv6Policy() {
+
+    /**
+      * Checks whether the 'signing_key' field has been set.
+      * metrics-lib/ServerDescriptor: String getSigningKey()
+      * @return True if the 'signing_key' field has been set, false otherwise.
+      */
+    public boolean hasSigningKey() {
       return fieldSetFlags()[16];
     }
-    
-    /** Clears the value of the 'ipv6_policy' field */
-    public converTor.bridge.Bridge.Builder clearIpv6Policy() {
-      ipv6_policy = null;
+
+
+    /**
+      * Clears the value of the 'signing_key' field.
+      * metrics-lib/ServerDescriptor: String getSigningKey()
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearSigningKey() {
+      signing_key = null;
       fieldSetFlags()[16] = false;
       return this;
     }
 
-    /** Gets the value of the 'ipv6_portlist' field */
-    public java.lang.CharSequence getIpv6Portlist() {
-      return ipv6_portlist;
+    /**
+      * Gets the value of the 'exit_policy' field.
+      * metrics-lib/ServerDescriptor: List<String> getExitPolicyLines()
+      * @return The value.
+      */
+    public java.util.List<java.lang.CharSequence> getExitPolicy() {
+      return exit_policy;
     }
-    
-    /** Sets the value of the 'ipv6_portlist' field */
-    public converTor.bridge.Bridge.Builder setIpv6Portlist(java.lang.CharSequence value) {
+
+    /**
+      * Sets the value of the 'exit_policy' field.
+      * metrics-lib/ServerDescriptor: List<String> getExitPolicyLines()
+      * @param value The value of 'exit_policy'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setExitPolicy(java.util.List<java.lang.CharSequence> value) {
       validate(fields()[17], value);
-      this.ipv6_portlist = value;
+      this.exit_policy = value;
       fieldSetFlags()[17] = true;
       return this; 
     }
-    
-    /** Checks whether the 'ipv6_portlist' field has been set */
-    public boolean hasIpv6Portlist() {
+
+    /**
+      * Checks whether the 'exit_policy' field has been set.
+      * metrics-lib/ServerDescriptor: List<String> getExitPolicyLines()
+      * @return True if the 'exit_policy' field has been set, false otherwise.
+      */
+    public boolean hasExitPolicy() {
       return fieldSetFlags()[17];
     }
-    
-    /** Clears the value of the 'ipv6_portlist' field */
-    public converTor.bridge.Bridge.Builder clearIpv6Portlist() {
-      ipv6_portlist = null;
+
+
+    /**
+      * Clears the value of the 'exit_policy' field.
+      * metrics-lib/ServerDescriptor: List<String> getExitPolicyLines()
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearExitPolicy() {
+      exit_policy = null;
       fieldSetFlags()[17] = false;
       return this;
     }
 
-    /** Gets the value of the 'router_sig_ed25519' field */
-    public java.lang.Boolean getRouterSigEd25519() {
-      return router_sig_ed25519;
+    /**
+      * Gets the value of the 'ipv6_policy' field.
+      * metrics-lib/ServerDescriptor: String getIpv6DefaultPolicy()
+      * @return The value.
+      */
+    public java.util.List<java.lang.CharSequence> getIpv6Policy() {
+      return ipv6_policy;
     }
-    
-    /** Sets the value of the 'router_sig_ed25519' field */
-    public converTor.bridge.Bridge.Builder setRouterSigEd25519(java.lang.Boolean value) {
+
+    /**
+      * Sets the value of the 'ipv6_policy' field.
+      * metrics-lib/ServerDescriptor: String getIpv6DefaultPolicy()
+      * @param value The value of 'ipv6_policy'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setIpv6Policy(java.util.List<java.lang.CharSequence> value) {
       validate(fields()[18], value);
-      this.router_sig_ed25519 = value;
+      this.ipv6_policy = value;
       fieldSetFlags()[18] = true;
       return this; 
     }
-    
-    /** Checks whether the 'router_sig_ed25519' field has been set */
-    public boolean hasRouterSigEd25519() {
+
+    /**
+      * Checks whether the 'ipv6_policy' field has been set.
+      * metrics-lib/ServerDescriptor: String getIpv6DefaultPolicy()
+      * @return True if the 'ipv6_policy' field has been set, false otherwise.
+      */
+    public boolean hasIpv6Policy() {
       return fieldSetFlags()[18];
     }
-    
-    /** Clears the value of the 'router_sig_ed25519' field */
-    public converTor.bridge.Bridge.Builder clearRouterSigEd25519() {
-      router_sig_ed25519 = null;
+
+
+    /**
+      * Clears the value of the 'ipv6_policy' field.
+      * metrics-lib/ServerDescriptor: String getIpv6DefaultPolicy()
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearIpv6Policy() {
+      ipv6_policy = null;
       fieldSetFlags()[18] = false;
       return this;
     }
 
-    /** Gets the value of the 'contact' field */
-    public java.lang.CharSequence getContact() {
-      return contact;
+    /**
+      * Gets the value of the 'ipv6_portlist' field.
+      * metrics-lib/ServerDescriptor: String getIpv6PortList()
+      * @return The value.
+      */
+    public java.lang.CharSequence getIpv6Portlist() {
+      return ipv6_portlist;
     }
-    
-    /** Sets the value of the 'contact' field */
-    public converTor.bridge.Bridge.Builder setContact(java.lang.CharSequence value) {
+
+    /**
+      * Sets the value of the 'ipv6_portlist' field.
+      * metrics-lib/ServerDescriptor: String getIpv6PortList()
+      * @param value The value of 'ipv6_portlist'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setIpv6Portlist(java.lang.CharSequence value) {
       validate(fields()[19], value);
-      this.contact = value;
+      this.ipv6_portlist = value;
       fieldSetFlags()[19] = true;
       return this; 
     }
-    
-    /** Checks whether the 'contact' field has been set */
-    public boolean hasContact() {
+
+    /**
+      * Checks whether the 'ipv6_portlist' field has been set.
+      * metrics-lib/ServerDescriptor: String getIpv6PortList()
+      * @return True if the 'ipv6_portlist' field has been set, false otherwise.
+      */
+    public boolean hasIpv6Portlist() {
       return fieldSetFlags()[19];
     }
-    
-    /** Clears the value of the 'contact' field */
-    public converTor.bridge.Bridge.Builder clearContact() {
-      contact = null;
+
+
+    /**
+      * Clears the value of the 'ipv6_portlist' field.
+      * metrics-lib/ServerDescriptor: String getIpv6PortList()
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearIpv6Portlist() {
+      ipv6_portlist = null;
       fieldSetFlags()[19] = false;
       return this;
     }
 
-    /** Gets the value of the 'family' field */
-    public java.util.List<java.lang.CharSequence> getFamily() {
-      return family;
+    /**
+      * Gets the value of the 'router_sig_ed25519' field.
+      * metrics-lib/ServerDescriptor: String getRouterSignatureEd25519()
+      * @return The value.
+      */
+    public java.lang.Boolean getRouterSigEd25519() {
+      return router_sig_ed25519;
     }
-    
-    /** Sets the value of the 'family' field */
-    public converTor.bridge.Bridge.Builder setFamily(java.util.List<java.lang.CharSequence> value) {
+
+    /**
+      * Sets the value of the 'router_sig_ed25519' field.
+      * metrics-lib/ServerDescriptor: String getRouterSignatureEd25519()
+      * @param value The value of 'router_sig_ed25519'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setRouterSigEd25519(java.lang.Boolean value) {
       validate(fields()[20], value);
-      this.family = value;
+      this.router_sig_ed25519 = value;
       fieldSetFlags()[20] = true;
       return this; 
     }
-    
-    /** Checks whether the 'family' field has been set */
-    public boolean hasFamily() {
+
+    /**
+      * Checks whether the 'router_sig_ed25519' field has been set.
+      * metrics-lib/ServerDescriptor: String getRouterSignatureEd25519()
+      * @return True if the 'router_sig_ed25519' field has been set, false otherwise.
+      */
+    public boolean hasRouterSigEd25519() {
       return fieldSetFlags()[20];
     }
-    
-    /** Clears the value of the 'family' field */
-    public converTor.bridge.Bridge.Builder clearFamily() {
-      family = null;
+
+
+    /**
+      * Clears the value of the 'router_sig_ed25519' field.
+      * metrics-lib/ServerDescriptor: String getRouterSignatureEd25519()
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearRouterSigEd25519() {
+      router_sig_ed25519 = null;
       fieldSetFlags()[20] = false;
       return this;
     }
 
-    /** Gets the value of the 'read_history' field */
-    public converTor.bridge.ReadHistory getReadHistory() {
-      return read_history;
+    /**
+      * Gets the value of the 'contact' field.
+      * metrics-lib/ServerDescriptor: String getContact()
+      * @return The value.
+      */
+    public java.lang.CharSequence getContact() {
+      return contact;
     }
-    
-    /** Sets the value of the 'read_history' field */
-    public converTor.bridge.Bridge.Builder setReadHistory(converTor.bridge.ReadHistory value) {
+
+    /**
+      * Sets the value of the 'contact' field.
+      * metrics-lib/ServerDescriptor: String getContact()
+      * @param value The value of 'contact'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setContact(java.lang.CharSequence value) {
       validate(fields()[21], value);
-      this.read_history = value;
+      this.contact = value;
       fieldSetFlags()[21] = true;
       return this; 
     }
-    
-    /** Checks whether the 'read_history' field has been set */
-    public boolean hasReadHistory() {
+
+    /**
+      * Checks whether the 'contact' field has been set.
+      * metrics-lib/ServerDescriptor: String getContact()
+      * @return True if the 'contact' field has been set, false otherwise.
+      */
+    public boolean hasContact() {
       return fieldSetFlags()[21];
     }
-    
-    /** Clears the value of the 'read_history' field */
-    public converTor.bridge.Bridge.Builder clearReadHistory() {
-      read_history = null;
+
+
+    /**
+      * Clears the value of the 'contact' field.
+      * metrics-lib/ServerDescriptor: String getContact()
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearContact() {
+      contact = null;
       fieldSetFlags()[21] = false;
       return this;
     }
 
-    /** Gets the value of the 'write_history' field */
-    public converTor.bridge.WriteHistory getWriteHistory() {
-      return write_history;
+    /**
+      * Gets the value of the 'family' field.
+      * metrics-lib/ServerDescriptor: List<String> getFamilyEntries()
+      * @return The value.
+      */
+    public java.util.List<java.lang.CharSequence> getFamily() {
+      return family;
     }
-    
-    /** Sets the value of the 'write_history' field */
-    public converTor.bridge.Bridge.Builder setWriteHistory(converTor.bridge.WriteHistory value) {
+
+    /**
+      * Sets the value of the 'family' field.
+      * metrics-lib/ServerDescriptor: List<String> getFamilyEntries()
+      * @param value The value of 'family'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setFamily(java.util.List<java.lang.CharSequence> value) {
       validate(fields()[22], value);
-      this.write_history = value;
+      this.family = value;
       fieldSetFlags()[22] = true;
       return this; 
     }
-    
-    /** Checks whether the 'write_history' field has been set */
-    public boolean hasWriteHistory() {
+
+    /**
+      * Checks whether the 'family' field has been set.
+      * metrics-lib/ServerDescriptor: List<String> getFamilyEntries()
+      * @return True if the 'family' field has been set, false otherwise.
+      */
+    public boolean hasFamily() {
       return fieldSetFlags()[22];
     }
-    
-    /** Clears the value of the 'write_history' field */
-    public converTor.bridge.Bridge.Builder clearWriteHistory() {
-      write_history = null;
+
+
+    /**
+      * Clears the value of the 'family' field.
+      * metrics-lib/ServerDescriptor: List<String> getFamilyEntries()
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearFamily() {
+      family = null;
       fieldSetFlags()[22] = false;
       return this;
     }
 
-    /** Gets the value of the 'eventdns' field */
-    public java.lang.Boolean getEventdns() {
-      return eventdns;
+    /**
+      * Gets the value of the 'read_history' field.
+      * metrics-lib/ServerDescriptor: BandwidthHistory getReadHistory()
+      * @return The value.
+      */
+    public converTor.bridge.ReadHistory getReadHistory() {
+      return read_history;
     }
-    
-    /** Sets the value of the 'eventdns' field */
-    public converTor.bridge.Bridge.Builder setEventdns(java.lang.Boolean value) {
+
+    /**
+      * Sets the value of the 'read_history' field.
+      * metrics-lib/ServerDescriptor: BandwidthHistory getReadHistory()
+      * @param value The value of 'read_history'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setReadHistory(converTor.bridge.ReadHistory value) {
       validate(fields()[23], value);
-      this.eventdns = value;
+      this.read_historyBuilder = null;
+      this.read_history = value;
       fieldSetFlags()[23] = true;
       return this; 
     }
-    
-    /** Checks whether the 'eventdns' field has been set */
-    public boolean hasEventdns() {
+
+    /**
+      * Checks whether the 'read_history' field has been set.
+      * metrics-lib/ServerDescriptor: BandwidthHistory getReadHistory()
+      * @return True if the 'read_history' field has been set, false otherwise.
+      */
+    public boolean hasReadHistory() {
       return fieldSetFlags()[23];
     }
-    
-    /** Clears the value of the 'eventdns' field */
-    public converTor.bridge.Bridge.Builder clearEventdns() {
-      eventdns = null;
+
+    /**
+     * Gets the Builder instance for the 'read_history' field and creates one if it doesn't exist yet.
+     * metrics-lib/ServerDescriptor: BandwidthHistory getReadHistory()
+     * @return This builder.
+     */
+    public converTor.bridge.ReadHistory.Builder getReadHistoryBuilder() {
+      if (read_historyBuilder == null) {
+        if (hasReadHistory()) {
+          setReadHistoryBuilder(converTor.bridge.ReadHistory.newBuilder(read_history));
+        } else {
+          setReadHistoryBuilder(converTor.bridge.ReadHistory.newBuilder());
+        }
+      }
+      return read_historyBuilder;
+    }
+
+    /**
+     * Sets the Builder instance for the 'read_history' field
+     * metrics-lib/ServerDescriptor: BandwidthHistory getReadHistory()
+     * @return This builder.
+     */
+    public converTor.bridge.Bridge.Builder setReadHistoryBuilder(converTor.bridge.ReadHistory.Builder value) {
+      clearReadHistory();
+      read_historyBuilder = value;
+      return this;
+    }
+
+    /**
+     * Checks whether the 'read_history' field has an active Builder instance
+     * metrics-lib/ServerDescriptor: BandwidthHistory getReadHistory()
+     * @return True if the 'read_history' field has an active Builder instance
+     */
+    public boolean hasReadHistoryBuilder() {
+      return read_historyBuilder != null;
+    }
+
+    /**
+      * Clears the value of the 'read_history' field.
+      * metrics-lib/ServerDescriptor: BandwidthHistory getReadHistory()
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearReadHistory() {
+      read_history = null;
+      read_historyBuilder = null;
       fieldSetFlags()[23] = false;
       return this;
     }
 
-    /** Gets the value of the 'caches_extra_info' field */
-    public java.lang.Boolean getCachesExtraInfo() {
-      return caches_extra_info;
+    /**
+      * Gets the value of the 'write_history' field.
+      * metrics-lib/ServerDescriptor: BandwidthHistory getWriteHistory()
+      * @return The value.
+      */
+    public converTor.bridge.WriteHistory getWriteHistory() {
+      return write_history;
     }
-    
-    /** Sets the value of the 'caches_extra_info' field */
-    public converTor.bridge.Bridge.Builder setCachesExtraInfo(java.lang.Boolean value) {
+
+    /**
+      * Sets the value of the 'write_history' field.
+      * metrics-lib/ServerDescriptor: BandwidthHistory getWriteHistory()
+      * @param value The value of 'write_history'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setWriteHistory(converTor.bridge.WriteHistory value) {
       validate(fields()[24], value);
-      this.caches_extra_info = value;
+      this.write_historyBuilder = null;
+      this.write_history = value;
       fieldSetFlags()[24] = true;
       return this; 
     }
-    
-    /** Checks whether the 'caches_extra_info' field has been set */
-    public boolean hasCachesExtraInfo() {
+
+    /**
+      * Checks whether the 'write_history' field has been set.
+      * metrics-lib/ServerDescriptor: BandwidthHistory getWriteHistory()
+      * @return True if the 'write_history' field has been set, false otherwise.
+      */
+    public boolean hasWriteHistory() {
       return fieldSetFlags()[24];
     }
-    
-    /** Clears the value of the 'caches_extra_info' field */
-    public converTor.bridge.Bridge.Builder clearCachesExtraInfo() {
-      caches_extra_info = null;
+
+    /**
+     * Gets the Builder instance for the 'write_history' field and creates one if it doesn't exist yet.
+     * metrics-lib/ServerDescriptor: BandwidthHistory getWriteHistory()
+     * @return This builder.
+     */
+    public converTor.bridge.WriteHistory.Builder getWriteHistoryBuilder() {
+      if (write_historyBuilder == null) {
+        if (hasWriteHistory()) {
+          setWriteHistoryBuilder(converTor.bridge.WriteHistory.newBuilder(write_history));
+        } else {
+          setWriteHistoryBuilder(converTor.bridge.WriteHistory.newBuilder());
+        }
+      }
+      return write_historyBuilder;
+    }
+
+    /**
+     * Sets the Builder instance for the 'write_history' field
+     * metrics-lib/ServerDescriptor: BandwidthHistory getWriteHistory()
+     * @return This builder.
+     */
+    public converTor.bridge.Bridge.Builder setWriteHistoryBuilder(converTor.bridge.WriteHistory.Builder value) {
+      clearWriteHistory();
+      write_historyBuilder = value;
+      return this;
+    }
+
+    /**
+     * Checks whether the 'write_history' field has an active Builder instance
+     * metrics-lib/ServerDescriptor: BandwidthHistory getWriteHistory()
+     * @return True if the 'write_history' field has an active Builder instance
+     */
+    public boolean hasWriteHistoryBuilder() {
+      return write_historyBuilder != null;
+    }
+
+    /**
+      * Clears the value of the 'write_history' field.
+      * metrics-lib/ServerDescriptor: BandwidthHistory getWriteHistory()
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearWriteHistory() {
+      write_history = null;
+      write_historyBuilder = null;
       fieldSetFlags()[24] = false;
       return this;
     }
 
-    /** Gets the value of the 'extra_info_digest' field */
-    public java.lang.CharSequence getExtraInfoDigest() {
-      return extra_info_digest;
+    /**
+      * Gets the value of the 'eventdns' field.
+      * metrics-lib/ServerDescriptor: boolean getUsesEnhancedDnsLogic()
+      * @return The value.
+      */
+    public java.lang.Boolean getEventdns() {
+      return eventdns;
     }
-    
-    /** Sets the value of the 'extra_info_digest' field */
-    public converTor.bridge.Bridge.Builder setExtraInfoDigest(java.lang.CharSequence value) {
+
+    /**
+      * Sets the value of the 'eventdns' field.
+      * metrics-lib/ServerDescriptor: boolean getUsesEnhancedDnsLogic()
+      * @param value The value of 'eventdns'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setEventdns(java.lang.Boolean value) {
       validate(fields()[25], value);
-      this.extra_info_digest = value;
+      this.eventdns = value;
       fieldSetFlags()[25] = true;
       return this; 
     }
-    
-    /** Checks whether the 'extra_info_digest' field has been set */
-    public boolean hasExtraInfoDigest() {
+
+    /**
+      * Checks whether the 'eventdns' field has been set.
+      * metrics-lib/ServerDescriptor: boolean getUsesEnhancedDnsLogic()
+      * @return True if the 'eventdns' field has been set, false otherwise.
+      */
+    public boolean hasEventdns() {
       return fieldSetFlags()[25];
     }
-    
-    /** Clears the value of the 'extra_info_digest' field */
-    public converTor.bridge.Bridge.Builder clearExtraInfoDigest() {
-      extra_info_digest = null;
+
+
+    /**
+      * Clears the value of the 'eventdns' field.
+      * metrics-lib/ServerDescriptor: boolean getUsesEnhancedDnsLogic()
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearEventdns() {
+      eventdns = null;
       fieldSetFlags()[25] = false;
       return this;
     }
 
-    /** Gets the value of the 'extra_info_digest_sha256' field */
-    public java.lang.CharSequence getExtraInfoDigestSha256() {
-      return extra_info_digest_sha256;
+    /**
+      * Gets the value of the 'caches_extra_info' field.
+      * metrics-lib/ServerDescriptor: boolean getCachesExtraInfo()
+      * @return The value.
+      */
+    public java.lang.Boolean getCachesExtraInfo() {
+      return caches_extra_info;
     }
-    
-    /** Sets the value of the 'extra_info_digest_sha256' field */
-    public converTor.bridge.Bridge.Builder setExtraInfoDigestSha256(java.lang.CharSequence value) {
+
+    /**
+      * Sets the value of the 'caches_extra_info' field.
+      * metrics-lib/ServerDescriptor: boolean getCachesExtraInfo()
+      * @param value The value of 'caches_extra_info'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setCachesExtraInfo(java.lang.Boolean value) {
       validate(fields()[26], value);
-      this.extra_info_digest_sha256 = value;
+      this.caches_extra_info = value;
       fieldSetFlags()[26] = true;
       return this; 
     }
-    
-    /** Checks whether the 'extra_info_digest_sha256' field has been set */
-    public boolean hasExtraInfoDigestSha256() {
+
+    /**
+      * Checks whether the 'caches_extra_info' field has been set.
+      * metrics-lib/ServerDescriptor: boolean getCachesExtraInfo()
+      * @return True if the 'caches_extra_info' field has been set, false otherwise.
+      */
+    public boolean hasCachesExtraInfo() {
       return fieldSetFlags()[26];
     }
-    
-    /** Clears the value of the 'extra_info_digest_sha256' field */
-    public converTor.bridge.Bridge.Builder clearExtraInfoDigestSha256() {
-      extra_info_digest_sha256 = null;
+
+
+    /**
+      * Clears the value of the 'caches_extra_info' field.
+      * metrics-lib/ServerDescriptor: boolean getCachesExtraInfo()
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearCachesExtraInfo() {
+      caches_extra_info = null;
       fieldSetFlags()[26] = false;
       return this;
     }
 
-    /** Gets the value of the 'hidden_service_dir' field */
-    public java.util.List<java.lang.Integer> getHiddenServiceDir() {
-      return hidden_service_dir;
+    /**
+      * Gets the value of the 'extra_info_digest' field.
+      * metrics-lib/ServerDescriptor: String getExtraInfoDigest()
+      * @return The value.
+      */
+    public java.lang.CharSequence getExtraInfoDigest() {
+      return extra_info_digest;
     }
-    
-    /** Sets the value of the 'hidden_service_dir' field */
-    public converTor.bridge.Bridge.Builder setHiddenServiceDir(java.util.List<java.lang.Integer> value) {
+
+    /**
+      * Sets the value of the 'extra_info_digest' field.
+      * metrics-lib/ServerDescriptor: String getExtraInfoDigest()
+      * @param value The value of 'extra_info_digest'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setExtraInfoDigest(java.lang.CharSequence value) {
       validate(fields()[27], value);
-      this.hidden_service_dir = value;
+      this.extra_info_digest = value;
       fieldSetFlags()[27] = true;
       return this; 
     }
-    
-    /** Checks whether the 'hidden_service_dir' field has been set */
-    public boolean hasHiddenServiceDir() {
+
+    /**
+      * Checks whether the 'extra_info_digest' field has been set.
+      * metrics-lib/ServerDescriptor: String getExtraInfoDigest()
+      * @return True if the 'extra_info_digest' field has been set, false otherwise.
+      */
+    public boolean hasExtraInfoDigest() {
       return fieldSetFlags()[27];
     }
-    
-    /** Clears the value of the 'hidden_service_dir' field */
-    public converTor.bridge.Bridge.Builder clearHiddenServiceDir() {
-      hidden_service_dir = null;
+
+
+    /**
+      * Clears the value of the 'extra_info_digest' field.
+      * metrics-lib/ServerDescriptor: String getExtraInfoDigest()
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearExtraInfoDigest() {
+      extra_info_digest = null;
       fieldSetFlags()[27] = false;
       return this;
     }
 
-    /** Gets the value of the 'link_protocol_versions' field */
-    public java.util.List<java.lang.Integer> getLinkProtocolVersions() {
-      return link_protocol_versions;
+    /**
+      * Gets the value of the 'extra_info_digest_sha256' field.
+      * metrics-lib/ServerDescriptor: String getExtraInfoDigestSha256()
+      * @return The value.
+      */
+    public java.lang.CharSequence getExtraInfoDigestSha256() {
+      return extra_info_digest_sha256;
     }
-    
-    /** Sets the value of the 'link_protocol_versions' field */
-    public converTor.bridge.Bridge.Builder setLinkProtocolVersions(java.util.List<java.lang.Integer> value) {
+
+    /**
+      * Sets the value of the 'extra_info_digest_sha256' field.
+      * metrics-lib/ServerDescriptor: String getExtraInfoDigestSha256()
+      * @param value The value of 'extra_info_digest_sha256'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setExtraInfoDigestSha256(java.lang.CharSequence value) {
       validate(fields()[28], value);
-      this.link_protocol_versions = value;
+      this.extra_info_digest_sha256 = value;
       fieldSetFlags()[28] = true;
       return this; 
     }
-    
-    /** Checks whether the 'link_protocol_versions' field has been set */
-    public boolean hasLinkProtocolVersions() {
+
+    /**
+      * Checks whether the 'extra_info_digest_sha256' field has been set.
+      * metrics-lib/ServerDescriptor: String getExtraInfoDigestSha256()
+      * @return True if the 'extra_info_digest_sha256' field has been set, false otherwise.
+      */
+    public boolean hasExtraInfoDigestSha256() {
       return fieldSetFlags()[28];
     }
-    
-    /** Clears the value of the 'link_protocol_versions' field */
-    public converTor.bridge.Bridge.Builder clearLinkProtocolVersions() {
-      link_protocol_versions = null;
+
+
+    /**
+      * Clears the value of the 'extra_info_digest_sha256' field.
+      * metrics-lib/ServerDescriptor: String getExtraInfoDigestSha256()
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearExtraInfoDigestSha256() {
+      extra_info_digest_sha256 = null;
       fieldSetFlags()[28] = false;
       return this;
     }
 
-    /** Gets the value of the 'circuit_protocol_versions' field */
-    public java.util.List<java.lang.Integer> getCircuitProtocolVersions() {
-      return circuit_protocol_versions;
+    /**
+      * Gets the value of the 'hidden_service_dir' field.
+      * metrics-lib/ServerDescriptor: List<Integer> getHiddenServiceDirVersions()
+      * @return The value.
+      */
+    public java.util.List<java.lang.Integer> getHiddenServiceDir() {
+      return hidden_service_dir;
     }
-    
-    /** Sets the value of the 'circuit_protocol_versions' field */
-    public converTor.bridge.Bridge.Builder setCircuitProtocolVersions(java.util.List<java.lang.Integer> value) {
+
+    /**
+      * Sets the value of the 'hidden_service_dir' field.
+      * metrics-lib/ServerDescriptor: List<Integer> getHiddenServiceDirVersions()
+      * @param value The value of 'hidden_service_dir'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setHiddenServiceDir(java.util.List<java.lang.Integer> value) {
       validate(fields()[29], value);
-      this.circuit_protocol_versions = value;
+      this.hidden_service_dir = value;
       fieldSetFlags()[29] = true;
       return this; 
     }
-    
-    /** Checks whether the 'circuit_protocol_versions' field has been set */
-    public boolean hasCircuitProtocolVersions() {
+
+    /**
+      * Checks whether the 'hidden_service_dir' field has been set.
+      * metrics-lib/ServerDescriptor: List<Integer> getHiddenServiceDirVersions()
+      * @return True if the 'hidden_service_dir' field has been set, false otherwise.
+      */
+    public boolean hasHiddenServiceDir() {
       return fieldSetFlags()[29];
     }
-    
-    /** Clears the value of the 'circuit_protocol_versions' field */
-    public converTor.bridge.Bridge.Builder clearCircuitProtocolVersions() {
-      circuit_protocol_versions = null;
+
+
+    /**
+      * Clears the value of the 'hidden_service_dir' field.
+      * metrics-lib/ServerDescriptor: List<Integer> getHiddenServiceDirVersions()
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearHiddenServiceDir() {
+      hidden_service_dir = null;
       fieldSetFlags()[29] = false;
       return this;
     }
 
-    /** Gets the value of the 'allow_single_hop_exits' field */
-    public java.lang.Boolean getAllowSingleHopExits() {
-      return allow_single_hop_exits;
+    /**
+      * Gets the value of the 'link_protocol_versions' field.
+      * metrics-lib/ServerDescriptor: List<Integer> getLinkProtocolVersions()
+      * @return The value.
+      */
+    public java.util.List<java.lang.Integer> getLinkProtocolVersions() {
+      return link_protocol_versions;
     }
-    
-    /** Sets the value of the 'allow_single_hop_exits' field */
-    public converTor.bridge.Bridge.Builder setAllowSingleHopExits(java.lang.Boolean value) {
+
+    /**
+      * Sets the value of the 'link_protocol_versions' field.
+      * metrics-lib/ServerDescriptor: List<Integer> getLinkProtocolVersions()
+      * @param value The value of 'link_protocol_versions'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setLinkProtocolVersions(java.util.List<java.lang.Integer> value) {
       validate(fields()[30], value);
-      this.allow_single_hop_exits = value;
+      this.link_protocol_versions = value;
       fieldSetFlags()[30] = true;
       return this; 
     }
-    
-    /** Checks whether the 'allow_single_hop_exits' field has been set */
-    public boolean hasAllowSingleHopExits() {
+
+    /**
+      * Checks whether the 'link_protocol_versions' field has been set.
+      * metrics-lib/ServerDescriptor: List<Integer> getLinkProtocolVersions()
+      * @return True if the 'link_protocol_versions' field has been set, false otherwise.
+      */
+    public boolean hasLinkProtocolVersions() {
       return fieldSetFlags()[30];
     }
-    
-    /** Clears the value of the 'allow_single_hop_exits' field */
-    public converTor.bridge.Bridge.Builder clearAllowSingleHopExits() {
-      allow_single_hop_exits = null;
+
+
+    /**
+      * Clears the value of the 'link_protocol_versions' field.
+      * metrics-lib/ServerDescriptor: List<Integer> getLinkProtocolVersions()
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearLinkProtocolVersions() {
+      link_protocol_versions = null;
       fieldSetFlags()[30] = false;
       return this;
     }
 
-    /** Gets the value of the 'or_address' field */
-    public java.util.List<converTor.bridge.OrAddress> getOrAddress() {
-      return or_address;
+    /**
+      * Gets the value of the 'circuit_protocol_versions' field.
+      * metrics-lib/ServerDescriptor: List<Integer> getCircuitProtocolVersions()
+      * @return The value.
+      */
+    public java.util.List<java.lang.Integer> getCircuitProtocolVersions() {
+      return circuit_protocol_versions;
     }
-    
-    /** Sets the value of the 'or_address' field */
-    public converTor.bridge.Bridge.Builder setOrAddress(java.util.List<converTor.bridge.OrAddress> value) {
+
+    /**
+      * Sets the value of the 'circuit_protocol_versions' field.
+      * metrics-lib/ServerDescriptor: List<Integer> getCircuitProtocolVersions()
+      * @param value The value of 'circuit_protocol_versions'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setCircuitProtocolVersions(java.util.List<java.lang.Integer> value) {
       validate(fields()[31], value);
-      this.or_address = value;
+      this.circuit_protocol_versions = value;
       fieldSetFlags()[31] = true;
       return this; 
     }
-    
-    /** Checks whether the 'or_address' field has been set */
-    public boolean hasOrAddress() {
+
+    /**
+      * Checks whether the 'circuit_protocol_versions' field has been set.
+      * metrics-lib/ServerDescriptor: List<Integer> getCircuitProtocolVersions()
+      * @return True if the 'circuit_protocol_versions' field has been set, false otherwise.
+      */
+    public boolean hasCircuitProtocolVersions() {
       return fieldSetFlags()[31];
     }
-    
-    /** Clears the value of the 'or_address' field */
-    public converTor.bridge.Bridge.Builder clearOrAddress() {
-      or_address = null;
+
+
+    /**
+      * Clears the value of the 'circuit_protocol_versions' field.
+      * metrics-lib/ServerDescriptor: List<Integer> getCircuitProtocolVersions()
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearCircuitProtocolVersions() {
+      circuit_protocol_versions = null;
       fieldSetFlags()[31] = false;
       return this;
     }
 
-    /** Gets the value of the 'router_digest' field */
-    public java.lang.CharSequence getRouterDigest() {
-      return router_digest;
+    /**
+      * Gets the value of the 'allow_single_hop_exits' field.
+      * metrics-lib/ServerDescriptor: boolean getAllowSingleHopExits()
+      * @return The value.
+      */
+    public java.lang.Boolean getAllowSingleHopExits() {
+      return allow_single_hop_exits;
     }
-    
-    /** Sets the value of the 'router_digest' field */
-    public converTor.bridge.Bridge.Builder setRouterDigest(java.lang.CharSequence value) {
+
+    /**
+      * Sets the value of the 'allow_single_hop_exits' field.
+      * metrics-lib/ServerDescriptor: boolean getAllowSingleHopExits()
+      * @param value The value of 'allow_single_hop_exits'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setAllowSingleHopExits(java.lang.Boolean value) {
       validate(fields()[32], value);
-      this.router_digest = value;
+      this.allow_single_hop_exits = value;
       fieldSetFlags()[32] = true;
       return this; 
     }
-    
-    /** Checks whether the 'router_digest' field has been set */
-    public boolean hasRouterDigest() {
+
+    /**
+      * Checks whether the 'allow_single_hop_exits' field has been set.
+      * metrics-lib/ServerDescriptor: boolean getAllowSingleHopExits()
+      * @return True if the 'allow_single_hop_exits' field has been set, false otherwise.
+      */
+    public boolean hasAllowSingleHopExits() {
       return fieldSetFlags()[32];
     }
-    
-    /** Clears the value of the 'router_digest' field */
-    public converTor.bridge.Bridge.Builder clearRouterDigest() {
-      router_digest = null;
+
+
+    /**
+      * Clears the value of the 'allow_single_hop_exits' field.
+      * metrics-lib/ServerDescriptor: boolean getAllowSingleHopExits()
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearAllowSingleHopExits() {
+      allow_single_hop_exits = null;
       fieldSetFlags()[32] = false;
       return this;
     }
 
-    /** Gets the value of the 'router_digest_sha256' field */
-    public java.lang.CharSequence getRouterDigestSha256() {
-      return router_digest_sha256;
+    /**
+      * Gets the value of the 'or_address' field.
+      * metrics-lib/ServerDescriptor: List<String> getOrAddresses()
+      * @return The value.
+      */
+    public java.util.List<converTor.bridge.OrAddress> getOrAddress() {
+      return or_address;
     }
-    
-    /** Sets the value of the 'router_digest_sha256' field */
-    public converTor.bridge.Bridge.Builder setRouterDigestSha256(java.lang.CharSequence value) {
+
+    /**
+      * Sets the value of the 'or_address' field.
+      * metrics-lib/ServerDescriptor: List<String> getOrAddresses()
+      * @param value The value of 'or_address'.
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder setOrAddress(java.util.List<converTor.bridge.OrAddress> value) {
       validate(fields()[33], value);
-      this.router_digest_sha256 = value;
+      this.or_address = value;
       fieldSetFlags()[33] = true;
       return this; 
     }
-    
-    /** Checks whether the 'router_digest_sha256' field has been set */
-    public boolean hasRouterDigestSha256() {
+
+    /**
+      * Checks whether the 'or_address' field has been set.
+      * metrics-lib/ServerDescriptor: List<String> getOrAddresses()
+      * @return True if the 'or_address' field has been set, false otherwise.
+      */
+    public boolean hasOrAddress() {
       return fieldSetFlags()[33];
     }
-    
-    /** Clears the value of the 'router_digest_sha256' field */
-    public converTor.bridge.Bridge.Builder clearRouterDigestSha256() {
-      router_digest_sha256 = null;
+
+
+    /**
+      * Clears the value of the 'or_address' field.
+      * metrics-lib/ServerDescriptor: List<String> getOrAddresses()
+      * @return This builder.
+      */
+    public converTor.bridge.Bridge.Builder clearOrAddress() {
+      or_address = null;
       fieldSetFlags()[33] = false;
       return this;
     }
@@ -1883,43 +2848,80 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
       try {
         Bridge record = new Bridge();
         record.descriptor_type = fieldSetFlags()[0] ? this.descriptor_type : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.router = fieldSetFlags()[1] ? this.router : (converTor.bridge.Router) defaultValue(fields()[1]);
-        record.identity_ed25519 = fieldSetFlags()[2] ? this.identity_ed25519 : (java.lang.Boolean) defaultValue(fields()[2]);
-        record.master_key_ed25519 = fieldSetFlags()[3] ? this.master_key_ed25519 : (java.lang.CharSequence) defaultValue(fields()[3]);
-        record.bandwidth = fieldSetFlags()[4] ? this.bandwidth : (converTor.bridge.Bandwidth) defaultValue(fields()[4]);
-        record.platform = fieldSetFlags()[5] ? this.platform : (java.lang.CharSequence) defaultValue(fields()[5]);
-        record.published = fieldSetFlags()[6] ? this.published : (java.lang.CharSequence) defaultValue(fields()[6]);
-        record.fingerprint = fieldSetFlags()[7] ? this.fingerprint : (java.lang.CharSequence) defaultValue(fields()[7]);
-        record.hibernating = fieldSetFlags()[8] ? this.hibernating : (java.lang.Boolean) defaultValue(fields()[8]);
-        record.uptime = fieldSetFlags()[9] ? this.uptime : (java.lang.Long) defaultValue(fields()[9]);
-        record.onion_key = fieldSetFlags()[10] ? this.onion_key : (java.lang.Boolean) defaultValue(fields()[10]);
-        record.onion_key_crosscert = fieldSetFlags()[11] ? this.onion_key_crosscert : (java.lang.Boolean) defaultValue(fields()[11]);
-        record.ntor_onion_key = fieldSetFlags()[12] ? this.ntor_onion_key : (java.lang.Boolean) defaultValue(fields()[12]);
-        record.ntor_onion_key_crosscert = fieldSetFlags()[13] ? this.ntor_onion_key_crosscert : (converTor.bridge.CrossCert) defaultValue(fields()[13]);
-        record.signing_key = fieldSetFlags()[14] ? this.signing_key : (java.lang.Boolean) defaultValue(fields()[14]);
-        record.exit_policy = fieldSetFlags()[15] ? this.exit_policy : (java.util.List<java.lang.CharSequence>) defaultValue(fields()[15]);
-        record.ipv6_policy = fieldSetFlags()[16] ? this.ipv6_policy : (java.lang.CharSequence) defaultValue(fields()[16]);
-        record.ipv6_portlist = fieldSetFlags()[17] ? this.ipv6_portlist : (java.lang.CharSequence) defaultValue(fields()[17]);
-        record.router_sig_ed25519 = fieldSetFlags()[18] ? this.router_sig_ed25519 : (java.lang.Boolean) defaultValue(fields()[18]);
-        record.contact = fieldSetFlags()[19] ? this.contact : (java.lang.CharSequence) defaultValue(fields()[19]);
-        record.family = fieldSetFlags()[20] ? this.family : (java.util.List<java.lang.CharSequence>) defaultValue(fields()[20]);
-        record.read_history = fieldSetFlags()[21] ? this.read_history : (converTor.bridge.ReadHistory) defaultValue(fields()[21]);
-        record.write_history = fieldSetFlags()[22] ? this.write_history : (converTor.bridge.WriteHistory) defaultValue(fields()[22]);
-        record.eventdns = fieldSetFlags()[23] ? this.eventdns : (java.lang.Boolean) defaultValue(fields()[23]);
-        record.caches_extra_info = fieldSetFlags()[24] ? this.caches_extra_info : (java.lang.Boolean) defaultValue(fields()[24]);
-        record.extra_info_digest = fieldSetFlags()[25] ? this.extra_info_digest : (java.lang.CharSequence) defaultValue(fields()[25]);
-        record.extra_info_digest_sha256 = fieldSetFlags()[26] ? this.extra_info_digest_sha256 : (java.lang.CharSequence) defaultValue(fields()[26]);
-        record.hidden_service_dir = fieldSetFlags()[27] ? this.hidden_service_dir : (java.util.List<java.lang.Integer>) defaultValue(fields()[27]);
-        record.link_protocol_versions = fieldSetFlags()[28] ? this.link_protocol_versions : (java.util.List<java.lang.Integer>) defaultValue(fields()[28]);
-        record.circuit_protocol_versions = fieldSetFlags()[29] ? this.circuit_protocol_versions : (java.util.List<java.lang.Integer>) defaultValue(fields()[29]);
-        record.allow_single_hop_exits = fieldSetFlags()[30] ? this.allow_single_hop_exits : (java.lang.Boolean) defaultValue(fields()[30]);
-        record.or_address = fieldSetFlags()[31] ? this.or_address : (java.util.List<converTor.bridge.OrAddress>) defaultValue(fields()[31]);
-        record.router_digest = fieldSetFlags()[32] ? this.router_digest : (java.lang.CharSequence) defaultValue(fields()[32]);
-        record.router_digest_sha256 = fieldSetFlags()[33] ? this.router_digest_sha256 : (java.lang.CharSequence) defaultValue(fields()[33]);
+        record.server_descriptor_digest = fieldSetFlags()[1] ? this.server_descriptor_digest : (java.lang.CharSequence) defaultValue(fields()[1]);
+        record.server_descriptor_sha256 = fieldSetFlags()[2] ? this.server_descriptor_sha256 : (java.lang.CharSequence) defaultValue(fields()[2]);
+        if (routerBuilder != null) {
+          record.router = this.routerBuilder.build();
+        } else {
+          record.router = fieldSetFlags()[3] ? this.router : (converTor.bridge.Router) defaultValue(fields()[3]);
+        }
+        record.identity_ed25519 = fieldSetFlags()[4] ? this.identity_ed25519 : (java.lang.Boolean) defaultValue(fields()[4]);
+        record.master_key_ed25519 = fieldSetFlags()[5] ? this.master_key_ed25519 : (java.lang.CharSequence) defaultValue(fields()[5]);
+        if (bandwidthBuilder != null) {
+          record.bandwidth = this.bandwidthBuilder.build();
+        } else {
+          record.bandwidth = fieldSetFlags()[6] ? this.bandwidth : (converTor.bridge.Bandwidth) defaultValue(fields()[6]);
+        }
+        record.platform = fieldSetFlags()[7] ? this.platform : (java.lang.CharSequence) defaultValue(fields()[7]);
+        record.published = fieldSetFlags()[8] ? this.published : (java.lang.CharSequence) defaultValue(fields()[8]);
+        record.fingerprint = fieldSetFlags()[9] ? this.fingerprint : (java.lang.CharSequence) defaultValue(fields()[9]);
+        record.hibernating = fieldSetFlags()[10] ? this.hibernating : (java.lang.Boolean) defaultValue(fields()[10]);
+        record.uptime = fieldSetFlags()[11] ? this.uptime : (java.lang.Long) defaultValue(fields()[11]);
+        record.onion_key = fieldSetFlags()[12] ? this.onion_key : (java.lang.Boolean) defaultValue(fields()[12]);
+        record.onion_key_crosscert = fieldSetFlags()[13] ? this.onion_key_crosscert : (java.lang.Boolean) defaultValue(fields()[13]);
+        record.ntor_onion_key = fieldSetFlags()[14] ? this.ntor_onion_key : (java.lang.Boolean) defaultValue(fields()[14]);
+        if (ntor_onion_key_crosscertBuilder != null) {
+          record.ntor_onion_key_crosscert = this.ntor_onion_key_crosscertBuilder.build();
+        } else {
+          record.ntor_onion_key_crosscert = fieldSetFlags()[15] ? this.ntor_onion_key_crosscert : (converTor.bridge.NtorCrossCert) defaultValue(fields()[15]);
+        }
+        record.signing_key = fieldSetFlags()[16] ? this.signing_key : (java.lang.Boolean) defaultValue(fields()[16]);
+        record.exit_policy = fieldSetFlags()[17] ? this.exit_policy : (java.util.List<java.lang.CharSequence>) defaultValue(fields()[17]);
+        record.ipv6_policy = fieldSetFlags()[18] ? this.ipv6_policy : (java.util.List<java.lang.CharSequence>) defaultValue(fields()[18]);
+        record.ipv6_portlist = fieldSetFlags()[19] ? this.ipv6_portlist : (java.lang.CharSequence) defaultValue(fields()[19]);
+        record.router_sig_ed25519 = fieldSetFlags()[20] ? this.router_sig_ed25519 : (java.lang.Boolean) defaultValue(fields()[20]);
+        record.contact = fieldSetFlags()[21] ? this.contact : (java.lang.CharSequence) defaultValue(fields()[21]);
+        record.family = fieldSetFlags()[22] ? this.family : (java.util.List<java.lang.CharSequence>) defaultValue(fields()[22]);
+        if (read_historyBuilder != null) {
+          record.read_history = this.read_historyBuilder.build();
+        } else {
+          record.read_history = fieldSetFlags()[23] ? this.read_history : (converTor.bridge.ReadHistory) defaultValue(fields()[23]);
+        }
+        if (write_historyBuilder != null) {
+          record.write_history = this.write_historyBuilder.build();
+        } else {
+          record.write_history = fieldSetFlags()[24] ? this.write_history : (converTor.bridge.WriteHistory) defaultValue(fields()[24]);
+        }
+        record.eventdns = fieldSetFlags()[25] ? this.eventdns : (java.lang.Boolean) defaultValue(fields()[25]);
+        record.caches_extra_info = fieldSetFlags()[26] ? this.caches_extra_info : (java.lang.Boolean) defaultValue(fields()[26]);
+        record.extra_info_digest = fieldSetFlags()[27] ? this.extra_info_digest : (java.lang.CharSequence) defaultValue(fields()[27]);
+        record.extra_info_digest_sha256 = fieldSetFlags()[28] ? this.extra_info_digest_sha256 : (java.lang.CharSequence) defaultValue(fields()[28]);
+        record.hidden_service_dir = fieldSetFlags()[29] ? this.hidden_service_dir : (java.util.List<java.lang.Integer>) defaultValue(fields()[29]);
+        record.link_protocol_versions = fieldSetFlags()[30] ? this.link_protocol_versions : (java.util.List<java.lang.Integer>) defaultValue(fields()[30]);
+        record.circuit_protocol_versions = fieldSetFlags()[31] ? this.circuit_protocol_versions : (java.util.List<java.lang.Integer>) defaultValue(fields()[31]);
+        record.allow_single_hop_exits = fieldSetFlags()[32] ? this.allow_single_hop_exits : (java.lang.Boolean) defaultValue(fields()[32]);
+        record.or_address = fieldSetFlags()[33] ? this.or_address : (java.util.List<converTor.bridge.OrAddress>) defaultValue(fields()[33]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
       }
     }
   }
+
+  private static final org.apache.avro.io.DatumWriter
+    WRITER$ = new org.apache.avro.specific.SpecificDatumWriter(SCHEMA$);  
+
+  @Override public void writeExternal(java.io.ObjectOutput out)
+    throws java.io.IOException {
+    WRITER$.write(this, org.apache.avro.specific.SpecificData.getEncoder(out));
+  }
+
+  private static final org.apache.avro.io.DatumReader
+    READER$ = new org.apache.avro.specific.SpecificDatumReader(SCHEMA$);  
+
+  @Override public void readExternal(java.io.ObjectInput in)
+    throws java.io.IOException {
+    READER$.read(this, org.apache.avro.specific.SpecificData.getDecoder(in));
+  }
+
 }

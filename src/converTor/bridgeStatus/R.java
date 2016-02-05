@@ -3,18 +3,26 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.bridgeStatus;
+package converTor.bridgeStatus;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class R extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"R\",\"namespace\":\"converTor.bridgeStatus\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",\"string\"]},{\"name\":\"identity\",\"type\":[\"null\",\"string\"]},{\"name\":\"digest\",\"type\":[\"null\",\"string\"]},{\"name\":\"published\",\"type\":[\"null\",\"string\"]},{\"name\":\"ip\",\"type\":[\"null\",\"string\"]},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"]},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"]}]}");
+  private static final long serialVersionUID = -2306307914155336108L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"R\",\"namespace\":\"converTor.bridgeStatus\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDescriptor()\"},{\"name\":\"digest\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: Set<String> getMicrodescriptorDigests()\"},{\"name\":\"published\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getPublishedMillis()\"},{\"name\":\"ip\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getOrPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getDirPort()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
+  /** metrics-lib/NetworkStatusEntry: String getNickname() */
   @Deprecated public java.lang.CharSequence nickname;
+  /** metrics-lib/NetworkStatusEntry: String getDescriptor() */
   @Deprecated public java.lang.CharSequence identity;
-  @Deprecated public java.lang.CharSequence digest;
+  /** metrics-lib/NetworkStatusEntry: Set<String> getMicrodescriptorDigests() */
+  @Deprecated public java.util.List<java.lang.CharSequence> digest;
+  /** metrics-lib/NetworkStatusEntry: long getPublishedMillis() */
   @Deprecated public java.lang.CharSequence published;
+  /** metrics-lib/NetworkStatusEntry: String getAddress() */
   @Deprecated public java.lang.CharSequence ip;
+  /** metrics-lib/NetworkStatusEntry: int getOrPort() */
   @Deprecated public java.lang.Integer or_port;
+  /** metrics-lib/NetworkStatusEntry: int getDirPort() */
   @Deprecated public java.lang.Integer dir_port;
 
   /**
@@ -26,8 +34,15 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
 
   /**
    * All-args constructor.
+   * @param nickname metrics-lib/NetworkStatusEntry: String getNickname()
+   * @param identity metrics-lib/NetworkStatusEntry: String getDescriptor()
+   * @param digest metrics-lib/NetworkStatusEntry: Set<String> getMicrodescriptorDigests()
+   * @param published metrics-lib/NetworkStatusEntry: long getPublishedMillis()
+   * @param ip metrics-lib/NetworkStatusEntry: String getAddress()
+   * @param or_port metrics-lib/NetworkStatusEntry: int getOrPort()
+   * @param dir_port metrics-lib/NetworkStatusEntry: int getDirPort()
    */
-  public R(java.lang.CharSequence nickname, java.lang.CharSequence identity, java.lang.CharSequence digest, java.lang.CharSequence published, java.lang.CharSequence ip, java.lang.Integer or_port, java.lang.Integer dir_port) {
+  public R(java.lang.CharSequence nickname, java.lang.CharSequence identity, java.util.List<java.lang.CharSequence> digest, java.lang.CharSequence published, java.lang.CharSequence ip, java.lang.Integer or_port, java.lang.Integer dir_port) {
     this.nickname = nickname;
     this.identity = identity;
     this.digest = digest;
@@ -57,7 +72,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
     switch (field$) {
     case 0: nickname = (java.lang.CharSequence)value$; break;
     case 1: identity = (java.lang.CharSequence)value$; break;
-    case 2: digest = (java.lang.CharSequence)value$; break;
+    case 2: digest = (java.util.List<java.lang.CharSequence>)value$; break;
     case 3: published = (java.lang.CharSequence)value$; break;
     case 4: ip = (java.lang.CharSequence)value$; break;
     case 5: or_port = (java.lang.Integer)value$; break;
@@ -68,6 +83,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
 
   /**
    * Gets the value of the 'nickname' field.
+   * @return metrics-lib/NetworkStatusEntry: String getNickname()
    */
   public java.lang.CharSequence getNickname() {
     return nickname;
@@ -75,6 +91,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
 
   /**
    * Sets the value of the 'nickname' field.
+   * metrics-lib/NetworkStatusEntry: String getNickname()
    * @param value the value to set.
    */
   public void setNickname(java.lang.CharSequence value) {
@@ -83,6 +100,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
 
   /**
    * Gets the value of the 'identity' field.
+   * @return metrics-lib/NetworkStatusEntry: String getDescriptor()
    */
   public java.lang.CharSequence getIdentity() {
     return identity;
@@ -90,6 +108,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
 
   /**
    * Sets the value of the 'identity' field.
+   * metrics-lib/NetworkStatusEntry: String getDescriptor()
    * @param value the value to set.
    */
   public void setIdentity(java.lang.CharSequence value) {
@@ -98,21 +117,24 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
 
   /**
    * Gets the value of the 'digest' field.
+   * @return metrics-lib/NetworkStatusEntry: Set<String> getMicrodescriptorDigests()
    */
-  public java.lang.CharSequence getDigest() {
+  public java.util.List<java.lang.CharSequence> getDigest() {
     return digest;
   }
 
   /**
    * Sets the value of the 'digest' field.
+   * metrics-lib/NetworkStatusEntry: Set<String> getMicrodescriptorDigests()
    * @param value the value to set.
    */
-  public void setDigest(java.lang.CharSequence value) {
+  public void setDigest(java.util.List<java.lang.CharSequence> value) {
     this.digest = value;
   }
 
   /**
    * Gets the value of the 'published' field.
+   * @return metrics-lib/NetworkStatusEntry: long getPublishedMillis()
    */
   public java.lang.CharSequence getPublished() {
     return published;
@@ -120,6 +142,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
 
   /**
    * Sets the value of the 'published' field.
+   * metrics-lib/NetworkStatusEntry: long getPublishedMillis()
    * @param value the value to set.
    */
   public void setPublished(java.lang.CharSequence value) {
@@ -128,6 +151,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
 
   /**
    * Gets the value of the 'ip' field.
+   * @return metrics-lib/NetworkStatusEntry: String getAddress()
    */
   public java.lang.CharSequence getIp() {
     return ip;
@@ -135,6 +159,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
 
   /**
    * Sets the value of the 'ip' field.
+   * metrics-lib/NetworkStatusEntry: String getAddress()
    * @param value the value to set.
    */
   public void setIp(java.lang.CharSequence value) {
@@ -143,6 +168,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
 
   /**
    * Gets the value of the 'or_port' field.
+   * @return metrics-lib/NetworkStatusEntry: int getOrPort()
    */
   public java.lang.Integer getOrPort() {
     return or_port;
@@ -150,6 +176,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
 
   /**
    * Sets the value of the 'or_port' field.
+   * metrics-lib/NetworkStatusEntry: int getOrPort()
    * @param value the value to set.
    */
   public void setOrPort(java.lang.Integer value) {
@@ -158,6 +185,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
 
   /**
    * Gets the value of the 'dir_port' field.
+   * @return metrics-lib/NetworkStatusEntry: int getDirPort()
    */
   public java.lang.Integer getDirPort() {
     return dir_port;
@@ -165,23 +193,35 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
 
   /**
    * Sets the value of the 'dir_port' field.
+   * metrics-lib/NetworkStatusEntry: int getDirPort()
    * @param value the value to set.
    */
   public void setDirPort(java.lang.Integer value) {
     this.dir_port = value;
   }
 
-  /** Creates a new R RecordBuilder */
+  /**
+   * Creates a new R RecordBuilder.
+   * @return A new R RecordBuilder
+   */
   public static converTor.bridgeStatus.R.Builder newBuilder() {
     return new converTor.bridgeStatus.R.Builder();
   }
   
-  /** Creates a new R RecordBuilder by copying an existing Builder */
+  /**
+   * Creates a new R RecordBuilder by copying an existing Builder.
+   * @param other The existing builder to copy.
+   * @return A new R RecordBuilder
+   */
   public static converTor.bridgeStatus.R.Builder newBuilder(converTor.bridgeStatus.R.Builder other) {
     return new converTor.bridgeStatus.R.Builder(other);
   }
   
-  /** Creates a new R RecordBuilder by copying an existing R instance */
+  /**
+   * Creates a new R RecordBuilder by copying an existing R instance.
+   * @param other The existing instance to copy.
+   * @return A new R RecordBuilder
+   */
   public static converTor.bridgeStatus.R.Builder newBuilder(converTor.bridgeStatus.R other) {
     return new converTor.bridgeStatus.R.Builder(other);
   }
@@ -192,12 +232,19 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<R>
     implements org.apache.avro.data.RecordBuilder<R> {
 
+    /** metrics-lib/NetworkStatusEntry: String getNickname() */
     private java.lang.CharSequence nickname;
+    /** metrics-lib/NetworkStatusEntry: String getDescriptor() */
     private java.lang.CharSequence identity;
-    private java.lang.CharSequence digest;
+    /** metrics-lib/NetworkStatusEntry: Set<String> getMicrodescriptorDigests() */
+    private java.util.List<java.lang.CharSequence> digest;
+    /** metrics-lib/NetworkStatusEntry: long getPublishedMillis() */
     private java.lang.CharSequence published;
+    /** metrics-lib/NetworkStatusEntry: String getAddress() */
     private java.lang.CharSequence ip;
+    /** metrics-lib/NetworkStatusEntry: int getOrPort() */
     private java.lang.Integer or_port;
+    /** metrics-lib/NetworkStatusEntry: int getDirPort() */
     private java.lang.Integer dir_port;
 
     /** Creates a new Builder */
@@ -205,7 +252,10 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
       super(converTor.bridgeStatus.R.SCHEMA$);
     }
     
-    /** Creates a Builder by copying an existing Builder */
+    /**
+     * Creates a Builder by copying an existing Builder.
+     * @param other The existing Builder to copy.
+     */
     private Builder(converTor.bridgeStatus.R.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.nickname)) {
@@ -238,7 +288,10 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
       }
     }
     
-    /** Creates a Builder by copying an existing R instance */
+    /**
+     * Creates a Builder by copying an existing R instance
+     * @param other The existing instance to copy.
+     */
     private Builder(converTor.bridgeStatus.R other) {
             super(converTor.bridgeStatus.R.SCHEMA$);
       if (isValidValue(fields()[0], other.nickname)) {
@@ -271,175 +324,301 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
       }
     }
 
-    /** Gets the value of the 'nickname' field */
+    /**
+      * Gets the value of the 'nickname' field.
+      * metrics-lib/NetworkStatusEntry: String getNickname()
+      * @return The value.
+      */
     public java.lang.CharSequence getNickname() {
       return nickname;
     }
-    
-    /** Sets the value of the 'nickname' field */
+
+    /**
+      * Sets the value of the 'nickname' field.
+      * metrics-lib/NetworkStatusEntry: String getNickname()
+      * @param value The value of 'nickname'.
+      * @return This builder.
+      */
     public converTor.bridgeStatus.R.Builder setNickname(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.nickname = value;
       fieldSetFlags()[0] = true;
       return this; 
     }
-    
-    /** Checks whether the 'nickname' field has been set */
+
+    /**
+      * Checks whether the 'nickname' field has been set.
+      * metrics-lib/NetworkStatusEntry: String getNickname()
+      * @return True if the 'nickname' field has been set, false otherwise.
+      */
     public boolean hasNickname() {
       return fieldSetFlags()[0];
     }
-    
-    /** Clears the value of the 'nickname' field */
+
+
+    /**
+      * Clears the value of the 'nickname' field.
+      * metrics-lib/NetworkStatusEntry: String getNickname()
+      * @return This builder.
+      */
     public converTor.bridgeStatus.R.Builder clearNickname() {
       nickname = null;
       fieldSetFlags()[0] = false;
       return this;
     }
 
-    /** Gets the value of the 'identity' field */
+    /**
+      * Gets the value of the 'identity' field.
+      * metrics-lib/NetworkStatusEntry: String getDescriptor()
+      * @return The value.
+      */
     public java.lang.CharSequence getIdentity() {
       return identity;
     }
-    
-    /** Sets the value of the 'identity' field */
+
+    /**
+      * Sets the value of the 'identity' field.
+      * metrics-lib/NetworkStatusEntry: String getDescriptor()
+      * @param value The value of 'identity'.
+      * @return This builder.
+      */
     public converTor.bridgeStatus.R.Builder setIdentity(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.identity = value;
       fieldSetFlags()[1] = true;
       return this; 
     }
-    
-    /** Checks whether the 'identity' field has been set */
+
+    /**
+      * Checks whether the 'identity' field has been set.
+      * metrics-lib/NetworkStatusEntry: String getDescriptor()
+      * @return True if the 'identity' field has been set, false otherwise.
+      */
     public boolean hasIdentity() {
       return fieldSetFlags()[1];
     }
-    
-    /** Clears the value of the 'identity' field */
+
+
+    /**
+      * Clears the value of the 'identity' field.
+      * metrics-lib/NetworkStatusEntry: String getDescriptor()
+      * @return This builder.
+      */
     public converTor.bridgeStatus.R.Builder clearIdentity() {
       identity = null;
       fieldSetFlags()[1] = false;
       return this;
     }
 
-    /** Gets the value of the 'digest' field */
-    public java.lang.CharSequence getDigest() {
+    /**
+      * Gets the value of the 'digest' field.
+      * metrics-lib/NetworkStatusEntry: Set<String> getMicrodescriptorDigests()
+      * @return The value.
+      */
+    public java.util.List<java.lang.CharSequence> getDigest() {
       return digest;
     }
-    
-    /** Sets the value of the 'digest' field */
-    public converTor.bridgeStatus.R.Builder setDigest(java.lang.CharSequence value) {
+
+    /**
+      * Sets the value of the 'digest' field.
+      * metrics-lib/NetworkStatusEntry: Set<String> getMicrodescriptorDigests()
+      * @param value The value of 'digest'.
+      * @return This builder.
+      */
+    public converTor.bridgeStatus.R.Builder setDigest(java.util.List<java.lang.CharSequence> value) {
       validate(fields()[2], value);
       this.digest = value;
       fieldSetFlags()[2] = true;
       return this; 
     }
-    
-    /** Checks whether the 'digest' field has been set */
+
+    /**
+      * Checks whether the 'digest' field has been set.
+      * metrics-lib/NetworkStatusEntry: Set<String> getMicrodescriptorDigests()
+      * @return True if the 'digest' field has been set, false otherwise.
+      */
     public boolean hasDigest() {
       return fieldSetFlags()[2];
     }
-    
-    /** Clears the value of the 'digest' field */
+
+
+    /**
+      * Clears the value of the 'digest' field.
+      * metrics-lib/NetworkStatusEntry: Set<String> getMicrodescriptorDigests()
+      * @return This builder.
+      */
     public converTor.bridgeStatus.R.Builder clearDigest() {
       digest = null;
       fieldSetFlags()[2] = false;
       return this;
     }
 
-    /** Gets the value of the 'published' field */
+    /**
+      * Gets the value of the 'published' field.
+      * metrics-lib/NetworkStatusEntry: long getPublishedMillis()
+      * @return The value.
+      */
     public java.lang.CharSequence getPublished() {
       return published;
     }
-    
-    /** Sets the value of the 'published' field */
+
+    /**
+      * Sets the value of the 'published' field.
+      * metrics-lib/NetworkStatusEntry: long getPublishedMillis()
+      * @param value The value of 'published'.
+      * @return This builder.
+      */
     public converTor.bridgeStatus.R.Builder setPublished(java.lang.CharSequence value) {
       validate(fields()[3], value);
       this.published = value;
       fieldSetFlags()[3] = true;
       return this; 
     }
-    
-    /** Checks whether the 'published' field has been set */
+
+    /**
+      * Checks whether the 'published' field has been set.
+      * metrics-lib/NetworkStatusEntry: long getPublishedMillis()
+      * @return True if the 'published' field has been set, false otherwise.
+      */
     public boolean hasPublished() {
       return fieldSetFlags()[3];
     }
-    
-    /** Clears the value of the 'published' field */
+
+
+    /**
+      * Clears the value of the 'published' field.
+      * metrics-lib/NetworkStatusEntry: long getPublishedMillis()
+      * @return This builder.
+      */
     public converTor.bridgeStatus.R.Builder clearPublished() {
       published = null;
       fieldSetFlags()[3] = false;
       return this;
     }
 
-    /** Gets the value of the 'ip' field */
+    /**
+      * Gets the value of the 'ip' field.
+      * metrics-lib/NetworkStatusEntry: String getAddress()
+      * @return The value.
+      */
     public java.lang.CharSequence getIp() {
       return ip;
     }
-    
-    /** Sets the value of the 'ip' field */
+
+    /**
+      * Sets the value of the 'ip' field.
+      * metrics-lib/NetworkStatusEntry: String getAddress()
+      * @param value The value of 'ip'.
+      * @return This builder.
+      */
     public converTor.bridgeStatus.R.Builder setIp(java.lang.CharSequence value) {
       validate(fields()[4], value);
       this.ip = value;
       fieldSetFlags()[4] = true;
       return this; 
     }
-    
-    /** Checks whether the 'ip' field has been set */
+
+    /**
+      * Checks whether the 'ip' field has been set.
+      * metrics-lib/NetworkStatusEntry: String getAddress()
+      * @return True if the 'ip' field has been set, false otherwise.
+      */
     public boolean hasIp() {
       return fieldSetFlags()[4];
     }
-    
-    /** Clears the value of the 'ip' field */
+
+
+    /**
+      * Clears the value of the 'ip' field.
+      * metrics-lib/NetworkStatusEntry: String getAddress()
+      * @return This builder.
+      */
     public converTor.bridgeStatus.R.Builder clearIp() {
       ip = null;
       fieldSetFlags()[4] = false;
       return this;
     }
 
-    /** Gets the value of the 'or_port' field */
+    /**
+      * Gets the value of the 'or_port' field.
+      * metrics-lib/NetworkStatusEntry: int getOrPort()
+      * @return The value.
+      */
     public java.lang.Integer getOrPort() {
       return or_port;
     }
-    
-    /** Sets the value of the 'or_port' field */
+
+    /**
+      * Sets the value of the 'or_port' field.
+      * metrics-lib/NetworkStatusEntry: int getOrPort()
+      * @param value The value of 'or_port'.
+      * @return This builder.
+      */
     public converTor.bridgeStatus.R.Builder setOrPort(java.lang.Integer value) {
       validate(fields()[5], value);
       this.or_port = value;
       fieldSetFlags()[5] = true;
       return this; 
     }
-    
-    /** Checks whether the 'or_port' field has been set */
+
+    /**
+      * Checks whether the 'or_port' field has been set.
+      * metrics-lib/NetworkStatusEntry: int getOrPort()
+      * @return True if the 'or_port' field has been set, false otherwise.
+      */
     public boolean hasOrPort() {
       return fieldSetFlags()[5];
     }
-    
-    /** Clears the value of the 'or_port' field */
+
+
+    /**
+      * Clears the value of the 'or_port' field.
+      * metrics-lib/NetworkStatusEntry: int getOrPort()
+      * @return This builder.
+      */
     public converTor.bridgeStatus.R.Builder clearOrPort() {
       or_port = null;
       fieldSetFlags()[5] = false;
       return this;
     }
 
-    /** Gets the value of the 'dir_port' field */
+    /**
+      * Gets the value of the 'dir_port' field.
+      * metrics-lib/NetworkStatusEntry: int getDirPort()
+      * @return The value.
+      */
     public java.lang.Integer getDirPort() {
       return dir_port;
     }
-    
-    /** Sets the value of the 'dir_port' field */
+
+    /**
+      * Sets the value of the 'dir_port' field.
+      * metrics-lib/NetworkStatusEntry: int getDirPort()
+      * @param value The value of 'dir_port'.
+      * @return This builder.
+      */
     public converTor.bridgeStatus.R.Builder setDirPort(java.lang.Integer value) {
       validate(fields()[6], value);
       this.dir_port = value;
       fieldSetFlags()[6] = true;
       return this; 
     }
-    
-    /** Checks whether the 'dir_port' field has been set */
+
+    /**
+      * Checks whether the 'dir_port' field has been set.
+      * metrics-lib/NetworkStatusEntry: int getDirPort()
+      * @return True if the 'dir_port' field has been set, false otherwise.
+      */
     public boolean hasDirPort() {
       return fieldSetFlags()[6];
     }
-    
-    /** Clears the value of the 'dir_port' field */
+
+
+    /**
+      * Clears the value of the 'dir_port' field.
+      * metrics-lib/NetworkStatusEntry: int getDirPort()
+      * @return This builder.
+      */
     public converTor.bridgeStatus.R.Builder clearDirPort() {
       dir_port = null;
       fieldSetFlags()[6] = false;
@@ -452,7 +631,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
         R record = new R();
         record.nickname = fieldSetFlags()[0] ? this.nickname : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.identity = fieldSetFlags()[1] ? this.identity : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.digest = fieldSetFlags()[2] ? this.digest : (java.lang.CharSequence) defaultValue(fields()[2]);
+        record.digest = fieldSetFlags()[2] ? this.digest : (java.util.List<java.lang.CharSequence>) defaultValue(fields()[2]);
         record.published = fieldSetFlags()[3] ? this.published : (java.lang.CharSequence) defaultValue(fields()[3]);
         record.ip = fieldSetFlags()[4] ? this.ip : (java.lang.CharSequence) defaultValue(fields()[4]);
         record.or_port = fieldSetFlags()[5] ? this.or_port : (java.lang.Integer) defaultValue(fields()[5]);
@@ -463,4 +642,21 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
       }
     }
   }
+
+  private static final org.apache.avro.io.DatumWriter
+    WRITER$ = new org.apache.avro.specific.SpecificDatumWriter(SCHEMA$);  
+
+  @Override public void writeExternal(java.io.ObjectOutput out)
+    throws java.io.IOException {
+    WRITER$.write(this, org.apache.avro.specific.SpecificData.getEncoder(out));
+  }
+
+  private static final org.apache.avro.io.DatumReader
+    READER$ = new org.apache.avro.specific.SpecificDatumReader(SCHEMA$);  
+
+  @Override public void readExternal(java.io.ObjectInput in)
+    throws java.io.IOException {
+    READER$.read(this, org.apache.avro.specific.SpecificData.getDecoder(in));
+  }
+
 }

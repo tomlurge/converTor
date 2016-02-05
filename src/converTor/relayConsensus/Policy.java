@@ -3,13 +3,16 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.relayConsensus;
+package converTor.relayConsensus;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Policy extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Policy\",\"namespace\":\"converTor.relayConsensus\",\"fields\":[{\"name\":\"default_policy\",\"type\":[\"null\",\"string\"]},{\"name\":\"port_summary\",\"type\":[\"null\",\"string\"]}]}");
+  private static final long serialVersionUID = -3610725433261482245L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Policy\",\"namespace\":\"converTor.relayConsensus\",\"fields\":[{\"name\":\"default_policy\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDefaultPolicy()\"},{\"name\":\"port_summary\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getPortList()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
+  /** metrics-lib/NetworkStatusEntry: String getDefaultPolicy() */
   @Deprecated public java.lang.CharSequence default_policy;
+  /** metrics-lib/NetworkStatusEntry: String getPortList() */
   @Deprecated public java.lang.CharSequence port_summary;
 
   /**
@@ -21,6 +24,8 @@ public class Policy extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * All-args constructor.
+   * @param default_policy metrics-lib/NetworkStatusEntry: String getDefaultPolicy()
+   * @param port_summary metrics-lib/NetworkStatusEntry: String getPortList()
    */
   public Policy(java.lang.CharSequence default_policy, java.lang.CharSequence port_summary) {
     this.default_policy = default_policy;
@@ -48,6 +53,7 @@ public class Policy extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'default_policy' field.
+   * @return metrics-lib/NetworkStatusEntry: String getDefaultPolicy()
    */
   public java.lang.CharSequence getDefaultPolicy() {
     return default_policy;
@@ -55,6 +61,7 @@ public class Policy extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'default_policy' field.
+   * metrics-lib/NetworkStatusEntry: String getDefaultPolicy()
    * @param value the value to set.
    */
   public void setDefaultPolicy(java.lang.CharSequence value) {
@@ -63,6 +70,7 @@ public class Policy extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'port_summary' field.
+   * @return metrics-lib/NetworkStatusEntry: String getPortList()
    */
   public java.lang.CharSequence getPortSummary() {
     return port_summary;
@@ -70,23 +78,35 @@ public class Policy extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'port_summary' field.
+   * metrics-lib/NetworkStatusEntry: String getPortList()
    * @param value the value to set.
    */
   public void setPortSummary(java.lang.CharSequence value) {
     this.port_summary = value;
   }
 
-  /** Creates a new Policy RecordBuilder */
+  /**
+   * Creates a new Policy RecordBuilder.
+   * @return A new Policy RecordBuilder
+   */
   public static converTor.relayConsensus.Policy.Builder newBuilder() {
     return new converTor.relayConsensus.Policy.Builder();
   }
   
-  /** Creates a new Policy RecordBuilder by copying an existing Builder */
+  /**
+   * Creates a new Policy RecordBuilder by copying an existing Builder.
+   * @param other The existing builder to copy.
+   * @return A new Policy RecordBuilder
+   */
   public static converTor.relayConsensus.Policy.Builder newBuilder(converTor.relayConsensus.Policy.Builder other) {
     return new converTor.relayConsensus.Policy.Builder(other);
   }
   
-  /** Creates a new Policy RecordBuilder by copying an existing Policy instance */
+  /**
+   * Creates a new Policy RecordBuilder by copying an existing Policy instance.
+   * @param other The existing instance to copy.
+   * @return A new Policy RecordBuilder
+   */
   public static converTor.relayConsensus.Policy.Builder newBuilder(converTor.relayConsensus.Policy other) {
     return new converTor.relayConsensus.Policy.Builder(other);
   }
@@ -97,7 +117,9 @@ public class Policy extends org.apache.avro.specific.SpecificRecordBase implemen
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Policy>
     implements org.apache.avro.data.RecordBuilder<Policy> {
 
+    /** metrics-lib/NetworkStatusEntry: String getDefaultPolicy() */
     private java.lang.CharSequence default_policy;
+    /** metrics-lib/NetworkStatusEntry: String getPortList() */
     private java.lang.CharSequence port_summary;
 
     /** Creates a new Builder */
@@ -105,7 +127,10 @@ public class Policy extends org.apache.avro.specific.SpecificRecordBase implemen
       super(converTor.relayConsensus.Policy.SCHEMA$);
     }
     
-    /** Creates a Builder by copying an existing Builder */
+    /**
+     * Creates a Builder by copying an existing Builder.
+     * @param other The existing Builder to copy.
+     */
     private Builder(converTor.relayConsensus.Policy.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.default_policy)) {
@@ -118,7 +143,10 @@ public class Policy extends org.apache.avro.specific.SpecificRecordBase implemen
       }
     }
     
-    /** Creates a Builder by copying an existing Policy instance */
+    /**
+     * Creates a Builder by copying an existing Policy instance
+     * @param other The existing instance to copy.
+     */
     private Builder(converTor.relayConsensus.Policy other) {
             super(converTor.relayConsensus.Policy.SCHEMA$);
       if (isValidValue(fields()[0], other.default_policy)) {
@@ -131,50 +159,86 @@ public class Policy extends org.apache.avro.specific.SpecificRecordBase implemen
       }
     }
 
-    /** Gets the value of the 'default_policy' field */
+    /**
+      * Gets the value of the 'default_policy' field.
+      * metrics-lib/NetworkStatusEntry: String getDefaultPolicy()
+      * @return The value.
+      */
     public java.lang.CharSequence getDefaultPolicy() {
       return default_policy;
     }
-    
-    /** Sets the value of the 'default_policy' field */
+
+    /**
+      * Sets the value of the 'default_policy' field.
+      * metrics-lib/NetworkStatusEntry: String getDefaultPolicy()
+      * @param value The value of 'default_policy'.
+      * @return This builder.
+      */
     public converTor.relayConsensus.Policy.Builder setDefaultPolicy(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.default_policy = value;
       fieldSetFlags()[0] = true;
       return this; 
     }
-    
-    /** Checks whether the 'default_policy' field has been set */
+
+    /**
+      * Checks whether the 'default_policy' field has been set.
+      * metrics-lib/NetworkStatusEntry: String getDefaultPolicy()
+      * @return True if the 'default_policy' field has been set, false otherwise.
+      */
     public boolean hasDefaultPolicy() {
       return fieldSetFlags()[0];
     }
-    
-    /** Clears the value of the 'default_policy' field */
+
+
+    /**
+      * Clears the value of the 'default_policy' field.
+      * metrics-lib/NetworkStatusEntry: String getDefaultPolicy()
+      * @return This builder.
+      */
     public converTor.relayConsensus.Policy.Builder clearDefaultPolicy() {
       default_policy = null;
       fieldSetFlags()[0] = false;
       return this;
     }
 
-    /** Gets the value of the 'port_summary' field */
+    /**
+      * Gets the value of the 'port_summary' field.
+      * metrics-lib/NetworkStatusEntry: String getPortList()
+      * @return The value.
+      */
     public java.lang.CharSequence getPortSummary() {
       return port_summary;
     }
-    
-    /** Sets the value of the 'port_summary' field */
+
+    /**
+      * Sets the value of the 'port_summary' field.
+      * metrics-lib/NetworkStatusEntry: String getPortList()
+      * @param value The value of 'port_summary'.
+      * @return This builder.
+      */
     public converTor.relayConsensus.Policy.Builder setPortSummary(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.port_summary = value;
       fieldSetFlags()[1] = true;
       return this; 
     }
-    
-    /** Checks whether the 'port_summary' field has been set */
+
+    /**
+      * Checks whether the 'port_summary' field has been set.
+      * metrics-lib/NetworkStatusEntry: String getPortList()
+      * @return True if the 'port_summary' field has been set, false otherwise.
+      */
     public boolean hasPortSummary() {
       return fieldSetFlags()[1];
     }
-    
-    /** Clears the value of the 'port_summary' field */
+
+
+    /**
+      * Clears the value of the 'port_summary' field.
+      * metrics-lib/NetworkStatusEntry: String getPortList()
+      * @return This builder.
+      */
     public converTor.relayConsensus.Policy.Builder clearPortSummary() {
       port_summary = null;
       fieldSetFlags()[1] = false;
@@ -193,4 +257,21 @@ public class Policy extends org.apache.avro.specific.SpecificRecordBase implemen
       }
     }
   }
+
+  private static final org.apache.avro.io.DatumWriter
+    WRITER$ = new org.apache.avro.specific.SpecificDatumWriter(SCHEMA$);  
+
+  @Override public void writeExternal(java.io.ObjectOutput out)
+    throws java.io.IOException {
+    WRITER$.write(this, org.apache.avro.specific.SpecificData.getEncoder(out));
+  }
+
+  private static final org.apache.avro.io.DatumReader
+    READER$ = new org.apache.avro.specific.SpecificDatumReader(SCHEMA$);  
+
+  @Override public void readExternal(java.io.ObjectInput in)
+    throws java.io.IOException {
+    READER$.read(this, org.apache.avro.specific.SpecificData.getDecoder(in));
+  }
+
 }

@@ -1,13 +1,3 @@
-/*
-
-TODO
-
-think: are the null's/defaults rightly laid out?
-integrate avro builder objects
-avro schema is not always like json schema (more records/sub-objects)
-  -> consequences ?!
-
- */
 package converTor;
 
 import java.io.*;
@@ -16,71 +6,337 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 /* avro */
-import org.apache.avro.file.DataFileReader;
 import org.apache.avro.file.DataFileWriter;
-import org.apache.avro.io.DatumReader;
 import org.apache.avro.io.DatumWriter;
-import org.apache.avro.specific.SpecificDatumReader;
 import org.apache.avro.specific.SpecificDatumWriter;
+
+/* avro classes auto-generated from schemas */
+import converTor.relay.*;
+import converTor.relayExtra.*;
+import converTor.bridgeExtra.*;
+import converTor.relayVote.*;
+import converTor.relayConsensus.*;
+import converTor.bridgeStatus.*;
+import converTor.tordnsel.*;
+import converTor.torperf.*;
 
 /*  metrics-lib  */
 import org.torproject.descriptor.*;
+
+/* command line interface */
+import org.apache.commons.cli.*;
+
+/* fileWriter - TODO maybe useful for multifile output */
+import org.apache.commons.io.FileUtils;
 
 
 public class Convert2avro {
 
   /*  argument defaults  */
-  static String format = "avro";
-  static String dir = "";
+  static boolean verbose = false;
+  static boolean compressed = false;
+  static boolean json = false;
+  static boolean avro = false;
+  static boolean parquet = true;
+  static String format = "parquet";
+  static String in = "data/in/";
+  static String out = "data/out/" + format + "/";
+  //  static String prefix = "";
+  //  static String name = "result";
+  static String suffix = "";
+  static int max = 20;
+
+  static class Converted {
+    String type;
+    String date;
+    Object load;  //  TODO  was'n das tatsächlich für'n typ?
+  }
 
   /*  Read all descriptors in the provided directory and
    *  convert them to the appropriate JSON format.  */
   public static void main(String[] args) throws IOException {
 
-    /*  optional command line arguments
-     *    -a, -avro         convert to Avro (default)
-     *    -p, -parquet      convert to Parquet
-     *    -j, -json         convert to JSON
-     *    <directory name>  scan only given subdirectory of default dir data/in/
-     */
-    for (String arg : args) {
-      if (arg.equals("-a") || arg.equals("--avro")) format = "avro";
-      else if (arg.equals("-p") || arg.equals("--parquet")) format = "parquet";
-      else if (arg.equals("-j") || arg.equals("--json")) format = "json";
-      else dir = arg;
+    //  INPUT ARGUMENTS
+    // https://commons.apache.org/proper/commons-cli/usage.html
+    Options options = new Options();
+    options.addOption("h", "help", false,
+            "display this help text");
+    options.addOption("f", "format", true,
+            "e.g. '-f=json'\n" +
+                    "to which serialization format to convert\n" +
+                    "defaults to 'parquet'\n" +
+                    "possible values are 'avro', 'parquet' and 'json'");
+    //  options.addOption("n", "name", true,
+    //          "e.g. '-n=myConversion'");
+    //  options.addOption("p", "prefix", true,
+    //          "e.g. '-p=NEW_'");
+    options.addOption("s", "suffix", true,
+            "e.g. '-s=_Suffix'");
+    options.addOption("i", "in", true,
+            "e.g. '-i=/my/data/in/dir'\n" +
+                    "from which directory to read data\n" +
+                    "defaults to 'data/in/'");
+    options.addOption("o", "out", true,
+            "e.g. '-i=/my/data/out/dir'\n" +
+                    "to which directory to write the converted data\n" +
+                    "defaults to 'data/out/'");
+    options.addOption("v", "verbose", false,
+            "encode 'jagged' maps (objects with non-uniform attribute sets) \n" +
+                    "additionally as 'flattened' arrays (with suffix '_FLAT')\n" +
+                    "and include all properties with 'null' values (this is only\n" +
+                    "relevant for the JSON encoding).\n" +
+                    "some SQL engines like Apache Drill require this.";
+    //  TODO  implement multi-file compression for JSON
+    options.addOption("c", "compressed", false,
+            "does generate .gz archive, \n" +
+                    "(this is only relevant for JSON)");
+    options.addOption("m", "max", true,
+            "maximum file readers to open, \n" +
+                    "e.g. '-m=5'\n" +
+                    "defaults to 20");
+    CommandLineParser parser = new DefaultParser();
+    CommandLine cmd = null;
+    try {
+      cmd = parser.parse(options, args);
+    } catch (ParseException e) {
+      e.printStackTrace();
+    }
+    if(cmd.hasOption("h")) {
+      HelpFormatter formatter = new HelpFormatter();
+      formatter.printHelp( "ConvertTor\n", options );
     }
 
+    if(cmd.hasOption("f") && cmd.getOptionValue("f") != null) {
+      String formatArgument = cmd.getOptionValue("f").toLowerCase();
+      if (formatArgument == "avro") {
+        avro = true;
+        parquet = false;
+        format = formatArgument;
+      }
+      else if (formatArgument == "json") {
+        json = true;
+        parquet = false;
+        format = formatArgument;
+      }
+      else if (formatArgument != "parquet")  {
+        HelpFormatter formatter = new HelpFormatter();
+        formatter.printHelp( "ConvertTor\n\n" +
+                "Sorry, but " + cmd.getOptionValue("f") +
+                " is not a valid format.\n\n", options );
+      }
+    }
+    //  if(cmd.hasOption("n") && cmd.getOptionValue("n") != null) {
+    //    name  = cmd.getOptionValue("n");
+    //  }
+    //  if(cmd.hasOption("p") && cmd.getOptionValue("p") != null) {
+    //    prefix  = cmd.getOptionValue("p");
+    //  }
+    if(cmd.hasOption("s") && cmd.getOptionValue("s") != null) {
+      suffix  = cmd.getOptionValue("s");
+    }
+    if(cmd.hasOption("i") && cmd.getOptionValue("i") != null) {
+      in = cmd.getOptionValue("i");
+    }
+    if(cmd.hasOption("o") && cmd.getOptionValue("o") != null) {
+      out = cmd.getOptionValue("o");
+    }
+    if(cmd.hasOption("v")) {
+      verbose = true;
+    }
+    if(verbose && json) {
+      compressed = true;
+    }
+
+    System.out.println("format = " + format);
+    //  System.out.println("name = " + name);
+    //  System.out.println("prefix = " + prefix);
+    System.out.println("suffix = " + suffix);
+    System.out.println("in = " + in);
+    System.out.println("out = " + out);
+    System.out.println("verbose = " + verbose);
+    System.out.println("compressed = " + compressed);
+
+    String outputFileEnding = suffix + "." + format + ( compressed ? ".gz" : "");
+    //  String outputFile = type + date + outputFileEnding;
+    //  String outputPath = out + outputFile;
+
+
     DescriptorReader descriptorReader = DescriptorSourceFactory.createDescriptorReader();
-    descriptorReader.addDirectory(new File("data/in/" + dir));
-    descriptorReader.setMaxDescriptorFilesInQueue(5);
+    descriptorReader.addDirectory(new File(in));
+    descriptorReader.setMaxDescriptorFilesInQueue(max);
     Iterator<DescriptorFile> descriptorFiles = descriptorReader.readDescriptors();
 
-    int written = 0;
-    String outputPath = "data/out/" + format + "/";
-    String outputName = "";
-    Writer AvroWriter = new FileWriter(outputPath + outputName);
-    BufferedWriter bw = new BufferedWriter(AvroWriter);
+
+    //  TODO  oder map?
+    ArrayList<DataFileWriter> dataFileWriters = new ArrayList<>();
+
+    /*  TODO  add(type,date,load)
+              check array/map dataFileWriters if writer type+date already exists
+                c.type
+                c.date
+              if no create it
+                all that writer gedöns
+              append load to it
+                c.load
+    */
+
+    //  TODO  bullshit
+    //  das kann alles weg
+    //  in der descriptor abarbeitungs schleife wird einfach gefragt werden,
+    //  ob so eine datei schon existiert
+    //  und wenn nicht wird das alles initialisiert
+    //  nur der array, in dem die datei gespeichert wird, muss schon vorher da sein
+
+    /* initialize files and writers */
+    File relayAvroFile = null;
+    DatumWriter<Relay> relayDatumWriter = null;
+    DataFileWriter<Relay> relayDataFileWriter = null;
+
+    File bridgeAvroFile = null;
+    DatumWriter<converTor.bridge.Bridge> bridgeDatumWriter = null;
+    DataFileWriter<converTor.bridge.Bridge> bridgeDataFileWriter = null;
+
+    File relayExtraAvroFile = null;
+    DatumWriter<RelayExtra> relayExtraDatumWriter = null;
+    DataFileWriter<RelayExtra> relayExtraDataFileWriter = null;
+
+    File bridgeExtraAvroFile = null;
+    DatumWriter<BridgeExtra> bridgeExtraDatumWriter = null;
+    DataFileWriter<BridgeExtra> bridgeExtraDataFileWriter = null;
+
+    File relayVoteAvroFile = null;
+    DatumWriter<RelayVote> relayVoteDatumWriter = null;
+    DataFileWriter<RelayVote> relayVoteDataFileWriter = null;
+
+    File relayConsensusAvroFile = null;
+    DatumWriter<RelayConsensus> relayConsensusDatumWriter = null;
+    DataFileWriter<RelayConsensus> relayConsensusDataFileWriter = null;
+
+    File bridgeStatusAvroFile = null;
+    DatumWriter<BridgeStatus> bridgeStatusDatumWriter = null;
+    DataFileWriter<BridgeStatus> bridgeStatusDataFileWriter = null;
+
+    File tordnselAvroFile = null;
+    DatumWriter<Tordnsel> tordnselDatumWriter = null;
+    DataFileWriter<Tordnsel> tordnselDataFileWriter = null;
+
+    File torperfAvroFile = null;
+    DatumWriter<Torperf> torperfDatumWriter = null;
+    DataFileWriter<Torperf> torperfDataFileWriter = null;
+
 
 
     while (descriptorFiles.hasNext()) {
       DescriptorFile descriptorFile = descriptorFiles.next();
+      if(null != descriptorFile.getException()){
+        System.err.print(descriptorFile.getException()
+                + "\n    in " + descriptorFile.getFileName() + "\n");
+      }
 
       for (Descriptor descriptor : descriptorFile.getDescriptors()) {
+        String avroDescriptor = null;   // TODO  wozu soll der gut sein?
 
-        // TODO which type?!
-        Object avroDescriptor = null;
-
-        //  relays & bridges descriptors
-        if (descriptor instanceof ServerDescriptor) {
-          avroDescriptor = AvroServerDescriptor
-                  .convert((ServerDescriptor) descriptor);
+        /*
+        //  relay descriptors
+        if (descriptor instanceof RelayServerDescriptor) {
+          avroDescriptor = ConvertRelay
+                  .convert((RelayServerDescriptor) descriptor);
         }
+        //  bridge descriptors
+        if (descriptor instanceof BridgeServerDescriptor) {
+          avroDescriptor = ConvertBridge
+                  .convert((BridgeServerDescriptor) descriptor);
+        }
+        //  relay extra info descriptors
+        if (descriptor instanceof RelayExtraInfoDescriptor) {
+          avroDescriptor = ConvertRelayExtra
+                  .convert((RelayExtraInfoDescriptor) descriptor);
+        }
+        //  bridge extra info descriptors
+        if (descriptor instanceof BridgeExtraInfoDescriptor) {
+          avroDescriptor = ConvertBridgeExtra
+                  .convert((BridgeExtraInfoDescriptor) descriptor);
+        }
+        //  relay network status vote
+        if (descriptor instanceof RelayNetworkStatusVote) {
+          avroDescriptor = ConvertRelayVote
+                  .convert((RelayNetworkStatusVote) descriptor);
+        }
+        //  relay network status consensus
+        if (descriptor instanceof RelayNetworkStatusConsensus) {
+          avroDescriptor = ConvertRelayConsensus
+                  .convert((RelayNetworkStatusConsensus) descriptor);
+        }
+        //  bridge network status
+        if (descriptor instanceof BridgeNetworkStatus) {
+          avroDescriptor = ConvertBridgeStatus
+                  .convert((BridgeNetworkStatus) descriptor);
+        }*/
+
+
+        //  tordnsel
+        /*if (descriptor instanceof ExitList) {
+          avroDescriptor = ConvertExitList
+                  .convert((ExitList) descriptor);
+        }*/
+        if (descriptor instanceof ExitList) {
+          //  add descriptor
+          if (tordnselAvroFile != null) {
+            Tordnsel tordnsel = ConvertTordnsel.populate((ExitList) descriptor);
+            tordnselDataFileWriter.append(tordnsel);
+          }
+          // initialize tordnsel and add first descriptor
+          else {
+            tordnselAvroFile = new File("tordnsel.avro");
+            tordnselDatumWriter = new SpecificDatumWriter<Tordnsel>(Tordnsel.class);
+            tordnselDataFileWriter = new DataFileWriter<Tordnsel>(tordnselDatumWriter);
+            dataFileWriters.add(tordnselDataFileWriter);
+            Tordnsel tordnsel = ConvertTordnsel.populate((ExitList) descriptor);
+            tordnselDataFileWriter.create(tordnsel.getSchema(), tordnselAvroFile);
+            tordnselDataFileWriter.append(tordnsel);
+          }
+        }
+
+
+
 
         //  torperf
         if (descriptor instanceof TorperfResult) {
-          avroDescriptor = AvroTorperfResult
-                  .construct((TorperfResult) descriptor);
+
+          //  TODO  mehr brauchts hier nicht
+          Converted c = ConvertTorperf.populate((TorperfResult) descriptor);
+          dataFileWriters.add( c ); // TODO  wrong type
+
+          //  TODO das kann weg
+          //  add descriptor
+          if (torperfAvroFile != null) {
+            Torperf torperf = ConvertTorperf.populate((TorperfResult) descriptor);
+            torperfDataFileWriter.append(torperf);
+          }
+          //  TODO  das muß woanders hin
+          // initialize torperf and add first descriptor
+          else {
+            torperfAvroFile = new File("torperf.avro");
+            torperfDatumWriter = new SpecificDatumWriter<Torperf>(Torperf.class);
+            torperfDataFileWriter = new DataFileWriter<Torperf>(torperfDatumWriter);
+            dataFileWriters.add(torperfDataFileWriter);
+            Torperf torperf = ConvertTorperf.populate((TorperfResult) descriptor);
+            torperfDataFileWriter.create(torperf.getSchema(), torperfAvroFile);
+            torperfDataFileWriter.append(torperf);
+          }
         }
+
+        /* from multifile output branch
+        //  torperf
+        if (descriptor instanceof TorperfResult) {
+          jsonDescriptor = JsonTorperf
+                  .convert((TorperfResult) descriptor);
+          String pathFileName = out + prefix + "torperf_" + jsonDescriptor.yearMonth + suffix + "." + format;
+          File theFile;
+          theFile = new File(pathFileName);
+          FileUtils.writeStringToFile(theFile, jsonDescriptor.jsonDesc + "\n", "UTF8", true);
+        }
+         */
 
         if (!descriptor.getUnrecognizedLines().isEmpty()) {
           System.err.println("Unrecognized lines in "
@@ -88,16 +344,18 @@ public class Convert2avro {
           System.err.println(descriptor.getUnrecognizedLines());
           continue;
         }
-        if (avroDescriptor != null) {
-          // TODO remove this comma -v- after testing
-          bw.write((written++ > 0 ? ",\n" : "") + avroDescriptor);
-        }
+
       }
     }
-    bw.close();
+
+    for ( DataFileWriter dataFileWriter : dataFileWriters) {
+      dataFileWriter.close();
+    }
+
   }
 
 
+  //  all descriptors
   static class AvroDescriptor {
 
     /*  generic key/value objects for verbose output  */
@@ -116,6 +374,24 @@ public class Convert2avro {
         this.key = key;
         this.val = val;
       }
+    }
+    static class StringDouble {
+      String key;
+      Double val;
+      StringDouble(String key, Double val) {
+        this.key = key;
+        this.val = val;
+      }
+    }
+
+    /* ExtraInfo and Stats objects used in extra info descriptors */
+    static class ExtraInfo {
+      String nickname;
+      String fingerprint;
+    }
+    static class Stats {
+      String date;
+      Long interval = 86400L;   // TODO  is it really useful to insert the default here?
     }
 
     /*  Serialize "read-history" and "write-history" lines  */
@@ -142,234 +418,117 @@ public class Convert2avro {
       dateTimeFormat.setLenient(false);
       dateTimeFormat.setTimeZone(dateTimezone);
     }
-
   }
 
-  static class AvroServerDescriptor extends AvroDescriptor {
 
-    /*  Take a single server descriptor, test if it is a server-descriptor or a
-     *  bridge-server-descriptor and return a JSON string representation. */
+  //  tordnsel
+  static class ConvertTordnsel extends AvroDescriptor {
 
-    static Server construct(ServerDescriptor desc) {
-
-      //  TODO that will probably not work out as expected
-      if (annotation.startsWith("@type server-descriptor")) {
-        Relay server = Relay.newBuilder();
-      }
-      else {
-        Bridge server = Bridge.newBuilder();
-      }
-
-      for (String annotation : desc.getAnnotations()) {
-        server.setDescriptorType(annotation.substring("@type ".length()));
-        //  relay specific attribute
-        if (annotation.startsWith("@type server-descriptor")) {
-          server.setRouterSignature(desc.getRouterSignature() != null);
-        }
-      }
-      // TODO router record
-      server.setNickname(desc.getNickname());
-      server.setAddress(desc.getAddress());
-      server.setOr_port(desc.getOrPort());
-      server.setSocks_port(desc.getSocksPort());
-      server.setDir_port(desc.getDirPort());
-      // TODO bandwidth record
-      server.setBandwidth_avg(desc.getBandwidthRate());
-      server.setBandwidth_burst(desc.getBandwidthBurst());
-      //  test, if there is a key: return 'true' if yes, 'false' otherwise
-      server.setOnion_key(desc.getOnionKey() != null);
-      server.setSigning_key(desc.getSigningKey() != null);
-      //  verbose testing because of List type
-      //  first check that the list is not null, then if it's empty
-      //  (checking for emptiness right away could lead to null pointer exc)
-      if (desc.getExitPolicyLines() != null && !desc.getExitPolicyLines().isEmpty()) {
-        server.setExit_policy(desc.getExitPolicyLines());
-      }
-      //  can be '-1' if null. in that case we don't touch it here, leaving the
-      //  default from the class definition intact
-      if (desc.getBandwidthObserved() >= 0) {
-        server.setBandwidth_observed(desc.getBandwidthObserved());
-      }
-      if (desc.getOrAddresses() != null && !desc.getOrAddresses().isEmpty()) {
-        server.setOr_addresses(new ArrayList<StringInt>());
-        for (String orAddress : desc.getOrAddresses()) {
-          if (!orAddress.contains(":")) {
-            continue;
-          }
-          int lastColon = orAddress.lastIndexOf(":");
-          try {
-            int val = Integer.parseInt(orAddress.substring(lastColon + 1));
-            server.setOr_addresses.add(
-                    new StringInt(orAddress.substring(0, lastColon), val)
-            );
-          } catch (NumberFormatException e) {
-            continue;
-          }
-        }
-      }
-      server.setPlatform(desc.getPlatform());
-      server.setPublished(dateTimeFormat.format(desc.getPublishedMillis()));
-      server.setFingerprint(desc.getFingerprint().toUpperCase());
-      //  isHibernating can't return 'null' because it's of type 'boolean'
-      //  (with little 'b') but it's only present in the collecTor data if it's
-      //  true. therefor we check for it's existence and include it if it
-      //  exists. otherwise we leave it alone / to the default value from
-      //  the class definition above (which is null)
-      if (desc.isHibernating()) {
-        server.setHibernating(desc.isHibernating());
-      }
-      server.setUptime(desc.getUptime());
-      server.setIpv6_policy(desc.getIpv6DefaultPolicy());
-      server.setContact(desc.getContact());
-      server.setFamily(desc.getFamilyEntries());
-      //  check for 'null' first because we want to run a method on it
-      //  and not get a null pointer exception meanwhile
-      if (desc.getReadHistory() != null) {
-        server.setRead_history(convertBandwidthHistory(desc.getReadHistory()));
-      }
-      if (desc.getWriteHistory() != null) {
-        server.setWrite_history(convertBandwidthHistory(desc.getWriteHistory()));
-      }
-      server.setEventdns(desc.getUsesEnhancedDnsLogic());
-      server.setCaches_extra_info(desc.getCachesExtraInfo());
-      if (desc.getExtraInfoDigest() != null) {
-        server.setExtra_info_digest(desc.getExtraInfoDigest().toUpperCase());
-      }
-      server.setHidden_service_dir_versions(desc.getHiddenServiceDirVersions());
-      server.setLink_protocol_versions(desc.getLinkProtocolVersions());
-      server.setCircuit_protocol_versions(desc.getCircuitProtocolVersions());
-      server.setAllow_single_hop_exits(desc.getAllowSingleHopExits());
-      server.setNtor_onion_key(desc.getNtorOnionKey() != null);
-      server.setRouter_digest(desc.getServerDescriptorDigest().toUpperCase());
-
-      return ToAvro.serialize(server);
+    List<ExitNode> exit_nodes;
+    static class ExitNode {
+      String fingerprint;
+      String published;
+      String last_status;
+      // List<Exit> exit_list;
+      Object exit_list;
     }
+    static class Exit {
+      String ip;
+      String date;
+    }
+
+    static Tordnsel populate(ExitList desc) {
+      Tordnsel tordnsel = new Tordnsel();
+      for (String annotation : desc.getAnnotations()) {
+        tordnsel.setDescriptorType(annotation.substring("@type ".length()));
+      }
+      tordnsel.setDownloaded(desc.getDownloadedMillis();
+      tordnsel.setExitNodes(AvroExitNodes.populate( ));
+
+      /*  how to populate nested records/arrays/maps
+      https://stackoverflow.com/questions/5480043/question-populating-nested-records-in-avro-using-a-genericrecord
+
+      Schema  sch =  Schema.parse(schemaFile);
+      DataFileWriter<GenericRecord> fw = new DataFileWriter<GenericRecord>(new GenericDatumWriter<GenericRecord>()).create(sch, new File(outFile));
+      GenericRecord r = new GenericData.Record(sch);
+      r.put(“firstName”, “John”);
+      fw.append(r);
+
+      GenericRecord t = new GenericData.Record(sch.getField("address").schema());
+      t.put("city","beijing");
+      r.put("address",t);
+      */
+
+      tordnsel.exit_nodes = new ArrayList<>();
+      if (desc.getEntries() != null && !desc.getEntries().isEmpty()) {
+        for(ExitList.Entry exitEntry : desc.getEntries()) {
+          ExitNode exitNode = new ExitNode();
+          exitNode.fingerprint = exitEntry.getFingerprint();
+          exitNode.published = dateTimeFormat.format(exitEntry.getPublishedMillis());
+          exitNode.last_status = dateTimeFormat.format(exitEntry.getLastStatusMillis());
+          if (exitEntry.getExitAddresses() != null && !exitEntry.getExitAddresses().isEmpty()) {
+            /* jagged */
+            exitNode.exit_list = new HashMap<String, String>();
+            HashMap<String, String> jaggedList = new HashMap<>();
+            for (Map.Entry<String, Long> exitAddress : exitEntry.getExitAddresses().entrySet()) {
+              jaggedList.put(exitAddress.getKey(), dateTimeFormat.format(exitAddress.getValue()));
+            }
+            exitNode.exit_list = jaggedList;
+            if (verbose) {
+              exitNode.exit_list_VERBOSE = new ArrayList<Exit>();
+              ArrayList<Exit> flatExit = new ArrayList<>();
+              for (Map.Entry<String, Long> exitAddress : exitEntry.getExitAddresses().entrySet()) {
+                Exit exit = new Exit();
+                exit.ip = exitAddress.getKey();
+                exit.date = dateTimeFormat.format(exitAddress.getValue());
+                flatExit.add(exit);
+              }
+              exitNode.exit_list = flatExit;
+            }
+          }
+          tordnsel.exit_nodes.add(exitNode);
+        }
+      }
+      /* */
+      return tordnsel;
+    }
+
+
+
+    //  inner class exitList
+    static class AvroExitNodes extends AvroDescriptor {
+      static Torperf populate(TorperfResult desc) {
+        Torperf torperf = new Torperf();
+        torperf.setDescriptorType("torperf 1.0");
+        torperf.setSource(desc.getSource());
+        torperf.setFilesize(desc.getFileSize());
+        return torperf;
+      }
+    }
+
   }
 
 
-//  static class AvroTorperfResult extends AvroDescriptor {
-//    String descriptor_type;
-//    String source;
-//    Integer filesize;
-//    String start;
-//    String socket;
-//    String connect;
-//    String negotiate;
-//    String request;
-//    String response;
-//    String datarequest;
-//    String dataresponse;
-//    String datacomplete;
-//    Integer writebytes;
-//    Integer readbytes;
-//    Boolean didtimeout;
-//    Long dataperc10;
-//    Long dataperc20;
-//    Long dataperc30;
-//    Long dataperc40;
-//    Long dataperc50;
-//    Long dataperc60;
-//    Long dataperc70;
-//    Long dataperc80;
-//    Long dataperc90;
-//    String launch;
-//    String used_at;
-//    List<String> path;
-//    List<Long> buildtimes;
-//    String timeout;
-//    Double quantile;
-//    Integer circ_id;
-//    Integer used_by;
-//
-//    static String convert(TorperfResult desc) {
-//      AvroTorperfResult torperf = new AvroTorperfResult();
-//      torperf.descriptor_type = "torperf 1.0";
-//      /*  TODO  hardcoding the descriptor type is a workaround to bug #17696 in
-//          metrics-lib (https://trac.torproject.org/projects/tor/ticket/17696)
-//      for (String annotation : desc.getAnnotations()) {
-//        torperf.descriptor_type = annotation.substring("@type ".length());
-//      }
-//      */
-//      torperf.source = desc.getSource();
-//      torperf.filesize = desc.getFileSize();
-//      torperf.start = dateTimeFormat.format(desc.getStartMillis());
-//      torperf.socket = dateTimeFormat.format(desc.getSocketMillis());
-//      torperf.connect = dateTimeFormat.format(desc.getConnectMillis());
-//      torperf.negotiate = dateTimeFormat.format(desc.getNegotiateMillis());
-//      torperf.request = dateTimeFormat.format(desc.getRequestMillis());
-//      torperf.response = dateTimeFormat.format(desc.getResponseMillis());
-//      torperf.datarequest = dateTimeFormat.format(desc.getDataRequestMillis());
-//      torperf.dataresponse = dateTimeFormat.format(desc.getDataResponseMillis());
-//      torperf.datacomplete = dateTimeFormat.format(desc.getDataCompleteMillis());
-//      torperf.writebytes = desc.getWriteBytes();
-//      torperf.readbytes = desc.getReadBytes();
-//      torperf.didtimeout = desc.didTimeout();
-//      if (desc.getDataPercentiles() != null && !desc.getDataPercentiles().isEmpty()) {
-//        torperf.dataperc10 = desc.getDataPercentiles().get(10);
-//        torperf.dataperc20 = desc.getDataPercentiles().get(20);
-//        torperf.dataperc30 = desc.getDataPercentiles().get(30);
-//        torperf.dataperc40 = desc.getDataPercentiles().get(40);
-//        torperf.dataperc50 = desc.getDataPercentiles().get(50);
-//        torperf.dataperc60 = desc.getDataPercentiles().get(60);
-//        torperf.dataperc70 = desc.getDataPercentiles().get(70);
-//        torperf.dataperc80 = desc.getDataPercentiles().get(80);
-//        torperf.dataperc90 = desc.getDataPercentiles().get(90);
-//      }
-//      if (desc.getLaunchMillis() >= 0) {
-//        torperf.launch = dateTimeFormat.format(desc.getLaunchMillis());
-//      }
-//      if (desc.getUsedAtMillis() >= 0) {
-//        torperf.used_at = dateTimeFormat.format(desc.getUsedAtMillis());
-//      }
-//      if (desc.getPath() != null && !desc.getPath().isEmpty()) {
-//        torperf.path = desc.getPath();
-//      }
-//      if (desc.getBuildTimes() != null && !desc.getBuildTimes().isEmpty()) {
-//        torperf.buildtimes = desc.getBuildTimes();
-//      }
-//      if (desc.getTimeout() >= 0) {
-//        torperf.timeout = dateTimeFormat.format(desc.getTimeout());
-//      }
-//      if (desc.getQuantile() >= 0) {
-//        torperf.quantile = desc.getQuantile();
-//      }
-//      if (desc.getCircId() >= 0) {
-//        torperf.circ_id = desc.getCircId();
-//      }
-//      if (desc.getUsedBy() >= 0) {
-//        torperf.used_by = desc.getUsedBy();
-//      }
-//      return ToAvro.serialize(torperf);
-//    }
-//  }
-
-
-  static class AvroTorperfResult extends AvroDescriptor {
-    static Torperf construct(TorperfResult desc) {
-
-      Torperf torperf = Torperf.newBuilder();
-      /*  TODO  hardcoding the descriptor type is a workaround to bug #17696 in
-          metrics-lib (https://trac.torproject.org/projects/tor/ticket/17696)
-      for (String annotation : desc.getAnnotations()) {
-        torperf.setDescriptorType(annotation.substring("@type ".length()));
-      }
-      */
-      //  TODO check CamelCasing with generated classes
+  //  torperf
+  //  SPECIFIC with CONSTRUCTOR
+  static class ConvertTorperf extends AvroDescriptor {
+    static Converted populate(TorperfResult desc) {
+      Torperf torperf = new Torperf();
       torperf.setDescriptorType("torperf 1.0");
       torperf.setSource(desc.getSource());
       torperf.setFilesize(desc.getFileSize());
-      torperf.setStart(dateTimeFormat.format(desc.getStartMillis()));
-      torperf.setSocket(dateTimeFormat.format(desc.getSocketMillis()));
-      torperf.setConnect(dateTimeFormat.format(desc.getConnectMillis()));
-      torperf.setNegotiate(dateTimeFormat.format(desc.getNegotiateMillis()));
-      torperf.setRequest(dateTimeFormat.format(desc.getRequestMillis()));
-      torperf.setResponse(dateTimeFormat.format(desc.getResponseMillis()));
-      torperf.setDatarequest(dateTimeFormat.format(desc.getDataRequestMillis()));
-      torperf.setDataresponse(dateTimeFormat.format(desc.getDataResponseMillis()));
-      torperf.setDatacomplete(dateTimeFormat.format(desc.getDataCompleteMillis()));
+      torperf.setStart(desc.getStartMillis());
+      torperf.setSocket(desc.getSocketMillis());
+      torperf.setConnect(desc.getConnectMillis());
+      torperf.setNegotiate(desc.getNegotiateMillis());
+      torperf.setRequest(desc.getRequestMillis());
+      torperf.setResponse(desc.getResponseMillis());
+      torperf.setDatarequest(desc.getDataRequestMillis());
+      torperf.setDataresponse(desc.getDataResponseMillis());
+      torperf.setDatacomplete(desc.getDataCompleteMillis());
       torperf.setWritebytes(desc.getWriteBytes());
-      torperf.setReadBytes(desc.getReadBytes());
-      torperf.setDidTimeout(desc.didTimeout());
+      torperf.setReadbytes(desc.getReadBytes());
+      torperf.setDidtimeout(desc.didTimeout());
       if (desc.getDataPercentiles() != null && !desc.getDataPercentiles().isEmpty()) {
         torperf.setDataperc10(desc.getDataPercentiles().get(10));
         torperf.setDataperc20(desc.getDataPercentiles().get(20));
@@ -381,34 +540,129 @@ public class Convert2avro {
         torperf.setDataperc80(desc.getDataPercentiles().get(80));
         torperf.setDataperc90(desc.getDataPercentiles().get(90));
       }
-      if (desc.getLaunchMillis() >= 0) {
-        torperf.setLaunch(dateTimeFormat.format(desc.getLaunchMillis()));
-      }
-      if (desc.getUsedAtMillis() >= 0) {
-        torperf.setUsedAt(dateTimeFormat.format(desc.getUsedAtMillis()));
-      }
+      torperf.setLaunch(desc.getLaunchMillis());
+      torperf.setUsedAt(desc.getUsedAtMillis());
+      //  TODO  type mismatch char_sequence/array -> string
+      //  it's an array stupid
       if (desc.getPath() != null && !desc.getPath().isEmpty()) {
         torperf.setPath(desc.getPath());
       }
-      if (desc.getBuildTimes() != null && !desc.getBuildTimes().isEmpty()) {
       torperf.setBuildtimes(desc.getBuildTimes());
+      torperf.setTimeout(desc.getTimeout());
+      torperf.setQuantile(desc.getQuantile());
+      torperf.setCircId(desc.getCircId());
+      torperf.setUsedBy(desc.getUsedBy());
+
+      Converted c = new Converted();
+      c.date = torperf.dateTimeFormat.format(desc.getStartMillis()).substring(0,7);
+      c.type = "torperf";
+      c.load = torperf;
+      return c;
+    }
+  }
+
+  //  SPECIFIC with BUILDER
+  /*
+  static class SpecificBuilderAvroTorperfDescriptor extends AvroDescriptor {
+    static Torperf populate(TorperfResult desc) {
+
+      Torperf torperf;
+      torperf = Torperf.newBuilder()
+                       .setDescriptorType("torperf 1.0")
+                       .setSource(desc.getSource())
+                       .setFilesize(desc.getFileSize())
+                       .setStart(desc.getStartMillis())
+                       .setSocket(desc.getSocketMillis())
+                       .setConnect(desc.getConnectMillis())
+                       .setNegotiate(desc.getNegotiateMillis())
+                       .setRequest(desc.getRequestMillis())
+                       .setResponse(desc.getResponseMillis())
+                       .setDatarequest(desc.getDataRequestMillis())
+                       .setDataresponse(desc.getDataResponseMillis())
+                       .setDatacomplete(desc.getDataCompleteMillis())
+                       .setWritebytes(desc.getWriteBytes())
+                       .setReadbytes(desc.getReadBytes())
+                       .setDidtimeout(desc.didTimeout())
+                       .build();
+      //  TODO BUILDER APPROACH BREAKS DOWN HERE
+      //  i have no idea how i could introduce any logic
+      //  like the following switch into that process
+      //  in a reasonable way
+      if (desc.getDataPercentiles() != null && !desc.getDataPercentiles().isEmpty()) {
+        torperf.setDataperc10(desc.getDataPercentiles().get(10));
+        torperf.setDataperc20(desc.getDataPercentiles().get(20));
+        torperf.setDataperc30(desc.getDataPercentiles().get(30));
+        torperf.setDataperc40(desc.getDataPercentiles().get(40));
+        torperf.setDataperc50(desc.getDataPercentiles().get(50));
+        torperf.setDataperc60(desc.getDataPercentiles().get(60));
+        torperf.setDataperc70(desc.getDataPercentiles().get(70));
+        torperf.setDataperc80(desc.getDataPercentiles().get(80));
+        torperf.setDataperc90(desc.getDataPercentiles().get(90));
       }
-      if (desc.getTimeout() >= 0) {
-        torperf.setTimeout(dateTimeFormat.format(desc.getTimeout()));
+      torperf.setLaunch(desc.getLaunchMillis());
+      torperf.setUsedAt(desc.getUsedAtMillis());
+      if (desc.getPath() != null && !desc.getPath().isEmpty()) {
+        torperf.setPath(desc.getPath());
       }
-      if (desc.getQuantile() >= 0) {
-        torperf.setQuantile(desc.getQuantile());
-      }
-      if (desc.getCircId() >= 0) {
-        torperf.setCircId(desc.getCircId());
-      }
-      if (desc.getUsedBy() >= 0) {
-        torperf.setUsedBy(desc.getUsedBy());
-      }
-      torperf.build();
+      torperf.setBuildtimes(desc.getBuildTimes());
+      torperf.setTimeout(desc.getTimeout());
+      torperf.setQuantile(desc.getQuantile());
+      torperf.setCircId(desc.getCircId());
+      torperf.setUsedBy(desc.getUsedBy());
+
       return torperf;
     }
   }
+  */
+
+  //  GENERIC
+  /*  TODO  delete after settling for SPECIIFIC mapping
+  static class GenericAvroTorperfDescriptor extends AvroDescriptor {
+    static GenericRecord populate(GenericRecord torperf, TorperfResult desc) {
+
+      //  TODO  manually check types for consistency
+      //        yes, manually! one might think "this is java", but still...
+
+      torperf.put("descriptor_type", "torperf 1.0");
+      torperf.put("source", desc.getSource());
+      torperf.put("filesize", desc.getFileSize());
+      torperf.put("start", dateTimeFormat.format(desc.getStartMillis()));
+      torperf.put("socket", dateTimeFormat.format(desc.getSocketMillis()));
+      torperf.put("connect", dateTimeFormat.format(desc.getConnectMillis()));
+      torperf.put("negotiate", dateTimeFormat.format(desc.getNegotiateMillis()));
+      torperf.put("request", dateTimeFormat.format(desc.getRequestMillis()));
+      torperf.put("response", dateTimeFormat.format(desc.getResponseMillis()));
+      torperf.put("datarequest", dateTimeFormat.format(desc.getDataRequestMillis()));
+      torperf.put("dataresponse", dateTimeFormat.format(desc.getDataResponseMillis()));
+      torperf.put("datacomplete", dateTimeFormat.format(desc.getDataCompleteMillis()));
+      torperf.put("writebytes", desc.getWriteBytes());
+      torperf.put("readbytes", desc.getReadBytes());
+      torperf.put("didtimeout", desc.didTimeout());
+      if (desc.getDataPercentiles() != null && !desc.getDataPercentiles().isEmpty()) {
+        torperf.put("dataperc10", desc.getDataPercentiles().get(10));
+        torperf.put("dataperc20", desc.getDataPercentiles().get(20));
+        torperf.put("dataperc30", desc.getDataPercentiles().get(30));
+        torperf.put("dataperc40", desc.getDataPercentiles().get(40));
+        torperf.put("dataperc50", desc.getDataPercentiles().get(50));
+        torperf.put("dataperc60", desc.getDataPercentiles().get(60));
+        torperf.put("dataperc70", desc.getDataPercentiles().get(70));
+        torperf.put("dataperc80", desc.getDataPercentiles().get(80));
+        torperf.put("dataperc90", desc.getDataPercentiles().get(90));
+      }
+      torperf.put("launch", desc.getLaunchMillis());
+      torperf.put("used_at", desc.getUsedAtMillis());
+      torperf.put("path", desc.getPath());
+      torperf.put("buildtimes", desc.getBuildTimes());
+      torperf.put("timeout", desc.getTimeout());
+      torperf.put("quantile", desc.getQuantile());
+      torperf.put("circ_id", desc.getCircId());
+      torperf.put("used_by", desc.getUsedBy());
+
+      return torperf;
+    }
+  }
+  */
+
 
 
 

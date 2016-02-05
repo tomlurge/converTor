@@ -3,13 +3,16 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.relayExtra;
+package converTor.relayExtra;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class DirreqStats extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DirreqStats\",\"namespace\":\"converTor.relayExtra\",\"fields\":[{\"name\":\"date\",\"type\":\"string\"},{\"name\":\"interval\",\"type\":\"long\",\"default\":86400}]}");
+  private static final long serialVersionUID = 4135296507280552834L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DirreqStats\",\"namespace\":\"converTor.relayExtra\",\"fields\":[{\"name\":\"date\",\"type\":\"string\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getDirreqStatsEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getDirreqStatsIntervalLength()\",\"default\":86400}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
+  /** metrics-lib/ExtraInfoDescriptor: long getDirreqStatsEndMillis() */
   @Deprecated public java.lang.CharSequence date;
+  /** metrics-lib/ExtraInfoDescriptor: long getDirreqStatsIntervalLength() */
   @Deprecated public long interval;
 
   /**
@@ -21,6 +24,8 @@ public class DirreqStats extends org.apache.avro.specific.SpecificRecordBase imp
 
   /**
    * All-args constructor.
+   * @param date metrics-lib/ExtraInfoDescriptor: long getDirreqStatsEndMillis()
+   * @param interval metrics-lib/ExtraInfoDescriptor: long getDirreqStatsIntervalLength()
    */
   public DirreqStats(java.lang.CharSequence date, java.lang.Long interval) {
     this.date = date;
@@ -48,6 +53,7 @@ public class DirreqStats extends org.apache.avro.specific.SpecificRecordBase imp
 
   /**
    * Gets the value of the 'date' field.
+   * @return metrics-lib/ExtraInfoDescriptor: long getDirreqStatsEndMillis()
    */
   public java.lang.CharSequence getDate() {
     return date;
@@ -55,6 +61,7 @@ public class DirreqStats extends org.apache.avro.specific.SpecificRecordBase imp
 
   /**
    * Sets the value of the 'date' field.
+   * metrics-lib/ExtraInfoDescriptor: long getDirreqStatsEndMillis()
    * @param value the value to set.
    */
   public void setDate(java.lang.CharSequence value) {
@@ -63,6 +70,7 @@ public class DirreqStats extends org.apache.avro.specific.SpecificRecordBase imp
 
   /**
    * Gets the value of the 'interval' field.
+   * @return metrics-lib/ExtraInfoDescriptor: long getDirreqStatsIntervalLength()
    */
   public java.lang.Long getInterval() {
     return interval;
@@ -70,23 +78,35 @@ public class DirreqStats extends org.apache.avro.specific.SpecificRecordBase imp
 
   /**
    * Sets the value of the 'interval' field.
+   * metrics-lib/ExtraInfoDescriptor: long getDirreqStatsIntervalLength()
    * @param value the value to set.
    */
   public void setInterval(java.lang.Long value) {
     this.interval = value;
   }
 
-  /** Creates a new DirreqStats RecordBuilder */
+  /**
+   * Creates a new DirreqStats RecordBuilder.
+   * @return A new DirreqStats RecordBuilder
+   */
   public static converTor.relayExtra.DirreqStats.Builder newBuilder() {
     return new converTor.relayExtra.DirreqStats.Builder();
   }
   
-  /** Creates a new DirreqStats RecordBuilder by copying an existing Builder */
+  /**
+   * Creates a new DirreqStats RecordBuilder by copying an existing Builder.
+   * @param other The existing builder to copy.
+   * @return A new DirreqStats RecordBuilder
+   */
   public static converTor.relayExtra.DirreqStats.Builder newBuilder(converTor.relayExtra.DirreqStats.Builder other) {
     return new converTor.relayExtra.DirreqStats.Builder(other);
   }
   
-  /** Creates a new DirreqStats RecordBuilder by copying an existing DirreqStats instance */
+  /**
+   * Creates a new DirreqStats RecordBuilder by copying an existing DirreqStats instance.
+   * @param other The existing instance to copy.
+   * @return A new DirreqStats RecordBuilder
+   */
   public static converTor.relayExtra.DirreqStats.Builder newBuilder(converTor.relayExtra.DirreqStats other) {
     return new converTor.relayExtra.DirreqStats.Builder(other);
   }
@@ -97,7 +117,9 @@ public class DirreqStats extends org.apache.avro.specific.SpecificRecordBase imp
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<DirreqStats>
     implements org.apache.avro.data.RecordBuilder<DirreqStats> {
 
+    /** metrics-lib/ExtraInfoDescriptor: long getDirreqStatsEndMillis() */
     private java.lang.CharSequence date;
+    /** metrics-lib/ExtraInfoDescriptor: long getDirreqStatsIntervalLength() */
     private long interval;
 
     /** Creates a new Builder */
@@ -105,7 +127,10 @@ public class DirreqStats extends org.apache.avro.specific.SpecificRecordBase imp
       super(converTor.relayExtra.DirreqStats.SCHEMA$);
     }
     
-    /** Creates a Builder by copying an existing Builder */
+    /**
+     * Creates a Builder by copying an existing Builder.
+     * @param other The existing Builder to copy.
+     */
     private Builder(converTor.relayExtra.DirreqStats.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.date)) {
@@ -118,7 +143,10 @@ public class DirreqStats extends org.apache.avro.specific.SpecificRecordBase imp
       }
     }
     
-    /** Creates a Builder by copying an existing DirreqStats instance */
+    /**
+     * Creates a Builder by copying an existing DirreqStats instance
+     * @param other The existing instance to copy.
+     */
     private Builder(converTor.relayExtra.DirreqStats other) {
             super(converTor.relayExtra.DirreqStats.SCHEMA$);
       if (isValidValue(fields()[0], other.date)) {
@@ -131,50 +159,86 @@ public class DirreqStats extends org.apache.avro.specific.SpecificRecordBase imp
       }
     }
 
-    /** Gets the value of the 'date' field */
+    /**
+      * Gets the value of the 'date' field.
+      * metrics-lib/ExtraInfoDescriptor: long getDirreqStatsEndMillis()
+      * @return The value.
+      */
     public java.lang.CharSequence getDate() {
       return date;
     }
-    
-    /** Sets the value of the 'date' field */
+
+    /**
+      * Sets the value of the 'date' field.
+      * metrics-lib/ExtraInfoDescriptor: long getDirreqStatsEndMillis()
+      * @param value The value of 'date'.
+      * @return This builder.
+      */
     public converTor.relayExtra.DirreqStats.Builder setDate(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.date = value;
       fieldSetFlags()[0] = true;
       return this; 
     }
-    
-    /** Checks whether the 'date' field has been set */
+
+    /**
+      * Checks whether the 'date' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: long getDirreqStatsEndMillis()
+      * @return True if the 'date' field has been set, false otherwise.
+      */
     public boolean hasDate() {
       return fieldSetFlags()[0];
     }
-    
-    /** Clears the value of the 'date' field */
+
+
+    /**
+      * Clears the value of the 'date' field.
+      * metrics-lib/ExtraInfoDescriptor: long getDirreqStatsEndMillis()
+      * @return This builder.
+      */
     public converTor.relayExtra.DirreqStats.Builder clearDate() {
       date = null;
       fieldSetFlags()[0] = false;
       return this;
     }
 
-    /** Gets the value of the 'interval' field */
+    /**
+      * Gets the value of the 'interval' field.
+      * metrics-lib/ExtraInfoDescriptor: long getDirreqStatsIntervalLength()
+      * @return The value.
+      */
     public java.lang.Long getInterval() {
       return interval;
     }
-    
-    /** Sets the value of the 'interval' field */
+
+    /**
+      * Sets the value of the 'interval' field.
+      * metrics-lib/ExtraInfoDescriptor: long getDirreqStatsIntervalLength()
+      * @param value The value of 'interval'.
+      * @return This builder.
+      */
     public converTor.relayExtra.DirreqStats.Builder setInterval(long value) {
       validate(fields()[1], value);
       this.interval = value;
       fieldSetFlags()[1] = true;
       return this; 
     }
-    
-    /** Checks whether the 'interval' field has been set */
+
+    /**
+      * Checks whether the 'interval' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: long getDirreqStatsIntervalLength()
+      * @return True if the 'interval' field has been set, false otherwise.
+      */
     public boolean hasInterval() {
       return fieldSetFlags()[1];
     }
-    
-    /** Clears the value of the 'interval' field */
+
+
+    /**
+      * Clears the value of the 'interval' field.
+      * metrics-lib/ExtraInfoDescriptor: long getDirreqStatsIntervalLength()
+      * @return This builder.
+      */
     public converTor.relayExtra.DirreqStats.Builder clearInterval() {
       fieldSetFlags()[1] = false;
       return this;
@@ -192,4 +256,21 @@ public class DirreqStats extends org.apache.avro.specific.SpecificRecordBase imp
       }
     }
   }
+
+  private static final org.apache.avro.io.DatumWriter
+    WRITER$ = new org.apache.avro.specific.SpecificDatumWriter(SCHEMA$);  
+
+  @Override public void writeExternal(java.io.ObjectOutput out)
+    throws java.io.IOException {
+    WRITER$.write(this, org.apache.avro.specific.SpecificData.getEncoder(out));
+  }
+
+  private static final org.apache.avro.io.DatumReader
+    READER$ = new org.apache.avro.specific.SpecificDatumReader(SCHEMA$);  
+
+  @Override public void readExternal(java.io.ObjectInput in)
+    throws java.io.IOException {
+    READER$.read(this, org.apache.avro.specific.SpecificData.getDecoder(in));
+  }
+
 }

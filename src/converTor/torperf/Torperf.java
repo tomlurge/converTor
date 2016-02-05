@@ -3,44 +3,75 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.torperf;
+package converTor.torperf;  
 @SuppressWarnings("all")
-/** torperf 1.0 */
 @org.apache.avro.specific.AvroGenerated
 public class Torperf extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Torperf\",\"namespace\":\"converTor.torperf\",\"doc\":\"torperf 1.0\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":\"string\",\"default\":\"torperf 1.0\"},{\"name\":\"source\",\"type\":[\"null\",\"string\"]},{\"name\":\"filesize\",\"type\":[\"null\",\"int\"]},{\"name\":\"start\",\"type\":[\"null\",\"long\"]},{\"name\":\"socket\",\"type\":[\"null\",\"long\"]},{\"name\":\"connect\",\"type\":[\"null\",\"long\"]},{\"name\":\"negotiate\",\"type\":[\"null\",\"long\"]},{\"name\":\"request\",\"type\":[\"null\",\"long\"]},{\"name\":\"response\",\"type\":[\"null\",\"long\"]},{\"name\":\"datarequest\",\"type\":[\"null\",\"long\"]},{\"name\":\"dataresponse\",\"type\":[\"null\",\"long\"]},{\"name\":\"datacomplete\",\"type\":[\"null\",\"long\"]},{\"name\":\"writebytes\",\"type\":[\"null\",\"int\"]},{\"name\":\"readbytes\",\"type\":[\"null\",\"int\"]},{\"name\":\"didtimeout\",\"type\":[\"null\",\"boolean\"]},{\"name\":\"dataperc10\",\"type\":[\"null\",\"long\"]},{\"name\":\"dataperc20\",\"type\":[\"null\",\"long\"]},{\"name\":\"dataperc30\",\"type\":[\"null\",\"long\"]},{\"name\":\"dataperc40\",\"type\":[\"null\",\"long\"]},{\"name\":\"dataperc50\",\"type\":[\"null\",\"long\"]},{\"name\":\"dataperc60\",\"type\":[\"null\",\"long\"]},{\"name\":\"dataperc70\",\"type\":[\"null\",\"long\"]},{\"name\":\"dataperc80\",\"type\":[\"null\",\"long\"]},{\"name\":\"dataperc90\",\"type\":[\"null\",\"long\"]},{\"name\":\"launch\",\"type\":[\"null\",\"long\"]},{\"name\":\"used_at\",\"type\":[\"null\",\"long\"]},{\"name\":\"path\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}]},{\"name\":\"buildtimes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}]},{\"name\":\"timeout\",\"type\":[\"null\",\"long\"]},{\"name\":\"quantile\",\"type\":[\"null\",\"double\"]},{\"name\":\"circ_id\",\"type\":[\"null\",\"int\"]},{\"name\":\"used_by\",\"type\":[\"null\",\"int\"]}],\"aliases\":[\"torperfResult\",\"torperf_descriptor\"]}");
+  private static final long serialVersionUID = 4404645593086624658L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Torperf\",\"namespace\":\"converTor.torperf\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":\"string\",\"default\":\"torperf 1.0\"},{\"name\":\"source\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/TorperfResult: String getSource()\"},{\"name\":\"filesize\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getFileSize()\"},{\"name\":\"start\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getStartMillis()\"},{\"name\":\"socket\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getSocketMillis()\"},{\"name\":\"connect\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getConnectMillis()\"},{\"name\":\"negotiate\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getNegotiateMillis()\"},{\"name\":\"request\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getRequestMillis()\"},{\"name\":\"response\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getResponseMillis()\"},{\"name\":\"datarequest\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getDataRequestMillis()\"},{\"name\":\"dataresponse\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getDataResponseMillis()\"},{\"name\":\"datacomplete\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getDataCompleteMillis()\"},{\"name\":\"writebytes\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getWriteBytes()\"},{\"name\":\"readbytes\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getReadBytes()\"},{\"name\":\"didtimeout\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/TorperfResult: Boolean didTimeout()\"},{\"name\":\"dataperc10\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(10)\"},{\"name\":\"dataperc20\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(20)\"},{\"name\":\"dataperc30\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(30)\"},{\"name\":\"dataperc40\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(40)\"},{\"name\":\"dataperc50\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(50)\"},{\"name\":\"dataperc60\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(60)\"},{\"name\":\"dataperc70\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(70)\"},{\"name\":\"dataperc80\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(80)\"},{\"name\":\"dataperc90\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(90)\"},{\"name\":\"launch\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getLaunchMillis()()\"},{\"name\":\"used_at\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getUsedAtMillis()\"},{\"name\":\"path\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/TorperfResult: List<String> getPath()\"},{\"name\":\"buildtimes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/TorperfResult: List<Long> getBuildTimes()\"},{\"name\":\"timeout\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getTimeout()\"},{\"name\":\"quantile\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/TorperfResult: double getQuantile()\"},{\"name\":\"circ_id\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getCircId()\"},{\"name\":\"used_by\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getUsedBy()\"}],\"aliases\":[\"torperfResult\"]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   @Deprecated public java.lang.CharSequence descriptor_type;
+  /** metrics-lib/TorperfResult: String getSource() */
   @Deprecated public java.lang.CharSequence source;
+  /** metrics-lib/TorperfResult: int getFileSize() */
   @Deprecated public java.lang.Integer filesize;
+  /** metrics-lib/TorperfResult: long getStartMillis() */
   @Deprecated public java.lang.Long start;
+  /** metrics-lib/TorperfResult: long getSocketMillis() */
   @Deprecated public java.lang.Long socket;
+  /** metrics-lib/TorperfResult: long getConnectMillis() */
   @Deprecated public java.lang.Long connect;
+  /** metrics-lib/TorperfResult: long getNegotiateMillis() */
   @Deprecated public java.lang.Long negotiate;
+  /** metrics-lib/TorperfResult: long getRequestMillis() */
   @Deprecated public java.lang.Long request;
+  /** metrics-lib/TorperfResult: long getResponseMillis() */
   @Deprecated public java.lang.Long response;
+  /** metrics-lib/TorperfResult: long getDataRequestMillis() */
   @Deprecated public java.lang.Long datarequest;
+  /** metrics-lib/TorperfResult: long getDataResponseMillis() */
   @Deprecated public java.lang.Long dataresponse;
+  /** metrics-lib/TorperfResult: long getDataCompleteMillis() */
   @Deprecated public java.lang.Long datacomplete;
+  /** metrics-lib/TorperfResult: int getWriteBytes() */
   @Deprecated public java.lang.Integer writebytes;
+  /** metrics-lib/TorperfResult: int getReadBytes() */
   @Deprecated public java.lang.Integer readbytes;
+  /** metrics-lib/TorperfResult: Boolean didTimeout() */
   @Deprecated public java.lang.Boolean didtimeout;
+  /** metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(10) */
   @Deprecated public java.lang.Long dataperc10;
+  /** metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(20) */
   @Deprecated public java.lang.Long dataperc20;
+  /** metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(30) */
   @Deprecated public java.lang.Long dataperc30;
+  /** metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(40) */
   @Deprecated public java.lang.Long dataperc40;
+  /** metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(50) */
   @Deprecated public java.lang.Long dataperc50;
+  /** metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(60) */
   @Deprecated public java.lang.Long dataperc60;
+  /** metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(70) */
   @Deprecated public java.lang.Long dataperc70;
+  /** metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(80) */
   @Deprecated public java.lang.Long dataperc80;
+  /** metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(90) */
   @Deprecated public java.lang.Long dataperc90;
+  /** metrics-lib/TorperfResult: long getLaunchMillis()() */
   @Deprecated public java.lang.Long launch;
+  /** metrics-lib/TorperfResult: long getUsedAtMillis() */
   @Deprecated public java.lang.Long used_at;
+  /** metrics-lib/TorperfResult: List<String> getPath() */
   @Deprecated public java.util.List<java.lang.CharSequence> path;
+  /** metrics-lib/TorperfResult: List<Long> getBuildTimes() */
   @Deprecated public java.util.List<java.lang.Long> buildtimes;
+  /** metrics-lib/TorperfResult: long getTimeout() */
   @Deprecated public java.lang.Long timeout;
+  /** metrics-lib/TorperfResult: double getQuantile() */
   @Deprecated public java.lang.Double quantile;
+  /** metrics-lib/TorperfResult: int getCircId() */
   @Deprecated public java.lang.Integer circ_id;
+  /** metrics-lib/TorperfResult: int getUsedBy() */
   @Deprecated public java.lang.Integer used_by;
 
   /**
@@ -52,6 +83,37 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * All-args constructor.
+   * @param source metrics-lib/TorperfResult: String getSource()
+   * @param filesize metrics-lib/TorperfResult: int getFileSize()
+   * @param start metrics-lib/TorperfResult: long getStartMillis()
+   * @param socket metrics-lib/TorperfResult: long getSocketMillis()
+   * @param connect metrics-lib/TorperfResult: long getConnectMillis()
+   * @param negotiate metrics-lib/TorperfResult: long getNegotiateMillis()
+   * @param request metrics-lib/TorperfResult: long getRequestMillis()
+   * @param response metrics-lib/TorperfResult: long getResponseMillis()
+   * @param datarequest metrics-lib/TorperfResult: long getDataRequestMillis()
+   * @param dataresponse metrics-lib/TorperfResult: long getDataResponseMillis()
+   * @param datacomplete metrics-lib/TorperfResult: long getDataCompleteMillis()
+   * @param writebytes metrics-lib/TorperfResult: int getWriteBytes()
+   * @param readbytes metrics-lib/TorperfResult: int getReadBytes()
+   * @param didtimeout metrics-lib/TorperfResult: Boolean didTimeout()
+   * @param dataperc10 metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(10)
+   * @param dataperc20 metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(20)
+   * @param dataperc30 metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(30)
+   * @param dataperc40 metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(40)
+   * @param dataperc50 metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(50)
+   * @param dataperc60 metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(60)
+   * @param dataperc70 metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(70)
+   * @param dataperc80 metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(80)
+   * @param dataperc90 metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(90)
+   * @param launch metrics-lib/TorperfResult: long getLaunchMillis()()
+   * @param used_at metrics-lib/TorperfResult: long getUsedAtMillis()
+   * @param path metrics-lib/TorperfResult: List<String> getPath()
+   * @param buildtimes metrics-lib/TorperfResult: List<Long> getBuildTimes()
+   * @param timeout metrics-lib/TorperfResult: long getTimeout()
+   * @param quantile metrics-lib/TorperfResult: double getQuantile()
+   * @param circ_id metrics-lib/TorperfResult: int getCircId()
+   * @param used_by metrics-lib/TorperfResult: int getUsedBy()
    */
   public Torperf(java.lang.CharSequence descriptor_type, java.lang.CharSequence source, java.lang.Integer filesize, java.lang.Long start, java.lang.Long socket, java.lang.Long connect, java.lang.Long negotiate, java.lang.Long request, java.lang.Long response, java.lang.Long datarequest, java.lang.Long dataresponse, java.lang.Long datacomplete, java.lang.Integer writebytes, java.lang.Integer readbytes, java.lang.Boolean didtimeout, java.lang.Long dataperc10, java.lang.Long dataperc20, java.lang.Long dataperc30, java.lang.Long dataperc40, java.lang.Long dataperc50, java.lang.Long dataperc60, java.lang.Long dataperc70, java.lang.Long dataperc80, java.lang.Long dataperc90, java.lang.Long launch, java.lang.Long used_at, java.util.List<java.lang.CharSequence> path, java.util.List<java.lang.Long> buildtimes, java.lang.Long timeout, java.lang.Double quantile, java.lang.Integer circ_id, java.lang.Integer used_by) {
     this.descriptor_type = descriptor_type;
@@ -184,6 +246,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Gets the value of the 'source' field.
+   * @return metrics-lib/TorperfResult: String getSource()
    */
   public java.lang.CharSequence getSource() {
     return source;
@@ -191,6 +254,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Sets the value of the 'source' field.
+   * metrics-lib/TorperfResult: String getSource()
    * @param value the value to set.
    */
   public void setSource(java.lang.CharSequence value) {
@@ -199,6 +263,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Gets the value of the 'filesize' field.
+   * @return metrics-lib/TorperfResult: int getFileSize()
    */
   public java.lang.Integer getFilesize() {
     return filesize;
@@ -206,6 +271,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Sets the value of the 'filesize' field.
+   * metrics-lib/TorperfResult: int getFileSize()
    * @param value the value to set.
    */
   public void setFilesize(java.lang.Integer value) {
@@ -214,6 +280,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Gets the value of the 'start' field.
+   * @return metrics-lib/TorperfResult: long getStartMillis()
    */
   public java.lang.Long getStart() {
     return start;
@@ -221,6 +288,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Sets the value of the 'start' field.
+   * metrics-lib/TorperfResult: long getStartMillis()
    * @param value the value to set.
    */
   public void setStart(java.lang.Long value) {
@@ -229,6 +297,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Gets the value of the 'socket' field.
+   * @return metrics-lib/TorperfResult: long getSocketMillis()
    */
   public java.lang.Long getSocket() {
     return socket;
@@ -236,6 +305,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Sets the value of the 'socket' field.
+   * metrics-lib/TorperfResult: long getSocketMillis()
    * @param value the value to set.
    */
   public void setSocket(java.lang.Long value) {
@@ -244,6 +314,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Gets the value of the 'connect' field.
+   * @return metrics-lib/TorperfResult: long getConnectMillis()
    */
   public java.lang.Long getConnect() {
     return connect;
@@ -251,6 +322,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Sets the value of the 'connect' field.
+   * metrics-lib/TorperfResult: long getConnectMillis()
    * @param value the value to set.
    */
   public void setConnect(java.lang.Long value) {
@@ -259,6 +331,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Gets the value of the 'negotiate' field.
+   * @return metrics-lib/TorperfResult: long getNegotiateMillis()
    */
   public java.lang.Long getNegotiate() {
     return negotiate;
@@ -266,6 +339,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Sets the value of the 'negotiate' field.
+   * metrics-lib/TorperfResult: long getNegotiateMillis()
    * @param value the value to set.
    */
   public void setNegotiate(java.lang.Long value) {
@@ -274,6 +348,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Gets the value of the 'request' field.
+   * @return metrics-lib/TorperfResult: long getRequestMillis()
    */
   public java.lang.Long getRequest() {
     return request;
@@ -281,6 +356,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Sets the value of the 'request' field.
+   * metrics-lib/TorperfResult: long getRequestMillis()
    * @param value the value to set.
    */
   public void setRequest(java.lang.Long value) {
@@ -289,6 +365,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Gets the value of the 'response' field.
+   * @return metrics-lib/TorperfResult: long getResponseMillis()
    */
   public java.lang.Long getResponse() {
     return response;
@@ -296,6 +373,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Sets the value of the 'response' field.
+   * metrics-lib/TorperfResult: long getResponseMillis()
    * @param value the value to set.
    */
   public void setResponse(java.lang.Long value) {
@@ -304,6 +382,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Gets the value of the 'datarequest' field.
+   * @return metrics-lib/TorperfResult: long getDataRequestMillis()
    */
   public java.lang.Long getDatarequest() {
     return datarequest;
@@ -311,6 +390,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Sets the value of the 'datarequest' field.
+   * metrics-lib/TorperfResult: long getDataRequestMillis()
    * @param value the value to set.
    */
   public void setDatarequest(java.lang.Long value) {
@@ -319,6 +399,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Gets the value of the 'dataresponse' field.
+   * @return metrics-lib/TorperfResult: long getDataResponseMillis()
    */
   public java.lang.Long getDataresponse() {
     return dataresponse;
@@ -326,6 +407,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Sets the value of the 'dataresponse' field.
+   * metrics-lib/TorperfResult: long getDataResponseMillis()
    * @param value the value to set.
    */
   public void setDataresponse(java.lang.Long value) {
@@ -334,6 +416,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Gets the value of the 'datacomplete' field.
+   * @return metrics-lib/TorperfResult: long getDataCompleteMillis()
    */
   public java.lang.Long getDatacomplete() {
     return datacomplete;
@@ -341,6 +424,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Sets the value of the 'datacomplete' field.
+   * metrics-lib/TorperfResult: long getDataCompleteMillis()
    * @param value the value to set.
    */
   public void setDatacomplete(java.lang.Long value) {
@@ -349,6 +433,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Gets the value of the 'writebytes' field.
+   * @return metrics-lib/TorperfResult: int getWriteBytes()
    */
   public java.lang.Integer getWritebytes() {
     return writebytes;
@@ -356,6 +441,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Sets the value of the 'writebytes' field.
+   * metrics-lib/TorperfResult: int getWriteBytes()
    * @param value the value to set.
    */
   public void setWritebytes(java.lang.Integer value) {
@@ -364,6 +450,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Gets the value of the 'readbytes' field.
+   * @return metrics-lib/TorperfResult: int getReadBytes()
    */
   public java.lang.Integer getReadbytes() {
     return readbytes;
@@ -371,6 +458,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Sets the value of the 'readbytes' field.
+   * metrics-lib/TorperfResult: int getReadBytes()
    * @param value the value to set.
    */
   public void setReadbytes(java.lang.Integer value) {
@@ -379,6 +467,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Gets the value of the 'didtimeout' field.
+   * @return metrics-lib/TorperfResult: Boolean didTimeout()
    */
   public java.lang.Boolean getDidtimeout() {
     return didtimeout;
@@ -386,6 +475,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Sets the value of the 'didtimeout' field.
+   * metrics-lib/TorperfResult: Boolean didTimeout()
    * @param value the value to set.
    */
   public void setDidtimeout(java.lang.Boolean value) {
@@ -394,6 +484,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Gets the value of the 'dataperc10' field.
+   * @return metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(10)
    */
   public java.lang.Long getDataperc10() {
     return dataperc10;
@@ -401,6 +492,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Sets the value of the 'dataperc10' field.
+   * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(10)
    * @param value the value to set.
    */
   public void setDataperc10(java.lang.Long value) {
@@ -409,6 +501,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Gets the value of the 'dataperc20' field.
+   * @return metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(20)
    */
   public java.lang.Long getDataperc20() {
     return dataperc20;
@@ -416,6 +509,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Sets the value of the 'dataperc20' field.
+   * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(20)
    * @param value the value to set.
    */
   public void setDataperc20(java.lang.Long value) {
@@ -424,6 +518,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Gets the value of the 'dataperc30' field.
+   * @return metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(30)
    */
   public java.lang.Long getDataperc30() {
     return dataperc30;
@@ -431,6 +526,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Sets the value of the 'dataperc30' field.
+   * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(30)
    * @param value the value to set.
    */
   public void setDataperc30(java.lang.Long value) {
@@ -439,6 +535,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Gets the value of the 'dataperc40' field.
+   * @return metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(40)
    */
   public java.lang.Long getDataperc40() {
     return dataperc40;
@@ -446,6 +543,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Sets the value of the 'dataperc40' field.
+   * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(40)
    * @param value the value to set.
    */
   public void setDataperc40(java.lang.Long value) {
@@ -454,6 +552,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Gets the value of the 'dataperc50' field.
+   * @return metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(50)
    */
   public java.lang.Long getDataperc50() {
     return dataperc50;
@@ -461,6 +560,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Sets the value of the 'dataperc50' field.
+   * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(50)
    * @param value the value to set.
    */
   public void setDataperc50(java.lang.Long value) {
@@ -469,6 +569,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Gets the value of the 'dataperc60' field.
+   * @return metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(60)
    */
   public java.lang.Long getDataperc60() {
     return dataperc60;
@@ -476,6 +577,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Sets the value of the 'dataperc60' field.
+   * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(60)
    * @param value the value to set.
    */
   public void setDataperc60(java.lang.Long value) {
@@ -484,6 +586,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Gets the value of the 'dataperc70' field.
+   * @return metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(70)
    */
   public java.lang.Long getDataperc70() {
     return dataperc70;
@@ -491,6 +594,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Sets the value of the 'dataperc70' field.
+   * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(70)
    * @param value the value to set.
    */
   public void setDataperc70(java.lang.Long value) {
@@ -499,6 +603,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Gets the value of the 'dataperc80' field.
+   * @return metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(80)
    */
   public java.lang.Long getDataperc80() {
     return dataperc80;
@@ -506,6 +611,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Sets the value of the 'dataperc80' field.
+   * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(80)
    * @param value the value to set.
    */
   public void setDataperc80(java.lang.Long value) {
@@ -514,6 +620,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Gets the value of the 'dataperc90' field.
+   * @return metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(90)
    */
   public java.lang.Long getDataperc90() {
     return dataperc90;
@@ -521,6 +628,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Sets the value of the 'dataperc90' field.
+   * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(90)
    * @param value the value to set.
    */
   public void setDataperc90(java.lang.Long value) {
@@ -529,6 +637,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Gets the value of the 'launch' field.
+   * @return metrics-lib/TorperfResult: long getLaunchMillis()()
    */
   public java.lang.Long getLaunch() {
     return launch;
@@ -536,6 +645,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Sets the value of the 'launch' field.
+   * metrics-lib/TorperfResult: long getLaunchMillis()()
    * @param value the value to set.
    */
   public void setLaunch(java.lang.Long value) {
@@ -544,6 +654,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Gets the value of the 'used_at' field.
+   * @return metrics-lib/TorperfResult: long getUsedAtMillis()
    */
   public java.lang.Long getUsedAt() {
     return used_at;
@@ -551,6 +662,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Sets the value of the 'used_at' field.
+   * metrics-lib/TorperfResult: long getUsedAtMillis()
    * @param value the value to set.
    */
   public void setUsedAt(java.lang.Long value) {
@@ -559,6 +671,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Gets the value of the 'path' field.
+   * @return metrics-lib/TorperfResult: List<String> getPath()
    */
   public java.util.List<java.lang.CharSequence> getPath() {
     return path;
@@ -566,6 +679,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Sets the value of the 'path' field.
+   * metrics-lib/TorperfResult: List<String> getPath()
    * @param value the value to set.
    */
   public void setPath(java.util.List<java.lang.CharSequence> value) {
@@ -574,6 +688,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Gets the value of the 'buildtimes' field.
+   * @return metrics-lib/TorperfResult: List<Long> getBuildTimes()
    */
   public java.util.List<java.lang.Long> getBuildtimes() {
     return buildtimes;
@@ -581,6 +696,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Sets the value of the 'buildtimes' field.
+   * metrics-lib/TorperfResult: List<Long> getBuildTimes()
    * @param value the value to set.
    */
   public void setBuildtimes(java.util.List<java.lang.Long> value) {
@@ -589,6 +705,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Gets the value of the 'timeout' field.
+   * @return metrics-lib/TorperfResult: long getTimeout()
    */
   public java.lang.Long getTimeout() {
     return timeout;
@@ -596,6 +713,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Sets the value of the 'timeout' field.
+   * metrics-lib/TorperfResult: long getTimeout()
    * @param value the value to set.
    */
   public void setTimeout(java.lang.Long value) {
@@ -604,6 +722,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Gets the value of the 'quantile' field.
+   * @return metrics-lib/TorperfResult: double getQuantile()
    */
   public java.lang.Double getQuantile() {
     return quantile;
@@ -611,6 +730,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Sets the value of the 'quantile' field.
+   * metrics-lib/TorperfResult: double getQuantile()
    * @param value the value to set.
    */
   public void setQuantile(java.lang.Double value) {
@@ -619,6 +739,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Gets the value of the 'circ_id' field.
+   * @return metrics-lib/TorperfResult: int getCircId()
    */
   public java.lang.Integer getCircId() {
     return circ_id;
@@ -626,6 +747,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Sets the value of the 'circ_id' field.
+   * metrics-lib/TorperfResult: int getCircId()
    * @param value the value to set.
    */
   public void setCircId(java.lang.Integer value) {
@@ -634,6 +756,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Gets the value of the 'used_by' field.
+   * @return metrics-lib/TorperfResult: int getUsedBy()
    */
   public java.lang.Integer getUsedBy() {
     return used_by;
@@ -641,23 +764,35 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Sets the value of the 'used_by' field.
+   * metrics-lib/TorperfResult: int getUsedBy()
    * @param value the value to set.
    */
   public void setUsedBy(java.lang.Integer value) {
     this.used_by = value;
   }
 
-  /** Creates a new Torperf RecordBuilder */
+  /**
+   * Creates a new Torperf RecordBuilder.
+   * @return A new Torperf RecordBuilder
+   */
   public static converTor.torperf.Torperf.Builder newBuilder() {
     return new converTor.torperf.Torperf.Builder();
   }
   
-  /** Creates a new Torperf RecordBuilder by copying an existing Builder */
+  /**
+   * Creates a new Torperf RecordBuilder by copying an existing Builder.
+   * @param other The existing builder to copy.
+   * @return A new Torperf RecordBuilder
+   */
   public static converTor.torperf.Torperf.Builder newBuilder(converTor.torperf.Torperf.Builder other) {
     return new converTor.torperf.Torperf.Builder(other);
   }
   
-  /** Creates a new Torperf RecordBuilder by copying an existing Torperf instance */
+  /**
+   * Creates a new Torperf RecordBuilder by copying an existing Torperf instance.
+   * @param other The existing instance to copy.
+   * @return A new Torperf RecordBuilder
+   */
   public static converTor.torperf.Torperf.Builder newBuilder(converTor.torperf.Torperf other) {
     return new converTor.torperf.Torperf.Builder(other);
   }
@@ -669,36 +804,67 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
     implements org.apache.avro.data.RecordBuilder<Torperf> {
 
     private java.lang.CharSequence descriptor_type;
+    /** metrics-lib/TorperfResult: String getSource() */
     private java.lang.CharSequence source;
+    /** metrics-lib/TorperfResult: int getFileSize() */
     private java.lang.Integer filesize;
+    /** metrics-lib/TorperfResult: long getStartMillis() */
     private java.lang.Long start;
+    /** metrics-lib/TorperfResult: long getSocketMillis() */
     private java.lang.Long socket;
+    /** metrics-lib/TorperfResult: long getConnectMillis() */
     private java.lang.Long connect;
+    /** metrics-lib/TorperfResult: long getNegotiateMillis() */
     private java.lang.Long negotiate;
+    /** metrics-lib/TorperfResult: long getRequestMillis() */
     private java.lang.Long request;
+    /** metrics-lib/TorperfResult: long getResponseMillis() */
     private java.lang.Long response;
+    /** metrics-lib/TorperfResult: long getDataRequestMillis() */
     private java.lang.Long datarequest;
+    /** metrics-lib/TorperfResult: long getDataResponseMillis() */
     private java.lang.Long dataresponse;
+    /** metrics-lib/TorperfResult: long getDataCompleteMillis() */
     private java.lang.Long datacomplete;
+    /** metrics-lib/TorperfResult: int getWriteBytes() */
     private java.lang.Integer writebytes;
+    /** metrics-lib/TorperfResult: int getReadBytes() */
     private java.lang.Integer readbytes;
+    /** metrics-lib/TorperfResult: Boolean didTimeout() */
     private java.lang.Boolean didtimeout;
+    /** metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(10) */
     private java.lang.Long dataperc10;
+    /** metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(20) */
     private java.lang.Long dataperc20;
+    /** metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(30) */
     private java.lang.Long dataperc30;
+    /** metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(40) */
     private java.lang.Long dataperc40;
+    /** metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(50) */
     private java.lang.Long dataperc50;
+    /** metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(60) */
     private java.lang.Long dataperc60;
+    /** metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(70) */
     private java.lang.Long dataperc70;
+    /** metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(80) */
     private java.lang.Long dataperc80;
+    /** metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(90) */
     private java.lang.Long dataperc90;
+    /** metrics-lib/TorperfResult: long getLaunchMillis()() */
     private java.lang.Long launch;
+    /** metrics-lib/TorperfResult: long getUsedAtMillis() */
     private java.lang.Long used_at;
+    /** metrics-lib/TorperfResult: List<String> getPath() */
     private java.util.List<java.lang.CharSequence> path;
+    /** metrics-lib/TorperfResult: List<Long> getBuildTimes() */
     private java.util.List<java.lang.Long> buildtimes;
+    /** metrics-lib/TorperfResult: long getTimeout() */
     private java.lang.Long timeout;
+    /** metrics-lib/TorperfResult: double getQuantile() */
     private java.lang.Double quantile;
+    /** metrics-lib/TorperfResult: int getCircId() */
     private java.lang.Integer circ_id;
+    /** metrics-lib/TorperfResult: int getUsedBy() */
     private java.lang.Integer used_by;
 
     /** Creates a new Builder */
@@ -706,7 +872,10 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       super(converTor.torperf.Torperf.SCHEMA$);
     }
     
-    /** Creates a Builder by copying an existing Builder */
+    /**
+     * Creates a Builder by copying an existing Builder.
+     * @param other The existing Builder to copy.
+     */
     private Builder(converTor.torperf.Torperf.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.descriptor_type)) {
@@ -839,7 +1008,10 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       }
     }
     
-    /** Creates a Builder by copying an existing Torperf instance */
+    /**
+     * Creates a Builder by copying an existing Torperf instance
+     * @param other The existing instance to copy.
+     */
     private Builder(converTor.torperf.Torperf other) {
             super(converTor.torperf.Torperf.SCHEMA$);
       if (isValidValue(fields()[0], other.descriptor_type)) {
@@ -972,800 +1144,1372 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       }
     }
 
-    /** Gets the value of the 'descriptor_type' field */
+    /**
+      * Gets the value of the 'descriptor_type' field.
+      * @return The value.
+      */
     public java.lang.CharSequence getDescriptorType() {
       return descriptor_type;
     }
-    
-    /** Sets the value of the 'descriptor_type' field */
+
+    /**
+      * Sets the value of the 'descriptor_type' field.
+      * @param value The value of 'descriptor_type'.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder setDescriptorType(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.descriptor_type = value;
       fieldSetFlags()[0] = true;
       return this; 
     }
-    
-    /** Checks whether the 'descriptor_type' field has been set */
+
+    /**
+      * Checks whether the 'descriptor_type' field has been set.
+      * @return True if the 'descriptor_type' field has been set, false otherwise.
+      */
     public boolean hasDescriptorType() {
       return fieldSetFlags()[0];
     }
-    
-    /** Clears the value of the 'descriptor_type' field */
+
+
+    /**
+      * Clears the value of the 'descriptor_type' field.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder clearDescriptorType() {
       descriptor_type = null;
       fieldSetFlags()[0] = false;
       return this;
     }
 
-    /** Gets the value of the 'source' field */
+    /**
+      * Gets the value of the 'source' field.
+      * metrics-lib/TorperfResult: String getSource()
+      * @return The value.
+      */
     public java.lang.CharSequence getSource() {
       return source;
     }
-    
-    /** Sets the value of the 'source' field */
+
+    /**
+      * Sets the value of the 'source' field.
+      * metrics-lib/TorperfResult: String getSource()
+      * @param value The value of 'source'.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder setSource(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.source = value;
       fieldSetFlags()[1] = true;
       return this; 
     }
-    
-    /** Checks whether the 'source' field has been set */
+
+    /**
+      * Checks whether the 'source' field has been set.
+      * metrics-lib/TorperfResult: String getSource()
+      * @return True if the 'source' field has been set, false otherwise.
+      */
     public boolean hasSource() {
       return fieldSetFlags()[1];
     }
-    
-    /** Clears the value of the 'source' field */
+
+
+    /**
+      * Clears the value of the 'source' field.
+      * metrics-lib/TorperfResult: String getSource()
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder clearSource() {
       source = null;
       fieldSetFlags()[1] = false;
       return this;
     }
 
-    /** Gets the value of the 'filesize' field */
+    /**
+      * Gets the value of the 'filesize' field.
+      * metrics-lib/TorperfResult: int getFileSize()
+      * @return The value.
+      */
     public java.lang.Integer getFilesize() {
       return filesize;
     }
-    
-    /** Sets the value of the 'filesize' field */
+
+    /**
+      * Sets the value of the 'filesize' field.
+      * metrics-lib/TorperfResult: int getFileSize()
+      * @param value The value of 'filesize'.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder setFilesize(java.lang.Integer value) {
       validate(fields()[2], value);
       this.filesize = value;
       fieldSetFlags()[2] = true;
       return this; 
     }
-    
-    /** Checks whether the 'filesize' field has been set */
+
+    /**
+      * Checks whether the 'filesize' field has been set.
+      * metrics-lib/TorperfResult: int getFileSize()
+      * @return True if the 'filesize' field has been set, false otherwise.
+      */
     public boolean hasFilesize() {
       return fieldSetFlags()[2];
     }
-    
-    /** Clears the value of the 'filesize' field */
+
+
+    /**
+      * Clears the value of the 'filesize' field.
+      * metrics-lib/TorperfResult: int getFileSize()
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder clearFilesize() {
       filesize = null;
       fieldSetFlags()[2] = false;
       return this;
     }
 
-    /** Gets the value of the 'start' field */
+    /**
+      * Gets the value of the 'start' field.
+      * metrics-lib/TorperfResult: long getStartMillis()
+      * @return The value.
+      */
     public java.lang.Long getStart() {
       return start;
     }
-    
-    /** Sets the value of the 'start' field */
+
+    /**
+      * Sets the value of the 'start' field.
+      * metrics-lib/TorperfResult: long getStartMillis()
+      * @param value The value of 'start'.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder setStart(java.lang.Long value) {
       validate(fields()[3], value);
       this.start = value;
       fieldSetFlags()[3] = true;
       return this; 
     }
-    
-    /** Checks whether the 'start' field has been set */
+
+    /**
+      * Checks whether the 'start' field has been set.
+      * metrics-lib/TorperfResult: long getStartMillis()
+      * @return True if the 'start' field has been set, false otherwise.
+      */
     public boolean hasStart() {
       return fieldSetFlags()[3];
     }
-    
-    /** Clears the value of the 'start' field */
+
+
+    /**
+      * Clears the value of the 'start' field.
+      * metrics-lib/TorperfResult: long getStartMillis()
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder clearStart() {
       start = null;
       fieldSetFlags()[3] = false;
       return this;
     }
 
-    /** Gets the value of the 'socket' field */
+    /**
+      * Gets the value of the 'socket' field.
+      * metrics-lib/TorperfResult: long getSocketMillis()
+      * @return The value.
+      */
     public java.lang.Long getSocket() {
       return socket;
     }
-    
-    /** Sets the value of the 'socket' field */
+
+    /**
+      * Sets the value of the 'socket' field.
+      * metrics-lib/TorperfResult: long getSocketMillis()
+      * @param value The value of 'socket'.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder setSocket(java.lang.Long value) {
       validate(fields()[4], value);
       this.socket = value;
       fieldSetFlags()[4] = true;
       return this; 
     }
-    
-    /** Checks whether the 'socket' field has been set */
+
+    /**
+      * Checks whether the 'socket' field has been set.
+      * metrics-lib/TorperfResult: long getSocketMillis()
+      * @return True if the 'socket' field has been set, false otherwise.
+      */
     public boolean hasSocket() {
       return fieldSetFlags()[4];
     }
-    
-    /** Clears the value of the 'socket' field */
+
+
+    /**
+      * Clears the value of the 'socket' field.
+      * metrics-lib/TorperfResult: long getSocketMillis()
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder clearSocket() {
       socket = null;
       fieldSetFlags()[4] = false;
       return this;
     }
 
-    /** Gets the value of the 'connect' field */
+    /**
+      * Gets the value of the 'connect' field.
+      * metrics-lib/TorperfResult: long getConnectMillis()
+      * @return The value.
+      */
     public java.lang.Long getConnect() {
       return connect;
     }
-    
-    /** Sets the value of the 'connect' field */
+
+    /**
+      * Sets the value of the 'connect' field.
+      * metrics-lib/TorperfResult: long getConnectMillis()
+      * @param value The value of 'connect'.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder setConnect(java.lang.Long value) {
       validate(fields()[5], value);
       this.connect = value;
       fieldSetFlags()[5] = true;
       return this; 
     }
-    
-    /** Checks whether the 'connect' field has been set */
+
+    /**
+      * Checks whether the 'connect' field has been set.
+      * metrics-lib/TorperfResult: long getConnectMillis()
+      * @return True if the 'connect' field has been set, false otherwise.
+      */
     public boolean hasConnect() {
       return fieldSetFlags()[5];
     }
-    
-    /** Clears the value of the 'connect' field */
+
+
+    /**
+      * Clears the value of the 'connect' field.
+      * metrics-lib/TorperfResult: long getConnectMillis()
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder clearConnect() {
       connect = null;
       fieldSetFlags()[5] = false;
       return this;
     }
 
-    /** Gets the value of the 'negotiate' field */
+    /**
+      * Gets the value of the 'negotiate' field.
+      * metrics-lib/TorperfResult: long getNegotiateMillis()
+      * @return The value.
+      */
     public java.lang.Long getNegotiate() {
       return negotiate;
     }
-    
-    /** Sets the value of the 'negotiate' field */
+
+    /**
+      * Sets the value of the 'negotiate' field.
+      * metrics-lib/TorperfResult: long getNegotiateMillis()
+      * @param value The value of 'negotiate'.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder setNegotiate(java.lang.Long value) {
       validate(fields()[6], value);
       this.negotiate = value;
       fieldSetFlags()[6] = true;
       return this; 
     }
-    
-    /** Checks whether the 'negotiate' field has been set */
+
+    /**
+      * Checks whether the 'negotiate' field has been set.
+      * metrics-lib/TorperfResult: long getNegotiateMillis()
+      * @return True if the 'negotiate' field has been set, false otherwise.
+      */
     public boolean hasNegotiate() {
       return fieldSetFlags()[6];
     }
-    
-    /** Clears the value of the 'negotiate' field */
+
+
+    /**
+      * Clears the value of the 'negotiate' field.
+      * metrics-lib/TorperfResult: long getNegotiateMillis()
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder clearNegotiate() {
       negotiate = null;
       fieldSetFlags()[6] = false;
       return this;
     }
 
-    /** Gets the value of the 'request' field */
+    /**
+      * Gets the value of the 'request' field.
+      * metrics-lib/TorperfResult: long getRequestMillis()
+      * @return The value.
+      */
     public java.lang.Long getRequest() {
       return request;
     }
-    
-    /** Sets the value of the 'request' field */
+
+    /**
+      * Sets the value of the 'request' field.
+      * metrics-lib/TorperfResult: long getRequestMillis()
+      * @param value The value of 'request'.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder setRequest(java.lang.Long value) {
       validate(fields()[7], value);
       this.request = value;
       fieldSetFlags()[7] = true;
       return this; 
     }
-    
-    /** Checks whether the 'request' field has been set */
+
+    /**
+      * Checks whether the 'request' field has been set.
+      * metrics-lib/TorperfResult: long getRequestMillis()
+      * @return True if the 'request' field has been set, false otherwise.
+      */
     public boolean hasRequest() {
       return fieldSetFlags()[7];
     }
-    
-    /** Clears the value of the 'request' field */
+
+
+    /**
+      * Clears the value of the 'request' field.
+      * metrics-lib/TorperfResult: long getRequestMillis()
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder clearRequest() {
       request = null;
       fieldSetFlags()[7] = false;
       return this;
     }
 
-    /** Gets the value of the 'response' field */
+    /**
+      * Gets the value of the 'response' field.
+      * metrics-lib/TorperfResult: long getResponseMillis()
+      * @return The value.
+      */
     public java.lang.Long getResponse() {
       return response;
     }
-    
-    /** Sets the value of the 'response' field */
+
+    /**
+      * Sets the value of the 'response' field.
+      * metrics-lib/TorperfResult: long getResponseMillis()
+      * @param value The value of 'response'.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder setResponse(java.lang.Long value) {
       validate(fields()[8], value);
       this.response = value;
       fieldSetFlags()[8] = true;
       return this; 
     }
-    
-    /** Checks whether the 'response' field has been set */
+
+    /**
+      * Checks whether the 'response' field has been set.
+      * metrics-lib/TorperfResult: long getResponseMillis()
+      * @return True if the 'response' field has been set, false otherwise.
+      */
     public boolean hasResponse() {
       return fieldSetFlags()[8];
     }
-    
-    /** Clears the value of the 'response' field */
+
+
+    /**
+      * Clears the value of the 'response' field.
+      * metrics-lib/TorperfResult: long getResponseMillis()
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder clearResponse() {
       response = null;
       fieldSetFlags()[8] = false;
       return this;
     }
 
-    /** Gets the value of the 'datarequest' field */
+    /**
+      * Gets the value of the 'datarequest' field.
+      * metrics-lib/TorperfResult: long getDataRequestMillis()
+      * @return The value.
+      */
     public java.lang.Long getDatarequest() {
       return datarequest;
     }
-    
-    /** Sets the value of the 'datarequest' field */
+
+    /**
+      * Sets the value of the 'datarequest' field.
+      * metrics-lib/TorperfResult: long getDataRequestMillis()
+      * @param value The value of 'datarequest'.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder setDatarequest(java.lang.Long value) {
       validate(fields()[9], value);
       this.datarequest = value;
       fieldSetFlags()[9] = true;
       return this; 
     }
-    
-    /** Checks whether the 'datarequest' field has been set */
+
+    /**
+      * Checks whether the 'datarequest' field has been set.
+      * metrics-lib/TorperfResult: long getDataRequestMillis()
+      * @return True if the 'datarequest' field has been set, false otherwise.
+      */
     public boolean hasDatarequest() {
       return fieldSetFlags()[9];
     }
-    
-    /** Clears the value of the 'datarequest' field */
+
+
+    /**
+      * Clears the value of the 'datarequest' field.
+      * metrics-lib/TorperfResult: long getDataRequestMillis()
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder clearDatarequest() {
       datarequest = null;
       fieldSetFlags()[9] = false;
       return this;
     }
 
-    /** Gets the value of the 'dataresponse' field */
+    /**
+      * Gets the value of the 'dataresponse' field.
+      * metrics-lib/TorperfResult: long getDataResponseMillis()
+      * @return The value.
+      */
     public java.lang.Long getDataresponse() {
       return dataresponse;
     }
-    
-    /** Sets the value of the 'dataresponse' field */
+
+    /**
+      * Sets the value of the 'dataresponse' field.
+      * metrics-lib/TorperfResult: long getDataResponseMillis()
+      * @param value The value of 'dataresponse'.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder setDataresponse(java.lang.Long value) {
       validate(fields()[10], value);
       this.dataresponse = value;
       fieldSetFlags()[10] = true;
       return this; 
     }
-    
-    /** Checks whether the 'dataresponse' field has been set */
+
+    /**
+      * Checks whether the 'dataresponse' field has been set.
+      * metrics-lib/TorperfResult: long getDataResponseMillis()
+      * @return True if the 'dataresponse' field has been set, false otherwise.
+      */
     public boolean hasDataresponse() {
       return fieldSetFlags()[10];
     }
-    
-    /** Clears the value of the 'dataresponse' field */
+
+
+    /**
+      * Clears the value of the 'dataresponse' field.
+      * metrics-lib/TorperfResult: long getDataResponseMillis()
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder clearDataresponse() {
       dataresponse = null;
       fieldSetFlags()[10] = false;
       return this;
     }
 
-    /** Gets the value of the 'datacomplete' field */
+    /**
+      * Gets the value of the 'datacomplete' field.
+      * metrics-lib/TorperfResult: long getDataCompleteMillis()
+      * @return The value.
+      */
     public java.lang.Long getDatacomplete() {
       return datacomplete;
     }
-    
-    /** Sets the value of the 'datacomplete' field */
+
+    /**
+      * Sets the value of the 'datacomplete' field.
+      * metrics-lib/TorperfResult: long getDataCompleteMillis()
+      * @param value The value of 'datacomplete'.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder setDatacomplete(java.lang.Long value) {
       validate(fields()[11], value);
       this.datacomplete = value;
       fieldSetFlags()[11] = true;
       return this; 
     }
-    
-    /** Checks whether the 'datacomplete' field has been set */
+
+    /**
+      * Checks whether the 'datacomplete' field has been set.
+      * metrics-lib/TorperfResult: long getDataCompleteMillis()
+      * @return True if the 'datacomplete' field has been set, false otherwise.
+      */
     public boolean hasDatacomplete() {
       return fieldSetFlags()[11];
     }
-    
-    /** Clears the value of the 'datacomplete' field */
+
+
+    /**
+      * Clears the value of the 'datacomplete' field.
+      * metrics-lib/TorperfResult: long getDataCompleteMillis()
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder clearDatacomplete() {
       datacomplete = null;
       fieldSetFlags()[11] = false;
       return this;
     }
 
-    /** Gets the value of the 'writebytes' field */
+    /**
+      * Gets the value of the 'writebytes' field.
+      * metrics-lib/TorperfResult: int getWriteBytes()
+      * @return The value.
+      */
     public java.lang.Integer getWritebytes() {
       return writebytes;
     }
-    
-    /** Sets the value of the 'writebytes' field */
+
+    /**
+      * Sets the value of the 'writebytes' field.
+      * metrics-lib/TorperfResult: int getWriteBytes()
+      * @param value The value of 'writebytes'.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder setWritebytes(java.lang.Integer value) {
       validate(fields()[12], value);
       this.writebytes = value;
       fieldSetFlags()[12] = true;
       return this; 
     }
-    
-    /** Checks whether the 'writebytes' field has been set */
+
+    /**
+      * Checks whether the 'writebytes' field has been set.
+      * metrics-lib/TorperfResult: int getWriteBytes()
+      * @return True if the 'writebytes' field has been set, false otherwise.
+      */
     public boolean hasWritebytes() {
       return fieldSetFlags()[12];
     }
-    
-    /** Clears the value of the 'writebytes' field */
+
+
+    /**
+      * Clears the value of the 'writebytes' field.
+      * metrics-lib/TorperfResult: int getWriteBytes()
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder clearWritebytes() {
       writebytes = null;
       fieldSetFlags()[12] = false;
       return this;
     }
 
-    /** Gets the value of the 'readbytes' field */
+    /**
+      * Gets the value of the 'readbytes' field.
+      * metrics-lib/TorperfResult: int getReadBytes()
+      * @return The value.
+      */
     public java.lang.Integer getReadbytes() {
       return readbytes;
     }
-    
-    /** Sets the value of the 'readbytes' field */
+
+    /**
+      * Sets the value of the 'readbytes' field.
+      * metrics-lib/TorperfResult: int getReadBytes()
+      * @param value The value of 'readbytes'.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder setReadbytes(java.lang.Integer value) {
       validate(fields()[13], value);
       this.readbytes = value;
       fieldSetFlags()[13] = true;
       return this; 
     }
-    
-    /** Checks whether the 'readbytes' field has been set */
+
+    /**
+      * Checks whether the 'readbytes' field has been set.
+      * metrics-lib/TorperfResult: int getReadBytes()
+      * @return True if the 'readbytes' field has been set, false otherwise.
+      */
     public boolean hasReadbytes() {
       return fieldSetFlags()[13];
     }
-    
-    /** Clears the value of the 'readbytes' field */
+
+
+    /**
+      * Clears the value of the 'readbytes' field.
+      * metrics-lib/TorperfResult: int getReadBytes()
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder clearReadbytes() {
       readbytes = null;
       fieldSetFlags()[13] = false;
       return this;
     }
 
-    /** Gets the value of the 'didtimeout' field */
+    /**
+      * Gets the value of the 'didtimeout' field.
+      * metrics-lib/TorperfResult: Boolean didTimeout()
+      * @return The value.
+      */
     public java.lang.Boolean getDidtimeout() {
       return didtimeout;
     }
-    
-    /** Sets the value of the 'didtimeout' field */
+
+    /**
+      * Sets the value of the 'didtimeout' field.
+      * metrics-lib/TorperfResult: Boolean didTimeout()
+      * @param value The value of 'didtimeout'.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder setDidtimeout(java.lang.Boolean value) {
       validate(fields()[14], value);
       this.didtimeout = value;
       fieldSetFlags()[14] = true;
       return this; 
     }
-    
-    /** Checks whether the 'didtimeout' field has been set */
+
+    /**
+      * Checks whether the 'didtimeout' field has been set.
+      * metrics-lib/TorperfResult: Boolean didTimeout()
+      * @return True if the 'didtimeout' field has been set, false otherwise.
+      */
     public boolean hasDidtimeout() {
       return fieldSetFlags()[14];
     }
-    
-    /** Clears the value of the 'didtimeout' field */
+
+
+    /**
+      * Clears the value of the 'didtimeout' field.
+      * metrics-lib/TorperfResult: Boolean didTimeout()
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder clearDidtimeout() {
       didtimeout = null;
       fieldSetFlags()[14] = false;
       return this;
     }
 
-    /** Gets the value of the 'dataperc10' field */
+    /**
+      * Gets the value of the 'dataperc10' field.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(10)
+      * @return The value.
+      */
     public java.lang.Long getDataperc10() {
       return dataperc10;
     }
-    
-    /** Sets the value of the 'dataperc10' field */
+
+    /**
+      * Sets the value of the 'dataperc10' field.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(10)
+      * @param value The value of 'dataperc10'.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder setDataperc10(java.lang.Long value) {
       validate(fields()[15], value);
       this.dataperc10 = value;
       fieldSetFlags()[15] = true;
       return this; 
     }
-    
-    /** Checks whether the 'dataperc10' field has been set */
+
+    /**
+      * Checks whether the 'dataperc10' field has been set.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(10)
+      * @return True if the 'dataperc10' field has been set, false otherwise.
+      */
     public boolean hasDataperc10() {
       return fieldSetFlags()[15];
     }
-    
-    /** Clears the value of the 'dataperc10' field */
+
+
+    /**
+      * Clears the value of the 'dataperc10' field.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(10)
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder clearDataperc10() {
       dataperc10 = null;
       fieldSetFlags()[15] = false;
       return this;
     }
 
-    /** Gets the value of the 'dataperc20' field */
+    /**
+      * Gets the value of the 'dataperc20' field.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(20)
+      * @return The value.
+      */
     public java.lang.Long getDataperc20() {
       return dataperc20;
     }
-    
-    /** Sets the value of the 'dataperc20' field */
+
+    /**
+      * Sets the value of the 'dataperc20' field.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(20)
+      * @param value The value of 'dataperc20'.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder setDataperc20(java.lang.Long value) {
       validate(fields()[16], value);
       this.dataperc20 = value;
       fieldSetFlags()[16] = true;
       return this; 
     }
-    
-    /** Checks whether the 'dataperc20' field has been set */
+
+    /**
+      * Checks whether the 'dataperc20' field has been set.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(20)
+      * @return True if the 'dataperc20' field has been set, false otherwise.
+      */
     public boolean hasDataperc20() {
       return fieldSetFlags()[16];
     }
-    
-    /** Clears the value of the 'dataperc20' field */
+
+
+    /**
+      * Clears the value of the 'dataperc20' field.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(20)
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder clearDataperc20() {
       dataperc20 = null;
       fieldSetFlags()[16] = false;
       return this;
     }
 
-    /** Gets the value of the 'dataperc30' field */
+    /**
+      * Gets the value of the 'dataperc30' field.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(30)
+      * @return The value.
+      */
     public java.lang.Long getDataperc30() {
       return dataperc30;
     }
-    
-    /** Sets the value of the 'dataperc30' field */
+
+    /**
+      * Sets the value of the 'dataperc30' field.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(30)
+      * @param value The value of 'dataperc30'.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder setDataperc30(java.lang.Long value) {
       validate(fields()[17], value);
       this.dataperc30 = value;
       fieldSetFlags()[17] = true;
       return this; 
     }
-    
-    /** Checks whether the 'dataperc30' field has been set */
+
+    /**
+      * Checks whether the 'dataperc30' field has been set.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(30)
+      * @return True if the 'dataperc30' field has been set, false otherwise.
+      */
     public boolean hasDataperc30() {
       return fieldSetFlags()[17];
     }
-    
-    /** Clears the value of the 'dataperc30' field */
+
+
+    /**
+      * Clears the value of the 'dataperc30' field.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(30)
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder clearDataperc30() {
       dataperc30 = null;
       fieldSetFlags()[17] = false;
       return this;
     }
 
-    /** Gets the value of the 'dataperc40' field */
+    /**
+      * Gets the value of the 'dataperc40' field.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(40)
+      * @return The value.
+      */
     public java.lang.Long getDataperc40() {
       return dataperc40;
     }
-    
-    /** Sets the value of the 'dataperc40' field */
+
+    /**
+      * Sets the value of the 'dataperc40' field.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(40)
+      * @param value The value of 'dataperc40'.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder setDataperc40(java.lang.Long value) {
       validate(fields()[18], value);
       this.dataperc40 = value;
       fieldSetFlags()[18] = true;
       return this; 
     }
-    
-    /** Checks whether the 'dataperc40' field has been set */
+
+    /**
+      * Checks whether the 'dataperc40' field has been set.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(40)
+      * @return True if the 'dataperc40' field has been set, false otherwise.
+      */
     public boolean hasDataperc40() {
       return fieldSetFlags()[18];
     }
-    
-    /** Clears the value of the 'dataperc40' field */
+
+
+    /**
+      * Clears the value of the 'dataperc40' field.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(40)
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder clearDataperc40() {
       dataperc40 = null;
       fieldSetFlags()[18] = false;
       return this;
     }
 
-    /** Gets the value of the 'dataperc50' field */
+    /**
+      * Gets the value of the 'dataperc50' field.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(50)
+      * @return The value.
+      */
     public java.lang.Long getDataperc50() {
       return dataperc50;
     }
-    
-    /** Sets the value of the 'dataperc50' field */
+
+    /**
+      * Sets the value of the 'dataperc50' field.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(50)
+      * @param value The value of 'dataperc50'.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder setDataperc50(java.lang.Long value) {
       validate(fields()[19], value);
       this.dataperc50 = value;
       fieldSetFlags()[19] = true;
       return this; 
     }
-    
-    /** Checks whether the 'dataperc50' field has been set */
+
+    /**
+      * Checks whether the 'dataperc50' field has been set.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(50)
+      * @return True if the 'dataperc50' field has been set, false otherwise.
+      */
     public boolean hasDataperc50() {
       return fieldSetFlags()[19];
     }
-    
-    /** Clears the value of the 'dataperc50' field */
+
+
+    /**
+      * Clears the value of the 'dataperc50' field.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(50)
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder clearDataperc50() {
       dataperc50 = null;
       fieldSetFlags()[19] = false;
       return this;
     }
 
-    /** Gets the value of the 'dataperc60' field */
+    /**
+      * Gets the value of the 'dataperc60' field.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(60)
+      * @return The value.
+      */
     public java.lang.Long getDataperc60() {
       return dataperc60;
     }
-    
-    /** Sets the value of the 'dataperc60' field */
+
+    /**
+      * Sets the value of the 'dataperc60' field.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(60)
+      * @param value The value of 'dataperc60'.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder setDataperc60(java.lang.Long value) {
       validate(fields()[20], value);
       this.dataperc60 = value;
       fieldSetFlags()[20] = true;
       return this; 
     }
-    
-    /** Checks whether the 'dataperc60' field has been set */
+
+    /**
+      * Checks whether the 'dataperc60' field has been set.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(60)
+      * @return True if the 'dataperc60' field has been set, false otherwise.
+      */
     public boolean hasDataperc60() {
       return fieldSetFlags()[20];
     }
-    
-    /** Clears the value of the 'dataperc60' field */
+
+
+    /**
+      * Clears the value of the 'dataperc60' field.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(60)
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder clearDataperc60() {
       dataperc60 = null;
       fieldSetFlags()[20] = false;
       return this;
     }
 
-    /** Gets the value of the 'dataperc70' field */
+    /**
+      * Gets the value of the 'dataperc70' field.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(70)
+      * @return The value.
+      */
     public java.lang.Long getDataperc70() {
       return dataperc70;
     }
-    
-    /** Sets the value of the 'dataperc70' field */
+
+    /**
+      * Sets the value of the 'dataperc70' field.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(70)
+      * @param value The value of 'dataperc70'.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder setDataperc70(java.lang.Long value) {
       validate(fields()[21], value);
       this.dataperc70 = value;
       fieldSetFlags()[21] = true;
       return this; 
     }
-    
-    /** Checks whether the 'dataperc70' field has been set */
+
+    /**
+      * Checks whether the 'dataperc70' field has been set.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(70)
+      * @return True if the 'dataperc70' field has been set, false otherwise.
+      */
     public boolean hasDataperc70() {
       return fieldSetFlags()[21];
     }
-    
-    /** Clears the value of the 'dataperc70' field */
+
+
+    /**
+      * Clears the value of the 'dataperc70' field.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(70)
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder clearDataperc70() {
       dataperc70 = null;
       fieldSetFlags()[21] = false;
       return this;
     }
 
-    /** Gets the value of the 'dataperc80' field */
+    /**
+      * Gets the value of the 'dataperc80' field.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(80)
+      * @return The value.
+      */
     public java.lang.Long getDataperc80() {
       return dataperc80;
     }
-    
-    /** Sets the value of the 'dataperc80' field */
+
+    /**
+      * Sets the value of the 'dataperc80' field.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(80)
+      * @param value The value of 'dataperc80'.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder setDataperc80(java.lang.Long value) {
       validate(fields()[22], value);
       this.dataperc80 = value;
       fieldSetFlags()[22] = true;
       return this; 
     }
-    
-    /** Checks whether the 'dataperc80' field has been set */
+
+    /**
+      * Checks whether the 'dataperc80' field has been set.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(80)
+      * @return True if the 'dataperc80' field has been set, false otherwise.
+      */
     public boolean hasDataperc80() {
       return fieldSetFlags()[22];
     }
-    
-    /** Clears the value of the 'dataperc80' field */
+
+
+    /**
+      * Clears the value of the 'dataperc80' field.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(80)
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder clearDataperc80() {
       dataperc80 = null;
       fieldSetFlags()[22] = false;
       return this;
     }
 
-    /** Gets the value of the 'dataperc90' field */
+    /**
+      * Gets the value of the 'dataperc90' field.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(90)
+      * @return The value.
+      */
     public java.lang.Long getDataperc90() {
       return dataperc90;
     }
-    
-    /** Sets the value of the 'dataperc90' field */
+
+    /**
+      * Sets the value of the 'dataperc90' field.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(90)
+      * @param value The value of 'dataperc90'.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder setDataperc90(java.lang.Long value) {
       validate(fields()[23], value);
       this.dataperc90 = value;
       fieldSetFlags()[23] = true;
       return this; 
     }
-    
-    /** Checks whether the 'dataperc90' field has been set */
+
+    /**
+      * Checks whether the 'dataperc90' field has been set.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(90)
+      * @return True if the 'dataperc90' field has been set, false otherwise.
+      */
     public boolean hasDataperc90() {
       return fieldSetFlags()[23];
     }
-    
-    /** Clears the value of the 'dataperc90' field */
+
+
+    /**
+      * Clears the value of the 'dataperc90' field.
+      * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(90)
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder clearDataperc90() {
       dataperc90 = null;
       fieldSetFlags()[23] = false;
       return this;
     }
 
-    /** Gets the value of the 'launch' field */
+    /**
+      * Gets the value of the 'launch' field.
+      * metrics-lib/TorperfResult: long getLaunchMillis()()
+      * @return The value.
+      */
     public java.lang.Long getLaunch() {
       return launch;
     }
-    
-    /** Sets the value of the 'launch' field */
+
+    /**
+      * Sets the value of the 'launch' field.
+      * metrics-lib/TorperfResult: long getLaunchMillis()()
+      * @param value The value of 'launch'.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder setLaunch(java.lang.Long value) {
       validate(fields()[24], value);
       this.launch = value;
       fieldSetFlags()[24] = true;
       return this; 
     }
-    
-    /** Checks whether the 'launch' field has been set */
+
+    /**
+      * Checks whether the 'launch' field has been set.
+      * metrics-lib/TorperfResult: long getLaunchMillis()()
+      * @return True if the 'launch' field has been set, false otherwise.
+      */
     public boolean hasLaunch() {
       return fieldSetFlags()[24];
     }
-    
-    /** Clears the value of the 'launch' field */
+
+
+    /**
+      * Clears the value of the 'launch' field.
+      * metrics-lib/TorperfResult: long getLaunchMillis()()
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder clearLaunch() {
       launch = null;
       fieldSetFlags()[24] = false;
       return this;
     }
 
-    /** Gets the value of the 'used_at' field */
+    /**
+      * Gets the value of the 'used_at' field.
+      * metrics-lib/TorperfResult: long getUsedAtMillis()
+      * @return The value.
+      */
     public java.lang.Long getUsedAt() {
       return used_at;
     }
-    
-    /** Sets the value of the 'used_at' field */
+
+    /**
+      * Sets the value of the 'used_at' field.
+      * metrics-lib/TorperfResult: long getUsedAtMillis()
+      * @param value The value of 'used_at'.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder setUsedAt(java.lang.Long value) {
       validate(fields()[25], value);
       this.used_at = value;
       fieldSetFlags()[25] = true;
       return this; 
     }
-    
-    /** Checks whether the 'used_at' field has been set */
+
+    /**
+      * Checks whether the 'used_at' field has been set.
+      * metrics-lib/TorperfResult: long getUsedAtMillis()
+      * @return True if the 'used_at' field has been set, false otherwise.
+      */
     public boolean hasUsedAt() {
       return fieldSetFlags()[25];
     }
-    
-    /** Clears the value of the 'used_at' field */
+
+
+    /**
+      * Clears the value of the 'used_at' field.
+      * metrics-lib/TorperfResult: long getUsedAtMillis()
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder clearUsedAt() {
       used_at = null;
       fieldSetFlags()[25] = false;
       return this;
     }
 
-    /** Gets the value of the 'path' field */
+    /**
+      * Gets the value of the 'path' field.
+      * metrics-lib/TorperfResult: List<String> getPath()
+      * @return The value.
+      */
     public java.util.List<java.lang.CharSequence> getPath() {
       return path;
     }
-    
-    /** Sets the value of the 'path' field */
+
+    /**
+      * Sets the value of the 'path' field.
+      * metrics-lib/TorperfResult: List<String> getPath()
+      * @param value The value of 'path'.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder setPath(java.util.List<java.lang.CharSequence> value) {
       validate(fields()[26], value);
       this.path = value;
       fieldSetFlags()[26] = true;
       return this; 
     }
-    
-    /** Checks whether the 'path' field has been set */
+
+    /**
+      * Checks whether the 'path' field has been set.
+      * metrics-lib/TorperfResult: List<String> getPath()
+      * @return True if the 'path' field has been set, false otherwise.
+      */
     public boolean hasPath() {
       return fieldSetFlags()[26];
     }
-    
-    /** Clears the value of the 'path' field */
+
+
+    /**
+      * Clears the value of the 'path' field.
+      * metrics-lib/TorperfResult: List<String> getPath()
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder clearPath() {
       path = null;
       fieldSetFlags()[26] = false;
       return this;
     }
 
-    /** Gets the value of the 'buildtimes' field */
+    /**
+      * Gets the value of the 'buildtimes' field.
+      * metrics-lib/TorperfResult: List<Long> getBuildTimes()
+      * @return The value.
+      */
     public java.util.List<java.lang.Long> getBuildtimes() {
       return buildtimes;
     }
-    
-    /** Sets the value of the 'buildtimes' field */
+
+    /**
+      * Sets the value of the 'buildtimes' field.
+      * metrics-lib/TorperfResult: List<Long> getBuildTimes()
+      * @param value The value of 'buildtimes'.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder setBuildtimes(java.util.List<java.lang.Long> value) {
       validate(fields()[27], value);
       this.buildtimes = value;
       fieldSetFlags()[27] = true;
       return this; 
     }
-    
-    /** Checks whether the 'buildtimes' field has been set */
+
+    /**
+      * Checks whether the 'buildtimes' field has been set.
+      * metrics-lib/TorperfResult: List<Long> getBuildTimes()
+      * @return True if the 'buildtimes' field has been set, false otherwise.
+      */
     public boolean hasBuildtimes() {
       return fieldSetFlags()[27];
     }
-    
-    /** Clears the value of the 'buildtimes' field */
+
+
+    /**
+      * Clears the value of the 'buildtimes' field.
+      * metrics-lib/TorperfResult: List<Long> getBuildTimes()
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder clearBuildtimes() {
       buildtimes = null;
       fieldSetFlags()[27] = false;
       return this;
     }
 
-    /** Gets the value of the 'timeout' field */
+    /**
+      * Gets the value of the 'timeout' field.
+      * metrics-lib/TorperfResult: long getTimeout()
+      * @return The value.
+      */
     public java.lang.Long getTimeout() {
       return timeout;
     }
-    
-    /** Sets the value of the 'timeout' field */
+
+    /**
+      * Sets the value of the 'timeout' field.
+      * metrics-lib/TorperfResult: long getTimeout()
+      * @param value The value of 'timeout'.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder setTimeout(java.lang.Long value) {
       validate(fields()[28], value);
       this.timeout = value;
       fieldSetFlags()[28] = true;
       return this; 
     }
-    
-    /** Checks whether the 'timeout' field has been set */
+
+    /**
+      * Checks whether the 'timeout' field has been set.
+      * metrics-lib/TorperfResult: long getTimeout()
+      * @return True if the 'timeout' field has been set, false otherwise.
+      */
     public boolean hasTimeout() {
       return fieldSetFlags()[28];
     }
-    
-    /** Clears the value of the 'timeout' field */
+
+
+    /**
+      * Clears the value of the 'timeout' field.
+      * metrics-lib/TorperfResult: long getTimeout()
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder clearTimeout() {
       timeout = null;
       fieldSetFlags()[28] = false;
       return this;
     }
 
-    /** Gets the value of the 'quantile' field */
+    /**
+      * Gets the value of the 'quantile' field.
+      * metrics-lib/TorperfResult: double getQuantile()
+      * @return The value.
+      */
     public java.lang.Double getQuantile() {
       return quantile;
     }
-    
-    /** Sets the value of the 'quantile' field */
+
+    /**
+      * Sets the value of the 'quantile' field.
+      * metrics-lib/TorperfResult: double getQuantile()
+      * @param value The value of 'quantile'.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder setQuantile(java.lang.Double value) {
       validate(fields()[29], value);
       this.quantile = value;
       fieldSetFlags()[29] = true;
       return this; 
     }
-    
-    /** Checks whether the 'quantile' field has been set */
+
+    /**
+      * Checks whether the 'quantile' field has been set.
+      * metrics-lib/TorperfResult: double getQuantile()
+      * @return True if the 'quantile' field has been set, false otherwise.
+      */
     public boolean hasQuantile() {
       return fieldSetFlags()[29];
     }
-    
-    /** Clears the value of the 'quantile' field */
+
+
+    /**
+      * Clears the value of the 'quantile' field.
+      * metrics-lib/TorperfResult: double getQuantile()
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder clearQuantile() {
       quantile = null;
       fieldSetFlags()[29] = false;
       return this;
     }
 
-    /** Gets the value of the 'circ_id' field */
+    /**
+      * Gets the value of the 'circ_id' field.
+      * metrics-lib/TorperfResult: int getCircId()
+      * @return The value.
+      */
     public java.lang.Integer getCircId() {
       return circ_id;
     }
-    
-    /** Sets the value of the 'circ_id' field */
+
+    /**
+      * Sets the value of the 'circ_id' field.
+      * metrics-lib/TorperfResult: int getCircId()
+      * @param value The value of 'circ_id'.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder setCircId(java.lang.Integer value) {
       validate(fields()[30], value);
       this.circ_id = value;
       fieldSetFlags()[30] = true;
       return this; 
     }
-    
-    /** Checks whether the 'circ_id' field has been set */
+
+    /**
+      * Checks whether the 'circ_id' field has been set.
+      * metrics-lib/TorperfResult: int getCircId()
+      * @return True if the 'circ_id' field has been set, false otherwise.
+      */
     public boolean hasCircId() {
       return fieldSetFlags()[30];
     }
-    
-    /** Clears the value of the 'circ_id' field */
+
+
+    /**
+      * Clears the value of the 'circ_id' field.
+      * metrics-lib/TorperfResult: int getCircId()
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder clearCircId() {
       circ_id = null;
       fieldSetFlags()[30] = false;
       return this;
     }
 
-    /** Gets the value of the 'used_by' field */
+    /**
+      * Gets the value of the 'used_by' field.
+      * metrics-lib/TorperfResult: int getUsedBy()
+      * @return The value.
+      */
     public java.lang.Integer getUsedBy() {
       return used_by;
     }
-    
-    /** Sets the value of the 'used_by' field */
+
+    /**
+      * Sets the value of the 'used_by' field.
+      * metrics-lib/TorperfResult: int getUsedBy()
+      * @param value The value of 'used_by'.
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder setUsedBy(java.lang.Integer value) {
       validate(fields()[31], value);
       this.used_by = value;
       fieldSetFlags()[31] = true;
       return this; 
     }
-    
-    /** Checks whether the 'used_by' field has been set */
+
+    /**
+      * Checks whether the 'used_by' field has been set.
+      * metrics-lib/TorperfResult: int getUsedBy()
+      * @return True if the 'used_by' field has been set, false otherwise.
+      */
     public boolean hasUsedBy() {
       return fieldSetFlags()[31];
     }
-    
-    /** Clears the value of the 'used_by' field */
+
+
+    /**
+      * Clears the value of the 'used_by' field.
+      * metrics-lib/TorperfResult: int getUsedBy()
+      * @return This builder.
+      */
     public converTor.torperf.Torperf.Builder clearUsedBy() {
       used_by = null;
       fieldSetFlags()[31] = false;
@@ -1814,4 +2558,21 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       }
     }
   }
+
+  private static final org.apache.avro.io.DatumWriter
+    WRITER$ = new org.apache.avro.specific.SpecificDatumWriter(SCHEMA$);  
+
+  @Override public void writeExternal(java.io.ObjectOutput out)
+    throws java.io.IOException {
+    WRITER$.write(this, org.apache.avro.specific.SpecificData.getEncoder(out));
+  }
+
+  private static final org.apache.avro.io.DatumReader
+    READER$ = new org.apache.avro.specific.SpecificDatumReader(SCHEMA$);  
+
+  @Override public void readExternal(java.io.ObjectInput in)
+    throws java.io.IOException {
+    READER$.read(this, org.apache.avro.specific.SpecificData.getDecoder(in));
+  }
+
 }

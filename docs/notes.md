@@ -1,22 +1,41 @@
 # TODO
 
-* anomalies while writing Avro IDL schemas
-
-
-- extra info 
-    dirreq-stats-end is an object with 2 fields, not 2 fields alone
-      made that right in the schema should fix it in ConvertToJson
-    entry-stats-end dito
+*
+  think about convertion per timespan
+    arrays of writers?
+  implement avro writer functionality
+  generate an avro file from torperf
+  set up checking/testing of avro file
+    convert avro to json, check that visually
+    think about testing
+  extend tordnsel with exitnode
+    difficult...
+  write the other converters
+  refactor to individual class files per descriptor type
  
-    
-        
-* streamline attribute names and structures (at least check for it)
-  - documentation in data.md or in excel or in avro schema?
-  
-* test
-  - convert one tarball per type 
-      to see if there is one suspiciously big JSON result
-  - error handling
+
+* TODO ask KL
+  anomalies while writing Avro IDL schemas
+  - vote
+      there's a method getSigningKeyDigest() which I'm not sure about to ehich property it belongs.
+      another methd of the same name in DirectorySignature makes sense though.
+      maybe a double?
+  -network status entry
+      does bridgeStatus status entry "p" map to policy or just getPortList?
+  - extra info transport is spec'ed as  transportname address:port [arglist] NL [Any number.]    
+      but in metrics-lib implemented as List<String> getTransports()
+      and that too seems to be what's in the descriptors
+  - check all things identity/digest/certificate
+      the documentation was often not helpful in finding the right mapping
+      between methods and attributes.
+      befor the converter goes into production this has to be checked specifically
+      by someone who knows and understands the details
+  - NetworkStatusEntry
+      mapping is unclear:  
+        identity  <->   getFingerprint,   
+        digest    <->   getDescriptor 
+        ?
+ 
     
 * output wird komplett in eine datei geschrieben
   + verzeichnisstruktur wird igoriert und geht verloren
@@ -34,10 +53,6 @@
 * and periodic ingestion  
 
 * convert to Parquet 
-* in Avro schema
-  + make optional fields optional
-  + add documentation
-  + unify formatting (either automatic or handmade)
   
 * check sizes
   + a bunch of Collector descriptors (say: 1 month)
@@ -54,12 +69,8 @@
   + a bunch of archives, XZ, one of each type            ->  1 GB
   + the same as JSON, GZ, with nulls and chatty arrays   ->  5.7 GB
   + the same as JSON, GZ, with chatty arrays             ->  5.63 GB
-
-* check all things identity/digest/certificate
-  - the documentation was often not helpful in finding the right mapping
-    between methods and attributes.
-    befor the converter goes into production this has to be checked specifically
-    by someone who knows and understands the details
+  +  convert one tarball per type 
+      to see if there is one suspiciously big JSON result
   
 * modularize
 * write tests
@@ -87,52 +98,6 @@
   
   
 # BUGS
-
-## NetworkStatusEntry
-
-mapping is unclear:  
-   
-    identity <-> getFingerprint,   
-    digest <-> getDescriptor ?
-  
-
-## METRICS-LIB COVERAGE
-  
-  ServerDescriptor
-    okay
-    
-  ExtraInfiDescriptor
-    okay
-  
-  RelayNetworkStatusConsensus
-    never called: NetworkStatusEntry getStatusEntry(String fingerprint)
-    okay
-   
-  RelayNetworkStatusVote
-    never called: NetworkStatusEntry getStatusEntry(String fingerprint)
-                  boolean containsStatusEntry(String fingerprint)
-    okay
-        
-  DirSourceEntry
-    never called: byte[] getDirSourceEntryBytes() // Return the raw dir-source bytes
-    okay
-    
-  NetworkStatusEntry
-    never called: byte[] getStatusEntryBytes()
-                  Set<String> getMicrodescriptorDigests()
-
-  BridgeNetworkStatus
-    okay
-    
-  ExitList
-    okay
-    
-  ExitListEntry
-    okay
-    
-  TorperfResult
-    okay
-
 
 
 

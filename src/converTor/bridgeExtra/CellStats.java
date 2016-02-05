@@ -3,13 +3,16 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.bridgeExtra;
+package converTor.bridgeExtra;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class CellStats extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"CellStats\",\"namespace\":\"converTor.bridgeExtra\",\"fields\":[{\"name\":\"date\",\"type\":\"string\"},{\"name\":\"interval\",\"type\":\"long\",\"default\":86400}]}");
+  private static final long serialVersionUID = -3591867000887620871L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"CellStats\",\"namespace\":\"converTor.bridgeExtra\",\"fields\":[{\"name\":\"date\",\"type\":\"string\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getCellStatsEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getCellStatsIntervalLength()\",\"default\":86400}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
+  /** metrics-lib/ExtraInfoDescriptor: long getCellStatsEndMillis() */
   @Deprecated public java.lang.CharSequence date;
+  /** metrics-lib/ExtraInfoDescriptor: long getCellStatsIntervalLength() */
   @Deprecated public long interval;
 
   /**
@@ -21,6 +24,8 @@ public class CellStats extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * All-args constructor.
+   * @param date metrics-lib/ExtraInfoDescriptor: long getCellStatsEndMillis()
+   * @param interval metrics-lib/ExtraInfoDescriptor: long getCellStatsIntervalLength()
    */
   public CellStats(java.lang.CharSequence date, java.lang.Long interval) {
     this.date = date;
@@ -48,6 +53,7 @@ public class CellStats extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Gets the value of the 'date' field.
+   * @return metrics-lib/ExtraInfoDescriptor: long getCellStatsEndMillis()
    */
   public java.lang.CharSequence getDate() {
     return date;
@@ -55,6 +61,7 @@ public class CellStats extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Sets the value of the 'date' field.
+   * metrics-lib/ExtraInfoDescriptor: long getCellStatsEndMillis()
    * @param value the value to set.
    */
   public void setDate(java.lang.CharSequence value) {
@@ -63,6 +70,7 @@ public class CellStats extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Gets the value of the 'interval' field.
+   * @return metrics-lib/ExtraInfoDescriptor: long getCellStatsIntervalLength()
    */
   public java.lang.Long getInterval() {
     return interval;
@@ -70,23 +78,35 @@ public class CellStats extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Sets the value of the 'interval' field.
+   * metrics-lib/ExtraInfoDescriptor: long getCellStatsIntervalLength()
    * @param value the value to set.
    */
   public void setInterval(java.lang.Long value) {
     this.interval = value;
   }
 
-  /** Creates a new CellStats RecordBuilder */
+  /**
+   * Creates a new CellStats RecordBuilder.
+   * @return A new CellStats RecordBuilder
+   */
   public static converTor.bridgeExtra.CellStats.Builder newBuilder() {
     return new converTor.bridgeExtra.CellStats.Builder();
   }
   
-  /** Creates a new CellStats RecordBuilder by copying an existing Builder */
+  /**
+   * Creates a new CellStats RecordBuilder by copying an existing Builder.
+   * @param other The existing builder to copy.
+   * @return A new CellStats RecordBuilder
+   */
   public static converTor.bridgeExtra.CellStats.Builder newBuilder(converTor.bridgeExtra.CellStats.Builder other) {
     return new converTor.bridgeExtra.CellStats.Builder(other);
   }
   
-  /** Creates a new CellStats RecordBuilder by copying an existing CellStats instance */
+  /**
+   * Creates a new CellStats RecordBuilder by copying an existing CellStats instance.
+   * @param other The existing instance to copy.
+   * @return A new CellStats RecordBuilder
+   */
   public static converTor.bridgeExtra.CellStats.Builder newBuilder(converTor.bridgeExtra.CellStats other) {
     return new converTor.bridgeExtra.CellStats.Builder(other);
   }
@@ -97,7 +117,9 @@ public class CellStats extends org.apache.avro.specific.SpecificRecordBase imple
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<CellStats>
     implements org.apache.avro.data.RecordBuilder<CellStats> {
 
+    /** metrics-lib/ExtraInfoDescriptor: long getCellStatsEndMillis() */
     private java.lang.CharSequence date;
+    /** metrics-lib/ExtraInfoDescriptor: long getCellStatsIntervalLength() */
     private long interval;
 
     /** Creates a new Builder */
@@ -105,7 +127,10 @@ public class CellStats extends org.apache.avro.specific.SpecificRecordBase imple
       super(converTor.bridgeExtra.CellStats.SCHEMA$);
     }
     
-    /** Creates a Builder by copying an existing Builder */
+    /**
+     * Creates a Builder by copying an existing Builder.
+     * @param other The existing Builder to copy.
+     */
     private Builder(converTor.bridgeExtra.CellStats.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.date)) {
@@ -118,7 +143,10 @@ public class CellStats extends org.apache.avro.specific.SpecificRecordBase imple
       }
     }
     
-    /** Creates a Builder by copying an existing CellStats instance */
+    /**
+     * Creates a Builder by copying an existing CellStats instance
+     * @param other The existing instance to copy.
+     */
     private Builder(converTor.bridgeExtra.CellStats other) {
             super(converTor.bridgeExtra.CellStats.SCHEMA$);
       if (isValidValue(fields()[0], other.date)) {
@@ -131,50 +159,86 @@ public class CellStats extends org.apache.avro.specific.SpecificRecordBase imple
       }
     }
 
-    /** Gets the value of the 'date' field */
+    /**
+      * Gets the value of the 'date' field.
+      * metrics-lib/ExtraInfoDescriptor: long getCellStatsEndMillis()
+      * @return The value.
+      */
     public java.lang.CharSequence getDate() {
       return date;
     }
-    
-    /** Sets the value of the 'date' field */
+
+    /**
+      * Sets the value of the 'date' field.
+      * metrics-lib/ExtraInfoDescriptor: long getCellStatsEndMillis()
+      * @param value The value of 'date'.
+      * @return This builder.
+      */
     public converTor.bridgeExtra.CellStats.Builder setDate(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.date = value;
       fieldSetFlags()[0] = true;
       return this; 
     }
-    
-    /** Checks whether the 'date' field has been set */
+
+    /**
+      * Checks whether the 'date' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: long getCellStatsEndMillis()
+      * @return True if the 'date' field has been set, false otherwise.
+      */
     public boolean hasDate() {
       return fieldSetFlags()[0];
     }
-    
-    /** Clears the value of the 'date' field */
+
+
+    /**
+      * Clears the value of the 'date' field.
+      * metrics-lib/ExtraInfoDescriptor: long getCellStatsEndMillis()
+      * @return This builder.
+      */
     public converTor.bridgeExtra.CellStats.Builder clearDate() {
       date = null;
       fieldSetFlags()[0] = false;
       return this;
     }
 
-    /** Gets the value of the 'interval' field */
+    /**
+      * Gets the value of the 'interval' field.
+      * metrics-lib/ExtraInfoDescriptor: long getCellStatsIntervalLength()
+      * @return The value.
+      */
     public java.lang.Long getInterval() {
       return interval;
     }
-    
-    /** Sets the value of the 'interval' field */
+
+    /**
+      * Sets the value of the 'interval' field.
+      * metrics-lib/ExtraInfoDescriptor: long getCellStatsIntervalLength()
+      * @param value The value of 'interval'.
+      * @return This builder.
+      */
     public converTor.bridgeExtra.CellStats.Builder setInterval(long value) {
       validate(fields()[1], value);
       this.interval = value;
       fieldSetFlags()[1] = true;
       return this; 
     }
-    
-    /** Checks whether the 'interval' field has been set */
+
+    /**
+      * Checks whether the 'interval' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: long getCellStatsIntervalLength()
+      * @return True if the 'interval' field has been set, false otherwise.
+      */
     public boolean hasInterval() {
       return fieldSetFlags()[1];
     }
-    
-    /** Clears the value of the 'interval' field */
+
+
+    /**
+      * Clears the value of the 'interval' field.
+      * metrics-lib/ExtraInfoDescriptor: long getCellStatsIntervalLength()
+      * @return This builder.
+      */
     public converTor.bridgeExtra.CellStats.Builder clearInterval() {
       fieldSetFlags()[1] = false;
       return this;
@@ -192,4 +256,21 @@ public class CellStats extends org.apache.avro.specific.SpecificRecordBase imple
       }
     }
   }
+
+  private static final org.apache.avro.io.DatumWriter
+    WRITER$ = new org.apache.avro.specific.SpecificDatumWriter(SCHEMA$);  
+
+  @Override public void writeExternal(java.io.ObjectOutput out)
+    throws java.io.IOException {
+    WRITER$.write(this, org.apache.avro.specific.SpecificData.getEncoder(out));
+  }
+
+  private static final org.apache.avro.io.DatumReader
+    READER$ = new org.apache.avro.specific.SpecificDatumReader(SCHEMA$);  
+
+  @Override public void readExternal(java.io.ObjectInput in)
+    throws java.io.IOException {
+    READER$.read(this, org.apache.avro.specific.SpecificData.getDecoder(in));
+  }
+
 }

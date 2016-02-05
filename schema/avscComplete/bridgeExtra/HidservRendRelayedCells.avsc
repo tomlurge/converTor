@@ -1,0 +1,17 @@
+{
+  "type" : "record",
+  "name" : "HidservRendRelayedCells",
+  "namespace" : "converTor.bridgeExtra",
+  "fields" : [ {
+    "name" : "cells",
+    "type" : "double",
+    "doc" : "metrics-lib/ExtraInfoDescriptor: Double getHidservRendRelayedCells()"
+  }, {
+    "name" : "obfuscation",
+    "type" : {
+      "type" : "map",
+      "values" : "int"
+    },
+    "doc" : "metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservRendRelayedCellsParameters()"
+  } ]
+}

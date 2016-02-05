@@ -3,13 +3,16 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.bridgeExtra;
+package converTor.bridgeExtra;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ExtraInfo\",\"namespace\":\"converTor.bridgeExtra\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",\"string\"]},{\"name\":\"fingerprint\",\"type\":[\"null\",\"string\"]}]}");
+  private static final long serialVersionUID = 1022734429112963864L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ExtraInfo\",\"namespace\":\"converTor.bridgeExtra\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getNickname()\"},{\"name\":\"fingerprint\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getFingerprint()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
+  /** metrics-lib/ExtraInfoDescriptor: String getNickname() */
   @Deprecated public java.lang.CharSequence nickname;
+  /** metrics-lib/ExtraInfoDescriptor: String getFingerprint() */
   @Deprecated public java.lang.CharSequence fingerprint;
 
   /**
@@ -21,6 +24,8 @@ public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * All-args constructor.
+   * @param nickname metrics-lib/ExtraInfoDescriptor: String getNickname()
+   * @param fingerprint metrics-lib/ExtraInfoDescriptor: String getFingerprint()
    */
   public ExtraInfo(java.lang.CharSequence nickname, java.lang.CharSequence fingerprint) {
     this.nickname = nickname;
@@ -48,6 +53,7 @@ public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Gets the value of the 'nickname' field.
+   * @return metrics-lib/ExtraInfoDescriptor: String getNickname()
    */
   public java.lang.CharSequence getNickname() {
     return nickname;
@@ -55,6 +61,7 @@ public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Sets the value of the 'nickname' field.
+   * metrics-lib/ExtraInfoDescriptor: String getNickname()
    * @param value the value to set.
    */
   public void setNickname(java.lang.CharSequence value) {
@@ -63,6 +70,7 @@ public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Gets the value of the 'fingerprint' field.
+   * @return metrics-lib/ExtraInfoDescriptor: String getFingerprint()
    */
   public java.lang.CharSequence getFingerprint() {
     return fingerprint;
@@ -70,23 +78,35 @@ public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Sets the value of the 'fingerprint' field.
+   * metrics-lib/ExtraInfoDescriptor: String getFingerprint()
    * @param value the value to set.
    */
   public void setFingerprint(java.lang.CharSequence value) {
     this.fingerprint = value;
   }
 
-  /** Creates a new ExtraInfo RecordBuilder */
+  /**
+   * Creates a new ExtraInfo RecordBuilder.
+   * @return A new ExtraInfo RecordBuilder
+   */
   public static converTor.bridgeExtra.ExtraInfo.Builder newBuilder() {
     return new converTor.bridgeExtra.ExtraInfo.Builder();
   }
   
-  /** Creates a new ExtraInfo RecordBuilder by copying an existing Builder */
+  /**
+   * Creates a new ExtraInfo RecordBuilder by copying an existing Builder.
+   * @param other The existing builder to copy.
+   * @return A new ExtraInfo RecordBuilder
+   */
   public static converTor.bridgeExtra.ExtraInfo.Builder newBuilder(converTor.bridgeExtra.ExtraInfo.Builder other) {
     return new converTor.bridgeExtra.ExtraInfo.Builder(other);
   }
   
-  /** Creates a new ExtraInfo RecordBuilder by copying an existing ExtraInfo instance */
+  /**
+   * Creates a new ExtraInfo RecordBuilder by copying an existing ExtraInfo instance.
+   * @param other The existing instance to copy.
+   * @return A new ExtraInfo RecordBuilder
+   */
   public static converTor.bridgeExtra.ExtraInfo.Builder newBuilder(converTor.bridgeExtra.ExtraInfo other) {
     return new converTor.bridgeExtra.ExtraInfo.Builder(other);
   }
@@ -97,7 +117,9 @@ public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase imple
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<ExtraInfo>
     implements org.apache.avro.data.RecordBuilder<ExtraInfo> {
 
+    /** metrics-lib/ExtraInfoDescriptor: String getNickname() */
     private java.lang.CharSequence nickname;
+    /** metrics-lib/ExtraInfoDescriptor: String getFingerprint() */
     private java.lang.CharSequence fingerprint;
 
     /** Creates a new Builder */
@@ -105,7 +127,10 @@ public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase imple
       super(converTor.bridgeExtra.ExtraInfo.SCHEMA$);
     }
     
-    /** Creates a Builder by copying an existing Builder */
+    /**
+     * Creates a Builder by copying an existing Builder.
+     * @param other The existing Builder to copy.
+     */
     private Builder(converTor.bridgeExtra.ExtraInfo.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.nickname)) {
@@ -118,7 +143,10 @@ public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase imple
       }
     }
     
-    /** Creates a Builder by copying an existing ExtraInfo instance */
+    /**
+     * Creates a Builder by copying an existing ExtraInfo instance
+     * @param other The existing instance to copy.
+     */
     private Builder(converTor.bridgeExtra.ExtraInfo other) {
             super(converTor.bridgeExtra.ExtraInfo.SCHEMA$);
       if (isValidValue(fields()[0], other.nickname)) {
@@ -131,50 +159,86 @@ public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase imple
       }
     }
 
-    /** Gets the value of the 'nickname' field */
+    /**
+      * Gets the value of the 'nickname' field.
+      * metrics-lib/ExtraInfoDescriptor: String getNickname()
+      * @return The value.
+      */
     public java.lang.CharSequence getNickname() {
       return nickname;
     }
-    
-    /** Sets the value of the 'nickname' field */
+
+    /**
+      * Sets the value of the 'nickname' field.
+      * metrics-lib/ExtraInfoDescriptor: String getNickname()
+      * @param value The value of 'nickname'.
+      * @return This builder.
+      */
     public converTor.bridgeExtra.ExtraInfo.Builder setNickname(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.nickname = value;
       fieldSetFlags()[0] = true;
       return this; 
     }
-    
-    /** Checks whether the 'nickname' field has been set */
+
+    /**
+      * Checks whether the 'nickname' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: String getNickname()
+      * @return True if the 'nickname' field has been set, false otherwise.
+      */
     public boolean hasNickname() {
       return fieldSetFlags()[0];
     }
-    
-    /** Clears the value of the 'nickname' field */
+
+
+    /**
+      * Clears the value of the 'nickname' field.
+      * metrics-lib/ExtraInfoDescriptor: String getNickname()
+      * @return This builder.
+      */
     public converTor.bridgeExtra.ExtraInfo.Builder clearNickname() {
       nickname = null;
       fieldSetFlags()[0] = false;
       return this;
     }
 
-    /** Gets the value of the 'fingerprint' field */
+    /**
+      * Gets the value of the 'fingerprint' field.
+      * metrics-lib/ExtraInfoDescriptor: String getFingerprint()
+      * @return The value.
+      */
     public java.lang.CharSequence getFingerprint() {
       return fingerprint;
     }
-    
-    /** Sets the value of the 'fingerprint' field */
+
+    /**
+      * Sets the value of the 'fingerprint' field.
+      * metrics-lib/ExtraInfoDescriptor: String getFingerprint()
+      * @param value The value of 'fingerprint'.
+      * @return This builder.
+      */
     public converTor.bridgeExtra.ExtraInfo.Builder setFingerprint(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.fingerprint = value;
       fieldSetFlags()[1] = true;
       return this; 
     }
-    
-    /** Checks whether the 'fingerprint' field has been set */
+
+    /**
+      * Checks whether the 'fingerprint' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: String getFingerprint()
+      * @return True if the 'fingerprint' field has been set, false otherwise.
+      */
     public boolean hasFingerprint() {
       return fieldSetFlags()[1];
     }
-    
-    /** Clears the value of the 'fingerprint' field */
+
+
+    /**
+      * Clears the value of the 'fingerprint' field.
+      * metrics-lib/ExtraInfoDescriptor: String getFingerprint()
+      * @return This builder.
+      */
     public converTor.bridgeExtra.ExtraInfo.Builder clearFingerprint() {
       fingerprint = null;
       fieldSetFlags()[1] = false;
@@ -193,4 +257,21 @@ public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase imple
       }
     }
   }
+
+  private static final org.apache.avro.io.DatumWriter
+    WRITER$ = new org.apache.avro.specific.SpecificDatumWriter(SCHEMA$);  
+
+  @Override public void writeExternal(java.io.ObjectOutput out)
+    throws java.io.IOException {
+    WRITER$.write(this, org.apache.avro.specific.SpecificData.getEncoder(out));
+  }
+
+  private static final org.apache.avro.io.DatumReader
+    READER$ = new org.apache.avro.specific.SpecificDatumReader(SCHEMA$);  
+
+  @Override public void readExternal(java.io.ObjectInput in)
+    throws java.io.IOException {
+    READER$.read(this, org.apache.avro.specific.SpecificData.getDecoder(in));
+  }
+
 }

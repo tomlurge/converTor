@@ -1,11 +1,13 @@
   
   
   TODO  most of the times only the flattend version is shown
-          only relay and bridge document both flattened and jagged versions      
+          only relay and bridge document show both flattened and jagged versions      
         no defaults
         no mandatory/optional
         not always a reference to the metrics-lib method
         remove all ..Entry
+        
+  
         
 # data
 
@@ -1105,7 +1107,8 @@ JSON SERIALIZATION
                                         metrics-lib class/method
 	{                                     RelayNetworkStatusVote
 		"descriptor_type": "network-status-vote-3 1.0",
-		"vote_status": #,                   int getNetworkStatusVersion
+		"network_status_version": 3         int getNetworkStatusVersion
+		"vote_status": "vote",              no getter, hardcoded
 		"consensus_methods": [#,#,#...],    getConsensusMethods
 		"published": "",                    long getPublishedMillis
 		"valid_after": "",                  long getValidAfterMillis   
@@ -1161,7 +1164,6 @@ JSON SERIALIZATION
 		"contact": "",                      getContactLine
 		"legacy_dir_key": ""                getLegacyDirKey    
 		            
-		            
     "directory_key": {                  // not in spec but in example above
       "version": #,                     int getDirKeyCertificateVersion
       "fingerprint": "",                // no method in metrics-lib
@@ -1173,18 +1175,20 @@ JSON SERIALIZATION
       "dir_key_certification": bool.    // no method in metrics-lib
 		},
 		
-		"router_status": [                  SortedMap<String, NetworkStatusEntry> getStatusEntries()
+		//  TODO this is not an array, but a map
+		"status": [                         SortedMap<String, NetworkStatusEntry> getStatusEntries()
 			{
 			  "key": "",                      the String in SortedMap<String, NetworkStatusEntry>
 			  "descriptor_identity",          getDescriptor
 				"r": {                          
 					"nickname": "",               getNickname
-					"identity": "",               getFingerprint
-					"digest": "",                 getDescriptor
+					"identity": "",               getDescriptor
+					"digest": ["","",""...],      getMicrodescriptorDigests
 					"publication": "",            long getPublishedMillis
 					"ip": "",                     getAddress
 					"or_port": #,                 int getOrPort
 					"dir_port": #                 int getDirPort
+					"fingerprint": ""             getFingerprint()
 				},                              
 				"a": ["","",""...],             getOrAddresses                            
 				"s": ["","",""...],             getFlags
@@ -1344,6 +1348,8 @@ flags, heuristics used for relay selection, etc.
 
 JSON SERIALIZATION
 
+  //  TODO  check for changes in vote above
+  
                                        metrics-lib class/method
 	{                                    RelayNetworkStatusConsensus
 		"descriptor_type": "network-status-consensus-3 1.0",
@@ -1399,8 +1405,9 @@ JSON SERIALIZATION
 		  	"is_legacy": boolean            isLegacy   // not in spec, but in metrics-lib
 			}                                 
 			...                               
-		],                                  
-		"router_status": [                  NetworkStatusEntry 
+		],             
+		//  TODO this is not an array, but a map                     
+		"status": [                         NetworkStatusEntry 
 			{                                 getStatusEntries()
 			  "r": {                          
 					"nickname": "",               getNickname
@@ -1503,7 +1510,8 @@ JSON SERIALIZATION
 			"guard-bw-exc-exits": #,      long getGuardBandwidthExcludingExits
 			"ignoring-advertised-bws": #  int getIgnoringAdvertisedBws
 			},
-		"bridges": [                    BridgeNetworkStatus.getStatusEntries
+		//  TODO this is not an array, but a map
+    "status": [                     BridgeNetworkStatus.getStatusEntries
 			{                             NetworkStatusEntry
 				"r": {                         
 					"nickname": "",,          getNickname
@@ -1520,8 +1528,9 @@ JSON SERIALIZATION
 					"measured_bw": #,         long getMeasured
 					"unmeasured_bw": boolean  getUnmeasured
 				},                     
+				//  TODO policy or just portlist?
 				"p": "",                    getDefaultPolicy
-				"a": "",                    getPortList
+				"a": ["","",""...],         getOrAddresses  
 				"v": ""                     getVersion
 			}
 			...
@@ -1592,7 +1601,7 @@ JSON SERIALIZATION
 				"fingerprint": "",     getFingerprint
 				"published": "",       long getPublishedMillis
 				"last_status": "",     long getLastStatusMillis
-				"exit_list": [         Map<String,Long> getExitAddresses
+				"exit_adresses": [     Map<String,Long> getExitAddresses
           {                    
             "ip": "",          getExitAddress
             "date": ""         long getScanMillis

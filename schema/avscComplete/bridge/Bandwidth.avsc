@@ -1,0 +1,18 @@
+{
+  "type" : "record",
+  "name" : "Bandwidth",
+  "namespace" : "converTor.bridge",
+  "fields" : [ {
+    "name" : "avg",
+    "type" : [ "null", "int" ],
+    "doc" : "metrics-lib/ServerDescriptor: int getBandwidthRate()"
+  }, {
+    "name" : "burst",
+    "type" : [ "null", "int" ],
+    "doc" : "metrics-lib/ServerDescriptor: int getBandwidthBurst()"
+  }, {
+    "name" : "observed",
+    "type" : [ "null", "int" ],
+    "doc" : "metrics-lib/ServerDescriptor: int getBandwidthObserved()"
+  } ]
+}

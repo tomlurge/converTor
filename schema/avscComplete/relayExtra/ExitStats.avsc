@@ -1,0 +1,15 @@
+{
+  "type" : "record",
+  "name" : "ExitStats",
+  "namespace" : "converTor.relayExtra",
+  "fields" : [ {
+    "name" : "date",
+    "type" : "string",
+    "doc" : "metrics-lib/ExtraInfoDescriptor: long getExitStatsEndMillis()"
+  }, {
+    "name" : "interval",
+    "type" : "long",
+    "doc" : "metrics-lib/ExtraInfoDescriptor: long getExitStatsIntervalLength()",
+    "default" : 86400
+  } ]
+}

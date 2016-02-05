@@ -1,0 +1,26 @@
+{
+  "type" : "record",
+  "name" : "Router",
+  "namespace" : "converTor.bridge",
+  "fields" : [ {
+    "name" : "nickname",
+    "type" : [ "null", "string" ],
+    "doc" : "metrics-lib/ServerDescriptor: String getNickname()"
+  }, {
+    "name" : "address",
+    "type" : [ "null", "string" ],
+    "doc" : "metrics-lib/ServerDescriptor: String getAddress()"
+  }, {
+    "name" : "or_port",
+    "type" : [ "null", "int" ],
+    "doc" : "metrics-lib/ServerDescriptor: int getOrPort()"
+  }, {
+    "name" : "socks_port",
+    "type" : [ "null", "int" ],
+    "doc" : "metrics-lib/ServerDescriptor: int getSocksPort()"
+  }, {
+    "name" : "dir_port",
+    "type" : [ "null", "int" ],
+    "doc" : "metrics-lib/ServerDescriptor: int getDirPort()"
+  } ]
+}

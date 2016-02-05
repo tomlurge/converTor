@@ -3,16 +3,22 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.bridge;
+package converTor.bridge;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Router extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Router\",\"namespace\":\"converTor.bridge\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",\"string\"]},{\"name\":\"address\",\"type\":[\"null\",\"string\"]},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"]},{\"name\":\"socks_port\",\"type\":[\"null\",\"int\"]},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"]}]}");
+  private static final long serialVersionUID = 8839565290681386275L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Router\",\"namespace\":\"converTor.bridge\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ServerDescriptor: String getNickname()\"},{\"name\":\"address\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ServerDescriptor: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getOrPort()\"},{\"name\":\"socks_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getSocksPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getDirPort()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
+  /** metrics-lib/ServerDescriptor: String getNickname() */
   @Deprecated public java.lang.CharSequence nickname;
+  /** metrics-lib/ServerDescriptor: String getAddress() */
   @Deprecated public java.lang.CharSequence address;
+  /** metrics-lib/ServerDescriptor: int getOrPort() */
   @Deprecated public java.lang.Integer or_port;
+  /** metrics-lib/ServerDescriptor: int getSocksPort() */
   @Deprecated public java.lang.Integer socks_port;
+  /** metrics-lib/ServerDescriptor: int getDirPort() */
   @Deprecated public java.lang.Integer dir_port;
 
   /**
@@ -24,6 +30,11 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * All-args constructor.
+   * @param nickname metrics-lib/ServerDescriptor: String getNickname()
+   * @param address metrics-lib/ServerDescriptor: String getAddress()
+   * @param or_port metrics-lib/ServerDescriptor: int getOrPort()
+   * @param socks_port metrics-lib/ServerDescriptor: int getSocksPort()
+   * @param dir_port metrics-lib/ServerDescriptor: int getDirPort()
    */
   public Router(java.lang.CharSequence nickname, java.lang.CharSequence address, java.lang.Integer or_port, java.lang.Integer socks_port, java.lang.Integer dir_port) {
     this.nickname = nickname;
@@ -60,6 +71,7 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'nickname' field.
+   * @return metrics-lib/ServerDescriptor: String getNickname()
    */
   public java.lang.CharSequence getNickname() {
     return nickname;
@@ -67,6 +79,7 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'nickname' field.
+   * metrics-lib/ServerDescriptor: String getNickname()
    * @param value the value to set.
    */
   public void setNickname(java.lang.CharSequence value) {
@@ -75,6 +88,7 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'address' field.
+   * @return metrics-lib/ServerDescriptor: String getAddress()
    */
   public java.lang.CharSequence getAddress() {
     return address;
@@ -82,6 +96,7 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'address' field.
+   * metrics-lib/ServerDescriptor: String getAddress()
    * @param value the value to set.
    */
   public void setAddress(java.lang.CharSequence value) {
@@ -90,6 +105,7 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'or_port' field.
+   * @return metrics-lib/ServerDescriptor: int getOrPort()
    */
   public java.lang.Integer getOrPort() {
     return or_port;
@@ -97,6 +113,7 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'or_port' field.
+   * metrics-lib/ServerDescriptor: int getOrPort()
    * @param value the value to set.
    */
   public void setOrPort(java.lang.Integer value) {
@@ -105,6 +122,7 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'socks_port' field.
+   * @return metrics-lib/ServerDescriptor: int getSocksPort()
    */
   public java.lang.Integer getSocksPort() {
     return socks_port;
@@ -112,6 +130,7 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'socks_port' field.
+   * metrics-lib/ServerDescriptor: int getSocksPort()
    * @param value the value to set.
    */
   public void setSocksPort(java.lang.Integer value) {
@@ -120,6 +139,7 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'dir_port' field.
+   * @return metrics-lib/ServerDescriptor: int getDirPort()
    */
   public java.lang.Integer getDirPort() {
     return dir_port;
@@ -127,23 +147,35 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Sets the value of the 'dir_port' field.
+   * metrics-lib/ServerDescriptor: int getDirPort()
    * @param value the value to set.
    */
   public void setDirPort(java.lang.Integer value) {
     this.dir_port = value;
   }
 
-  /** Creates a new Router RecordBuilder */
+  /**
+   * Creates a new Router RecordBuilder.
+   * @return A new Router RecordBuilder
+   */
   public static converTor.bridge.Router.Builder newBuilder() {
     return new converTor.bridge.Router.Builder();
   }
   
-  /** Creates a new Router RecordBuilder by copying an existing Builder */
+  /**
+   * Creates a new Router RecordBuilder by copying an existing Builder.
+   * @param other The existing builder to copy.
+   * @return A new Router RecordBuilder
+   */
   public static converTor.bridge.Router.Builder newBuilder(converTor.bridge.Router.Builder other) {
     return new converTor.bridge.Router.Builder(other);
   }
   
-  /** Creates a new Router RecordBuilder by copying an existing Router instance */
+  /**
+   * Creates a new Router RecordBuilder by copying an existing Router instance.
+   * @param other The existing instance to copy.
+   * @return A new Router RecordBuilder
+   */
   public static converTor.bridge.Router.Builder newBuilder(converTor.bridge.Router other) {
     return new converTor.bridge.Router.Builder(other);
   }
@@ -154,10 +186,15 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Router>
     implements org.apache.avro.data.RecordBuilder<Router> {
 
+    /** metrics-lib/ServerDescriptor: String getNickname() */
     private java.lang.CharSequence nickname;
+    /** metrics-lib/ServerDescriptor: String getAddress() */
     private java.lang.CharSequence address;
+    /** metrics-lib/ServerDescriptor: int getOrPort() */
     private java.lang.Integer or_port;
+    /** metrics-lib/ServerDescriptor: int getSocksPort() */
     private java.lang.Integer socks_port;
+    /** metrics-lib/ServerDescriptor: int getDirPort() */
     private java.lang.Integer dir_port;
 
     /** Creates a new Builder */
@@ -165,7 +202,10 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
       super(converTor.bridge.Router.SCHEMA$);
     }
     
-    /** Creates a Builder by copying an existing Builder */
+    /**
+     * Creates a Builder by copying an existing Builder.
+     * @param other The existing Builder to copy.
+     */
     private Builder(converTor.bridge.Router.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.nickname)) {
@@ -190,7 +230,10 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
       }
     }
     
-    /** Creates a Builder by copying an existing Router instance */
+    /**
+     * Creates a Builder by copying an existing Router instance
+     * @param other The existing instance to copy.
+     */
     private Builder(converTor.bridge.Router other) {
             super(converTor.bridge.Router.SCHEMA$);
       if (isValidValue(fields()[0], other.nickname)) {
@@ -215,125 +258,215 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
       }
     }
 
-    /** Gets the value of the 'nickname' field */
+    /**
+      * Gets the value of the 'nickname' field.
+      * metrics-lib/ServerDescriptor: String getNickname()
+      * @return The value.
+      */
     public java.lang.CharSequence getNickname() {
       return nickname;
     }
-    
-    /** Sets the value of the 'nickname' field */
+
+    /**
+      * Sets the value of the 'nickname' field.
+      * metrics-lib/ServerDescriptor: String getNickname()
+      * @param value The value of 'nickname'.
+      * @return This builder.
+      */
     public converTor.bridge.Router.Builder setNickname(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.nickname = value;
       fieldSetFlags()[0] = true;
       return this; 
     }
-    
-    /** Checks whether the 'nickname' field has been set */
+
+    /**
+      * Checks whether the 'nickname' field has been set.
+      * metrics-lib/ServerDescriptor: String getNickname()
+      * @return True if the 'nickname' field has been set, false otherwise.
+      */
     public boolean hasNickname() {
       return fieldSetFlags()[0];
     }
-    
-    /** Clears the value of the 'nickname' field */
+
+
+    /**
+      * Clears the value of the 'nickname' field.
+      * metrics-lib/ServerDescriptor: String getNickname()
+      * @return This builder.
+      */
     public converTor.bridge.Router.Builder clearNickname() {
       nickname = null;
       fieldSetFlags()[0] = false;
       return this;
     }
 
-    /** Gets the value of the 'address' field */
+    /**
+      * Gets the value of the 'address' field.
+      * metrics-lib/ServerDescriptor: String getAddress()
+      * @return The value.
+      */
     public java.lang.CharSequence getAddress() {
       return address;
     }
-    
-    /** Sets the value of the 'address' field */
+
+    /**
+      * Sets the value of the 'address' field.
+      * metrics-lib/ServerDescriptor: String getAddress()
+      * @param value The value of 'address'.
+      * @return This builder.
+      */
     public converTor.bridge.Router.Builder setAddress(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.address = value;
       fieldSetFlags()[1] = true;
       return this; 
     }
-    
-    /** Checks whether the 'address' field has been set */
+
+    /**
+      * Checks whether the 'address' field has been set.
+      * metrics-lib/ServerDescriptor: String getAddress()
+      * @return True if the 'address' field has been set, false otherwise.
+      */
     public boolean hasAddress() {
       return fieldSetFlags()[1];
     }
-    
-    /** Clears the value of the 'address' field */
+
+
+    /**
+      * Clears the value of the 'address' field.
+      * metrics-lib/ServerDescriptor: String getAddress()
+      * @return This builder.
+      */
     public converTor.bridge.Router.Builder clearAddress() {
       address = null;
       fieldSetFlags()[1] = false;
       return this;
     }
 
-    /** Gets the value of the 'or_port' field */
+    /**
+      * Gets the value of the 'or_port' field.
+      * metrics-lib/ServerDescriptor: int getOrPort()
+      * @return The value.
+      */
     public java.lang.Integer getOrPort() {
       return or_port;
     }
-    
-    /** Sets the value of the 'or_port' field */
+
+    /**
+      * Sets the value of the 'or_port' field.
+      * metrics-lib/ServerDescriptor: int getOrPort()
+      * @param value The value of 'or_port'.
+      * @return This builder.
+      */
     public converTor.bridge.Router.Builder setOrPort(java.lang.Integer value) {
       validate(fields()[2], value);
       this.or_port = value;
       fieldSetFlags()[2] = true;
       return this; 
     }
-    
-    /** Checks whether the 'or_port' field has been set */
+
+    /**
+      * Checks whether the 'or_port' field has been set.
+      * metrics-lib/ServerDescriptor: int getOrPort()
+      * @return True if the 'or_port' field has been set, false otherwise.
+      */
     public boolean hasOrPort() {
       return fieldSetFlags()[2];
     }
-    
-    /** Clears the value of the 'or_port' field */
+
+
+    /**
+      * Clears the value of the 'or_port' field.
+      * metrics-lib/ServerDescriptor: int getOrPort()
+      * @return This builder.
+      */
     public converTor.bridge.Router.Builder clearOrPort() {
       or_port = null;
       fieldSetFlags()[2] = false;
       return this;
     }
 
-    /** Gets the value of the 'socks_port' field */
+    /**
+      * Gets the value of the 'socks_port' field.
+      * metrics-lib/ServerDescriptor: int getSocksPort()
+      * @return The value.
+      */
     public java.lang.Integer getSocksPort() {
       return socks_port;
     }
-    
-    /** Sets the value of the 'socks_port' field */
+
+    /**
+      * Sets the value of the 'socks_port' field.
+      * metrics-lib/ServerDescriptor: int getSocksPort()
+      * @param value The value of 'socks_port'.
+      * @return This builder.
+      */
     public converTor.bridge.Router.Builder setSocksPort(java.lang.Integer value) {
       validate(fields()[3], value);
       this.socks_port = value;
       fieldSetFlags()[3] = true;
       return this; 
     }
-    
-    /** Checks whether the 'socks_port' field has been set */
+
+    /**
+      * Checks whether the 'socks_port' field has been set.
+      * metrics-lib/ServerDescriptor: int getSocksPort()
+      * @return True if the 'socks_port' field has been set, false otherwise.
+      */
     public boolean hasSocksPort() {
       return fieldSetFlags()[3];
     }
-    
-    /** Clears the value of the 'socks_port' field */
+
+
+    /**
+      * Clears the value of the 'socks_port' field.
+      * metrics-lib/ServerDescriptor: int getSocksPort()
+      * @return This builder.
+      */
     public converTor.bridge.Router.Builder clearSocksPort() {
       socks_port = null;
       fieldSetFlags()[3] = false;
       return this;
     }
 
-    /** Gets the value of the 'dir_port' field */
+    /**
+      * Gets the value of the 'dir_port' field.
+      * metrics-lib/ServerDescriptor: int getDirPort()
+      * @return The value.
+      */
     public java.lang.Integer getDirPort() {
       return dir_port;
     }
-    
-    /** Sets the value of the 'dir_port' field */
+
+    /**
+      * Sets the value of the 'dir_port' field.
+      * metrics-lib/ServerDescriptor: int getDirPort()
+      * @param value The value of 'dir_port'.
+      * @return This builder.
+      */
     public converTor.bridge.Router.Builder setDirPort(java.lang.Integer value) {
       validate(fields()[4], value);
       this.dir_port = value;
       fieldSetFlags()[4] = true;
       return this; 
     }
-    
-    /** Checks whether the 'dir_port' field has been set */
+
+    /**
+      * Checks whether the 'dir_port' field has been set.
+      * metrics-lib/ServerDescriptor: int getDirPort()
+      * @return True if the 'dir_port' field has been set, false otherwise.
+      */
     public boolean hasDirPort() {
       return fieldSetFlags()[4];
     }
-    
-    /** Clears the value of the 'dir_port' field */
+
+
+    /**
+      * Clears the value of the 'dir_port' field.
+      * metrics-lib/ServerDescriptor: int getDirPort()
+      * @return This builder.
+      */
     public converTor.bridge.Router.Builder clearDirPort() {
       dir_port = null;
       fieldSetFlags()[4] = false;
@@ -355,4 +488,21 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
       }
     }
   }
+
+  private static final org.apache.avro.io.DatumWriter
+    WRITER$ = new org.apache.avro.specific.SpecificDatumWriter(SCHEMA$);  
+
+  @Override public void writeExternal(java.io.ObjectOutput out)
+    throws java.io.IOException {
+    WRITER$.write(this, org.apache.avro.specific.SpecificData.getEncoder(out));
+  }
+
+  private static final org.apache.avro.io.DatumReader
+    READER$ = new org.apache.avro.specific.SpecificDatumReader(SCHEMA$);  
+
+  @Override public void readExternal(java.io.ObjectInput in)
+    throws java.io.IOException {
+    READER$.read(this, org.apache.avro.specific.SpecificData.getDecoder(in));
+  }
+
 }

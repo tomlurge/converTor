@@ -3,13 +3,16 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.relayConsensus;
+package converTor.relayConsensus;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Vote extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Vote\",\"namespace\":\"converTor.relayConsensus\",\"fields\":[{\"name\":\"vote_seconds\",\"type\":[\"null\",\"long\"]},{\"name\":\"dist_seconds\",\"type\":[\"null\",\"long\"]}]}");
+  private static final long serialVersionUID = 2947214722951960135L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Vote\",\"namespace\":\"converTor.relayConsensus\",\"fields\":[{\"name\":\"vote_seconds\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: long getVoteSeconds()\"},{\"name\":\"dist_seconds\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: long getDistSeconds()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
+  /** metrics-lib/RelayNetworkStatusConsensus: long getVoteSeconds() */
   @Deprecated public java.lang.Long vote_seconds;
+  /** metrics-lib/RelayNetworkStatusConsensus: long getDistSeconds() */
   @Deprecated public java.lang.Long dist_seconds;
 
   /**
@@ -21,6 +24,8 @@ public class Vote extends org.apache.avro.specific.SpecificRecordBase implements
 
   /**
    * All-args constructor.
+   * @param vote_seconds metrics-lib/RelayNetworkStatusConsensus: long getVoteSeconds()
+   * @param dist_seconds metrics-lib/RelayNetworkStatusConsensus: long getDistSeconds()
    */
   public Vote(java.lang.Long vote_seconds, java.lang.Long dist_seconds) {
     this.vote_seconds = vote_seconds;
@@ -48,6 +53,7 @@ public class Vote extends org.apache.avro.specific.SpecificRecordBase implements
 
   /**
    * Gets the value of the 'vote_seconds' field.
+   * @return metrics-lib/RelayNetworkStatusConsensus: long getVoteSeconds()
    */
   public java.lang.Long getVoteSeconds() {
     return vote_seconds;
@@ -55,6 +61,7 @@ public class Vote extends org.apache.avro.specific.SpecificRecordBase implements
 
   /**
    * Sets the value of the 'vote_seconds' field.
+   * metrics-lib/RelayNetworkStatusConsensus: long getVoteSeconds()
    * @param value the value to set.
    */
   public void setVoteSeconds(java.lang.Long value) {
@@ -63,6 +70,7 @@ public class Vote extends org.apache.avro.specific.SpecificRecordBase implements
 
   /**
    * Gets the value of the 'dist_seconds' field.
+   * @return metrics-lib/RelayNetworkStatusConsensus: long getDistSeconds()
    */
   public java.lang.Long getDistSeconds() {
     return dist_seconds;
@@ -70,23 +78,35 @@ public class Vote extends org.apache.avro.specific.SpecificRecordBase implements
 
   /**
    * Sets the value of the 'dist_seconds' field.
+   * metrics-lib/RelayNetworkStatusConsensus: long getDistSeconds()
    * @param value the value to set.
    */
   public void setDistSeconds(java.lang.Long value) {
     this.dist_seconds = value;
   }
 
-  /** Creates a new Vote RecordBuilder */
+  /**
+   * Creates a new Vote RecordBuilder.
+   * @return A new Vote RecordBuilder
+   */
   public static converTor.relayConsensus.Vote.Builder newBuilder() {
     return new converTor.relayConsensus.Vote.Builder();
   }
   
-  /** Creates a new Vote RecordBuilder by copying an existing Builder */
+  /**
+   * Creates a new Vote RecordBuilder by copying an existing Builder.
+   * @param other The existing builder to copy.
+   * @return A new Vote RecordBuilder
+   */
   public static converTor.relayConsensus.Vote.Builder newBuilder(converTor.relayConsensus.Vote.Builder other) {
     return new converTor.relayConsensus.Vote.Builder(other);
   }
   
-  /** Creates a new Vote RecordBuilder by copying an existing Vote instance */
+  /**
+   * Creates a new Vote RecordBuilder by copying an existing Vote instance.
+   * @param other The existing instance to copy.
+   * @return A new Vote RecordBuilder
+   */
   public static converTor.relayConsensus.Vote.Builder newBuilder(converTor.relayConsensus.Vote other) {
     return new converTor.relayConsensus.Vote.Builder(other);
   }
@@ -97,7 +117,9 @@ public class Vote extends org.apache.avro.specific.SpecificRecordBase implements
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Vote>
     implements org.apache.avro.data.RecordBuilder<Vote> {
 
+    /** metrics-lib/RelayNetworkStatusConsensus: long getVoteSeconds() */
     private java.lang.Long vote_seconds;
+    /** metrics-lib/RelayNetworkStatusConsensus: long getDistSeconds() */
     private java.lang.Long dist_seconds;
 
     /** Creates a new Builder */
@@ -105,7 +127,10 @@ public class Vote extends org.apache.avro.specific.SpecificRecordBase implements
       super(converTor.relayConsensus.Vote.SCHEMA$);
     }
     
-    /** Creates a Builder by copying an existing Builder */
+    /**
+     * Creates a Builder by copying an existing Builder.
+     * @param other The existing Builder to copy.
+     */
     private Builder(converTor.relayConsensus.Vote.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.vote_seconds)) {
@@ -118,7 +143,10 @@ public class Vote extends org.apache.avro.specific.SpecificRecordBase implements
       }
     }
     
-    /** Creates a Builder by copying an existing Vote instance */
+    /**
+     * Creates a Builder by copying an existing Vote instance
+     * @param other The existing instance to copy.
+     */
     private Builder(converTor.relayConsensus.Vote other) {
             super(converTor.relayConsensus.Vote.SCHEMA$);
       if (isValidValue(fields()[0], other.vote_seconds)) {
@@ -131,50 +159,86 @@ public class Vote extends org.apache.avro.specific.SpecificRecordBase implements
       }
     }
 
-    /** Gets the value of the 'vote_seconds' field */
+    /**
+      * Gets the value of the 'vote_seconds' field.
+      * metrics-lib/RelayNetworkStatusConsensus: long getVoteSeconds()
+      * @return The value.
+      */
     public java.lang.Long getVoteSeconds() {
       return vote_seconds;
     }
-    
-    /** Sets the value of the 'vote_seconds' field */
+
+    /**
+      * Sets the value of the 'vote_seconds' field.
+      * metrics-lib/RelayNetworkStatusConsensus: long getVoteSeconds()
+      * @param value The value of 'vote_seconds'.
+      * @return This builder.
+      */
     public converTor.relayConsensus.Vote.Builder setVoteSeconds(java.lang.Long value) {
       validate(fields()[0], value);
       this.vote_seconds = value;
       fieldSetFlags()[0] = true;
       return this; 
     }
-    
-    /** Checks whether the 'vote_seconds' field has been set */
+
+    /**
+      * Checks whether the 'vote_seconds' field has been set.
+      * metrics-lib/RelayNetworkStatusConsensus: long getVoteSeconds()
+      * @return True if the 'vote_seconds' field has been set, false otherwise.
+      */
     public boolean hasVoteSeconds() {
       return fieldSetFlags()[0];
     }
-    
-    /** Clears the value of the 'vote_seconds' field */
+
+
+    /**
+      * Clears the value of the 'vote_seconds' field.
+      * metrics-lib/RelayNetworkStatusConsensus: long getVoteSeconds()
+      * @return This builder.
+      */
     public converTor.relayConsensus.Vote.Builder clearVoteSeconds() {
       vote_seconds = null;
       fieldSetFlags()[0] = false;
       return this;
     }
 
-    /** Gets the value of the 'dist_seconds' field */
+    /**
+      * Gets the value of the 'dist_seconds' field.
+      * metrics-lib/RelayNetworkStatusConsensus: long getDistSeconds()
+      * @return The value.
+      */
     public java.lang.Long getDistSeconds() {
       return dist_seconds;
     }
-    
-    /** Sets the value of the 'dist_seconds' field */
+
+    /**
+      * Sets the value of the 'dist_seconds' field.
+      * metrics-lib/RelayNetworkStatusConsensus: long getDistSeconds()
+      * @param value The value of 'dist_seconds'.
+      * @return This builder.
+      */
     public converTor.relayConsensus.Vote.Builder setDistSeconds(java.lang.Long value) {
       validate(fields()[1], value);
       this.dist_seconds = value;
       fieldSetFlags()[1] = true;
       return this; 
     }
-    
-    /** Checks whether the 'dist_seconds' field has been set */
+
+    /**
+      * Checks whether the 'dist_seconds' field has been set.
+      * metrics-lib/RelayNetworkStatusConsensus: long getDistSeconds()
+      * @return True if the 'dist_seconds' field has been set, false otherwise.
+      */
     public boolean hasDistSeconds() {
       return fieldSetFlags()[1];
     }
-    
-    /** Clears the value of the 'dist_seconds' field */
+
+
+    /**
+      * Clears the value of the 'dist_seconds' field.
+      * metrics-lib/RelayNetworkStatusConsensus: long getDistSeconds()
+      * @return This builder.
+      */
     public converTor.relayConsensus.Vote.Builder clearDistSeconds() {
       dist_seconds = null;
       fieldSetFlags()[1] = false;
@@ -193,4 +257,21 @@ public class Vote extends org.apache.avro.specific.SpecificRecordBase implements
       }
     }
   }
+
+  private static final org.apache.avro.io.DatumWriter
+    WRITER$ = new org.apache.avro.specific.SpecificDatumWriter(SCHEMA$);  
+
+  @Override public void writeExternal(java.io.ObjectOutput out)
+    throws java.io.IOException {
+    WRITER$.write(this, org.apache.avro.specific.SpecificData.getEncoder(out));
+  }
+
+  private static final org.apache.avro.io.DatumReader
+    READER$ = new org.apache.avro.specific.SpecificDatumReader(SCHEMA$);  
+
+  @Override public void readExternal(java.io.ObjectInput in)
+    throws java.io.IOException {
+    READER$.read(this, org.apache.avro.specific.SpecificData.getDecoder(in));
+  }
+
 }

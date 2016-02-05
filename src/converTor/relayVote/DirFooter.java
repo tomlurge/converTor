@@ -3,12 +3,14 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.relayVote;
+package converTor.relayVote;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class DirFooter extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DirFooter\",\"namespace\":\"converTor.relayVote\",\"fields\":[{\"name\":\"directory_signature\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirSig\",\"fields\":[{\"name\":\"algorithm\",\"type\":[\"null\",\"string\"]},{\"name\":\"identity\",\"type\":[\"null\",\"string\"]},{\"name\":\"signing_key_digest\",\"type\":[\"null\",\"string\"]},{\"name\":\"signature\",\"type\":[\"null\",\"boolean\"]}]}]}]}");
+  private static final long serialVersionUID = 1892505949075704066L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DirFooter\",\"namespace\":\"converTor.relayVote\",\"fields\":[{\"name\":\"directory_signature\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirSig\",\"fields\":[{\"name\":\"algorithm\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/DirectorySignature: String getAlgorithm()\"},{\"name\":\"identity\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/DirectorySignature: String getIdentity()\"},{\"name\":\"signing_key_digest\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/DirectorySignature: String getSigningKeyDigest()\"},{\"name\":\"signature\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/DirectorySignature: String getSignature()\"}]}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: SortedMap<String, DirectorySignature> getDirectorySignatures()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
+  /** metrics-lib/RelayNetworkStatusVote: SortedMap<String, DirectorySignature> getDirectorySignatures() */
   @Deprecated public converTor.relayVote.DirSig directory_signature;
 
   /**
@@ -20,6 +22,7 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * All-args constructor.
+   * @param directory_signature metrics-lib/RelayNetworkStatusVote: SortedMap<String, DirectorySignature> getDirectorySignatures()
    */
   public DirFooter(converTor.relayVote.DirSig directory_signature) {
     this.directory_signature = directory_signature;
@@ -44,6 +47,7 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Gets the value of the 'directory_signature' field.
+   * @return metrics-lib/RelayNetworkStatusVote: SortedMap<String, DirectorySignature> getDirectorySignatures()
    */
   public converTor.relayVote.DirSig getDirectorySignature() {
     return directory_signature;
@@ -51,23 +55,35 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Sets the value of the 'directory_signature' field.
+   * metrics-lib/RelayNetworkStatusVote: SortedMap<String, DirectorySignature> getDirectorySignatures()
    * @param value the value to set.
    */
   public void setDirectorySignature(converTor.relayVote.DirSig value) {
     this.directory_signature = value;
   }
 
-  /** Creates a new DirFooter RecordBuilder */
+  /**
+   * Creates a new DirFooter RecordBuilder.
+   * @return A new DirFooter RecordBuilder
+   */
   public static converTor.relayVote.DirFooter.Builder newBuilder() {
     return new converTor.relayVote.DirFooter.Builder();
   }
   
-  /** Creates a new DirFooter RecordBuilder by copying an existing Builder */
+  /**
+   * Creates a new DirFooter RecordBuilder by copying an existing Builder.
+   * @param other The existing builder to copy.
+   * @return A new DirFooter RecordBuilder
+   */
   public static converTor.relayVote.DirFooter.Builder newBuilder(converTor.relayVote.DirFooter.Builder other) {
     return new converTor.relayVote.DirFooter.Builder(other);
   }
   
-  /** Creates a new DirFooter RecordBuilder by copying an existing DirFooter instance */
+  /**
+   * Creates a new DirFooter RecordBuilder by copying an existing DirFooter instance.
+   * @param other The existing instance to copy.
+   * @return A new DirFooter RecordBuilder
+   */
   public static converTor.relayVote.DirFooter.Builder newBuilder(converTor.relayVote.DirFooter other) {
     return new converTor.relayVote.DirFooter.Builder(other);
   }
@@ -78,52 +94,119 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<DirFooter>
     implements org.apache.avro.data.RecordBuilder<DirFooter> {
 
+    /** metrics-lib/RelayNetworkStatusVote: SortedMap<String, DirectorySignature> getDirectorySignatures() */
     private converTor.relayVote.DirSig directory_signature;
+    private converTor.relayVote.DirSig.Builder directory_signatureBuilder;
 
     /** Creates a new Builder */
     private Builder() {
       super(converTor.relayVote.DirFooter.SCHEMA$);
     }
     
-    /** Creates a Builder by copying an existing Builder */
+    /**
+     * Creates a Builder by copying an existing Builder.
+     * @param other The existing Builder to copy.
+     */
     private Builder(converTor.relayVote.DirFooter.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.directory_signature)) {
         this.directory_signature = data().deepCopy(fields()[0].schema(), other.directory_signature);
         fieldSetFlags()[0] = true;
       }
+      if (other.hasDirectorySignatureBuilder()) {
+        this.directory_signatureBuilder = converTor.relayVote.DirSig.newBuilder(other.getDirectorySignatureBuilder());
+      }
     }
     
-    /** Creates a Builder by copying an existing DirFooter instance */
+    /**
+     * Creates a Builder by copying an existing DirFooter instance
+     * @param other The existing instance to copy.
+     */
     private Builder(converTor.relayVote.DirFooter other) {
             super(converTor.relayVote.DirFooter.SCHEMA$);
       if (isValidValue(fields()[0], other.directory_signature)) {
         this.directory_signature = data().deepCopy(fields()[0].schema(), other.directory_signature);
         fieldSetFlags()[0] = true;
       }
+      this.directory_signatureBuilder = null;
     }
 
-    /** Gets the value of the 'directory_signature' field */
+    /**
+      * Gets the value of the 'directory_signature' field.
+      * metrics-lib/RelayNetworkStatusVote: SortedMap<String, DirectorySignature> getDirectorySignatures()
+      * @return The value.
+      */
     public converTor.relayVote.DirSig getDirectorySignature() {
       return directory_signature;
     }
-    
-    /** Sets the value of the 'directory_signature' field */
+
+    /**
+      * Sets the value of the 'directory_signature' field.
+      * metrics-lib/RelayNetworkStatusVote: SortedMap<String, DirectorySignature> getDirectorySignatures()
+      * @param value The value of 'directory_signature'.
+      * @return This builder.
+      */
     public converTor.relayVote.DirFooter.Builder setDirectorySignature(converTor.relayVote.DirSig value) {
       validate(fields()[0], value);
+      this.directory_signatureBuilder = null;
       this.directory_signature = value;
       fieldSetFlags()[0] = true;
       return this; 
     }
-    
-    /** Checks whether the 'directory_signature' field has been set */
+
+    /**
+      * Checks whether the 'directory_signature' field has been set.
+      * metrics-lib/RelayNetworkStatusVote: SortedMap<String, DirectorySignature> getDirectorySignatures()
+      * @return True if the 'directory_signature' field has been set, false otherwise.
+      */
     public boolean hasDirectorySignature() {
       return fieldSetFlags()[0];
     }
-    
-    /** Clears the value of the 'directory_signature' field */
+
+    /**
+     * Gets the Builder instance for the 'directory_signature' field and creates one if it doesn't exist yet.
+     * metrics-lib/RelayNetworkStatusVote: SortedMap<String, DirectorySignature> getDirectorySignatures()
+     * @return This builder.
+     */
+    public converTor.relayVote.DirSig.Builder getDirectorySignatureBuilder() {
+      if (directory_signatureBuilder == null) {
+        if (hasDirectorySignature()) {
+          setDirectorySignatureBuilder(converTor.relayVote.DirSig.newBuilder(directory_signature));
+        } else {
+          setDirectorySignatureBuilder(converTor.relayVote.DirSig.newBuilder());
+        }
+      }
+      return directory_signatureBuilder;
+    }
+
+    /**
+     * Sets the Builder instance for the 'directory_signature' field
+     * metrics-lib/RelayNetworkStatusVote: SortedMap<String, DirectorySignature> getDirectorySignatures()
+     * @return This builder.
+     */
+    public converTor.relayVote.DirFooter.Builder setDirectorySignatureBuilder(converTor.relayVote.DirSig.Builder value) {
+      clearDirectorySignature();
+      directory_signatureBuilder = value;
+      return this;
+    }
+
+    /**
+     * Checks whether the 'directory_signature' field has an active Builder instance
+     * metrics-lib/RelayNetworkStatusVote: SortedMap<String, DirectorySignature> getDirectorySignatures()
+     * @return True if the 'directory_signature' field has an active Builder instance
+     */
+    public boolean hasDirectorySignatureBuilder() {
+      return directory_signatureBuilder != null;
+    }
+
+    /**
+      * Clears the value of the 'directory_signature' field.
+      * metrics-lib/RelayNetworkStatusVote: SortedMap<String, DirectorySignature> getDirectorySignatures()
+      * @return This builder.
+      */
     public converTor.relayVote.DirFooter.Builder clearDirectorySignature() {
       directory_signature = null;
+      directory_signatureBuilder = null;
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -132,11 +215,32 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
     public DirFooter build() {
       try {
         DirFooter record = new DirFooter();
-        record.directory_signature = fieldSetFlags()[0] ? this.directory_signature : (converTor.relayVote.DirSig) defaultValue(fields()[0]);
+        if (directory_signatureBuilder != null) {
+          record.directory_signature = this.directory_signatureBuilder.build();
+        } else {
+          record.directory_signature = fieldSetFlags()[0] ? this.directory_signature : (converTor.relayVote.DirSig) defaultValue(fields()[0]);
+        }
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
       }
     }
   }
+
+  private static final org.apache.avro.io.DatumWriter
+    WRITER$ = new org.apache.avro.specific.SpecificDatumWriter(SCHEMA$);  
+
+  @Override public void writeExternal(java.io.ObjectOutput out)
+    throws java.io.IOException {
+    WRITER$.write(this, org.apache.avro.specific.SpecificData.getEncoder(out));
+  }
+
+  private static final org.apache.avro.io.DatumReader
+    READER$ = new org.apache.avro.specific.SpecificDatumReader(SCHEMA$);  
+
+  @Override public void readExternal(java.io.ObjectInput in)
+    throws java.io.IOException {
+    READER$.read(this, org.apache.avro.specific.SpecificData.getDecoder(in));
+  }
+
 }

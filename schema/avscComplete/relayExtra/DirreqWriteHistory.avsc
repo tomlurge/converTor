@@ -1,0 +1,21 @@
+{
+  "type" : "record",
+  "name" : "DirreqWriteHistory",
+  "namespace" : "converTor.relayExtra",
+  "fields" : [ {
+    "name" : "date",
+    "type" : "string",
+    "doc" : "metrics-lib/BandwidthHistory: long getHistoryEndMillis()"
+  }, {
+    "name" : "interval",
+    "type" : "long",
+    "doc" : "metrics-lib/BandwidthHistory: long getIntervalLength()"
+  }, {
+    "name" : "bytes",
+    "type" : {
+      "type" : "array",
+      "items" : "long"
+    },
+    "doc" : "metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()"
+  } ]
+}

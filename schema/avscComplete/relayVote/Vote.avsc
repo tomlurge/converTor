@@ -1,0 +1,14 @@
+{
+  "type" : "record",
+  "name" : "Vote",
+  "namespace" : "converTor.relayVote",
+  "fields" : [ {
+    "name" : "vote_seconds",
+    "type" : [ "null", "long" ],
+    "doc" : "metrics-lib/RelayNetworkStatusVote: long getVoteSeconds()"
+  }, {
+    "name" : "dist_seconds",
+    "type" : [ "null", "long" ],
+    "doc" : "metrics-lib/RelayNetworkStatusVote: long getDistSeconds()"
+  } ]
+}

@@ -3,17 +3,24 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.relayExtra;
+package converTor.relayExtra;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ConnBiDirect\",\"namespace\":\"converTor.relayExtra\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"string\"]},{\"name\":\"interval\",\"type\":\"long\",\"default\":86400},{\"name\":\"below\",\"type\":[\"null\",\"int\"]},{\"name\":\"read\",\"type\":[\"null\",\"int\"]},{\"name\":\"write\",\"type\":[\"null\",\"int\"]},{\"name\":\"both\",\"type\":[\"null\",\"int\"]}]}");
+  private static final long serialVersionUID = 2115676593962503455L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ConnBiDirect\",\"namespace\":\"converTor.relayExtra\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsIntervalLength()\",\"default\":86400},{\"name\":\"below\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBelow()\"},{\"name\":\"read\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectRead()\"},{\"name\":\"write\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectWrite()\"},{\"name\":\"both\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBoth()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
+  /** metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis() */
   @Deprecated public java.lang.CharSequence date;
+  /** metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsIntervalLength() */
   @Deprecated public long interval;
+  /** metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBelow() */
   @Deprecated public java.lang.Integer below;
+  /** metrics-lib/ExtraInfoDescriptor: int getConnBiDirectRead() */
   @Deprecated public java.lang.Integer read;
+  /** metrics-lib/ExtraInfoDescriptor: int getConnBiDirectWrite() */
   @Deprecated public java.lang.Integer write;
+  /** metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBoth() */
   @Deprecated public java.lang.Integer both;
 
   /**
@@ -25,6 +32,12 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
 
   /**
    * All-args constructor.
+   * @param date metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis()
+   * @param interval metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsIntervalLength()
+   * @param below metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBelow()
+   * @param read metrics-lib/ExtraInfoDescriptor: int getConnBiDirectRead()
+   * @param write metrics-lib/ExtraInfoDescriptor: int getConnBiDirectWrite()
+   * @param both metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBoth()
    */
   public ConnBiDirect(java.lang.CharSequence date, java.lang.Long interval, java.lang.Integer below, java.lang.Integer read, java.lang.Integer write, java.lang.Integer both) {
     this.date = date;
@@ -64,6 +77,7 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
 
   /**
    * Gets the value of the 'date' field.
+   * @return metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis()
    */
   public java.lang.CharSequence getDate() {
     return date;
@@ -71,6 +85,7 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
 
   /**
    * Sets the value of the 'date' field.
+   * metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis()
    * @param value the value to set.
    */
   public void setDate(java.lang.CharSequence value) {
@@ -79,6 +94,7 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
 
   /**
    * Gets the value of the 'interval' field.
+   * @return metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsIntervalLength()
    */
   public java.lang.Long getInterval() {
     return interval;
@@ -86,6 +102,7 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
 
   /**
    * Sets the value of the 'interval' field.
+   * metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsIntervalLength()
    * @param value the value to set.
    */
   public void setInterval(java.lang.Long value) {
@@ -94,6 +111,7 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
 
   /**
    * Gets the value of the 'below' field.
+   * @return metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBelow()
    */
   public java.lang.Integer getBelow() {
     return below;
@@ -101,6 +119,7 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
 
   /**
    * Sets the value of the 'below' field.
+   * metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBelow()
    * @param value the value to set.
    */
   public void setBelow(java.lang.Integer value) {
@@ -109,6 +128,7 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
 
   /**
    * Gets the value of the 'read' field.
+   * @return metrics-lib/ExtraInfoDescriptor: int getConnBiDirectRead()
    */
   public java.lang.Integer getRead() {
     return read;
@@ -116,6 +136,7 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
 
   /**
    * Sets the value of the 'read' field.
+   * metrics-lib/ExtraInfoDescriptor: int getConnBiDirectRead()
    * @param value the value to set.
    */
   public void setRead(java.lang.Integer value) {
@@ -124,6 +145,7 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
 
   /**
    * Gets the value of the 'write' field.
+   * @return metrics-lib/ExtraInfoDescriptor: int getConnBiDirectWrite()
    */
   public java.lang.Integer getWrite() {
     return write;
@@ -131,6 +153,7 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
 
   /**
    * Sets the value of the 'write' field.
+   * metrics-lib/ExtraInfoDescriptor: int getConnBiDirectWrite()
    * @param value the value to set.
    */
   public void setWrite(java.lang.Integer value) {
@@ -139,6 +162,7 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
 
   /**
    * Gets the value of the 'both' field.
+   * @return metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBoth()
    */
   public java.lang.Integer getBoth() {
     return both;
@@ -146,23 +170,35 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
 
   /**
    * Sets the value of the 'both' field.
+   * metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBoth()
    * @param value the value to set.
    */
   public void setBoth(java.lang.Integer value) {
     this.both = value;
   }
 
-  /** Creates a new ConnBiDirect RecordBuilder */
+  /**
+   * Creates a new ConnBiDirect RecordBuilder.
+   * @return A new ConnBiDirect RecordBuilder
+   */
   public static converTor.relayExtra.ConnBiDirect.Builder newBuilder() {
     return new converTor.relayExtra.ConnBiDirect.Builder();
   }
   
-  /** Creates a new ConnBiDirect RecordBuilder by copying an existing Builder */
+  /**
+   * Creates a new ConnBiDirect RecordBuilder by copying an existing Builder.
+   * @param other The existing builder to copy.
+   * @return A new ConnBiDirect RecordBuilder
+   */
   public static converTor.relayExtra.ConnBiDirect.Builder newBuilder(converTor.relayExtra.ConnBiDirect.Builder other) {
     return new converTor.relayExtra.ConnBiDirect.Builder(other);
   }
   
-  /** Creates a new ConnBiDirect RecordBuilder by copying an existing ConnBiDirect instance */
+  /**
+   * Creates a new ConnBiDirect RecordBuilder by copying an existing ConnBiDirect instance.
+   * @param other The existing instance to copy.
+   * @return A new ConnBiDirect RecordBuilder
+   */
   public static converTor.relayExtra.ConnBiDirect.Builder newBuilder(converTor.relayExtra.ConnBiDirect other) {
     return new converTor.relayExtra.ConnBiDirect.Builder(other);
   }
@@ -173,11 +209,17 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<ConnBiDirect>
     implements org.apache.avro.data.RecordBuilder<ConnBiDirect> {
 
+    /** metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis() */
     private java.lang.CharSequence date;
+    /** metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsIntervalLength() */
     private long interval;
+    /** metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBelow() */
     private java.lang.Integer below;
+    /** metrics-lib/ExtraInfoDescriptor: int getConnBiDirectRead() */
     private java.lang.Integer read;
+    /** metrics-lib/ExtraInfoDescriptor: int getConnBiDirectWrite() */
     private java.lang.Integer write;
+    /** metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBoth() */
     private java.lang.Integer both;
 
     /** Creates a new Builder */
@@ -185,7 +227,10 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
       super(converTor.relayExtra.ConnBiDirect.SCHEMA$);
     }
     
-    /** Creates a Builder by copying an existing Builder */
+    /**
+     * Creates a Builder by copying an existing Builder.
+     * @param other The existing Builder to copy.
+     */
     private Builder(converTor.relayExtra.ConnBiDirect.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.date)) {
@@ -214,7 +259,10 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
       }
     }
     
-    /** Creates a Builder by copying an existing ConnBiDirect instance */
+    /**
+     * Creates a Builder by copying an existing ConnBiDirect instance
+     * @param other The existing instance to copy.
+     */
     private Builder(converTor.relayExtra.ConnBiDirect other) {
             super(converTor.relayExtra.ConnBiDirect.SCHEMA$);
       if (isValidValue(fields()[0], other.date)) {
@@ -243,149 +291,257 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
       }
     }
 
-    /** Gets the value of the 'date' field */
+    /**
+      * Gets the value of the 'date' field.
+      * metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis()
+      * @return The value.
+      */
     public java.lang.CharSequence getDate() {
       return date;
     }
-    
-    /** Sets the value of the 'date' field */
+
+    /**
+      * Sets the value of the 'date' field.
+      * metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis()
+      * @param value The value of 'date'.
+      * @return This builder.
+      */
     public converTor.relayExtra.ConnBiDirect.Builder setDate(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.date = value;
       fieldSetFlags()[0] = true;
       return this; 
     }
-    
-    /** Checks whether the 'date' field has been set */
+
+    /**
+      * Checks whether the 'date' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis()
+      * @return True if the 'date' field has been set, false otherwise.
+      */
     public boolean hasDate() {
       return fieldSetFlags()[0];
     }
-    
-    /** Clears the value of the 'date' field */
+
+
+    /**
+      * Clears the value of the 'date' field.
+      * metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis()
+      * @return This builder.
+      */
     public converTor.relayExtra.ConnBiDirect.Builder clearDate() {
       date = null;
       fieldSetFlags()[0] = false;
       return this;
     }
 
-    /** Gets the value of the 'interval' field */
+    /**
+      * Gets the value of the 'interval' field.
+      * metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsIntervalLength()
+      * @return The value.
+      */
     public java.lang.Long getInterval() {
       return interval;
     }
-    
-    /** Sets the value of the 'interval' field */
+
+    /**
+      * Sets the value of the 'interval' field.
+      * metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsIntervalLength()
+      * @param value The value of 'interval'.
+      * @return This builder.
+      */
     public converTor.relayExtra.ConnBiDirect.Builder setInterval(long value) {
       validate(fields()[1], value);
       this.interval = value;
       fieldSetFlags()[1] = true;
       return this; 
     }
-    
-    /** Checks whether the 'interval' field has been set */
+
+    /**
+      * Checks whether the 'interval' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsIntervalLength()
+      * @return True if the 'interval' field has been set, false otherwise.
+      */
     public boolean hasInterval() {
       return fieldSetFlags()[1];
     }
-    
-    /** Clears the value of the 'interval' field */
+
+
+    /**
+      * Clears the value of the 'interval' field.
+      * metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsIntervalLength()
+      * @return This builder.
+      */
     public converTor.relayExtra.ConnBiDirect.Builder clearInterval() {
       fieldSetFlags()[1] = false;
       return this;
     }
 
-    /** Gets the value of the 'below' field */
+    /**
+      * Gets the value of the 'below' field.
+      * metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBelow()
+      * @return The value.
+      */
     public java.lang.Integer getBelow() {
       return below;
     }
-    
-    /** Sets the value of the 'below' field */
+
+    /**
+      * Sets the value of the 'below' field.
+      * metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBelow()
+      * @param value The value of 'below'.
+      * @return This builder.
+      */
     public converTor.relayExtra.ConnBiDirect.Builder setBelow(java.lang.Integer value) {
       validate(fields()[2], value);
       this.below = value;
       fieldSetFlags()[2] = true;
       return this; 
     }
-    
-    /** Checks whether the 'below' field has been set */
+
+    /**
+      * Checks whether the 'below' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBelow()
+      * @return True if the 'below' field has been set, false otherwise.
+      */
     public boolean hasBelow() {
       return fieldSetFlags()[2];
     }
-    
-    /** Clears the value of the 'below' field */
+
+
+    /**
+      * Clears the value of the 'below' field.
+      * metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBelow()
+      * @return This builder.
+      */
     public converTor.relayExtra.ConnBiDirect.Builder clearBelow() {
       below = null;
       fieldSetFlags()[2] = false;
       return this;
     }
 
-    /** Gets the value of the 'read' field */
+    /**
+      * Gets the value of the 'read' field.
+      * metrics-lib/ExtraInfoDescriptor: int getConnBiDirectRead()
+      * @return The value.
+      */
     public java.lang.Integer getRead() {
       return read;
     }
-    
-    /** Sets the value of the 'read' field */
+
+    /**
+      * Sets the value of the 'read' field.
+      * metrics-lib/ExtraInfoDescriptor: int getConnBiDirectRead()
+      * @param value The value of 'read'.
+      * @return This builder.
+      */
     public converTor.relayExtra.ConnBiDirect.Builder setRead(java.lang.Integer value) {
       validate(fields()[3], value);
       this.read = value;
       fieldSetFlags()[3] = true;
       return this; 
     }
-    
-    /** Checks whether the 'read' field has been set */
+
+    /**
+      * Checks whether the 'read' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: int getConnBiDirectRead()
+      * @return True if the 'read' field has been set, false otherwise.
+      */
     public boolean hasRead() {
       return fieldSetFlags()[3];
     }
-    
-    /** Clears the value of the 'read' field */
+
+
+    /**
+      * Clears the value of the 'read' field.
+      * metrics-lib/ExtraInfoDescriptor: int getConnBiDirectRead()
+      * @return This builder.
+      */
     public converTor.relayExtra.ConnBiDirect.Builder clearRead() {
       read = null;
       fieldSetFlags()[3] = false;
       return this;
     }
 
-    /** Gets the value of the 'write' field */
+    /**
+      * Gets the value of the 'write' field.
+      * metrics-lib/ExtraInfoDescriptor: int getConnBiDirectWrite()
+      * @return The value.
+      */
     public java.lang.Integer getWrite() {
       return write;
     }
-    
-    /** Sets the value of the 'write' field */
+
+    /**
+      * Sets the value of the 'write' field.
+      * metrics-lib/ExtraInfoDescriptor: int getConnBiDirectWrite()
+      * @param value The value of 'write'.
+      * @return This builder.
+      */
     public converTor.relayExtra.ConnBiDirect.Builder setWrite(java.lang.Integer value) {
       validate(fields()[4], value);
       this.write = value;
       fieldSetFlags()[4] = true;
       return this; 
     }
-    
-    /** Checks whether the 'write' field has been set */
+
+    /**
+      * Checks whether the 'write' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: int getConnBiDirectWrite()
+      * @return True if the 'write' field has been set, false otherwise.
+      */
     public boolean hasWrite() {
       return fieldSetFlags()[4];
     }
-    
-    /** Clears the value of the 'write' field */
+
+
+    /**
+      * Clears the value of the 'write' field.
+      * metrics-lib/ExtraInfoDescriptor: int getConnBiDirectWrite()
+      * @return This builder.
+      */
     public converTor.relayExtra.ConnBiDirect.Builder clearWrite() {
       write = null;
       fieldSetFlags()[4] = false;
       return this;
     }
 
-    /** Gets the value of the 'both' field */
+    /**
+      * Gets the value of the 'both' field.
+      * metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBoth()
+      * @return The value.
+      */
     public java.lang.Integer getBoth() {
       return both;
     }
-    
-    /** Sets the value of the 'both' field */
+
+    /**
+      * Sets the value of the 'both' field.
+      * metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBoth()
+      * @param value The value of 'both'.
+      * @return This builder.
+      */
     public converTor.relayExtra.ConnBiDirect.Builder setBoth(java.lang.Integer value) {
       validate(fields()[5], value);
       this.both = value;
       fieldSetFlags()[5] = true;
       return this; 
     }
-    
-    /** Checks whether the 'both' field has been set */
+
+    /**
+      * Checks whether the 'both' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBoth()
+      * @return True if the 'both' field has been set, false otherwise.
+      */
     public boolean hasBoth() {
       return fieldSetFlags()[5];
     }
-    
-    /** Clears the value of the 'both' field */
+
+
+    /**
+      * Clears the value of the 'both' field.
+      * metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBoth()
+      * @return This builder.
+      */
     public converTor.relayExtra.ConnBiDirect.Builder clearBoth() {
       both = null;
       fieldSetFlags()[5] = false;
@@ -408,4 +564,21 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
       }
     }
   }
+
+  private static final org.apache.avro.io.DatumWriter
+    WRITER$ = new org.apache.avro.specific.SpecificDatumWriter(SCHEMA$);  
+
+  @Override public void writeExternal(java.io.ObjectOutput out)
+    throws java.io.IOException {
+    WRITER$.write(this, org.apache.avro.specific.SpecificData.getEncoder(out));
+  }
+
+  private static final org.apache.avro.io.DatumReader
+    READER$ = new org.apache.avro.specific.SpecificDatumReader(SCHEMA$);  
+
+  @Override public void readExternal(java.io.ObjectInput in)
+    throws java.io.IOException {
+    READER$.read(this, org.apache.avro.specific.SpecificData.getDecoder(in));
+  }
+
 }

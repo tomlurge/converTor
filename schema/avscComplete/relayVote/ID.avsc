@@ -1,0 +1,10 @@
+{
+  "type" : "record",
+  "name" : "ID",
+  "namespace" : "converTor.relayVote",
+  "fields" : [ {
+    "name" : "ed25519",
+    "type" : [ "null", "boolean" ],
+    "doc" : "metrics-lib/NetworkStatusEntry: String getMasterKeyEd25519()"
+  } ]
+}

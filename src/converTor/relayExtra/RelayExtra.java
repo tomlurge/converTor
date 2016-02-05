@@ -3,57 +3,92 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.relayExtra;
+package converTor.relayExtra;  
 @SuppressWarnings("all")
-/** extra-info 1.0 */
 @org.apache.avro.specific.AvroGenerated
 public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"RelayExtra\",\"namespace\":\"converTor.relayExtra\",\"doc\":\"extra-info 1.0\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":\"string\",\"default\":\"extra-info 1.0\"},{\"name\":\"extra_info\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ExtraInfo\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",\"string\"]},{\"name\":\"fingerprint\",\"type\":[\"null\",\"string\"]}]}]},{\"name\":\"identity_ed25519\",\"type\":[\"null\",\"boolean\"]},{\"name\":\"published\",\"type\":[\"null\",\"string\"]},{\"name\":\"read_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ReadHistory\",\"fields\":[{\"name\":\"date\",\"type\":\"string\"},{\"name\":\"interval\",\"type\":\"long\"},{\"name\":\"bytes\",\"type\":{\"type\":\"array\",\"items\":\"long\"}}]}]},{\"name\":\"write_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"WriteHistory\",\"fields\":[{\"name\":\"date\",\"type\":\"string\"},{\"name\":\"interval\",\"type\":\"long\"},{\"name\":\"bytes\",\"type\":{\"type\":\"array\",\"items\":\"long\"}}]}]},{\"name\":\"geoip_db_digest\",\"type\":[\"null\",\"string\"]},{\"name\":\"geoip6_db_digest\",\"type\":[\"null\",\"string\"]},{\"name\":\"geoip_start_time\",\"type\":[\"null\",\"string\"]},{\"name\":\"dirreq_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirreqStats\",\"fields\":[{\"name\":\"date\",\"type\":\"string\"},{\"name\":\"interval\",\"type\":\"long\",\"default\":86400}]}]},{\"name\":\"dirreq_v2_ips\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}]},{\"name\":\"dirreq_v3_ips\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}]},{\"name\":\"dirreq_v2_reqs\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}]},{\"name\":\"dirreq_v3_reqs\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}]},{\"name\":\"dirreq_v2_share\",\"type\":[\"null\",\"double\"]},{\"name\":\"dirreq_v3_share\",\"type\":[\"null\",\"double\"]},{\"name\":\"dirreq_v2_resp\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}]},{\"name\":\"dirreq_v3_resp\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}]},{\"name\":\"dirreq_v2_direct_dl\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}]},{\"name\":\"dirreq_v3_direct_dl\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}]},{\"name\":\"dirreq_v2_tunneled_dl\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}]},{\"name\":\"dirreq_v3_tunneled_dl\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}]},{\"name\":\"dirreq_read_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirreqReadHistory\",\"fields\":[{\"name\":\"date\",\"type\":\"string\"},{\"name\":\"interval\",\"type\":\"long\"},{\"name\":\"bytes\",\"type\":{\"type\":\"array\",\"items\":\"long\"}}]}]},{\"name\":\"dirreq_write_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirreqWriteHistory\",\"fields\":[{\"name\":\"date\",\"type\":\"string\"},{\"name\":\"interval\",\"type\":\"long\"},{\"name\":\"bytes\",\"type\":{\"type\":\"array\",\"items\":\"long\"}}]}]},{\"name\":\"entry_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"EntryStats\",\"fields\":[{\"name\":\"date\",\"type\":\"string\"},{\"name\":\"interval\",\"type\":\"long\",\"default\":86400}]}]},{\"name\":\"entry_ips\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}]},{\"name\":\"cell_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"CellStats\",\"fields\":[{\"name\":\"date\",\"type\":\"string\"},{\"name\":\"interval\",\"type\":\"long\",\"default\":86400}]}]},{\"name\":\"cell_processed_cells\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}]},{\"name\":\"cell_queued_cells\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"double\"}]},{\"name\":\"cell_time_in_queue\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}]},{\"name\":\"cell_circuits_per_decile\",\"type\":[\"null\",\"int\"]},{\"name\":\"conn_bi_direct\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ConnBiDirect\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"string\"]},{\"name\":\"interval\",\"type\":\"long\",\"default\":86400},{\"name\":\"below\",\"type\":[\"null\",\"int\"]},{\"name\":\"read\",\"type\":[\"null\",\"int\"]},{\"name\":\"write\",\"type\":[\"null\",\"int\"]},{\"name\":\"both\",\"type\":[\"null\",\"int\"]}]}]},{\"name\":\"exit_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ExitStats\",\"fields\":[{\"name\":\"date\",\"type\":\"string\"},{\"name\":\"interval\",\"type\":\"long\",\"default\":86400}]}]},{\"name\":\"exit_kibibytes_written\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}]},{\"name\":\"exit_kibibytes_read\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}]},{\"name\":\"exit_streams_opened\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}]},{\"name\":\"hidserv_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"HidservStats\",\"fields\":[{\"name\":\"date\",\"type\":\"string\"},{\"name\":\"interval\",\"type\":\"long\",\"default\":86400}]}]},{\"name\":\"hidserv_rend_relayed_cells\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"HidservRendRelayedCells\",\"fields\":[{\"name\":\"cells\",\"type\":\"int\"},{\"name\":\"obfuscation\",\"type\":{\"type\":\"map\",\"values\":\"int\"}}]}]},{\"name\":\"hidserv_dir_onions_seen\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"HidservDirOnionsSeen\",\"fields\":[{\"name\":\"onions\",\"type\":\"int\"},{\"name\":\"obfuscation\",\"type\":{\"type\":\"map\",\"values\":\"int\"}}]}]},{\"name\":\"transport\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Transport\",\"fields\":[{\"name\":\"transportname\",\"type\":[\"null\",\"string\"]},{\"name\":\"address\",\"type\":[\"null\",\"string\"]},{\"name\":\"port\",\"type\":[\"null\",\"int\"]},{\"name\":\"args\",\"type\":[\"null\",\"string\"]}]}}]},{\"name\":\"router_sig_ed25519\",\"type\":[\"null\",\"boolean\"]},{\"name\":\"router_signature\",\"type\":[\"null\",\"boolean\"]},{\"name\":\"extra_info_digest\",\"type\":[\"null\",\"string\"]},{\"name\":\"extra_info_digest_sha256\",\"type\":[\"null\",\"string\"]},{\"name\":\"master_key_ed25519\",\"type\":[\"null\",\"boolean\"]}],\"aliases\":[\"extra_info\",\"relay_extra_info\",\"relay_extra_info_descriptor\"]}");
+  private static final long serialVersionUID = 4361032627651816084L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"RelayExtra\",\"namespace\":\"converTor.relayExtra\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":\"string\",\"default\":\"extra-info 1.0\"},{\"name\":\"extra_info\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ExtraInfo\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getNickname()\"},{\"name\":\"fingerprint\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getFingerprint()\"}]}]},{\"name\":\"identity_ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getIdentityEd25519();\"},{\"name\":\"published\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getPublishedMillis()\"},{\"name\":\"read_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ReadHistory\",\"fields\":[{\"name\":\"date\",\"type\":\"string\",\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":{\"type\":\"array\",\"items\":\"long\"},\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory()\"},{\"name\":\"write_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"WriteHistory\",\"fields\":[{\"name\":\"date\",\"type\":\"string\",\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":{\"type\":\"array\",\"items\":\"long\"},\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory()\"},{\"name\":\"geoip_db_digest\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getGeoipDbDigest()\"},{\"name\":\"geoip6_db_digest\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getGeoip6DbDigest()\"},{\"name\":\"geoip_start_time\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getGeoipStartTimeMillis()\"},{\"name\":\"dirreq_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirreqStats\",\"fields\":[{\"name\":\"date\",\"type\":\"string\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getDirreqStatsEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getDirreqStatsIntervalLength()\",\"default\":86400}]}]},{\"name\":\"dirreq_v2_ips\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Ips()\"},{\"name\":\"dirreq_v3_ips\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Ips()\"},{\"name\":\"dirreq_v2_reqs\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Reqs()\"},{\"name\":\"dirreq_v3_reqs\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Reqs()\"},{\"name\":\"dirreq_v2_share\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: double getDirreqV2Share()\"},{\"name\":\"dirreq_v3_share\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: double getDirreqV3Share()\"},{\"name\":\"dirreq_v2_resp\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Resp()\"},{\"name\":\"dirreq_v3_resp\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Resp()\"},{\"name\":\"dirreq_v2_direct_dl\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2DirectDl()\"},{\"name\":\"dirreq_v3_direct_dl\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3DirectDl()\"},{\"name\":\"dirreq_v2_tunneled_dl\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2TunneledDl()\"},{\"name\":\"dirreq_v3_tunneled_dl\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3TunneledDl()\"},{\"name\":\"dirreq_read_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirreqReadHistory\",\"fields\":[{\"name\":\"date\",\"type\":\"string\",\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":{\"type\":\"array\",\"items\":\"long\"},\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory()\"},{\"name\":\"dirreq_write_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirreqWriteHistory\",\"fields\":[{\"name\":\"date\",\"type\":\"string\",\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":{\"type\":\"array\",\"items\":\"long\"},\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory()\"},{\"name\":\"entry_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"EntryStats\",\"fields\":[{\"name\":\"date\",\"type\":\"string\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getEntryStatsEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getEntryStatsIntervalLength()\",\"default\":86400}]}]},{\"name\":\"entry_ips\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getEntryIps()\"},{\"name\":\"cell_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"CellStats\",\"fields\":[{\"name\":\"date\",\"type\":\"string\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getCellStatsEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getCellStatsIntervalLength()\",\"default\":86400}]}]},{\"name\":\"cell_processed_cells\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: List<Integer> getCellProcessedCells()\"},{\"name\":\"cell_queued_cells\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"double\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: List<Double> getCellQueuedCells()\"},{\"name\":\"cell_time_in_queue\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: List<Integer> getCellTimeInQueue()\"},{\"name\":\"cell_circuits_per_decile\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getCellCircuitsPerDecile()\"},{\"name\":\"conn_bi_direct\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ConnBiDirect\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsIntervalLength()\",\"default\":86400},{\"name\":\"below\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBelow()\"},{\"name\":\"read\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectRead()\"},{\"name\":\"write\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectWrite()\"},{\"name\":\"both\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBoth()\"}]}]},{\"name\":\"exit_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ExitStats\",\"fields\":[{\"name\":\"date\",\"type\":\"string\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getExitStatsEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getExitStatsIntervalLength()\",\"default\":86400}]}]},{\"name\":\"exit_kibibytes_written\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"long\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesWritten()\"},{\"name\":\"exit_kibibytes_read\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"long\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesRead()\"},{\"name\":\"exit_streams_opened\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"long\"}],\"doc\":\"metrics-lib/E","xtraInfoDescriptor: SortedMap<String, Long> getExitStreamsOpened()\"},{\"name\":\"hidserv_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"HidservStats\",\"fields\":[{\"name\":\"date\",\"type\":\"string\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getHidservStatsEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getHidservStatsIntervalLength()\",\"default\":86400}]}]},{\"name\":\"hidserv_rend_relayed_cells\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"HidservRendRelayedCells\",\"fields\":[{\"name\":\"cells\",\"type\":\"double\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: Double getHidservRendRelayedCells()\"},{\"name\":\"obfuscation\",\"type\":{\"type\":\"map\",\"values\":\"int\"},\"doc\":\"metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservRendRelayedCellsParameters()\"}]}]},{\"name\":\"hidserv_dir_onions_seen\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"HidservDirOnionsSeen\",\"fields\":[{\"name\":\"onions\",\"type\":\"double\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: Double getHidservDirOnionsSeen()\"},{\"name\":\"obfuscation\",\"type\":{\"type\":\"map\",\"values\":\"int\"},\"doc\":\"metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservDirOnionsSeenParameters()\"}]}]},{\"name\":\"transport\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: List<String> getTransports()\"},{\"name\":\"router_sig_ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getRouterSignatureEd25519()\"},{\"name\":\"router_signature\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getRouterSignature()\"},{\"name\":\"extra_info_digest\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigest()\"},{\"name\":\"extra_info_digest_sha256\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigestSha256()\"},{\"name\":\"master_key_ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getMasterKeyEd25519()\"}],\"aliases\":[\"relay_extra_info\"]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   @Deprecated public java.lang.CharSequence descriptor_type;
   @Deprecated public converTor.relayExtra.ExtraInfo extra_info;
+  /** metrics-lib/ExtraInfoDescriptor: String getIdentityEd25519(); */
   @Deprecated public java.lang.Boolean identity_ed25519;
+  /** metrics-lib/ExtraInfoDescriptor: long getPublishedMillis() */
   @Deprecated public java.lang.CharSequence published;
+  /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory() */
   @Deprecated public converTor.relayExtra.ReadHistory read_history;
+  /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory() */
   @Deprecated public converTor.relayExtra.WriteHistory write_history;
+  /** metrics-lib/ExtraInfoDescriptor: String getGeoipDbDigest() */
   @Deprecated public java.lang.CharSequence geoip_db_digest;
+  /** metrics-lib/ExtraInfoDescriptor: String getGeoip6DbDigest() */
   @Deprecated public java.lang.CharSequence geoip6_db_digest;
+  /** metrics-lib/ExtraInfoDescriptor: String getGeoipStartTimeMillis() */
   @Deprecated public java.lang.CharSequence geoip_start_time;
   @Deprecated public converTor.relayExtra.DirreqStats dirreq_stats_end;
+  /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Ips() */
   @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_ips;
+  /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Ips() */
   @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_ips;
+  /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Reqs() */
   @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_reqs;
+  /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Reqs() */
   @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_reqs;
+  /** metrics-lib/ExtraInfoDescriptor: double getDirreqV2Share() */
   @Deprecated public java.lang.Double dirreq_v2_share;
+  /** metrics-lib/ExtraInfoDescriptor: double getDirreqV3Share() */
   @Deprecated public java.lang.Double dirreq_v3_share;
+  /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Resp() */
   @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_resp;
+  /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Resp() */
   @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_resp;
+  /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2DirectDl() */
   @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_direct_dl;
+  /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3DirectDl() */
   @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_direct_dl;
+  /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2TunneledDl() */
   @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_tunneled_dl;
+  /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3TunneledDl() */
   @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_tunneled_dl;
+  /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory() */
   @Deprecated public converTor.relayExtra.DirreqReadHistory dirreq_read_history;
+  /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory() */
   @Deprecated public converTor.relayExtra.DirreqWriteHistory dirreq_write_history;
   @Deprecated public converTor.relayExtra.EntryStats entry_stats_end;
+  /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getEntryIps() */
   @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> entry_ips;
   @Deprecated public converTor.relayExtra.CellStats cell_stats_end;
+  /** metrics-lib/ExtraInfoDescriptor: List<Integer> getCellProcessedCells() */
   @Deprecated public java.util.List<java.lang.Integer> cell_processed_cells;
+  /** metrics-lib/ExtraInfoDescriptor: List<Double> getCellQueuedCells() */
   @Deprecated public java.util.List<java.lang.Double> cell_queued_cells;
+  /** metrics-lib/ExtraInfoDescriptor: List<Integer> getCellTimeInQueue() */
   @Deprecated public java.util.List<java.lang.Integer> cell_time_in_queue;
+  /** metrics-lib/ExtraInfoDescriptor: int getCellCircuitsPerDecile() */
   @Deprecated public java.lang.Integer cell_circuits_per_decile;
   @Deprecated public converTor.relayExtra.ConnBiDirect conn_bi_direct;
   @Deprecated public converTor.relayExtra.ExitStats exit_stats_end;
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> exit_kibibytes_written;
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> exit_kibibytes_read;
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> exit_streams_opened;
+  /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesWritten() */
+  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Long> exit_kibibytes_written;
+  /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesRead() */
+  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Long> exit_kibibytes_read;
+  /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitStreamsOpened() */
+  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Long> exit_streams_opened;
   @Deprecated public converTor.relayExtra.HidservStats hidserv_stats_end;
   @Deprecated public converTor.relayExtra.HidservRendRelayedCells hidserv_rend_relayed_cells;
   @Deprecated public converTor.relayExtra.HidservDirOnionsSeen hidserv_dir_onions_seen;
-  @Deprecated public java.util.List<converTor.relayExtra.Transport> transport;
+  /** metrics-lib/ExtraInfoDescriptor: List<String> getTransports() */
+  @Deprecated public java.util.List<java.lang.CharSequence> transport;
+  /** metrics-lib/ExtraInfoDescriptor: String getRouterSignatureEd25519() */
   @Deprecated public java.lang.Boolean router_sig_ed25519;
+  /** metrics-lib/ExtraInfoDescriptor: String getRouterSignature() */
   @Deprecated public java.lang.Boolean router_signature;
+  /** metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigest() */
   @Deprecated public java.lang.CharSequence extra_info_digest;
+  /** metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigestSha256() */
   @Deprecated public java.lang.CharSequence extra_info_digest_sha256;
+  /** metrics-lib/ExtraInfoDescriptor: String getMasterKeyEd25519() */
   @Deprecated public java.lang.Boolean master_key_ed25519;
 
   /**
@@ -65,8 +100,43 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * All-args constructor.
+   * @param identity_ed25519 metrics-lib/ExtraInfoDescriptor: String getIdentityEd25519();
+   * @param published metrics-lib/ExtraInfoDescriptor: long getPublishedMillis()
+   * @param read_history metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory()
+   * @param write_history metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory()
+   * @param geoip_db_digest metrics-lib/ExtraInfoDescriptor: String getGeoipDbDigest()
+   * @param geoip6_db_digest metrics-lib/ExtraInfoDescriptor: String getGeoip6DbDigest()
+   * @param geoip_start_time metrics-lib/ExtraInfoDescriptor: String getGeoipStartTimeMillis()
+   * @param dirreq_v2_ips metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Ips()
+   * @param dirreq_v3_ips metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Ips()
+   * @param dirreq_v2_reqs metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Reqs()
+   * @param dirreq_v3_reqs metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Reqs()
+   * @param dirreq_v2_share metrics-lib/ExtraInfoDescriptor: double getDirreqV2Share()
+   * @param dirreq_v3_share metrics-lib/ExtraInfoDescriptor: double getDirreqV3Share()
+   * @param dirreq_v2_resp metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Resp()
+   * @param dirreq_v3_resp metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Resp()
+   * @param dirreq_v2_direct_dl metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2DirectDl()
+   * @param dirreq_v3_direct_dl metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3DirectDl()
+   * @param dirreq_v2_tunneled_dl metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2TunneledDl()
+   * @param dirreq_v3_tunneled_dl metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3TunneledDl()
+   * @param dirreq_read_history metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory()
+   * @param dirreq_write_history metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory()
+   * @param entry_ips metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getEntryIps()
+   * @param cell_processed_cells metrics-lib/ExtraInfoDescriptor: List<Integer> getCellProcessedCells()
+   * @param cell_queued_cells metrics-lib/ExtraInfoDescriptor: List<Double> getCellQueuedCells()
+   * @param cell_time_in_queue metrics-lib/ExtraInfoDescriptor: List<Integer> getCellTimeInQueue()
+   * @param cell_circuits_per_decile metrics-lib/ExtraInfoDescriptor: int getCellCircuitsPerDecile()
+   * @param exit_kibibytes_written metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesWritten()
+   * @param exit_kibibytes_read metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesRead()
+   * @param exit_streams_opened metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitStreamsOpened()
+   * @param transport metrics-lib/ExtraInfoDescriptor: List<String> getTransports()
+   * @param router_sig_ed25519 metrics-lib/ExtraInfoDescriptor: String getRouterSignatureEd25519()
+   * @param router_signature metrics-lib/ExtraInfoDescriptor: String getRouterSignature()
+   * @param extra_info_digest metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigest()
+   * @param extra_info_digest_sha256 metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigestSha256()
+   * @param master_key_ed25519 metrics-lib/ExtraInfoDescriptor: String getMasterKeyEd25519()
    */
-  public RelayExtra(java.lang.CharSequence descriptor_type, converTor.relayExtra.ExtraInfo extra_info, java.lang.Boolean identity_ed25519, java.lang.CharSequence published, converTor.relayExtra.ReadHistory read_history, converTor.relayExtra.WriteHistory write_history, java.lang.CharSequence geoip_db_digest, java.lang.CharSequence geoip6_db_digest, java.lang.CharSequence geoip_start_time, converTor.relayExtra.DirreqStats dirreq_stats_end, java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_ips, java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_ips, java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_reqs, java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_reqs, java.lang.Double dirreq_v2_share, java.lang.Double dirreq_v3_share, java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_resp, java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_resp, java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_direct_dl, java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_direct_dl, java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_tunneled_dl, java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_tunneled_dl, converTor.relayExtra.DirreqReadHistory dirreq_read_history, converTor.relayExtra.DirreqWriteHistory dirreq_write_history, converTor.relayExtra.EntryStats entry_stats_end, java.util.Map<java.lang.CharSequence,java.lang.Integer> entry_ips, converTor.relayExtra.CellStats cell_stats_end, java.util.List<java.lang.Integer> cell_processed_cells, java.util.List<java.lang.Double> cell_queued_cells, java.util.List<java.lang.Integer> cell_time_in_queue, java.lang.Integer cell_circuits_per_decile, converTor.relayExtra.ConnBiDirect conn_bi_direct, converTor.relayExtra.ExitStats exit_stats_end, java.util.Map<java.lang.CharSequence,java.lang.Integer> exit_kibibytes_written, java.util.Map<java.lang.CharSequence,java.lang.Integer> exit_kibibytes_read, java.util.Map<java.lang.CharSequence,java.lang.Integer> exit_streams_opened, converTor.relayExtra.HidservStats hidserv_stats_end, converTor.relayExtra.HidservRendRelayedCells hidserv_rend_relayed_cells, converTor.relayExtra.HidservDirOnionsSeen hidserv_dir_onions_seen, java.util.List<converTor.relayExtra.Transport> transport, java.lang.Boolean router_sig_ed25519, java.lang.Boolean router_signature, java.lang.CharSequence extra_info_digest, java.lang.CharSequence extra_info_digest_sha256, java.lang.Boolean master_key_ed25519) {
+  public RelayExtra(java.lang.CharSequence descriptor_type, converTor.relayExtra.ExtraInfo extra_info, java.lang.Boolean identity_ed25519, java.lang.CharSequence published, converTor.relayExtra.ReadHistory read_history, converTor.relayExtra.WriteHistory write_history, java.lang.CharSequence geoip_db_digest, java.lang.CharSequence geoip6_db_digest, java.lang.CharSequence geoip_start_time, converTor.relayExtra.DirreqStats dirreq_stats_end, java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_ips, java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_ips, java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_reqs, java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_reqs, java.lang.Double dirreq_v2_share, java.lang.Double dirreq_v3_share, java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_resp, java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_resp, java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_direct_dl, java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_direct_dl, java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_tunneled_dl, java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_tunneled_dl, converTor.relayExtra.DirreqReadHistory dirreq_read_history, converTor.relayExtra.DirreqWriteHistory dirreq_write_history, converTor.relayExtra.EntryStats entry_stats_end, java.util.Map<java.lang.CharSequence,java.lang.Integer> entry_ips, converTor.relayExtra.CellStats cell_stats_end, java.util.List<java.lang.Integer> cell_processed_cells, java.util.List<java.lang.Double> cell_queued_cells, java.util.List<java.lang.Integer> cell_time_in_queue, java.lang.Integer cell_circuits_per_decile, converTor.relayExtra.ConnBiDirect conn_bi_direct, converTor.relayExtra.ExitStats exit_stats_end, java.util.Map<java.lang.CharSequence,java.lang.Long> exit_kibibytes_written, java.util.Map<java.lang.CharSequence,java.lang.Long> exit_kibibytes_read, java.util.Map<java.lang.CharSequence,java.lang.Long> exit_streams_opened, converTor.relayExtra.HidservStats hidserv_stats_end, converTor.relayExtra.HidservRendRelayedCells hidserv_rend_relayed_cells, converTor.relayExtra.HidservDirOnionsSeen hidserv_dir_onions_seen, java.util.List<java.lang.CharSequence> transport, java.lang.Boolean router_sig_ed25519, java.lang.Boolean router_signature, java.lang.CharSequence extra_info_digest, java.lang.CharSequence extra_info_digest_sha256, java.lang.Boolean master_key_ed25519) {
     this.descriptor_type = descriptor_type;
     this.extra_info = extra_info;
     this.identity_ed25519 = identity_ed25519;
@@ -203,13 +273,13 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
     case 30: cell_circuits_per_decile = (java.lang.Integer)value$; break;
     case 31: conn_bi_direct = (converTor.relayExtra.ConnBiDirect)value$; break;
     case 32: exit_stats_end = (converTor.relayExtra.ExitStats)value$; break;
-    case 33: exit_kibibytes_written = (java.util.Map<java.lang.CharSequence,java.lang.Integer>)value$; break;
-    case 34: exit_kibibytes_read = (java.util.Map<java.lang.CharSequence,java.lang.Integer>)value$; break;
-    case 35: exit_streams_opened = (java.util.Map<java.lang.CharSequence,java.lang.Integer>)value$; break;
+    case 33: exit_kibibytes_written = (java.util.Map<java.lang.CharSequence,java.lang.Long>)value$; break;
+    case 34: exit_kibibytes_read = (java.util.Map<java.lang.CharSequence,java.lang.Long>)value$; break;
+    case 35: exit_streams_opened = (java.util.Map<java.lang.CharSequence,java.lang.Long>)value$; break;
     case 36: hidserv_stats_end = (converTor.relayExtra.HidservStats)value$; break;
     case 37: hidserv_rend_relayed_cells = (converTor.relayExtra.HidservRendRelayedCells)value$; break;
     case 38: hidserv_dir_onions_seen = (converTor.relayExtra.HidservDirOnionsSeen)value$; break;
-    case 39: transport = (java.util.List<converTor.relayExtra.Transport>)value$; break;
+    case 39: transport = (java.util.List<java.lang.CharSequence>)value$; break;
     case 40: router_sig_ed25519 = (java.lang.Boolean)value$; break;
     case 41: router_signature = (java.lang.Boolean)value$; break;
     case 42: extra_info_digest = (java.lang.CharSequence)value$; break;
@@ -251,6 +321,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Gets the value of the 'identity_ed25519' field.
+   * @return metrics-lib/ExtraInfoDescriptor: String getIdentityEd25519();
    */
   public java.lang.Boolean getIdentityEd25519() {
     return identity_ed25519;
@@ -258,6 +329,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Sets the value of the 'identity_ed25519' field.
+   * metrics-lib/ExtraInfoDescriptor: String getIdentityEd25519();
    * @param value the value to set.
    */
   public void setIdentityEd25519(java.lang.Boolean value) {
@@ -266,6 +338,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Gets the value of the 'published' field.
+   * @return metrics-lib/ExtraInfoDescriptor: long getPublishedMillis()
    */
   public java.lang.CharSequence getPublished() {
     return published;
@@ -273,6 +346,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Sets the value of the 'published' field.
+   * metrics-lib/ExtraInfoDescriptor: long getPublishedMillis()
    * @param value the value to set.
    */
   public void setPublished(java.lang.CharSequence value) {
@@ -281,6 +355,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Gets the value of the 'read_history' field.
+   * @return metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory()
    */
   public converTor.relayExtra.ReadHistory getReadHistory() {
     return read_history;
@@ -288,6 +363,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Sets the value of the 'read_history' field.
+   * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory()
    * @param value the value to set.
    */
   public void setReadHistory(converTor.relayExtra.ReadHistory value) {
@@ -296,6 +372,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Gets the value of the 'write_history' field.
+   * @return metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory()
    */
   public converTor.relayExtra.WriteHistory getWriteHistory() {
     return write_history;
@@ -303,6 +380,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Sets the value of the 'write_history' field.
+   * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory()
    * @param value the value to set.
    */
   public void setWriteHistory(converTor.relayExtra.WriteHistory value) {
@@ -311,6 +389,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Gets the value of the 'geoip_db_digest' field.
+   * @return metrics-lib/ExtraInfoDescriptor: String getGeoipDbDigest()
    */
   public java.lang.CharSequence getGeoipDbDigest() {
     return geoip_db_digest;
@@ -318,6 +397,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Sets the value of the 'geoip_db_digest' field.
+   * metrics-lib/ExtraInfoDescriptor: String getGeoipDbDigest()
    * @param value the value to set.
    */
   public void setGeoipDbDigest(java.lang.CharSequence value) {
@@ -326,6 +406,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Gets the value of the 'geoip6_db_digest' field.
+   * @return metrics-lib/ExtraInfoDescriptor: String getGeoip6DbDigest()
    */
   public java.lang.CharSequence getGeoip6DbDigest() {
     return geoip6_db_digest;
@@ -333,6 +414,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Sets the value of the 'geoip6_db_digest' field.
+   * metrics-lib/ExtraInfoDescriptor: String getGeoip6DbDigest()
    * @param value the value to set.
    */
   public void setGeoip6DbDigest(java.lang.CharSequence value) {
@@ -341,6 +423,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Gets the value of the 'geoip_start_time' field.
+   * @return metrics-lib/ExtraInfoDescriptor: String getGeoipStartTimeMillis()
    */
   public java.lang.CharSequence getGeoipStartTime() {
     return geoip_start_time;
@@ -348,6 +431,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Sets the value of the 'geoip_start_time' field.
+   * metrics-lib/ExtraInfoDescriptor: String getGeoipStartTimeMillis()
    * @param value the value to set.
    */
   public void setGeoipStartTime(java.lang.CharSequence value) {
@@ -371,6 +455,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Gets the value of the 'dirreq_v2_ips' field.
+   * @return metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Ips()
    */
   public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV2Ips() {
     return dirreq_v2_ips;
@@ -378,6 +463,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Sets the value of the 'dirreq_v2_ips' field.
+   * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Ips()
    * @param value the value to set.
    */
   public void setDirreqV2Ips(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
@@ -386,6 +472,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Gets the value of the 'dirreq_v3_ips' field.
+   * @return metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Ips()
    */
   public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV3Ips() {
     return dirreq_v3_ips;
@@ -393,6 +480,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Sets the value of the 'dirreq_v3_ips' field.
+   * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Ips()
    * @param value the value to set.
    */
   public void setDirreqV3Ips(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
@@ -401,6 +489,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Gets the value of the 'dirreq_v2_reqs' field.
+   * @return metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Reqs()
    */
   public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV2Reqs() {
     return dirreq_v2_reqs;
@@ -408,6 +497,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Sets the value of the 'dirreq_v2_reqs' field.
+   * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Reqs()
    * @param value the value to set.
    */
   public void setDirreqV2Reqs(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
@@ -416,6 +506,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Gets the value of the 'dirreq_v3_reqs' field.
+   * @return metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Reqs()
    */
   public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV3Reqs() {
     return dirreq_v3_reqs;
@@ -423,6 +514,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Sets the value of the 'dirreq_v3_reqs' field.
+   * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Reqs()
    * @param value the value to set.
    */
   public void setDirreqV3Reqs(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
@@ -431,6 +523,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Gets the value of the 'dirreq_v2_share' field.
+   * @return metrics-lib/ExtraInfoDescriptor: double getDirreqV2Share()
    */
   public java.lang.Double getDirreqV2Share() {
     return dirreq_v2_share;
@@ -438,6 +531,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Sets the value of the 'dirreq_v2_share' field.
+   * metrics-lib/ExtraInfoDescriptor: double getDirreqV2Share()
    * @param value the value to set.
    */
   public void setDirreqV2Share(java.lang.Double value) {
@@ -446,6 +540,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Gets the value of the 'dirreq_v3_share' field.
+   * @return metrics-lib/ExtraInfoDescriptor: double getDirreqV3Share()
    */
   public java.lang.Double getDirreqV3Share() {
     return dirreq_v3_share;
@@ -453,6 +548,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Sets the value of the 'dirreq_v3_share' field.
+   * metrics-lib/ExtraInfoDescriptor: double getDirreqV3Share()
    * @param value the value to set.
    */
   public void setDirreqV3Share(java.lang.Double value) {
@@ -461,6 +557,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Gets the value of the 'dirreq_v2_resp' field.
+   * @return metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Resp()
    */
   public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV2Resp() {
     return dirreq_v2_resp;
@@ -468,6 +565,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Sets the value of the 'dirreq_v2_resp' field.
+   * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Resp()
    * @param value the value to set.
    */
   public void setDirreqV2Resp(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
@@ -476,6 +574,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Gets the value of the 'dirreq_v3_resp' field.
+   * @return metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Resp()
    */
   public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV3Resp() {
     return dirreq_v3_resp;
@@ -483,6 +582,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Sets the value of the 'dirreq_v3_resp' field.
+   * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Resp()
    * @param value the value to set.
    */
   public void setDirreqV3Resp(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
@@ -491,6 +591,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Gets the value of the 'dirreq_v2_direct_dl' field.
+   * @return metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2DirectDl()
    */
   public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV2DirectDl() {
     return dirreq_v2_direct_dl;
@@ -498,6 +599,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Sets the value of the 'dirreq_v2_direct_dl' field.
+   * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2DirectDl()
    * @param value the value to set.
    */
   public void setDirreqV2DirectDl(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
@@ -506,6 +608,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Gets the value of the 'dirreq_v3_direct_dl' field.
+   * @return metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3DirectDl()
    */
   public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV3DirectDl() {
     return dirreq_v3_direct_dl;
@@ -513,6 +616,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Sets the value of the 'dirreq_v3_direct_dl' field.
+   * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3DirectDl()
    * @param value the value to set.
    */
   public void setDirreqV3DirectDl(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
@@ -521,6 +625,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Gets the value of the 'dirreq_v2_tunneled_dl' field.
+   * @return metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2TunneledDl()
    */
   public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV2TunneledDl() {
     return dirreq_v2_tunneled_dl;
@@ -528,6 +633,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Sets the value of the 'dirreq_v2_tunneled_dl' field.
+   * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2TunneledDl()
    * @param value the value to set.
    */
   public void setDirreqV2TunneledDl(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
@@ -536,6 +642,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Gets the value of the 'dirreq_v3_tunneled_dl' field.
+   * @return metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3TunneledDl()
    */
   public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV3TunneledDl() {
     return dirreq_v3_tunneled_dl;
@@ -543,6 +650,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Sets the value of the 'dirreq_v3_tunneled_dl' field.
+   * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3TunneledDl()
    * @param value the value to set.
    */
   public void setDirreqV3TunneledDl(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
@@ -551,6 +659,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Gets the value of the 'dirreq_read_history' field.
+   * @return metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory()
    */
   public converTor.relayExtra.DirreqReadHistory getDirreqReadHistory() {
     return dirreq_read_history;
@@ -558,6 +667,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Sets the value of the 'dirreq_read_history' field.
+   * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory()
    * @param value the value to set.
    */
   public void setDirreqReadHistory(converTor.relayExtra.DirreqReadHistory value) {
@@ -566,6 +676,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Gets the value of the 'dirreq_write_history' field.
+   * @return metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory()
    */
   public converTor.relayExtra.DirreqWriteHistory getDirreqWriteHistory() {
     return dirreq_write_history;
@@ -573,6 +684,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Sets the value of the 'dirreq_write_history' field.
+   * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory()
    * @param value the value to set.
    */
   public void setDirreqWriteHistory(converTor.relayExtra.DirreqWriteHistory value) {
@@ -596,6 +708,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Gets the value of the 'entry_ips' field.
+   * @return metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getEntryIps()
    */
   public java.util.Map<java.lang.CharSequence,java.lang.Integer> getEntryIps() {
     return entry_ips;
@@ -603,6 +716,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Sets the value of the 'entry_ips' field.
+   * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getEntryIps()
    * @param value the value to set.
    */
   public void setEntryIps(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
@@ -626,6 +740,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Gets the value of the 'cell_processed_cells' field.
+   * @return metrics-lib/ExtraInfoDescriptor: List<Integer> getCellProcessedCells()
    */
   public java.util.List<java.lang.Integer> getCellProcessedCells() {
     return cell_processed_cells;
@@ -633,6 +748,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Sets the value of the 'cell_processed_cells' field.
+   * metrics-lib/ExtraInfoDescriptor: List<Integer> getCellProcessedCells()
    * @param value the value to set.
    */
   public void setCellProcessedCells(java.util.List<java.lang.Integer> value) {
@@ -641,6 +757,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Gets the value of the 'cell_queued_cells' field.
+   * @return metrics-lib/ExtraInfoDescriptor: List<Double> getCellQueuedCells()
    */
   public java.util.List<java.lang.Double> getCellQueuedCells() {
     return cell_queued_cells;
@@ -648,6 +765,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Sets the value of the 'cell_queued_cells' field.
+   * metrics-lib/ExtraInfoDescriptor: List<Double> getCellQueuedCells()
    * @param value the value to set.
    */
   public void setCellQueuedCells(java.util.List<java.lang.Double> value) {
@@ -656,6 +774,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Gets the value of the 'cell_time_in_queue' field.
+   * @return metrics-lib/ExtraInfoDescriptor: List<Integer> getCellTimeInQueue()
    */
   public java.util.List<java.lang.Integer> getCellTimeInQueue() {
     return cell_time_in_queue;
@@ -663,6 +782,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Sets the value of the 'cell_time_in_queue' field.
+   * metrics-lib/ExtraInfoDescriptor: List<Integer> getCellTimeInQueue()
    * @param value the value to set.
    */
   public void setCellTimeInQueue(java.util.List<java.lang.Integer> value) {
@@ -671,6 +791,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Gets the value of the 'cell_circuits_per_decile' field.
+   * @return metrics-lib/ExtraInfoDescriptor: int getCellCircuitsPerDecile()
    */
   public java.lang.Integer getCellCircuitsPerDecile() {
     return cell_circuits_per_decile;
@@ -678,6 +799,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Sets the value of the 'cell_circuits_per_decile' field.
+   * metrics-lib/ExtraInfoDescriptor: int getCellCircuitsPerDecile()
    * @param value the value to set.
    */
   public void setCellCircuitsPerDecile(java.lang.Integer value) {
@@ -716,46 +838,52 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Gets the value of the 'exit_kibibytes_written' field.
+   * @return metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesWritten()
    */
-  public java.util.Map<java.lang.CharSequence,java.lang.Integer> getExitKibibytesWritten() {
+  public java.util.Map<java.lang.CharSequence,java.lang.Long> getExitKibibytesWritten() {
     return exit_kibibytes_written;
   }
 
   /**
    * Sets the value of the 'exit_kibibytes_written' field.
+   * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesWritten()
    * @param value the value to set.
    */
-  public void setExitKibibytesWritten(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+  public void setExitKibibytesWritten(java.util.Map<java.lang.CharSequence,java.lang.Long> value) {
     this.exit_kibibytes_written = value;
   }
 
   /**
    * Gets the value of the 'exit_kibibytes_read' field.
+   * @return metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesRead()
    */
-  public java.util.Map<java.lang.CharSequence,java.lang.Integer> getExitKibibytesRead() {
+  public java.util.Map<java.lang.CharSequence,java.lang.Long> getExitKibibytesRead() {
     return exit_kibibytes_read;
   }
 
   /**
    * Sets the value of the 'exit_kibibytes_read' field.
+   * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesRead()
    * @param value the value to set.
    */
-  public void setExitKibibytesRead(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+  public void setExitKibibytesRead(java.util.Map<java.lang.CharSequence,java.lang.Long> value) {
     this.exit_kibibytes_read = value;
   }
 
   /**
    * Gets the value of the 'exit_streams_opened' field.
+   * @return metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitStreamsOpened()
    */
-  public java.util.Map<java.lang.CharSequence,java.lang.Integer> getExitStreamsOpened() {
+  public java.util.Map<java.lang.CharSequence,java.lang.Long> getExitStreamsOpened() {
     return exit_streams_opened;
   }
 
   /**
    * Sets the value of the 'exit_streams_opened' field.
+   * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitStreamsOpened()
    * @param value the value to set.
    */
-  public void setExitStreamsOpened(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+  public void setExitStreamsOpened(java.util.Map<java.lang.CharSequence,java.lang.Long> value) {
     this.exit_streams_opened = value;
   }
 
@@ -806,21 +934,24 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Gets the value of the 'transport' field.
+   * @return metrics-lib/ExtraInfoDescriptor: List<String> getTransports()
    */
-  public java.util.List<converTor.relayExtra.Transport> getTransport() {
+  public java.util.List<java.lang.CharSequence> getTransport() {
     return transport;
   }
 
   /**
    * Sets the value of the 'transport' field.
+   * metrics-lib/ExtraInfoDescriptor: List<String> getTransports()
    * @param value the value to set.
    */
-  public void setTransport(java.util.List<converTor.relayExtra.Transport> value) {
+  public void setTransport(java.util.List<java.lang.CharSequence> value) {
     this.transport = value;
   }
 
   /**
    * Gets the value of the 'router_sig_ed25519' field.
+   * @return metrics-lib/ExtraInfoDescriptor: String getRouterSignatureEd25519()
    */
   public java.lang.Boolean getRouterSigEd25519() {
     return router_sig_ed25519;
@@ -828,6 +959,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Sets the value of the 'router_sig_ed25519' field.
+   * metrics-lib/ExtraInfoDescriptor: String getRouterSignatureEd25519()
    * @param value the value to set.
    */
   public void setRouterSigEd25519(java.lang.Boolean value) {
@@ -836,6 +968,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Gets the value of the 'router_signature' field.
+   * @return metrics-lib/ExtraInfoDescriptor: String getRouterSignature()
    */
   public java.lang.Boolean getRouterSignature() {
     return router_signature;
@@ -843,6 +976,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Sets the value of the 'router_signature' field.
+   * metrics-lib/ExtraInfoDescriptor: String getRouterSignature()
    * @param value the value to set.
    */
   public void setRouterSignature(java.lang.Boolean value) {
@@ -851,6 +985,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Gets the value of the 'extra_info_digest' field.
+   * @return metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigest()
    */
   public java.lang.CharSequence getExtraInfoDigest() {
     return extra_info_digest;
@@ -858,6 +993,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Sets the value of the 'extra_info_digest' field.
+   * metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigest()
    * @param value the value to set.
    */
   public void setExtraInfoDigest(java.lang.CharSequence value) {
@@ -866,6 +1002,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Gets the value of the 'extra_info_digest_sha256' field.
+   * @return metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigestSha256()
    */
   public java.lang.CharSequence getExtraInfoDigestSha256() {
     return extra_info_digest_sha256;
@@ -873,6 +1010,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Sets the value of the 'extra_info_digest_sha256' field.
+   * metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigestSha256()
    * @param value the value to set.
    */
   public void setExtraInfoDigestSha256(java.lang.CharSequence value) {
@@ -881,6 +1019,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Gets the value of the 'master_key_ed25519' field.
+   * @return metrics-lib/ExtraInfoDescriptor: String getMasterKeyEd25519()
    */
   public java.lang.Boolean getMasterKeyEd25519() {
     return master_key_ed25519;
@@ -888,23 +1027,35 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
   /**
    * Sets the value of the 'master_key_ed25519' field.
+   * metrics-lib/ExtraInfoDescriptor: String getMasterKeyEd25519()
    * @param value the value to set.
    */
   public void setMasterKeyEd25519(java.lang.Boolean value) {
     this.master_key_ed25519 = value;
   }
 
-  /** Creates a new RelayExtra RecordBuilder */
+  /**
+   * Creates a new RelayExtra RecordBuilder.
+   * @return A new RelayExtra RecordBuilder
+   */
   public static converTor.relayExtra.RelayExtra.Builder newBuilder() {
     return new converTor.relayExtra.RelayExtra.Builder();
   }
   
-  /** Creates a new RelayExtra RecordBuilder by copying an existing Builder */
+  /**
+   * Creates a new RelayExtra RecordBuilder by copying an existing Builder.
+   * @param other The existing builder to copy.
+   * @return A new RelayExtra RecordBuilder
+   */
   public static converTor.relayExtra.RelayExtra.Builder newBuilder(converTor.relayExtra.RelayExtra.Builder other) {
     return new converTor.relayExtra.RelayExtra.Builder(other);
   }
   
-  /** Creates a new RelayExtra RecordBuilder by copying an existing RelayExtra instance */
+  /**
+   * Creates a new RelayExtra RecordBuilder by copying an existing RelayExtra instance.
+   * @param other The existing instance to copy.
+   * @return A new RelayExtra RecordBuilder
+   */
   public static converTor.relayExtra.RelayExtra.Builder newBuilder(converTor.relayExtra.RelayExtra other) {
     return new converTor.relayExtra.RelayExtra.Builder(other);
   }
@@ -917,48 +1068,96 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
     private java.lang.CharSequence descriptor_type;
     private converTor.relayExtra.ExtraInfo extra_info;
+    private converTor.relayExtra.ExtraInfo.Builder extra_infoBuilder;
+    /** metrics-lib/ExtraInfoDescriptor: String getIdentityEd25519(); */
     private java.lang.Boolean identity_ed25519;
+    /** metrics-lib/ExtraInfoDescriptor: long getPublishedMillis() */
     private java.lang.CharSequence published;
+    /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory() */
     private converTor.relayExtra.ReadHistory read_history;
+    private converTor.relayExtra.ReadHistory.Builder read_historyBuilder;
+    /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory() */
     private converTor.relayExtra.WriteHistory write_history;
+    private converTor.relayExtra.WriteHistory.Builder write_historyBuilder;
+    /** metrics-lib/ExtraInfoDescriptor: String getGeoipDbDigest() */
     private java.lang.CharSequence geoip_db_digest;
+    /** metrics-lib/ExtraInfoDescriptor: String getGeoip6DbDigest() */
     private java.lang.CharSequence geoip6_db_digest;
+    /** metrics-lib/ExtraInfoDescriptor: String getGeoipStartTimeMillis() */
     private java.lang.CharSequence geoip_start_time;
     private converTor.relayExtra.DirreqStats dirreq_stats_end;
+    private converTor.relayExtra.DirreqStats.Builder dirreq_stats_endBuilder;
+    /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Ips() */
     private java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_ips;
+    /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Ips() */
     private java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_ips;
+    /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Reqs() */
     private java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_reqs;
+    /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Reqs() */
     private java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_reqs;
+    /** metrics-lib/ExtraInfoDescriptor: double getDirreqV2Share() */
     private java.lang.Double dirreq_v2_share;
+    /** metrics-lib/ExtraInfoDescriptor: double getDirreqV3Share() */
     private java.lang.Double dirreq_v3_share;
+    /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Resp() */
     private java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_resp;
+    /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Resp() */
     private java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_resp;
+    /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2DirectDl() */
     private java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_direct_dl;
+    /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3DirectDl() */
     private java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_direct_dl;
+    /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2TunneledDl() */
     private java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_tunneled_dl;
+    /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3TunneledDl() */
     private java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_tunneled_dl;
+    /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory() */
     private converTor.relayExtra.DirreqReadHistory dirreq_read_history;
+    private converTor.relayExtra.DirreqReadHistory.Builder dirreq_read_historyBuilder;
+    /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory() */
     private converTor.relayExtra.DirreqWriteHistory dirreq_write_history;
+    private converTor.relayExtra.DirreqWriteHistory.Builder dirreq_write_historyBuilder;
     private converTor.relayExtra.EntryStats entry_stats_end;
+    private converTor.relayExtra.EntryStats.Builder entry_stats_endBuilder;
+    /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getEntryIps() */
     private java.util.Map<java.lang.CharSequence,java.lang.Integer> entry_ips;
     private converTor.relayExtra.CellStats cell_stats_end;
+    private converTor.relayExtra.CellStats.Builder cell_stats_endBuilder;
+    /** metrics-lib/ExtraInfoDescriptor: List<Integer> getCellProcessedCells() */
     private java.util.List<java.lang.Integer> cell_processed_cells;
+    /** metrics-lib/ExtraInfoDescriptor: List<Double> getCellQueuedCells() */
     private java.util.List<java.lang.Double> cell_queued_cells;
+    /** metrics-lib/ExtraInfoDescriptor: List<Integer> getCellTimeInQueue() */
     private java.util.List<java.lang.Integer> cell_time_in_queue;
+    /** metrics-lib/ExtraInfoDescriptor: int getCellCircuitsPerDecile() */
     private java.lang.Integer cell_circuits_per_decile;
     private converTor.relayExtra.ConnBiDirect conn_bi_direct;
+    private converTor.relayExtra.ConnBiDirect.Builder conn_bi_directBuilder;
     private converTor.relayExtra.ExitStats exit_stats_end;
-    private java.util.Map<java.lang.CharSequence,java.lang.Integer> exit_kibibytes_written;
-    private java.util.Map<java.lang.CharSequence,java.lang.Integer> exit_kibibytes_read;
-    private java.util.Map<java.lang.CharSequence,java.lang.Integer> exit_streams_opened;
+    private converTor.relayExtra.ExitStats.Builder exit_stats_endBuilder;
+    /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesWritten() */
+    private java.util.Map<java.lang.CharSequence,java.lang.Long> exit_kibibytes_written;
+    /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesRead() */
+    private java.util.Map<java.lang.CharSequence,java.lang.Long> exit_kibibytes_read;
+    /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitStreamsOpened() */
+    private java.util.Map<java.lang.CharSequence,java.lang.Long> exit_streams_opened;
     private converTor.relayExtra.HidservStats hidserv_stats_end;
+    private converTor.relayExtra.HidservStats.Builder hidserv_stats_endBuilder;
     private converTor.relayExtra.HidservRendRelayedCells hidserv_rend_relayed_cells;
+    private converTor.relayExtra.HidservRendRelayedCells.Builder hidserv_rend_relayed_cellsBuilder;
     private converTor.relayExtra.HidservDirOnionsSeen hidserv_dir_onions_seen;
-    private java.util.List<converTor.relayExtra.Transport> transport;
+    private converTor.relayExtra.HidservDirOnionsSeen.Builder hidserv_dir_onions_seenBuilder;
+    /** metrics-lib/ExtraInfoDescriptor: List<String> getTransports() */
+    private java.util.List<java.lang.CharSequence> transport;
+    /** metrics-lib/ExtraInfoDescriptor: String getRouterSignatureEd25519() */
     private java.lang.Boolean router_sig_ed25519;
+    /** metrics-lib/ExtraInfoDescriptor: String getRouterSignature() */
     private java.lang.Boolean router_signature;
+    /** metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigest() */
     private java.lang.CharSequence extra_info_digest;
+    /** metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigestSha256() */
     private java.lang.CharSequence extra_info_digest_sha256;
+    /** metrics-lib/ExtraInfoDescriptor: String getMasterKeyEd25519() */
     private java.lang.Boolean master_key_ed25519;
 
     /** Creates a new Builder */
@@ -966,7 +1165,10 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       super(converTor.relayExtra.RelayExtra.SCHEMA$);
     }
     
-    /** Creates a Builder by copying an existing Builder */
+    /**
+     * Creates a Builder by copying an existing Builder.
+     * @param other The existing Builder to copy.
+     */
     private Builder(converTor.relayExtra.RelayExtra.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.descriptor_type)) {
@@ -977,6 +1179,9 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
         this.extra_info = data().deepCopy(fields()[1].schema(), other.extra_info);
         fieldSetFlags()[1] = true;
       }
+      if (other.hasExtraInfoBuilder()) {
+        this.extra_infoBuilder = converTor.relayExtra.ExtraInfo.newBuilder(other.getExtraInfoBuilder());
+      }
       if (isValidValue(fields()[2], other.identity_ed25519)) {
         this.identity_ed25519 = data().deepCopy(fields()[2].schema(), other.identity_ed25519);
         fieldSetFlags()[2] = true;
@@ -989,9 +1194,15 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
         this.read_history = data().deepCopy(fields()[4].schema(), other.read_history);
         fieldSetFlags()[4] = true;
       }
+      if (other.hasReadHistoryBuilder()) {
+        this.read_historyBuilder = converTor.relayExtra.ReadHistory.newBuilder(other.getReadHistoryBuilder());
+      }
       if (isValidValue(fields()[5], other.write_history)) {
         this.write_history = data().deepCopy(fields()[5].schema(), other.write_history);
         fieldSetFlags()[5] = true;
+      }
+      if (other.hasWriteHistoryBuilder()) {
+        this.write_historyBuilder = converTor.relayExtra.WriteHistory.newBuilder(other.getWriteHistoryBuilder());
       }
       if (isValidValue(fields()[6], other.geoip_db_digest)) {
         this.geoip_db_digest = data().deepCopy(fields()[6].schema(), other.geoip_db_digest);
@@ -1008,6 +1219,9 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       if (isValidValue(fields()[9], other.dirreq_stats_end)) {
         this.dirreq_stats_end = data().deepCopy(fields()[9].schema(), other.dirreq_stats_end);
         fieldSetFlags()[9] = true;
+      }
+      if (other.hasDirreqStatsEndBuilder()) {
+        this.dirreq_stats_endBuilder = converTor.relayExtra.DirreqStats.newBuilder(other.getDirreqStatsEndBuilder());
       }
       if (isValidValue(fields()[10], other.dirreq_v2_ips)) {
         this.dirreq_v2_ips = data().deepCopy(fields()[10].schema(), other.dirreq_v2_ips);
@@ -1061,13 +1275,22 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
         this.dirreq_read_history = data().deepCopy(fields()[22].schema(), other.dirreq_read_history);
         fieldSetFlags()[22] = true;
       }
+      if (other.hasDirreqReadHistoryBuilder()) {
+        this.dirreq_read_historyBuilder = converTor.relayExtra.DirreqReadHistory.newBuilder(other.getDirreqReadHistoryBuilder());
+      }
       if (isValidValue(fields()[23], other.dirreq_write_history)) {
         this.dirreq_write_history = data().deepCopy(fields()[23].schema(), other.dirreq_write_history);
         fieldSetFlags()[23] = true;
       }
+      if (other.hasDirreqWriteHistoryBuilder()) {
+        this.dirreq_write_historyBuilder = converTor.relayExtra.DirreqWriteHistory.newBuilder(other.getDirreqWriteHistoryBuilder());
+      }
       if (isValidValue(fields()[24], other.entry_stats_end)) {
         this.entry_stats_end = data().deepCopy(fields()[24].schema(), other.entry_stats_end);
         fieldSetFlags()[24] = true;
+      }
+      if (other.hasEntryStatsEndBuilder()) {
+        this.entry_stats_endBuilder = converTor.relayExtra.EntryStats.newBuilder(other.getEntryStatsEndBuilder());
       }
       if (isValidValue(fields()[25], other.entry_ips)) {
         this.entry_ips = data().deepCopy(fields()[25].schema(), other.entry_ips);
@@ -1076,6 +1299,9 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       if (isValidValue(fields()[26], other.cell_stats_end)) {
         this.cell_stats_end = data().deepCopy(fields()[26].schema(), other.cell_stats_end);
         fieldSetFlags()[26] = true;
+      }
+      if (other.hasCellStatsEndBuilder()) {
+        this.cell_stats_endBuilder = converTor.relayExtra.CellStats.newBuilder(other.getCellStatsEndBuilder());
       }
       if (isValidValue(fields()[27], other.cell_processed_cells)) {
         this.cell_processed_cells = data().deepCopy(fields()[27].schema(), other.cell_processed_cells);
@@ -1097,9 +1323,15 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
         this.conn_bi_direct = data().deepCopy(fields()[31].schema(), other.conn_bi_direct);
         fieldSetFlags()[31] = true;
       }
+      if (other.hasConnBiDirectBuilder()) {
+        this.conn_bi_directBuilder = converTor.relayExtra.ConnBiDirect.newBuilder(other.getConnBiDirectBuilder());
+      }
       if (isValidValue(fields()[32], other.exit_stats_end)) {
         this.exit_stats_end = data().deepCopy(fields()[32].schema(), other.exit_stats_end);
         fieldSetFlags()[32] = true;
+      }
+      if (other.hasExitStatsEndBuilder()) {
+        this.exit_stats_endBuilder = converTor.relayExtra.ExitStats.newBuilder(other.getExitStatsEndBuilder());
       }
       if (isValidValue(fields()[33], other.exit_kibibytes_written)) {
         this.exit_kibibytes_written = data().deepCopy(fields()[33].schema(), other.exit_kibibytes_written);
@@ -1117,13 +1349,22 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
         this.hidserv_stats_end = data().deepCopy(fields()[36].schema(), other.hidserv_stats_end);
         fieldSetFlags()[36] = true;
       }
+      if (other.hasHidservStatsEndBuilder()) {
+        this.hidserv_stats_endBuilder = converTor.relayExtra.HidservStats.newBuilder(other.getHidservStatsEndBuilder());
+      }
       if (isValidValue(fields()[37], other.hidserv_rend_relayed_cells)) {
         this.hidserv_rend_relayed_cells = data().deepCopy(fields()[37].schema(), other.hidserv_rend_relayed_cells);
         fieldSetFlags()[37] = true;
       }
+      if (other.hasHidservRendRelayedCellsBuilder()) {
+        this.hidserv_rend_relayed_cellsBuilder = converTor.relayExtra.HidservRendRelayedCells.newBuilder(other.getHidservRendRelayedCellsBuilder());
+      }
       if (isValidValue(fields()[38], other.hidserv_dir_onions_seen)) {
         this.hidserv_dir_onions_seen = data().deepCopy(fields()[38].schema(), other.hidserv_dir_onions_seen);
         fieldSetFlags()[38] = true;
+      }
+      if (other.hasHidservDirOnionsSeenBuilder()) {
+        this.hidserv_dir_onions_seenBuilder = converTor.relayExtra.HidservDirOnionsSeen.newBuilder(other.getHidservDirOnionsSeenBuilder());
       }
       if (isValidValue(fields()[39], other.transport)) {
         this.transport = data().deepCopy(fields()[39].schema(), other.transport);
@@ -1151,7 +1392,10 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       }
     }
     
-    /** Creates a Builder by copying an existing RelayExtra instance */
+    /**
+     * Creates a Builder by copying an existing RelayExtra instance
+     * @param other The existing instance to copy.
+     */
     private Builder(converTor.relayExtra.RelayExtra other) {
             super(converTor.relayExtra.RelayExtra.SCHEMA$);
       if (isValidValue(fields()[0], other.descriptor_type)) {
@@ -1162,6 +1406,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
         this.extra_info = data().deepCopy(fields()[1].schema(), other.extra_info);
         fieldSetFlags()[1] = true;
       }
+      this.extra_infoBuilder = null;
       if (isValidValue(fields()[2], other.identity_ed25519)) {
         this.identity_ed25519 = data().deepCopy(fields()[2].schema(), other.identity_ed25519);
         fieldSetFlags()[2] = true;
@@ -1174,10 +1419,12 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
         this.read_history = data().deepCopy(fields()[4].schema(), other.read_history);
         fieldSetFlags()[4] = true;
       }
+      this.read_historyBuilder = null;
       if (isValidValue(fields()[5], other.write_history)) {
         this.write_history = data().deepCopy(fields()[5].schema(), other.write_history);
         fieldSetFlags()[5] = true;
       }
+      this.write_historyBuilder = null;
       if (isValidValue(fields()[6], other.geoip_db_digest)) {
         this.geoip_db_digest = data().deepCopy(fields()[6].schema(), other.geoip_db_digest);
         fieldSetFlags()[6] = true;
@@ -1194,6 +1441,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
         this.dirreq_stats_end = data().deepCopy(fields()[9].schema(), other.dirreq_stats_end);
         fieldSetFlags()[9] = true;
       }
+      this.dirreq_stats_endBuilder = null;
       if (isValidValue(fields()[10], other.dirreq_v2_ips)) {
         this.dirreq_v2_ips = data().deepCopy(fields()[10].schema(), other.dirreq_v2_ips);
         fieldSetFlags()[10] = true;
@@ -1246,14 +1494,17 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
         this.dirreq_read_history = data().deepCopy(fields()[22].schema(), other.dirreq_read_history);
         fieldSetFlags()[22] = true;
       }
+      this.dirreq_read_historyBuilder = null;
       if (isValidValue(fields()[23], other.dirreq_write_history)) {
         this.dirreq_write_history = data().deepCopy(fields()[23].schema(), other.dirreq_write_history);
         fieldSetFlags()[23] = true;
       }
+      this.dirreq_write_historyBuilder = null;
       if (isValidValue(fields()[24], other.entry_stats_end)) {
         this.entry_stats_end = data().deepCopy(fields()[24].schema(), other.entry_stats_end);
         fieldSetFlags()[24] = true;
       }
+      this.entry_stats_endBuilder = null;
       if (isValidValue(fields()[25], other.entry_ips)) {
         this.entry_ips = data().deepCopy(fields()[25].schema(), other.entry_ips);
         fieldSetFlags()[25] = true;
@@ -1262,6 +1513,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
         this.cell_stats_end = data().deepCopy(fields()[26].schema(), other.cell_stats_end);
         fieldSetFlags()[26] = true;
       }
+      this.cell_stats_endBuilder = null;
       if (isValidValue(fields()[27], other.cell_processed_cells)) {
         this.cell_processed_cells = data().deepCopy(fields()[27].schema(), other.cell_processed_cells);
         fieldSetFlags()[27] = true;
@@ -1282,10 +1534,12 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
         this.conn_bi_direct = data().deepCopy(fields()[31].schema(), other.conn_bi_direct);
         fieldSetFlags()[31] = true;
       }
+      this.conn_bi_directBuilder = null;
       if (isValidValue(fields()[32], other.exit_stats_end)) {
         this.exit_stats_end = data().deepCopy(fields()[32].schema(), other.exit_stats_end);
         fieldSetFlags()[32] = true;
       }
+      this.exit_stats_endBuilder = null;
       if (isValidValue(fields()[33], other.exit_kibibytes_written)) {
         this.exit_kibibytes_written = data().deepCopy(fields()[33].schema(), other.exit_kibibytes_written);
         fieldSetFlags()[33] = true;
@@ -1302,14 +1556,17 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
         this.hidserv_stats_end = data().deepCopy(fields()[36].schema(), other.hidserv_stats_end);
         fieldSetFlags()[36] = true;
       }
+      this.hidserv_stats_endBuilder = null;
       if (isValidValue(fields()[37], other.hidserv_rend_relayed_cells)) {
         this.hidserv_rend_relayed_cells = data().deepCopy(fields()[37].schema(), other.hidserv_rend_relayed_cells);
         fieldSetFlags()[37] = true;
       }
+      this.hidserv_rend_relayed_cellsBuilder = null;
       if (isValidValue(fields()[38], other.hidserv_dir_onions_seen)) {
         this.hidserv_dir_onions_seen = data().deepCopy(fields()[38].schema(), other.hidserv_dir_onions_seen);
         fieldSetFlags()[38] = true;
       }
+      this.hidserv_dir_onions_seenBuilder = null;
       if (isValidValue(fields()[39], other.transport)) {
         this.transport = data().deepCopy(fields()[39].schema(), other.transport);
         fieldSetFlags()[39] = true;
@@ -1336,1125 +1593,2349 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       }
     }
 
-    /** Gets the value of the 'descriptor_type' field */
+    /**
+      * Gets the value of the 'descriptor_type' field.
+      * @return The value.
+      */
     public java.lang.CharSequence getDescriptorType() {
       return descriptor_type;
     }
-    
-    /** Sets the value of the 'descriptor_type' field */
+
+    /**
+      * Sets the value of the 'descriptor_type' field.
+      * @param value The value of 'descriptor_type'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setDescriptorType(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.descriptor_type = value;
       fieldSetFlags()[0] = true;
       return this; 
     }
-    
-    /** Checks whether the 'descriptor_type' field has been set */
+
+    /**
+      * Checks whether the 'descriptor_type' field has been set.
+      * @return True if the 'descriptor_type' field has been set, false otherwise.
+      */
     public boolean hasDescriptorType() {
       return fieldSetFlags()[0];
     }
-    
-    /** Clears the value of the 'descriptor_type' field */
+
+
+    /**
+      * Clears the value of the 'descriptor_type' field.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearDescriptorType() {
       descriptor_type = null;
       fieldSetFlags()[0] = false;
       return this;
     }
 
-    /** Gets the value of the 'extra_info' field */
+    /**
+      * Gets the value of the 'extra_info' field.
+      * @return The value.
+      */
     public converTor.relayExtra.ExtraInfo getExtraInfo() {
       return extra_info;
     }
-    
-    /** Sets the value of the 'extra_info' field */
+
+    /**
+      * Sets the value of the 'extra_info' field.
+      * @param value The value of 'extra_info'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setExtraInfo(converTor.relayExtra.ExtraInfo value) {
       validate(fields()[1], value);
+      this.extra_infoBuilder = null;
       this.extra_info = value;
       fieldSetFlags()[1] = true;
       return this; 
     }
-    
-    /** Checks whether the 'extra_info' field has been set */
+
+    /**
+      * Checks whether the 'extra_info' field has been set.
+      * @return True if the 'extra_info' field has been set, false otherwise.
+      */
     public boolean hasExtraInfo() {
       return fieldSetFlags()[1];
     }
-    
-    /** Clears the value of the 'extra_info' field */
+
+    /**
+     * Gets the Builder instance for the 'extra_info' field and creates one if it doesn't exist yet.
+     * @return This builder.
+     */
+    public converTor.relayExtra.ExtraInfo.Builder getExtraInfoBuilder() {
+      if (extra_infoBuilder == null) {
+        if (hasExtraInfo()) {
+          setExtraInfoBuilder(converTor.relayExtra.ExtraInfo.newBuilder(extra_info));
+        } else {
+          setExtraInfoBuilder(converTor.relayExtra.ExtraInfo.newBuilder());
+        }
+      }
+      return extra_infoBuilder;
+    }
+
+    /**
+     * Sets the Builder instance for the 'extra_info' field
+     * @return This builder.
+     */
+    public converTor.relayExtra.RelayExtra.Builder setExtraInfoBuilder(converTor.relayExtra.ExtraInfo.Builder value) {
+      clearExtraInfo();
+      extra_infoBuilder = value;
+      return this;
+    }
+
+    /**
+     * Checks whether the 'extra_info' field has an active Builder instance
+     * @return True if the 'extra_info' field has an active Builder instance
+     */
+    public boolean hasExtraInfoBuilder() {
+      return extra_infoBuilder != null;
+    }
+
+    /**
+      * Clears the value of the 'extra_info' field.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearExtraInfo() {
       extra_info = null;
+      extra_infoBuilder = null;
       fieldSetFlags()[1] = false;
       return this;
     }
 
-    /** Gets the value of the 'identity_ed25519' field */
+    /**
+      * Gets the value of the 'identity_ed25519' field.
+      * metrics-lib/ExtraInfoDescriptor: String getIdentityEd25519();
+      * @return The value.
+      */
     public java.lang.Boolean getIdentityEd25519() {
       return identity_ed25519;
     }
-    
-    /** Sets the value of the 'identity_ed25519' field */
+
+    /**
+      * Sets the value of the 'identity_ed25519' field.
+      * metrics-lib/ExtraInfoDescriptor: String getIdentityEd25519();
+      * @param value The value of 'identity_ed25519'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setIdentityEd25519(java.lang.Boolean value) {
       validate(fields()[2], value);
       this.identity_ed25519 = value;
       fieldSetFlags()[2] = true;
       return this; 
     }
-    
-    /** Checks whether the 'identity_ed25519' field has been set */
+
+    /**
+      * Checks whether the 'identity_ed25519' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: String getIdentityEd25519();
+      * @return True if the 'identity_ed25519' field has been set, false otherwise.
+      */
     public boolean hasIdentityEd25519() {
       return fieldSetFlags()[2];
     }
-    
-    /** Clears the value of the 'identity_ed25519' field */
+
+
+    /**
+      * Clears the value of the 'identity_ed25519' field.
+      * metrics-lib/ExtraInfoDescriptor: String getIdentityEd25519();
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearIdentityEd25519() {
       identity_ed25519 = null;
       fieldSetFlags()[2] = false;
       return this;
     }
 
-    /** Gets the value of the 'published' field */
+    /**
+      * Gets the value of the 'published' field.
+      * metrics-lib/ExtraInfoDescriptor: long getPublishedMillis()
+      * @return The value.
+      */
     public java.lang.CharSequence getPublished() {
       return published;
     }
-    
-    /** Sets the value of the 'published' field */
+
+    /**
+      * Sets the value of the 'published' field.
+      * metrics-lib/ExtraInfoDescriptor: long getPublishedMillis()
+      * @param value The value of 'published'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setPublished(java.lang.CharSequence value) {
       validate(fields()[3], value);
       this.published = value;
       fieldSetFlags()[3] = true;
       return this; 
     }
-    
-    /** Checks whether the 'published' field has been set */
+
+    /**
+      * Checks whether the 'published' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: long getPublishedMillis()
+      * @return True if the 'published' field has been set, false otherwise.
+      */
     public boolean hasPublished() {
       return fieldSetFlags()[3];
     }
-    
-    /** Clears the value of the 'published' field */
+
+
+    /**
+      * Clears the value of the 'published' field.
+      * metrics-lib/ExtraInfoDescriptor: long getPublishedMillis()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearPublished() {
       published = null;
       fieldSetFlags()[3] = false;
       return this;
     }
 
-    /** Gets the value of the 'read_history' field */
+    /**
+      * Gets the value of the 'read_history' field.
+      * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory()
+      * @return The value.
+      */
     public converTor.relayExtra.ReadHistory getReadHistory() {
       return read_history;
     }
-    
-    /** Sets the value of the 'read_history' field */
+
+    /**
+      * Sets the value of the 'read_history' field.
+      * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory()
+      * @param value The value of 'read_history'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setReadHistory(converTor.relayExtra.ReadHistory value) {
       validate(fields()[4], value);
+      this.read_historyBuilder = null;
       this.read_history = value;
       fieldSetFlags()[4] = true;
       return this; 
     }
-    
-    /** Checks whether the 'read_history' field has been set */
+
+    /**
+      * Checks whether the 'read_history' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory()
+      * @return True if the 'read_history' field has been set, false otherwise.
+      */
     public boolean hasReadHistory() {
       return fieldSetFlags()[4];
     }
-    
-    /** Clears the value of the 'read_history' field */
+
+    /**
+     * Gets the Builder instance for the 'read_history' field and creates one if it doesn't exist yet.
+     * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory()
+     * @return This builder.
+     */
+    public converTor.relayExtra.ReadHistory.Builder getReadHistoryBuilder() {
+      if (read_historyBuilder == null) {
+        if (hasReadHistory()) {
+          setReadHistoryBuilder(converTor.relayExtra.ReadHistory.newBuilder(read_history));
+        } else {
+          setReadHistoryBuilder(converTor.relayExtra.ReadHistory.newBuilder());
+        }
+      }
+      return read_historyBuilder;
+    }
+
+    /**
+     * Sets the Builder instance for the 'read_history' field
+     * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory()
+     * @return This builder.
+     */
+    public converTor.relayExtra.RelayExtra.Builder setReadHistoryBuilder(converTor.relayExtra.ReadHistory.Builder value) {
+      clearReadHistory();
+      read_historyBuilder = value;
+      return this;
+    }
+
+    /**
+     * Checks whether the 'read_history' field has an active Builder instance
+     * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory()
+     * @return True if the 'read_history' field has an active Builder instance
+     */
+    public boolean hasReadHistoryBuilder() {
+      return read_historyBuilder != null;
+    }
+
+    /**
+      * Clears the value of the 'read_history' field.
+      * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearReadHistory() {
       read_history = null;
+      read_historyBuilder = null;
       fieldSetFlags()[4] = false;
       return this;
     }
 
-    /** Gets the value of the 'write_history' field */
+    /**
+      * Gets the value of the 'write_history' field.
+      * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory()
+      * @return The value.
+      */
     public converTor.relayExtra.WriteHistory getWriteHistory() {
       return write_history;
     }
-    
-    /** Sets the value of the 'write_history' field */
+
+    /**
+      * Sets the value of the 'write_history' field.
+      * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory()
+      * @param value The value of 'write_history'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setWriteHistory(converTor.relayExtra.WriteHistory value) {
       validate(fields()[5], value);
+      this.write_historyBuilder = null;
       this.write_history = value;
       fieldSetFlags()[5] = true;
       return this; 
     }
-    
-    /** Checks whether the 'write_history' field has been set */
+
+    /**
+      * Checks whether the 'write_history' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory()
+      * @return True if the 'write_history' field has been set, false otherwise.
+      */
     public boolean hasWriteHistory() {
       return fieldSetFlags()[5];
     }
-    
-    /** Clears the value of the 'write_history' field */
+
+    /**
+     * Gets the Builder instance for the 'write_history' field and creates one if it doesn't exist yet.
+     * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory()
+     * @return This builder.
+     */
+    public converTor.relayExtra.WriteHistory.Builder getWriteHistoryBuilder() {
+      if (write_historyBuilder == null) {
+        if (hasWriteHistory()) {
+          setWriteHistoryBuilder(converTor.relayExtra.WriteHistory.newBuilder(write_history));
+        } else {
+          setWriteHistoryBuilder(converTor.relayExtra.WriteHistory.newBuilder());
+        }
+      }
+      return write_historyBuilder;
+    }
+
+    /**
+     * Sets the Builder instance for the 'write_history' field
+     * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory()
+     * @return This builder.
+     */
+    public converTor.relayExtra.RelayExtra.Builder setWriteHistoryBuilder(converTor.relayExtra.WriteHistory.Builder value) {
+      clearWriteHistory();
+      write_historyBuilder = value;
+      return this;
+    }
+
+    /**
+     * Checks whether the 'write_history' field has an active Builder instance
+     * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory()
+     * @return True if the 'write_history' field has an active Builder instance
+     */
+    public boolean hasWriteHistoryBuilder() {
+      return write_historyBuilder != null;
+    }
+
+    /**
+      * Clears the value of the 'write_history' field.
+      * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearWriteHistory() {
       write_history = null;
+      write_historyBuilder = null;
       fieldSetFlags()[5] = false;
       return this;
     }
 
-    /** Gets the value of the 'geoip_db_digest' field */
+    /**
+      * Gets the value of the 'geoip_db_digest' field.
+      * metrics-lib/ExtraInfoDescriptor: String getGeoipDbDigest()
+      * @return The value.
+      */
     public java.lang.CharSequence getGeoipDbDigest() {
       return geoip_db_digest;
     }
-    
-    /** Sets the value of the 'geoip_db_digest' field */
+
+    /**
+      * Sets the value of the 'geoip_db_digest' field.
+      * metrics-lib/ExtraInfoDescriptor: String getGeoipDbDigest()
+      * @param value The value of 'geoip_db_digest'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setGeoipDbDigest(java.lang.CharSequence value) {
       validate(fields()[6], value);
       this.geoip_db_digest = value;
       fieldSetFlags()[6] = true;
       return this; 
     }
-    
-    /** Checks whether the 'geoip_db_digest' field has been set */
+
+    /**
+      * Checks whether the 'geoip_db_digest' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: String getGeoipDbDigest()
+      * @return True if the 'geoip_db_digest' field has been set, false otherwise.
+      */
     public boolean hasGeoipDbDigest() {
       return fieldSetFlags()[6];
     }
-    
-    /** Clears the value of the 'geoip_db_digest' field */
+
+
+    /**
+      * Clears the value of the 'geoip_db_digest' field.
+      * metrics-lib/ExtraInfoDescriptor: String getGeoipDbDigest()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearGeoipDbDigest() {
       geoip_db_digest = null;
       fieldSetFlags()[6] = false;
       return this;
     }
 
-    /** Gets the value of the 'geoip6_db_digest' field */
+    /**
+      * Gets the value of the 'geoip6_db_digest' field.
+      * metrics-lib/ExtraInfoDescriptor: String getGeoip6DbDigest()
+      * @return The value.
+      */
     public java.lang.CharSequence getGeoip6DbDigest() {
       return geoip6_db_digest;
     }
-    
-    /** Sets the value of the 'geoip6_db_digest' field */
+
+    /**
+      * Sets the value of the 'geoip6_db_digest' field.
+      * metrics-lib/ExtraInfoDescriptor: String getGeoip6DbDigest()
+      * @param value The value of 'geoip6_db_digest'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setGeoip6DbDigest(java.lang.CharSequence value) {
       validate(fields()[7], value);
       this.geoip6_db_digest = value;
       fieldSetFlags()[7] = true;
       return this; 
     }
-    
-    /** Checks whether the 'geoip6_db_digest' field has been set */
+
+    /**
+      * Checks whether the 'geoip6_db_digest' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: String getGeoip6DbDigest()
+      * @return True if the 'geoip6_db_digest' field has been set, false otherwise.
+      */
     public boolean hasGeoip6DbDigest() {
       return fieldSetFlags()[7];
     }
-    
-    /** Clears the value of the 'geoip6_db_digest' field */
+
+
+    /**
+      * Clears the value of the 'geoip6_db_digest' field.
+      * metrics-lib/ExtraInfoDescriptor: String getGeoip6DbDigest()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearGeoip6DbDigest() {
       geoip6_db_digest = null;
       fieldSetFlags()[7] = false;
       return this;
     }
 
-    /** Gets the value of the 'geoip_start_time' field */
+    /**
+      * Gets the value of the 'geoip_start_time' field.
+      * metrics-lib/ExtraInfoDescriptor: String getGeoipStartTimeMillis()
+      * @return The value.
+      */
     public java.lang.CharSequence getGeoipStartTime() {
       return geoip_start_time;
     }
-    
-    /** Sets the value of the 'geoip_start_time' field */
+
+    /**
+      * Sets the value of the 'geoip_start_time' field.
+      * metrics-lib/ExtraInfoDescriptor: String getGeoipStartTimeMillis()
+      * @param value The value of 'geoip_start_time'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setGeoipStartTime(java.lang.CharSequence value) {
       validate(fields()[8], value);
       this.geoip_start_time = value;
       fieldSetFlags()[8] = true;
       return this; 
     }
-    
-    /** Checks whether the 'geoip_start_time' field has been set */
+
+    /**
+      * Checks whether the 'geoip_start_time' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: String getGeoipStartTimeMillis()
+      * @return True if the 'geoip_start_time' field has been set, false otherwise.
+      */
     public boolean hasGeoipStartTime() {
       return fieldSetFlags()[8];
     }
-    
-    /** Clears the value of the 'geoip_start_time' field */
+
+
+    /**
+      * Clears the value of the 'geoip_start_time' field.
+      * metrics-lib/ExtraInfoDescriptor: String getGeoipStartTimeMillis()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearGeoipStartTime() {
       geoip_start_time = null;
       fieldSetFlags()[8] = false;
       return this;
     }
 
-    /** Gets the value of the 'dirreq_stats_end' field */
+    /**
+      * Gets the value of the 'dirreq_stats_end' field.
+      * @return The value.
+      */
     public converTor.relayExtra.DirreqStats getDirreqStatsEnd() {
       return dirreq_stats_end;
     }
-    
-    /** Sets the value of the 'dirreq_stats_end' field */
+
+    /**
+      * Sets the value of the 'dirreq_stats_end' field.
+      * @param value The value of 'dirreq_stats_end'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setDirreqStatsEnd(converTor.relayExtra.DirreqStats value) {
       validate(fields()[9], value);
+      this.dirreq_stats_endBuilder = null;
       this.dirreq_stats_end = value;
       fieldSetFlags()[9] = true;
       return this; 
     }
-    
-    /** Checks whether the 'dirreq_stats_end' field has been set */
+
+    /**
+      * Checks whether the 'dirreq_stats_end' field has been set.
+      * @return True if the 'dirreq_stats_end' field has been set, false otherwise.
+      */
     public boolean hasDirreqStatsEnd() {
       return fieldSetFlags()[9];
     }
-    
-    /** Clears the value of the 'dirreq_stats_end' field */
+
+    /**
+     * Gets the Builder instance for the 'dirreq_stats_end' field and creates one if it doesn't exist yet.
+     * @return This builder.
+     */
+    public converTor.relayExtra.DirreqStats.Builder getDirreqStatsEndBuilder() {
+      if (dirreq_stats_endBuilder == null) {
+        if (hasDirreqStatsEnd()) {
+          setDirreqStatsEndBuilder(converTor.relayExtra.DirreqStats.newBuilder(dirreq_stats_end));
+        } else {
+          setDirreqStatsEndBuilder(converTor.relayExtra.DirreqStats.newBuilder());
+        }
+      }
+      return dirreq_stats_endBuilder;
+    }
+
+    /**
+     * Sets the Builder instance for the 'dirreq_stats_end' field
+     * @return This builder.
+     */
+    public converTor.relayExtra.RelayExtra.Builder setDirreqStatsEndBuilder(converTor.relayExtra.DirreqStats.Builder value) {
+      clearDirreqStatsEnd();
+      dirreq_stats_endBuilder = value;
+      return this;
+    }
+
+    /**
+     * Checks whether the 'dirreq_stats_end' field has an active Builder instance
+     * @return True if the 'dirreq_stats_end' field has an active Builder instance
+     */
+    public boolean hasDirreqStatsEndBuilder() {
+      return dirreq_stats_endBuilder != null;
+    }
+
+    /**
+      * Clears the value of the 'dirreq_stats_end' field.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearDirreqStatsEnd() {
       dirreq_stats_end = null;
+      dirreq_stats_endBuilder = null;
       fieldSetFlags()[9] = false;
       return this;
     }
 
-    /** Gets the value of the 'dirreq_v2_ips' field */
+    /**
+      * Gets the value of the 'dirreq_v2_ips' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Ips()
+      * @return The value.
+      */
     public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV2Ips() {
       return dirreq_v2_ips;
     }
-    
-    /** Sets the value of the 'dirreq_v2_ips' field */
+
+    /**
+      * Sets the value of the 'dirreq_v2_ips' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Ips()
+      * @param value The value of 'dirreq_v2_ips'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setDirreqV2Ips(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
       validate(fields()[10], value);
       this.dirreq_v2_ips = value;
       fieldSetFlags()[10] = true;
       return this; 
     }
-    
-    /** Checks whether the 'dirreq_v2_ips' field has been set */
+
+    /**
+      * Checks whether the 'dirreq_v2_ips' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Ips()
+      * @return True if the 'dirreq_v2_ips' field has been set, false otherwise.
+      */
     public boolean hasDirreqV2Ips() {
       return fieldSetFlags()[10];
     }
-    
-    /** Clears the value of the 'dirreq_v2_ips' field */
+
+
+    /**
+      * Clears the value of the 'dirreq_v2_ips' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Ips()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearDirreqV2Ips() {
       dirreq_v2_ips = null;
       fieldSetFlags()[10] = false;
       return this;
     }
 
-    /** Gets the value of the 'dirreq_v3_ips' field */
+    /**
+      * Gets the value of the 'dirreq_v3_ips' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Ips()
+      * @return The value.
+      */
     public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV3Ips() {
       return dirreq_v3_ips;
     }
-    
-    /** Sets the value of the 'dirreq_v3_ips' field */
+
+    /**
+      * Sets the value of the 'dirreq_v3_ips' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Ips()
+      * @param value The value of 'dirreq_v3_ips'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setDirreqV3Ips(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
       validate(fields()[11], value);
       this.dirreq_v3_ips = value;
       fieldSetFlags()[11] = true;
       return this; 
     }
-    
-    /** Checks whether the 'dirreq_v3_ips' field has been set */
+
+    /**
+      * Checks whether the 'dirreq_v3_ips' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Ips()
+      * @return True if the 'dirreq_v3_ips' field has been set, false otherwise.
+      */
     public boolean hasDirreqV3Ips() {
       return fieldSetFlags()[11];
     }
-    
-    /** Clears the value of the 'dirreq_v3_ips' field */
+
+
+    /**
+      * Clears the value of the 'dirreq_v3_ips' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Ips()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearDirreqV3Ips() {
       dirreq_v3_ips = null;
       fieldSetFlags()[11] = false;
       return this;
     }
 
-    /** Gets the value of the 'dirreq_v2_reqs' field */
+    /**
+      * Gets the value of the 'dirreq_v2_reqs' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Reqs()
+      * @return The value.
+      */
     public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV2Reqs() {
       return dirreq_v2_reqs;
     }
-    
-    /** Sets the value of the 'dirreq_v2_reqs' field */
+
+    /**
+      * Sets the value of the 'dirreq_v2_reqs' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Reqs()
+      * @param value The value of 'dirreq_v2_reqs'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setDirreqV2Reqs(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
       validate(fields()[12], value);
       this.dirreq_v2_reqs = value;
       fieldSetFlags()[12] = true;
       return this; 
     }
-    
-    /** Checks whether the 'dirreq_v2_reqs' field has been set */
+
+    /**
+      * Checks whether the 'dirreq_v2_reqs' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Reqs()
+      * @return True if the 'dirreq_v2_reqs' field has been set, false otherwise.
+      */
     public boolean hasDirreqV2Reqs() {
       return fieldSetFlags()[12];
     }
-    
-    /** Clears the value of the 'dirreq_v2_reqs' field */
+
+
+    /**
+      * Clears the value of the 'dirreq_v2_reqs' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Reqs()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearDirreqV2Reqs() {
       dirreq_v2_reqs = null;
       fieldSetFlags()[12] = false;
       return this;
     }
 
-    /** Gets the value of the 'dirreq_v3_reqs' field */
+    /**
+      * Gets the value of the 'dirreq_v3_reqs' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Reqs()
+      * @return The value.
+      */
     public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV3Reqs() {
       return dirreq_v3_reqs;
     }
-    
-    /** Sets the value of the 'dirreq_v3_reqs' field */
+
+    /**
+      * Sets the value of the 'dirreq_v3_reqs' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Reqs()
+      * @param value The value of 'dirreq_v3_reqs'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setDirreqV3Reqs(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
       validate(fields()[13], value);
       this.dirreq_v3_reqs = value;
       fieldSetFlags()[13] = true;
       return this; 
     }
-    
-    /** Checks whether the 'dirreq_v3_reqs' field has been set */
+
+    /**
+      * Checks whether the 'dirreq_v3_reqs' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Reqs()
+      * @return True if the 'dirreq_v3_reqs' field has been set, false otherwise.
+      */
     public boolean hasDirreqV3Reqs() {
       return fieldSetFlags()[13];
     }
-    
-    /** Clears the value of the 'dirreq_v3_reqs' field */
+
+
+    /**
+      * Clears the value of the 'dirreq_v3_reqs' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Reqs()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearDirreqV3Reqs() {
       dirreq_v3_reqs = null;
       fieldSetFlags()[13] = false;
       return this;
     }
 
-    /** Gets the value of the 'dirreq_v2_share' field */
+    /**
+      * Gets the value of the 'dirreq_v2_share' field.
+      * metrics-lib/ExtraInfoDescriptor: double getDirreqV2Share()
+      * @return The value.
+      */
     public java.lang.Double getDirreqV2Share() {
       return dirreq_v2_share;
     }
-    
-    /** Sets the value of the 'dirreq_v2_share' field */
+
+    /**
+      * Sets the value of the 'dirreq_v2_share' field.
+      * metrics-lib/ExtraInfoDescriptor: double getDirreqV2Share()
+      * @param value The value of 'dirreq_v2_share'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setDirreqV2Share(java.lang.Double value) {
       validate(fields()[14], value);
       this.dirreq_v2_share = value;
       fieldSetFlags()[14] = true;
       return this; 
     }
-    
-    /** Checks whether the 'dirreq_v2_share' field has been set */
+
+    /**
+      * Checks whether the 'dirreq_v2_share' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: double getDirreqV2Share()
+      * @return True if the 'dirreq_v2_share' field has been set, false otherwise.
+      */
     public boolean hasDirreqV2Share() {
       return fieldSetFlags()[14];
     }
-    
-    /** Clears the value of the 'dirreq_v2_share' field */
+
+
+    /**
+      * Clears the value of the 'dirreq_v2_share' field.
+      * metrics-lib/ExtraInfoDescriptor: double getDirreqV2Share()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearDirreqV2Share() {
       dirreq_v2_share = null;
       fieldSetFlags()[14] = false;
       return this;
     }
 
-    /** Gets the value of the 'dirreq_v3_share' field */
+    /**
+      * Gets the value of the 'dirreq_v3_share' field.
+      * metrics-lib/ExtraInfoDescriptor: double getDirreqV3Share()
+      * @return The value.
+      */
     public java.lang.Double getDirreqV3Share() {
       return dirreq_v3_share;
     }
-    
-    /** Sets the value of the 'dirreq_v3_share' field */
+
+    /**
+      * Sets the value of the 'dirreq_v3_share' field.
+      * metrics-lib/ExtraInfoDescriptor: double getDirreqV3Share()
+      * @param value The value of 'dirreq_v3_share'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setDirreqV3Share(java.lang.Double value) {
       validate(fields()[15], value);
       this.dirreq_v3_share = value;
       fieldSetFlags()[15] = true;
       return this; 
     }
-    
-    /** Checks whether the 'dirreq_v3_share' field has been set */
+
+    /**
+      * Checks whether the 'dirreq_v3_share' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: double getDirreqV3Share()
+      * @return True if the 'dirreq_v3_share' field has been set, false otherwise.
+      */
     public boolean hasDirreqV3Share() {
       return fieldSetFlags()[15];
     }
-    
-    /** Clears the value of the 'dirreq_v3_share' field */
+
+
+    /**
+      * Clears the value of the 'dirreq_v3_share' field.
+      * metrics-lib/ExtraInfoDescriptor: double getDirreqV3Share()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearDirreqV3Share() {
       dirreq_v3_share = null;
       fieldSetFlags()[15] = false;
       return this;
     }
 
-    /** Gets the value of the 'dirreq_v2_resp' field */
+    /**
+      * Gets the value of the 'dirreq_v2_resp' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Resp()
+      * @return The value.
+      */
     public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV2Resp() {
       return dirreq_v2_resp;
     }
-    
-    /** Sets the value of the 'dirreq_v2_resp' field */
+
+    /**
+      * Sets the value of the 'dirreq_v2_resp' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Resp()
+      * @param value The value of 'dirreq_v2_resp'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setDirreqV2Resp(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
       validate(fields()[16], value);
       this.dirreq_v2_resp = value;
       fieldSetFlags()[16] = true;
       return this; 
     }
-    
-    /** Checks whether the 'dirreq_v2_resp' field has been set */
+
+    /**
+      * Checks whether the 'dirreq_v2_resp' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Resp()
+      * @return True if the 'dirreq_v2_resp' field has been set, false otherwise.
+      */
     public boolean hasDirreqV2Resp() {
       return fieldSetFlags()[16];
     }
-    
-    /** Clears the value of the 'dirreq_v2_resp' field */
+
+
+    /**
+      * Clears the value of the 'dirreq_v2_resp' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Resp()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearDirreqV2Resp() {
       dirreq_v2_resp = null;
       fieldSetFlags()[16] = false;
       return this;
     }
 
-    /** Gets the value of the 'dirreq_v3_resp' field */
+    /**
+      * Gets the value of the 'dirreq_v3_resp' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Resp()
+      * @return The value.
+      */
     public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV3Resp() {
       return dirreq_v3_resp;
     }
-    
-    /** Sets the value of the 'dirreq_v3_resp' field */
+
+    /**
+      * Sets the value of the 'dirreq_v3_resp' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Resp()
+      * @param value The value of 'dirreq_v3_resp'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setDirreqV3Resp(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
       validate(fields()[17], value);
       this.dirreq_v3_resp = value;
       fieldSetFlags()[17] = true;
       return this; 
     }
-    
-    /** Checks whether the 'dirreq_v3_resp' field has been set */
+
+    /**
+      * Checks whether the 'dirreq_v3_resp' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Resp()
+      * @return True if the 'dirreq_v3_resp' field has been set, false otherwise.
+      */
     public boolean hasDirreqV3Resp() {
       return fieldSetFlags()[17];
     }
-    
-    /** Clears the value of the 'dirreq_v3_resp' field */
+
+
+    /**
+      * Clears the value of the 'dirreq_v3_resp' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Resp()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearDirreqV3Resp() {
       dirreq_v3_resp = null;
       fieldSetFlags()[17] = false;
       return this;
     }
 
-    /** Gets the value of the 'dirreq_v2_direct_dl' field */
+    /**
+      * Gets the value of the 'dirreq_v2_direct_dl' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2DirectDl()
+      * @return The value.
+      */
     public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV2DirectDl() {
       return dirreq_v2_direct_dl;
     }
-    
-    /** Sets the value of the 'dirreq_v2_direct_dl' field */
+
+    /**
+      * Sets the value of the 'dirreq_v2_direct_dl' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2DirectDl()
+      * @param value The value of 'dirreq_v2_direct_dl'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setDirreqV2DirectDl(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
       validate(fields()[18], value);
       this.dirreq_v2_direct_dl = value;
       fieldSetFlags()[18] = true;
       return this; 
     }
-    
-    /** Checks whether the 'dirreq_v2_direct_dl' field has been set */
+
+    /**
+      * Checks whether the 'dirreq_v2_direct_dl' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2DirectDl()
+      * @return True if the 'dirreq_v2_direct_dl' field has been set, false otherwise.
+      */
     public boolean hasDirreqV2DirectDl() {
       return fieldSetFlags()[18];
     }
-    
-    /** Clears the value of the 'dirreq_v2_direct_dl' field */
+
+
+    /**
+      * Clears the value of the 'dirreq_v2_direct_dl' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2DirectDl()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearDirreqV2DirectDl() {
       dirreq_v2_direct_dl = null;
       fieldSetFlags()[18] = false;
       return this;
     }
 
-    /** Gets the value of the 'dirreq_v3_direct_dl' field */
+    /**
+      * Gets the value of the 'dirreq_v3_direct_dl' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3DirectDl()
+      * @return The value.
+      */
     public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV3DirectDl() {
       return dirreq_v3_direct_dl;
     }
-    
-    /** Sets the value of the 'dirreq_v3_direct_dl' field */
+
+    /**
+      * Sets the value of the 'dirreq_v3_direct_dl' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3DirectDl()
+      * @param value The value of 'dirreq_v3_direct_dl'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setDirreqV3DirectDl(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
       validate(fields()[19], value);
       this.dirreq_v3_direct_dl = value;
       fieldSetFlags()[19] = true;
       return this; 
     }
-    
-    /** Checks whether the 'dirreq_v3_direct_dl' field has been set */
+
+    /**
+      * Checks whether the 'dirreq_v3_direct_dl' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3DirectDl()
+      * @return True if the 'dirreq_v3_direct_dl' field has been set, false otherwise.
+      */
     public boolean hasDirreqV3DirectDl() {
       return fieldSetFlags()[19];
     }
-    
-    /** Clears the value of the 'dirreq_v3_direct_dl' field */
+
+
+    /**
+      * Clears the value of the 'dirreq_v3_direct_dl' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3DirectDl()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearDirreqV3DirectDl() {
       dirreq_v3_direct_dl = null;
       fieldSetFlags()[19] = false;
       return this;
     }
 
-    /** Gets the value of the 'dirreq_v2_tunneled_dl' field */
+    /**
+      * Gets the value of the 'dirreq_v2_tunneled_dl' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2TunneledDl()
+      * @return The value.
+      */
     public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV2TunneledDl() {
       return dirreq_v2_tunneled_dl;
     }
-    
-    /** Sets the value of the 'dirreq_v2_tunneled_dl' field */
+
+    /**
+      * Sets the value of the 'dirreq_v2_tunneled_dl' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2TunneledDl()
+      * @param value The value of 'dirreq_v2_tunneled_dl'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setDirreqV2TunneledDl(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
       validate(fields()[20], value);
       this.dirreq_v2_tunneled_dl = value;
       fieldSetFlags()[20] = true;
       return this; 
     }
-    
-    /** Checks whether the 'dirreq_v2_tunneled_dl' field has been set */
+
+    /**
+      * Checks whether the 'dirreq_v2_tunneled_dl' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2TunneledDl()
+      * @return True if the 'dirreq_v2_tunneled_dl' field has been set, false otherwise.
+      */
     public boolean hasDirreqV2TunneledDl() {
       return fieldSetFlags()[20];
     }
-    
-    /** Clears the value of the 'dirreq_v2_tunneled_dl' field */
+
+
+    /**
+      * Clears the value of the 'dirreq_v2_tunneled_dl' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2TunneledDl()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearDirreqV2TunneledDl() {
       dirreq_v2_tunneled_dl = null;
       fieldSetFlags()[20] = false;
       return this;
     }
 
-    /** Gets the value of the 'dirreq_v3_tunneled_dl' field */
+    /**
+      * Gets the value of the 'dirreq_v3_tunneled_dl' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3TunneledDl()
+      * @return The value.
+      */
     public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV3TunneledDl() {
       return dirreq_v3_tunneled_dl;
     }
-    
-    /** Sets the value of the 'dirreq_v3_tunneled_dl' field */
+
+    /**
+      * Sets the value of the 'dirreq_v3_tunneled_dl' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3TunneledDl()
+      * @param value The value of 'dirreq_v3_tunneled_dl'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setDirreqV3TunneledDl(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
       validate(fields()[21], value);
       this.dirreq_v3_tunneled_dl = value;
       fieldSetFlags()[21] = true;
       return this; 
     }
-    
-    /** Checks whether the 'dirreq_v3_tunneled_dl' field has been set */
+
+    /**
+      * Checks whether the 'dirreq_v3_tunneled_dl' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3TunneledDl()
+      * @return True if the 'dirreq_v3_tunneled_dl' field has been set, false otherwise.
+      */
     public boolean hasDirreqV3TunneledDl() {
       return fieldSetFlags()[21];
     }
-    
-    /** Clears the value of the 'dirreq_v3_tunneled_dl' field */
+
+
+    /**
+      * Clears the value of the 'dirreq_v3_tunneled_dl' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3TunneledDl()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearDirreqV3TunneledDl() {
       dirreq_v3_tunneled_dl = null;
       fieldSetFlags()[21] = false;
       return this;
     }
 
-    /** Gets the value of the 'dirreq_read_history' field */
+    /**
+      * Gets the value of the 'dirreq_read_history' field.
+      * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory()
+      * @return The value.
+      */
     public converTor.relayExtra.DirreqReadHistory getDirreqReadHistory() {
       return dirreq_read_history;
     }
-    
-    /** Sets the value of the 'dirreq_read_history' field */
+
+    /**
+      * Sets the value of the 'dirreq_read_history' field.
+      * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory()
+      * @param value The value of 'dirreq_read_history'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setDirreqReadHistory(converTor.relayExtra.DirreqReadHistory value) {
       validate(fields()[22], value);
+      this.dirreq_read_historyBuilder = null;
       this.dirreq_read_history = value;
       fieldSetFlags()[22] = true;
       return this; 
     }
-    
-    /** Checks whether the 'dirreq_read_history' field has been set */
+
+    /**
+      * Checks whether the 'dirreq_read_history' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory()
+      * @return True if the 'dirreq_read_history' field has been set, false otherwise.
+      */
     public boolean hasDirreqReadHistory() {
       return fieldSetFlags()[22];
     }
-    
-    /** Clears the value of the 'dirreq_read_history' field */
+
+    /**
+     * Gets the Builder instance for the 'dirreq_read_history' field and creates one if it doesn't exist yet.
+     * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory()
+     * @return This builder.
+     */
+    public converTor.relayExtra.DirreqReadHistory.Builder getDirreqReadHistoryBuilder() {
+      if (dirreq_read_historyBuilder == null) {
+        if (hasDirreqReadHistory()) {
+          setDirreqReadHistoryBuilder(converTor.relayExtra.DirreqReadHistory.newBuilder(dirreq_read_history));
+        } else {
+          setDirreqReadHistoryBuilder(converTor.relayExtra.DirreqReadHistory.newBuilder());
+        }
+      }
+      return dirreq_read_historyBuilder;
+    }
+
+    /**
+     * Sets the Builder instance for the 'dirreq_read_history' field
+     * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory()
+     * @return This builder.
+     */
+    public converTor.relayExtra.RelayExtra.Builder setDirreqReadHistoryBuilder(converTor.relayExtra.DirreqReadHistory.Builder value) {
+      clearDirreqReadHistory();
+      dirreq_read_historyBuilder = value;
+      return this;
+    }
+
+    /**
+     * Checks whether the 'dirreq_read_history' field has an active Builder instance
+     * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory()
+     * @return True if the 'dirreq_read_history' field has an active Builder instance
+     */
+    public boolean hasDirreqReadHistoryBuilder() {
+      return dirreq_read_historyBuilder != null;
+    }
+
+    /**
+      * Clears the value of the 'dirreq_read_history' field.
+      * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearDirreqReadHistory() {
       dirreq_read_history = null;
+      dirreq_read_historyBuilder = null;
       fieldSetFlags()[22] = false;
       return this;
     }
 
-    /** Gets the value of the 'dirreq_write_history' field */
+    /**
+      * Gets the value of the 'dirreq_write_history' field.
+      * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory()
+      * @return The value.
+      */
     public converTor.relayExtra.DirreqWriteHistory getDirreqWriteHistory() {
       return dirreq_write_history;
     }
-    
-    /** Sets the value of the 'dirreq_write_history' field */
+
+    /**
+      * Sets the value of the 'dirreq_write_history' field.
+      * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory()
+      * @param value The value of 'dirreq_write_history'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setDirreqWriteHistory(converTor.relayExtra.DirreqWriteHistory value) {
       validate(fields()[23], value);
+      this.dirreq_write_historyBuilder = null;
       this.dirreq_write_history = value;
       fieldSetFlags()[23] = true;
       return this; 
     }
-    
-    /** Checks whether the 'dirreq_write_history' field has been set */
+
+    /**
+      * Checks whether the 'dirreq_write_history' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory()
+      * @return True if the 'dirreq_write_history' field has been set, false otherwise.
+      */
     public boolean hasDirreqWriteHistory() {
       return fieldSetFlags()[23];
     }
-    
-    /** Clears the value of the 'dirreq_write_history' field */
+
+    /**
+     * Gets the Builder instance for the 'dirreq_write_history' field and creates one if it doesn't exist yet.
+     * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory()
+     * @return This builder.
+     */
+    public converTor.relayExtra.DirreqWriteHistory.Builder getDirreqWriteHistoryBuilder() {
+      if (dirreq_write_historyBuilder == null) {
+        if (hasDirreqWriteHistory()) {
+          setDirreqWriteHistoryBuilder(converTor.relayExtra.DirreqWriteHistory.newBuilder(dirreq_write_history));
+        } else {
+          setDirreqWriteHistoryBuilder(converTor.relayExtra.DirreqWriteHistory.newBuilder());
+        }
+      }
+      return dirreq_write_historyBuilder;
+    }
+
+    /**
+     * Sets the Builder instance for the 'dirreq_write_history' field
+     * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory()
+     * @return This builder.
+     */
+    public converTor.relayExtra.RelayExtra.Builder setDirreqWriteHistoryBuilder(converTor.relayExtra.DirreqWriteHistory.Builder value) {
+      clearDirreqWriteHistory();
+      dirreq_write_historyBuilder = value;
+      return this;
+    }
+
+    /**
+     * Checks whether the 'dirreq_write_history' field has an active Builder instance
+     * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory()
+     * @return True if the 'dirreq_write_history' field has an active Builder instance
+     */
+    public boolean hasDirreqWriteHistoryBuilder() {
+      return dirreq_write_historyBuilder != null;
+    }
+
+    /**
+      * Clears the value of the 'dirreq_write_history' field.
+      * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearDirreqWriteHistory() {
       dirreq_write_history = null;
+      dirreq_write_historyBuilder = null;
       fieldSetFlags()[23] = false;
       return this;
     }
 
-    /** Gets the value of the 'entry_stats_end' field */
+    /**
+      * Gets the value of the 'entry_stats_end' field.
+      * @return The value.
+      */
     public converTor.relayExtra.EntryStats getEntryStatsEnd() {
       return entry_stats_end;
     }
-    
-    /** Sets the value of the 'entry_stats_end' field */
+
+    /**
+      * Sets the value of the 'entry_stats_end' field.
+      * @param value The value of 'entry_stats_end'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setEntryStatsEnd(converTor.relayExtra.EntryStats value) {
       validate(fields()[24], value);
+      this.entry_stats_endBuilder = null;
       this.entry_stats_end = value;
       fieldSetFlags()[24] = true;
       return this; 
     }
-    
-    /** Checks whether the 'entry_stats_end' field has been set */
+
+    /**
+      * Checks whether the 'entry_stats_end' field has been set.
+      * @return True if the 'entry_stats_end' field has been set, false otherwise.
+      */
     public boolean hasEntryStatsEnd() {
       return fieldSetFlags()[24];
     }
-    
-    /** Clears the value of the 'entry_stats_end' field */
+
+    /**
+     * Gets the Builder instance for the 'entry_stats_end' field and creates one if it doesn't exist yet.
+     * @return This builder.
+     */
+    public converTor.relayExtra.EntryStats.Builder getEntryStatsEndBuilder() {
+      if (entry_stats_endBuilder == null) {
+        if (hasEntryStatsEnd()) {
+          setEntryStatsEndBuilder(converTor.relayExtra.EntryStats.newBuilder(entry_stats_end));
+        } else {
+          setEntryStatsEndBuilder(converTor.relayExtra.EntryStats.newBuilder());
+        }
+      }
+      return entry_stats_endBuilder;
+    }
+
+    /**
+     * Sets the Builder instance for the 'entry_stats_end' field
+     * @return This builder.
+     */
+    public converTor.relayExtra.RelayExtra.Builder setEntryStatsEndBuilder(converTor.relayExtra.EntryStats.Builder value) {
+      clearEntryStatsEnd();
+      entry_stats_endBuilder = value;
+      return this;
+    }
+
+    /**
+     * Checks whether the 'entry_stats_end' field has an active Builder instance
+     * @return True if the 'entry_stats_end' field has an active Builder instance
+     */
+    public boolean hasEntryStatsEndBuilder() {
+      return entry_stats_endBuilder != null;
+    }
+
+    /**
+      * Clears the value of the 'entry_stats_end' field.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearEntryStatsEnd() {
       entry_stats_end = null;
+      entry_stats_endBuilder = null;
       fieldSetFlags()[24] = false;
       return this;
     }
 
-    /** Gets the value of the 'entry_ips' field */
+    /**
+      * Gets the value of the 'entry_ips' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getEntryIps()
+      * @return The value.
+      */
     public java.util.Map<java.lang.CharSequence,java.lang.Integer> getEntryIps() {
       return entry_ips;
     }
-    
-    /** Sets the value of the 'entry_ips' field */
+
+    /**
+      * Sets the value of the 'entry_ips' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getEntryIps()
+      * @param value The value of 'entry_ips'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setEntryIps(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
       validate(fields()[25], value);
       this.entry_ips = value;
       fieldSetFlags()[25] = true;
       return this; 
     }
-    
-    /** Checks whether the 'entry_ips' field has been set */
+
+    /**
+      * Checks whether the 'entry_ips' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getEntryIps()
+      * @return True if the 'entry_ips' field has been set, false otherwise.
+      */
     public boolean hasEntryIps() {
       return fieldSetFlags()[25];
     }
-    
-    /** Clears the value of the 'entry_ips' field */
+
+
+    /**
+      * Clears the value of the 'entry_ips' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getEntryIps()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearEntryIps() {
       entry_ips = null;
       fieldSetFlags()[25] = false;
       return this;
     }
 
-    /** Gets the value of the 'cell_stats_end' field */
+    /**
+      * Gets the value of the 'cell_stats_end' field.
+      * @return The value.
+      */
     public converTor.relayExtra.CellStats getCellStatsEnd() {
       return cell_stats_end;
     }
-    
-    /** Sets the value of the 'cell_stats_end' field */
+
+    /**
+      * Sets the value of the 'cell_stats_end' field.
+      * @param value The value of 'cell_stats_end'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setCellStatsEnd(converTor.relayExtra.CellStats value) {
       validate(fields()[26], value);
+      this.cell_stats_endBuilder = null;
       this.cell_stats_end = value;
       fieldSetFlags()[26] = true;
       return this; 
     }
-    
-    /** Checks whether the 'cell_stats_end' field has been set */
+
+    /**
+      * Checks whether the 'cell_stats_end' field has been set.
+      * @return True if the 'cell_stats_end' field has been set, false otherwise.
+      */
     public boolean hasCellStatsEnd() {
       return fieldSetFlags()[26];
     }
-    
-    /** Clears the value of the 'cell_stats_end' field */
+
+    /**
+     * Gets the Builder instance for the 'cell_stats_end' field and creates one if it doesn't exist yet.
+     * @return This builder.
+     */
+    public converTor.relayExtra.CellStats.Builder getCellStatsEndBuilder() {
+      if (cell_stats_endBuilder == null) {
+        if (hasCellStatsEnd()) {
+          setCellStatsEndBuilder(converTor.relayExtra.CellStats.newBuilder(cell_stats_end));
+        } else {
+          setCellStatsEndBuilder(converTor.relayExtra.CellStats.newBuilder());
+        }
+      }
+      return cell_stats_endBuilder;
+    }
+
+    /**
+     * Sets the Builder instance for the 'cell_stats_end' field
+     * @return This builder.
+     */
+    public converTor.relayExtra.RelayExtra.Builder setCellStatsEndBuilder(converTor.relayExtra.CellStats.Builder value) {
+      clearCellStatsEnd();
+      cell_stats_endBuilder = value;
+      return this;
+    }
+
+    /**
+     * Checks whether the 'cell_stats_end' field has an active Builder instance
+     * @return True if the 'cell_stats_end' field has an active Builder instance
+     */
+    public boolean hasCellStatsEndBuilder() {
+      return cell_stats_endBuilder != null;
+    }
+
+    /**
+      * Clears the value of the 'cell_stats_end' field.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearCellStatsEnd() {
       cell_stats_end = null;
+      cell_stats_endBuilder = null;
       fieldSetFlags()[26] = false;
       return this;
     }
 
-    /** Gets the value of the 'cell_processed_cells' field */
+    /**
+      * Gets the value of the 'cell_processed_cells' field.
+      * metrics-lib/ExtraInfoDescriptor: List<Integer> getCellProcessedCells()
+      * @return The value.
+      */
     public java.util.List<java.lang.Integer> getCellProcessedCells() {
       return cell_processed_cells;
     }
-    
-    /** Sets the value of the 'cell_processed_cells' field */
+
+    /**
+      * Sets the value of the 'cell_processed_cells' field.
+      * metrics-lib/ExtraInfoDescriptor: List<Integer> getCellProcessedCells()
+      * @param value The value of 'cell_processed_cells'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setCellProcessedCells(java.util.List<java.lang.Integer> value) {
       validate(fields()[27], value);
       this.cell_processed_cells = value;
       fieldSetFlags()[27] = true;
       return this; 
     }
-    
-    /** Checks whether the 'cell_processed_cells' field has been set */
+
+    /**
+      * Checks whether the 'cell_processed_cells' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: List<Integer> getCellProcessedCells()
+      * @return True if the 'cell_processed_cells' field has been set, false otherwise.
+      */
     public boolean hasCellProcessedCells() {
       return fieldSetFlags()[27];
     }
-    
-    /** Clears the value of the 'cell_processed_cells' field */
+
+
+    /**
+      * Clears the value of the 'cell_processed_cells' field.
+      * metrics-lib/ExtraInfoDescriptor: List<Integer> getCellProcessedCells()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearCellProcessedCells() {
       cell_processed_cells = null;
       fieldSetFlags()[27] = false;
       return this;
     }
 
-    /** Gets the value of the 'cell_queued_cells' field */
+    /**
+      * Gets the value of the 'cell_queued_cells' field.
+      * metrics-lib/ExtraInfoDescriptor: List<Double> getCellQueuedCells()
+      * @return The value.
+      */
     public java.util.List<java.lang.Double> getCellQueuedCells() {
       return cell_queued_cells;
     }
-    
-    /** Sets the value of the 'cell_queued_cells' field */
+
+    /**
+      * Sets the value of the 'cell_queued_cells' field.
+      * metrics-lib/ExtraInfoDescriptor: List<Double> getCellQueuedCells()
+      * @param value The value of 'cell_queued_cells'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setCellQueuedCells(java.util.List<java.lang.Double> value) {
       validate(fields()[28], value);
       this.cell_queued_cells = value;
       fieldSetFlags()[28] = true;
       return this; 
     }
-    
-    /** Checks whether the 'cell_queued_cells' field has been set */
+
+    /**
+      * Checks whether the 'cell_queued_cells' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: List<Double> getCellQueuedCells()
+      * @return True if the 'cell_queued_cells' field has been set, false otherwise.
+      */
     public boolean hasCellQueuedCells() {
       return fieldSetFlags()[28];
     }
-    
-    /** Clears the value of the 'cell_queued_cells' field */
+
+
+    /**
+      * Clears the value of the 'cell_queued_cells' field.
+      * metrics-lib/ExtraInfoDescriptor: List<Double> getCellQueuedCells()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearCellQueuedCells() {
       cell_queued_cells = null;
       fieldSetFlags()[28] = false;
       return this;
     }
 
-    /** Gets the value of the 'cell_time_in_queue' field */
+    /**
+      * Gets the value of the 'cell_time_in_queue' field.
+      * metrics-lib/ExtraInfoDescriptor: List<Integer> getCellTimeInQueue()
+      * @return The value.
+      */
     public java.util.List<java.lang.Integer> getCellTimeInQueue() {
       return cell_time_in_queue;
     }
-    
-    /** Sets the value of the 'cell_time_in_queue' field */
+
+    /**
+      * Sets the value of the 'cell_time_in_queue' field.
+      * metrics-lib/ExtraInfoDescriptor: List<Integer> getCellTimeInQueue()
+      * @param value The value of 'cell_time_in_queue'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setCellTimeInQueue(java.util.List<java.lang.Integer> value) {
       validate(fields()[29], value);
       this.cell_time_in_queue = value;
       fieldSetFlags()[29] = true;
       return this; 
     }
-    
-    /** Checks whether the 'cell_time_in_queue' field has been set */
+
+    /**
+      * Checks whether the 'cell_time_in_queue' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: List<Integer> getCellTimeInQueue()
+      * @return True if the 'cell_time_in_queue' field has been set, false otherwise.
+      */
     public boolean hasCellTimeInQueue() {
       return fieldSetFlags()[29];
     }
-    
-    /** Clears the value of the 'cell_time_in_queue' field */
+
+
+    /**
+      * Clears the value of the 'cell_time_in_queue' field.
+      * metrics-lib/ExtraInfoDescriptor: List<Integer> getCellTimeInQueue()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearCellTimeInQueue() {
       cell_time_in_queue = null;
       fieldSetFlags()[29] = false;
       return this;
     }
 
-    /** Gets the value of the 'cell_circuits_per_decile' field */
+    /**
+      * Gets the value of the 'cell_circuits_per_decile' field.
+      * metrics-lib/ExtraInfoDescriptor: int getCellCircuitsPerDecile()
+      * @return The value.
+      */
     public java.lang.Integer getCellCircuitsPerDecile() {
       return cell_circuits_per_decile;
     }
-    
-    /** Sets the value of the 'cell_circuits_per_decile' field */
+
+    /**
+      * Sets the value of the 'cell_circuits_per_decile' field.
+      * metrics-lib/ExtraInfoDescriptor: int getCellCircuitsPerDecile()
+      * @param value The value of 'cell_circuits_per_decile'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setCellCircuitsPerDecile(java.lang.Integer value) {
       validate(fields()[30], value);
       this.cell_circuits_per_decile = value;
       fieldSetFlags()[30] = true;
       return this; 
     }
-    
-    /** Checks whether the 'cell_circuits_per_decile' field has been set */
+
+    /**
+      * Checks whether the 'cell_circuits_per_decile' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: int getCellCircuitsPerDecile()
+      * @return True if the 'cell_circuits_per_decile' field has been set, false otherwise.
+      */
     public boolean hasCellCircuitsPerDecile() {
       return fieldSetFlags()[30];
     }
-    
-    /** Clears the value of the 'cell_circuits_per_decile' field */
+
+
+    /**
+      * Clears the value of the 'cell_circuits_per_decile' field.
+      * metrics-lib/ExtraInfoDescriptor: int getCellCircuitsPerDecile()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearCellCircuitsPerDecile() {
       cell_circuits_per_decile = null;
       fieldSetFlags()[30] = false;
       return this;
     }
 
-    /** Gets the value of the 'conn_bi_direct' field */
+    /**
+      * Gets the value of the 'conn_bi_direct' field.
+      * @return The value.
+      */
     public converTor.relayExtra.ConnBiDirect getConnBiDirect() {
       return conn_bi_direct;
     }
-    
-    /** Sets the value of the 'conn_bi_direct' field */
+
+    /**
+      * Sets the value of the 'conn_bi_direct' field.
+      * @param value The value of 'conn_bi_direct'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setConnBiDirect(converTor.relayExtra.ConnBiDirect value) {
       validate(fields()[31], value);
+      this.conn_bi_directBuilder = null;
       this.conn_bi_direct = value;
       fieldSetFlags()[31] = true;
       return this; 
     }
-    
-    /** Checks whether the 'conn_bi_direct' field has been set */
+
+    /**
+      * Checks whether the 'conn_bi_direct' field has been set.
+      * @return True if the 'conn_bi_direct' field has been set, false otherwise.
+      */
     public boolean hasConnBiDirect() {
       return fieldSetFlags()[31];
     }
-    
-    /** Clears the value of the 'conn_bi_direct' field */
+
+    /**
+     * Gets the Builder instance for the 'conn_bi_direct' field and creates one if it doesn't exist yet.
+     * @return This builder.
+     */
+    public converTor.relayExtra.ConnBiDirect.Builder getConnBiDirectBuilder() {
+      if (conn_bi_directBuilder == null) {
+        if (hasConnBiDirect()) {
+          setConnBiDirectBuilder(converTor.relayExtra.ConnBiDirect.newBuilder(conn_bi_direct));
+        } else {
+          setConnBiDirectBuilder(converTor.relayExtra.ConnBiDirect.newBuilder());
+        }
+      }
+      return conn_bi_directBuilder;
+    }
+
+    /**
+     * Sets the Builder instance for the 'conn_bi_direct' field
+     * @return This builder.
+     */
+    public converTor.relayExtra.RelayExtra.Builder setConnBiDirectBuilder(converTor.relayExtra.ConnBiDirect.Builder value) {
+      clearConnBiDirect();
+      conn_bi_directBuilder = value;
+      return this;
+    }
+
+    /**
+     * Checks whether the 'conn_bi_direct' field has an active Builder instance
+     * @return True if the 'conn_bi_direct' field has an active Builder instance
+     */
+    public boolean hasConnBiDirectBuilder() {
+      return conn_bi_directBuilder != null;
+    }
+
+    /**
+      * Clears the value of the 'conn_bi_direct' field.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearConnBiDirect() {
       conn_bi_direct = null;
+      conn_bi_directBuilder = null;
       fieldSetFlags()[31] = false;
       return this;
     }
 
-    /** Gets the value of the 'exit_stats_end' field */
+    /**
+      * Gets the value of the 'exit_stats_end' field.
+      * @return The value.
+      */
     public converTor.relayExtra.ExitStats getExitStatsEnd() {
       return exit_stats_end;
     }
-    
-    /** Sets the value of the 'exit_stats_end' field */
+
+    /**
+      * Sets the value of the 'exit_stats_end' field.
+      * @param value The value of 'exit_stats_end'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setExitStatsEnd(converTor.relayExtra.ExitStats value) {
       validate(fields()[32], value);
+      this.exit_stats_endBuilder = null;
       this.exit_stats_end = value;
       fieldSetFlags()[32] = true;
       return this; 
     }
-    
-    /** Checks whether the 'exit_stats_end' field has been set */
+
+    /**
+      * Checks whether the 'exit_stats_end' field has been set.
+      * @return True if the 'exit_stats_end' field has been set, false otherwise.
+      */
     public boolean hasExitStatsEnd() {
       return fieldSetFlags()[32];
     }
-    
-    /** Clears the value of the 'exit_stats_end' field */
+
+    /**
+     * Gets the Builder instance for the 'exit_stats_end' field and creates one if it doesn't exist yet.
+     * @return This builder.
+     */
+    public converTor.relayExtra.ExitStats.Builder getExitStatsEndBuilder() {
+      if (exit_stats_endBuilder == null) {
+        if (hasExitStatsEnd()) {
+          setExitStatsEndBuilder(converTor.relayExtra.ExitStats.newBuilder(exit_stats_end));
+        } else {
+          setExitStatsEndBuilder(converTor.relayExtra.ExitStats.newBuilder());
+        }
+      }
+      return exit_stats_endBuilder;
+    }
+
+    /**
+     * Sets the Builder instance for the 'exit_stats_end' field
+     * @return This builder.
+     */
+    public converTor.relayExtra.RelayExtra.Builder setExitStatsEndBuilder(converTor.relayExtra.ExitStats.Builder value) {
+      clearExitStatsEnd();
+      exit_stats_endBuilder = value;
+      return this;
+    }
+
+    /**
+     * Checks whether the 'exit_stats_end' field has an active Builder instance
+     * @return True if the 'exit_stats_end' field has an active Builder instance
+     */
+    public boolean hasExitStatsEndBuilder() {
+      return exit_stats_endBuilder != null;
+    }
+
+    /**
+      * Clears the value of the 'exit_stats_end' field.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearExitStatsEnd() {
       exit_stats_end = null;
+      exit_stats_endBuilder = null;
       fieldSetFlags()[32] = false;
       return this;
     }
 
-    /** Gets the value of the 'exit_kibibytes_written' field */
-    public java.util.Map<java.lang.CharSequence,java.lang.Integer> getExitKibibytesWritten() {
+    /**
+      * Gets the value of the 'exit_kibibytes_written' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesWritten()
+      * @return The value.
+      */
+    public java.util.Map<java.lang.CharSequence,java.lang.Long> getExitKibibytesWritten() {
       return exit_kibibytes_written;
     }
-    
-    /** Sets the value of the 'exit_kibibytes_written' field */
-    public converTor.relayExtra.RelayExtra.Builder setExitKibibytesWritten(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+
+    /**
+      * Sets the value of the 'exit_kibibytes_written' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesWritten()
+      * @param value The value of 'exit_kibibytes_written'.
+      * @return This builder.
+      */
+    public converTor.relayExtra.RelayExtra.Builder setExitKibibytesWritten(java.util.Map<java.lang.CharSequence,java.lang.Long> value) {
       validate(fields()[33], value);
       this.exit_kibibytes_written = value;
       fieldSetFlags()[33] = true;
       return this; 
     }
-    
-    /** Checks whether the 'exit_kibibytes_written' field has been set */
+
+    /**
+      * Checks whether the 'exit_kibibytes_written' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesWritten()
+      * @return True if the 'exit_kibibytes_written' field has been set, false otherwise.
+      */
     public boolean hasExitKibibytesWritten() {
       return fieldSetFlags()[33];
     }
-    
-    /** Clears the value of the 'exit_kibibytes_written' field */
+
+
+    /**
+      * Clears the value of the 'exit_kibibytes_written' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesWritten()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearExitKibibytesWritten() {
       exit_kibibytes_written = null;
       fieldSetFlags()[33] = false;
       return this;
     }
 
-    /** Gets the value of the 'exit_kibibytes_read' field */
-    public java.util.Map<java.lang.CharSequence,java.lang.Integer> getExitKibibytesRead() {
+    /**
+      * Gets the value of the 'exit_kibibytes_read' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesRead()
+      * @return The value.
+      */
+    public java.util.Map<java.lang.CharSequence,java.lang.Long> getExitKibibytesRead() {
       return exit_kibibytes_read;
     }
-    
-    /** Sets the value of the 'exit_kibibytes_read' field */
-    public converTor.relayExtra.RelayExtra.Builder setExitKibibytesRead(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+
+    /**
+      * Sets the value of the 'exit_kibibytes_read' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesRead()
+      * @param value The value of 'exit_kibibytes_read'.
+      * @return This builder.
+      */
+    public converTor.relayExtra.RelayExtra.Builder setExitKibibytesRead(java.util.Map<java.lang.CharSequence,java.lang.Long> value) {
       validate(fields()[34], value);
       this.exit_kibibytes_read = value;
       fieldSetFlags()[34] = true;
       return this; 
     }
-    
-    /** Checks whether the 'exit_kibibytes_read' field has been set */
+
+    /**
+      * Checks whether the 'exit_kibibytes_read' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesRead()
+      * @return True if the 'exit_kibibytes_read' field has been set, false otherwise.
+      */
     public boolean hasExitKibibytesRead() {
       return fieldSetFlags()[34];
     }
-    
-    /** Clears the value of the 'exit_kibibytes_read' field */
+
+
+    /**
+      * Clears the value of the 'exit_kibibytes_read' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesRead()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearExitKibibytesRead() {
       exit_kibibytes_read = null;
       fieldSetFlags()[34] = false;
       return this;
     }
 
-    /** Gets the value of the 'exit_streams_opened' field */
-    public java.util.Map<java.lang.CharSequence,java.lang.Integer> getExitStreamsOpened() {
+    /**
+      * Gets the value of the 'exit_streams_opened' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitStreamsOpened()
+      * @return The value.
+      */
+    public java.util.Map<java.lang.CharSequence,java.lang.Long> getExitStreamsOpened() {
       return exit_streams_opened;
     }
-    
-    /** Sets the value of the 'exit_streams_opened' field */
-    public converTor.relayExtra.RelayExtra.Builder setExitStreamsOpened(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+
+    /**
+      * Sets the value of the 'exit_streams_opened' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitStreamsOpened()
+      * @param value The value of 'exit_streams_opened'.
+      * @return This builder.
+      */
+    public converTor.relayExtra.RelayExtra.Builder setExitStreamsOpened(java.util.Map<java.lang.CharSequence,java.lang.Long> value) {
       validate(fields()[35], value);
       this.exit_streams_opened = value;
       fieldSetFlags()[35] = true;
       return this; 
     }
-    
-    /** Checks whether the 'exit_streams_opened' field has been set */
+
+    /**
+      * Checks whether the 'exit_streams_opened' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitStreamsOpened()
+      * @return True if the 'exit_streams_opened' field has been set, false otherwise.
+      */
     public boolean hasExitStreamsOpened() {
       return fieldSetFlags()[35];
     }
-    
-    /** Clears the value of the 'exit_streams_opened' field */
+
+
+    /**
+      * Clears the value of the 'exit_streams_opened' field.
+      * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitStreamsOpened()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearExitStreamsOpened() {
       exit_streams_opened = null;
       fieldSetFlags()[35] = false;
       return this;
     }
 
-    /** Gets the value of the 'hidserv_stats_end' field */
+    /**
+      * Gets the value of the 'hidserv_stats_end' field.
+      * @return The value.
+      */
     public converTor.relayExtra.HidservStats getHidservStatsEnd() {
       return hidserv_stats_end;
     }
-    
-    /** Sets the value of the 'hidserv_stats_end' field */
+
+    /**
+      * Sets the value of the 'hidserv_stats_end' field.
+      * @param value The value of 'hidserv_stats_end'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setHidservStatsEnd(converTor.relayExtra.HidservStats value) {
       validate(fields()[36], value);
+      this.hidserv_stats_endBuilder = null;
       this.hidserv_stats_end = value;
       fieldSetFlags()[36] = true;
       return this; 
     }
-    
-    /** Checks whether the 'hidserv_stats_end' field has been set */
+
+    /**
+      * Checks whether the 'hidserv_stats_end' field has been set.
+      * @return True if the 'hidserv_stats_end' field has been set, false otherwise.
+      */
     public boolean hasHidservStatsEnd() {
       return fieldSetFlags()[36];
     }
-    
-    /** Clears the value of the 'hidserv_stats_end' field */
+
+    /**
+     * Gets the Builder instance for the 'hidserv_stats_end' field and creates one if it doesn't exist yet.
+     * @return This builder.
+     */
+    public converTor.relayExtra.HidservStats.Builder getHidservStatsEndBuilder() {
+      if (hidserv_stats_endBuilder == null) {
+        if (hasHidservStatsEnd()) {
+          setHidservStatsEndBuilder(converTor.relayExtra.HidservStats.newBuilder(hidserv_stats_end));
+        } else {
+          setHidservStatsEndBuilder(converTor.relayExtra.HidservStats.newBuilder());
+        }
+      }
+      return hidserv_stats_endBuilder;
+    }
+
+    /**
+     * Sets the Builder instance for the 'hidserv_stats_end' field
+     * @return This builder.
+     */
+    public converTor.relayExtra.RelayExtra.Builder setHidservStatsEndBuilder(converTor.relayExtra.HidservStats.Builder value) {
+      clearHidservStatsEnd();
+      hidserv_stats_endBuilder = value;
+      return this;
+    }
+
+    /**
+     * Checks whether the 'hidserv_stats_end' field has an active Builder instance
+     * @return True if the 'hidserv_stats_end' field has an active Builder instance
+     */
+    public boolean hasHidservStatsEndBuilder() {
+      return hidserv_stats_endBuilder != null;
+    }
+
+    /**
+      * Clears the value of the 'hidserv_stats_end' field.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearHidservStatsEnd() {
       hidserv_stats_end = null;
+      hidserv_stats_endBuilder = null;
       fieldSetFlags()[36] = false;
       return this;
     }
 
-    /** Gets the value of the 'hidserv_rend_relayed_cells' field */
+    /**
+      * Gets the value of the 'hidserv_rend_relayed_cells' field.
+      * @return The value.
+      */
     public converTor.relayExtra.HidservRendRelayedCells getHidservRendRelayedCells() {
       return hidserv_rend_relayed_cells;
     }
-    
-    /** Sets the value of the 'hidserv_rend_relayed_cells' field */
+
+    /**
+      * Sets the value of the 'hidserv_rend_relayed_cells' field.
+      * @param value The value of 'hidserv_rend_relayed_cells'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setHidservRendRelayedCells(converTor.relayExtra.HidservRendRelayedCells value) {
       validate(fields()[37], value);
+      this.hidserv_rend_relayed_cellsBuilder = null;
       this.hidserv_rend_relayed_cells = value;
       fieldSetFlags()[37] = true;
       return this; 
     }
-    
-    /** Checks whether the 'hidserv_rend_relayed_cells' field has been set */
+
+    /**
+      * Checks whether the 'hidserv_rend_relayed_cells' field has been set.
+      * @return True if the 'hidserv_rend_relayed_cells' field has been set, false otherwise.
+      */
     public boolean hasHidservRendRelayedCells() {
       return fieldSetFlags()[37];
     }
-    
-    /** Clears the value of the 'hidserv_rend_relayed_cells' field */
+
+    /**
+     * Gets the Builder instance for the 'hidserv_rend_relayed_cells' field and creates one if it doesn't exist yet.
+     * @return This builder.
+     */
+    public converTor.relayExtra.HidservRendRelayedCells.Builder getHidservRendRelayedCellsBuilder() {
+      if (hidserv_rend_relayed_cellsBuilder == null) {
+        if (hasHidservRendRelayedCells()) {
+          setHidservRendRelayedCellsBuilder(converTor.relayExtra.HidservRendRelayedCells.newBuilder(hidserv_rend_relayed_cells));
+        } else {
+          setHidservRendRelayedCellsBuilder(converTor.relayExtra.HidservRendRelayedCells.newBuilder());
+        }
+      }
+      return hidserv_rend_relayed_cellsBuilder;
+    }
+
+    /**
+     * Sets the Builder instance for the 'hidserv_rend_relayed_cells' field
+     * @return This builder.
+     */
+    public converTor.relayExtra.RelayExtra.Builder setHidservRendRelayedCellsBuilder(converTor.relayExtra.HidservRendRelayedCells.Builder value) {
+      clearHidservRendRelayedCells();
+      hidserv_rend_relayed_cellsBuilder = value;
+      return this;
+    }
+
+    /**
+     * Checks whether the 'hidserv_rend_relayed_cells' field has an active Builder instance
+     * @return True if the 'hidserv_rend_relayed_cells' field has an active Builder instance
+     */
+    public boolean hasHidservRendRelayedCellsBuilder() {
+      return hidserv_rend_relayed_cellsBuilder != null;
+    }
+
+    /**
+      * Clears the value of the 'hidserv_rend_relayed_cells' field.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearHidservRendRelayedCells() {
       hidserv_rend_relayed_cells = null;
+      hidserv_rend_relayed_cellsBuilder = null;
       fieldSetFlags()[37] = false;
       return this;
     }
 
-    /** Gets the value of the 'hidserv_dir_onions_seen' field */
+    /**
+      * Gets the value of the 'hidserv_dir_onions_seen' field.
+      * @return The value.
+      */
     public converTor.relayExtra.HidservDirOnionsSeen getHidservDirOnionsSeen() {
       return hidserv_dir_onions_seen;
     }
-    
-    /** Sets the value of the 'hidserv_dir_onions_seen' field */
+
+    /**
+      * Sets the value of the 'hidserv_dir_onions_seen' field.
+      * @param value The value of 'hidserv_dir_onions_seen'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setHidservDirOnionsSeen(converTor.relayExtra.HidservDirOnionsSeen value) {
       validate(fields()[38], value);
+      this.hidserv_dir_onions_seenBuilder = null;
       this.hidserv_dir_onions_seen = value;
       fieldSetFlags()[38] = true;
       return this; 
     }
-    
-    /** Checks whether the 'hidserv_dir_onions_seen' field has been set */
+
+    /**
+      * Checks whether the 'hidserv_dir_onions_seen' field has been set.
+      * @return True if the 'hidserv_dir_onions_seen' field has been set, false otherwise.
+      */
     public boolean hasHidservDirOnionsSeen() {
       return fieldSetFlags()[38];
     }
-    
-    /** Clears the value of the 'hidserv_dir_onions_seen' field */
+
+    /**
+     * Gets the Builder instance for the 'hidserv_dir_onions_seen' field and creates one if it doesn't exist yet.
+     * @return This builder.
+     */
+    public converTor.relayExtra.HidservDirOnionsSeen.Builder getHidservDirOnionsSeenBuilder() {
+      if (hidserv_dir_onions_seenBuilder == null) {
+        if (hasHidservDirOnionsSeen()) {
+          setHidservDirOnionsSeenBuilder(converTor.relayExtra.HidservDirOnionsSeen.newBuilder(hidserv_dir_onions_seen));
+        } else {
+          setHidservDirOnionsSeenBuilder(converTor.relayExtra.HidservDirOnionsSeen.newBuilder());
+        }
+      }
+      return hidserv_dir_onions_seenBuilder;
+    }
+
+    /**
+     * Sets the Builder instance for the 'hidserv_dir_onions_seen' field
+     * @return This builder.
+     */
+    public converTor.relayExtra.RelayExtra.Builder setHidservDirOnionsSeenBuilder(converTor.relayExtra.HidservDirOnionsSeen.Builder value) {
+      clearHidservDirOnionsSeen();
+      hidserv_dir_onions_seenBuilder = value;
+      return this;
+    }
+
+    /**
+     * Checks whether the 'hidserv_dir_onions_seen' field has an active Builder instance
+     * @return True if the 'hidserv_dir_onions_seen' field has an active Builder instance
+     */
+    public boolean hasHidservDirOnionsSeenBuilder() {
+      return hidserv_dir_onions_seenBuilder != null;
+    }
+
+    /**
+      * Clears the value of the 'hidserv_dir_onions_seen' field.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearHidservDirOnionsSeen() {
       hidserv_dir_onions_seen = null;
+      hidserv_dir_onions_seenBuilder = null;
       fieldSetFlags()[38] = false;
       return this;
     }
 
-    /** Gets the value of the 'transport' field */
-    public java.util.List<converTor.relayExtra.Transport> getTransport() {
+    /**
+      * Gets the value of the 'transport' field.
+      * metrics-lib/ExtraInfoDescriptor: List<String> getTransports()
+      * @return The value.
+      */
+    public java.util.List<java.lang.CharSequence> getTransport() {
       return transport;
     }
-    
-    /** Sets the value of the 'transport' field */
-    public converTor.relayExtra.RelayExtra.Builder setTransport(java.util.List<converTor.relayExtra.Transport> value) {
+
+    /**
+      * Sets the value of the 'transport' field.
+      * metrics-lib/ExtraInfoDescriptor: List<String> getTransports()
+      * @param value The value of 'transport'.
+      * @return This builder.
+      */
+    public converTor.relayExtra.RelayExtra.Builder setTransport(java.util.List<java.lang.CharSequence> value) {
       validate(fields()[39], value);
       this.transport = value;
       fieldSetFlags()[39] = true;
       return this; 
     }
-    
-    /** Checks whether the 'transport' field has been set */
+
+    /**
+      * Checks whether the 'transport' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: List<String> getTransports()
+      * @return True if the 'transport' field has been set, false otherwise.
+      */
     public boolean hasTransport() {
       return fieldSetFlags()[39];
     }
-    
-    /** Clears the value of the 'transport' field */
+
+
+    /**
+      * Clears the value of the 'transport' field.
+      * metrics-lib/ExtraInfoDescriptor: List<String> getTransports()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearTransport() {
       transport = null;
       fieldSetFlags()[39] = false;
       return this;
     }
 
-    /** Gets the value of the 'router_sig_ed25519' field */
+    /**
+      * Gets the value of the 'router_sig_ed25519' field.
+      * metrics-lib/ExtraInfoDescriptor: String getRouterSignatureEd25519()
+      * @return The value.
+      */
     public java.lang.Boolean getRouterSigEd25519() {
       return router_sig_ed25519;
     }
-    
-    /** Sets the value of the 'router_sig_ed25519' field */
+
+    /**
+      * Sets the value of the 'router_sig_ed25519' field.
+      * metrics-lib/ExtraInfoDescriptor: String getRouterSignatureEd25519()
+      * @param value The value of 'router_sig_ed25519'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setRouterSigEd25519(java.lang.Boolean value) {
       validate(fields()[40], value);
       this.router_sig_ed25519 = value;
       fieldSetFlags()[40] = true;
       return this; 
     }
-    
-    /** Checks whether the 'router_sig_ed25519' field has been set */
+
+    /**
+      * Checks whether the 'router_sig_ed25519' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: String getRouterSignatureEd25519()
+      * @return True if the 'router_sig_ed25519' field has been set, false otherwise.
+      */
     public boolean hasRouterSigEd25519() {
       return fieldSetFlags()[40];
     }
-    
-    /** Clears the value of the 'router_sig_ed25519' field */
+
+
+    /**
+      * Clears the value of the 'router_sig_ed25519' field.
+      * metrics-lib/ExtraInfoDescriptor: String getRouterSignatureEd25519()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearRouterSigEd25519() {
       router_sig_ed25519 = null;
       fieldSetFlags()[40] = false;
       return this;
     }
 
-    /** Gets the value of the 'router_signature' field */
+    /**
+      * Gets the value of the 'router_signature' field.
+      * metrics-lib/ExtraInfoDescriptor: String getRouterSignature()
+      * @return The value.
+      */
     public java.lang.Boolean getRouterSignature() {
       return router_signature;
     }
-    
-    /** Sets the value of the 'router_signature' field */
+
+    /**
+      * Sets the value of the 'router_signature' field.
+      * metrics-lib/ExtraInfoDescriptor: String getRouterSignature()
+      * @param value The value of 'router_signature'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setRouterSignature(java.lang.Boolean value) {
       validate(fields()[41], value);
       this.router_signature = value;
       fieldSetFlags()[41] = true;
       return this; 
     }
-    
-    /** Checks whether the 'router_signature' field has been set */
+
+    /**
+      * Checks whether the 'router_signature' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: String getRouterSignature()
+      * @return True if the 'router_signature' field has been set, false otherwise.
+      */
     public boolean hasRouterSignature() {
       return fieldSetFlags()[41];
     }
-    
-    /** Clears the value of the 'router_signature' field */
+
+
+    /**
+      * Clears the value of the 'router_signature' field.
+      * metrics-lib/ExtraInfoDescriptor: String getRouterSignature()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearRouterSignature() {
       router_signature = null;
       fieldSetFlags()[41] = false;
       return this;
     }
 
-    /** Gets the value of the 'extra_info_digest' field */
+    /**
+      * Gets the value of the 'extra_info_digest' field.
+      * metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigest()
+      * @return The value.
+      */
     public java.lang.CharSequence getExtraInfoDigest() {
       return extra_info_digest;
     }
-    
-    /** Sets the value of the 'extra_info_digest' field */
+
+    /**
+      * Sets the value of the 'extra_info_digest' field.
+      * metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigest()
+      * @param value The value of 'extra_info_digest'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setExtraInfoDigest(java.lang.CharSequence value) {
       validate(fields()[42], value);
       this.extra_info_digest = value;
       fieldSetFlags()[42] = true;
       return this; 
     }
-    
-    /** Checks whether the 'extra_info_digest' field has been set */
+
+    /**
+      * Checks whether the 'extra_info_digest' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigest()
+      * @return True if the 'extra_info_digest' field has been set, false otherwise.
+      */
     public boolean hasExtraInfoDigest() {
       return fieldSetFlags()[42];
     }
-    
-    /** Clears the value of the 'extra_info_digest' field */
+
+
+    /**
+      * Clears the value of the 'extra_info_digest' field.
+      * metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigest()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearExtraInfoDigest() {
       extra_info_digest = null;
       fieldSetFlags()[42] = false;
       return this;
     }
 
-    /** Gets the value of the 'extra_info_digest_sha256' field */
+    /**
+      * Gets the value of the 'extra_info_digest_sha256' field.
+      * metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigestSha256()
+      * @return The value.
+      */
     public java.lang.CharSequence getExtraInfoDigestSha256() {
       return extra_info_digest_sha256;
     }
-    
-    /** Sets the value of the 'extra_info_digest_sha256' field */
+
+    /**
+      * Sets the value of the 'extra_info_digest_sha256' field.
+      * metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigestSha256()
+      * @param value The value of 'extra_info_digest_sha256'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setExtraInfoDigestSha256(java.lang.CharSequence value) {
       validate(fields()[43], value);
       this.extra_info_digest_sha256 = value;
       fieldSetFlags()[43] = true;
       return this; 
     }
-    
-    /** Checks whether the 'extra_info_digest_sha256' field has been set */
+
+    /**
+      * Checks whether the 'extra_info_digest_sha256' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigestSha256()
+      * @return True if the 'extra_info_digest_sha256' field has been set, false otherwise.
+      */
     public boolean hasExtraInfoDigestSha256() {
       return fieldSetFlags()[43];
     }
-    
-    /** Clears the value of the 'extra_info_digest_sha256' field */
+
+
+    /**
+      * Clears the value of the 'extra_info_digest_sha256' field.
+      * metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigestSha256()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearExtraInfoDigestSha256() {
       extra_info_digest_sha256 = null;
       fieldSetFlags()[43] = false;
       return this;
     }
 
-    /** Gets the value of the 'master_key_ed25519' field */
+    /**
+      * Gets the value of the 'master_key_ed25519' field.
+      * metrics-lib/ExtraInfoDescriptor: String getMasterKeyEd25519()
+      * @return The value.
+      */
     public java.lang.Boolean getMasterKeyEd25519() {
       return master_key_ed25519;
     }
-    
-    /** Sets the value of the 'master_key_ed25519' field */
+
+    /**
+      * Sets the value of the 'master_key_ed25519' field.
+      * metrics-lib/ExtraInfoDescriptor: String getMasterKeyEd25519()
+      * @param value The value of 'master_key_ed25519'.
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder setMasterKeyEd25519(java.lang.Boolean value) {
       validate(fields()[44], value);
       this.master_key_ed25519 = value;
       fieldSetFlags()[44] = true;
       return this; 
     }
-    
-    /** Checks whether the 'master_key_ed25519' field has been set */
+
+    /**
+      * Checks whether the 'master_key_ed25519' field has been set.
+      * metrics-lib/ExtraInfoDescriptor: String getMasterKeyEd25519()
+      * @return True if the 'master_key_ed25519' field has been set, false otherwise.
+      */
     public boolean hasMasterKeyEd25519() {
       return fieldSetFlags()[44];
     }
-    
-    /** Clears the value of the 'master_key_ed25519' field */
+
+
+    /**
+      * Clears the value of the 'master_key_ed25519' field.
+      * metrics-lib/ExtraInfoDescriptor: String getMasterKeyEd25519()
+      * @return This builder.
+      */
     public converTor.relayExtra.RelayExtra.Builder clearMasterKeyEd25519() {
       master_key_ed25519 = null;
       fieldSetFlags()[44] = false;
@@ -2466,15 +3947,31 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       try {
         RelayExtra record = new RelayExtra();
         record.descriptor_type = fieldSetFlags()[0] ? this.descriptor_type : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.extra_info = fieldSetFlags()[1] ? this.extra_info : (converTor.relayExtra.ExtraInfo) defaultValue(fields()[1]);
+        if (extra_infoBuilder != null) {
+          record.extra_info = this.extra_infoBuilder.build();
+        } else {
+          record.extra_info = fieldSetFlags()[1] ? this.extra_info : (converTor.relayExtra.ExtraInfo) defaultValue(fields()[1]);
+        }
         record.identity_ed25519 = fieldSetFlags()[2] ? this.identity_ed25519 : (java.lang.Boolean) defaultValue(fields()[2]);
         record.published = fieldSetFlags()[3] ? this.published : (java.lang.CharSequence) defaultValue(fields()[3]);
-        record.read_history = fieldSetFlags()[4] ? this.read_history : (converTor.relayExtra.ReadHistory) defaultValue(fields()[4]);
-        record.write_history = fieldSetFlags()[5] ? this.write_history : (converTor.relayExtra.WriteHistory) defaultValue(fields()[5]);
+        if (read_historyBuilder != null) {
+          record.read_history = this.read_historyBuilder.build();
+        } else {
+          record.read_history = fieldSetFlags()[4] ? this.read_history : (converTor.relayExtra.ReadHistory) defaultValue(fields()[4]);
+        }
+        if (write_historyBuilder != null) {
+          record.write_history = this.write_historyBuilder.build();
+        } else {
+          record.write_history = fieldSetFlags()[5] ? this.write_history : (converTor.relayExtra.WriteHistory) defaultValue(fields()[5]);
+        }
         record.geoip_db_digest = fieldSetFlags()[6] ? this.geoip_db_digest : (java.lang.CharSequence) defaultValue(fields()[6]);
         record.geoip6_db_digest = fieldSetFlags()[7] ? this.geoip6_db_digest : (java.lang.CharSequence) defaultValue(fields()[7]);
         record.geoip_start_time = fieldSetFlags()[8] ? this.geoip_start_time : (java.lang.CharSequence) defaultValue(fields()[8]);
-        record.dirreq_stats_end = fieldSetFlags()[9] ? this.dirreq_stats_end : (converTor.relayExtra.DirreqStats) defaultValue(fields()[9]);
+        if (dirreq_stats_endBuilder != null) {
+          record.dirreq_stats_end = this.dirreq_stats_endBuilder.build();
+        } else {
+          record.dirreq_stats_end = fieldSetFlags()[9] ? this.dirreq_stats_end : (converTor.relayExtra.DirreqStats) defaultValue(fields()[9]);
+        }
         record.dirreq_v2_ips = fieldSetFlags()[10] ? this.dirreq_v2_ips : (java.util.Map<java.lang.CharSequence,java.lang.Integer>) defaultValue(fields()[10]);
         record.dirreq_v3_ips = fieldSetFlags()[11] ? this.dirreq_v3_ips : (java.util.Map<java.lang.CharSequence,java.lang.Integer>) defaultValue(fields()[11]);
         record.dirreq_v2_reqs = fieldSetFlags()[12] ? this.dirreq_v2_reqs : (java.util.Map<java.lang.CharSequence,java.lang.Integer>) defaultValue(fields()[12]);
@@ -2487,24 +3984,60 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
         record.dirreq_v3_direct_dl = fieldSetFlags()[19] ? this.dirreq_v3_direct_dl : (java.util.Map<java.lang.CharSequence,java.lang.Integer>) defaultValue(fields()[19]);
         record.dirreq_v2_tunneled_dl = fieldSetFlags()[20] ? this.dirreq_v2_tunneled_dl : (java.util.Map<java.lang.CharSequence,java.lang.Integer>) defaultValue(fields()[20]);
         record.dirreq_v3_tunneled_dl = fieldSetFlags()[21] ? this.dirreq_v3_tunneled_dl : (java.util.Map<java.lang.CharSequence,java.lang.Integer>) defaultValue(fields()[21]);
-        record.dirreq_read_history = fieldSetFlags()[22] ? this.dirreq_read_history : (converTor.relayExtra.DirreqReadHistory) defaultValue(fields()[22]);
-        record.dirreq_write_history = fieldSetFlags()[23] ? this.dirreq_write_history : (converTor.relayExtra.DirreqWriteHistory) defaultValue(fields()[23]);
-        record.entry_stats_end = fieldSetFlags()[24] ? this.entry_stats_end : (converTor.relayExtra.EntryStats) defaultValue(fields()[24]);
+        if (dirreq_read_historyBuilder != null) {
+          record.dirreq_read_history = this.dirreq_read_historyBuilder.build();
+        } else {
+          record.dirreq_read_history = fieldSetFlags()[22] ? this.dirreq_read_history : (converTor.relayExtra.DirreqReadHistory) defaultValue(fields()[22]);
+        }
+        if (dirreq_write_historyBuilder != null) {
+          record.dirreq_write_history = this.dirreq_write_historyBuilder.build();
+        } else {
+          record.dirreq_write_history = fieldSetFlags()[23] ? this.dirreq_write_history : (converTor.relayExtra.DirreqWriteHistory) defaultValue(fields()[23]);
+        }
+        if (entry_stats_endBuilder != null) {
+          record.entry_stats_end = this.entry_stats_endBuilder.build();
+        } else {
+          record.entry_stats_end = fieldSetFlags()[24] ? this.entry_stats_end : (converTor.relayExtra.EntryStats) defaultValue(fields()[24]);
+        }
         record.entry_ips = fieldSetFlags()[25] ? this.entry_ips : (java.util.Map<java.lang.CharSequence,java.lang.Integer>) defaultValue(fields()[25]);
-        record.cell_stats_end = fieldSetFlags()[26] ? this.cell_stats_end : (converTor.relayExtra.CellStats) defaultValue(fields()[26]);
+        if (cell_stats_endBuilder != null) {
+          record.cell_stats_end = this.cell_stats_endBuilder.build();
+        } else {
+          record.cell_stats_end = fieldSetFlags()[26] ? this.cell_stats_end : (converTor.relayExtra.CellStats) defaultValue(fields()[26]);
+        }
         record.cell_processed_cells = fieldSetFlags()[27] ? this.cell_processed_cells : (java.util.List<java.lang.Integer>) defaultValue(fields()[27]);
         record.cell_queued_cells = fieldSetFlags()[28] ? this.cell_queued_cells : (java.util.List<java.lang.Double>) defaultValue(fields()[28]);
         record.cell_time_in_queue = fieldSetFlags()[29] ? this.cell_time_in_queue : (java.util.List<java.lang.Integer>) defaultValue(fields()[29]);
         record.cell_circuits_per_decile = fieldSetFlags()[30] ? this.cell_circuits_per_decile : (java.lang.Integer) defaultValue(fields()[30]);
-        record.conn_bi_direct = fieldSetFlags()[31] ? this.conn_bi_direct : (converTor.relayExtra.ConnBiDirect) defaultValue(fields()[31]);
-        record.exit_stats_end = fieldSetFlags()[32] ? this.exit_stats_end : (converTor.relayExtra.ExitStats) defaultValue(fields()[32]);
-        record.exit_kibibytes_written = fieldSetFlags()[33] ? this.exit_kibibytes_written : (java.util.Map<java.lang.CharSequence,java.lang.Integer>) defaultValue(fields()[33]);
-        record.exit_kibibytes_read = fieldSetFlags()[34] ? this.exit_kibibytes_read : (java.util.Map<java.lang.CharSequence,java.lang.Integer>) defaultValue(fields()[34]);
-        record.exit_streams_opened = fieldSetFlags()[35] ? this.exit_streams_opened : (java.util.Map<java.lang.CharSequence,java.lang.Integer>) defaultValue(fields()[35]);
-        record.hidserv_stats_end = fieldSetFlags()[36] ? this.hidserv_stats_end : (converTor.relayExtra.HidservStats) defaultValue(fields()[36]);
-        record.hidserv_rend_relayed_cells = fieldSetFlags()[37] ? this.hidserv_rend_relayed_cells : (converTor.relayExtra.HidservRendRelayedCells) defaultValue(fields()[37]);
-        record.hidserv_dir_onions_seen = fieldSetFlags()[38] ? this.hidserv_dir_onions_seen : (converTor.relayExtra.HidservDirOnionsSeen) defaultValue(fields()[38]);
-        record.transport = fieldSetFlags()[39] ? this.transport : (java.util.List<converTor.relayExtra.Transport>) defaultValue(fields()[39]);
+        if (conn_bi_directBuilder != null) {
+          record.conn_bi_direct = this.conn_bi_directBuilder.build();
+        } else {
+          record.conn_bi_direct = fieldSetFlags()[31] ? this.conn_bi_direct : (converTor.relayExtra.ConnBiDirect) defaultValue(fields()[31]);
+        }
+        if (exit_stats_endBuilder != null) {
+          record.exit_stats_end = this.exit_stats_endBuilder.build();
+        } else {
+          record.exit_stats_end = fieldSetFlags()[32] ? this.exit_stats_end : (converTor.relayExtra.ExitStats) defaultValue(fields()[32]);
+        }
+        record.exit_kibibytes_written = fieldSetFlags()[33] ? this.exit_kibibytes_written : (java.util.Map<java.lang.CharSequence,java.lang.Long>) defaultValue(fields()[33]);
+        record.exit_kibibytes_read = fieldSetFlags()[34] ? this.exit_kibibytes_read : (java.util.Map<java.lang.CharSequence,java.lang.Long>) defaultValue(fields()[34]);
+        record.exit_streams_opened = fieldSetFlags()[35] ? this.exit_streams_opened : (java.util.Map<java.lang.CharSequence,java.lang.Long>) defaultValue(fields()[35]);
+        if (hidserv_stats_endBuilder != null) {
+          record.hidserv_stats_end = this.hidserv_stats_endBuilder.build();
+        } else {
+          record.hidserv_stats_end = fieldSetFlags()[36] ? this.hidserv_stats_end : (converTor.relayExtra.HidservStats) defaultValue(fields()[36]);
+        }
+        if (hidserv_rend_relayed_cellsBuilder != null) {
+          record.hidserv_rend_relayed_cells = this.hidserv_rend_relayed_cellsBuilder.build();
+        } else {
+          record.hidserv_rend_relayed_cells = fieldSetFlags()[37] ? this.hidserv_rend_relayed_cells : (converTor.relayExtra.HidservRendRelayedCells) defaultValue(fields()[37]);
+        }
+        if (hidserv_dir_onions_seenBuilder != null) {
+          record.hidserv_dir_onions_seen = this.hidserv_dir_onions_seenBuilder.build();
+        } else {
+          record.hidserv_dir_onions_seen = fieldSetFlags()[38] ? this.hidserv_dir_onions_seen : (converTor.relayExtra.HidservDirOnionsSeen) defaultValue(fields()[38]);
+        }
+        record.transport = fieldSetFlags()[39] ? this.transport : (java.util.List<java.lang.CharSequence>) defaultValue(fields()[39]);
         record.router_sig_ed25519 = fieldSetFlags()[40] ? this.router_sig_ed25519 : (java.lang.Boolean) defaultValue(fields()[40]);
         record.router_signature = fieldSetFlags()[41] ? this.router_signature : (java.lang.Boolean) defaultValue(fields()[41]);
         record.extra_info_digest = fieldSetFlags()[42] ? this.extra_info_digest : (java.lang.CharSequence) defaultValue(fields()[42]);
@@ -2516,4 +4049,21 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       }
     }
   }
+
+  private static final org.apache.avro.io.DatumWriter
+    WRITER$ = new org.apache.avro.specific.SpecificDatumWriter(SCHEMA$);  
+
+  @Override public void writeExternal(java.io.ObjectOutput out)
+    throws java.io.IOException {
+    WRITER$.write(this, org.apache.avro.specific.SpecificData.getEncoder(out));
+  }
+
+  private static final org.apache.avro.io.DatumReader
+    READER$ = new org.apache.avro.specific.SpecificDatumReader(SCHEMA$);  
+
+  @Override public void readExternal(java.io.ObjectInput in)
+    throws java.io.IOException {
+    READER$.read(this, org.apache.avro.specific.SpecificData.getDecoder(in));
+  }
+
 }

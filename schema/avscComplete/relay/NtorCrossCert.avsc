@@ -1,0 +1,14 @@
+{
+  "type" : "record",
+  "name" : "NtorCrossCert",
+  "namespace" : "converTor.relay",
+  "fields" : [ {
+    "name" : "cert",
+    "type" : "string",
+    "doc" : "metrics-lib/ServerDescriptor: String getNtorOnionKeyCrosscert()"
+  }, {
+    "name" : "bit",
+    "type" : "int",
+    "doc" : "metrics-lib/ServerDescriptor: int getNtorOnionKeyCrosscertSign()"
+  } ]
+}

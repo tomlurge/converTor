@@ -3,17 +3,21 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.bridgeStatus;
+package converTor.bridgeStatus;  
 @SuppressWarnings("all")
-/** bridge-network-status 1.0 */
 @org.apache.avro.specific.AvroGenerated
 public class BridgeStatus extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"BridgeStatus\",\"namespace\":\"converTor.bridgeStatus\",\"doc\":\"bridge-network-status 1.0\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":\"string\",\"default\":\"bridge-network-status 1.0\"},{\"name\":\"published\",\"type\":[\"null\",\"string\"]},{\"name\":\"flag_tresholds\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"FlagTresholds\",\"fields\":[{\"name\":\"stable_uptime\",\"type\":[\"null\",\"long\"]},{\"name\":\"stable_mtbf\",\"type\":[\"null\",\"long\"]},{\"name\":\"enough_mtbf\",\"type\":[\"null\",\"int\"]},{\"name\":\"fast_speed\",\"type\":[\"null\",\"long\"]},{\"name\":\"guard_wfu\",\"type\":[\"null\",\"double\"]},{\"name\":\"guard_tk\",\"type\":[\"null\",\"long\"]},{\"name\":\"guard_bw_inc_exits\",\"type\":[\"null\",\"long\"]},{\"name\":\"guard_bw_exc_exits\",\"type\":[\"null\",\"long\"]},{\"name\":\"ignoring_advertised\",\"type\":[\"null\",\"int\"]}]}]},{\"name\":\"bridges\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Bridge\",\"fields\":[{\"name\":\"r\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"R\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",\"string\"]},{\"name\":\"identity\",\"type\":[\"null\",\"string\"]},{\"name\":\"digest\",\"type\":[\"null\",\"string\"]},{\"name\":\"published\",\"type\":[\"null\",\"string\"]},{\"name\":\"ip\",\"type\":[\"null\",\"string\"]},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"]},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"]}]}]},{\"name\":\"s\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}]},{\"name\":\"w\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"W\",\"fields\":[{\"name\":\"bandwidth\",\"type\":[\"null\",\"long\"]},{\"name\":\"measured\",\"type\":[\"null\",\"long\"]},{\"name\":\"unmeasured\",\"type\":[\"null\",\"boolean\"]}]}]},{\"name\":\"p\",\"type\":[\"null\",\"string\"]},{\"name\":\"a\",\"type\":[\"null\",\"string\"]},{\"name\":\"v\",\"type\":[\"null\",\"string\"]}]}}]}],\"aliases\":[\"bridge_network_status\",\"bridge_network_status_descriptor\"]}");
+  private static final long serialVersionUID = -2333533568613729107L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"BridgeStatus\",\"namespace\":\"converTor.bridgeStatus\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":\"string\",\"default\":\"bridge-network-status 1.0\"},{\"name\":\"published\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getPublishedMillis()\"},{\"name\":\"flag_tresholds\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"FlagTresholds\",\"fields\":[{\"name\":\"stable_uptime\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getStableUptime()\"},{\"name\":\"stable_mtbf\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getStableMtbf()\"},{\"name\":\"enough_mtbf\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: int getEnoughMtbfInfo()\"},{\"name\":\"fast_speed\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getFastBandwidth()\"},{\"name\":\"guard_wfu\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: double getGuardWfu()\"},{\"name\":\"guard_tk\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getGuardTk()\"},{\"name\":\"guard_bw_inc_exits\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getGuardBandwidthIncludingExits()\"},{\"name\":\"guard_bw_exc_exits\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getGuardBandwidthExcludingExits()\"},{\"name\":\"ignoring_advertised\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: int getIgnoringAdvertisedBws()\"}]}],\"doc\":\"see above\"},{\"name\":\"status\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Status\",\"fields\":[{\"name\":\"r\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"R\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDescriptor()\"},{\"name\":\"digest\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: Set<String> getMicrodescriptorDigests()\"},{\"name\":\"published\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getPublishedMillis()\"},{\"name\":\"ip\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getOrPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getDirPort()\"}]}]},{\"name\":\"a\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: getOrAddresses()\"},{\"name\":\"s\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags()\"},{\"name\":\"v\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getVersion()\"},{\"name\":\"w\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"W\",\"fields\":[{\"name\":\"bandwidth\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getBandwidth()\"},{\"name\":\"measured\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getMeasured()\"},{\"name\":\"unmeasured\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/NetworkStatusEntry: boolean getUnmeasured()\"}]}]},{\"name\":\"p\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Policy\",\"fields\":[{\"name\":\"default_policy\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDefaultPolicy()\"},{\"name\":\"port_summary\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getPortList()\"}]}]}]}}],\"doc\":\"metrics-lib/BridgeNetworkStatus: SortedMap<String, NetworkStatusEntry> getStatusEntries()\\n     status entries, one for each contained bridge\"}],\"aliases\":[\"bridge_network_status\"]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   @Deprecated public java.lang.CharSequence descriptor_type;
+  /** metrics-lib/BridgeNetworkStatus: long getPublishedMillis() */
   @Deprecated public java.lang.CharSequence published;
+  /** see above */
   @Deprecated public converTor.bridgeStatus.FlagTresholds flag_tresholds;
-  @Deprecated public java.util.List<converTor.bridgeStatus.Bridge> bridges;
+  /** metrics-lib/BridgeNetworkStatus: SortedMap<String, NetworkStatusEntry> getStatusEntries()
+     status entries, one for each contained bridge */
+  @Deprecated public java.util.List<converTor.bridgeStatus.Status> status;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -24,12 +28,16 @@ public class BridgeStatus extends org.apache.avro.specific.SpecificRecordBase im
 
   /**
    * All-args constructor.
+   * @param published metrics-lib/BridgeNetworkStatus: long getPublishedMillis()
+   * @param flag_tresholds see above
+   * @param status metrics-lib/BridgeNetworkStatus: SortedMap<String, NetworkStatusEntry> getStatusEntries()
+     status entries, one for each contained bridge
    */
-  public BridgeStatus(java.lang.CharSequence descriptor_type, java.lang.CharSequence published, converTor.bridgeStatus.FlagTresholds flag_tresholds, java.util.List<converTor.bridgeStatus.Bridge> bridges) {
+  public BridgeStatus(java.lang.CharSequence descriptor_type, java.lang.CharSequence published, converTor.bridgeStatus.FlagTresholds flag_tresholds, java.util.List<converTor.bridgeStatus.Status> status) {
     this.descriptor_type = descriptor_type;
     this.published = published;
     this.flag_tresholds = flag_tresholds;
-    this.bridges = bridges;
+    this.status = status;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -39,7 +47,7 @@ public class BridgeStatus extends org.apache.avro.specific.SpecificRecordBase im
     case 0: return descriptor_type;
     case 1: return published;
     case 2: return flag_tresholds;
-    case 3: return bridges;
+    case 3: return status;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -50,7 +58,7 @@ public class BridgeStatus extends org.apache.avro.specific.SpecificRecordBase im
     case 0: descriptor_type = (java.lang.CharSequence)value$; break;
     case 1: published = (java.lang.CharSequence)value$; break;
     case 2: flag_tresholds = (converTor.bridgeStatus.FlagTresholds)value$; break;
-    case 3: bridges = (java.util.List<converTor.bridgeStatus.Bridge>)value$; break;
+    case 3: status = (java.util.List<converTor.bridgeStatus.Status>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -72,6 +80,7 @@ public class BridgeStatus extends org.apache.avro.specific.SpecificRecordBase im
 
   /**
    * Gets the value of the 'published' field.
+   * @return metrics-lib/BridgeNetworkStatus: long getPublishedMillis()
    */
   public java.lang.CharSequence getPublished() {
     return published;
@@ -79,6 +88,7 @@ public class BridgeStatus extends org.apache.avro.specific.SpecificRecordBase im
 
   /**
    * Sets the value of the 'published' field.
+   * metrics-lib/BridgeNetworkStatus: long getPublishedMillis()
    * @param value the value to set.
    */
   public void setPublished(java.lang.CharSequence value) {
@@ -87,6 +97,7 @@ public class BridgeStatus extends org.apache.avro.specific.SpecificRecordBase im
 
   /**
    * Gets the value of the 'flag_tresholds' field.
+   * @return see above
    */
   public converTor.bridgeStatus.FlagTresholds getFlagTresholds() {
     return flag_tresholds;
@@ -94,6 +105,7 @@ public class BridgeStatus extends org.apache.avro.specific.SpecificRecordBase im
 
   /**
    * Sets the value of the 'flag_tresholds' field.
+   * see above
    * @param value the value to set.
    */
   public void setFlagTresholds(converTor.bridgeStatus.FlagTresholds value) {
@@ -101,31 +113,46 @@ public class BridgeStatus extends org.apache.avro.specific.SpecificRecordBase im
   }
 
   /**
-   * Gets the value of the 'bridges' field.
+   * Gets the value of the 'status' field.
+   * @return metrics-lib/BridgeNetworkStatus: SortedMap<String, NetworkStatusEntry> getStatusEntries()
+     status entries, one for each contained bridge
    */
-  public java.util.List<converTor.bridgeStatus.Bridge> getBridges() {
-    return bridges;
+  public java.util.List<converTor.bridgeStatus.Status> getStatus() {
+    return status;
   }
 
   /**
-   * Sets the value of the 'bridges' field.
+   * Sets the value of the 'status' field.
+   * metrics-lib/BridgeNetworkStatus: SortedMap<String, NetworkStatusEntry> getStatusEntries()
+     status entries, one for each contained bridge
    * @param value the value to set.
    */
-  public void setBridges(java.util.List<converTor.bridgeStatus.Bridge> value) {
-    this.bridges = value;
+  public void setStatus(java.util.List<converTor.bridgeStatus.Status> value) {
+    this.status = value;
   }
 
-  /** Creates a new BridgeStatus RecordBuilder */
+  /**
+   * Creates a new BridgeStatus RecordBuilder.
+   * @return A new BridgeStatus RecordBuilder
+   */
   public static converTor.bridgeStatus.BridgeStatus.Builder newBuilder() {
     return new converTor.bridgeStatus.BridgeStatus.Builder();
   }
   
-  /** Creates a new BridgeStatus RecordBuilder by copying an existing Builder */
+  /**
+   * Creates a new BridgeStatus RecordBuilder by copying an existing Builder.
+   * @param other The existing builder to copy.
+   * @return A new BridgeStatus RecordBuilder
+   */
   public static converTor.bridgeStatus.BridgeStatus.Builder newBuilder(converTor.bridgeStatus.BridgeStatus.Builder other) {
     return new converTor.bridgeStatus.BridgeStatus.Builder(other);
   }
   
-  /** Creates a new BridgeStatus RecordBuilder by copying an existing BridgeStatus instance */
+  /**
+   * Creates a new BridgeStatus RecordBuilder by copying an existing BridgeStatus instance.
+   * @param other The existing instance to copy.
+   * @return A new BridgeStatus RecordBuilder
+   */
   public static converTor.bridgeStatus.BridgeStatus.Builder newBuilder(converTor.bridgeStatus.BridgeStatus other) {
     return new converTor.bridgeStatus.BridgeStatus.Builder(other);
   }
@@ -137,16 +164,24 @@ public class BridgeStatus extends org.apache.avro.specific.SpecificRecordBase im
     implements org.apache.avro.data.RecordBuilder<BridgeStatus> {
 
     private java.lang.CharSequence descriptor_type;
+    /** metrics-lib/BridgeNetworkStatus: long getPublishedMillis() */
     private java.lang.CharSequence published;
+    /** see above */
     private converTor.bridgeStatus.FlagTresholds flag_tresholds;
-    private java.util.List<converTor.bridgeStatus.Bridge> bridges;
+    private converTor.bridgeStatus.FlagTresholds.Builder flag_tresholdsBuilder;
+    /** metrics-lib/BridgeNetworkStatus: SortedMap<String, NetworkStatusEntry> getStatusEntries()
+     status entries, one for each contained bridge */
+    private java.util.List<converTor.bridgeStatus.Status> status;
 
     /** Creates a new Builder */
     private Builder() {
       super(converTor.bridgeStatus.BridgeStatus.SCHEMA$);
     }
     
-    /** Creates a Builder by copying an existing Builder */
+    /**
+     * Creates a Builder by copying an existing Builder.
+     * @param other The existing Builder to copy.
+     */
     private Builder(converTor.bridgeStatus.BridgeStatus.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.descriptor_type)) {
@@ -161,13 +196,19 @@ public class BridgeStatus extends org.apache.avro.specific.SpecificRecordBase im
         this.flag_tresholds = data().deepCopy(fields()[2].schema(), other.flag_tresholds);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.bridges)) {
-        this.bridges = data().deepCopy(fields()[3].schema(), other.bridges);
+      if (other.hasFlagTresholdsBuilder()) {
+        this.flag_tresholdsBuilder = converTor.bridgeStatus.FlagTresholds.newBuilder(other.getFlagTresholdsBuilder());
+      }
+      if (isValidValue(fields()[3], other.status)) {
+        this.status = data().deepCopy(fields()[3].schema(), other.status);
         fieldSetFlags()[3] = true;
       }
     }
     
-    /** Creates a Builder by copying an existing BridgeStatus instance */
+    /**
+     * Creates a Builder by copying an existing BridgeStatus instance
+     * @param other The existing instance to copy.
+     */
     private Builder(converTor.bridgeStatus.BridgeStatus other) {
             super(converTor.bridgeStatus.BridgeStatus.SCHEMA$);
       if (isValidValue(fields()[0], other.descriptor_type)) {
@@ -182,108 +223,218 @@ public class BridgeStatus extends org.apache.avro.specific.SpecificRecordBase im
         this.flag_tresholds = data().deepCopy(fields()[2].schema(), other.flag_tresholds);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.bridges)) {
-        this.bridges = data().deepCopy(fields()[3].schema(), other.bridges);
+      this.flag_tresholdsBuilder = null;
+      if (isValidValue(fields()[3], other.status)) {
+        this.status = data().deepCopy(fields()[3].schema(), other.status);
         fieldSetFlags()[3] = true;
       }
     }
 
-    /** Gets the value of the 'descriptor_type' field */
+    /**
+      * Gets the value of the 'descriptor_type' field.
+      * @return The value.
+      */
     public java.lang.CharSequence getDescriptorType() {
       return descriptor_type;
     }
-    
-    /** Sets the value of the 'descriptor_type' field */
+
+    /**
+      * Sets the value of the 'descriptor_type' field.
+      * @param value The value of 'descriptor_type'.
+      * @return This builder.
+      */
     public converTor.bridgeStatus.BridgeStatus.Builder setDescriptorType(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.descriptor_type = value;
       fieldSetFlags()[0] = true;
       return this; 
     }
-    
-    /** Checks whether the 'descriptor_type' field has been set */
+
+    /**
+      * Checks whether the 'descriptor_type' field has been set.
+      * @return True if the 'descriptor_type' field has been set, false otherwise.
+      */
     public boolean hasDescriptorType() {
       return fieldSetFlags()[0];
     }
-    
-    /** Clears the value of the 'descriptor_type' field */
+
+
+    /**
+      * Clears the value of the 'descriptor_type' field.
+      * @return This builder.
+      */
     public converTor.bridgeStatus.BridgeStatus.Builder clearDescriptorType() {
       descriptor_type = null;
       fieldSetFlags()[0] = false;
       return this;
     }
 
-    /** Gets the value of the 'published' field */
+    /**
+      * Gets the value of the 'published' field.
+      * metrics-lib/BridgeNetworkStatus: long getPublishedMillis()
+      * @return The value.
+      */
     public java.lang.CharSequence getPublished() {
       return published;
     }
-    
-    /** Sets the value of the 'published' field */
+
+    /**
+      * Sets the value of the 'published' field.
+      * metrics-lib/BridgeNetworkStatus: long getPublishedMillis()
+      * @param value The value of 'published'.
+      * @return This builder.
+      */
     public converTor.bridgeStatus.BridgeStatus.Builder setPublished(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.published = value;
       fieldSetFlags()[1] = true;
       return this; 
     }
-    
-    /** Checks whether the 'published' field has been set */
+
+    /**
+      * Checks whether the 'published' field has been set.
+      * metrics-lib/BridgeNetworkStatus: long getPublishedMillis()
+      * @return True if the 'published' field has been set, false otherwise.
+      */
     public boolean hasPublished() {
       return fieldSetFlags()[1];
     }
-    
-    /** Clears the value of the 'published' field */
+
+
+    /**
+      * Clears the value of the 'published' field.
+      * metrics-lib/BridgeNetworkStatus: long getPublishedMillis()
+      * @return This builder.
+      */
     public converTor.bridgeStatus.BridgeStatus.Builder clearPublished() {
       published = null;
       fieldSetFlags()[1] = false;
       return this;
     }
 
-    /** Gets the value of the 'flag_tresholds' field */
+    /**
+      * Gets the value of the 'flag_tresholds' field.
+      * see above
+      * @return The value.
+      */
     public converTor.bridgeStatus.FlagTresholds getFlagTresholds() {
       return flag_tresholds;
     }
-    
-    /** Sets the value of the 'flag_tresholds' field */
+
+    /**
+      * Sets the value of the 'flag_tresholds' field.
+      * see above
+      * @param value The value of 'flag_tresholds'.
+      * @return This builder.
+      */
     public converTor.bridgeStatus.BridgeStatus.Builder setFlagTresholds(converTor.bridgeStatus.FlagTresholds value) {
       validate(fields()[2], value);
+      this.flag_tresholdsBuilder = null;
       this.flag_tresholds = value;
       fieldSetFlags()[2] = true;
       return this; 
     }
-    
-    /** Checks whether the 'flag_tresholds' field has been set */
+
+    /**
+      * Checks whether the 'flag_tresholds' field has been set.
+      * see above
+      * @return True if the 'flag_tresholds' field has been set, false otherwise.
+      */
     public boolean hasFlagTresholds() {
       return fieldSetFlags()[2];
     }
-    
-    /** Clears the value of the 'flag_tresholds' field */
+
+    /**
+     * Gets the Builder instance for the 'flag_tresholds' field and creates one if it doesn't exist yet.
+     * see above
+     * @return This builder.
+     */
+    public converTor.bridgeStatus.FlagTresholds.Builder getFlagTresholdsBuilder() {
+      if (flag_tresholdsBuilder == null) {
+        if (hasFlagTresholds()) {
+          setFlagTresholdsBuilder(converTor.bridgeStatus.FlagTresholds.newBuilder(flag_tresholds));
+        } else {
+          setFlagTresholdsBuilder(converTor.bridgeStatus.FlagTresholds.newBuilder());
+        }
+      }
+      return flag_tresholdsBuilder;
+    }
+
+    /**
+     * Sets the Builder instance for the 'flag_tresholds' field
+     * see above
+     * @return This builder.
+     */
+    public converTor.bridgeStatus.BridgeStatus.Builder setFlagTresholdsBuilder(converTor.bridgeStatus.FlagTresholds.Builder value) {
+      clearFlagTresholds();
+      flag_tresholdsBuilder = value;
+      return this;
+    }
+
+    /**
+     * Checks whether the 'flag_tresholds' field has an active Builder instance
+     * see above
+     * @return True if the 'flag_tresholds' field has an active Builder instance
+     */
+    public boolean hasFlagTresholdsBuilder() {
+      return flag_tresholdsBuilder != null;
+    }
+
+    /**
+      * Clears the value of the 'flag_tresholds' field.
+      * see above
+      * @return This builder.
+      */
     public converTor.bridgeStatus.BridgeStatus.Builder clearFlagTresholds() {
       flag_tresholds = null;
+      flag_tresholdsBuilder = null;
       fieldSetFlags()[2] = false;
       return this;
     }
 
-    /** Gets the value of the 'bridges' field */
-    public java.util.List<converTor.bridgeStatus.Bridge> getBridges() {
-      return bridges;
+    /**
+      * Gets the value of the 'status' field.
+      * metrics-lib/BridgeNetworkStatus: SortedMap<String, NetworkStatusEntry> getStatusEntries()
+     status entries, one for each contained bridge
+      * @return The value.
+      */
+    public java.util.List<converTor.bridgeStatus.Status> getStatus() {
+      return status;
     }
-    
-    /** Sets the value of the 'bridges' field */
-    public converTor.bridgeStatus.BridgeStatus.Builder setBridges(java.util.List<converTor.bridgeStatus.Bridge> value) {
+
+    /**
+      * Sets the value of the 'status' field.
+      * metrics-lib/BridgeNetworkStatus: SortedMap<String, NetworkStatusEntry> getStatusEntries()
+     status entries, one for each contained bridge
+      * @param value The value of 'status'.
+      * @return This builder.
+      */
+    public converTor.bridgeStatus.BridgeStatus.Builder setStatus(java.util.List<converTor.bridgeStatus.Status> value) {
       validate(fields()[3], value);
-      this.bridges = value;
+      this.status = value;
       fieldSetFlags()[3] = true;
       return this; 
     }
-    
-    /** Checks whether the 'bridges' field has been set */
-    public boolean hasBridges() {
+
+    /**
+      * Checks whether the 'status' field has been set.
+      * metrics-lib/BridgeNetworkStatus: SortedMap<String, NetworkStatusEntry> getStatusEntries()
+     status entries, one for each contained bridge
+      * @return True if the 'status' field has been set, false otherwise.
+      */
+    public boolean hasStatus() {
       return fieldSetFlags()[3];
     }
-    
-    /** Clears the value of the 'bridges' field */
-    public converTor.bridgeStatus.BridgeStatus.Builder clearBridges() {
-      bridges = null;
+
+
+    /**
+      * Clears the value of the 'status' field.
+      * metrics-lib/BridgeNetworkStatus: SortedMap<String, NetworkStatusEntry> getStatusEntries()
+     status entries, one for each contained bridge
+      * @return This builder.
+      */
+    public converTor.bridgeStatus.BridgeStatus.Builder clearStatus() {
+      status = null;
       fieldSetFlags()[3] = false;
       return this;
     }
@@ -294,12 +445,33 @@ public class BridgeStatus extends org.apache.avro.specific.SpecificRecordBase im
         BridgeStatus record = new BridgeStatus();
         record.descriptor_type = fieldSetFlags()[0] ? this.descriptor_type : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.published = fieldSetFlags()[1] ? this.published : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.flag_tresholds = fieldSetFlags()[2] ? this.flag_tresholds : (converTor.bridgeStatus.FlagTresholds) defaultValue(fields()[2]);
-        record.bridges = fieldSetFlags()[3] ? this.bridges : (java.util.List<converTor.bridgeStatus.Bridge>) defaultValue(fields()[3]);
+        if (flag_tresholdsBuilder != null) {
+          record.flag_tresholds = this.flag_tresholdsBuilder.build();
+        } else {
+          record.flag_tresholds = fieldSetFlags()[2] ? this.flag_tresholds : (converTor.bridgeStatus.FlagTresholds) defaultValue(fields()[2]);
+        }
+        record.status = fieldSetFlags()[3] ? this.status : (java.util.List<converTor.bridgeStatus.Status>) defaultValue(fields()[3]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
       }
     }
   }
+
+  private static final org.apache.avro.io.DatumWriter
+    WRITER$ = new org.apache.avro.specific.SpecificDatumWriter(SCHEMA$);  
+
+  @Override public void writeExternal(java.io.ObjectOutput out)
+    throws java.io.IOException {
+    WRITER$.write(this, org.apache.avro.specific.SpecificData.getEncoder(out));
+  }
+
+  private static final org.apache.avro.io.DatumReader
+    READER$ = new org.apache.avro.specific.SpecificDatumReader(SCHEMA$);  
+
+  @Override public void readExternal(java.io.ObjectInput in)
+    throws java.io.IOException {
+    READER$.read(this, org.apache.avro.specific.SpecificData.getDecoder(in));
+  }
+
 }

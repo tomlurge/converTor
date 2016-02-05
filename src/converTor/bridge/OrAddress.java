@@ -3,13 +3,16 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.bridge;
+package converTor.bridge;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class OrAddress extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"OrAddress\",\"namespace\":\"converTor.bridge\",\"fields\":[{\"name\":\"adress\",\"type\":\"string\"},{\"name\":\"port\",\"type\":\"int\"}]}");
+  private static final long serialVersionUID = 737875207930130482L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"OrAddress\",\"namespace\":\"converTor.bridge\",\"fields\":[{\"name\":\"address\",\"type\":\"string\",\"doc\":\"implementation specific\"},{\"name\":\"port\",\"type\":\"int\",\"doc\":\"implementation specific\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
-  @Deprecated public java.lang.CharSequence adress;
+  /** implementation specific */
+  @Deprecated public java.lang.CharSequence address;
+  /** implementation specific */
   @Deprecated public int port;
 
   /**
@@ -21,9 +24,11 @@ public class OrAddress extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * All-args constructor.
+   * @param address implementation specific
+   * @param port implementation specific
    */
-  public OrAddress(java.lang.CharSequence adress, java.lang.Integer port) {
-    this.adress = adress;
+  public OrAddress(java.lang.CharSequence address, java.lang.Integer port) {
+    this.address = address;
     this.port = port;
   }
 
@@ -31,7 +36,7 @@ public class OrAddress extends org.apache.avro.specific.SpecificRecordBase imple
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {
     switch (field$) {
-    case 0: return adress;
+    case 0: return address;
     case 1: return port;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
@@ -40,29 +45,32 @@ public class OrAddress extends org.apache.avro.specific.SpecificRecordBase imple
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: adress = (java.lang.CharSequence)value$; break;
+    case 0: address = (java.lang.CharSequence)value$; break;
     case 1: port = (java.lang.Integer)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
 
   /**
-   * Gets the value of the 'adress' field.
+   * Gets the value of the 'address' field.
+   * @return implementation specific
    */
-  public java.lang.CharSequence getAdress() {
-    return adress;
+  public java.lang.CharSequence getAddress() {
+    return address;
   }
 
   /**
-   * Sets the value of the 'adress' field.
+   * Sets the value of the 'address' field.
+   * implementation specific
    * @param value the value to set.
    */
-  public void setAdress(java.lang.CharSequence value) {
-    this.adress = value;
+  public void setAddress(java.lang.CharSequence value) {
+    this.address = value;
   }
 
   /**
    * Gets the value of the 'port' field.
+   * @return implementation specific
    */
   public java.lang.Integer getPort() {
     return port;
@@ -70,23 +78,35 @@ public class OrAddress extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Sets the value of the 'port' field.
+   * implementation specific
    * @param value the value to set.
    */
   public void setPort(java.lang.Integer value) {
     this.port = value;
   }
 
-  /** Creates a new OrAddress RecordBuilder */
+  /**
+   * Creates a new OrAddress RecordBuilder.
+   * @return A new OrAddress RecordBuilder
+   */
   public static converTor.bridge.OrAddress.Builder newBuilder() {
     return new converTor.bridge.OrAddress.Builder();
   }
   
-  /** Creates a new OrAddress RecordBuilder by copying an existing Builder */
+  /**
+   * Creates a new OrAddress RecordBuilder by copying an existing Builder.
+   * @param other The existing builder to copy.
+   * @return A new OrAddress RecordBuilder
+   */
   public static converTor.bridge.OrAddress.Builder newBuilder(converTor.bridge.OrAddress.Builder other) {
     return new converTor.bridge.OrAddress.Builder(other);
   }
   
-  /** Creates a new OrAddress RecordBuilder by copying an existing OrAddress instance */
+  /**
+   * Creates a new OrAddress RecordBuilder by copying an existing OrAddress instance.
+   * @param other The existing instance to copy.
+   * @return A new OrAddress RecordBuilder
+   */
   public static converTor.bridge.OrAddress.Builder newBuilder(converTor.bridge.OrAddress other) {
     return new converTor.bridge.OrAddress.Builder(other);
   }
@@ -97,7 +117,9 @@ public class OrAddress extends org.apache.avro.specific.SpecificRecordBase imple
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<OrAddress>
     implements org.apache.avro.data.RecordBuilder<OrAddress> {
 
-    private java.lang.CharSequence adress;
+    /** implementation specific */
+    private java.lang.CharSequence address;
+    /** implementation specific */
     private int port;
 
     /** Creates a new Builder */
@@ -105,11 +127,14 @@ public class OrAddress extends org.apache.avro.specific.SpecificRecordBase imple
       super(converTor.bridge.OrAddress.SCHEMA$);
     }
     
-    /** Creates a Builder by copying an existing Builder */
+    /**
+     * Creates a Builder by copying an existing Builder.
+     * @param other The existing Builder to copy.
+     */
     private Builder(converTor.bridge.OrAddress.Builder other) {
       super(other);
-      if (isValidValue(fields()[0], other.adress)) {
-        this.adress = data().deepCopy(fields()[0].schema(), other.adress);
+      if (isValidValue(fields()[0], other.address)) {
+        this.address = data().deepCopy(fields()[0].schema(), other.address);
         fieldSetFlags()[0] = true;
       }
       if (isValidValue(fields()[1], other.port)) {
@@ -118,11 +143,14 @@ public class OrAddress extends org.apache.avro.specific.SpecificRecordBase imple
       }
     }
     
-    /** Creates a Builder by copying an existing OrAddress instance */
+    /**
+     * Creates a Builder by copying an existing OrAddress instance
+     * @param other The existing instance to copy.
+     */
     private Builder(converTor.bridge.OrAddress other) {
             super(converTor.bridge.OrAddress.SCHEMA$);
-      if (isValidValue(fields()[0], other.adress)) {
-        this.adress = data().deepCopy(fields()[0].schema(), other.adress);
+      if (isValidValue(fields()[0], other.address)) {
+        this.address = data().deepCopy(fields()[0].schema(), other.address);
         fieldSetFlags()[0] = true;
       }
       if (isValidValue(fields()[1], other.port)) {
@@ -131,50 +159,86 @@ public class OrAddress extends org.apache.avro.specific.SpecificRecordBase imple
       }
     }
 
-    /** Gets the value of the 'adress' field */
-    public java.lang.CharSequence getAdress() {
-      return adress;
+    /**
+      * Gets the value of the 'address' field.
+      * implementation specific
+      * @return The value.
+      */
+    public java.lang.CharSequence getAddress() {
+      return address;
     }
-    
-    /** Sets the value of the 'adress' field */
-    public converTor.bridge.OrAddress.Builder setAdress(java.lang.CharSequence value) {
+
+    /**
+      * Sets the value of the 'address' field.
+      * implementation specific
+      * @param value The value of 'address'.
+      * @return This builder.
+      */
+    public converTor.bridge.OrAddress.Builder setAddress(java.lang.CharSequence value) {
       validate(fields()[0], value);
-      this.adress = value;
+      this.address = value;
       fieldSetFlags()[0] = true;
       return this; 
     }
-    
-    /** Checks whether the 'adress' field has been set */
-    public boolean hasAdress() {
+
+    /**
+      * Checks whether the 'address' field has been set.
+      * implementation specific
+      * @return True if the 'address' field has been set, false otherwise.
+      */
+    public boolean hasAddress() {
       return fieldSetFlags()[0];
     }
-    
-    /** Clears the value of the 'adress' field */
-    public converTor.bridge.OrAddress.Builder clearAdress() {
-      adress = null;
+
+
+    /**
+      * Clears the value of the 'address' field.
+      * implementation specific
+      * @return This builder.
+      */
+    public converTor.bridge.OrAddress.Builder clearAddress() {
+      address = null;
       fieldSetFlags()[0] = false;
       return this;
     }
 
-    /** Gets the value of the 'port' field */
+    /**
+      * Gets the value of the 'port' field.
+      * implementation specific
+      * @return The value.
+      */
     public java.lang.Integer getPort() {
       return port;
     }
-    
-    /** Sets the value of the 'port' field */
+
+    /**
+      * Sets the value of the 'port' field.
+      * implementation specific
+      * @param value The value of 'port'.
+      * @return This builder.
+      */
     public converTor.bridge.OrAddress.Builder setPort(int value) {
       validate(fields()[1], value);
       this.port = value;
       fieldSetFlags()[1] = true;
       return this; 
     }
-    
-    /** Checks whether the 'port' field has been set */
+
+    /**
+      * Checks whether the 'port' field has been set.
+      * implementation specific
+      * @return True if the 'port' field has been set, false otherwise.
+      */
     public boolean hasPort() {
       return fieldSetFlags()[1];
     }
-    
-    /** Clears the value of the 'port' field */
+
+
+    /**
+      * Clears the value of the 'port' field.
+      * implementation specific
+      * @return This builder.
+      */
     public converTor.bridge.OrAddress.Builder clearPort() {
       fieldSetFlags()[1] = false;
       return this;
@@ -184,7 +248,7 @@ public class OrAddress extends org.apache.avro.specific.SpecificRecordBase imple
     public OrAddress build() {
       try {
         OrAddress record = new OrAddress();
-        record.adress = fieldSetFlags()[0] ? this.adress : (java.lang.CharSequence) defaultValue(fields()[0]);
+        record.address = fieldSetFlags()[0] ? this.address : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.port = fieldSetFlags()[1] ? this.port : (java.lang.Integer) defaultValue(fields()[1]);
         return record;
       } catch (Exception e) {
@@ -192,4 +256,21 @@ public class OrAddress extends org.apache.avro.specific.SpecificRecordBase imple
       }
     }
   }
+
+  private static final org.apache.avro.io.DatumWriter
+    WRITER$ = new org.apache.avro.specific.SpecificDatumWriter(SCHEMA$);  
+
+  @Override public void writeExternal(java.io.ObjectOutput out)
+    throws java.io.IOException {
+    WRITER$.write(this, org.apache.avro.specific.SpecificData.getEncoder(out));
+  }
+
+  private static final org.apache.avro.io.DatumReader
+    READER$ = new org.apache.avro.specific.SpecificDatumReader(SCHEMA$);  
+
+  @Override public void readExternal(java.io.ObjectInput in)
+    throws java.io.IOException {
+    READER$.read(this, org.apache.avro.specific.SpecificData.getDecoder(in));
+  }
+
 }

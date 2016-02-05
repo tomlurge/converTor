@@ -194,6 +194,7 @@ public class ConvertToJson {
       }
     }
     bw.close();
+
   }
 
 
@@ -1457,6 +1458,15 @@ public class ConvertToJson {
 
 
   //  network status vote
+  //  TODO  nickname unklar
+  //        String getSigningKeyDigest()
+  //          theres a method of this name in vote AND in DirectorySignature
+  //          - i'm not sure what the method in vote is for
+  //          rename Router to Status
+  //          router äh status idendity wird jetzt bespielt von getDescriptor
+  //          und es gibt ein neues fingerprint property (mit getFungerprint von vormals idendity)
+  //          und (auch noch ij r) ganz neu "digest": ["","",""...],      getMicrodescriptorDigests
+  //          und id wurde eine eigene klasse
   static class JsonRelayNetworkStatusVote extends JsonDescriptor {
     String descriptor_type;
     Integer network_status_version;
@@ -1682,6 +1692,9 @@ public class ConvertToJson {
 
 
   //  network status consensus
+  //  TODO see vote
+  //  authorities is a map of authorities with key authority and
+  //    as value an array of DirSource entries
   static class JsonRelayNetworkStatusConsensus extends JsonDescriptor {
     String descriptor_type;
     String published;     // this property is not in the spec but eases querying
@@ -1701,6 +1714,9 @@ public class ConvertToJson {
     List<String> server_versions;
     SortedSet<String> known_flags;
     Object params;
+    //  TODO wrong - must be a map -
+    //    metrics-lib/RelayNetworkStatusConsensus:
+    //    SortedMap<String, DirectorySignature> getDirectorySignatures()
     List<Authority> authorities;
     static class Authority {
       DirSource dir_source;
@@ -1877,6 +1893,8 @@ public class ConvertToJson {
 
 
   //  bridge network status
+  //  TODO  status (formerly bridge) is a map not an array
+  //        "a" must map to getOrAddresses (an array)
   static class JsonBridgeNetworkStatus extends JsonDescriptor {
     String descriptor_type;
     String published;
@@ -1996,7 +2014,7 @@ public class ConvertToJson {
       String published;
       String last_status;
       // List<Exit> exit_list;
-      Object exit_list;
+      Object exit_adresses;
     }
     static class Exit {
       String ip;
@@ -2018,14 +2036,14 @@ public class ConvertToJson {
           exitNode.last_status = dateTimeFormat.format(exitEntry.getLastStatusMillis());
           if (exitEntry.getExitAddresses() != null && !exitEntry.getExitAddresses().isEmpty()) {
             if (jagged) {
-              exitNode.exit_list = new HashMap<String, String>();
+              exitNode.exit_adresses = new HashMap<String, String>();
               HashMap<String, String> jaggedList = new HashMap<>();
               for (Map.Entry<String, Long> exitAddress : exitEntry.getExitAddresses().entrySet()) {
                 jaggedList.put(exitAddress.getKey(), dateTimeFormat.format(exitAddress.getValue()));
               }
-              exitNode.exit_list = jaggedList;
+              exitNode.exit_adresses = jaggedList;
             } else {
-              exitNode.exit_list = new ArrayList<Exit>();
+              exitNode.exit_adresses = new ArrayList<Exit>();
                 ArrayList<Exit> flatExit = new ArrayList<>();
                 for (Map.Entry<String, Long> exitAddress : exitEntry.getExitAddresses().entrySet()) {
                   Exit exit = new Exit();
@@ -2033,7 +2051,7 @@ public class ConvertToJson {
                   exit.date = dateTimeFormat.format(exitAddress.getValue());
                   flatExit.add(exit);
                 }
-                exitNode.exit_list = flatExit;
+                exitNode.exit_adresses = flatExit;
             }
           }
           tordnsel.exit_nodes.add(exitNode);
@@ -2115,6 +2133,7 @@ public class ConvertToJson {
       if (desc.getUsedAtMillis() >= 0) {
         torperf.used_at = desc.getUsedAtMillis();
       }
+      //  TODO has to be an is an array, idiot
       if (desc.getPath() != null && !desc.getPath().isEmpty()) {
         torperf.path = desc.getPath();
       }
