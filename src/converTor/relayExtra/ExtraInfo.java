@@ -8,12 +8,12 @@ package converTor.relayExtra;
 @org.apache.avro.specific.AvroGenerated
 public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -2177237164187429443L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ExtraInfo\",\"namespace\":\"converTor.relayExtra\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getNickname()\"},{\"name\":\"fingerprint\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getFingerprint()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ExtraInfo\",\"namespace\":\"converTor.relayExtra\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getNickname()\"},{\"name\":\"fingerprint\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getFingerprint()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/ExtraInfoDescriptor: String getNickname() */
-  @Deprecated public java.lang.CharSequence nickname;
+  @Deprecated public java.lang.String nickname;
   /** metrics-lib/ExtraInfoDescriptor: String getFingerprint() */
-  @Deprecated public java.lang.CharSequence fingerprint;
+  @Deprecated public java.lang.String fingerprint;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -27,7 +27,7 @@ public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase imple
    * @param nickname metrics-lib/ExtraInfoDescriptor: String getNickname()
    * @param fingerprint metrics-lib/ExtraInfoDescriptor: String getFingerprint()
    */
-  public ExtraInfo(java.lang.CharSequence nickname, java.lang.CharSequence fingerprint) {
+  public ExtraInfo(java.lang.String nickname, java.lang.String fingerprint) {
     this.nickname = nickname;
     this.fingerprint = fingerprint;
   }
@@ -45,8 +45,8 @@ public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase imple
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: nickname = (java.lang.CharSequence)value$; break;
-    case 1: fingerprint = (java.lang.CharSequence)value$; break;
+    case 0: nickname = (java.lang.String)value$; break;
+    case 1: fingerprint = (java.lang.String)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -55,7 +55,7 @@ public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase imple
    * Gets the value of the 'nickname' field.
    * @return metrics-lib/ExtraInfoDescriptor: String getNickname()
    */
-  public java.lang.CharSequence getNickname() {
+  public java.lang.String getNickname() {
     return nickname;
   }
 
@@ -64,7 +64,7 @@ public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase imple
    * metrics-lib/ExtraInfoDescriptor: String getNickname()
    * @param value the value to set.
    */
-  public void setNickname(java.lang.CharSequence value) {
+  public void setNickname(java.lang.String value) {
     this.nickname = value;
   }
 
@@ -72,7 +72,7 @@ public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase imple
    * Gets the value of the 'fingerprint' field.
    * @return metrics-lib/ExtraInfoDescriptor: String getFingerprint()
    */
-  public java.lang.CharSequence getFingerprint() {
+  public java.lang.String getFingerprint() {
     return fingerprint;
   }
 
@@ -81,7 +81,7 @@ public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase imple
    * metrics-lib/ExtraInfoDescriptor: String getFingerprint()
    * @param value the value to set.
    */
-  public void setFingerprint(java.lang.CharSequence value) {
+  public void setFingerprint(java.lang.String value) {
     this.fingerprint = value;
   }
 
@@ -118,9 +118,9 @@ public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase imple
     implements org.apache.avro.data.RecordBuilder<ExtraInfo> {
 
     /** metrics-lib/ExtraInfoDescriptor: String getNickname() */
-    private java.lang.CharSequence nickname;
+    private java.lang.String nickname;
     /** metrics-lib/ExtraInfoDescriptor: String getFingerprint() */
-    private java.lang.CharSequence fingerprint;
+    private java.lang.String fingerprint;
 
     /** Creates a new Builder */
     private Builder() {
@@ -164,7 +164,7 @@ public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/ExtraInfoDescriptor: String getNickname()
       * @return The value.
       */
-    public java.lang.CharSequence getNickname() {
+    public java.lang.String getNickname() {
       return nickname;
     }
 
@@ -174,7 +174,7 @@ public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'nickname'.
       * @return This builder.
       */
-    public converTor.relayExtra.ExtraInfo.Builder setNickname(java.lang.CharSequence value) {
+    public converTor.relayExtra.ExtraInfo.Builder setNickname(java.lang.String value) {
       validate(fields()[0], value);
       this.nickname = value;
       fieldSetFlags()[0] = true;
@@ -207,7 +207,7 @@ public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/ExtraInfoDescriptor: String getFingerprint()
       * @return The value.
       */
-    public java.lang.CharSequence getFingerprint() {
+    public java.lang.String getFingerprint() {
       return fingerprint;
     }
 
@@ -217,7 +217,7 @@ public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'fingerprint'.
       * @return This builder.
       */
-    public converTor.relayExtra.ExtraInfo.Builder setFingerprint(java.lang.CharSequence value) {
+    public converTor.relayExtra.ExtraInfo.Builder setFingerprint(java.lang.String value) {
       validate(fields()[1], value);
       this.fingerprint = value;
       fieldSetFlags()[1] = true;
@@ -249,8 +249,8 @@ public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase imple
     public ExtraInfo build() {
       try {
         ExtraInfo record = new ExtraInfo();
-        record.nickname = fieldSetFlags()[0] ? this.nickname : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.fingerprint = fieldSetFlags()[1] ? this.fingerprint : (java.lang.CharSequence) defaultValue(fields()[1]);
+        record.nickname = fieldSetFlags()[0] ? this.nickname : (java.lang.String) defaultValue(fields()[0]);
+        record.fingerprint = fieldSetFlags()[1] ? this.fingerprint : (java.lang.String) defaultValue(fields()[1]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

@@ -8,65 +8,65 @@ package converTor.bridgeExtra;
 @org.apache.avro.specific.AvroGenerated
 public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = 8268846369886544710L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"BridgeExtra\",\"namespace\":\"converTor.bridgeExtra\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":\"string\",\"default\":\"bridge-extra-info 1.3\"},{\"name\":\"extra_info\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ExtraInfo\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getNickname()\"},{\"name\":\"fingerprint\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getFingerprint()\"}]}]},{\"name\":\"identity_ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getIdentityEd25519();\"},{\"name\":\"published\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getPublishedMillis()\"},{\"name\":\"read_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ReadHistory\",\"fields\":[{\"name\":\"date\",\"type\":\"string\",\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":{\"type\":\"array\",\"items\":\"long\"},\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory()\"},{\"name\":\"write_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"WriteHistory\",\"fields\":[{\"name\":\"date\",\"type\":\"string\",\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":{\"type\":\"array\",\"items\":\"long\"},\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory()\"},{\"name\":\"geoip_db_digest\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getGeoipDbDigest()\"},{\"name\":\"geoip6_db_digest\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getGeoip6DbDigest()\"},{\"name\":\"geoip_start_time\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getGeoipStartTimeMillis()\"},{\"name\":\"geoip_client_origins\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getGeoipClientOrigins()\"},{\"name\":\"bridge_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"BridgeStats\",\"fields\":[{\"name\":\"date\",\"type\":\"string\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getBridgeStatsEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getBridgeStatsIntervalLength()\",\"default\":86400}]}]},{\"name\":\"bridge_ips\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIps()\"},{\"name\":\"bridge_ip_versions\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIpVersions()\"},{\"name\":\"bridge_ip_transports\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIpTransports()\"},{\"name\":\"dirreq_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirreqStats\",\"fields\":[{\"name\":\"date\",\"type\":\"string\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getDirreqStatsEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getDirreqStatsIntervalLength()\",\"default\":86400}]}]},{\"name\":\"dirreq_v2_ips\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Ips()\"},{\"name\":\"dirreq_v3_ips\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Ips()\"},{\"name\":\"dirreq_v2_reqs\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Reqs()\"},{\"name\":\"dirreq_v3_reqs\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Reqs()\"},{\"name\":\"dirreq_v2_share\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: double getDirreqV2Share()\"},{\"name\":\"dirreq_v3_share\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: double getDirreqV3Share()\"},{\"name\":\"dirreq_v2_resp\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Resp()\"},{\"name\":\"dirreq_v3_resp\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Resp()\"},{\"name\":\"dirreq_v2_direct_dl\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2DirectDl()\"},{\"name\":\"dirreq_v3_direct_dl\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3DirectDl()\"},{\"name\":\"dirreq_v2_tunneled_dl\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2TunneledDl()\"},{\"name\":\"dirreq_v3_tunneled_dl\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3TunneledDl()\"},{\"name\":\"dirreq_read_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirreqReadHistory\",\"fields\":[{\"name\":\"date\",\"type\":\"string\",\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":{\"type\":\"array\",\"items\":\"long\"},\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory()\"},{\"name\":\"dirreq_write_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirreqWriteHistory\",\"fields\":[{\"name\":\"date\",\"type\":\"string\",\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":{\"type\":\"array\",\"items\":\"long\"},\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory()\"},{\"name\":\"entry_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"EntryStats\",\"fields\":[{\"name\":\"date\",\"type\":\"string\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getEntryStatsEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getEntryStatsIntervalLength()\",\"default\":86400}]}]},{\"name\":\"entry_ips\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getEntryIps()\"},{\"name\":\"cell_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"CellStats\",\"fields\":[{\"name\":\"date\",\"type\":\"string\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getCellStatsEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getCellStatsIntervalLength()\",\"default\":86400}]}]},{\"name\":\"cell_processed_cells\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: List<Integer> getCellProcessedCells()\"},{\"name\":\"cell_queued_cells\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"double\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: List<Double> getCellQueuedCells()\"},{\"name\":\"cell_time_in_queue\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: List<Integer> getCellTimeInQueue()\"},{\"name\":\"cell_circuits_per_decile\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getCellCircuitsPerDecile()\"},{\"name\":\"conn_bi_direct\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ConnBiDirect\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsIntervalLength()\",\"default\":86400},{\"name\":\"below\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBelow()\"},{\"name\":\"read\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int g","etConnBiDirectRead()\"},{\"name\":\"write\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectWrite()\"},{\"name\":\"both\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBoth()\"}]}]},{\"name\":\"exit_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ExitStats\",\"fields\":[{\"name\":\"date\",\"type\":\"string\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getExitStatsEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getExitStatsIntervalLength()\",\"default\":86400}]}]},{\"name\":\"exit_kibibytes_written\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"long\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesWritten()\"},{\"name\":\"exit_kibibytes_read\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"long\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesRead()\"},{\"name\":\"exit_streams_opened\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"long\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitStreamsOpened()\"},{\"name\":\"hidserv_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"HidservStats\",\"fields\":[{\"name\":\"date\",\"type\":\"string\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getHidservStatsEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getHidservStatsIntervalLength()\",\"default\":86400}]}]},{\"name\":\"hidserv_rend_relayed_cells\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"HidservRendRelayedCells\",\"fields\":[{\"name\":\"cells\",\"type\":\"double\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: Double getHidservRendRelayedCells()\"},{\"name\":\"obfuscation\",\"type\":{\"type\":\"map\",\"values\":\"int\"},\"doc\":\"metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservRendRelayedCellsParameters()\"}]}]},{\"name\":\"hidserv_dir_onions_seen\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"HidservDirOnionsSeen\",\"fields\":[{\"name\":\"onions\",\"type\":\"double\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: Double getHidservDirOnionsSeen()\"},{\"name\":\"obfuscation\",\"type\":{\"type\":\"map\",\"values\":\"int\"},\"doc\":\"metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservDirOnionsSeenParameters()\"}]}]},{\"name\":\"transport\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: List<String> getTransports()\"},{\"name\":\"router_sig_ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getRouterSignatureEd25519()\"},{\"name\":\"router_signature\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getRouterSignature()\"},{\"name\":\"extra_info_digest\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigest()\"},{\"name\":\"extra_info_digest_sha256\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigestSha256()\"},{\"name\":\"master_key_ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getMasterKeyEd25519()\"}],\"aliases\":[\"bridge_extra_info\"]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"BridgeExtra\",\"namespace\":\"converTor.bridgeExtra\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"bridge-extra-info 1.3\"},{\"name\":\"extra_info\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ExtraInfo\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getNickname()\"},{\"name\":\"fingerprint\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getFingerprint()\"}]}]},{\"name\":\"identity_ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getIdentityEd25519();\"},{\"name\":\"published\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getPublishedMillis()\"},{\"name\":\"read_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ReadHistory\",\"fields\":[{\"name\":\"date\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":{\"type\":\"array\",\"items\":\"long\"},\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory()\"},{\"name\":\"write_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"WriteHistory\",\"fields\":[{\"name\":\"date\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":{\"type\":\"array\",\"items\":\"long\"},\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory()\"},{\"name\":\"geoip_db_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getGeoipDbDigest()\"},{\"name\":\"geoip6_db_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getGeoip6DbDigest()\"},{\"name\":\"geoip_start_time\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getGeoipStartTimeMillis()\"},{\"name\":\"geoip_client_origins\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getGeoipClientOrigins()\"},{\"name\":\"bridge_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"BridgeStats\",\"fields\":[{\"name\":\"date\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getBridgeStatsEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getBridgeStatsIntervalLength()\",\"default\":86400}]}]},{\"name\":\"bridge_ips\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIps()\"},{\"name\":\"bridge_ip_versions\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIpVersions()\"},{\"name\":\"bridge_ip_transports\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIpTransports()\"},{\"name\":\"dirreq_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirreqStats\",\"fields\":[{\"name\":\"date\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getDirreqStatsEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getDirreqStatsIntervalLength()\",\"default\":86400}]}]},{\"name\":\"dirreq_v2_ips\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Ips()\"},{\"name\":\"dirreq_v3_ips\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Ips()\"},{\"name\":\"dirreq_v2_reqs\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Reqs()\"},{\"name\":\"dirreq_v3_reqs\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Reqs()\"},{\"name\":\"dirreq_v2_share\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: double getDirreqV2Share()\"},{\"name\":\"dirreq_v3_share\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: double getDirreqV3Share()\"},{\"name\":\"dirreq_v2_resp\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Resp()\"},{\"name\":\"dirreq_v3_resp\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Resp()\"},{\"name\":\"dirreq_v2_direct_dl\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2DirectDl()\"},{\"name\":\"dirreq_v3_direct_dl\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3DirectDl()\"},{\"name\":\"dirreq_v2_tunneled_dl\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2TunneledDl()\"},{\"name\":\"dirreq_v3_tunneled_dl\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3TunneledDl()\"},{\"name\":\"dirreq_read_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirreqReadHistory\",\"fields\":[{\"name\":\"date\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":{\"type\":\"array\",\"items\":\"long\"},\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory()\"},{\"name\":\"dirreq_write_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirreqWriteHistory\",\"fields\":[{\"name\":\"date\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":{\"type\":\"array\",\"items\":\"long\"},\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory()\"},{\"name\":\"entry_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"EntryStats\",\"fields\":[{\"name\":\"date\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getEntryStatsEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getEntryStatsIntervalLength()\",\"default\":86400}]}]},{\"name\":\"entry_ips\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getEntryIps()\"},{\"name\":\"cell_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"CellStats\",\"fields\":[{\"name\":\"date\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getCellStatsEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getCellStatsIntervalLength()\",\"default\":86400}]}]},{\"name\":\"cell_processed_cells\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: List<Integer> getCellProcessedCe","lls()\"},{\"name\":\"cell_queued_cells\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"double\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: List<Double> getCellQueuedCells()\"},{\"name\":\"cell_time_in_queue\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: List<Integer> getCellTimeInQueue()\"},{\"name\":\"cell_circuits_per_decile\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getCellCircuitsPerDecile()\"},{\"name\":\"conn_bi_direct\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ConnBiDirect\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsIntervalLength()\",\"default\":86400},{\"name\":\"below\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBelow()\"},{\"name\":\"read\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectRead()\"},{\"name\":\"write\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectWrite()\"},{\"name\":\"both\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBoth()\"}]}]},{\"name\":\"exit_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ExitStats\",\"fields\":[{\"name\":\"date\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getExitStatsEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getExitStatsIntervalLength()\",\"default\":86400}]}]},{\"name\":\"exit_kibibytes_written\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"long\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesWritten()\"},{\"name\":\"exit_kibibytes_read\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"long\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesRead()\"},{\"name\":\"exit_streams_opened\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"long\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitStreamsOpened()\"},{\"name\":\"hidserv_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"HidservStats\",\"fields\":[{\"name\":\"date\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getHidservStatsEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getHidservStatsIntervalLength()\",\"default\":86400}]}]},{\"name\":\"hidserv_rend_relayed_cells\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"HidservRendRelayedCells\",\"fields\":[{\"name\":\"cells\",\"type\":\"double\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: Double getHidservRendRelayedCells()\"},{\"name\":\"obfuscation\",\"type\":{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"},\"doc\":\"metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservRendRelayedCellsParameters()\"}]}]},{\"name\":\"hidserv_dir_onions_seen\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"HidservDirOnionsSeen\",\"fields\":[{\"name\":\"onions\",\"type\":\"double\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: Double getHidservDirOnionsSeen()\"},{\"name\":\"obfuscation\",\"type\":{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"},\"doc\":\"metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservDirOnionsSeenParameters()\"}]}]},{\"name\":\"transport\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: List<String> getTransports()\"},{\"name\":\"router_sig_ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getRouterSignatureEd25519()\"},{\"name\":\"router_signature\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getRouterSignature()\"},{\"name\":\"extra_info_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigest()\"},{\"name\":\"extra_info_digest_sha256\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigestSha256()\"},{\"name\":\"master_key_ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getMasterKeyEd25519()\"}],\"aliases\":[\"bridge_extra_info\"]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
-  @Deprecated public java.lang.CharSequence descriptor_type;
+  @Deprecated public java.lang.String descriptor_type;
   @Deprecated public converTor.bridgeExtra.ExtraInfo extra_info;
   /** metrics-lib/ExtraInfoDescriptor: String getIdentityEd25519(); */
   @Deprecated public java.lang.Boolean identity_ed25519;
   /** metrics-lib/ExtraInfoDescriptor: long getPublishedMillis() */
-  @Deprecated public java.lang.CharSequence published;
+  @Deprecated public java.lang.String published;
   /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory() */
   @Deprecated public converTor.bridgeExtra.ReadHistory read_history;
   /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory() */
   @Deprecated public converTor.bridgeExtra.WriteHistory write_history;
   /** metrics-lib/ExtraInfoDescriptor: String getGeoipDbDigest() */
-  @Deprecated public java.lang.CharSequence geoip_db_digest;
+  @Deprecated public java.lang.String geoip_db_digest;
   /** metrics-lib/ExtraInfoDescriptor: String getGeoip6DbDigest() */
-  @Deprecated public java.lang.CharSequence geoip6_db_digest;
+  @Deprecated public java.lang.String geoip6_db_digest;
   /** metrics-lib/ExtraInfoDescriptor: String getGeoipStartTimeMillis() */
-  @Deprecated public java.lang.CharSequence geoip_start_time;
+  @Deprecated public java.lang.String geoip_start_time;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getGeoipClientOrigins() */
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> geoip_client_origins;
+  @Deprecated public java.util.Map<java.lang.String,java.lang.Integer> geoip_client_origins;
   @Deprecated public converTor.bridgeExtra.BridgeStats bridge_stats_end;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIps() */
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> bridge_ips;
+  @Deprecated public java.util.Map<java.lang.String,java.lang.Integer> bridge_ips;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIpVersions() */
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> bridge_ip_versions;
+  @Deprecated public java.util.Map<java.lang.String,java.lang.Integer> bridge_ip_versions;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIpTransports() */
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> bridge_ip_transports;
+  @Deprecated public java.util.Map<java.lang.String,java.lang.Integer> bridge_ip_transports;
   @Deprecated public converTor.bridgeExtra.DirreqStats dirreq_stats_end;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Ips() */
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_ips;
+  @Deprecated public java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_ips;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Ips() */
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_ips;
+  @Deprecated public java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_ips;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Reqs() */
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_reqs;
+  @Deprecated public java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_reqs;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Reqs() */
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_reqs;
+  @Deprecated public java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_reqs;
   /** metrics-lib/ExtraInfoDescriptor: double getDirreqV2Share() */
   @Deprecated public java.lang.Double dirreq_v2_share;
   /** metrics-lib/ExtraInfoDescriptor: double getDirreqV3Share() */
   @Deprecated public java.lang.Double dirreq_v3_share;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Resp() */
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_resp;
+  @Deprecated public java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_resp;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Resp() */
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_resp;
+  @Deprecated public java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_resp;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2DirectDl() */
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_direct_dl;
+  @Deprecated public java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_direct_dl;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3DirectDl() */
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_direct_dl;
+  @Deprecated public java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_direct_dl;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2TunneledDl() */
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_tunneled_dl;
+  @Deprecated public java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_tunneled_dl;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3TunneledDl() */
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_tunneled_dl;
+  @Deprecated public java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_tunneled_dl;
   /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory() */
   @Deprecated public converTor.bridgeExtra.DirreqReadHistory dirreq_read_history;
   /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory() */
   @Deprecated public converTor.bridgeExtra.DirreqWriteHistory dirreq_write_history;
   @Deprecated public converTor.bridgeExtra.EntryStats entry_stats_end;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getEntryIps() */
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> entry_ips;
+  @Deprecated public java.util.Map<java.lang.String,java.lang.Integer> entry_ips;
   @Deprecated public converTor.bridgeExtra.CellStats cell_stats_end;
   /** metrics-lib/ExtraInfoDescriptor: List<Integer> getCellProcessedCells() */
   @Deprecated public java.util.List<java.lang.Integer> cell_processed_cells;
@@ -79,24 +79,24 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
   @Deprecated public converTor.bridgeExtra.ConnBiDirect conn_bi_direct;
   @Deprecated public converTor.bridgeExtra.ExitStats exit_stats_end;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesWritten() */
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Long> exit_kibibytes_written;
+  @Deprecated public java.util.Map<java.lang.String,java.lang.Long> exit_kibibytes_written;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesRead() */
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Long> exit_kibibytes_read;
+  @Deprecated public java.util.Map<java.lang.String,java.lang.Long> exit_kibibytes_read;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitStreamsOpened() */
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Long> exit_streams_opened;
+  @Deprecated public java.util.Map<java.lang.String,java.lang.Long> exit_streams_opened;
   @Deprecated public converTor.bridgeExtra.HidservStats hidserv_stats_end;
   @Deprecated public converTor.bridgeExtra.HidservRendRelayedCells hidserv_rend_relayed_cells;
   @Deprecated public converTor.bridgeExtra.HidservDirOnionsSeen hidserv_dir_onions_seen;
   /** metrics-lib/ExtraInfoDescriptor: List<String> getTransports() */
-  @Deprecated public java.util.List<java.lang.CharSequence> transport;
+  @Deprecated public java.util.List<java.lang.String> transport;
   /** metrics-lib/ExtraInfoDescriptor: String getRouterSignatureEd25519() */
   @Deprecated public java.lang.Boolean router_sig_ed25519;
   /** metrics-lib/ExtraInfoDescriptor: String getRouterSignature() */
   @Deprecated public java.lang.Boolean router_signature;
   /** metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigest() */
-  @Deprecated public java.lang.CharSequence extra_info_digest;
+  @Deprecated public java.lang.String extra_info_digest;
   /** metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigestSha256() */
-  @Deprecated public java.lang.CharSequence extra_info_digest_sha256;
+  @Deprecated public java.lang.String extra_info_digest_sha256;
   /** metrics-lib/ExtraInfoDescriptor: String getMasterKeyEd25519() */
   @Deprecated public java.lang.Boolean master_key_ed25519;
 
@@ -149,7 +149,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * @param extra_info_digest_sha256 metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigestSha256()
    * @param master_key_ed25519 metrics-lib/ExtraInfoDescriptor: String getMasterKeyEd25519()
    */
-  public BridgeExtra(java.lang.CharSequence descriptor_type, converTor.bridgeExtra.ExtraInfo extra_info, java.lang.Boolean identity_ed25519, java.lang.CharSequence published, converTor.bridgeExtra.ReadHistory read_history, converTor.bridgeExtra.WriteHistory write_history, java.lang.CharSequence geoip_db_digest, java.lang.CharSequence geoip6_db_digest, java.lang.CharSequence geoip_start_time, java.util.Map<java.lang.CharSequence,java.lang.Integer> geoip_client_origins, converTor.bridgeExtra.BridgeStats bridge_stats_end, java.util.Map<java.lang.CharSequence,java.lang.Integer> bridge_ips, java.util.Map<java.lang.CharSequence,java.lang.Integer> bridge_ip_versions, java.util.Map<java.lang.CharSequence,java.lang.Integer> bridge_ip_transports, converTor.bridgeExtra.DirreqStats dirreq_stats_end, java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_ips, java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_ips, java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_reqs, java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_reqs, java.lang.Double dirreq_v2_share, java.lang.Double dirreq_v3_share, java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_resp, java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_resp, java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_direct_dl, java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_direct_dl, java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_tunneled_dl, java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_tunneled_dl, converTor.bridgeExtra.DirreqReadHistory dirreq_read_history, converTor.bridgeExtra.DirreqWriteHistory dirreq_write_history, converTor.bridgeExtra.EntryStats entry_stats_end, java.util.Map<java.lang.CharSequence,java.lang.Integer> entry_ips, converTor.bridgeExtra.CellStats cell_stats_end, java.util.List<java.lang.Integer> cell_processed_cells, java.util.List<java.lang.Double> cell_queued_cells, java.util.List<java.lang.Integer> cell_time_in_queue, java.lang.Integer cell_circuits_per_decile, converTor.bridgeExtra.ConnBiDirect conn_bi_direct, converTor.bridgeExtra.ExitStats exit_stats_end, java.util.Map<java.lang.CharSequence,java.lang.Long> exit_kibibytes_written, java.util.Map<java.lang.CharSequence,java.lang.Long> exit_kibibytes_read, java.util.Map<java.lang.CharSequence,java.lang.Long> exit_streams_opened, converTor.bridgeExtra.HidservStats hidserv_stats_end, converTor.bridgeExtra.HidservRendRelayedCells hidserv_rend_relayed_cells, converTor.bridgeExtra.HidservDirOnionsSeen hidserv_dir_onions_seen, java.util.List<java.lang.CharSequence> transport, java.lang.Boolean router_sig_ed25519, java.lang.Boolean router_signature, java.lang.CharSequence extra_info_digest, java.lang.CharSequence extra_info_digest_sha256, java.lang.Boolean master_key_ed25519) {
+  public BridgeExtra(java.lang.String descriptor_type, converTor.bridgeExtra.ExtraInfo extra_info, java.lang.Boolean identity_ed25519, java.lang.String published, converTor.bridgeExtra.ReadHistory read_history, converTor.bridgeExtra.WriteHistory write_history, java.lang.String geoip_db_digest, java.lang.String geoip6_db_digest, java.lang.String geoip_start_time, java.util.Map<java.lang.String,java.lang.Integer> geoip_client_origins, converTor.bridgeExtra.BridgeStats bridge_stats_end, java.util.Map<java.lang.String,java.lang.Integer> bridge_ips, java.util.Map<java.lang.String,java.lang.Integer> bridge_ip_versions, java.util.Map<java.lang.String,java.lang.Integer> bridge_ip_transports, converTor.bridgeExtra.DirreqStats dirreq_stats_end, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_ips, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_ips, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_reqs, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_reqs, java.lang.Double dirreq_v2_share, java.lang.Double dirreq_v3_share, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_resp, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_resp, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_direct_dl, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_direct_dl, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_tunneled_dl, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_tunneled_dl, converTor.bridgeExtra.DirreqReadHistory dirreq_read_history, converTor.bridgeExtra.DirreqWriteHistory dirreq_write_history, converTor.bridgeExtra.EntryStats entry_stats_end, java.util.Map<java.lang.String,java.lang.Integer> entry_ips, converTor.bridgeExtra.CellStats cell_stats_end, java.util.List<java.lang.Integer> cell_processed_cells, java.util.List<java.lang.Double> cell_queued_cells, java.util.List<java.lang.Integer> cell_time_in_queue, java.lang.Integer cell_circuits_per_decile, converTor.bridgeExtra.ConnBiDirect conn_bi_direct, converTor.bridgeExtra.ExitStats exit_stats_end, java.util.Map<java.lang.String,java.lang.Long> exit_kibibytes_written, java.util.Map<java.lang.String,java.lang.Long> exit_kibibytes_read, java.util.Map<java.lang.String,java.lang.Long> exit_streams_opened, converTor.bridgeExtra.HidservStats hidserv_stats_end, converTor.bridgeExtra.HidservRendRelayedCells hidserv_rend_relayed_cells, converTor.bridgeExtra.HidservDirOnionsSeen hidserv_dir_onions_seen, java.util.List<java.lang.String> transport, java.lang.Boolean router_sig_ed25519, java.lang.Boolean router_signature, java.lang.String extra_info_digest, java.lang.String extra_info_digest_sha256, java.lang.Boolean master_key_ed25519) {
     this.descriptor_type = descriptor_type;
     this.extra_info = extra_info;
     this.identity_ed25519 = identity_ed25519;
@@ -263,37 +263,37 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: descriptor_type = (java.lang.CharSequence)value$; break;
+    case 0: descriptor_type = (java.lang.String)value$; break;
     case 1: extra_info = (converTor.bridgeExtra.ExtraInfo)value$; break;
     case 2: identity_ed25519 = (java.lang.Boolean)value$; break;
-    case 3: published = (java.lang.CharSequence)value$; break;
+    case 3: published = (java.lang.String)value$; break;
     case 4: read_history = (converTor.bridgeExtra.ReadHistory)value$; break;
     case 5: write_history = (converTor.bridgeExtra.WriteHistory)value$; break;
-    case 6: geoip_db_digest = (java.lang.CharSequence)value$; break;
-    case 7: geoip6_db_digest = (java.lang.CharSequence)value$; break;
-    case 8: geoip_start_time = (java.lang.CharSequence)value$; break;
-    case 9: geoip_client_origins = (java.util.Map<java.lang.CharSequence,java.lang.Integer>)value$; break;
+    case 6: geoip_db_digest = (java.lang.String)value$; break;
+    case 7: geoip6_db_digest = (java.lang.String)value$; break;
+    case 8: geoip_start_time = (java.lang.String)value$; break;
+    case 9: geoip_client_origins = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
     case 10: bridge_stats_end = (converTor.bridgeExtra.BridgeStats)value$; break;
-    case 11: bridge_ips = (java.util.Map<java.lang.CharSequence,java.lang.Integer>)value$; break;
-    case 12: bridge_ip_versions = (java.util.Map<java.lang.CharSequence,java.lang.Integer>)value$; break;
-    case 13: bridge_ip_transports = (java.util.Map<java.lang.CharSequence,java.lang.Integer>)value$; break;
+    case 11: bridge_ips = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
+    case 12: bridge_ip_versions = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
+    case 13: bridge_ip_transports = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
     case 14: dirreq_stats_end = (converTor.bridgeExtra.DirreqStats)value$; break;
-    case 15: dirreq_v2_ips = (java.util.Map<java.lang.CharSequence,java.lang.Integer>)value$; break;
-    case 16: dirreq_v3_ips = (java.util.Map<java.lang.CharSequence,java.lang.Integer>)value$; break;
-    case 17: dirreq_v2_reqs = (java.util.Map<java.lang.CharSequence,java.lang.Integer>)value$; break;
-    case 18: dirreq_v3_reqs = (java.util.Map<java.lang.CharSequence,java.lang.Integer>)value$; break;
+    case 15: dirreq_v2_ips = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
+    case 16: dirreq_v3_ips = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
+    case 17: dirreq_v2_reqs = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
+    case 18: dirreq_v3_reqs = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
     case 19: dirreq_v2_share = (java.lang.Double)value$; break;
     case 20: dirreq_v3_share = (java.lang.Double)value$; break;
-    case 21: dirreq_v2_resp = (java.util.Map<java.lang.CharSequence,java.lang.Integer>)value$; break;
-    case 22: dirreq_v3_resp = (java.util.Map<java.lang.CharSequence,java.lang.Integer>)value$; break;
-    case 23: dirreq_v2_direct_dl = (java.util.Map<java.lang.CharSequence,java.lang.Integer>)value$; break;
-    case 24: dirreq_v3_direct_dl = (java.util.Map<java.lang.CharSequence,java.lang.Integer>)value$; break;
-    case 25: dirreq_v2_tunneled_dl = (java.util.Map<java.lang.CharSequence,java.lang.Integer>)value$; break;
-    case 26: dirreq_v3_tunneled_dl = (java.util.Map<java.lang.CharSequence,java.lang.Integer>)value$; break;
+    case 21: dirreq_v2_resp = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
+    case 22: dirreq_v3_resp = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
+    case 23: dirreq_v2_direct_dl = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
+    case 24: dirreq_v3_direct_dl = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
+    case 25: dirreq_v2_tunneled_dl = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
+    case 26: dirreq_v3_tunneled_dl = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
     case 27: dirreq_read_history = (converTor.bridgeExtra.DirreqReadHistory)value$; break;
     case 28: dirreq_write_history = (converTor.bridgeExtra.DirreqWriteHistory)value$; break;
     case 29: entry_stats_end = (converTor.bridgeExtra.EntryStats)value$; break;
-    case 30: entry_ips = (java.util.Map<java.lang.CharSequence,java.lang.Integer>)value$; break;
+    case 30: entry_ips = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
     case 31: cell_stats_end = (converTor.bridgeExtra.CellStats)value$; break;
     case 32: cell_processed_cells = (java.util.List<java.lang.Integer>)value$; break;
     case 33: cell_queued_cells = (java.util.List<java.lang.Double>)value$; break;
@@ -301,17 +301,17 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
     case 35: cell_circuits_per_decile = (java.lang.Integer)value$; break;
     case 36: conn_bi_direct = (converTor.bridgeExtra.ConnBiDirect)value$; break;
     case 37: exit_stats_end = (converTor.bridgeExtra.ExitStats)value$; break;
-    case 38: exit_kibibytes_written = (java.util.Map<java.lang.CharSequence,java.lang.Long>)value$; break;
-    case 39: exit_kibibytes_read = (java.util.Map<java.lang.CharSequence,java.lang.Long>)value$; break;
-    case 40: exit_streams_opened = (java.util.Map<java.lang.CharSequence,java.lang.Long>)value$; break;
+    case 38: exit_kibibytes_written = (java.util.Map<java.lang.String,java.lang.Long>)value$; break;
+    case 39: exit_kibibytes_read = (java.util.Map<java.lang.String,java.lang.Long>)value$; break;
+    case 40: exit_streams_opened = (java.util.Map<java.lang.String,java.lang.Long>)value$; break;
     case 41: hidserv_stats_end = (converTor.bridgeExtra.HidservStats)value$; break;
     case 42: hidserv_rend_relayed_cells = (converTor.bridgeExtra.HidservRendRelayedCells)value$; break;
     case 43: hidserv_dir_onions_seen = (converTor.bridgeExtra.HidservDirOnionsSeen)value$; break;
-    case 44: transport = (java.util.List<java.lang.CharSequence>)value$; break;
+    case 44: transport = (java.util.List<java.lang.String>)value$; break;
     case 45: router_sig_ed25519 = (java.lang.Boolean)value$; break;
     case 46: router_signature = (java.lang.Boolean)value$; break;
-    case 47: extra_info_digest = (java.lang.CharSequence)value$; break;
-    case 48: extra_info_digest_sha256 = (java.lang.CharSequence)value$; break;
+    case 47: extra_info_digest = (java.lang.String)value$; break;
+    case 48: extra_info_digest_sha256 = (java.lang.String)value$; break;
     case 49: master_key_ed25519 = (java.lang.Boolean)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
@@ -320,7 +320,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
   /**
    * Gets the value of the 'descriptor_type' field.
    */
-  public java.lang.CharSequence getDescriptorType() {
+  public java.lang.String getDescriptorType() {
     return descriptor_type;
   }
 
@@ -328,7 +328,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Sets the value of the 'descriptor_type' field.
    * @param value the value to set.
    */
-  public void setDescriptorType(java.lang.CharSequence value) {
+  public void setDescriptorType(java.lang.String value) {
     this.descriptor_type = value;
   }
 
@@ -368,7 +368,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Gets the value of the 'published' field.
    * @return metrics-lib/ExtraInfoDescriptor: long getPublishedMillis()
    */
-  public java.lang.CharSequence getPublished() {
+  public java.lang.String getPublished() {
     return published;
   }
 
@@ -377,7 +377,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * metrics-lib/ExtraInfoDescriptor: long getPublishedMillis()
    * @param value the value to set.
    */
-  public void setPublished(java.lang.CharSequence value) {
+  public void setPublished(java.lang.String value) {
     this.published = value;
   }
 
@@ -419,7 +419,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Gets the value of the 'geoip_db_digest' field.
    * @return metrics-lib/ExtraInfoDescriptor: String getGeoipDbDigest()
    */
-  public java.lang.CharSequence getGeoipDbDigest() {
+  public java.lang.String getGeoipDbDigest() {
     return geoip_db_digest;
   }
 
@@ -428,7 +428,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * metrics-lib/ExtraInfoDescriptor: String getGeoipDbDigest()
    * @param value the value to set.
    */
-  public void setGeoipDbDigest(java.lang.CharSequence value) {
+  public void setGeoipDbDigest(java.lang.String value) {
     this.geoip_db_digest = value;
   }
 
@@ -436,7 +436,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Gets the value of the 'geoip6_db_digest' field.
    * @return metrics-lib/ExtraInfoDescriptor: String getGeoip6DbDigest()
    */
-  public java.lang.CharSequence getGeoip6DbDigest() {
+  public java.lang.String getGeoip6DbDigest() {
     return geoip6_db_digest;
   }
 
@@ -445,7 +445,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * metrics-lib/ExtraInfoDescriptor: String getGeoip6DbDigest()
    * @param value the value to set.
    */
-  public void setGeoip6DbDigest(java.lang.CharSequence value) {
+  public void setGeoip6DbDigest(java.lang.String value) {
     this.geoip6_db_digest = value;
   }
 
@@ -453,7 +453,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Gets the value of the 'geoip_start_time' field.
    * @return metrics-lib/ExtraInfoDescriptor: String getGeoipStartTimeMillis()
    */
-  public java.lang.CharSequence getGeoipStartTime() {
+  public java.lang.String getGeoipStartTime() {
     return geoip_start_time;
   }
 
@@ -462,7 +462,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * metrics-lib/ExtraInfoDescriptor: String getGeoipStartTimeMillis()
    * @param value the value to set.
    */
-  public void setGeoipStartTime(java.lang.CharSequence value) {
+  public void setGeoipStartTime(java.lang.String value) {
     this.geoip_start_time = value;
   }
 
@@ -470,7 +470,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Gets the value of the 'geoip_client_origins' field.
    * @return metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getGeoipClientOrigins()
    */
-  public java.util.Map<java.lang.CharSequence,java.lang.Integer> getGeoipClientOrigins() {
+  public java.util.Map<java.lang.String,java.lang.Integer> getGeoipClientOrigins() {
     return geoip_client_origins;
   }
 
@@ -479,7 +479,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getGeoipClientOrigins()
    * @param value the value to set.
    */
-  public void setGeoipClientOrigins(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+  public void setGeoipClientOrigins(java.util.Map<java.lang.String,java.lang.Integer> value) {
     this.geoip_client_origins = value;
   }
 
@@ -502,7 +502,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Gets the value of the 'bridge_ips' field.
    * @return metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIps()
    */
-  public java.util.Map<java.lang.CharSequence,java.lang.Integer> getBridgeIps() {
+  public java.util.Map<java.lang.String,java.lang.Integer> getBridgeIps() {
     return bridge_ips;
   }
 
@@ -511,7 +511,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIps()
    * @param value the value to set.
    */
-  public void setBridgeIps(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+  public void setBridgeIps(java.util.Map<java.lang.String,java.lang.Integer> value) {
     this.bridge_ips = value;
   }
 
@@ -519,7 +519,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Gets the value of the 'bridge_ip_versions' field.
    * @return metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIpVersions()
    */
-  public java.util.Map<java.lang.CharSequence,java.lang.Integer> getBridgeIpVersions() {
+  public java.util.Map<java.lang.String,java.lang.Integer> getBridgeIpVersions() {
     return bridge_ip_versions;
   }
 
@@ -528,7 +528,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIpVersions()
    * @param value the value to set.
    */
-  public void setBridgeIpVersions(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+  public void setBridgeIpVersions(java.util.Map<java.lang.String,java.lang.Integer> value) {
     this.bridge_ip_versions = value;
   }
 
@@ -536,7 +536,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Gets the value of the 'bridge_ip_transports' field.
    * @return metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIpTransports()
    */
-  public java.util.Map<java.lang.CharSequence,java.lang.Integer> getBridgeIpTransports() {
+  public java.util.Map<java.lang.String,java.lang.Integer> getBridgeIpTransports() {
     return bridge_ip_transports;
   }
 
@@ -545,7 +545,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIpTransports()
    * @param value the value to set.
    */
-  public void setBridgeIpTransports(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+  public void setBridgeIpTransports(java.util.Map<java.lang.String,java.lang.Integer> value) {
     this.bridge_ip_transports = value;
   }
 
@@ -568,7 +568,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Gets the value of the 'dirreq_v2_ips' field.
    * @return metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Ips()
    */
-  public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV2Ips() {
+  public java.util.Map<java.lang.String,java.lang.Integer> getDirreqV2Ips() {
     return dirreq_v2_ips;
   }
 
@@ -577,7 +577,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Ips()
    * @param value the value to set.
    */
-  public void setDirreqV2Ips(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+  public void setDirreqV2Ips(java.util.Map<java.lang.String,java.lang.Integer> value) {
     this.dirreq_v2_ips = value;
   }
 
@@ -585,7 +585,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Gets the value of the 'dirreq_v3_ips' field.
    * @return metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Ips()
    */
-  public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV3Ips() {
+  public java.util.Map<java.lang.String,java.lang.Integer> getDirreqV3Ips() {
     return dirreq_v3_ips;
   }
 
@@ -594,7 +594,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Ips()
    * @param value the value to set.
    */
-  public void setDirreqV3Ips(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+  public void setDirreqV3Ips(java.util.Map<java.lang.String,java.lang.Integer> value) {
     this.dirreq_v3_ips = value;
   }
 
@@ -602,7 +602,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Gets the value of the 'dirreq_v2_reqs' field.
    * @return metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Reqs()
    */
-  public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV2Reqs() {
+  public java.util.Map<java.lang.String,java.lang.Integer> getDirreqV2Reqs() {
     return dirreq_v2_reqs;
   }
 
@@ -611,7 +611,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Reqs()
    * @param value the value to set.
    */
-  public void setDirreqV2Reqs(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+  public void setDirreqV2Reqs(java.util.Map<java.lang.String,java.lang.Integer> value) {
     this.dirreq_v2_reqs = value;
   }
 
@@ -619,7 +619,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Gets the value of the 'dirreq_v3_reqs' field.
    * @return metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Reqs()
    */
-  public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV3Reqs() {
+  public java.util.Map<java.lang.String,java.lang.Integer> getDirreqV3Reqs() {
     return dirreq_v3_reqs;
   }
 
@@ -628,7 +628,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Reqs()
    * @param value the value to set.
    */
-  public void setDirreqV3Reqs(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+  public void setDirreqV3Reqs(java.util.Map<java.lang.String,java.lang.Integer> value) {
     this.dirreq_v3_reqs = value;
   }
 
@@ -670,7 +670,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Gets the value of the 'dirreq_v2_resp' field.
    * @return metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Resp()
    */
-  public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV2Resp() {
+  public java.util.Map<java.lang.String,java.lang.Integer> getDirreqV2Resp() {
     return dirreq_v2_resp;
   }
 
@@ -679,7 +679,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Resp()
    * @param value the value to set.
    */
-  public void setDirreqV2Resp(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+  public void setDirreqV2Resp(java.util.Map<java.lang.String,java.lang.Integer> value) {
     this.dirreq_v2_resp = value;
   }
 
@@ -687,7 +687,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Gets the value of the 'dirreq_v3_resp' field.
    * @return metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Resp()
    */
-  public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV3Resp() {
+  public java.util.Map<java.lang.String,java.lang.Integer> getDirreqV3Resp() {
     return dirreq_v3_resp;
   }
 
@@ -696,7 +696,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Resp()
    * @param value the value to set.
    */
-  public void setDirreqV3Resp(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+  public void setDirreqV3Resp(java.util.Map<java.lang.String,java.lang.Integer> value) {
     this.dirreq_v3_resp = value;
   }
 
@@ -704,7 +704,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Gets the value of the 'dirreq_v2_direct_dl' field.
    * @return metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2DirectDl()
    */
-  public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV2DirectDl() {
+  public java.util.Map<java.lang.String,java.lang.Integer> getDirreqV2DirectDl() {
     return dirreq_v2_direct_dl;
   }
 
@@ -713,7 +713,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2DirectDl()
    * @param value the value to set.
    */
-  public void setDirreqV2DirectDl(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+  public void setDirreqV2DirectDl(java.util.Map<java.lang.String,java.lang.Integer> value) {
     this.dirreq_v2_direct_dl = value;
   }
 
@@ -721,7 +721,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Gets the value of the 'dirreq_v3_direct_dl' field.
    * @return metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3DirectDl()
    */
-  public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV3DirectDl() {
+  public java.util.Map<java.lang.String,java.lang.Integer> getDirreqV3DirectDl() {
     return dirreq_v3_direct_dl;
   }
 
@@ -730,7 +730,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3DirectDl()
    * @param value the value to set.
    */
-  public void setDirreqV3DirectDl(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+  public void setDirreqV3DirectDl(java.util.Map<java.lang.String,java.lang.Integer> value) {
     this.dirreq_v3_direct_dl = value;
   }
 
@@ -738,7 +738,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Gets the value of the 'dirreq_v2_tunneled_dl' field.
    * @return metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2TunneledDl()
    */
-  public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV2TunneledDl() {
+  public java.util.Map<java.lang.String,java.lang.Integer> getDirreqV2TunneledDl() {
     return dirreq_v2_tunneled_dl;
   }
 
@@ -747,7 +747,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2TunneledDl()
    * @param value the value to set.
    */
-  public void setDirreqV2TunneledDl(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+  public void setDirreqV2TunneledDl(java.util.Map<java.lang.String,java.lang.Integer> value) {
     this.dirreq_v2_tunneled_dl = value;
   }
 
@@ -755,7 +755,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Gets the value of the 'dirreq_v3_tunneled_dl' field.
    * @return metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3TunneledDl()
    */
-  public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV3TunneledDl() {
+  public java.util.Map<java.lang.String,java.lang.Integer> getDirreqV3TunneledDl() {
     return dirreq_v3_tunneled_dl;
   }
 
@@ -764,7 +764,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3TunneledDl()
    * @param value the value to set.
    */
-  public void setDirreqV3TunneledDl(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+  public void setDirreqV3TunneledDl(java.util.Map<java.lang.String,java.lang.Integer> value) {
     this.dirreq_v3_tunneled_dl = value;
   }
 
@@ -821,7 +821,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Gets the value of the 'entry_ips' field.
    * @return metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getEntryIps()
    */
-  public java.util.Map<java.lang.CharSequence,java.lang.Integer> getEntryIps() {
+  public java.util.Map<java.lang.String,java.lang.Integer> getEntryIps() {
     return entry_ips;
   }
 
@@ -830,7 +830,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getEntryIps()
    * @param value the value to set.
    */
-  public void setEntryIps(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+  public void setEntryIps(java.util.Map<java.lang.String,java.lang.Integer> value) {
     this.entry_ips = value;
   }
 
@@ -951,7 +951,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Gets the value of the 'exit_kibibytes_written' field.
    * @return metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesWritten()
    */
-  public java.util.Map<java.lang.CharSequence,java.lang.Long> getExitKibibytesWritten() {
+  public java.util.Map<java.lang.String,java.lang.Long> getExitKibibytesWritten() {
     return exit_kibibytes_written;
   }
 
@@ -960,7 +960,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesWritten()
    * @param value the value to set.
    */
-  public void setExitKibibytesWritten(java.util.Map<java.lang.CharSequence,java.lang.Long> value) {
+  public void setExitKibibytesWritten(java.util.Map<java.lang.String,java.lang.Long> value) {
     this.exit_kibibytes_written = value;
   }
 
@@ -968,7 +968,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Gets the value of the 'exit_kibibytes_read' field.
    * @return metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesRead()
    */
-  public java.util.Map<java.lang.CharSequence,java.lang.Long> getExitKibibytesRead() {
+  public java.util.Map<java.lang.String,java.lang.Long> getExitKibibytesRead() {
     return exit_kibibytes_read;
   }
 
@@ -977,7 +977,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesRead()
    * @param value the value to set.
    */
-  public void setExitKibibytesRead(java.util.Map<java.lang.CharSequence,java.lang.Long> value) {
+  public void setExitKibibytesRead(java.util.Map<java.lang.String,java.lang.Long> value) {
     this.exit_kibibytes_read = value;
   }
 
@@ -985,7 +985,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Gets the value of the 'exit_streams_opened' field.
    * @return metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitStreamsOpened()
    */
-  public java.util.Map<java.lang.CharSequence,java.lang.Long> getExitStreamsOpened() {
+  public java.util.Map<java.lang.String,java.lang.Long> getExitStreamsOpened() {
     return exit_streams_opened;
   }
 
@@ -994,7 +994,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitStreamsOpened()
    * @param value the value to set.
    */
-  public void setExitStreamsOpened(java.util.Map<java.lang.CharSequence,java.lang.Long> value) {
+  public void setExitStreamsOpened(java.util.Map<java.lang.String,java.lang.Long> value) {
     this.exit_streams_opened = value;
   }
 
@@ -1047,7 +1047,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Gets the value of the 'transport' field.
    * @return metrics-lib/ExtraInfoDescriptor: List<String> getTransports()
    */
-  public java.util.List<java.lang.CharSequence> getTransport() {
+  public java.util.List<java.lang.String> getTransport() {
     return transport;
   }
 
@@ -1056,7 +1056,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * metrics-lib/ExtraInfoDescriptor: List<String> getTransports()
    * @param value the value to set.
    */
-  public void setTransport(java.util.List<java.lang.CharSequence> value) {
+  public void setTransport(java.util.List<java.lang.String> value) {
     this.transport = value;
   }
 
@@ -1098,7 +1098,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Gets the value of the 'extra_info_digest' field.
    * @return metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigest()
    */
-  public java.lang.CharSequence getExtraInfoDigest() {
+  public java.lang.String getExtraInfoDigest() {
     return extra_info_digest;
   }
 
@@ -1107,7 +1107,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigest()
    * @param value the value to set.
    */
-  public void setExtraInfoDigest(java.lang.CharSequence value) {
+  public void setExtraInfoDigest(java.lang.String value) {
     this.extra_info_digest = value;
   }
 
@@ -1115,7 +1115,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Gets the value of the 'extra_info_digest_sha256' field.
    * @return metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigestSha256()
    */
-  public java.lang.CharSequence getExtraInfoDigestSha256() {
+  public java.lang.String getExtraInfoDigestSha256() {
     return extra_info_digest_sha256;
   }
 
@@ -1124,7 +1124,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigestSha256()
    * @param value the value to set.
    */
-  public void setExtraInfoDigestSha256(java.lang.CharSequence value) {
+  public void setExtraInfoDigestSha256(java.lang.String value) {
     this.extra_info_digest_sha256 = value;
   }
 
@@ -1177,13 +1177,13 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<BridgeExtra>
     implements org.apache.avro.data.RecordBuilder<BridgeExtra> {
 
-    private java.lang.CharSequence descriptor_type;
+    private java.lang.String descriptor_type;
     private converTor.bridgeExtra.ExtraInfo extra_info;
     private converTor.bridgeExtra.ExtraInfo.Builder extra_infoBuilder;
     /** metrics-lib/ExtraInfoDescriptor: String getIdentityEd25519(); */
     private java.lang.Boolean identity_ed25519;
     /** metrics-lib/ExtraInfoDescriptor: long getPublishedMillis() */
-    private java.lang.CharSequence published;
+    private java.lang.String published;
     /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory() */
     private converTor.bridgeExtra.ReadHistory read_history;
     private converTor.bridgeExtra.ReadHistory.Builder read_historyBuilder;
@@ -1191,47 +1191,47 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
     private converTor.bridgeExtra.WriteHistory write_history;
     private converTor.bridgeExtra.WriteHistory.Builder write_historyBuilder;
     /** metrics-lib/ExtraInfoDescriptor: String getGeoipDbDigest() */
-    private java.lang.CharSequence geoip_db_digest;
+    private java.lang.String geoip_db_digest;
     /** metrics-lib/ExtraInfoDescriptor: String getGeoip6DbDigest() */
-    private java.lang.CharSequence geoip6_db_digest;
+    private java.lang.String geoip6_db_digest;
     /** metrics-lib/ExtraInfoDescriptor: String getGeoipStartTimeMillis() */
-    private java.lang.CharSequence geoip_start_time;
+    private java.lang.String geoip_start_time;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getGeoipClientOrigins() */
-    private java.util.Map<java.lang.CharSequence,java.lang.Integer> geoip_client_origins;
+    private java.util.Map<java.lang.String,java.lang.Integer> geoip_client_origins;
     private converTor.bridgeExtra.BridgeStats bridge_stats_end;
     private converTor.bridgeExtra.BridgeStats.Builder bridge_stats_endBuilder;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIps() */
-    private java.util.Map<java.lang.CharSequence,java.lang.Integer> bridge_ips;
+    private java.util.Map<java.lang.String,java.lang.Integer> bridge_ips;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIpVersions() */
-    private java.util.Map<java.lang.CharSequence,java.lang.Integer> bridge_ip_versions;
+    private java.util.Map<java.lang.String,java.lang.Integer> bridge_ip_versions;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIpTransports() */
-    private java.util.Map<java.lang.CharSequence,java.lang.Integer> bridge_ip_transports;
+    private java.util.Map<java.lang.String,java.lang.Integer> bridge_ip_transports;
     private converTor.bridgeExtra.DirreqStats dirreq_stats_end;
     private converTor.bridgeExtra.DirreqStats.Builder dirreq_stats_endBuilder;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Ips() */
-    private java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_ips;
+    private java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_ips;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Ips() */
-    private java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_ips;
+    private java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_ips;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Reqs() */
-    private java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_reqs;
+    private java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_reqs;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Reqs() */
-    private java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_reqs;
+    private java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_reqs;
     /** metrics-lib/ExtraInfoDescriptor: double getDirreqV2Share() */
     private java.lang.Double dirreq_v2_share;
     /** metrics-lib/ExtraInfoDescriptor: double getDirreqV3Share() */
     private java.lang.Double dirreq_v3_share;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Resp() */
-    private java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_resp;
+    private java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_resp;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Resp() */
-    private java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_resp;
+    private java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_resp;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2DirectDl() */
-    private java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_direct_dl;
+    private java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_direct_dl;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3DirectDl() */
-    private java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_direct_dl;
+    private java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_direct_dl;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2TunneledDl() */
-    private java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v2_tunneled_dl;
+    private java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_tunneled_dl;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3TunneledDl() */
-    private java.util.Map<java.lang.CharSequence,java.lang.Integer> dirreq_v3_tunneled_dl;
+    private java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_tunneled_dl;
     /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory() */
     private converTor.bridgeExtra.DirreqReadHistory dirreq_read_history;
     private converTor.bridgeExtra.DirreqReadHistory.Builder dirreq_read_historyBuilder;
@@ -1241,7 +1241,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
     private converTor.bridgeExtra.EntryStats entry_stats_end;
     private converTor.bridgeExtra.EntryStats.Builder entry_stats_endBuilder;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getEntryIps() */
-    private java.util.Map<java.lang.CharSequence,java.lang.Integer> entry_ips;
+    private java.util.Map<java.lang.String,java.lang.Integer> entry_ips;
     private converTor.bridgeExtra.CellStats cell_stats_end;
     private converTor.bridgeExtra.CellStats.Builder cell_stats_endBuilder;
     /** metrics-lib/ExtraInfoDescriptor: List<Integer> getCellProcessedCells() */
@@ -1257,11 +1257,11 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
     private converTor.bridgeExtra.ExitStats exit_stats_end;
     private converTor.bridgeExtra.ExitStats.Builder exit_stats_endBuilder;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesWritten() */
-    private java.util.Map<java.lang.CharSequence,java.lang.Long> exit_kibibytes_written;
+    private java.util.Map<java.lang.String,java.lang.Long> exit_kibibytes_written;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesRead() */
-    private java.util.Map<java.lang.CharSequence,java.lang.Long> exit_kibibytes_read;
+    private java.util.Map<java.lang.String,java.lang.Long> exit_kibibytes_read;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitStreamsOpened() */
-    private java.util.Map<java.lang.CharSequence,java.lang.Long> exit_streams_opened;
+    private java.util.Map<java.lang.String,java.lang.Long> exit_streams_opened;
     private converTor.bridgeExtra.HidservStats hidserv_stats_end;
     private converTor.bridgeExtra.HidservStats.Builder hidserv_stats_endBuilder;
     private converTor.bridgeExtra.HidservRendRelayedCells hidserv_rend_relayed_cells;
@@ -1269,15 +1269,15 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
     private converTor.bridgeExtra.HidservDirOnionsSeen hidserv_dir_onions_seen;
     private converTor.bridgeExtra.HidservDirOnionsSeen.Builder hidserv_dir_onions_seenBuilder;
     /** metrics-lib/ExtraInfoDescriptor: List<String> getTransports() */
-    private java.util.List<java.lang.CharSequence> transport;
+    private java.util.List<java.lang.String> transport;
     /** metrics-lib/ExtraInfoDescriptor: String getRouterSignatureEd25519() */
     private java.lang.Boolean router_sig_ed25519;
     /** metrics-lib/ExtraInfoDescriptor: String getRouterSignature() */
     private java.lang.Boolean router_signature;
     /** metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigest() */
-    private java.lang.CharSequence extra_info_digest;
+    private java.lang.String extra_info_digest;
     /** metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigestSha256() */
-    private java.lang.CharSequence extra_info_digest_sha256;
+    private java.lang.String extra_info_digest_sha256;
     /** metrics-lib/ExtraInfoDescriptor: String getMasterKeyEd25519() */
     private java.lang.Boolean master_key_ed25519;
 
@@ -1762,7 +1762,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * Gets the value of the 'descriptor_type' field.
       * @return The value.
       */
-    public java.lang.CharSequence getDescriptorType() {
+    public java.lang.String getDescriptorType() {
       return descriptor_type;
     }
 
@@ -1771,7 +1771,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'descriptor_type'.
       * @return This builder.
       */
-    public converTor.bridgeExtra.BridgeExtra.Builder setDescriptorType(java.lang.CharSequence value) {
+    public converTor.bridgeExtra.BridgeExtra.Builder setDescriptorType(java.lang.String value) {
       validate(fields()[0], value);
       this.descriptor_type = value;
       fieldSetFlags()[0] = true;
@@ -1918,7 +1918,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: long getPublishedMillis()
       * @return The value.
       */
-    public java.lang.CharSequence getPublished() {
+    public java.lang.String getPublished() {
       return published;
     }
 
@@ -1928,7 +1928,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'published'.
       * @return This builder.
       */
-    public converTor.bridgeExtra.BridgeExtra.Builder setPublished(java.lang.CharSequence value) {
+    public converTor.bridgeExtra.BridgeExtra.Builder setPublished(java.lang.String value) {
       validate(fields()[3], value);
       this.published = value;
       fieldSetFlags()[3] = true;
@@ -2121,7 +2121,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: String getGeoipDbDigest()
       * @return The value.
       */
-    public java.lang.CharSequence getGeoipDbDigest() {
+    public java.lang.String getGeoipDbDigest() {
       return geoip_db_digest;
     }
 
@@ -2131,7 +2131,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'geoip_db_digest'.
       * @return This builder.
       */
-    public converTor.bridgeExtra.BridgeExtra.Builder setGeoipDbDigest(java.lang.CharSequence value) {
+    public converTor.bridgeExtra.BridgeExtra.Builder setGeoipDbDigest(java.lang.String value) {
       validate(fields()[6], value);
       this.geoip_db_digest = value;
       fieldSetFlags()[6] = true;
@@ -2164,7 +2164,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: String getGeoip6DbDigest()
       * @return The value.
       */
-    public java.lang.CharSequence getGeoip6DbDigest() {
+    public java.lang.String getGeoip6DbDigest() {
       return geoip6_db_digest;
     }
 
@@ -2174,7 +2174,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'geoip6_db_digest'.
       * @return This builder.
       */
-    public converTor.bridgeExtra.BridgeExtra.Builder setGeoip6DbDigest(java.lang.CharSequence value) {
+    public converTor.bridgeExtra.BridgeExtra.Builder setGeoip6DbDigest(java.lang.String value) {
       validate(fields()[7], value);
       this.geoip6_db_digest = value;
       fieldSetFlags()[7] = true;
@@ -2207,7 +2207,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: String getGeoipStartTimeMillis()
       * @return The value.
       */
-    public java.lang.CharSequence getGeoipStartTime() {
+    public java.lang.String getGeoipStartTime() {
       return geoip_start_time;
     }
 
@@ -2217,7 +2217,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'geoip_start_time'.
       * @return This builder.
       */
-    public converTor.bridgeExtra.BridgeExtra.Builder setGeoipStartTime(java.lang.CharSequence value) {
+    public converTor.bridgeExtra.BridgeExtra.Builder setGeoipStartTime(java.lang.String value) {
       validate(fields()[8], value);
       this.geoip_start_time = value;
       fieldSetFlags()[8] = true;
@@ -2250,7 +2250,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getGeoipClientOrigins()
       * @return The value.
       */
-    public java.util.Map<java.lang.CharSequence,java.lang.Integer> getGeoipClientOrigins() {
+    public java.util.Map<java.lang.String,java.lang.Integer> getGeoipClientOrigins() {
       return geoip_client_origins;
     }
 
@@ -2260,7 +2260,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'geoip_client_origins'.
       * @return This builder.
       */
-    public converTor.bridgeExtra.BridgeExtra.Builder setGeoipClientOrigins(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+    public converTor.bridgeExtra.BridgeExtra.Builder setGeoipClientOrigins(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[9], value);
       this.geoip_client_origins = value;
       fieldSetFlags()[9] = true;
@@ -2366,7 +2366,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIps()
       * @return The value.
       */
-    public java.util.Map<java.lang.CharSequence,java.lang.Integer> getBridgeIps() {
+    public java.util.Map<java.lang.String,java.lang.Integer> getBridgeIps() {
       return bridge_ips;
     }
 
@@ -2376,7 +2376,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'bridge_ips'.
       * @return This builder.
       */
-    public converTor.bridgeExtra.BridgeExtra.Builder setBridgeIps(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+    public converTor.bridgeExtra.BridgeExtra.Builder setBridgeIps(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[11], value);
       this.bridge_ips = value;
       fieldSetFlags()[11] = true;
@@ -2409,7 +2409,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIpVersions()
       * @return The value.
       */
-    public java.util.Map<java.lang.CharSequence,java.lang.Integer> getBridgeIpVersions() {
+    public java.util.Map<java.lang.String,java.lang.Integer> getBridgeIpVersions() {
       return bridge_ip_versions;
     }
 
@@ -2419,7 +2419,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'bridge_ip_versions'.
       * @return This builder.
       */
-    public converTor.bridgeExtra.BridgeExtra.Builder setBridgeIpVersions(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+    public converTor.bridgeExtra.BridgeExtra.Builder setBridgeIpVersions(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[12], value);
       this.bridge_ip_versions = value;
       fieldSetFlags()[12] = true;
@@ -2452,7 +2452,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIpTransports()
       * @return The value.
       */
-    public java.util.Map<java.lang.CharSequence,java.lang.Integer> getBridgeIpTransports() {
+    public java.util.Map<java.lang.String,java.lang.Integer> getBridgeIpTransports() {
       return bridge_ip_transports;
     }
 
@@ -2462,7 +2462,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'bridge_ip_transports'.
       * @return This builder.
       */
-    public converTor.bridgeExtra.BridgeExtra.Builder setBridgeIpTransports(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+    public converTor.bridgeExtra.BridgeExtra.Builder setBridgeIpTransports(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[13], value);
       this.bridge_ip_transports = value;
       fieldSetFlags()[13] = true;
@@ -2568,7 +2568,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Ips()
       * @return The value.
       */
-    public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV2Ips() {
+    public java.util.Map<java.lang.String,java.lang.Integer> getDirreqV2Ips() {
       return dirreq_v2_ips;
     }
 
@@ -2578,7 +2578,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'dirreq_v2_ips'.
       * @return This builder.
       */
-    public converTor.bridgeExtra.BridgeExtra.Builder setDirreqV2Ips(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+    public converTor.bridgeExtra.BridgeExtra.Builder setDirreqV2Ips(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[15], value);
       this.dirreq_v2_ips = value;
       fieldSetFlags()[15] = true;
@@ -2611,7 +2611,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Ips()
       * @return The value.
       */
-    public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV3Ips() {
+    public java.util.Map<java.lang.String,java.lang.Integer> getDirreqV3Ips() {
       return dirreq_v3_ips;
     }
 
@@ -2621,7 +2621,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'dirreq_v3_ips'.
       * @return This builder.
       */
-    public converTor.bridgeExtra.BridgeExtra.Builder setDirreqV3Ips(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+    public converTor.bridgeExtra.BridgeExtra.Builder setDirreqV3Ips(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[16], value);
       this.dirreq_v3_ips = value;
       fieldSetFlags()[16] = true;
@@ -2654,7 +2654,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Reqs()
       * @return The value.
       */
-    public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV2Reqs() {
+    public java.util.Map<java.lang.String,java.lang.Integer> getDirreqV2Reqs() {
       return dirreq_v2_reqs;
     }
 
@@ -2664,7 +2664,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'dirreq_v2_reqs'.
       * @return This builder.
       */
-    public converTor.bridgeExtra.BridgeExtra.Builder setDirreqV2Reqs(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+    public converTor.bridgeExtra.BridgeExtra.Builder setDirreqV2Reqs(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[17], value);
       this.dirreq_v2_reqs = value;
       fieldSetFlags()[17] = true;
@@ -2697,7 +2697,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Reqs()
       * @return The value.
       */
-    public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV3Reqs() {
+    public java.util.Map<java.lang.String,java.lang.Integer> getDirreqV3Reqs() {
       return dirreq_v3_reqs;
     }
 
@@ -2707,7 +2707,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'dirreq_v3_reqs'.
       * @return This builder.
       */
-    public converTor.bridgeExtra.BridgeExtra.Builder setDirreqV3Reqs(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+    public converTor.bridgeExtra.BridgeExtra.Builder setDirreqV3Reqs(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[18], value);
       this.dirreq_v3_reqs = value;
       fieldSetFlags()[18] = true;
@@ -2826,7 +2826,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Resp()
       * @return The value.
       */
-    public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV2Resp() {
+    public java.util.Map<java.lang.String,java.lang.Integer> getDirreqV2Resp() {
       return dirreq_v2_resp;
     }
 
@@ -2836,7 +2836,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'dirreq_v2_resp'.
       * @return This builder.
       */
-    public converTor.bridgeExtra.BridgeExtra.Builder setDirreqV2Resp(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+    public converTor.bridgeExtra.BridgeExtra.Builder setDirreqV2Resp(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[21], value);
       this.dirreq_v2_resp = value;
       fieldSetFlags()[21] = true;
@@ -2869,7 +2869,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Resp()
       * @return The value.
       */
-    public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV3Resp() {
+    public java.util.Map<java.lang.String,java.lang.Integer> getDirreqV3Resp() {
       return dirreq_v3_resp;
     }
 
@@ -2879,7 +2879,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'dirreq_v3_resp'.
       * @return This builder.
       */
-    public converTor.bridgeExtra.BridgeExtra.Builder setDirreqV3Resp(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+    public converTor.bridgeExtra.BridgeExtra.Builder setDirreqV3Resp(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[22], value);
       this.dirreq_v3_resp = value;
       fieldSetFlags()[22] = true;
@@ -2912,7 +2912,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2DirectDl()
       * @return The value.
       */
-    public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV2DirectDl() {
+    public java.util.Map<java.lang.String,java.lang.Integer> getDirreqV2DirectDl() {
       return dirreq_v2_direct_dl;
     }
 
@@ -2922,7 +2922,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'dirreq_v2_direct_dl'.
       * @return This builder.
       */
-    public converTor.bridgeExtra.BridgeExtra.Builder setDirreqV2DirectDl(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+    public converTor.bridgeExtra.BridgeExtra.Builder setDirreqV2DirectDl(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[23], value);
       this.dirreq_v2_direct_dl = value;
       fieldSetFlags()[23] = true;
@@ -2955,7 +2955,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3DirectDl()
       * @return The value.
       */
-    public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV3DirectDl() {
+    public java.util.Map<java.lang.String,java.lang.Integer> getDirreqV3DirectDl() {
       return dirreq_v3_direct_dl;
     }
 
@@ -2965,7 +2965,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'dirreq_v3_direct_dl'.
       * @return This builder.
       */
-    public converTor.bridgeExtra.BridgeExtra.Builder setDirreqV3DirectDl(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+    public converTor.bridgeExtra.BridgeExtra.Builder setDirreqV3DirectDl(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[24], value);
       this.dirreq_v3_direct_dl = value;
       fieldSetFlags()[24] = true;
@@ -2998,7 +2998,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2TunneledDl()
       * @return The value.
       */
-    public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV2TunneledDl() {
+    public java.util.Map<java.lang.String,java.lang.Integer> getDirreqV2TunneledDl() {
       return dirreq_v2_tunneled_dl;
     }
 
@@ -3008,7 +3008,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'dirreq_v2_tunneled_dl'.
       * @return This builder.
       */
-    public converTor.bridgeExtra.BridgeExtra.Builder setDirreqV2TunneledDl(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+    public converTor.bridgeExtra.BridgeExtra.Builder setDirreqV2TunneledDl(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[25], value);
       this.dirreq_v2_tunneled_dl = value;
       fieldSetFlags()[25] = true;
@@ -3041,7 +3041,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3TunneledDl()
       * @return The value.
       */
-    public java.util.Map<java.lang.CharSequence,java.lang.Integer> getDirreqV3TunneledDl() {
+    public java.util.Map<java.lang.String,java.lang.Integer> getDirreqV3TunneledDl() {
       return dirreq_v3_tunneled_dl;
     }
 
@@ -3051,7 +3051,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'dirreq_v3_tunneled_dl'.
       * @return This builder.
       */
-    public converTor.bridgeExtra.BridgeExtra.Builder setDirreqV3TunneledDl(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+    public converTor.bridgeExtra.BridgeExtra.Builder setDirreqV3TunneledDl(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[26], value);
       this.dirreq_v3_tunneled_dl = value;
       fieldSetFlags()[26] = true;
@@ -3317,7 +3317,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getEntryIps()
       * @return The value.
       */
-    public java.util.Map<java.lang.CharSequence,java.lang.Integer> getEntryIps() {
+    public java.util.Map<java.lang.String,java.lang.Integer> getEntryIps() {
       return entry_ips;
     }
 
@@ -3327,7 +3327,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'entry_ips'.
       * @return This builder.
       */
-    public converTor.bridgeExtra.BridgeExtra.Builder setEntryIps(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+    public converTor.bridgeExtra.BridgeExtra.Builder setEntryIps(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[30], value);
       this.entry_ips = value;
       fieldSetFlags()[30] = true;
@@ -3751,7 +3751,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesWritten()
       * @return The value.
       */
-    public java.util.Map<java.lang.CharSequence,java.lang.Long> getExitKibibytesWritten() {
+    public java.util.Map<java.lang.String,java.lang.Long> getExitKibibytesWritten() {
       return exit_kibibytes_written;
     }
 
@@ -3761,7 +3761,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'exit_kibibytes_written'.
       * @return This builder.
       */
-    public converTor.bridgeExtra.BridgeExtra.Builder setExitKibibytesWritten(java.util.Map<java.lang.CharSequence,java.lang.Long> value) {
+    public converTor.bridgeExtra.BridgeExtra.Builder setExitKibibytesWritten(java.util.Map<java.lang.String,java.lang.Long> value) {
       validate(fields()[38], value);
       this.exit_kibibytes_written = value;
       fieldSetFlags()[38] = true;
@@ -3794,7 +3794,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesRead()
       * @return The value.
       */
-    public java.util.Map<java.lang.CharSequence,java.lang.Long> getExitKibibytesRead() {
+    public java.util.Map<java.lang.String,java.lang.Long> getExitKibibytesRead() {
       return exit_kibibytes_read;
     }
 
@@ -3804,7 +3804,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'exit_kibibytes_read'.
       * @return This builder.
       */
-    public converTor.bridgeExtra.BridgeExtra.Builder setExitKibibytesRead(java.util.Map<java.lang.CharSequence,java.lang.Long> value) {
+    public converTor.bridgeExtra.BridgeExtra.Builder setExitKibibytesRead(java.util.Map<java.lang.String,java.lang.Long> value) {
       validate(fields()[39], value);
       this.exit_kibibytes_read = value;
       fieldSetFlags()[39] = true;
@@ -3837,7 +3837,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitStreamsOpened()
       * @return The value.
       */
-    public java.util.Map<java.lang.CharSequence,java.lang.Long> getExitStreamsOpened() {
+    public java.util.Map<java.lang.String,java.lang.Long> getExitStreamsOpened() {
       return exit_streams_opened;
     }
 
@@ -3847,7 +3847,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'exit_streams_opened'.
       * @return This builder.
       */
-    public converTor.bridgeExtra.BridgeExtra.Builder setExitStreamsOpened(java.util.Map<java.lang.CharSequence,java.lang.Long> value) {
+    public converTor.bridgeExtra.BridgeExtra.Builder setExitStreamsOpened(java.util.Map<java.lang.String,java.lang.Long> value) {
       validate(fields()[40], value);
       this.exit_streams_opened = value;
       fieldSetFlags()[40] = true;
@@ -4099,7 +4099,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: List<String> getTransports()
       * @return The value.
       */
-    public java.util.List<java.lang.CharSequence> getTransport() {
+    public java.util.List<java.lang.String> getTransport() {
       return transport;
     }
 
@@ -4109,7 +4109,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'transport'.
       * @return This builder.
       */
-    public converTor.bridgeExtra.BridgeExtra.Builder setTransport(java.util.List<java.lang.CharSequence> value) {
+    public converTor.bridgeExtra.BridgeExtra.Builder setTransport(java.util.List<java.lang.String> value) {
       validate(fields()[44], value);
       this.transport = value;
       fieldSetFlags()[44] = true;
@@ -4228,7 +4228,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigest()
       * @return The value.
       */
-    public java.lang.CharSequence getExtraInfoDigest() {
+    public java.lang.String getExtraInfoDigest() {
       return extra_info_digest;
     }
 
@@ -4238,7 +4238,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'extra_info_digest'.
       * @return This builder.
       */
-    public converTor.bridgeExtra.BridgeExtra.Builder setExtraInfoDigest(java.lang.CharSequence value) {
+    public converTor.bridgeExtra.BridgeExtra.Builder setExtraInfoDigest(java.lang.String value) {
       validate(fields()[47], value);
       this.extra_info_digest = value;
       fieldSetFlags()[47] = true;
@@ -4271,7 +4271,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigestSha256()
       * @return The value.
       */
-    public java.lang.CharSequence getExtraInfoDigestSha256() {
+    public java.lang.String getExtraInfoDigestSha256() {
       return extra_info_digest_sha256;
     }
 
@@ -4281,7 +4281,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'extra_info_digest_sha256'.
       * @return This builder.
       */
-    public converTor.bridgeExtra.BridgeExtra.Builder setExtraInfoDigestSha256(java.lang.CharSequence value) {
+    public converTor.bridgeExtra.BridgeExtra.Builder setExtraInfoDigestSha256(java.lang.String value) {
       validate(fields()[48], value);
       this.extra_info_digest_sha256 = value;
       fieldSetFlags()[48] = true;
@@ -4356,14 +4356,14 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
     public BridgeExtra build() {
       try {
         BridgeExtra record = new BridgeExtra();
-        record.descriptor_type = fieldSetFlags()[0] ? this.descriptor_type : (java.lang.CharSequence) defaultValue(fields()[0]);
+        record.descriptor_type = fieldSetFlags()[0] ? this.descriptor_type : (java.lang.String) defaultValue(fields()[0]);
         if (extra_infoBuilder != null) {
           record.extra_info = this.extra_infoBuilder.build();
         } else {
           record.extra_info = fieldSetFlags()[1] ? this.extra_info : (converTor.bridgeExtra.ExtraInfo) defaultValue(fields()[1]);
         }
         record.identity_ed25519 = fieldSetFlags()[2] ? this.identity_ed25519 : (java.lang.Boolean) defaultValue(fields()[2]);
-        record.published = fieldSetFlags()[3] ? this.published : (java.lang.CharSequence) defaultValue(fields()[3]);
+        record.published = fieldSetFlags()[3] ? this.published : (java.lang.String) defaultValue(fields()[3]);
         if (read_historyBuilder != null) {
           record.read_history = this.read_historyBuilder.build();
         } else {
@@ -4374,35 +4374,35 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
         } else {
           record.write_history = fieldSetFlags()[5] ? this.write_history : (converTor.bridgeExtra.WriteHistory) defaultValue(fields()[5]);
         }
-        record.geoip_db_digest = fieldSetFlags()[6] ? this.geoip_db_digest : (java.lang.CharSequence) defaultValue(fields()[6]);
-        record.geoip6_db_digest = fieldSetFlags()[7] ? this.geoip6_db_digest : (java.lang.CharSequence) defaultValue(fields()[7]);
-        record.geoip_start_time = fieldSetFlags()[8] ? this.geoip_start_time : (java.lang.CharSequence) defaultValue(fields()[8]);
-        record.geoip_client_origins = fieldSetFlags()[9] ? this.geoip_client_origins : (java.util.Map<java.lang.CharSequence,java.lang.Integer>) defaultValue(fields()[9]);
+        record.geoip_db_digest = fieldSetFlags()[6] ? this.geoip_db_digest : (java.lang.String) defaultValue(fields()[6]);
+        record.geoip6_db_digest = fieldSetFlags()[7] ? this.geoip6_db_digest : (java.lang.String) defaultValue(fields()[7]);
+        record.geoip_start_time = fieldSetFlags()[8] ? this.geoip_start_time : (java.lang.String) defaultValue(fields()[8]);
+        record.geoip_client_origins = fieldSetFlags()[9] ? this.geoip_client_origins : (java.util.Map<java.lang.String,java.lang.Integer>) defaultValue(fields()[9]);
         if (bridge_stats_endBuilder != null) {
           record.bridge_stats_end = this.bridge_stats_endBuilder.build();
         } else {
           record.bridge_stats_end = fieldSetFlags()[10] ? this.bridge_stats_end : (converTor.bridgeExtra.BridgeStats) defaultValue(fields()[10]);
         }
-        record.bridge_ips = fieldSetFlags()[11] ? this.bridge_ips : (java.util.Map<java.lang.CharSequence,java.lang.Integer>) defaultValue(fields()[11]);
-        record.bridge_ip_versions = fieldSetFlags()[12] ? this.bridge_ip_versions : (java.util.Map<java.lang.CharSequence,java.lang.Integer>) defaultValue(fields()[12]);
-        record.bridge_ip_transports = fieldSetFlags()[13] ? this.bridge_ip_transports : (java.util.Map<java.lang.CharSequence,java.lang.Integer>) defaultValue(fields()[13]);
+        record.bridge_ips = fieldSetFlags()[11] ? this.bridge_ips : (java.util.Map<java.lang.String,java.lang.Integer>) defaultValue(fields()[11]);
+        record.bridge_ip_versions = fieldSetFlags()[12] ? this.bridge_ip_versions : (java.util.Map<java.lang.String,java.lang.Integer>) defaultValue(fields()[12]);
+        record.bridge_ip_transports = fieldSetFlags()[13] ? this.bridge_ip_transports : (java.util.Map<java.lang.String,java.lang.Integer>) defaultValue(fields()[13]);
         if (dirreq_stats_endBuilder != null) {
           record.dirreq_stats_end = this.dirreq_stats_endBuilder.build();
         } else {
           record.dirreq_stats_end = fieldSetFlags()[14] ? this.dirreq_stats_end : (converTor.bridgeExtra.DirreqStats) defaultValue(fields()[14]);
         }
-        record.dirreq_v2_ips = fieldSetFlags()[15] ? this.dirreq_v2_ips : (java.util.Map<java.lang.CharSequence,java.lang.Integer>) defaultValue(fields()[15]);
-        record.dirreq_v3_ips = fieldSetFlags()[16] ? this.dirreq_v3_ips : (java.util.Map<java.lang.CharSequence,java.lang.Integer>) defaultValue(fields()[16]);
-        record.dirreq_v2_reqs = fieldSetFlags()[17] ? this.dirreq_v2_reqs : (java.util.Map<java.lang.CharSequence,java.lang.Integer>) defaultValue(fields()[17]);
-        record.dirreq_v3_reqs = fieldSetFlags()[18] ? this.dirreq_v3_reqs : (java.util.Map<java.lang.CharSequence,java.lang.Integer>) defaultValue(fields()[18]);
+        record.dirreq_v2_ips = fieldSetFlags()[15] ? this.dirreq_v2_ips : (java.util.Map<java.lang.String,java.lang.Integer>) defaultValue(fields()[15]);
+        record.dirreq_v3_ips = fieldSetFlags()[16] ? this.dirreq_v3_ips : (java.util.Map<java.lang.String,java.lang.Integer>) defaultValue(fields()[16]);
+        record.dirreq_v2_reqs = fieldSetFlags()[17] ? this.dirreq_v2_reqs : (java.util.Map<java.lang.String,java.lang.Integer>) defaultValue(fields()[17]);
+        record.dirreq_v3_reqs = fieldSetFlags()[18] ? this.dirreq_v3_reqs : (java.util.Map<java.lang.String,java.lang.Integer>) defaultValue(fields()[18]);
         record.dirreq_v2_share = fieldSetFlags()[19] ? this.dirreq_v2_share : (java.lang.Double) defaultValue(fields()[19]);
         record.dirreq_v3_share = fieldSetFlags()[20] ? this.dirreq_v3_share : (java.lang.Double) defaultValue(fields()[20]);
-        record.dirreq_v2_resp = fieldSetFlags()[21] ? this.dirreq_v2_resp : (java.util.Map<java.lang.CharSequence,java.lang.Integer>) defaultValue(fields()[21]);
-        record.dirreq_v3_resp = fieldSetFlags()[22] ? this.dirreq_v3_resp : (java.util.Map<java.lang.CharSequence,java.lang.Integer>) defaultValue(fields()[22]);
-        record.dirreq_v2_direct_dl = fieldSetFlags()[23] ? this.dirreq_v2_direct_dl : (java.util.Map<java.lang.CharSequence,java.lang.Integer>) defaultValue(fields()[23]);
-        record.dirreq_v3_direct_dl = fieldSetFlags()[24] ? this.dirreq_v3_direct_dl : (java.util.Map<java.lang.CharSequence,java.lang.Integer>) defaultValue(fields()[24]);
-        record.dirreq_v2_tunneled_dl = fieldSetFlags()[25] ? this.dirreq_v2_tunneled_dl : (java.util.Map<java.lang.CharSequence,java.lang.Integer>) defaultValue(fields()[25]);
-        record.dirreq_v3_tunneled_dl = fieldSetFlags()[26] ? this.dirreq_v3_tunneled_dl : (java.util.Map<java.lang.CharSequence,java.lang.Integer>) defaultValue(fields()[26]);
+        record.dirreq_v2_resp = fieldSetFlags()[21] ? this.dirreq_v2_resp : (java.util.Map<java.lang.String,java.lang.Integer>) defaultValue(fields()[21]);
+        record.dirreq_v3_resp = fieldSetFlags()[22] ? this.dirreq_v3_resp : (java.util.Map<java.lang.String,java.lang.Integer>) defaultValue(fields()[22]);
+        record.dirreq_v2_direct_dl = fieldSetFlags()[23] ? this.dirreq_v2_direct_dl : (java.util.Map<java.lang.String,java.lang.Integer>) defaultValue(fields()[23]);
+        record.dirreq_v3_direct_dl = fieldSetFlags()[24] ? this.dirreq_v3_direct_dl : (java.util.Map<java.lang.String,java.lang.Integer>) defaultValue(fields()[24]);
+        record.dirreq_v2_tunneled_dl = fieldSetFlags()[25] ? this.dirreq_v2_tunneled_dl : (java.util.Map<java.lang.String,java.lang.Integer>) defaultValue(fields()[25]);
+        record.dirreq_v3_tunneled_dl = fieldSetFlags()[26] ? this.dirreq_v3_tunneled_dl : (java.util.Map<java.lang.String,java.lang.Integer>) defaultValue(fields()[26]);
         if (dirreq_read_historyBuilder != null) {
           record.dirreq_read_history = this.dirreq_read_historyBuilder.build();
         } else {
@@ -4418,7 +4418,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
         } else {
           record.entry_stats_end = fieldSetFlags()[29] ? this.entry_stats_end : (converTor.bridgeExtra.EntryStats) defaultValue(fields()[29]);
         }
-        record.entry_ips = fieldSetFlags()[30] ? this.entry_ips : (java.util.Map<java.lang.CharSequence,java.lang.Integer>) defaultValue(fields()[30]);
+        record.entry_ips = fieldSetFlags()[30] ? this.entry_ips : (java.util.Map<java.lang.String,java.lang.Integer>) defaultValue(fields()[30]);
         if (cell_stats_endBuilder != null) {
           record.cell_stats_end = this.cell_stats_endBuilder.build();
         } else {
@@ -4438,9 +4438,9 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
         } else {
           record.exit_stats_end = fieldSetFlags()[37] ? this.exit_stats_end : (converTor.bridgeExtra.ExitStats) defaultValue(fields()[37]);
         }
-        record.exit_kibibytes_written = fieldSetFlags()[38] ? this.exit_kibibytes_written : (java.util.Map<java.lang.CharSequence,java.lang.Long>) defaultValue(fields()[38]);
-        record.exit_kibibytes_read = fieldSetFlags()[39] ? this.exit_kibibytes_read : (java.util.Map<java.lang.CharSequence,java.lang.Long>) defaultValue(fields()[39]);
-        record.exit_streams_opened = fieldSetFlags()[40] ? this.exit_streams_opened : (java.util.Map<java.lang.CharSequence,java.lang.Long>) defaultValue(fields()[40]);
+        record.exit_kibibytes_written = fieldSetFlags()[38] ? this.exit_kibibytes_written : (java.util.Map<java.lang.String,java.lang.Long>) defaultValue(fields()[38]);
+        record.exit_kibibytes_read = fieldSetFlags()[39] ? this.exit_kibibytes_read : (java.util.Map<java.lang.String,java.lang.Long>) defaultValue(fields()[39]);
+        record.exit_streams_opened = fieldSetFlags()[40] ? this.exit_streams_opened : (java.util.Map<java.lang.String,java.lang.Long>) defaultValue(fields()[40]);
         if (hidserv_stats_endBuilder != null) {
           record.hidserv_stats_end = this.hidserv_stats_endBuilder.build();
         } else {
@@ -4456,11 +4456,11 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
         } else {
           record.hidserv_dir_onions_seen = fieldSetFlags()[43] ? this.hidserv_dir_onions_seen : (converTor.bridgeExtra.HidservDirOnionsSeen) defaultValue(fields()[43]);
         }
-        record.transport = fieldSetFlags()[44] ? this.transport : (java.util.List<java.lang.CharSequence>) defaultValue(fields()[44]);
+        record.transport = fieldSetFlags()[44] ? this.transport : (java.util.List<java.lang.String>) defaultValue(fields()[44]);
         record.router_sig_ed25519 = fieldSetFlags()[45] ? this.router_sig_ed25519 : (java.lang.Boolean) defaultValue(fields()[45]);
         record.router_signature = fieldSetFlags()[46] ? this.router_signature : (java.lang.Boolean) defaultValue(fields()[46]);
-        record.extra_info_digest = fieldSetFlags()[47] ? this.extra_info_digest : (java.lang.CharSequence) defaultValue(fields()[47]);
-        record.extra_info_digest_sha256 = fieldSetFlags()[48] ? this.extra_info_digest_sha256 : (java.lang.CharSequence) defaultValue(fields()[48]);
+        record.extra_info_digest = fieldSetFlags()[47] ? this.extra_info_digest : (java.lang.String) defaultValue(fields()[47]);
+        record.extra_info_digest_sha256 = fieldSetFlags()[48] ? this.extra_info_digest_sha256 : (java.lang.String) defaultValue(fields()[48]);
         record.master_key_ed25519 = fieldSetFlags()[49] ? this.master_key_ed25519 : (java.lang.Boolean) defaultValue(fields()[49]);
         return record;
       } catch (Exception e) {

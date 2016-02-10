@@ -8,10 +8,10 @@ package converTor.relay;
 @org.apache.avro.specific.AvroGenerated
 public class OrAddress extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -5025164770998896807L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"OrAddress\",\"namespace\":\"converTor.relay\",\"fields\":[{\"name\":\"address\",\"type\":\"string\",\"doc\":\"implementation specific\"},{\"name\":\"port\",\"type\":\"int\",\"doc\":\"implementation specific\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"OrAddress\",\"namespace\":\"converTor.relay\",\"fields\":[{\"name\":\"address\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"implementation specific\"},{\"name\":\"port\",\"type\":\"int\",\"doc\":\"implementation specific\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** implementation specific */
-  @Deprecated public java.lang.CharSequence address;
+  @Deprecated public java.lang.String address;
   /** implementation specific */
   @Deprecated public int port;
 
@@ -27,7 +27,7 @@ public class OrAddress extends org.apache.avro.specific.SpecificRecordBase imple
    * @param address implementation specific
    * @param port implementation specific
    */
-  public OrAddress(java.lang.CharSequence address, java.lang.Integer port) {
+  public OrAddress(java.lang.String address, java.lang.Integer port) {
     this.address = address;
     this.port = port;
   }
@@ -45,7 +45,7 @@ public class OrAddress extends org.apache.avro.specific.SpecificRecordBase imple
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: address = (java.lang.CharSequence)value$; break;
+    case 0: address = (java.lang.String)value$; break;
     case 1: port = (java.lang.Integer)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
@@ -55,7 +55,7 @@ public class OrAddress extends org.apache.avro.specific.SpecificRecordBase imple
    * Gets the value of the 'address' field.
    * @return implementation specific
    */
-  public java.lang.CharSequence getAddress() {
+  public java.lang.String getAddress() {
     return address;
   }
 
@@ -64,7 +64,7 @@ public class OrAddress extends org.apache.avro.specific.SpecificRecordBase imple
    * implementation specific
    * @param value the value to set.
    */
-  public void setAddress(java.lang.CharSequence value) {
+  public void setAddress(java.lang.String value) {
     this.address = value;
   }
 
@@ -118,7 +118,7 @@ public class OrAddress extends org.apache.avro.specific.SpecificRecordBase imple
     implements org.apache.avro.data.RecordBuilder<OrAddress> {
 
     /** implementation specific */
-    private java.lang.CharSequence address;
+    private java.lang.String address;
     /** implementation specific */
     private int port;
 
@@ -164,7 +164,7 @@ public class OrAddress extends org.apache.avro.specific.SpecificRecordBase imple
       * implementation specific
       * @return The value.
       */
-    public java.lang.CharSequence getAddress() {
+    public java.lang.String getAddress() {
       return address;
     }
 
@@ -174,7 +174,7 @@ public class OrAddress extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'address'.
       * @return This builder.
       */
-    public converTor.relay.OrAddress.Builder setAddress(java.lang.CharSequence value) {
+    public converTor.relay.OrAddress.Builder setAddress(java.lang.String value) {
       validate(fields()[0], value);
       this.address = value;
       fieldSetFlags()[0] = true;
@@ -248,7 +248,7 @@ public class OrAddress extends org.apache.avro.specific.SpecificRecordBase imple
     public OrAddress build() {
       try {
         OrAddress record = new OrAddress();
-        record.address = fieldSetFlags()[0] ? this.address : (java.lang.CharSequence) defaultValue(fields()[0]);
+        record.address = fieldSetFlags()[0] ? this.address : (java.lang.String) defaultValue(fields()[0]);
         record.port = fieldSetFlags()[1] ? this.port : (java.lang.Integer) defaultValue(fields()[1]);
         return record;
       } catch (Exception e) {

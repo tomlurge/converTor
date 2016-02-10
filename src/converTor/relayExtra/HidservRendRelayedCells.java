@@ -8,12 +8,12 @@ package converTor.relayExtra;
 @org.apache.avro.specific.AvroGenerated
 public class HidservRendRelayedCells extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = 2142579229300375871L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"HidservRendRelayedCells\",\"namespace\":\"converTor.relayExtra\",\"fields\":[{\"name\":\"cells\",\"type\":\"double\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: Double getHidservRendRelayedCells()\"},{\"name\":\"obfuscation\",\"type\":{\"type\":\"map\",\"values\":\"int\"},\"doc\":\"metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservRendRelayedCellsParameters()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"HidservRendRelayedCells\",\"namespace\":\"converTor.relayExtra\",\"fields\":[{\"name\":\"cells\",\"type\":\"double\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: Double getHidservRendRelayedCells()\"},{\"name\":\"obfuscation\",\"type\":{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"},\"doc\":\"metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservRendRelayedCellsParameters()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/ExtraInfoDescriptor: Double getHidservRendRelayedCells() */
   @Deprecated public double cells;
   /** metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservRendRelayedCellsParameters() */
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> obfuscation;
+  @Deprecated public java.util.Map<java.lang.String,java.lang.Integer> obfuscation;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -27,7 +27,7 @@ public class HidservRendRelayedCells extends org.apache.avro.specific.SpecificRe
    * @param cells metrics-lib/ExtraInfoDescriptor: Double getHidservRendRelayedCells()
    * @param obfuscation metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservRendRelayedCellsParameters()
    */
-  public HidservRendRelayedCells(java.lang.Double cells, java.util.Map<java.lang.CharSequence,java.lang.Integer> obfuscation) {
+  public HidservRendRelayedCells(java.lang.Double cells, java.util.Map<java.lang.String,java.lang.Integer> obfuscation) {
     this.cells = cells;
     this.obfuscation = obfuscation;
   }
@@ -46,7 +46,7 @@ public class HidservRendRelayedCells extends org.apache.avro.specific.SpecificRe
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
     case 0: cells = (java.lang.Double)value$; break;
-    case 1: obfuscation = (java.util.Map<java.lang.CharSequence,java.lang.Integer>)value$; break;
+    case 1: obfuscation = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -72,7 +72,7 @@ public class HidservRendRelayedCells extends org.apache.avro.specific.SpecificRe
    * Gets the value of the 'obfuscation' field.
    * @return metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservRendRelayedCellsParameters()
    */
-  public java.util.Map<java.lang.CharSequence,java.lang.Integer> getObfuscation() {
+  public java.util.Map<java.lang.String,java.lang.Integer> getObfuscation() {
     return obfuscation;
   }
 
@@ -81,7 +81,7 @@ public class HidservRendRelayedCells extends org.apache.avro.specific.SpecificRe
    * metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservRendRelayedCellsParameters()
    * @param value the value to set.
    */
-  public void setObfuscation(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+  public void setObfuscation(java.util.Map<java.lang.String,java.lang.Integer> value) {
     this.obfuscation = value;
   }
 
@@ -120,7 +120,7 @@ public class HidservRendRelayedCells extends org.apache.avro.specific.SpecificRe
     /** metrics-lib/ExtraInfoDescriptor: Double getHidservRendRelayedCells() */
     private double cells;
     /** metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservRendRelayedCellsParameters() */
-    private java.util.Map<java.lang.CharSequence,java.lang.Integer> obfuscation;
+    private java.util.Map<java.lang.String,java.lang.Integer> obfuscation;
 
     /** Creates a new Builder */
     private Builder() {
@@ -206,7 +206,7 @@ public class HidservRendRelayedCells extends org.apache.avro.specific.SpecificRe
       * metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservRendRelayedCellsParameters()
       * @return The value.
       */
-    public java.util.Map<java.lang.CharSequence,java.lang.Integer> getObfuscation() {
+    public java.util.Map<java.lang.String,java.lang.Integer> getObfuscation() {
       return obfuscation;
     }
 
@@ -216,7 +216,7 @@ public class HidservRendRelayedCells extends org.apache.avro.specific.SpecificRe
       * @param value The value of 'obfuscation'.
       * @return This builder.
       */
-    public converTor.relayExtra.HidservRendRelayedCells.Builder setObfuscation(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+    public converTor.relayExtra.HidservRendRelayedCells.Builder setObfuscation(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[1], value);
       this.obfuscation = value;
       fieldSetFlags()[1] = true;
@@ -249,7 +249,7 @@ public class HidservRendRelayedCells extends org.apache.avro.specific.SpecificRe
       try {
         HidservRendRelayedCells record = new HidservRendRelayedCells();
         record.cells = fieldSetFlags()[0] ? this.cells : (java.lang.Double) defaultValue(fields()[0]);
-        record.obfuscation = fieldSetFlags()[1] ? this.obfuscation : (java.util.Map<java.lang.CharSequence,java.lang.Integer>) defaultValue(fields()[1]);
+        record.obfuscation = fieldSetFlags()[1] ? this.obfuscation : (java.util.Map<java.lang.String,java.lang.Integer>) defaultValue(fields()[1]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

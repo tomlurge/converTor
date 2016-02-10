@@ -8,12 +8,12 @@ package converTor.bridgeStatus;
 @org.apache.avro.specific.AvroGenerated
 public class Policy extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -8939163475253350244L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Policy\",\"namespace\":\"converTor.bridgeStatus\",\"fields\":[{\"name\":\"default_policy\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDefaultPolicy()\"},{\"name\":\"port_summary\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getPortList()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Policy\",\"namespace\":\"converTor.bridgeStatus\",\"fields\":[{\"name\":\"default_policy\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDefaultPolicy()\"},{\"name\":\"port_summary\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getPortList()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/NetworkStatusEntry: String getDefaultPolicy() */
-  @Deprecated public java.lang.CharSequence default_policy;
+  @Deprecated public java.lang.String default_policy;
   /** metrics-lib/NetworkStatusEntry: String getPortList() */
-  @Deprecated public java.lang.CharSequence port_summary;
+  @Deprecated public java.lang.String port_summary;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -27,7 +27,7 @@ public class Policy extends org.apache.avro.specific.SpecificRecordBase implemen
    * @param default_policy metrics-lib/NetworkStatusEntry: String getDefaultPolicy()
    * @param port_summary metrics-lib/NetworkStatusEntry: String getPortList()
    */
-  public Policy(java.lang.CharSequence default_policy, java.lang.CharSequence port_summary) {
+  public Policy(java.lang.String default_policy, java.lang.String port_summary) {
     this.default_policy = default_policy;
     this.port_summary = port_summary;
   }
@@ -45,8 +45,8 @@ public class Policy extends org.apache.avro.specific.SpecificRecordBase implemen
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: default_policy = (java.lang.CharSequence)value$; break;
-    case 1: port_summary = (java.lang.CharSequence)value$; break;
+    case 0: default_policy = (java.lang.String)value$; break;
+    case 1: port_summary = (java.lang.String)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -55,7 +55,7 @@ public class Policy extends org.apache.avro.specific.SpecificRecordBase implemen
    * Gets the value of the 'default_policy' field.
    * @return metrics-lib/NetworkStatusEntry: String getDefaultPolicy()
    */
-  public java.lang.CharSequence getDefaultPolicy() {
+  public java.lang.String getDefaultPolicy() {
     return default_policy;
   }
 
@@ -64,7 +64,7 @@ public class Policy extends org.apache.avro.specific.SpecificRecordBase implemen
    * metrics-lib/NetworkStatusEntry: String getDefaultPolicy()
    * @param value the value to set.
    */
-  public void setDefaultPolicy(java.lang.CharSequence value) {
+  public void setDefaultPolicy(java.lang.String value) {
     this.default_policy = value;
   }
 
@@ -72,7 +72,7 @@ public class Policy extends org.apache.avro.specific.SpecificRecordBase implemen
    * Gets the value of the 'port_summary' field.
    * @return metrics-lib/NetworkStatusEntry: String getPortList()
    */
-  public java.lang.CharSequence getPortSummary() {
+  public java.lang.String getPortSummary() {
     return port_summary;
   }
 
@@ -81,7 +81,7 @@ public class Policy extends org.apache.avro.specific.SpecificRecordBase implemen
    * metrics-lib/NetworkStatusEntry: String getPortList()
    * @param value the value to set.
    */
-  public void setPortSummary(java.lang.CharSequence value) {
+  public void setPortSummary(java.lang.String value) {
     this.port_summary = value;
   }
 
@@ -118,9 +118,9 @@ public class Policy extends org.apache.avro.specific.SpecificRecordBase implemen
     implements org.apache.avro.data.RecordBuilder<Policy> {
 
     /** metrics-lib/NetworkStatusEntry: String getDefaultPolicy() */
-    private java.lang.CharSequence default_policy;
+    private java.lang.String default_policy;
     /** metrics-lib/NetworkStatusEntry: String getPortList() */
-    private java.lang.CharSequence port_summary;
+    private java.lang.String port_summary;
 
     /** Creates a new Builder */
     private Builder() {
@@ -164,7 +164,7 @@ public class Policy extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/NetworkStatusEntry: String getDefaultPolicy()
       * @return The value.
       */
-    public java.lang.CharSequence getDefaultPolicy() {
+    public java.lang.String getDefaultPolicy() {
       return default_policy;
     }
 
@@ -174,7 +174,7 @@ public class Policy extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'default_policy'.
       * @return This builder.
       */
-    public converTor.bridgeStatus.Policy.Builder setDefaultPolicy(java.lang.CharSequence value) {
+    public converTor.bridgeStatus.Policy.Builder setDefaultPolicy(java.lang.String value) {
       validate(fields()[0], value);
       this.default_policy = value;
       fieldSetFlags()[0] = true;
@@ -207,7 +207,7 @@ public class Policy extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/NetworkStatusEntry: String getPortList()
       * @return The value.
       */
-    public java.lang.CharSequence getPortSummary() {
+    public java.lang.String getPortSummary() {
       return port_summary;
     }
 
@@ -217,7 +217,7 @@ public class Policy extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'port_summary'.
       * @return This builder.
       */
-    public converTor.bridgeStatus.Policy.Builder setPortSummary(java.lang.CharSequence value) {
+    public converTor.bridgeStatus.Policy.Builder setPortSummary(java.lang.String value) {
       validate(fields()[1], value);
       this.port_summary = value;
       fieldSetFlags()[1] = true;
@@ -249,8 +249,8 @@ public class Policy extends org.apache.avro.specific.SpecificRecordBase implemen
     public Policy build() {
       try {
         Policy record = new Policy();
-        record.default_policy = fieldSetFlags()[0] ? this.default_policy : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.port_summary = fieldSetFlags()[1] ? this.port_summary : (java.lang.CharSequence) defaultValue(fields()[1]);
+        record.default_policy = fieldSetFlags()[0] ? this.default_policy : (java.lang.String) defaultValue(fields()[0]);
+        record.port_summary = fieldSetFlags()[1] ? this.port_summary : (java.lang.String) defaultValue(fields()[1]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

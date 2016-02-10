@@ -8,14 +8,14 @@ package converTor.relayConsensus;
 @org.apache.avro.specific.AvroGenerated
 public class DirSource extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -2130677181950298812L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DirSource\",\"namespace\":\"converTor.relayConsensus\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/DirSourceEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/DirSourceEntry: String getIdentity()\"},{\"name\":\"address\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/DirSourceEntry: String getAddress()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/DirSourceEntry: int getDirport()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/DirSourceEntry: int getOrport()\"},{\"name\":\"is_legacy\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/DirSourceEntry: boolean isLegacy()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DirSource\",\"namespace\":\"converTor.relayConsensus\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getIdentity()\"},{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getAddress()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/DirSourceEntry: int getDirport()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/DirSourceEntry: int getOrport()\"},{\"name\":\"is_legacy\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/DirSourceEntry: boolean isLegacy()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/DirSourceEntry: String getNickname() */
-  @Deprecated public java.lang.CharSequence nickname;
+  @Deprecated public java.lang.String nickname;
   /** metrics-lib/DirSourceEntry: String getIdentity() */
-  @Deprecated public java.lang.CharSequence identity;
+  @Deprecated public java.lang.String identity;
   /** metrics-lib/DirSourceEntry: String getAddress() */
-  @Deprecated public java.lang.CharSequence address;
+  @Deprecated public java.lang.String address;
   /** metrics-lib/DirSourceEntry: int getDirport() */
   @Deprecated public java.lang.Integer dir_port;
   /** metrics-lib/DirSourceEntry: int getOrport() */
@@ -39,7 +39,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
    * @param or_port metrics-lib/DirSourceEntry: int getOrport()
    * @param is_legacy metrics-lib/DirSourceEntry: boolean isLegacy()
    */
-  public DirSource(java.lang.CharSequence nickname, java.lang.CharSequence identity, java.lang.CharSequence address, java.lang.Integer dir_port, java.lang.Integer or_port, java.lang.Boolean is_legacy) {
+  public DirSource(java.lang.String nickname, java.lang.String identity, java.lang.String address, java.lang.Integer dir_port, java.lang.Integer or_port, java.lang.Boolean is_legacy) {
     this.nickname = nickname;
     this.identity = identity;
     this.address = address;
@@ -65,9 +65,9 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: nickname = (java.lang.CharSequence)value$; break;
-    case 1: identity = (java.lang.CharSequence)value$; break;
-    case 2: address = (java.lang.CharSequence)value$; break;
+    case 0: nickname = (java.lang.String)value$; break;
+    case 1: identity = (java.lang.String)value$; break;
+    case 2: address = (java.lang.String)value$; break;
     case 3: dir_port = (java.lang.Integer)value$; break;
     case 4: or_port = (java.lang.Integer)value$; break;
     case 5: is_legacy = (java.lang.Boolean)value$; break;
@@ -79,7 +79,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
    * Gets the value of the 'nickname' field.
    * @return metrics-lib/DirSourceEntry: String getNickname()
    */
-  public java.lang.CharSequence getNickname() {
+  public java.lang.String getNickname() {
     return nickname;
   }
 
@@ -88,7 +88,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
    * metrics-lib/DirSourceEntry: String getNickname()
    * @param value the value to set.
    */
-  public void setNickname(java.lang.CharSequence value) {
+  public void setNickname(java.lang.String value) {
     this.nickname = value;
   }
 
@@ -96,7 +96,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
    * Gets the value of the 'identity' field.
    * @return metrics-lib/DirSourceEntry: String getIdentity()
    */
-  public java.lang.CharSequence getIdentity() {
+  public java.lang.String getIdentity() {
     return identity;
   }
 
@@ -105,7 +105,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
    * metrics-lib/DirSourceEntry: String getIdentity()
    * @param value the value to set.
    */
-  public void setIdentity(java.lang.CharSequence value) {
+  public void setIdentity(java.lang.String value) {
     this.identity = value;
   }
 
@@ -113,7 +113,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
    * Gets the value of the 'address' field.
    * @return metrics-lib/DirSourceEntry: String getAddress()
    */
-  public java.lang.CharSequence getAddress() {
+  public java.lang.String getAddress() {
     return address;
   }
 
@@ -122,7 +122,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
    * metrics-lib/DirSourceEntry: String getAddress()
    * @param value the value to set.
    */
-  public void setAddress(java.lang.CharSequence value) {
+  public void setAddress(java.lang.String value) {
     this.address = value;
   }
 
@@ -210,11 +210,11 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
     implements org.apache.avro.data.RecordBuilder<DirSource> {
 
     /** metrics-lib/DirSourceEntry: String getNickname() */
-    private java.lang.CharSequence nickname;
+    private java.lang.String nickname;
     /** metrics-lib/DirSourceEntry: String getIdentity() */
-    private java.lang.CharSequence identity;
+    private java.lang.String identity;
     /** metrics-lib/DirSourceEntry: String getAddress() */
-    private java.lang.CharSequence address;
+    private java.lang.String address;
     /** metrics-lib/DirSourceEntry: int getDirport() */
     private java.lang.Integer dir_port;
     /** metrics-lib/DirSourceEntry: int getOrport() */
@@ -296,7 +296,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/DirSourceEntry: String getNickname()
       * @return The value.
       */
-    public java.lang.CharSequence getNickname() {
+    public java.lang.String getNickname() {
       return nickname;
     }
 
@@ -306,7 +306,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'nickname'.
       * @return This builder.
       */
-    public converTor.relayConsensus.DirSource.Builder setNickname(java.lang.CharSequence value) {
+    public converTor.relayConsensus.DirSource.Builder setNickname(java.lang.String value) {
       validate(fields()[0], value);
       this.nickname = value;
       fieldSetFlags()[0] = true;
@@ -339,7 +339,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/DirSourceEntry: String getIdentity()
       * @return The value.
       */
-    public java.lang.CharSequence getIdentity() {
+    public java.lang.String getIdentity() {
       return identity;
     }
 
@@ -349,7 +349,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'identity'.
       * @return This builder.
       */
-    public converTor.relayConsensus.DirSource.Builder setIdentity(java.lang.CharSequence value) {
+    public converTor.relayConsensus.DirSource.Builder setIdentity(java.lang.String value) {
       validate(fields()[1], value);
       this.identity = value;
       fieldSetFlags()[1] = true;
@@ -382,7 +382,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/DirSourceEntry: String getAddress()
       * @return The value.
       */
-    public java.lang.CharSequence getAddress() {
+    public java.lang.String getAddress() {
       return address;
     }
 
@@ -392,7 +392,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'address'.
       * @return This builder.
       */
-    public converTor.relayConsensus.DirSource.Builder setAddress(java.lang.CharSequence value) {
+    public converTor.relayConsensus.DirSource.Builder setAddress(java.lang.String value) {
       validate(fields()[2], value);
       this.address = value;
       fieldSetFlags()[2] = true;
@@ -553,9 +553,9 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
     public DirSource build() {
       try {
         DirSource record = new DirSource();
-        record.nickname = fieldSetFlags()[0] ? this.nickname : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.identity = fieldSetFlags()[1] ? this.identity : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.address = fieldSetFlags()[2] ? this.address : (java.lang.CharSequence) defaultValue(fields()[2]);
+        record.nickname = fieldSetFlags()[0] ? this.nickname : (java.lang.String) defaultValue(fields()[0]);
+        record.identity = fieldSetFlags()[1] ? this.identity : (java.lang.String) defaultValue(fields()[1]);
+        record.address = fieldSetFlags()[2] ? this.address : (java.lang.String) defaultValue(fields()[2]);
         record.dir_port = fieldSetFlags()[3] ? this.dir_port : (java.lang.Integer) defaultValue(fields()[3]);
         record.or_port = fieldSetFlags()[4] ? this.or_port : (java.lang.Integer) defaultValue(fields()[4]);
         record.is_legacy = fieldSetFlags()[5] ? this.is_legacy : (java.lang.Boolean) defaultValue(fields()[5]);

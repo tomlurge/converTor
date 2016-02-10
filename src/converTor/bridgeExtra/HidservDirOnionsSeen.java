@@ -8,12 +8,12 @@ package converTor.bridgeExtra;
 @org.apache.avro.specific.AvroGenerated
 public class HidservDirOnionsSeen extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -8031721531763277441L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"HidservDirOnionsSeen\",\"namespace\":\"converTor.bridgeExtra\",\"fields\":[{\"name\":\"onions\",\"type\":\"double\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: Double getHidservDirOnionsSeen()\"},{\"name\":\"obfuscation\",\"type\":{\"type\":\"map\",\"values\":\"int\"},\"doc\":\"metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservDirOnionsSeenParameters()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"HidservDirOnionsSeen\",\"namespace\":\"converTor.bridgeExtra\",\"fields\":[{\"name\":\"onions\",\"type\":\"double\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: Double getHidservDirOnionsSeen()\"},{\"name\":\"obfuscation\",\"type\":{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"},\"doc\":\"metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservDirOnionsSeenParameters()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/ExtraInfoDescriptor: Double getHidservDirOnionsSeen() */
   @Deprecated public double onions;
   /** metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservDirOnionsSeenParameters() */
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> obfuscation;
+  @Deprecated public java.util.Map<java.lang.String,java.lang.Integer> obfuscation;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -27,7 +27,7 @@ public class HidservDirOnionsSeen extends org.apache.avro.specific.SpecificRecor
    * @param onions metrics-lib/ExtraInfoDescriptor: Double getHidservDirOnionsSeen()
    * @param obfuscation metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservDirOnionsSeenParameters()
    */
-  public HidservDirOnionsSeen(java.lang.Double onions, java.util.Map<java.lang.CharSequence,java.lang.Integer> obfuscation) {
+  public HidservDirOnionsSeen(java.lang.Double onions, java.util.Map<java.lang.String,java.lang.Integer> obfuscation) {
     this.onions = onions;
     this.obfuscation = obfuscation;
   }
@@ -46,7 +46,7 @@ public class HidservDirOnionsSeen extends org.apache.avro.specific.SpecificRecor
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
     case 0: onions = (java.lang.Double)value$; break;
-    case 1: obfuscation = (java.util.Map<java.lang.CharSequence,java.lang.Integer>)value$; break;
+    case 1: obfuscation = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -72,7 +72,7 @@ public class HidservDirOnionsSeen extends org.apache.avro.specific.SpecificRecor
    * Gets the value of the 'obfuscation' field.
    * @return metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservDirOnionsSeenParameters()
    */
-  public java.util.Map<java.lang.CharSequence,java.lang.Integer> getObfuscation() {
+  public java.util.Map<java.lang.String,java.lang.Integer> getObfuscation() {
     return obfuscation;
   }
 
@@ -81,7 +81,7 @@ public class HidservDirOnionsSeen extends org.apache.avro.specific.SpecificRecor
    * metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservDirOnionsSeenParameters()
    * @param value the value to set.
    */
-  public void setObfuscation(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+  public void setObfuscation(java.util.Map<java.lang.String,java.lang.Integer> value) {
     this.obfuscation = value;
   }
 
@@ -120,7 +120,7 @@ public class HidservDirOnionsSeen extends org.apache.avro.specific.SpecificRecor
     /** metrics-lib/ExtraInfoDescriptor: Double getHidservDirOnionsSeen() */
     private double onions;
     /** metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservDirOnionsSeenParameters() */
-    private java.util.Map<java.lang.CharSequence,java.lang.Integer> obfuscation;
+    private java.util.Map<java.lang.String,java.lang.Integer> obfuscation;
 
     /** Creates a new Builder */
     private Builder() {
@@ -206,7 +206,7 @@ public class HidservDirOnionsSeen extends org.apache.avro.specific.SpecificRecor
       * metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservDirOnionsSeenParameters()
       * @return The value.
       */
-    public java.util.Map<java.lang.CharSequence,java.lang.Integer> getObfuscation() {
+    public java.util.Map<java.lang.String,java.lang.Integer> getObfuscation() {
       return obfuscation;
     }
 
@@ -216,7 +216,7 @@ public class HidservDirOnionsSeen extends org.apache.avro.specific.SpecificRecor
       * @param value The value of 'obfuscation'.
       * @return This builder.
       */
-    public converTor.bridgeExtra.HidservDirOnionsSeen.Builder setObfuscation(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+    public converTor.bridgeExtra.HidservDirOnionsSeen.Builder setObfuscation(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[1], value);
       this.obfuscation = value;
       fieldSetFlags()[1] = true;
@@ -249,7 +249,7 @@ public class HidservDirOnionsSeen extends org.apache.avro.specific.SpecificRecor
       try {
         HidservDirOnionsSeen record = new HidservDirOnionsSeen();
         record.onions = fieldSetFlags()[0] ? this.onions : (java.lang.Double) defaultValue(fields()[0]);
-        record.obfuscation = fieldSetFlags()[1] ? this.obfuscation : (java.util.Map<java.lang.CharSequence,java.lang.Integer>) defaultValue(fields()[1]);
+        record.obfuscation = fieldSetFlags()[1] ? this.obfuscation : (java.util.Map<java.lang.String,java.lang.Integer>) defaultValue(fields()[1]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

@@ -8,38 +8,38 @@ package converTor.relayConsensus;
 @org.apache.avro.specific.AvroGenerated
 public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -6446568355711709240L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"RelayConsensus\",\"namespace\":\"converTor.relayConsensus\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":\"string\",\"default\":\"network-status-consensus-3 1.0\"},{\"name\":\"network_status_version\",\"type\":\"int\",\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: int getNetworkStatusVersion()\",\"default\":3},{\"name\":\"vote_status\",\"type\":[\"null\",\"string\"],\"doc\":\"\\\"consensus\\\" per definition, no getter\",\"default\":\"consensus\"},{\"name\":\"consensus_method\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: int getConsensusMethod()\"},{\"name\":\"consensus_flavor\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: String getConsensusFlavor()\"},{\"name\":\"valid_after\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: long getValidAfterMillis()\"},{\"name\":\"fresh_until\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: long getFreshUntilMillis()\"},{\"name\":\"valid_until\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: long getValidUntilMillis()\"},{\"name\":\"voting_delay\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Vote\",\"fields\":[{\"name\":\"vote_seconds\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: long getVoteSeconds()\"},{\"name\":\"dist_seconds\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: long getDistSeconds()\"}]}]},{\"name\":\"client_versions\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: List<String> getRecommendedClientVersions()\"},{\"name\":\"server_versions\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: List<String> getRecommendedServerVersions()\"},{\"name\":\"known_flags\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: SortedSet<String> getKnownFlags()\"},{\"name\":\"params\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, Integer> getConsensusParams()\"},{\"name\":\"authorities\",\"type\":[\"null\",{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"Authority\",\"fields\":[{\"name\":\"dir_source\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirSource\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/DirSourceEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/DirSourceEntry: String getIdentity()\"},{\"name\":\"address\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/DirSourceEntry: String getAddress()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/DirSourceEntry: int getDirport()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/DirSourceEntry: int getOrport()\"},{\"name\":\"is_legacy\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/DirSourceEntry: boolean isLegacy()\"}]}]},{\"name\":\"contact\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/DirSourceEntry: String getContactLine()\"},{\"name\":\"vote_digest\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/DirSourceEntry: String getVoteDigest()\"}]}}],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, DirSourceEntry> getDirSourceEntries()\\n     dir-source entries representing the directories of which votes are contained in this consensus\"},{\"name\":\"status\",\"type\":[\"null\",{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"Status\",\"fields\":[{\"name\":\"r\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"R\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDescriptor()\"},{\"name\":\"digest\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: Set<String> getMicrodescriptorDigests()\"},{\"name\":\"publication\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getPublishedMillis()\"},{\"name\":\"ip\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getOrPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getDirPort()\"},{\"name\":\"fingerprint\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getFingerprint() - not in spec, but in metrics-lib\"}]}]},{\"name\":\"a\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: getOrAddresses()\"},{\"name\":\"s\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags()\"},{\"name\":\"v\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getVersion()\"},{\"name\":\"w\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"W\",\"fields\":[{\"name\":\"bandwidth\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getBandwidth()\"},{\"name\":\"measured\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getMeasured()\"},{\"name\":\"unmeasured\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/NetworkStatusEntry: boolean getUnmeasured()\"}]}]},{\"name\":\"p\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Policy\",\"fields\":[{\"name\":\"default_policy\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDefaultPolicy()\"},{\"name\":\"port_summary\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getPortList()\"}]}]}]}}],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, NetworkStatusEntry> getStatusEntries()\\n     status entries, one for each contained relay\"},{\"name\":\"directory_footer\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirFooter\",\"fields\":[{\"name\":\"bandwidth_weights\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, Integer> getBandwidthWeights()\"},{\"name\":\"consensus_digest\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: String getConsensusDigest()\"},{\"name\":\"directory_signature\",\"type\":[\"null\",{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"DirSig\",\"fields\":[{\"name\":\"algorithm\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/DirectorySignature: String getAlgorithm()\",\"default\":\"sha1\"},{\"name\":\"identity\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/DirectorySignature: String getIdentity()\"},{\"name\":\"signing_key_digest\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/DirectorySignature: String getSigningKeyDigest()\"},{\"name\":\"signature\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/DirectorySignature: String getSignature()\"}]}}],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, DirectorySignature> getDirectorySignatures()\"}]}]}],\"aliases\":[\"relay_network_status_consensus_3\"]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"RelayConsensus\",\"namespace\":\"converTor.relayConsensus\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"network-status-consensus-3 1.0\"},{\"name\":\"network_status_version\",\"type\":\"int\",\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: int getNetworkStatusVersion()\",\"default\":3},{\"name\":\"vote_status\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"\\\"consensus\\\" per definition, no getter\",\"default\":\"consensus\"},{\"name\":\"consensus_method\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: int getConsensusMethod()\"},{\"name\":\"consensus_flavor\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: String getConsensusFlavor()\"},{\"name\":\"valid_after\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: long getValidAfterMillis()\"},{\"name\":\"fresh_until\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: long getFreshUntilMillis()\"},{\"name\":\"valid_until\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: long getValidUntilMillis()\"},{\"name\":\"voting_delay\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Vote\",\"fields\":[{\"name\":\"vote_seconds\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: long getVoteSeconds()\"},{\"name\":\"dist_seconds\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: long getDistSeconds()\"}]}]},{\"name\":\"client_versions\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: List<String> getRecommendedClientVersions()\"},{\"name\":\"server_versions\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: List<String> getRecommendedServerVersions()\"},{\"name\":\"known_flags\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: SortedSet<String> getKnownFlags()\"},{\"name\":\"params\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, Integer> getConsensusParams()\"},{\"name\":\"authorities\",\"type\":[\"null\",{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"Authority\",\"fields\":[{\"name\":\"dir_source\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirSource\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getIdentity()\"},{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getAddress()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/DirSourceEntry: int getDirport()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/DirSourceEntry: int getOrport()\"},{\"name\":\"is_legacy\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/DirSourceEntry: boolean isLegacy()\"}]}]},{\"name\":\"contact\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getContactLine()\"},{\"name\":\"vote_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getVoteDigest()\"}]},\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, DirSourceEntry> getDirSourceEntries()\\n     dir-source entries representing the directories of which votes are contained in this consensus\"},{\"name\":\"status\",\"type\":[\"null\",{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"Status\",\"fields\":[{\"name\":\"r\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"R\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDescriptor()\"},{\"name\":\"digest\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/NetworkStatusEntry: Set<String> getMicrodescriptorDigests()\"},{\"name\":\"publication\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: long getPublishedMillis()\"},{\"name\":\"ip\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getOrPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getDirPort()\"},{\"name\":\"fingerprint\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getFingerprint() - not in spec, but in metrics-lib\"}]}]},{\"name\":\"a\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/NetworkStatusEntry: getOrAddresses()\"},{\"name\":\"s\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags()\"},{\"name\":\"v\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getVersion()\"},{\"name\":\"w\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"W\",\"fields\":[{\"name\":\"bandwidth\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getBandwidth()\"},{\"name\":\"measured\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getMeasured()\"},{\"name\":\"unmeasured\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/NetworkStatusEntry: boolean getUnmeasured()\"}]}]},{\"name\":\"p\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Policy\",\"fields\":[{\"name\":\"default_policy\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDefaultPolicy()\"},{\"name\":\"port_summary\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getPortList()\"}]}]}]},\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, NetworkStatusEntry> getStatusEntries()\\n     status entries, one for each contained relay\"},{\"name\":\"directory_footer\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirFooter\",\"fields\":[{\"name\":\"bandwidth_weights\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, Integer> getBandwidthWeights()\"},{\"name\":\"consensus_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: String getConsensusDigest()\"},{\"name\":\"directory_signature\",\"type\":[\"null\",{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"DirSig\",\"fields\":[{\"name\":\"algorithm\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getAlgorithm()\",\"default\":\"sha1\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getIdentity()\"},{\"name\":\"signing_key_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getSigningKeyDigest()\"},{\"name\":\"signature\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/DirectorySignature: String getSignature()\"}]},\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, DirectorySignature> getDirectorySignatures()\"}]}]}],\"aliases\":[\"relay_network_status_consensus_3\"]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
-  @Deprecated public java.lang.CharSequence descriptor_type;
+  @Deprecated public java.lang.String descriptor_type;
   /** metrics-lib/RelayNetworkStatusConsensus: int getNetworkStatusVersion() */
   @Deprecated public int network_status_version;
   /** "consensus" per definition, no getter */
-  @Deprecated public java.lang.CharSequence vote_status;
+  @Deprecated public java.lang.String vote_status;
   /** metrics-lib/RelayNetworkStatusConsensus: int getConsensusMethod() */
   @Deprecated public java.lang.Integer consensus_method;
   /** metrics-lib/RelayNetworkStatusConsensus: String getConsensusFlavor() */
-  @Deprecated public java.lang.CharSequence consensus_flavor;
+  @Deprecated public java.lang.String consensus_flavor;
   /** metrics-lib/RelayNetworkStatusConsensus: long getValidAfterMillis() */
-  @Deprecated public java.lang.CharSequence valid_after;
+  @Deprecated public java.lang.String valid_after;
   /** metrics-lib/RelayNetworkStatusConsensus: long getFreshUntilMillis() */
-  @Deprecated public java.lang.CharSequence fresh_until;
+  @Deprecated public java.lang.String fresh_until;
   /** metrics-lib/RelayNetworkStatusConsensus: long getValidUntilMillis() */
-  @Deprecated public java.lang.CharSequence valid_until;
+  @Deprecated public java.lang.String valid_until;
   @Deprecated public converTor.relayConsensus.Vote voting_delay;
   /** metrics-lib/RelayNetworkStatusConsensus: List<String> getRecommendedClientVersions() */
-  @Deprecated public java.util.List<java.lang.CharSequence> client_versions;
+  @Deprecated public java.util.List<java.lang.String> client_versions;
   /** metrics-lib/RelayNetworkStatusConsensus: List<String> getRecommendedServerVersions() */
-  @Deprecated public java.util.List<java.lang.CharSequence> server_versions;
+  @Deprecated public java.util.List<java.lang.String> server_versions;
   /** metrics-lib/RelayNetworkStatusConsensus: SortedSet<String> getKnownFlags() */
-  @Deprecated public java.util.List<java.lang.CharSequence> known_flags;
+  @Deprecated public java.util.List<java.lang.String> known_flags;
   /** metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, Integer> getConsensusParams() */
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> params;
+  @Deprecated public java.util.Map<java.lang.String,java.lang.Integer> params;
   /** metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, DirSourceEntry> getDirSourceEntries()
      dir-source entries representing the directories of which votes are contained in this consensus */
-  @Deprecated public java.util.Map<java.lang.CharSequence,converTor.relayConsensus.Authority> authorities;
+  @Deprecated public java.util.Map<java.lang.String,converTor.relayConsensus.Authority> authorities;
   /** metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, NetworkStatusEntry> getStatusEntries()
      status entries, one for each contained relay */
-  @Deprecated public java.util.Map<java.lang.CharSequence,converTor.relayConsensus.Status> status;
+  @Deprecated public java.util.Map<java.lang.String,converTor.relayConsensus.Status> status;
   @Deprecated public converTor.relayConsensus.DirFooter directory_footer;
 
   /**
@@ -67,7 +67,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
    * @param status metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, NetworkStatusEntry> getStatusEntries()
      status entries, one for each contained relay
    */
-  public RelayConsensus(java.lang.CharSequence descriptor_type, java.lang.Integer network_status_version, java.lang.CharSequence vote_status, java.lang.Integer consensus_method, java.lang.CharSequence consensus_flavor, java.lang.CharSequence valid_after, java.lang.CharSequence fresh_until, java.lang.CharSequence valid_until, converTor.relayConsensus.Vote voting_delay, java.util.List<java.lang.CharSequence> client_versions, java.util.List<java.lang.CharSequence> server_versions, java.util.List<java.lang.CharSequence> known_flags, java.util.Map<java.lang.CharSequence,java.lang.Integer> params, java.util.Map<java.lang.CharSequence,converTor.relayConsensus.Authority> authorities, java.util.Map<java.lang.CharSequence,converTor.relayConsensus.Status> status, converTor.relayConsensus.DirFooter directory_footer) {
+  public RelayConsensus(java.lang.String descriptor_type, java.lang.Integer network_status_version, java.lang.String vote_status, java.lang.Integer consensus_method, java.lang.String consensus_flavor, java.lang.String valid_after, java.lang.String fresh_until, java.lang.String valid_until, converTor.relayConsensus.Vote voting_delay, java.util.List<java.lang.String> client_versions, java.util.List<java.lang.String> server_versions, java.util.List<java.lang.String> known_flags, java.util.Map<java.lang.String,java.lang.Integer> params, java.util.Map<java.lang.String,converTor.relayConsensus.Authority> authorities, java.util.Map<java.lang.String,converTor.relayConsensus.Status> status, converTor.relayConsensus.DirFooter directory_footer) {
     this.descriptor_type = descriptor_type;
     this.network_status_version = network_status_version;
     this.vote_status = vote_status;
@@ -113,21 +113,21 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: descriptor_type = (java.lang.CharSequence)value$; break;
+    case 0: descriptor_type = (java.lang.String)value$; break;
     case 1: network_status_version = (java.lang.Integer)value$; break;
-    case 2: vote_status = (java.lang.CharSequence)value$; break;
+    case 2: vote_status = (java.lang.String)value$; break;
     case 3: consensus_method = (java.lang.Integer)value$; break;
-    case 4: consensus_flavor = (java.lang.CharSequence)value$; break;
-    case 5: valid_after = (java.lang.CharSequence)value$; break;
-    case 6: fresh_until = (java.lang.CharSequence)value$; break;
-    case 7: valid_until = (java.lang.CharSequence)value$; break;
+    case 4: consensus_flavor = (java.lang.String)value$; break;
+    case 5: valid_after = (java.lang.String)value$; break;
+    case 6: fresh_until = (java.lang.String)value$; break;
+    case 7: valid_until = (java.lang.String)value$; break;
     case 8: voting_delay = (converTor.relayConsensus.Vote)value$; break;
-    case 9: client_versions = (java.util.List<java.lang.CharSequence>)value$; break;
-    case 10: server_versions = (java.util.List<java.lang.CharSequence>)value$; break;
-    case 11: known_flags = (java.util.List<java.lang.CharSequence>)value$; break;
-    case 12: params = (java.util.Map<java.lang.CharSequence,java.lang.Integer>)value$; break;
-    case 13: authorities = (java.util.Map<java.lang.CharSequence,converTor.relayConsensus.Authority>)value$; break;
-    case 14: status = (java.util.Map<java.lang.CharSequence,converTor.relayConsensus.Status>)value$; break;
+    case 9: client_versions = (java.util.List<java.lang.String>)value$; break;
+    case 10: server_versions = (java.util.List<java.lang.String>)value$; break;
+    case 11: known_flags = (java.util.List<java.lang.String>)value$; break;
+    case 12: params = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
+    case 13: authorities = (java.util.Map<java.lang.String,converTor.relayConsensus.Authority>)value$; break;
+    case 14: status = (java.util.Map<java.lang.String,converTor.relayConsensus.Status>)value$; break;
     case 15: directory_footer = (converTor.relayConsensus.DirFooter)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
@@ -136,7 +136,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
   /**
    * Gets the value of the 'descriptor_type' field.
    */
-  public java.lang.CharSequence getDescriptorType() {
+  public java.lang.String getDescriptorType() {
     return descriptor_type;
   }
 
@@ -144,7 +144,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
    * Sets the value of the 'descriptor_type' field.
    * @param value the value to set.
    */
-  public void setDescriptorType(java.lang.CharSequence value) {
+  public void setDescriptorType(java.lang.String value) {
     this.descriptor_type = value;
   }
 
@@ -169,7 +169,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
    * Gets the value of the 'vote_status' field.
    * @return "consensus" per definition, no getter
    */
-  public java.lang.CharSequence getVoteStatus() {
+  public java.lang.String getVoteStatus() {
     return vote_status;
   }
 
@@ -178,7 +178,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
    * "consensus" per definition, no getter
    * @param value the value to set.
    */
-  public void setVoteStatus(java.lang.CharSequence value) {
+  public void setVoteStatus(java.lang.String value) {
     this.vote_status = value;
   }
 
@@ -203,7 +203,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
    * Gets the value of the 'consensus_flavor' field.
    * @return metrics-lib/RelayNetworkStatusConsensus: String getConsensusFlavor()
    */
-  public java.lang.CharSequence getConsensusFlavor() {
+  public java.lang.String getConsensusFlavor() {
     return consensus_flavor;
   }
 
@@ -212,7 +212,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
    * metrics-lib/RelayNetworkStatusConsensus: String getConsensusFlavor()
    * @param value the value to set.
    */
-  public void setConsensusFlavor(java.lang.CharSequence value) {
+  public void setConsensusFlavor(java.lang.String value) {
     this.consensus_flavor = value;
   }
 
@@ -220,7 +220,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
    * Gets the value of the 'valid_after' field.
    * @return metrics-lib/RelayNetworkStatusConsensus: long getValidAfterMillis()
    */
-  public java.lang.CharSequence getValidAfter() {
+  public java.lang.String getValidAfter() {
     return valid_after;
   }
 
@@ -229,7 +229,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
    * metrics-lib/RelayNetworkStatusConsensus: long getValidAfterMillis()
    * @param value the value to set.
    */
-  public void setValidAfter(java.lang.CharSequence value) {
+  public void setValidAfter(java.lang.String value) {
     this.valid_after = value;
   }
 
@@ -237,7 +237,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
    * Gets the value of the 'fresh_until' field.
    * @return metrics-lib/RelayNetworkStatusConsensus: long getFreshUntilMillis()
    */
-  public java.lang.CharSequence getFreshUntil() {
+  public java.lang.String getFreshUntil() {
     return fresh_until;
   }
 
@@ -246,7 +246,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
    * metrics-lib/RelayNetworkStatusConsensus: long getFreshUntilMillis()
    * @param value the value to set.
    */
-  public void setFreshUntil(java.lang.CharSequence value) {
+  public void setFreshUntil(java.lang.String value) {
     this.fresh_until = value;
   }
 
@@ -254,7 +254,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
    * Gets the value of the 'valid_until' field.
    * @return metrics-lib/RelayNetworkStatusConsensus: long getValidUntilMillis()
    */
-  public java.lang.CharSequence getValidUntil() {
+  public java.lang.String getValidUntil() {
     return valid_until;
   }
 
@@ -263,7 +263,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
    * metrics-lib/RelayNetworkStatusConsensus: long getValidUntilMillis()
    * @param value the value to set.
    */
-  public void setValidUntil(java.lang.CharSequence value) {
+  public void setValidUntil(java.lang.String value) {
     this.valid_until = value;
   }
 
@@ -286,7 +286,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
    * Gets the value of the 'client_versions' field.
    * @return metrics-lib/RelayNetworkStatusConsensus: List<String> getRecommendedClientVersions()
    */
-  public java.util.List<java.lang.CharSequence> getClientVersions() {
+  public java.util.List<java.lang.String> getClientVersions() {
     return client_versions;
   }
 
@@ -295,7 +295,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
    * metrics-lib/RelayNetworkStatusConsensus: List<String> getRecommendedClientVersions()
    * @param value the value to set.
    */
-  public void setClientVersions(java.util.List<java.lang.CharSequence> value) {
+  public void setClientVersions(java.util.List<java.lang.String> value) {
     this.client_versions = value;
   }
 
@@ -303,7 +303,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
    * Gets the value of the 'server_versions' field.
    * @return metrics-lib/RelayNetworkStatusConsensus: List<String> getRecommendedServerVersions()
    */
-  public java.util.List<java.lang.CharSequence> getServerVersions() {
+  public java.util.List<java.lang.String> getServerVersions() {
     return server_versions;
   }
 
@@ -312,7 +312,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
    * metrics-lib/RelayNetworkStatusConsensus: List<String> getRecommendedServerVersions()
    * @param value the value to set.
    */
-  public void setServerVersions(java.util.List<java.lang.CharSequence> value) {
+  public void setServerVersions(java.util.List<java.lang.String> value) {
     this.server_versions = value;
   }
 
@@ -320,7 +320,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
    * Gets the value of the 'known_flags' field.
    * @return metrics-lib/RelayNetworkStatusConsensus: SortedSet<String> getKnownFlags()
    */
-  public java.util.List<java.lang.CharSequence> getKnownFlags() {
+  public java.util.List<java.lang.String> getKnownFlags() {
     return known_flags;
   }
 
@@ -329,7 +329,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
    * metrics-lib/RelayNetworkStatusConsensus: SortedSet<String> getKnownFlags()
    * @param value the value to set.
    */
-  public void setKnownFlags(java.util.List<java.lang.CharSequence> value) {
+  public void setKnownFlags(java.util.List<java.lang.String> value) {
     this.known_flags = value;
   }
 
@@ -337,7 +337,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
    * Gets the value of the 'params' field.
    * @return metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, Integer> getConsensusParams()
    */
-  public java.util.Map<java.lang.CharSequence,java.lang.Integer> getParams() {
+  public java.util.Map<java.lang.String,java.lang.Integer> getParams() {
     return params;
   }
 
@@ -346,7 +346,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
    * metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, Integer> getConsensusParams()
    * @param value the value to set.
    */
-  public void setParams(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+  public void setParams(java.util.Map<java.lang.String,java.lang.Integer> value) {
     this.params = value;
   }
 
@@ -355,7 +355,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
    * @return metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, DirSourceEntry> getDirSourceEntries()
      dir-source entries representing the directories of which votes are contained in this consensus
    */
-  public java.util.Map<java.lang.CharSequence,converTor.relayConsensus.Authority> getAuthorities() {
+  public java.util.Map<java.lang.String,converTor.relayConsensus.Authority> getAuthorities() {
     return authorities;
   }
 
@@ -365,7 +365,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
      dir-source entries representing the directories of which votes are contained in this consensus
    * @param value the value to set.
    */
-  public void setAuthorities(java.util.Map<java.lang.CharSequence,converTor.relayConsensus.Authority> value) {
+  public void setAuthorities(java.util.Map<java.lang.String,converTor.relayConsensus.Authority> value) {
     this.authorities = value;
   }
 
@@ -374,7 +374,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
    * @return metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, NetworkStatusEntry> getStatusEntries()
      status entries, one for each contained relay
    */
-  public java.util.Map<java.lang.CharSequence,converTor.relayConsensus.Status> getStatus() {
+  public java.util.Map<java.lang.String,converTor.relayConsensus.Status> getStatus() {
     return status;
   }
 
@@ -384,7 +384,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
      status entries, one for each contained relay
    * @param value the value to set.
    */
-  public void setStatus(java.util.Map<java.lang.CharSequence,converTor.relayConsensus.Status> value) {
+  public void setStatus(java.util.Map<java.lang.String,converTor.relayConsensus.Status> value) {
     this.status = value;
   }
 
@@ -435,37 +435,37 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<RelayConsensus>
     implements org.apache.avro.data.RecordBuilder<RelayConsensus> {
 
-    private java.lang.CharSequence descriptor_type;
+    private java.lang.String descriptor_type;
     /** metrics-lib/RelayNetworkStatusConsensus: int getNetworkStatusVersion() */
     private int network_status_version;
     /** "consensus" per definition, no getter */
-    private java.lang.CharSequence vote_status;
+    private java.lang.String vote_status;
     /** metrics-lib/RelayNetworkStatusConsensus: int getConsensusMethod() */
     private java.lang.Integer consensus_method;
     /** metrics-lib/RelayNetworkStatusConsensus: String getConsensusFlavor() */
-    private java.lang.CharSequence consensus_flavor;
+    private java.lang.String consensus_flavor;
     /** metrics-lib/RelayNetworkStatusConsensus: long getValidAfterMillis() */
-    private java.lang.CharSequence valid_after;
+    private java.lang.String valid_after;
     /** metrics-lib/RelayNetworkStatusConsensus: long getFreshUntilMillis() */
-    private java.lang.CharSequence fresh_until;
+    private java.lang.String fresh_until;
     /** metrics-lib/RelayNetworkStatusConsensus: long getValidUntilMillis() */
-    private java.lang.CharSequence valid_until;
+    private java.lang.String valid_until;
     private converTor.relayConsensus.Vote voting_delay;
     private converTor.relayConsensus.Vote.Builder voting_delayBuilder;
     /** metrics-lib/RelayNetworkStatusConsensus: List<String> getRecommendedClientVersions() */
-    private java.util.List<java.lang.CharSequence> client_versions;
+    private java.util.List<java.lang.String> client_versions;
     /** metrics-lib/RelayNetworkStatusConsensus: List<String> getRecommendedServerVersions() */
-    private java.util.List<java.lang.CharSequence> server_versions;
+    private java.util.List<java.lang.String> server_versions;
     /** metrics-lib/RelayNetworkStatusConsensus: SortedSet<String> getKnownFlags() */
-    private java.util.List<java.lang.CharSequence> known_flags;
+    private java.util.List<java.lang.String> known_flags;
     /** metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, Integer> getConsensusParams() */
-    private java.util.Map<java.lang.CharSequence,java.lang.Integer> params;
+    private java.util.Map<java.lang.String,java.lang.Integer> params;
     /** metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, DirSourceEntry> getDirSourceEntries()
      dir-source entries representing the directories of which votes are contained in this consensus */
-    private java.util.Map<java.lang.CharSequence,converTor.relayConsensus.Authority> authorities;
+    private java.util.Map<java.lang.String,converTor.relayConsensus.Authority> authorities;
     /** metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, NetworkStatusEntry> getStatusEntries()
      status entries, one for each contained relay */
-    private java.util.Map<java.lang.CharSequence,converTor.relayConsensus.Status> status;
+    private java.util.Map<java.lang.String,converTor.relayConsensus.Status> status;
     private converTor.relayConsensus.DirFooter directory_footer;
     private converTor.relayConsensus.DirFooter.Builder directory_footerBuilder;
 
@@ -630,7 +630,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
       * Gets the value of the 'descriptor_type' field.
       * @return The value.
       */
-    public java.lang.CharSequence getDescriptorType() {
+    public java.lang.String getDescriptorType() {
       return descriptor_type;
     }
 
@@ -639,7 +639,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
       * @param value The value of 'descriptor_type'.
       * @return This builder.
       */
-    public converTor.relayConsensus.RelayConsensus.Builder setDescriptorType(java.lang.CharSequence value) {
+    public converTor.relayConsensus.RelayConsensus.Builder setDescriptorType(java.lang.String value) {
       validate(fields()[0], value);
       this.descriptor_type = value;
       fieldSetFlags()[0] = true;
@@ -712,7 +712,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
       * "consensus" per definition, no getter
       * @return The value.
       */
-    public java.lang.CharSequence getVoteStatus() {
+    public java.lang.String getVoteStatus() {
       return vote_status;
     }
 
@@ -722,7 +722,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
       * @param value The value of 'vote_status'.
       * @return This builder.
       */
-    public converTor.relayConsensus.RelayConsensus.Builder setVoteStatus(java.lang.CharSequence value) {
+    public converTor.relayConsensus.RelayConsensus.Builder setVoteStatus(java.lang.String value) {
       validate(fields()[2], value);
       this.vote_status = value;
       fieldSetFlags()[2] = true;
@@ -798,7 +798,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
       * metrics-lib/RelayNetworkStatusConsensus: String getConsensusFlavor()
       * @return The value.
       */
-    public java.lang.CharSequence getConsensusFlavor() {
+    public java.lang.String getConsensusFlavor() {
       return consensus_flavor;
     }
 
@@ -808,7 +808,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
       * @param value The value of 'consensus_flavor'.
       * @return This builder.
       */
-    public converTor.relayConsensus.RelayConsensus.Builder setConsensusFlavor(java.lang.CharSequence value) {
+    public converTor.relayConsensus.RelayConsensus.Builder setConsensusFlavor(java.lang.String value) {
       validate(fields()[4], value);
       this.consensus_flavor = value;
       fieldSetFlags()[4] = true;
@@ -841,7 +841,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
       * metrics-lib/RelayNetworkStatusConsensus: long getValidAfterMillis()
       * @return The value.
       */
-    public java.lang.CharSequence getValidAfter() {
+    public java.lang.String getValidAfter() {
       return valid_after;
     }
 
@@ -851,7 +851,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
       * @param value The value of 'valid_after'.
       * @return This builder.
       */
-    public converTor.relayConsensus.RelayConsensus.Builder setValidAfter(java.lang.CharSequence value) {
+    public converTor.relayConsensus.RelayConsensus.Builder setValidAfter(java.lang.String value) {
       validate(fields()[5], value);
       this.valid_after = value;
       fieldSetFlags()[5] = true;
@@ -884,7 +884,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
       * metrics-lib/RelayNetworkStatusConsensus: long getFreshUntilMillis()
       * @return The value.
       */
-    public java.lang.CharSequence getFreshUntil() {
+    public java.lang.String getFreshUntil() {
       return fresh_until;
     }
 
@@ -894,7 +894,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
       * @param value The value of 'fresh_until'.
       * @return This builder.
       */
-    public converTor.relayConsensus.RelayConsensus.Builder setFreshUntil(java.lang.CharSequence value) {
+    public converTor.relayConsensus.RelayConsensus.Builder setFreshUntil(java.lang.String value) {
       validate(fields()[6], value);
       this.fresh_until = value;
       fieldSetFlags()[6] = true;
@@ -927,7 +927,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
       * metrics-lib/RelayNetworkStatusConsensus: long getValidUntilMillis()
       * @return The value.
       */
-    public java.lang.CharSequence getValidUntil() {
+    public java.lang.String getValidUntil() {
       return valid_until;
     }
 
@@ -937,7 +937,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
       * @param value The value of 'valid_until'.
       * @return This builder.
       */
-    public converTor.relayConsensus.RelayConsensus.Builder setValidUntil(java.lang.CharSequence value) {
+    public converTor.relayConsensus.RelayConsensus.Builder setValidUntil(java.lang.String value) {
       validate(fields()[7], value);
       this.valid_until = value;
       fieldSetFlags()[7] = true;
@@ -1043,7 +1043,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
       * metrics-lib/RelayNetworkStatusConsensus: List<String> getRecommendedClientVersions()
       * @return The value.
       */
-    public java.util.List<java.lang.CharSequence> getClientVersions() {
+    public java.util.List<java.lang.String> getClientVersions() {
       return client_versions;
     }
 
@@ -1053,7 +1053,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
       * @param value The value of 'client_versions'.
       * @return This builder.
       */
-    public converTor.relayConsensus.RelayConsensus.Builder setClientVersions(java.util.List<java.lang.CharSequence> value) {
+    public converTor.relayConsensus.RelayConsensus.Builder setClientVersions(java.util.List<java.lang.String> value) {
       validate(fields()[9], value);
       this.client_versions = value;
       fieldSetFlags()[9] = true;
@@ -1086,7 +1086,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
       * metrics-lib/RelayNetworkStatusConsensus: List<String> getRecommendedServerVersions()
       * @return The value.
       */
-    public java.util.List<java.lang.CharSequence> getServerVersions() {
+    public java.util.List<java.lang.String> getServerVersions() {
       return server_versions;
     }
 
@@ -1096,7 +1096,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
       * @param value The value of 'server_versions'.
       * @return This builder.
       */
-    public converTor.relayConsensus.RelayConsensus.Builder setServerVersions(java.util.List<java.lang.CharSequence> value) {
+    public converTor.relayConsensus.RelayConsensus.Builder setServerVersions(java.util.List<java.lang.String> value) {
       validate(fields()[10], value);
       this.server_versions = value;
       fieldSetFlags()[10] = true;
@@ -1129,7 +1129,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
       * metrics-lib/RelayNetworkStatusConsensus: SortedSet<String> getKnownFlags()
       * @return The value.
       */
-    public java.util.List<java.lang.CharSequence> getKnownFlags() {
+    public java.util.List<java.lang.String> getKnownFlags() {
       return known_flags;
     }
 
@@ -1139,7 +1139,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
       * @param value The value of 'known_flags'.
       * @return This builder.
       */
-    public converTor.relayConsensus.RelayConsensus.Builder setKnownFlags(java.util.List<java.lang.CharSequence> value) {
+    public converTor.relayConsensus.RelayConsensus.Builder setKnownFlags(java.util.List<java.lang.String> value) {
       validate(fields()[11], value);
       this.known_flags = value;
       fieldSetFlags()[11] = true;
@@ -1172,7 +1172,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
       * metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, Integer> getConsensusParams()
       * @return The value.
       */
-    public java.util.Map<java.lang.CharSequence,java.lang.Integer> getParams() {
+    public java.util.Map<java.lang.String,java.lang.Integer> getParams() {
       return params;
     }
 
@@ -1182,7 +1182,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
       * @param value The value of 'params'.
       * @return This builder.
       */
-    public converTor.relayConsensus.RelayConsensus.Builder setParams(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+    public converTor.relayConsensus.RelayConsensus.Builder setParams(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[12], value);
       this.params = value;
       fieldSetFlags()[12] = true;
@@ -1216,7 +1216,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
      dir-source entries representing the directories of which votes are contained in this consensus
       * @return The value.
       */
-    public java.util.Map<java.lang.CharSequence,converTor.relayConsensus.Authority> getAuthorities() {
+    public java.util.Map<java.lang.String,converTor.relayConsensus.Authority> getAuthorities() {
       return authorities;
     }
 
@@ -1227,7 +1227,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
       * @param value The value of 'authorities'.
       * @return This builder.
       */
-    public converTor.relayConsensus.RelayConsensus.Builder setAuthorities(java.util.Map<java.lang.CharSequence,converTor.relayConsensus.Authority> value) {
+    public converTor.relayConsensus.RelayConsensus.Builder setAuthorities(java.util.Map<java.lang.String,converTor.relayConsensus.Authority> value) {
       validate(fields()[13], value);
       this.authorities = value;
       fieldSetFlags()[13] = true;
@@ -1263,7 +1263,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
      status entries, one for each contained relay
       * @return The value.
       */
-    public java.util.Map<java.lang.CharSequence,converTor.relayConsensus.Status> getStatus() {
+    public java.util.Map<java.lang.String,converTor.relayConsensus.Status> getStatus() {
       return status;
     }
 
@@ -1274,7 +1274,7 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
       * @param value The value of 'status'.
       * @return This builder.
       */
-    public converTor.relayConsensus.RelayConsensus.Builder setStatus(java.util.Map<java.lang.CharSequence,converTor.relayConsensus.Status> value) {
+    public converTor.relayConsensus.RelayConsensus.Builder setStatus(java.util.Map<java.lang.String,converTor.relayConsensus.Status> value) {
       validate(fields()[14], value);
       this.status = value;
       fieldSetFlags()[14] = true;
@@ -1381,25 +1381,25 @@ public class RelayConsensus extends org.apache.avro.specific.SpecificRecordBase 
     public RelayConsensus build() {
       try {
         RelayConsensus record = new RelayConsensus();
-        record.descriptor_type = fieldSetFlags()[0] ? this.descriptor_type : (java.lang.CharSequence) defaultValue(fields()[0]);
+        record.descriptor_type = fieldSetFlags()[0] ? this.descriptor_type : (java.lang.String) defaultValue(fields()[0]);
         record.network_status_version = fieldSetFlags()[1] ? this.network_status_version : (java.lang.Integer) defaultValue(fields()[1]);
-        record.vote_status = fieldSetFlags()[2] ? this.vote_status : (java.lang.CharSequence) defaultValue(fields()[2]);
+        record.vote_status = fieldSetFlags()[2] ? this.vote_status : (java.lang.String) defaultValue(fields()[2]);
         record.consensus_method = fieldSetFlags()[3] ? this.consensus_method : (java.lang.Integer) defaultValue(fields()[3]);
-        record.consensus_flavor = fieldSetFlags()[4] ? this.consensus_flavor : (java.lang.CharSequence) defaultValue(fields()[4]);
-        record.valid_after = fieldSetFlags()[5] ? this.valid_after : (java.lang.CharSequence) defaultValue(fields()[5]);
-        record.fresh_until = fieldSetFlags()[6] ? this.fresh_until : (java.lang.CharSequence) defaultValue(fields()[6]);
-        record.valid_until = fieldSetFlags()[7] ? this.valid_until : (java.lang.CharSequence) defaultValue(fields()[7]);
+        record.consensus_flavor = fieldSetFlags()[4] ? this.consensus_flavor : (java.lang.String) defaultValue(fields()[4]);
+        record.valid_after = fieldSetFlags()[5] ? this.valid_after : (java.lang.String) defaultValue(fields()[5]);
+        record.fresh_until = fieldSetFlags()[6] ? this.fresh_until : (java.lang.String) defaultValue(fields()[6]);
+        record.valid_until = fieldSetFlags()[7] ? this.valid_until : (java.lang.String) defaultValue(fields()[7]);
         if (voting_delayBuilder != null) {
           record.voting_delay = this.voting_delayBuilder.build();
         } else {
           record.voting_delay = fieldSetFlags()[8] ? this.voting_delay : (converTor.relayConsensus.Vote) defaultValue(fields()[8]);
         }
-        record.client_versions = fieldSetFlags()[9] ? this.client_versions : (java.util.List<java.lang.CharSequence>) defaultValue(fields()[9]);
-        record.server_versions = fieldSetFlags()[10] ? this.server_versions : (java.util.List<java.lang.CharSequence>) defaultValue(fields()[10]);
-        record.known_flags = fieldSetFlags()[11] ? this.known_flags : (java.util.List<java.lang.CharSequence>) defaultValue(fields()[11]);
-        record.params = fieldSetFlags()[12] ? this.params : (java.util.Map<java.lang.CharSequence,java.lang.Integer>) defaultValue(fields()[12]);
-        record.authorities = fieldSetFlags()[13] ? this.authorities : (java.util.Map<java.lang.CharSequence,converTor.relayConsensus.Authority>) defaultValue(fields()[13]);
-        record.status = fieldSetFlags()[14] ? this.status : (java.util.Map<java.lang.CharSequence,converTor.relayConsensus.Status>) defaultValue(fields()[14]);
+        record.client_versions = fieldSetFlags()[9] ? this.client_versions : (java.util.List<java.lang.String>) defaultValue(fields()[9]);
+        record.server_versions = fieldSetFlags()[10] ? this.server_versions : (java.util.List<java.lang.String>) defaultValue(fields()[10]);
+        record.known_flags = fieldSetFlags()[11] ? this.known_flags : (java.util.List<java.lang.String>) defaultValue(fields()[11]);
+        record.params = fieldSetFlags()[12] ? this.params : (java.util.Map<java.lang.String,java.lang.Integer>) defaultValue(fields()[12]);
+        record.authorities = fieldSetFlags()[13] ? this.authorities : (java.util.Map<java.lang.String,converTor.relayConsensus.Authority>) defaultValue(fields()[13]);
+        record.status = fieldSetFlags()[14] ? this.status : (java.util.Map<java.lang.String,converTor.relayConsensus.Status>) defaultValue(fields()[14]);
         if (directory_footerBuilder != null) {
           record.directory_footer = this.directory_footerBuilder.build();
         } else {

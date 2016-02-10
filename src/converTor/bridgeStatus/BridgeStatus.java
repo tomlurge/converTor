@@ -8,11 +8,11 @@ package converTor.bridgeStatus;
 @org.apache.avro.specific.AvroGenerated
 public class BridgeStatus extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -2333533568613729107L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"BridgeStatus\",\"namespace\":\"converTor.bridgeStatus\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":\"string\",\"default\":\"bridge-network-status 1.0\"},{\"name\":\"published\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getPublishedMillis()\"},{\"name\":\"flag_tresholds\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"FlagTresholds\",\"fields\":[{\"name\":\"stable_uptime\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getStableUptime()\"},{\"name\":\"stable_mtbf\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getStableMtbf()\"},{\"name\":\"enough_mtbf\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: int getEnoughMtbfInfo()\"},{\"name\":\"fast_speed\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getFastBandwidth()\"},{\"name\":\"guard_wfu\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: double getGuardWfu()\"},{\"name\":\"guard_tk\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getGuardTk()\"},{\"name\":\"guard_bw_inc_exits\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getGuardBandwidthIncludingExits()\"},{\"name\":\"guard_bw_exc_exits\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getGuardBandwidthExcludingExits()\"},{\"name\":\"ignoring_advertised\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: int getIgnoringAdvertisedBws()\"}]}],\"doc\":\"see above\"},{\"name\":\"status\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Status\",\"fields\":[{\"name\":\"r\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"R\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDescriptor()\"},{\"name\":\"digest\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: Set<String> getMicrodescriptorDigests()\"},{\"name\":\"published\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getPublishedMillis()\"},{\"name\":\"ip\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getOrPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getDirPort()\"}]}]},{\"name\":\"a\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: getOrAddresses()\"},{\"name\":\"s\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags()\"},{\"name\":\"v\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getVersion()\"},{\"name\":\"w\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"W\",\"fields\":[{\"name\":\"bandwidth\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getBandwidth()\"},{\"name\":\"measured\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getMeasured()\"},{\"name\":\"unmeasured\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/NetworkStatusEntry: boolean getUnmeasured()\"}]}]},{\"name\":\"p\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Policy\",\"fields\":[{\"name\":\"default_policy\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDefaultPolicy()\"},{\"name\":\"port_summary\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getPortList()\"}]}]}]}}],\"doc\":\"metrics-lib/BridgeNetworkStatus: SortedMap<String, NetworkStatusEntry> getStatusEntries()\\n     status entries, one for each contained bridge\"}],\"aliases\":[\"bridge_network_status\"]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"BridgeStatus\",\"namespace\":\"converTor.bridgeStatus\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"bridge-network-status 1.0\"},{\"name\":\"published\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getPublishedMillis()\"},{\"name\":\"flag_tresholds\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"FlagTresholds\",\"fields\":[{\"name\":\"stable_uptime\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getStableUptime()\"},{\"name\":\"stable_mtbf\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getStableMtbf()\"},{\"name\":\"enough_mtbf\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: int getEnoughMtbfInfo()\"},{\"name\":\"fast_speed\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getFastBandwidth()\"},{\"name\":\"guard_wfu\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: double getGuardWfu()\"},{\"name\":\"guard_tk\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getGuardTk()\"},{\"name\":\"guard_bw_inc_exits\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getGuardBandwidthIncludingExits()\"},{\"name\":\"guard_bw_exc_exits\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getGuardBandwidthExcludingExits()\"},{\"name\":\"ignoring_advertised\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: int getIgnoringAdvertisedBws()\"}]}],\"doc\":\"see above\"},{\"name\":\"status\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Status\",\"fields\":[{\"name\":\"r\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"R\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDescriptor()\"},{\"name\":\"digest\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/NetworkStatusEntry: Set<String> getMicrodescriptorDigests()\"},{\"name\":\"published\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: long getPublishedMillis()\"},{\"name\":\"ip\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getOrPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getDirPort()\"}]}]},{\"name\":\"a\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/NetworkStatusEntry: getOrAddresses()\"},{\"name\":\"s\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags()\"},{\"name\":\"v\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getVersion()\"},{\"name\":\"w\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"W\",\"fields\":[{\"name\":\"bandwidth\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getBandwidth()\"},{\"name\":\"measured\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getMeasured()\"},{\"name\":\"unmeasured\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/NetworkStatusEntry: boolean getUnmeasured()\"}]}]},{\"name\":\"p\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Policy\",\"fields\":[{\"name\":\"default_policy\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDefaultPolicy()\"},{\"name\":\"port_summary\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getPortList()\"}]}]}]}}],\"doc\":\"metrics-lib/BridgeNetworkStatus: SortedMap<String, NetworkStatusEntry> getStatusEntries()\\n     status entries, one for each contained bridge\"}],\"aliases\":[\"bridge_network_status\"]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
-  @Deprecated public java.lang.CharSequence descriptor_type;
+  @Deprecated public java.lang.String descriptor_type;
   /** metrics-lib/BridgeNetworkStatus: long getPublishedMillis() */
-  @Deprecated public java.lang.CharSequence published;
+  @Deprecated public java.lang.String published;
   /** see above */
   @Deprecated public converTor.bridgeStatus.FlagTresholds flag_tresholds;
   /** metrics-lib/BridgeNetworkStatus: SortedMap<String, NetworkStatusEntry> getStatusEntries()
@@ -33,7 +33,7 @@ public class BridgeStatus extends org.apache.avro.specific.SpecificRecordBase im
    * @param status metrics-lib/BridgeNetworkStatus: SortedMap<String, NetworkStatusEntry> getStatusEntries()
      status entries, one for each contained bridge
    */
-  public BridgeStatus(java.lang.CharSequence descriptor_type, java.lang.CharSequence published, converTor.bridgeStatus.FlagTresholds flag_tresholds, java.util.List<converTor.bridgeStatus.Status> status) {
+  public BridgeStatus(java.lang.String descriptor_type, java.lang.String published, converTor.bridgeStatus.FlagTresholds flag_tresholds, java.util.List<converTor.bridgeStatus.Status> status) {
     this.descriptor_type = descriptor_type;
     this.published = published;
     this.flag_tresholds = flag_tresholds;
@@ -55,8 +55,8 @@ public class BridgeStatus extends org.apache.avro.specific.SpecificRecordBase im
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: descriptor_type = (java.lang.CharSequence)value$; break;
-    case 1: published = (java.lang.CharSequence)value$; break;
+    case 0: descriptor_type = (java.lang.String)value$; break;
+    case 1: published = (java.lang.String)value$; break;
     case 2: flag_tresholds = (converTor.bridgeStatus.FlagTresholds)value$; break;
     case 3: status = (java.util.List<converTor.bridgeStatus.Status>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
@@ -66,7 +66,7 @@ public class BridgeStatus extends org.apache.avro.specific.SpecificRecordBase im
   /**
    * Gets the value of the 'descriptor_type' field.
    */
-  public java.lang.CharSequence getDescriptorType() {
+  public java.lang.String getDescriptorType() {
     return descriptor_type;
   }
 
@@ -74,7 +74,7 @@ public class BridgeStatus extends org.apache.avro.specific.SpecificRecordBase im
    * Sets the value of the 'descriptor_type' field.
    * @param value the value to set.
    */
-  public void setDescriptorType(java.lang.CharSequence value) {
+  public void setDescriptorType(java.lang.String value) {
     this.descriptor_type = value;
   }
 
@@ -82,7 +82,7 @@ public class BridgeStatus extends org.apache.avro.specific.SpecificRecordBase im
    * Gets the value of the 'published' field.
    * @return metrics-lib/BridgeNetworkStatus: long getPublishedMillis()
    */
-  public java.lang.CharSequence getPublished() {
+  public java.lang.String getPublished() {
     return published;
   }
 
@@ -91,7 +91,7 @@ public class BridgeStatus extends org.apache.avro.specific.SpecificRecordBase im
    * metrics-lib/BridgeNetworkStatus: long getPublishedMillis()
    * @param value the value to set.
    */
-  public void setPublished(java.lang.CharSequence value) {
+  public void setPublished(java.lang.String value) {
     this.published = value;
   }
 
@@ -163,9 +163,9 @@ public class BridgeStatus extends org.apache.avro.specific.SpecificRecordBase im
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<BridgeStatus>
     implements org.apache.avro.data.RecordBuilder<BridgeStatus> {
 
-    private java.lang.CharSequence descriptor_type;
+    private java.lang.String descriptor_type;
     /** metrics-lib/BridgeNetworkStatus: long getPublishedMillis() */
-    private java.lang.CharSequence published;
+    private java.lang.String published;
     /** see above */
     private converTor.bridgeStatus.FlagTresholds flag_tresholds;
     private converTor.bridgeStatus.FlagTresholds.Builder flag_tresholdsBuilder;
@@ -234,7 +234,7 @@ public class BridgeStatus extends org.apache.avro.specific.SpecificRecordBase im
       * Gets the value of the 'descriptor_type' field.
       * @return The value.
       */
-    public java.lang.CharSequence getDescriptorType() {
+    public java.lang.String getDescriptorType() {
       return descriptor_type;
     }
 
@@ -243,7 +243,7 @@ public class BridgeStatus extends org.apache.avro.specific.SpecificRecordBase im
       * @param value The value of 'descriptor_type'.
       * @return This builder.
       */
-    public converTor.bridgeStatus.BridgeStatus.Builder setDescriptorType(java.lang.CharSequence value) {
+    public converTor.bridgeStatus.BridgeStatus.Builder setDescriptorType(java.lang.String value) {
       validate(fields()[0], value);
       this.descriptor_type = value;
       fieldSetFlags()[0] = true;
@@ -274,7 +274,7 @@ public class BridgeStatus extends org.apache.avro.specific.SpecificRecordBase im
       * metrics-lib/BridgeNetworkStatus: long getPublishedMillis()
       * @return The value.
       */
-    public java.lang.CharSequence getPublished() {
+    public java.lang.String getPublished() {
       return published;
     }
 
@@ -284,7 +284,7 @@ public class BridgeStatus extends org.apache.avro.specific.SpecificRecordBase im
       * @param value The value of 'published'.
       * @return This builder.
       */
-    public converTor.bridgeStatus.BridgeStatus.Builder setPublished(java.lang.CharSequence value) {
+    public converTor.bridgeStatus.BridgeStatus.Builder setPublished(java.lang.String value) {
       validate(fields()[1], value);
       this.published = value;
       fieldSetFlags()[1] = true;
@@ -443,8 +443,8 @@ public class BridgeStatus extends org.apache.avro.specific.SpecificRecordBase im
     public BridgeStatus build() {
       try {
         BridgeStatus record = new BridgeStatus();
-        record.descriptor_type = fieldSetFlags()[0] ? this.descriptor_type : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.published = fieldSetFlags()[1] ? this.published : (java.lang.CharSequence) defaultValue(fields()[1]);
+        record.descriptor_type = fieldSetFlags()[0] ? this.descriptor_type : (java.lang.String) defaultValue(fields()[0]);
+        record.published = fieldSetFlags()[1] ? this.published : (java.lang.String) defaultValue(fields()[1]);
         if (flag_tresholdsBuilder != null) {
           record.flag_tresholds = this.flag_tresholdsBuilder.build();
         } else {

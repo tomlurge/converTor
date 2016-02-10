@@ -8,24 +8,24 @@ package converTor.relayVote;
 @org.apache.avro.specific.AvroGenerated
 public class R extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -8715789823111203538L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"R\",\"namespace\":\"converTor.relayVote\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDescriptor()\"},{\"name\":\"digest\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: Set<String> getMicrodescriptorDigests()\"},{\"name\":\"publication\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getPublishedMillis()\"},{\"name\":\"ip\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getOrPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getDirPort()\"},{\"name\":\"fingerprint\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getFingerprint() - not in spec, but in metrics-lib\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"R\",\"namespace\":\"converTor.relayVote\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDescriptor()\"},{\"name\":\"digest\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/NetworkStatusEntry: Set<String> getMicrodescriptorDigests()\"},{\"name\":\"publication\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: long getPublishedMillis()\"},{\"name\":\"ip\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getOrPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getDirPort()\"},{\"name\":\"fingerprint\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getFingerprint() - not in spec, but in metrics-lib\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/NetworkStatusEntry: String getNickname() */
-  @Deprecated public java.lang.CharSequence nickname;
+  @Deprecated public java.lang.String nickname;
   /** metrics-lib/NetworkStatusEntry: String getDescriptor() */
-  @Deprecated public java.lang.CharSequence identity;
+  @Deprecated public java.lang.String identity;
   /** metrics-lib/NetworkStatusEntry: Set<String> getMicrodescriptorDigests() */
-  @Deprecated public java.util.List<java.lang.CharSequence> digest;
+  @Deprecated public java.util.List<java.lang.String> digest;
   /** metrics-lib/NetworkStatusEntry: long getPublishedMillis() */
-  @Deprecated public java.lang.CharSequence publication;
+  @Deprecated public java.lang.String publication;
   /** metrics-lib/NetworkStatusEntry: String getAddress() */
-  @Deprecated public java.lang.CharSequence ip;
+  @Deprecated public java.lang.String ip;
   /** metrics-lib/NetworkStatusEntry: int getOrPort() */
   @Deprecated public java.lang.Integer or_port;
   /** metrics-lib/NetworkStatusEntry: int getDirPort() */
   @Deprecated public java.lang.Integer dir_port;
   /** metrics-lib/NetworkStatusEntry: String getFingerprint() - not in spec, but in metrics-lib */
-  @Deprecated public java.lang.CharSequence fingerprint;
+  @Deprecated public java.lang.String fingerprint;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -45,7 +45,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
    * @param dir_port metrics-lib/NetworkStatusEntry: int getDirPort()
    * @param fingerprint metrics-lib/NetworkStatusEntry: String getFingerprint() - not in spec, but in metrics-lib
    */
-  public R(java.lang.CharSequence nickname, java.lang.CharSequence identity, java.util.List<java.lang.CharSequence> digest, java.lang.CharSequence publication, java.lang.CharSequence ip, java.lang.Integer or_port, java.lang.Integer dir_port, java.lang.CharSequence fingerprint) {
+  public R(java.lang.String nickname, java.lang.String identity, java.util.List<java.lang.String> digest, java.lang.String publication, java.lang.String ip, java.lang.Integer or_port, java.lang.Integer dir_port, java.lang.String fingerprint) {
     this.nickname = nickname;
     this.identity = identity;
     this.digest = digest;
@@ -75,14 +75,14 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: nickname = (java.lang.CharSequence)value$; break;
-    case 1: identity = (java.lang.CharSequence)value$; break;
-    case 2: digest = (java.util.List<java.lang.CharSequence>)value$; break;
-    case 3: publication = (java.lang.CharSequence)value$; break;
-    case 4: ip = (java.lang.CharSequence)value$; break;
+    case 0: nickname = (java.lang.String)value$; break;
+    case 1: identity = (java.lang.String)value$; break;
+    case 2: digest = (java.util.List<java.lang.String>)value$; break;
+    case 3: publication = (java.lang.String)value$; break;
+    case 4: ip = (java.lang.String)value$; break;
     case 5: or_port = (java.lang.Integer)value$; break;
     case 6: dir_port = (java.lang.Integer)value$; break;
-    case 7: fingerprint = (java.lang.CharSequence)value$; break;
+    case 7: fingerprint = (java.lang.String)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -91,7 +91,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
    * Gets the value of the 'nickname' field.
    * @return metrics-lib/NetworkStatusEntry: String getNickname()
    */
-  public java.lang.CharSequence getNickname() {
+  public java.lang.String getNickname() {
     return nickname;
   }
 
@@ -100,7 +100,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
    * metrics-lib/NetworkStatusEntry: String getNickname()
    * @param value the value to set.
    */
-  public void setNickname(java.lang.CharSequence value) {
+  public void setNickname(java.lang.String value) {
     this.nickname = value;
   }
 
@@ -108,7 +108,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
    * Gets the value of the 'identity' field.
    * @return metrics-lib/NetworkStatusEntry: String getDescriptor()
    */
-  public java.lang.CharSequence getIdentity() {
+  public java.lang.String getIdentity() {
     return identity;
   }
 
@@ -117,7 +117,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
    * metrics-lib/NetworkStatusEntry: String getDescriptor()
    * @param value the value to set.
    */
-  public void setIdentity(java.lang.CharSequence value) {
+  public void setIdentity(java.lang.String value) {
     this.identity = value;
   }
 
@@ -125,7 +125,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
    * Gets the value of the 'digest' field.
    * @return metrics-lib/NetworkStatusEntry: Set<String> getMicrodescriptorDigests()
    */
-  public java.util.List<java.lang.CharSequence> getDigest() {
+  public java.util.List<java.lang.String> getDigest() {
     return digest;
   }
 
@@ -134,7 +134,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
    * metrics-lib/NetworkStatusEntry: Set<String> getMicrodescriptorDigests()
    * @param value the value to set.
    */
-  public void setDigest(java.util.List<java.lang.CharSequence> value) {
+  public void setDigest(java.util.List<java.lang.String> value) {
     this.digest = value;
   }
 
@@ -142,7 +142,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
    * Gets the value of the 'publication' field.
    * @return metrics-lib/NetworkStatusEntry: long getPublishedMillis()
    */
-  public java.lang.CharSequence getPublication() {
+  public java.lang.String getPublication() {
     return publication;
   }
 
@@ -151,7 +151,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
    * metrics-lib/NetworkStatusEntry: long getPublishedMillis()
    * @param value the value to set.
    */
-  public void setPublication(java.lang.CharSequence value) {
+  public void setPublication(java.lang.String value) {
     this.publication = value;
   }
 
@@ -159,7 +159,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
    * Gets the value of the 'ip' field.
    * @return metrics-lib/NetworkStatusEntry: String getAddress()
    */
-  public java.lang.CharSequence getIp() {
+  public java.lang.String getIp() {
     return ip;
   }
 
@@ -168,7 +168,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
    * metrics-lib/NetworkStatusEntry: String getAddress()
    * @param value the value to set.
    */
-  public void setIp(java.lang.CharSequence value) {
+  public void setIp(java.lang.String value) {
     this.ip = value;
   }
 
@@ -210,7 +210,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
    * Gets the value of the 'fingerprint' field.
    * @return metrics-lib/NetworkStatusEntry: String getFingerprint() - not in spec, but in metrics-lib
    */
-  public java.lang.CharSequence getFingerprint() {
+  public java.lang.String getFingerprint() {
     return fingerprint;
   }
 
@@ -219,7 +219,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
    * metrics-lib/NetworkStatusEntry: String getFingerprint() - not in spec, but in metrics-lib
    * @param value the value to set.
    */
-  public void setFingerprint(java.lang.CharSequence value) {
+  public void setFingerprint(java.lang.String value) {
     this.fingerprint = value;
   }
 
@@ -256,21 +256,21 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
     implements org.apache.avro.data.RecordBuilder<R> {
 
     /** metrics-lib/NetworkStatusEntry: String getNickname() */
-    private java.lang.CharSequence nickname;
+    private java.lang.String nickname;
     /** metrics-lib/NetworkStatusEntry: String getDescriptor() */
-    private java.lang.CharSequence identity;
+    private java.lang.String identity;
     /** metrics-lib/NetworkStatusEntry: Set<String> getMicrodescriptorDigests() */
-    private java.util.List<java.lang.CharSequence> digest;
+    private java.util.List<java.lang.String> digest;
     /** metrics-lib/NetworkStatusEntry: long getPublishedMillis() */
-    private java.lang.CharSequence publication;
+    private java.lang.String publication;
     /** metrics-lib/NetworkStatusEntry: String getAddress() */
-    private java.lang.CharSequence ip;
+    private java.lang.String ip;
     /** metrics-lib/NetworkStatusEntry: int getOrPort() */
     private java.lang.Integer or_port;
     /** metrics-lib/NetworkStatusEntry: int getDirPort() */
     private java.lang.Integer dir_port;
     /** metrics-lib/NetworkStatusEntry: String getFingerprint() - not in spec, but in metrics-lib */
-    private java.lang.CharSequence fingerprint;
+    private java.lang.String fingerprint;
 
     /** Creates a new Builder */
     private Builder() {
@@ -362,7 +362,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
       * metrics-lib/NetworkStatusEntry: String getNickname()
       * @return The value.
       */
-    public java.lang.CharSequence getNickname() {
+    public java.lang.String getNickname() {
       return nickname;
     }
 
@@ -372,7 +372,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
       * @param value The value of 'nickname'.
       * @return This builder.
       */
-    public converTor.relayVote.R.Builder setNickname(java.lang.CharSequence value) {
+    public converTor.relayVote.R.Builder setNickname(java.lang.String value) {
       validate(fields()[0], value);
       this.nickname = value;
       fieldSetFlags()[0] = true;
@@ -405,7 +405,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
       * metrics-lib/NetworkStatusEntry: String getDescriptor()
       * @return The value.
       */
-    public java.lang.CharSequence getIdentity() {
+    public java.lang.String getIdentity() {
       return identity;
     }
 
@@ -415,7 +415,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
       * @param value The value of 'identity'.
       * @return This builder.
       */
-    public converTor.relayVote.R.Builder setIdentity(java.lang.CharSequence value) {
+    public converTor.relayVote.R.Builder setIdentity(java.lang.String value) {
       validate(fields()[1], value);
       this.identity = value;
       fieldSetFlags()[1] = true;
@@ -448,7 +448,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
       * metrics-lib/NetworkStatusEntry: Set<String> getMicrodescriptorDigests()
       * @return The value.
       */
-    public java.util.List<java.lang.CharSequence> getDigest() {
+    public java.util.List<java.lang.String> getDigest() {
       return digest;
     }
 
@@ -458,7 +458,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
       * @param value The value of 'digest'.
       * @return This builder.
       */
-    public converTor.relayVote.R.Builder setDigest(java.util.List<java.lang.CharSequence> value) {
+    public converTor.relayVote.R.Builder setDigest(java.util.List<java.lang.String> value) {
       validate(fields()[2], value);
       this.digest = value;
       fieldSetFlags()[2] = true;
@@ -491,7 +491,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
       * metrics-lib/NetworkStatusEntry: long getPublishedMillis()
       * @return The value.
       */
-    public java.lang.CharSequence getPublication() {
+    public java.lang.String getPublication() {
       return publication;
     }
 
@@ -501,7 +501,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
       * @param value The value of 'publication'.
       * @return This builder.
       */
-    public converTor.relayVote.R.Builder setPublication(java.lang.CharSequence value) {
+    public converTor.relayVote.R.Builder setPublication(java.lang.String value) {
       validate(fields()[3], value);
       this.publication = value;
       fieldSetFlags()[3] = true;
@@ -534,7 +534,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
       * metrics-lib/NetworkStatusEntry: String getAddress()
       * @return The value.
       */
-    public java.lang.CharSequence getIp() {
+    public java.lang.String getIp() {
       return ip;
     }
 
@@ -544,7 +544,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
       * @param value The value of 'ip'.
       * @return This builder.
       */
-    public converTor.relayVote.R.Builder setIp(java.lang.CharSequence value) {
+    public converTor.relayVote.R.Builder setIp(java.lang.String value) {
       validate(fields()[4], value);
       this.ip = value;
       fieldSetFlags()[4] = true;
@@ -663,7 +663,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
       * metrics-lib/NetworkStatusEntry: String getFingerprint() - not in spec, but in metrics-lib
       * @return The value.
       */
-    public java.lang.CharSequence getFingerprint() {
+    public java.lang.String getFingerprint() {
       return fingerprint;
     }
 
@@ -673,7 +673,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
       * @param value The value of 'fingerprint'.
       * @return This builder.
       */
-    public converTor.relayVote.R.Builder setFingerprint(java.lang.CharSequence value) {
+    public converTor.relayVote.R.Builder setFingerprint(java.lang.String value) {
       validate(fields()[7], value);
       this.fingerprint = value;
       fieldSetFlags()[7] = true;
@@ -705,14 +705,14 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
     public R build() {
       try {
         R record = new R();
-        record.nickname = fieldSetFlags()[0] ? this.nickname : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.identity = fieldSetFlags()[1] ? this.identity : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.digest = fieldSetFlags()[2] ? this.digest : (java.util.List<java.lang.CharSequence>) defaultValue(fields()[2]);
-        record.publication = fieldSetFlags()[3] ? this.publication : (java.lang.CharSequence) defaultValue(fields()[3]);
-        record.ip = fieldSetFlags()[4] ? this.ip : (java.lang.CharSequence) defaultValue(fields()[4]);
+        record.nickname = fieldSetFlags()[0] ? this.nickname : (java.lang.String) defaultValue(fields()[0]);
+        record.identity = fieldSetFlags()[1] ? this.identity : (java.lang.String) defaultValue(fields()[1]);
+        record.digest = fieldSetFlags()[2] ? this.digest : (java.util.List<java.lang.String>) defaultValue(fields()[2]);
+        record.publication = fieldSetFlags()[3] ? this.publication : (java.lang.String) defaultValue(fields()[3]);
+        record.ip = fieldSetFlags()[4] ? this.ip : (java.lang.String) defaultValue(fields()[4]);
         record.or_port = fieldSetFlags()[5] ? this.or_port : (java.lang.Integer) defaultValue(fields()[5]);
         record.dir_port = fieldSetFlags()[6] ? this.dir_port : (java.lang.Integer) defaultValue(fields()[6]);
-        record.fingerprint = fieldSetFlags()[7] ? this.fingerprint : (java.lang.CharSequence) defaultValue(fields()[7]);
+        record.fingerprint = fieldSetFlags()[7] ? this.fingerprint : (java.lang.String) defaultValue(fields()[7]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

@@ -23,11 +23,11 @@ public class ConvertToJson {
   static boolean nulled = true;
   static boolean compressed = true;
   static String format = "json";
-  static String in = "data/in/";
-  static String out = "data/out/";
+  static String in = "data/inPath/";
+  static String out = "data/outPath/";
   static String name = "result";
 
-  /*  Read all descriptors in the provided directory and
+  /*  Read all descriptors inPath the provided directory and
    *  convert them to the appropriate JSON format.  */
   public static void main(String[] args) throws IOException {
 
@@ -42,7 +42,7 @@ public class ConvertToJson {
             "probably wise to document this setting with a prefix/suffix");
     options.addOption("w", "withoutNulls", false,
             "attributes with value null are not emitted \n" +
-            "which gains a little advantage in storage space");
+            "which gains a little advantage inPath storage space");
     options.addOption("u", "uncompressed", false,
             "does not generate .gz archive, \n" +
             "mainly useful for testing");
@@ -51,14 +51,14 @@ public class ConvertToJson {
             "to which serialization format to convert\n" +
             "defaults to 'json'\n" +
             "(currently only 'json' is supported)");
-    options.addOption("i", "in", true,
-            "e.g. '-i=/my/data/in/dir'\n" +
+    options.addOption("i", "inPath", true,
+            "e.g. '-i=/my/data/inPath/dir'\n" +
             "from which directory to read data\n" +
-            "defaults to 'data/in/'");
-    options.addOption("o", "out", true,
-            "e.g. '-i=/my/data/out/dir'\n" +
+            "defaults to 'data/inPath/'");
+    options.addOption("o", "outPath", true,
+            "e.g. '-i=/my/data/outPath/dir'\n" +
             "to which directory to write the converted data\n" +
-            "defaults to 'data/out/'");
+            "defaults to 'data/outPath/'");
     CommandLineParser parser = new DefaultParser();
     CommandLine cmd = null;
     try {
@@ -102,8 +102,8 @@ public class ConvertToJson {
     System.out.println("nulled = " + nulled);
     System.out.println("compressed = " + compressed);
     System.out.println("format = " + format);
-    System.out.println("in = " + in);
-    System.out.println("out = " + out);
+    System.out.println("inPath = " + in);
+    System.out.println("outPath = " + out);
     System.out.println("name = " + name);
 
     DescriptorReader descriptorReader = DescriptorSourceFactory.createDescriptorReader();
@@ -130,7 +130,7 @@ public class ConvertToJson {
       DescriptorFile descriptorFile = descriptorFiles.next();
       if(null != descriptorFile.getException()){
         System.err.print(descriptorFile.getException()
-                + "\n    in " + descriptorFile.getFileName() + "\n");
+                + "\n    inPath " + descriptorFile.getFileName() + "\n");
       }
 
       for (Descriptor descriptor : descriptorFile.getDescriptors()) {
@@ -183,7 +183,7 @@ public class ConvertToJson {
         }
 
         if (!descriptor.getUnrecognizedLines().isEmpty()) {
-          System.err.println("Unrecognized lines in "
+          System.err.println("Unrecognized lines inPath "
                   + descriptorFile.getFileName() + ":");
           System.err.println(descriptor.getUnrecognizedLines());
           continue;
@@ -228,7 +228,7 @@ public class ConvertToJson {
       }
     }
 
-    /* ExtraInfo and Stats objects used in extra info descriptors */
+    /* ExtraInfo and Stats objects used inPath extra info descriptors */
     static class ExtraInfo {
       String nickname;
       String fingerprint;
@@ -282,7 +282,7 @@ public class ConvertToJson {
     static class Bandwidth {
       Integer avg;
       Integer burst;
-      Integer observed;  // missing in older descriptors!
+      Integer observed;  // missing inPath older descriptors!
     }
     String platform;  // though usually set
     String published;   // format YYYY-MM-DD HH:MM:SS
@@ -335,7 +335,7 @@ public class ConvertToJson {
       relay.bandwidth = new Bandwidth();
       relay.bandwidth.avg = desc.getBandwidthRate();
       relay.bandwidth.burst = desc.getBandwidthBurst();
-      //  can be '-1' if null. in that case we don't touch it here, leaving the
+      //  can be '-1' if null. inPath that case we don't touch it here, leaving the
       //  default from the class definition intact
       if (desc.getBandwidthObserved() >= 0) {
         relay.bandwidth.observed = desc.getBandwidthObserved();
@@ -344,7 +344,7 @@ public class ConvertToJson {
       relay.published = dateTimeFormat.format(desc.getPublishedMillis());
       relay.fingerprint = desc.getFingerprint().toUpperCase();
       //  isHibernating can't return 'null' because it's of type 'boolean'
-      //  (with little 'b') but it's only present in the collecTor data if it's
+      //  (with little 'b') but it's only present inPath the collecTor data if it's
       //  true. therefor we check for it's existence and include it if it
       //  exists. otherwise we leave it alone / to the default value from
       //  the class definition above (which is null)
@@ -462,7 +462,7 @@ public class ConvertToJson {
     static class Bandwidth {
       Integer avg;
       Integer burst;
-      Integer observed;  // missing in older descriptors!
+      Integer observed;  // missing inPath older descriptors!
     }
     String platform;  // though usually set
     String published;   // format YYYY-MM-DD HH:MM:SS
@@ -514,7 +514,7 @@ public class ConvertToJson {
       bridge.bandwidth = new Bandwidth();
       bridge.bandwidth.avg = desc.getBandwidthRate();
       bridge.bandwidth.burst = desc.getBandwidthBurst();
-      //  can be '-1' if null. in that case we don't touch it here, leaving the
+      //  can be '-1' if null. inPath that case we don't touch it here, leaving the
       //  default from the class definition intact
       if (desc.getBandwidthObserved() >= 0) {
         bridge.bandwidth.observed = desc.getBandwidthObserved();
@@ -523,7 +523,7 @@ public class ConvertToJson {
       bridge.published = dateTimeFormat.format(desc.getPublishedMillis());
       bridge.fingerprint = desc.getFingerprint().toUpperCase();
       //  isHibernating can't return 'null' because it's of type 'boolean'
-      //  (with little 'b') but it's only present in the collecTor data if it's
+      //  (with little 'b') but it's only present inPath the collecTor data if it's
       //  true. therefor we check for it's existence and include it if it
       //  exists. otherwise we leave it alone / to the default value from
       //  the class definition above (which is null)
@@ -1460,8 +1460,8 @@ public class ConvertToJson {
   //  network status vote
   //  TODO  nickname unklar
   //        String getSigningKeyDigest()
-  //          theres a method of this name in vote AND in DirectorySignature
-  //          - i'm not sure what the method in vote is for
+  //          theres a method of this name inPath vote AND inPath DirectorySignature
+  //          - i'm not sure what the method inPath vote is for
   //          rename Router to Status
   //          router äh status idendity wird jetzt bespielt von getDescriptor
   //          und es gibt ein neues fingerprint property (mit getFungerprint von vormals idendity)
@@ -1697,7 +1697,7 @@ public class ConvertToJson {
   //    as value an array of DirSource entries
   static class JsonRelayNetworkStatusConsensus extends JsonDescriptor {
     String descriptor_type;
-    String published;     // this property is not in the spec but eases querying
+    String published;     // this property is not inPath the spec but eases querying
     Integer network_status_version;
     String vote_status;
     Integer consensus_method;

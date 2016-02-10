@@ -8,14 +8,14 @@ package converTor.relayVote;
 @org.apache.avro.specific.AvroGenerated
 public class DirKey extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = 9060482589551505664L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DirKey\",\"namespace\":\"converTor.relayVote\",\"fields\":[{\"name\":\"version\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getDirKeyCertificateVersion()\"},{\"name\":\"dir_key_published\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getDirKeyPublishedMillis()\"},{\"name\":\"dir_key_expires\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getDirKeyExpiresMillis()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DirKey\",\"namespace\":\"converTor.relayVote\",\"fields\":[{\"name\":\"version\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getDirKeyCertificateVersion()\"},{\"name\":\"dir_key_published\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getDirKeyPublishedMillis()\"},{\"name\":\"dir_key_expires\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getDirKeyExpiresMillis()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/RelayNetworkStatusVote: int getDirKeyCertificateVersion() */
   @Deprecated public java.lang.Integer version;
   /** metrics-lib/RelayNetworkStatusVote: long getDirKeyPublishedMillis() */
-  @Deprecated public java.lang.CharSequence dir_key_published;
+  @Deprecated public java.lang.String dir_key_published;
   /** metrics-lib/RelayNetworkStatusVote: long getDirKeyExpiresMillis() */
-  @Deprecated public java.lang.CharSequence dir_key_expires;
+  @Deprecated public java.lang.String dir_key_expires;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -30,7 +30,7 @@ public class DirKey extends org.apache.avro.specific.SpecificRecordBase implemen
    * @param dir_key_published metrics-lib/RelayNetworkStatusVote: long getDirKeyPublishedMillis()
    * @param dir_key_expires metrics-lib/RelayNetworkStatusVote: long getDirKeyExpiresMillis()
    */
-  public DirKey(java.lang.Integer version, java.lang.CharSequence dir_key_published, java.lang.CharSequence dir_key_expires) {
+  public DirKey(java.lang.Integer version, java.lang.String dir_key_published, java.lang.String dir_key_expires) {
     this.version = version;
     this.dir_key_published = dir_key_published;
     this.dir_key_expires = dir_key_expires;
@@ -51,8 +51,8 @@ public class DirKey extends org.apache.avro.specific.SpecificRecordBase implemen
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
     case 0: version = (java.lang.Integer)value$; break;
-    case 1: dir_key_published = (java.lang.CharSequence)value$; break;
-    case 2: dir_key_expires = (java.lang.CharSequence)value$; break;
+    case 1: dir_key_published = (java.lang.String)value$; break;
+    case 2: dir_key_expires = (java.lang.String)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -78,7 +78,7 @@ public class DirKey extends org.apache.avro.specific.SpecificRecordBase implemen
    * Gets the value of the 'dir_key_published' field.
    * @return metrics-lib/RelayNetworkStatusVote: long getDirKeyPublishedMillis()
    */
-  public java.lang.CharSequence getDirKeyPublished() {
+  public java.lang.String getDirKeyPublished() {
     return dir_key_published;
   }
 
@@ -87,7 +87,7 @@ public class DirKey extends org.apache.avro.specific.SpecificRecordBase implemen
    * metrics-lib/RelayNetworkStatusVote: long getDirKeyPublishedMillis()
    * @param value the value to set.
    */
-  public void setDirKeyPublished(java.lang.CharSequence value) {
+  public void setDirKeyPublished(java.lang.String value) {
     this.dir_key_published = value;
   }
 
@@ -95,7 +95,7 @@ public class DirKey extends org.apache.avro.specific.SpecificRecordBase implemen
    * Gets the value of the 'dir_key_expires' field.
    * @return metrics-lib/RelayNetworkStatusVote: long getDirKeyExpiresMillis()
    */
-  public java.lang.CharSequence getDirKeyExpires() {
+  public java.lang.String getDirKeyExpires() {
     return dir_key_expires;
   }
 
@@ -104,7 +104,7 @@ public class DirKey extends org.apache.avro.specific.SpecificRecordBase implemen
    * metrics-lib/RelayNetworkStatusVote: long getDirKeyExpiresMillis()
    * @param value the value to set.
    */
-  public void setDirKeyExpires(java.lang.CharSequence value) {
+  public void setDirKeyExpires(java.lang.String value) {
     this.dir_key_expires = value;
   }
 
@@ -143,9 +143,9 @@ public class DirKey extends org.apache.avro.specific.SpecificRecordBase implemen
     /** metrics-lib/RelayNetworkStatusVote: int getDirKeyCertificateVersion() */
     private java.lang.Integer version;
     /** metrics-lib/RelayNetworkStatusVote: long getDirKeyPublishedMillis() */
-    private java.lang.CharSequence dir_key_published;
+    private java.lang.String dir_key_published;
     /** metrics-lib/RelayNetworkStatusVote: long getDirKeyExpiresMillis() */
-    private java.lang.CharSequence dir_key_expires;
+    private java.lang.String dir_key_expires;
 
     /** Creates a new Builder */
     private Builder() {
@@ -240,7 +240,7 @@ public class DirKey extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/RelayNetworkStatusVote: long getDirKeyPublishedMillis()
       * @return The value.
       */
-    public java.lang.CharSequence getDirKeyPublished() {
+    public java.lang.String getDirKeyPublished() {
       return dir_key_published;
     }
 
@@ -250,7 +250,7 @@ public class DirKey extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'dir_key_published'.
       * @return This builder.
       */
-    public converTor.relayVote.DirKey.Builder setDirKeyPublished(java.lang.CharSequence value) {
+    public converTor.relayVote.DirKey.Builder setDirKeyPublished(java.lang.String value) {
       validate(fields()[1], value);
       this.dir_key_published = value;
       fieldSetFlags()[1] = true;
@@ -283,7 +283,7 @@ public class DirKey extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/RelayNetworkStatusVote: long getDirKeyExpiresMillis()
       * @return The value.
       */
-    public java.lang.CharSequence getDirKeyExpires() {
+    public java.lang.String getDirKeyExpires() {
       return dir_key_expires;
     }
 
@@ -293,7 +293,7 @@ public class DirKey extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'dir_key_expires'.
       * @return This builder.
       */
-    public converTor.relayVote.DirKey.Builder setDirKeyExpires(java.lang.CharSequence value) {
+    public converTor.relayVote.DirKey.Builder setDirKeyExpires(java.lang.String value) {
       validate(fields()[2], value);
       this.dir_key_expires = value;
       fieldSetFlags()[2] = true;
@@ -326,8 +326,8 @@ public class DirKey extends org.apache.avro.specific.SpecificRecordBase implemen
       try {
         DirKey record = new DirKey();
         record.version = fieldSetFlags()[0] ? this.version : (java.lang.Integer) defaultValue(fields()[0]);
-        record.dir_key_published = fieldSetFlags()[1] ? this.dir_key_published : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.dir_key_expires = fieldSetFlags()[2] ? this.dir_key_expires : (java.lang.CharSequence) defaultValue(fields()[2]);
+        record.dir_key_published = fieldSetFlags()[1] ? this.dir_key_published : (java.lang.String) defaultValue(fields()[1]);
+        record.dir_key_expires = fieldSetFlags()[2] ? this.dir_key_expires : (java.lang.String) defaultValue(fields()[2]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

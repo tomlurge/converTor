@@ -8,15 +8,15 @@ package converTor.bridgeStatus;
 @org.apache.avro.specific.AvroGenerated
 public class Status extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -4683770407987508879L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Status\",\"namespace\":\"converTor.bridgeStatus\",\"fields\":[{\"name\":\"r\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"R\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDescriptor()\"},{\"name\":\"digest\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: Set<String> getMicrodescriptorDigests()\"},{\"name\":\"published\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getPublishedMillis()\"},{\"name\":\"ip\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getOrPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getDirPort()\"}]}]},{\"name\":\"a\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: getOrAddresses()\"},{\"name\":\"s\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags()\"},{\"name\":\"v\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getVersion()\"},{\"name\":\"w\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"W\",\"fields\":[{\"name\":\"bandwidth\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getBandwidth()\"},{\"name\":\"measured\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getMeasured()\"},{\"name\":\"unmeasured\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/NetworkStatusEntry: boolean getUnmeasured()\"}]}]},{\"name\":\"p\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Policy\",\"fields\":[{\"name\":\"default_policy\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDefaultPolicy()\"},{\"name\":\"port_summary\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getPortList()\"}]}]}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Status\",\"namespace\":\"converTor.bridgeStatus\",\"fields\":[{\"name\":\"r\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"R\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDescriptor()\"},{\"name\":\"digest\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/NetworkStatusEntry: Set<String> getMicrodescriptorDigests()\"},{\"name\":\"published\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: long getPublishedMillis()\"},{\"name\":\"ip\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getOrPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getDirPort()\"}]}]},{\"name\":\"a\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/NetworkStatusEntry: getOrAddresses()\"},{\"name\":\"s\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags()\"},{\"name\":\"v\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getVersion()\"},{\"name\":\"w\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"W\",\"fields\":[{\"name\":\"bandwidth\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getBandwidth()\"},{\"name\":\"measured\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getMeasured()\"},{\"name\":\"unmeasured\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/NetworkStatusEntry: boolean getUnmeasured()\"}]}]},{\"name\":\"p\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Policy\",\"fields\":[{\"name\":\"default_policy\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDefaultPolicy()\"},{\"name\":\"port_summary\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getPortList()\"}]}]}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   @Deprecated public converTor.bridgeStatus.R r;
   /** metrics-lib/NetworkStatusEntry: getOrAddresses() */
-  @Deprecated public java.util.List<java.lang.CharSequence> a;
+  @Deprecated public java.util.List<java.lang.String> a;
   /** metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags() */
-  @Deprecated public java.util.List<java.lang.CharSequence> s;
+  @Deprecated public java.util.List<java.lang.String> s;
   /** metrics-lib/NetworkStatusEntry: String getVersion() */
-  @Deprecated public java.lang.CharSequence v;
+  @Deprecated public java.lang.String v;
   @Deprecated public converTor.bridgeStatus.W w;
   @Deprecated public converTor.bridgeStatus.Policy p;
 
@@ -33,7 +33,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
    * @param s metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags()
    * @param v metrics-lib/NetworkStatusEntry: String getVersion()
    */
-  public Status(converTor.bridgeStatus.R r, java.util.List<java.lang.CharSequence> a, java.util.List<java.lang.CharSequence> s, java.lang.CharSequence v, converTor.bridgeStatus.W w, converTor.bridgeStatus.Policy p) {
+  public Status(converTor.bridgeStatus.R r, java.util.List<java.lang.String> a, java.util.List<java.lang.String> s, java.lang.String v, converTor.bridgeStatus.W w, converTor.bridgeStatus.Policy p) {
     this.r = r;
     this.a = a;
     this.s = s;
@@ -60,9 +60,9 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
     case 0: r = (converTor.bridgeStatus.R)value$; break;
-    case 1: a = (java.util.List<java.lang.CharSequence>)value$; break;
-    case 2: s = (java.util.List<java.lang.CharSequence>)value$; break;
-    case 3: v = (java.lang.CharSequence)value$; break;
+    case 1: a = (java.util.List<java.lang.String>)value$; break;
+    case 2: s = (java.util.List<java.lang.String>)value$; break;
+    case 3: v = (java.lang.String)value$; break;
     case 4: w = (converTor.bridgeStatus.W)value$; break;
     case 5: p = (converTor.bridgeStatus.Policy)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
@@ -88,7 +88,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
    * Gets the value of the 'a' field.
    * @return metrics-lib/NetworkStatusEntry: getOrAddresses()
    */
-  public java.util.List<java.lang.CharSequence> getA() {
+  public java.util.List<java.lang.String> getA() {
     return a;
   }
 
@@ -97,7 +97,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
    * metrics-lib/NetworkStatusEntry: getOrAddresses()
    * @param value the value to set.
    */
-  public void setA(java.util.List<java.lang.CharSequence> value) {
+  public void setA(java.util.List<java.lang.String> value) {
     this.a = value;
   }
 
@@ -105,7 +105,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
    * Gets the value of the 's' field.
    * @return metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags()
    */
-  public java.util.List<java.lang.CharSequence> getS() {
+  public java.util.List<java.lang.String> getS() {
     return s;
   }
 
@@ -114,7 +114,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
    * metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags()
    * @param value the value to set.
    */
-  public void setS(java.util.List<java.lang.CharSequence> value) {
+  public void setS(java.util.List<java.lang.String> value) {
     this.s = value;
   }
 
@@ -122,7 +122,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
    * Gets the value of the 'v' field.
    * @return metrics-lib/NetworkStatusEntry: String getVersion()
    */
-  public java.lang.CharSequence getV() {
+  public java.lang.String getV() {
     return v;
   }
 
@@ -131,7 +131,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
    * metrics-lib/NetworkStatusEntry: String getVersion()
    * @param value the value to set.
    */
-  public void setV(java.lang.CharSequence value) {
+  public void setV(java.lang.String value) {
     this.v = value;
   }
 
@@ -200,11 +200,11 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
     private converTor.bridgeStatus.R r;
     private converTor.bridgeStatus.R.Builder rBuilder;
     /** metrics-lib/NetworkStatusEntry: getOrAddresses() */
-    private java.util.List<java.lang.CharSequence> a;
+    private java.util.List<java.lang.String> a;
     /** metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags() */
-    private java.util.List<java.lang.CharSequence> s;
+    private java.util.List<java.lang.String> s;
     /** metrics-lib/NetworkStatusEntry: String getVersion() */
-    private java.lang.CharSequence v;
+    private java.lang.String v;
     private converTor.bridgeStatus.W w;
     private converTor.bridgeStatus.W.Builder wBuilder;
     private converTor.bridgeStatus.Policy p;
@@ -369,7 +369,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/NetworkStatusEntry: getOrAddresses()
       * @return The value.
       */
-    public java.util.List<java.lang.CharSequence> getA() {
+    public java.util.List<java.lang.String> getA() {
       return a;
     }
 
@@ -379,7 +379,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'a'.
       * @return This builder.
       */
-    public converTor.bridgeStatus.Status.Builder setA(java.util.List<java.lang.CharSequence> value) {
+    public converTor.bridgeStatus.Status.Builder setA(java.util.List<java.lang.String> value) {
       validate(fields()[1], value);
       this.a = value;
       fieldSetFlags()[1] = true;
@@ -412,7 +412,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags()
       * @return The value.
       */
-    public java.util.List<java.lang.CharSequence> getS() {
+    public java.util.List<java.lang.String> getS() {
       return s;
     }
 
@@ -422,7 +422,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 's'.
       * @return This builder.
       */
-    public converTor.bridgeStatus.Status.Builder setS(java.util.List<java.lang.CharSequence> value) {
+    public converTor.bridgeStatus.Status.Builder setS(java.util.List<java.lang.String> value) {
       validate(fields()[2], value);
       this.s = value;
       fieldSetFlags()[2] = true;
@@ -455,7 +455,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/NetworkStatusEntry: String getVersion()
       * @return The value.
       */
-    public java.lang.CharSequence getV() {
+    public java.lang.String getV() {
       return v;
     }
 
@@ -465,7 +465,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'v'.
       * @return This builder.
       */
-    public converTor.bridgeStatus.Status.Builder setV(java.lang.CharSequence value) {
+    public converTor.bridgeStatus.Status.Builder setV(java.lang.String value) {
       validate(fields()[3], value);
       this.v = value;
       fieldSetFlags()[3] = true;
@@ -648,9 +648,9 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
         } else {
           record.r = fieldSetFlags()[0] ? this.r : (converTor.bridgeStatus.R) defaultValue(fields()[0]);
         }
-        record.a = fieldSetFlags()[1] ? this.a : (java.util.List<java.lang.CharSequence>) defaultValue(fields()[1]);
-        record.s = fieldSetFlags()[2] ? this.s : (java.util.List<java.lang.CharSequence>) defaultValue(fields()[2]);
-        record.v = fieldSetFlags()[3] ? this.v : (java.lang.CharSequence) defaultValue(fields()[3]);
+        record.a = fieldSetFlags()[1] ? this.a : (java.util.List<java.lang.String>) defaultValue(fields()[1]);
+        record.s = fieldSetFlags()[2] ? this.s : (java.util.List<java.lang.String>) defaultValue(fields()[2]);
+        record.v = fieldSetFlags()[3] ? this.v : (java.lang.String) defaultValue(fields()[3]);
         if (wBuilder != null) {
           record.w = this.wBuilder.build();
         } else {

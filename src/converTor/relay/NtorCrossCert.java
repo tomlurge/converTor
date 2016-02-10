@@ -8,10 +8,10 @@ package converTor.relay;
 @org.apache.avro.specific.AvroGenerated
 public class NtorCrossCert extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -5076841990272955768L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"NtorCrossCert\",\"namespace\":\"converTor.relay\",\"fields\":[{\"name\":\"cert\",\"type\":\"string\",\"doc\":\"metrics-lib/ServerDescriptor: String getNtorOnionKeyCrosscert()\"},{\"name\":\"bit\",\"type\":\"int\",\"doc\":\"metrics-lib/ServerDescriptor: int getNtorOnionKeyCrosscertSign()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"NtorCrossCert\",\"namespace\":\"converTor.relay\",\"fields\":[{\"name\":\"cert\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"metrics-lib/ServerDescriptor: String getNtorOnionKeyCrosscert()\"},{\"name\":\"bit\",\"type\":\"int\",\"doc\":\"metrics-lib/ServerDescriptor: int getNtorOnionKeyCrosscertSign()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/ServerDescriptor: String getNtorOnionKeyCrosscert() */
-  @Deprecated public java.lang.CharSequence cert;
+  @Deprecated public java.lang.String cert;
   /** metrics-lib/ServerDescriptor: int getNtorOnionKeyCrosscertSign() */
   @Deprecated public int bit;
 
@@ -27,7 +27,7 @@ public class NtorCrossCert extends org.apache.avro.specific.SpecificRecordBase i
    * @param cert metrics-lib/ServerDescriptor: String getNtorOnionKeyCrosscert()
    * @param bit metrics-lib/ServerDescriptor: int getNtorOnionKeyCrosscertSign()
    */
-  public NtorCrossCert(java.lang.CharSequence cert, java.lang.Integer bit) {
+  public NtorCrossCert(java.lang.String cert, java.lang.Integer bit) {
     this.cert = cert;
     this.bit = bit;
   }
@@ -45,7 +45,7 @@ public class NtorCrossCert extends org.apache.avro.specific.SpecificRecordBase i
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: cert = (java.lang.CharSequence)value$; break;
+    case 0: cert = (java.lang.String)value$; break;
     case 1: bit = (java.lang.Integer)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
@@ -55,7 +55,7 @@ public class NtorCrossCert extends org.apache.avro.specific.SpecificRecordBase i
    * Gets the value of the 'cert' field.
    * @return metrics-lib/ServerDescriptor: String getNtorOnionKeyCrosscert()
    */
-  public java.lang.CharSequence getCert() {
+  public java.lang.String getCert() {
     return cert;
   }
 
@@ -64,7 +64,7 @@ public class NtorCrossCert extends org.apache.avro.specific.SpecificRecordBase i
    * metrics-lib/ServerDescriptor: String getNtorOnionKeyCrosscert()
    * @param value the value to set.
    */
-  public void setCert(java.lang.CharSequence value) {
+  public void setCert(java.lang.String value) {
     this.cert = value;
   }
 
@@ -118,7 +118,7 @@ public class NtorCrossCert extends org.apache.avro.specific.SpecificRecordBase i
     implements org.apache.avro.data.RecordBuilder<NtorCrossCert> {
 
     /** metrics-lib/ServerDescriptor: String getNtorOnionKeyCrosscert() */
-    private java.lang.CharSequence cert;
+    private java.lang.String cert;
     /** metrics-lib/ServerDescriptor: int getNtorOnionKeyCrosscertSign() */
     private int bit;
 
@@ -164,7 +164,7 @@ public class NtorCrossCert extends org.apache.avro.specific.SpecificRecordBase i
       * metrics-lib/ServerDescriptor: String getNtorOnionKeyCrosscert()
       * @return The value.
       */
-    public java.lang.CharSequence getCert() {
+    public java.lang.String getCert() {
       return cert;
     }
 
@@ -174,7 +174,7 @@ public class NtorCrossCert extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'cert'.
       * @return This builder.
       */
-    public converTor.relay.NtorCrossCert.Builder setCert(java.lang.CharSequence value) {
+    public converTor.relay.NtorCrossCert.Builder setCert(java.lang.String value) {
       validate(fields()[0], value);
       this.cert = value;
       fieldSetFlags()[0] = true;
@@ -248,7 +248,7 @@ public class NtorCrossCert extends org.apache.avro.specific.SpecificRecordBase i
     public NtorCrossCert build() {
       try {
         NtorCrossCert record = new NtorCrossCert();
-        record.cert = fieldSetFlags()[0] ? this.cert : (java.lang.CharSequence) defaultValue(fields()[0]);
+        record.cert = fieldSetFlags()[0] ? this.cert : (java.lang.String) defaultValue(fields()[0]);
         record.bit = fieldSetFlags()[1] ? this.bit : (java.lang.Integer) defaultValue(fields()[1]);
         return record;
       } catch (Exception e) {

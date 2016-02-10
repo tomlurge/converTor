@@ -8,14 +8,14 @@ package converTor.relayVote;
 @org.apache.avro.specific.AvroGenerated
 public class DirSig extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -5751705824052911882L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DirSig\",\"namespace\":\"converTor.relayVote\",\"fields\":[{\"name\":\"algorithm\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/DirectorySignature: String getAlgorithm()\"},{\"name\":\"identity\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/DirectorySignature: String getIdentity()\"},{\"name\":\"signing_key_digest\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/DirectorySignature: String getSigningKeyDigest()\"},{\"name\":\"signature\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/DirectorySignature: String getSignature()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DirSig\",\"namespace\":\"converTor.relayVote\",\"fields\":[{\"name\":\"algorithm\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getAlgorithm()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getIdentity()\"},{\"name\":\"signing_key_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getSigningKeyDigest()\"},{\"name\":\"signature\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/DirectorySignature: String getSignature()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/DirectorySignature: String getAlgorithm() */
-  @Deprecated public java.lang.CharSequence algorithm;
+  @Deprecated public java.lang.String algorithm;
   /** metrics-lib/DirectorySignature: String getIdentity() */
-  @Deprecated public java.lang.CharSequence identity;
+  @Deprecated public java.lang.String identity;
   /** metrics-lib/DirectorySignature: String getSigningKeyDigest() */
-  @Deprecated public java.lang.CharSequence signing_key_digest;
+  @Deprecated public java.lang.String signing_key_digest;
   /** metrics-lib/DirectorySignature: String getSignature() */
   @Deprecated public java.lang.Boolean signature;
 
@@ -33,7 +33,7 @@ public class DirSig extends org.apache.avro.specific.SpecificRecordBase implemen
    * @param signing_key_digest metrics-lib/DirectorySignature: String getSigningKeyDigest()
    * @param signature metrics-lib/DirectorySignature: String getSignature()
    */
-  public DirSig(java.lang.CharSequence algorithm, java.lang.CharSequence identity, java.lang.CharSequence signing_key_digest, java.lang.Boolean signature) {
+  public DirSig(java.lang.String algorithm, java.lang.String identity, java.lang.String signing_key_digest, java.lang.Boolean signature) {
     this.algorithm = algorithm;
     this.identity = identity;
     this.signing_key_digest = signing_key_digest;
@@ -55,9 +55,9 @@ public class DirSig extends org.apache.avro.specific.SpecificRecordBase implemen
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: algorithm = (java.lang.CharSequence)value$; break;
-    case 1: identity = (java.lang.CharSequence)value$; break;
-    case 2: signing_key_digest = (java.lang.CharSequence)value$; break;
+    case 0: algorithm = (java.lang.String)value$; break;
+    case 1: identity = (java.lang.String)value$; break;
+    case 2: signing_key_digest = (java.lang.String)value$; break;
     case 3: signature = (java.lang.Boolean)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
@@ -67,7 +67,7 @@ public class DirSig extends org.apache.avro.specific.SpecificRecordBase implemen
    * Gets the value of the 'algorithm' field.
    * @return metrics-lib/DirectorySignature: String getAlgorithm()
    */
-  public java.lang.CharSequence getAlgorithm() {
+  public java.lang.String getAlgorithm() {
     return algorithm;
   }
 
@@ -76,7 +76,7 @@ public class DirSig extends org.apache.avro.specific.SpecificRecordBase implemen
    * metrics-lib/DirectorySignature: String getAlgorithm()
    * @param value the value to set.
    */
-  public void setAlgorithm(java.lang.CharSequence value) {
+  public void setAlgorithm(java.lang.String value) {
     this.algorithm = value;
   }
 
@@ -84,7 +84,7 @@ public class DirSig extends org.apache.avro.specific.SpecificRecordBase implemen
    * Gets the value of the 'identity' field.
    * @return metrics-lib/DirectorySignature: String getIdentity()
    */
-  public java.lang.CharSequence getIdentity() {
+  public java.lang.String getIdentity() {
     return identity;
   }
 
@@ -93,7 +93,7 @@ public class DirSig extends org.apache.avro.specific.SpecificRecordBase implemen
    * metrics-lib/DirectorySignature: String getIdentity()
    * @param value the value to set.
    */
-  public void setIdentity(java.lang.CharSequence value) {
+  public void setIdentity(java.lang.String value) {
     this.identity = value;
   }
 
@@ -101,7 +101,7 @@ public class DirSig extends org.apache.avro.specific.SpecificRecordBase implemen
    * Gets the value of the 'signing_key_digest' field.
    * @return metrics-lib/DirectorySignature: String getSigningKeyDigest()
    */
-  public java.lang.CharSequence getSigningKeyDigest() {
+  public java.lang.String getSigningKeyDigest() {
     return signing_key_digest;
   }
 
@@ -110,7 +110,7 @@ public class DirSig extends org.apache.avro.specific.SpecificRecordBase implemen
    * metrics-lib/DirectorySignature: String getSigningKeyDigest()
    * @param value the value to set.
    */
-  public void setSigningKeyDigest(java.lang.CharSequence value) {
+  public void setSigningKeyDigest(java.lang.String value) {
     this.signing_key_digest = value;
   }
 
@@ -164,11 +164,11 @@ public class DirSig extends org.apache.avro.specific.SpecificRecordBase implemen
     implements org.apache.avro.data.RecordBuilder<DirSig> {
 
     /** metrics-lib/DirectorySignature: String getAlgorithm() */
-    private java.lang.CharSequence algorithm;
+    private java.lang.String algorithm;
     /** metrics-lib/DirectorySignature: String getIdentity() */
-    private java.lang.CharSequence identity;
+    private java.lang.String identity;
     /** metrics-lib/DirectorySignature: String getSigningKeyDigest() */
-    private java.lang.CharSequence signing_key_digest;
+    private java.lang.String signing_key_digest;
     /** metrics-lib/DirectorySignature: String getSignature() */
     private java.lang.Boolean signature;
 
@@ -230,7 +230,7 @@ public class DirSig extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/DirectorySignature: String getAlgorithm()
       * @return The value.
       */
-    public java.lang.CharSequence getAlgorithm() {
+    public java.lang.String getAlgorithm() {
       return algorithm;
     }
 
@@ -240,7 +240,7 @@ public class DirSig extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'algorithm'.
       * @return This builder.
       */
-    public converTor.relayVote.DirSig.Builder setAlgorithm(java.lang.CharSequence value) {
+    public converTor.relayVote.DirSig.Builder setAlgorithm(java.lang.String value) {
       validate(fields()[0], value);
       this.algorithm = value;
       fieldSetFlags()[0] = true;
@@ -273,7 +273,7 @@ public class DirSig extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/DirectorySignature: String getIdentity()
       * @return The value.
       */
-    public java.lang.CharSequence getIdentity() {
+    public java.lang.String getIdentity() {
       return identity;
     }
 
@@ -283,7 +283,7 @@ public class DirSig extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'identity'.
       * @return This builder.
       */
-    public converTor.relayVote.DirSig.Builder setIdentity(java.lang.CharSequence value) {
+    public converTor.relayVote.DirSig.Builder setIdentity(java.lang.String value) {
       validate(fields()[1], value);
       this.identity = value;
       fieldSetFlags()[1] = true;
@@ -316,7 +316,7 @@ public class DirSig extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/DirectorySignature: String getSigningKeyDigest()
       * @return The value.
       */
-    public java.lang.CharSequence getSigningKeyDigest() {
+    public java.lang.String getSigningKeyDigest() {
       return signing_key_digest;
     }
 
@@ -326,7 +326,7 @@ public class DirSig extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'signing_key_digest'.
       * @return This builder.
       */
-    public converTor.relayVote.DirSig.Builder setSigningKeyDigest(java.lang.CharSequence value) {
+    public converTor.relayVote.DirSig.Builder setSigningKeyDigest(java.lang.String value) {
       validate(fields()[2], value);
       this.signing_key_digest = value;
       fieldSetFlags()[2] = true;
@@ -401,9 +401,9 @@ public class DirSig extends org.apache.avro.specific.SpecificRecordBase implemen
     public DirSig build() {
       try {
         DirSig record = new DirSig();
-        record.algorithm = fieldSetFlags()[0] ? this.algorithm : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.identity = fieldSetFlags()[1] ? this.identity : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.signing_key_digest = fieldSetFlags()[2] ? this.signing_key_digest : (java.lang.CharSequence) defaultValue(fields()[2]);
+        record.algorithm = fieldSetFlags()[0] ? this.algorithm : (java.lang.String) defaultValue(fields()[0]);
+        record.identity = fieldSetFlags()[1] ? this.identity : (java.lang.String) defaultValue(fields()[1]);
+        record.signing_key_digest = fieldSetFlags()[2] ? this.signing_key_digest : (java.lang.String) defaultValue(fields()[2]);
         record.signature = fieldSetFlags()[3] ? this.signature : (java.lang.Boolean) defaultValue(fields()[3]);
         return record;
       } catch (Exception e) {

@@ -8,16 +8,16 @@ package converTor.tordnsel;
 @org.apache.avro.specific.AvroGenerated
 public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -497584333310602887L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ExitNode\",\"namespace\":\"converTor.tordnsel\",\"fields\":[{\"name\":\"fingerprint\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ExitList.Entry: String getFingerprint()\"},{\"name\":\"published\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ExitList.Entry: long getPublishedMillis()\"},{\"name\":\"last_status\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ExitList.Entry: long getLastStatusMillis()\"},{\"name\":\"exit_adresses\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"long\"}],\"doc\":\"metrics-lib/ExitList.Entry: Map<String, Long> getExitAddresses()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ExitNode\",\"namespace\":\"converTor.tordnsel\",\"fields\":[{\"name\":\"fingerprint\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExitList.Entry: String getFingerprint()\"},{\"name\":\"published\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExitList.Entry: long getPublishedMillis()\"},{\"name\":\"last_status\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExitList.Entry: long getLastStatusMillis()\"},{\"name\":\"exit_adresses\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"long\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExitList.Entry: Map<String, Long> getExitAddresses()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/ExitList.Entry: String getFingerprint() */
-  @Deprecated public java.lang.CharSequence fingerprint;
+  @Deprecated public java.lang.String fingerprint;
   /** metrics-lib/ExitList.Entry: long getPublishedMillis() */
-  @Deprecated public java.lang.CharSequence published;
+  @Deprecated public java.lang.String published;
   /** metrics-lib/ExitList.Entry: long getLastStatusMillis() */
-  @Deprecated public java.lang.CharSequence last_status;
+  @Deprecated public java.lang.String last_status;
   /** metrics-lib/ExitList.Entry: Map<String, Long> getExitAddresses() */
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Long> exit_adresses;
+  @Deprecated public java.util.Map<java.lang.String,java.lang.Long> exit_adresses;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -33,7 +33,7 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
    * @param last_status metrics-lib/ExitList.Entry: long getLastStatusMillis()
    * @param exit_adresses metrics-lib/ExitList.Entry: Map<String, Long> getExitAddresses()
    */
-  public ExitNode(java.lang.CharSequence fingerprint, java.lang.CharSequence published, java.lang.CharSequence last_status, java.util.Map<java.lang.CharSequence,java.lang.Long> exit_adresses) {
+  public ExitNode(java.lang.String fingerprint, java.lang.String published, java.lang.String last_status, java.util.Map<java.lang.String,java.lang.Long> exit_adresses) {
     this.fingerprint = fingerprint;
     this.published = published;
     this.last_status = last_status;
@@ -55,10 +55,10 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: fingerprint = (java.lang.CharSequence)value$; break;
-    case 1: published = (java.lang.CharSequence)value$; break;
-    case 2: last_status = (java.lang.CharSequence)value$; break;
-    case 3: exit_adresses = (java.util.Map<java.lang.CharSequence,java.lang.Long>)value$; break;
+    case 0: fingerprint = (java.lang.String)value$; break;
+    case 1: published = (java.lang.String)value$; break;
+    case 2: last_status = (java.lang.String)value$; break;
+    case 3: exit_adresses = (java.util.Map<java.lang.String,java.lang.Long>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -67,7 +67,7 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
    * Gets the value of the 'fingerprint' field.
    * @return metrics-lib/ExitList.Entry: String getFingerprint()
    */
-  public java.lang.CharSequence getFingerprint() {
+  public java.lang.String getFingerprint() {
     return fingerprint;
   }
 
@@ -76,7 +76,7 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
    * metrics-lib/ExitList.Entry: String getFingerprint()
    * @param value the value to set.
    */
-  public void setFingerprint(java.lang.CharSequence value) {
+  public void setFingerprint(java.lang.String value) {
     this.fingerprint = value;
   }
 
@@ -84,7 +84,7 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
    * Gets the value of the 'published' field.
    * @return metrics-lib/ExitList.Entry: long getPublishedMillis()
    */
-  public java.lang.CharSequence getPublished() {
+  public java.lang.String getPublished() {
     return published;
   }
 
@@ -93,7 +93,7 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
    * metrics-lib/ExitList.Entry: long getPublishedMillis()
    * @param value the value to set.
    */
-  public void setPublished(java.lang.CharSequence value) {
+  public void setPublished(java.lang.String value) {
     this.published = value;
   }
 
@@ -101,7 +101,7 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
    * Gets the value of the 'last_status' field.
    * @return metrics-lib/ExitList.Entry: long getLastStatusMillis()
    */
-  public java.lang.CharSequence getLastStatus() {
+  public java.lang.String getLastStatus() {
     return last_status;
   }
 
@@ -110,7 +110,7 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
    * metrics-lib/ExitList.Entry: long getLastStatusMillis()
    * @param value the value to set.
    */
-  public void setLastStatus(java.lang.CharSequence value) {
+  public void setLastStatus(java.lang.String value) {
     this.last_status = value;
   }
 
@@ -118,7 +118,7 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
    * Gets the value of the 'exit_adresses' field.
    * @return metrics-lib/ExitList.Entry: Map<String, Long> getExitAddresses()
    */
-  public java.util.Map<java.lang.CharSequence,java.lang.Long> getExitAdresses() {
+  public java.util.Map<java.lang.String,java.lang.Long> getExitAdresses() {
     return exit_adresses;
   }
 
@@ -127,7 +127,7 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
    * metrics-lib/ExitList.Entry: Map<String, Long> getExitAddresses()
    * @param value the value to set.
    */
-  public void setExitAdresses(java.util.Map<java.lang.CharSequence,java.lang.Long> value) {
+  public void setExitAdresses(java.util.Map<java.lang.String,java.lang.Long> value) {
     this.exit_adresses = value;
   }
 
@@ -164,13 +164,13 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
     implements org.apache.avro.data.RecordBuilder<ExitNode> {
 
     /** metrics-lib/ExitList.Entry: String getFingerprint() */
-    private java.lang.CharSequence fingerprint;
+    private java.lang.String fingerprint;
     /** metrics-lib/ExitList.Entry: long getPublishedMillis() */
-    private java.lang.CharSequence published;
+    private java.lang.String published;
     /** metrics-lib/ExitList.Entry: long getLastStatusMillis() */
-    private java.lang.CharSequence last_status;
+    private java.lang.String last_status;
     /** metrics-lib/ExitList.Entry: Map<String, Long> getExitAddresses() */
-    private java.util.Map<java.lang.CharSequence,java.lang.Long> exit_adresses;
+    private java.util.Map<java.lang.String,java.lang.Long> exit_adresses;
 
     /** Creates a new Builder */
     private Builder() {
@@ -230,7 +230,7 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
       * metrics-lib/ExitList.Entry: String getFingerprint()
       * @return The value.
       */
-    public java.lang.CharSequence getFingerprint() {
+    public java.lang.String getFingerprint() {
       return fingerprint;
     }
 
@@ -240,7 +240,7 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'fingerprint'.
       * @return This builder.
       */
-    public converTor.tordnsel.ExitNode.Builder setFingerprint(java.lang.CharSequence value) {
+    public converTor.tordnsel.ExitNode.Builder setFingerprint(java.lang.String value) {
       validate(fields()[0], value);
       this.fingerprint = value;
       fieldSetFlags()[0] = true;
@@ -273,7 +273,7 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
       * metrics-lib/ExitList.Entry: long getPublishedMillis()
       * @return The value.
       */
-    public java.lang.CharSequence getPublished() {
+    public java.lang.String getPublished() {
       return published;
     }
 
@@ -283,7 +283,7 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'published'.
       * @return This builder.
       */
-    public converTor.tordnsel.ExitNode.Builder setPublished(java.lang.CharSequence value) {
+    public converTor.tordnsel.ExitNode.Builder setPublished(java.lang.String value) {
       validate(fields()[1], value);
       this.published = value;
       fieldSetFlags()[1] = true;
@@ -316,7 +316,7 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
       * metrics-lib/ExitList.Entry: long getLastStatusMillis()
       * @return The value.
       */
-    public java.lang.CharSequence getLastStatus() {
+    public java.lang.String getLastStatus() {
       return last_status;
     }
 
@@ -326,7 +326,7 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'last_status'.
       * @return This builder.
       */
-    public converTor.tordnsel.ExitNode.Builder setLastStatus(java.lang.CharSequence value) {
+    public converTor.tordnsel.ExitNode.Builder setLastStatus(java.lang.String value) {
       validate(fields()[2], value);
       this.last_status = value;
       fieldSetFlags()[2] = true;
@@ -359,7 +359,7 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
       * metrics-lib/ExitList.Entry: Map<String, Long> getExitAddresses()
       * @return The value.
       */
-    public java.util.Map<java.lang.CharSequence,java.lang.Long> getExitAdresses() {
+    public java.util.Map<java.lang.String,java.lang.Long> getExitAdresses() {
       return exit_adresses;
     }
 
@@ -369,7 +369,7 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'exit_adresses'.
       * @return This builder.
       */
-    public converTor.tordnsel.ExitNode.Builder setExitAdresses(java.util.Map<java.lang.CharSequence,java.lang.Long> value) {
+    public converTor.tordnsel.ExitNode.Builder setExitAdresses(java.util.Map<java.lang.String,java.lang.Long> value) {
       validate(fields()[3], value);
       this.exit_adresses = value;
       fieldSetFlags()[3] = true;
@@ -401,10 +401,10 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
     public ExitNode build() {
       try {
         ExitNode record = new ExitNode();
-        record.fingerprint = fieldSetFlags()[0] ? this.fingerprint : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.published = fieldSetFlags()[1] ? this.published : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.last_status = fieldSetFlags()[2] ? this.last_status : (java.lang.CharSequence) defaultValue(fields()[2]);
-        record.exit_adresses = fieldSetFlags()[3] ? this.exit_adresses : (java.util.Map<java.lang.CharSequence,java.lang.Long>) defaultValue(fields()[3]);
+        record.fingerprint = fieldSetFlags()[0] ? this.fingerprint : (java.lang.String) defaultValue(fields()[0]);
+        record.published = fieldSetFlags()[1] ? this.published : (java.lang.String) defaultValue(fields()[1]);
+        record.last_status = fieldSetFlags()[2] ? this.last_status : (java.lang.String) defaultValue(fields()[2]);
+        record.exit_adresses = fieldSetFlags()[3] ? this.exit_adresses : (java.util.Map<java.lang.String,java.lang.Long>) defaultValue(fields()[3]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

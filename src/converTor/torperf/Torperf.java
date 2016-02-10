@@ -8,11 +8,11 @@ package converTor.torperf;
 @org.apache.avro.specific.AvroGenerated
 public class Torperf extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = 4404645593086624658L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Torperf\",\"namespace\":\"converTor.torperf\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":\"string\",\"default\":\"torperf 1.0\"},{\"name\":\"source\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/TorperfResult: String getSource()\"},{\"name\":\"filesize\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getFileSize()\"},{\"name\":\"start\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getStartMillis()\"},{\"name\":\"socket\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getSocketMillis()\"},{\"name\":\"connect\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getConnectMillis()\"},{\"name\":\"negotiate\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getNegotiateMillis()\"},{\"name\":\"request\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getRequestMillis()\"},{\"name\":\"response\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getResponseMillis()\"},{\"name\":\"datarequest\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getDataRequestMillis()\"},{\"name\":\"dataresponse\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getDataResponseMillis()\"},{\"name\":\"datacomplete\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getDataCompleteMillis()\"},{\"name\":\"writebytes\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getWriteBytes()\"},{\"name\":\"readbytes\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getReadBytes()\"},{\"name\":\"didtimeout\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/TorperfResult: Boolean didTimeout()\"},{\"name\":\"dataperc10\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(10)\"},{\"name\":\"dataperc20\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(20)\"},{\"name\":\"dataperc30\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(30)\"},{\"name\":\"dataperc40\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(40)\"},{\"name\":\"dataperc50\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(50)\"},{\"name\":\"dataperc60\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(60)\"},{\"name\":\"dataperc70\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(70)\"},{\"name\":\"dataperc80\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(80)\"},{\"name\":\"dataperc90\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(90)\"},{\"name\":\"launch\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getLaunchMillis()()\"},{\"name\":\"used_at\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getUsedAtMillis()\"},{\"name\":\"path\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/TorperfResult: List<String> getPath()\"},{\"name\":\"buildtimes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/TorperfResult: List<Long> getBuildTimes()\"},{\"name\":\"timeout\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getTimeout()\"},{\"name\":\"quantile\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/TorperfResult: double getQuantile()\"},{\"name\":\"circ_id\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getCircId()\"},{\"name\":\"used_by\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getUsedBy()\"}],\"aliases\":[\"torperfResult\"]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Torperf\",\"namespace\":\"converTor.torperf\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"torperf 1.0\"},{\"name\":\"source\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/TorperfResult: String getSource()\"},{\"name\":\"filesize\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getFileSize()\"},{\"name\":\"start\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getStartMillis()\"},{\"name\":\"socket\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getSocketMillis()\"},{\"name\":\"connect\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getConnectMillis()\"},{\"name\":\"negotiate\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getNegotiateMillis()\"},{\"name\":\"request\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getRequestMillis()\"},{\"name\":\"response\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getResponseMillis()\"},{\"name\":\"datarequest\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getDataRequestMillis()\"},{\"name\":\"dataresponse\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getDataResponseMillis()\"},{\"name\":\"datacomplete\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getDataCompleteMillis()\"},{\"name\":\"writebytes\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getWriteBytes()\"},{\"name\":\"readbytes\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getReadBytes()\"},{\"name\":\"didtimeout\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/TorperfResult: Boolean didTimeout()\"},{\"name\":\"dataperc10\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(10)\"},{\"name\":\"dataperc20\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(20)\"},{\"name\":\"dataperc30\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(30)\"},{\"name\":\"dataperc40\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(40)\"},{\"name\":\"dataperc50\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(50)\"},{\"name\":\"dataperc60\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(60)\"},{\"name\":\"dataperc70\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(70)\"},{\"name\":\"dataperc80\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(80)\"},{\"name\":\"dataperc90\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(90)\"},{\"name\":\"launch\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getLaunchMillis()()\"},{\"name\":\"used_at\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getUsedAtMillis()\"},{\"name\":\"path\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/TorperfResult: List<String> getPath()\"},{\"name\":\"buildtimes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/TorperfResult: List<Long> getBuildTimes()\"},{\"name\":\"timeout\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getTimeout()\"},{\"name\":\"quantile\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/TorperfResult: double getQuantile()\"},{\"name\":\"circ_id\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getCircId()\"},{\"name\":\"used_by\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getUsedBy()\"}],\"aliases\":[\"torperfResult\"]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
-  @Deprecated public java.lang.CharSequence descriptor_type;
+  @Deprecated public java.lang.String descriptor_type;
   /** metrics-lib/TorperfResult: String getSource() */
-  @Deprecated public java.lang.CharSequence source;
+  @Deprecated public java.lang.String source;
   /** metrics-lib/TorperfResult: int getFileSize() */
   @Deprecated public java.lang.Integer filesize;
   /** metrics-lib/TorperfResult: long getStartMillis() */
@@ -62,7 +62,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
   /** metrics-lib/TorperfResult: long getUsedAtMillis() */
   @Deprecated public java.lang.Long used_at;
   /** metrics-lib/TorperfResult: List<String> getPath() */
-  @Deprecated public java.util.List<java.lang.CharSequence> path;
+  @Deprecated public java.util.List<java.lang.String> path;
   /** metrics-lib/TorperfResult: List<Long> getBuildTimes() */
   @Deprecated public java.util.List<java.lang.Long> buildtimes;
   /** metrics-lib/TorperfResult: long getTimeout() */
@@ -115,7 +115,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
    * @param circ_id metrics-lib/TorperfResult: int getCircId()
    * @param used_by metrics-lib/TorperfResult: int getUsedBy()
    */
-  public Torperf(java.lang.CharSequence descriptor_type, java.lang.CharSequence source, java.lang.Integer filesize, java.lang.Long start, java.lang.Long socket, java.lang.Long connect, java.lang.Long negotiate, java.lang.Long request, java.lang.Long response, java.lang.Long datarequest, java.lang.Long dataresponse, java.lang.Long datacomplete, java.lang.Integer writebytes, java.lang.Integer readbytes, java.lang.Boolean didtimeout, java.lang.Long dataperc10, java.lang.Long dataperc20, java.lang.Long dataperc30, java.lang.Long dataperc40, java.lang.Long dataperc50, java.lang.Long dataperc60, java.lang.Long dataperc70, java.lang.Long dataperc80, java.lang.Long dataperc90, java.lang.Long launch, java.lang.Long used_at, java.util.List<java.lang.CharSequence> path, java.util.List<java.lang.Long> buildtimes, java.lang.Long timeout, java.lang.Double quantile, java.lang.Integer circ_id, java.lang.Integer used_by) {
+  public Torperf(java.lang.String descriptor_type, java.lang.String source, java.lang.Integer filesize, java.lang.Long start, java.lang.Long socket, java.lang.Long connect, java.lang.Long negotiate, java.lang.Long request, java.lang.Long response, java.lang.Long datarequest, java.lang.Long dataresponse, java.lang.Long datacomplete, java.lang.Integer writebytes, java.lang.Integer readbytes, java.lang.Boolean didtimeout, java.lang.Long dataperc10, java.lang.Long dataperc20, java.lang.Long dataperc30, java.lang.Long dataperc40, java.lang.Long dataperc50, java.lang.Long dataperc60, java.lang.Long dataperc70, java.lang.Long dataperc80, java.lang.Long dataperc90, java.lang.Long launch, java.lang.Long used_at, java.util.List<java.lang.String> path, java.util.List<java.lang.Long> buildtimes, java.lang.Long timeout, java.lang.Double quantile, java.lang.Integer circ_id, java.lang.Integer used_by) {
     this.descriptor_type = descriptor_type;
     this.source = source;
     this.filesize = filesize;
@@ -193,8 +193,8 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: descriptor_type = (java.lang.CharSequence)value$; break;
-    case 1: source = (java.lang.CharSequence)value$; break;
+    case 0: descriptor_type = (java.lang.String)value$; break;
+    case 1: source = (java.lang.String)value$; break;
     case 2: filesize = (java.lang.Integer)value$; break;
     case 3: start = (java.lang.Long)value$; break;
     case 4: socket = (java.lang.Long)value$; break;
@@ -219,7 +219,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
     case 23: dataperc90 = (java.lang.Long)value$; break;
     case 24: launch = (java.lang.Long)value$; break;
     case 25: used_at = (java.lang.Long)value$; break;
-    case 26: path = (java.util.List<java.lang.CharSequence>)value$; break;
+    case 26: path = (java.util.List<java.lang.String>)value$; break;
     case 27: buildtimes = (java.util.List<java.lang.Long>)value$; break;
     case 28: timeout = (java.lang.Long)value$; break;
     case 29: quantile = (java.lang.Double)value$; break;
@@ -232,7 +232,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
   /**
    * Gets the value of the 'descriptor_type' field.
    */
-  public java.lang.CharSequence getDescriptorType() {
+  public java.lang.String getDescriptorType() {
     return descriptor_type;
   }
 
@@ -240,7 +240,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
    * Sets the value of the 'descriptor_type' field.
    * @param value the value to set.
    */
-  public void setDescriptorType(java.lang.CharSequence value) {
+  public void setDescriptorType(java.lang.String value) {
     this.descriptor_type = value;
   }
 
@@ -248,7 +248,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
    * Gets the value of the 'source' field.
    * @return metrics-lib/TorperfResult: String getSource()
    */
-  public java.lang.CharSequence getSource() {
+  public java.lang.String getSource() {
     return source;
   }
 
@@ -257,7 +257,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
    * metrics-lib/TorperfResult: String getSource()
    * @param value the value to set.
    */
-  public void setSource(java.lang.CharSequence value) {
+  public void setSource(java.lang.String value) {
     this.source = value;
   }
 
@@ -673,7 +673,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
    * Gets the value of the 'path' field.
    * @return metrics-lib/TorperfResult: List<String> getPath()
    */
-  public java.util.List<java.lang.CharSequence> getPath() {
+  public java.util.List<java.lang.String> getPath() {
     return path;
   }
 
@@ -682,7 +682,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
    * metrics-lib/TorperfResult: List<String> getPath()
    * @param value the value to set.
    */
-  public void setPath(java.util.List<java.lang.CharSequence> value) {
+  public void setPath(java.util.List<java.lang.String> value) {
     this.path = value;
   }
 
@@ -803,9 +803,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Torperf>
     implements org.apache.avro.data.RecordBuilder<Torperf> {
 
-    private java.lang.CharSequence descriptor_type;
+    private java.lang.String descriptor_type;
     /** metrics-lib/TorperfResult: String getSource() */
-    private java.lang.CharSequence source;
+    private java.lang.String source;
     /** metrics-lib/TorperfResult: int getFileSize() */
     private java.lang.Integer filesize;
     /** metrics-lib/TorperfResult: long getStartMillis() */
@@ -855,7 +855,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
     /** metrics-lib/TorperfResult: long getUsedAtMillis() */
     private java.lang.Long used_at;
     /** metrics-lib/TorperfResult: List<String> getPath() */
-    private java.util.List<java.lang.CharSequence> path;
+    private java.util.List<java.lang.String> path;
     /** metrics-lib/TorperfResult: List<Long> getBuildTimes() */
     private java.util.List<java.lang.Long> buildtimes;
     /** metrics-lib/TorperfResult: long getTimeout() */
@@ -1148,7 +1148,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * Gets the value of the 'descriptor_type' field.
       * @return The value.
       */
-    public java.lang.CharSequence getDescriptorType() {
+    public java.lang.String getDescriptorType() {
       return descriptor_type;
     }
 
@@ -1157,7 +1157,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'descriptor_type'.
       * @return This builder.
       */
-    public converTor.torperf.Torperf.Builder setDescriptorType(java.lang.CharSequence value) {
+    public converTor.torperf.Torperf.Builder setDescriptorType(java.lang.String value) {
       validate(fields()[0], value);
       this.descriptor_type = value;
       fieldSetFlags()[0] = true;
@@ -1188,7 +1188,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: String getSource()
       * @return The value.
       */
-    public java.lang.CharSequence getSource() {
+    public java.lang.String getSource() {
       return source;
     }
 
@@ -1198,7 +1198,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'source'.
       * @return This builder.
       */
-    public converTor.torperf.Torperf.Builder setSource(java.lang.CharSequence value) {
+    public converTor.torperf.Torperf.Builder setSource(java.lang.String value) {
       validate(fields()[1], value);
       this.source = value;
       fieldSetFlags()[1] = true;
@@ -2263,7 +2263,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: List<String> getPath()
       * @return The value.
       */
-    public java.util.List<java.lang.CharSequence> getPath() {
+    public java.util.List<java.lang.String> getPath() {
       return path;
     }
 
@@ -2273,7 +2273,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'path'.
       * @return This builder.
       */
-    public converTor.torperf.Torperf.Builder setPath(java.util.List<java.lang.CharSequence> value) {
+    public converTor.torperf.Torperf.Builder setPath(java.util.List<java.lang.String> value) {
       validate(fields()[26], value);
       this.path = value;
       fieldSetFlags()[26] = true;
@@ -2520,8 +2520,8 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
     public Torperf build() {
       try {
         Torperf record = new Torperf();
-        record.descriptor_type = fieldSetFlags()[0] ? this.descriptor_type : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.source = fieldSetFlags()[1] ? this.source : (java.lang.CharSequence) defaultValue(fields()[1]);
+        record.descriptor_type = fieldSetFlags()[0] ? this.descriptor_type : (java.lang.String) defaultValue(fields()[0]);
+        record.source = fieldSetFlags()[1] ? this.source : (java.lang.String) defaultValue(fields()[1]);
         record.filesize = fieldSetFlags()[2] ? this.filesize : (java.lang.Integer) defaultValue(fields()[2]);
         record.start = fieldSetFlags()[3] ? this.start : (java.lang.Long) defaultValue(fields()[3]);
         record.socket = fieldSetFlags()[4] ? this.socket : (java.lang.Long) defaultValue(fields()[4]);
@@ -2546,7 +2546,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
         record.dataperc90 = fieldSetFlags()[23] ? this.dataperc90 : (java.lang.Long) defaultValue(fields()[23]);
         record.launch = fieldSetFlags()[24] ? this.launch : (java.lang.Long) defaultValue(fields()[24]);
         record.used_at = fieldSetFlags()[25] ? this.used_at : (java.lang.Long) defaultValue(fields()[25]);
-        record.path = fieldSetFlags()[26] ? this.path : (java.util.List<java.lang.CharSequence>) defaultValue(fields()[26]);
+        record.path = fieldSetFlags()[26] ? this.path : (java.util.List<java.lang.String>) defaultValue(fields()[26]);
         record.buildtimes = fieldSetFlags()[27] ? this.buildtimes : (java.util.List<java.lang.Long>) defaultValue(fields()[27]);
         record.timeout = fieldSetFlags()[28] ? this.timeout : (java.lang.Long) defaultValue(fields()[28]);
         record.quantile = fieldSetFlags()[29] ? this.quantile : (java.lang.Double) defaultValue(fields()[29]);

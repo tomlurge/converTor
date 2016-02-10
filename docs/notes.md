@@ -1,8 +1,6 @@
 # TODO
 
 *
-  think about convertion per timespan
-    arrays of writers?
   implement avro writer functionality
   generate an avro file from torperf
   set up checking/testing of avro file

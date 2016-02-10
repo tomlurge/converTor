@@ -8,12 +8,12 @@ package converTor.bridge;
 @org.apache.avro.specific.AvroGenerated
 public class Router extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = 8839565290681386275L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Router\",\"namespace\":\"converTor.bridge\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ServerDescriptor: String getNickname()\"},{\"name\":\"address\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ServerDescriptor: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getOrPort()\"},{\"name\":\"socks_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getSocksPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getDirPort()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Router\",\"namespace\":\"converTor.bridge\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getNickname()\"},{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getOrPort()\"},{\"name\":\"socks_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getSocksPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getDirPort()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/ServerDescriptor: String getNickname() */
-  @Deprecated public java.lang.CharSequence nickname;
+  @Deprecated public java.lang.String nickname;
   /** metrics-lib/ServerDescriptor: String getAddress() */
-  @Deprecated public java.lang.CharSequence address;
+  @Deprecated public java.lang.String address;
   /** metrics-lib/ServerDescriptor: int getOrPort() */
   @Deprecated public java.lang.Integer or_port;
   /** metrics-lib/ServerDescriptor: int getSocksPort() */
@@ -36,7 +36,7 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
    * @param socks_port metrics-lib/ServerDescriptor: int getSocksPort()
    * @param dir_port metrics-lib/ServerDescriptor: int getDirPort()
    */
-  public Router(java.lang.CharSequence nickname, java.lang.CharSequence address, java.lang.Integer or_port, java.lang.Integer socks_port, java.lang.Integer dir_port) {
+  public Router(java.lang.String nickname, java.lang.String address, java.lang.Integer or_port, java.lang.Integer socks_port, java.lang.Integer dir_port) {
     this.nickname = nickname;
     this.address = address;
     this.or_port = or_port;
@@ -60,8 +60,8 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: nickname = (java.lang.CharSequence)value$; break;
-    case 1: address = (java.lang.CharSequence)value$; break;
+    case 0: nickname = (java.lang.String)value$; break;
+    case 1: address = (java.lang.String)value$; break;
     case 2: or_port = (java.lang.Integer)value$; break;
     case 3: socks_port = (java.lang.Integer)value$; break;
     case 4: dir_port = (java.lang.Integer)value$; break;
@@ -73,7 +73,7 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
    * Gets the value of the 'nickname' field.
    * @return metrics-lib/ServerDescriptor: String getNickname()
    */
-  public java.lang.CharSequence getNickname() {
+  public java.lang.String getNickname() {
     return nickname;
   }
 
@@ -82,7 +82,7 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
    * metrics-lib/ServerDescriptor: String getNickname()
    * @param value the value to set.
    */
-  public void setNickname(java.lang.CharSequence value) {
+  public void setNickname(java.lang.String value) {
     this.nickname = value;
   }
 
@@ -90,7 +90,7 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
    * Gets the value of the 'address' field.
    * @return metrics-lib/ServerDescriptor: String getAddress()
    */
-  public java.lang.CharSequence getAddress() {
+  public java.lang.String getAddress() {
     return address;
   }
 
@@ -99,7 +99,7 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
    * metrics-lib/ServerDescriptor: String getAddress()
    * @param value the value to set.
    */
-  public void setAddress(java.lang.CharSequence value) {
+  public void setAddress(java.lang.String value) {
     this.address = value;
   }
 
@@ -187,9 +187,9 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
     implements org.apache.avro.data.RecordBuilder<Router> {
 
     /** metrics-lib/ServerDescriptor: String getNickname() */
-    private java.lang.CharSequence nickname;
+    private java.lang.String nickname;
     /** metrics-lib/ServerDescriptor: String getAddress() */
-    private java.lang.CharSequence address;
+    private java.lang.String address;
     /** metrics-lib/ServerDescriptor: int getOrPort() */
     private java.lang.Integer or_port;
     /** metrics-lib/ServerDescriptor: int getSocksPort() */
@@ -263,7 +263,7 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/ServerDescriptor: String getNickname()
       * @return The value.
       */
-    public java.lang.CharSequence getNickname() {
+    public java.lang.String getNickname() {
       return nickname;
     }
 
@@ -273,7 +273,7 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'nickname'.
       * @return This builder.
       */
-    public converTor.bridge.Router.Builder setNickname(java.lang.CharSequence value) {
+    public converTor.bridge.Router.Builder setNickname(java.lang.String value) {
       validate(fields()[0], value);
       this.nickname = value;
       fieldSetFlags()[0] = true;
@@ -306,7 +306,7 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/ServerDescriptor: String getAddress()
       * @return The value.
       */
-    public java.lang.CharSequence getAddress() {
+    public java.lang.String getAddress() {
       return address;
     }
 
@@ -316,7 +316,7 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'address'.
       * @return This builder.
       */
-    public converTor.bridge.Router.Builder setAddress(java.lang.CharSequence value) {
+    public converTor.bridge.Router.Builder setAddress(java.lang.String value) {
       validate(fields()[1], value);
       this.address = value;
       fieldSetFlags()[1] = true;
@@ -477,8 +477,8 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
     public Router build() {
       try {
         Router record = new Router();
-        record.nickname = fieldSetFlags()[0] ? this.nickname : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.address = fieldSetFlags()[1] ? this.address : (java.lang.CharSequence) defaultValue(fields()[1]);
+        record.nickname = fieldSetFlags()[0] ? this.nickname : (java.lang.String) defaultValue(fields()[0]);
+        record.address = fieldSetFlags()[1] ? this.address : (java.lang.String) defaultValue(fields()[1]);
         record.or_port = fieldSetFlags()[2] ? this.or_port : (java.lang.Integer) defaultValue(fields()[2]);
         record.socks_port = fieldSetFlags()[3] ? this.socks_port : (java.lang.Integer) defaultValue(fields()[3]);
         record.dir_port = fieldSetFlags()[4] ? this.dir_port : (java.lang.Integer) defaultValue(fields()[4]);

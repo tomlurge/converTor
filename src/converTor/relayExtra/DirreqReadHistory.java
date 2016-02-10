@@ -8,10 +8,10 @@ package converTor.relayExtra;
 @org.apache.avro.specific.AvroGenerated
 public class DirreqReadHistory extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -655771317953189762L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DirreqReadHistory\",\"namespace\":\"converTor.relayExtra\",\"fields\":[{\"name\":\"date\",\"type\":\"string\",\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":{\"type\":\"array\",\"items\":\"long\"},\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DirreqReadHistory\",\"namespace\":\"converTor.relayExtra\",\"fields\":[{\"name\":\"date\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":{\"type\":\"array\",\"items\":\"long\"},\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/BandwidthHistory: long getHistoryEndMillis() */
-  @Deprecated public java.lang.CharSequence date;
+  @Deprecated public java.lang.String date;
   /** metrics-lib/BandwidthHistory: long getIntervalLength() */
   @Deprecated public long interval;
   /** metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values() */
@@ -30,7 +30,7 @@ public class DirreqReadHistory extends org.apache.avro.specific.SpecificRecordBa
    * @param interval metrics-lib/BandwidthHistory: long getIntervalLength()
    * @param bytes metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()
    */
-  public DirreqReadHistory(java.lang.CharSequence date, java.lang.Long interval, java.util.List<java.lang.Long> bytes) {
+  public DirreqReadHistory(java.lang.String date, java.lang.Long interval, java.util.List<java.lang.Long> bytes) {
     this.date = date;
     this.interval = interval;
     this.bytes = bytes;
@@ -50,7 +50,7 @@ public class DirreqReadHistory extends org.apache.avro.specific.SpecificRecordBa
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: date = (java.lang.CharSequence)value$; break;
+    case 0: date = (java.lang.String)value$; break;
     case 1: interval = (java.lang.Long)value$; break;
     case 2: bytes = (java.util.List<java.lang.Long>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
@@ -61,7 +61,7 @@ public class DirreqReadHistory extends org.apache.avro.specific.SpecificRecordBa
    * Gets the value of the 'date' field.
    * @return metrics-lib/BandwidthHistory: long getHistoryEndMillis()
    */
-  public java.lang.CharSequence getDate() {
+  public java.lang.String getDate() {
     return date;
   }
 
@@ -70,7 +70,7 @@ public class DirreqReadHistory extends org.apache.avro.specific.SpecificRecordBa
    * metrics-lib/BandwidthHistory: long getHistoryEndMillis()
    * @param value the value to set.
    */
-  public void setDate(java.lang.CharSequence value) {
+  public void setDate(java.lang.String value) {
     this.date = value;
   }
 
@@ -141,7 +141,7 @@ public class DirreqReadHistory extends org.apache.avro.specific.SpecificRecordBa
     implements org.apache.avro.data.RecordBuilder<DirreqReadHistory> {
 
     /** metrics-lib/BandwidthHistory: long getHistoryEndMillis() */
-    private java.lang.CharSequence date;
+    private java.lang.String date;
     /** metrics-lib/BandwidthHistory: long getIntervalLength() */
     private long interval;
     /** metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values() */
@@ -197,7 +197,7 @@ public class DirreqReadHistory extends org.apache.avro.specific.SpecificRecordBa
       * metrics-lib/BandwidthHistory: long getHistoryEndMillis()
       * @return The value.
       */
-    public java.lang.CharSequence getDate() {
+    public java.lang.String getDate() {
       return date;
     }
 
@@ -207,7 +207,7 @@ public class DirreqReadHistory extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'date'.
       * @return This builder.
       */
-    public converTor.relayExtra.DirreqReadHistory.Builder setDate(java.lang.CharSequence value) {
+    public converTor.relayExtra.DirreqReadHistory.Builder setDate(java.lang.String value) {
       validate(fields()[0], value);
       this.date = value;
       fieldSetFlags()[0] = true;
@@ -324,7 +324,7 @@ public class DirreqReadHistory extends org.apache.avro.specific.SpecificRecordBa
     public DirreqReadHistory build() {
       try {
         DirreqReadHistory record = new DirreqReadHistory();
-        record.date = fieldSetFlags()[0] ? this.date : (java.lang.CharSequence) defaultValue(fields()[0]);
+        record.date = fieldSetFlags()[0] ? this.date : (java.lang.String) defaultValue(fields()[0]);
         record.interval = fieldSetFlags()[1] ? this.interval : (java.lang.Long) defaultValue(fields()[1]);
         record.bytes = fieldSetFlags()[2] ? this.bytes : (java.util.List<java.lang.Long>) defaultValue(fields()[2]);
         return record;

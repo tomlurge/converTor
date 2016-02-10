@@ -9,25 +9,25 @@ package converTor.bridge;
 @org.apache.avro.specific.AvroGenerated
 public class Bridge extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -7277671666637710069L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Bridge\",\"namespace\":\"converTor.bridge\",\"doc\":\"server-descriptor 1.0 - same as relay but without field 'router_signature'\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":\"string\",\"default\":\"server-descriptor 1.0\"},{\"name\":\"server_descriptor_digest\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ServerDescriptor: String getServerDescriptorDigest()\"},{\"name\":\"server_descriptor_sha256\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ServerDescriptor: String getServerDescriptorDigestSha256()\"},{\"name\":\"router\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Router\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ServerDescriptor: String getNickname()\"},{\"name\":\"address\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ServerDescriptor: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getOrPort()\"},{\"name\":\"socks_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getSocksPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getDirPort()\"}]}]},{\"name\":\"identity_ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getIdentityEd25519()\"},{\"name\":\"master_key_ed25519\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ServerDescriptor: String getMasterKeyEd25519()\"},{\"name\":\"bandwidth\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Bandwidth\",\"fields\":[{\"name\":\"avg\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getBandwidthRate()\"},{\"name\":\"burst\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getBandwidthBurst()\"},{\"name\":\"observed\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getBandwidthObserved()\"}]}]},{\"name\":\"platform\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ServerDescriptor: String getPlatform()\"},{\"name\":\"published\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ServerDescriptor: long getPublishedMillis()\"},{\"name\":\"fingerprint\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ServerDescriptor: String getFingerprint()\"},{\"name\":\"hibernating\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: boolean isHibernating()\"},{\"name\":\"uptime\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ServerDescriptor: Long getUptime()\"},{\"name\":\"onion_key\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getOnionKey()\"},{\"name\":\"onion_key_crosscert\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getOnionKeyCrosscert()\"},{\"name\":\"ntor_onion_key\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getNtorOnionKey()\"},{\"name\":\"ntor_onion_key_crosscert\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"NtorCrossCert\",\"fields\":[{\"name\":\"cert\",\"type\":\"string\",\"doc\":\"metrics-lib/ServerDescriptor: String getNtorOnionKeyCrosscert()\"},{\"name\":\"bit\",\"type\":\"int\",\"doc\":\"metrics-lib/ServerDescriptor: int getNtorOnionKeyCrosscertSign()\"}]}]},{\"name\":\"signing_key\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getSigningKey()\"},{\"name\":\"exit_policy\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/ServerDescriptor: List<String> getExitPolicyLines()\"},{\"name\":\"ipv6_policy\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getIpv6DefaultPolicy()\"},{\"name\":\"ipv6_portlist\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ServerDescriptor: String getIpv6PortList()\"},{\"name\":\"router_sig_ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getRouterSignatureEd25519()\"},{\"name\":\"contact\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ServerDescriptor: String getContact()\"},{\"name\":\"family\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/ServerDescriptor: List<String> getFamilyEntries()\"},{\"name\":\"read_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ReadHistory\",\"fields\":[{\"name\":\"date\",\"type\":\"string\",\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":{\"type\":\"array\",\"items\":\"long\"},\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ServerDescriptor: BandwidthHistory getReadHistory()\"},{\"name\":\"write_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"WriteHistory\",\"fields\":[{\"name\":\"date\",\"type\":\"string\",\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":{\"type\":\"array\",\"items\":\"long\"},\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ServerDescriptor: BandwidthHistory getWriteHistory()\"},{\"name\":\"eventdns\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: boolean getUsesEnhancedDnsLogic()\"},{\"name\":\"caches_extra_info\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: boolean getCachesExtraInfo()\"},{\"name\":\"extra_info_digest\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ServerDescriptor: String getExtraInfoDigest()\"},{\"name\":\"extra_info_digest_sha256\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ServerDescriptor: String getExtraInfoDigestSha256()\"},{\"name\":\"hidden_service_dir\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}],\"doc\":\"metrics-lib/ServerDescriptor: List<Integer> getHiddenServiceDirVersions()\"},{\"name\":\"link_protocol_versions\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}],\"doc\":\"metrics-lib/ServerDescriptor: List<Integer> getLinkProtocolVersions()\"},{\"name\":\"circuit_protocol_versions\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}],\"doc\":\"metrics-lib/ServerDescriptor: List<Integer> getCircuitProtocolVersions()\"},{\"name\":\"allow_single_hop_exits\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: boolean getAllowSingleHopExits()\"},{\"name\":\"or_address\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"OrAddress\",\"fields\":[{\"name\":\"address\",\"type\":\"string\",\"doc\":\"implementation specific\"},{\"name\":\"port\",\"type\":\"int\",\"doc\":\"implementation specific\"}]}}],\"doc\":\"metrics-lib/ServerDescriptor: List<String> getOrAddresses()\"}],\"aliases\":[\"bridge_server\"]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Bridge\",\"namespace\":\"converTor.bridge\",\"doc\":\"server-descriptor 1.0 - same as relay but without field 'router_signature'\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"server-descriptor 1.0\"},{\"name\":\"server_descriptor_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getServerDescriptorDigest()\"},{\"name\":\"server_descriptor_sha256\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getServerDescriptorDigestSha256()\"},{\"name\":\"router\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Router\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getNickname()\"},{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getOrPort()\"},{\"name\":\"socks_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getSocksPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getDirPort()\"}]}]},{\"name\":\"identity_ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getIdentityEd25519()\"},{\"name\":\"master_key_ed25519\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getMasterKeyEd25519()\"},{\"name\":\"bandwidth\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Bandwidth\",\"fields\":[{\"name\":\"avg\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getBandwidthRate()\"},{\"name\":\"burst\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getBandwidthBurst()\"},{\"name\":\"observed\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getBandwidthObserved()\"}]}]},{\"name\":\"platform\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getPlatform()\"},{\"name\":\"published\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: long getPublishedMillis()\"},{\"name\":\"fingerprint\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getFingerprint()\"},{\"name\":\"hibernating\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: boolean isHibernating()\"},{\"name\":\"uptime\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ServerDescriptor: Long getUptime()\"},{\"name\":\"onion_key\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getOnionKey()\"},{\"name\":\"onion_key_crosscert\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getOnionKeyCrosscert()\"},{\"name\":\"ntor_onion_key\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getNtorOnionKey()\"},{\"name\":\"ntor_onion_key_crosscert\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"NtorCrossCert\",\"fields\":[{\"name\":\"cert\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"metrics-lib/ServerDescriptor: String getNtorOnionKeyCrosscert()\"},{\"name\":\"bit\",\"type\":\"int\",\"doc\":\"metrics-lib/ServerDescriptor: int getNtorOnionKeyCrosscertSign()\"}]}]},{\"name\":\"signing_key\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getSigningKey()\"},{\"name\":\"exit_policy\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/ServerDescriptor: List<String> getExitPolicyLines()\"},{\"name\":\"ipv6_policy\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/ServerDescriptor: String getIpv6DefaultPolicy()\"},{\"name\":\"ipv6_portlist\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getIpv6PortList()\"},{\"name\":\"router_sig_ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getRouterSignatureEd25519()\"},{\"name\":\"contact\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getContact()\"},{\"name\":\"family\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/ServerDescriptor: List<String> getFamilyEntries()\"},{\"name\":\"read_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ReadHistory\",\"fields\":[{\"name\":\"date\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":{\"type\":\"array\",\"items\":\"long\"},\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ServerDescriptor: BandwidthHistory getReadHistory()\"},{\"name\":\"write_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"WriteHistory\",\"fields\":[{\"name\":\"date\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":{\"type\":\"array\",\"items\":\"long\"},\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ServerDescriptor: BandwidthHistory getWriteHistory()\"},{\"name\":\"eventdns\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: boolean getUsesEnhancedDnsLogic()\"},{\"name\":\"caches_extra_info\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: boolean getCachesExtraInfo()\"},{\"name\":\"extra_info_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getExtraInfoDigest()\"},{\"name\":\"extra_info_digest_sha256\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getExtraInfoDigestSha256()\"},{\"name\":\"hidden_service_dir\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}],\"doc\":\"metrics-lib/ServerDescriptor: List<Integer> getHiddenServiceDirVersions()\"},{\"name\":\"link_protocol_versions\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}],\"doc\":\"metrics-lib/ServerDescriptor: List<Integer> getLinkProtocolVersions()\"},{\"name\":\"circuit_protocol_versions\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}],\"doc\":\"metrics-lib/ServerDescriptor: List<Integer> getCircuitProtocolVersions()\"},{\"name\":\"allow_single_hop_exits\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: boolean getAllowSingleHopExits()\"},{\"name\":\"or_address\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"OrAddress\",\"fields\":[{\"name\":\"address\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"implementation specific\"},{\"name\":\"port\",\"type\":\"int\",\"doc\":\"implementation specific\"}]}}],\"doc\":\"metrics-lib/ServerDescriptor: List<String> getOrAddresses()\"}],\"aliases\":[\"bridge_server\"]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
-  @Deprecated public java.lang.CharSequence descriptor_type;
+  @Deprecated public java.lang.String descriptor_type;
   /** metrics-lib/ServerDescriptor: String getServerDescriptorDigest() */
-  @Deprecated public java.lang.CharSequence server_descriptor_digest;
+  @Deprecated public java.lang.String server_descriptor_digest;
   /** metrics-lib/ServerDescriptor: String getServerDescriptorDigestSha256() */
-  @Deprecated public java.lang.CharSequence server_descriptor_sha256;
+  @Deprecated public java.lang.String server_descriptor_sha256;
   @Deprecated public converTor.bridge.Router router;
   /** metrics-lib/ServerDescriptor: String getIdentityEd25519() */
   @Deprecated public java.lang.Boolean identity_ed25519;
   /** metrics-lib/ServerDescriptor: String getMasterKeyEd25519() */
-  @Deprecated public java.lang.CharSequence master_key_ed25519;
+  @Deprecated public java.lang.String master_key_ed25519;
   @Deprecated public converTor.bridge.Bandwidth bandwidth;
   /** metrics-lib/ServerDescriptor: String getPlatform() */
-  @Deprecated public java.lang.CharSequence platform;
+  @Deprecated public java.lang.String platform;
   /** metrics-lib/ServerDescriptor: long getPublishedMillis() */
-  @Deprecated public java.lang.CharSequence published;
+  @Deprecated public java.lang.String published;
   /** metrics-lib/ServerDescriptor: String getFingerprint() */
-  @Deprecated public java.lang.CharSequence fingerprint;
+  @Deprecated public java.lang.String fingerprint;
   /** metrics-lib/ServerDescriptor: boolean isHibernating() */
   @Deprecated public java.lang.Boolean hibernating;
   /** metrics-lib/ServerDescriptor: Long getUptime() */
@@ -42,17 +42,17 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
   /** metrics-lib/ServerDescriptor: String getSigningKey() */
   @Deprecated public java.lang.Boolean signing_key;
   /** metrics-lib/ServerDescriptor: List<String> getExitPolicyLines() */
-  @Deprecated public java.util.List<java.lang.CharSequence> exit_policy;
+  @Deprecated public java.util.List<java.lang.String> exit_policy;
   /** metrics-lib/ServerDescriptor: String getIpv6DefaultPolicy() */
-  @Deprecated public java.util.List<java.lang.CharSequence> ipv6_policy;
+  @Deprecated public java.util.List<java.lang.String> ipv6_policy;
   /** metrics-lib/ServerDescriptor: String getIpv6PortList() */
-  @Deprecated public java.lang.CharSequence ipv6_portlist;
+  @Deprecated public java.lang.String ipv6_portlist;
   /** metrics-lib/ServerDescriptor: String getRouterSignatureEd25519() */
   @Deprecated public java.lang.Boolean router_sig_ed25519;
   /** metrics-lib/ServerDescriptor: String getContact() */
-  @Deprecated public java.lang.CharSequence contact;
+  @Deprecated public java.lang.String contact;
   /** metrics-lib/ServerDescriptor: List<String> getFamilyEntries() */
-  @Deprecated public java.util.List<java.lang.CharSequence> family;
+  @Deprecated public java.util.List<java.lang.String> family;
   /** metrics-lib/ServerDescriptor: BandwidthHistory getReadHistory() */
   @Deprecated public converTor.bridge.ReadHistory read_history;
   /** metrics-lib/ServerDescriptor: BandwidthHistory getWriteHistory() */
@@ -62,9 +62,9 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
   /** metrics-lib/ServerDescriptor: boolean getCachesExtraInfo() */
   @Deprecated public java.lang.Boolean caches_extra_info;
   /** metrics-lib/ServerDescriptor: String getExtraInfoDigest() */
-  @Deprecated public java.lang.CharSequence extra_info_digest;
+  @Deprecated public java.lang.String extra_info_digest;
   /** metrics-lib/ServerDescriptor: String getExtraInfoDigestSha256() */
-  @Deprecated public java.lang.CharSequence extra_info_digest_sha256;
+  @Deprecated public java.lang.String extra_info_digest_sha256;
   /** metrics-lib/ServerDescriptor: List<Integer> getHiddenServiceDirVersions() */
   @Deprecated public java.util.List<java.lang.Integer> hidden_service_dir;
   /** metrics-lib/ServerDescriptor: List<Integer> getLinkProtocolVersions() */
@@ -116,7 +116,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
    * @param allow_single_hop_exits metrics-lib/ServerDescriptor: boolean getAllowSingleHopExits()
    * @param or_address metrics-lib/ServerDescriptor: List<String> getOrAddresses()
    */
-  public Bridge(java.lang.CharSequence descriptor_type, java.lang.CharSequence server_descriptor_digest, java.lang.CharSequence server_descriptor_sha256, converTor.bridge.Router router, java.lang.Boolean identity_ed25519, java.lang.CharSequence master_key_ed25519, converTor.bridge.Bandwidth bandwidth, java.lang.CharSequence platform, java.lang.CharSequence published, java.lang.CharSequence fingerprint, java.lang.Boolean hibernating, java.lang.Long uptime, java.lang.Boolean onion_key, java.lang.Boolean onion_key_crosscert, java.lang.Boolean ntor_onion_key, converTor.bridge.NtorCrossCert ntor_onion_key_crosscert, java.lang.Boolean signing_key, java.util.List<java.lang.CharSequence> exit_policy, java.util.List<java.lang.CharSequence> ipv6_policy, java.lang.CharSequence ipv6_portlist, java.lang.Boolean router_sig_ed25519, java.lang.CharSequence contact, java.util.List<java.lang.CharSequence> family, converTor.bridge.ReadHistory read_history, converTor.bridge.WriteHistory write_history, java.lang.Boolean eventdns, java.lang.Boolean caches_extra_info, java.lang.CharSequence extra_info_digest, java.lang.CharSequence extra_info_digest_sha256, java.util.List<java.lang.Integer> hidden_service_dir, java.util.List<java.lang.Integer> link_protocol_versions, java.util.List<java.lang.Integer> circuit_protocol_versions, java.lang.Boolean allow_single_hop_exits, java.util.List<converTor.bridge.OrAddress> or_address) {
+  public Bridge(java.lang.String descriptor_type, java.lang.String server_descriptor_digest, java.lang.String server_descriptor_sha256, converTor.bridge.Router router, java.lang.Boolean identity_ed25519, java.lang.String master_key_ed25519, converTor.bridge.Bandwidth bandwidth, java.lang.String platform, java.lang.String published, java.lang.String fingerprint, java.lang.Boolean hibernating, java.lang.Long uptime, java.lang.Boolean onion_key, java.lang.Boolean onion_key_crosscert, java.lang.Boolean ntor_onion_key, converTor.bridge.NtorCrossCert ntor_onion_key_crosscert, java.lang.Boolean signing_key, java.util.List<java.lang.String> exit_policy, java.util.List<java.lang.String> ipv6_policy, java.lang.String ipv6_portlist, java.lang.Boolean router_sig_ed25519, java.lang.String contact, java.util.List<java.lang.String> family, converTor.bridge.ReadHistory read_history, converTor.bridge.WriteHistory write_history, java.lang.Boolean eventdns, java.lang.Boolean caches_extra_info, java.lang.String extra_info_digest, java.lang.String extra_info_digest_sha256, java.util.List<java.lang.Integer> hidden_service_dir, java.util.List<java.lang.Integer> link_protocol_versions, java.util.List<java.lang.Integer> circuit_protocol_versions, java.lang.Boolean allow_single_hop_exits, java.util.List<converTor.bridge.OrAddress> or_address) {
     this.descriptor_type = descriptor_type;
     this.server_descriptor_digest = server_descriptor_digest;
     this.server_descriptor_sha256 = server_descriptor_sha256;
@@ -198,16 +198,16 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: descriptor_type = (java.lang.CharSequence)value$; break;
-    case 1: server_descriptor_digest = (java.lang.CharSequence)value$; break;
-    case 2: server_descriptor_sha256 = (java.lang.CharSequence)value$; break;
+    case 0: descriptor_type = (java.lang.String)value$; break;
+    case 1: server_descriptor_digest = (java.lang.String)value$; break;
+    case 2: server_descriptor_sha256 = (java.lang.String)value$; break;
     case 3: router = (converTor.bridge.Router)value$; break;
     case 4: identity_ed25519 = (java.lang.Boolean)value$; break;
-    case 5: master_key_ed25519 = (java.lang.CharSequence)value$; break;
+    case 5: master_key_ed25519 = (java.lang.String)value$; break;
     case 6: bandwidth = (converTor.bridge.Bandwidth)value$; break;
-    case 7: platform = (java.lang.CharSequence)value$; break;
-    case 8: published = (java.lang.CharSequence)value$; break;
-    case 9: fingerprint = (java.lang.CharSequence)value$; break;
+    case 7: platform = (java.lang.String)value$; break;
+    case 8: published = (java.lang.String)value$; break;
+    case 9: fingerprint = (java.lang.String)value$; break;
     case 10: hibernating = (java.lang.Boolean)value$; break;
     case 11: uptime = (java.lang.Long)value$; break;
     case 12: onion_key = (java.lang.Boolean)value$; break;
@@ -215,18 +215,18 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
     case 14: ntor_onion_key = (java.lang.Boolean)value$; break;
     case 15: ntor_onion_key_crosscert = (converTor.bridge.NtorCrossCert)value$; break;
     case 16: signing_key = (java.lang.Boolean)value$; break;
-    case 17: exit_policy = (java.util.List<java.lang.CharSequence>)value$; break;
-    case 18: ipv6_policy = (java.util.List<java.lang.CharSequence>)value$; break;
-    case 19: ipv6_portlist = (java.lang.CharSequence)value$; break;
+    case 17: exit_policy = (java.util.List<java.lang.String>)value$; break;
+    case 18: ipv6_policy = (java.util.List<java.lang.String>)value$; break;
+    case 19: ipv6_portlist = (java.lang.String)value$; break;
     case 20: router_sig_ed25519 = (java.lang.Boolean)value$; break;
-    case 21: contact = (java.lang.CharSequence)value$; break;
-    case 22: family = (java.util.List<java.lang.CharSequence>)value$; break;
+    case 21: contact = (java.lang.String)value$; break;
+    case 22: family = (java.util.List<java.lang.String>)value$; break;
     case 23: read_history = (converTor.bridge.ReadHistory)value$; break;
     case 24: write_history = (converTor.bridge.WriteHistory)value$; break;
     case 25: eventdns = (java.lang.Boolean)value$; break;
     case 26: caches_extra_info = (java.lang.Boolean)value$; break;
-    case 27: extra_info_digest = (java.lang.CharSequence)value$; break;
-    case 28: extra_info_digest_sha256 = (java.lang.CharSequence)value$; break;
+    case 27: extra_info_digest = (java.lang.String)value$; break;
+    case 28: extra_info_digest_sha256 = (java.lang.String)value$; break;
     case 29: hidden_service_dir = (java.util.List<java.lang.Integer>)value$; break;
     case 30: link_protocol_versions = (java.util.List<java.lang.Integer>)value$; break;
     case 31: circuit_protocol_versions = (java.util.List<java.lang.Integer>)value$; break;
@@ -239,7 +239,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
   /**
    * Gets the value of the 'descriptor_type' field.
    */
-  public java.lang.CharSequence getDescriptorType() {
+  public java.lang.String getDescriptorType() {
     return descriptor_type;
   }
 
@@ -247,7 +247,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
    * Sets the value of the 'descriptor_type' field.
    * @param value the value to set.
    */
-  public void setDescriptorType(java.lang.CharSequence value) {
+  public void setDescriptorType(java.lang.String value) {
     this.descriptor_type = value;
   }
 
@@ -255,7 +255,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
    * Gets the value of the 'server_descriptor_digest' field.
    * @return metrics-lib/ServerDescriptor: String getServerDescriptorDigest()
    */
-  public java.lang.CharSequence getServerDescriptorDigest() {
+  public java.lang.String getServerDescriptorDigest() {
     return server_descriptor_digest;
   }
 
@@ -264,7 +264,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
    * metrics-lib/ServerDescriptor: String getServerDescriptorDigest()
    * @param value the value to set.
    */
-  public void setServerDescriptorDigest(java.lang.CharSequence value) {
+  public void setServerDescriptorDigest(java.lang.String value) {
     this.server_descriptor_digest = value;
   }
 
@@ -272,7 +272,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
    * Gets the value of the 'server_descriptor_sha256' field.
    * @return metrics-lib/ServerDescriptor: String getServerDescriptorDigestSha256()
    */
-  public java.lang.CharSequence getServerDescriptorSha256() {
+  public java.lang.String getServerDescriptorSha256() {
     return server_descriptor_sha256;
   }
 
@@ -281,7 +281,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
    * metrics-lib/ServerDescriptor: String getServerDescriptorDigestSha256()
    * @param value the value to set.
    */
-  public void setServerDescriptorSha256(java.lang.CharSequence value) {
+  public void setServerDescriptorSha256(java.lang.String value) {
     this.server_descriptor_sha256 = value;
   }
 
@@ -321,7 +321,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
    * Gets the value of the 'master_key_ed25519' field.
    * @return metrics-lib/ServerDescriptor: String getMasterKeyEd25519()
    */
-  public java.lang.CharSequence getMasterKeyEd25519() {
+  public java.lang.String getMasterKeyEd25519() {
     return master_key_ed25519;
   }
 
@@ -330,7 +330,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
    * metrics-lib/ServerDescriptor: String getMasterKeyEd25519()
    * @param value the value to set.
    */
-  public void setMasterKeyEd25519(java.lang.CharSequence value) {
+  public void setMasterKeyEd25519(java.lang.String value) {
     this.master_key_ed25519 = value;
   }
 
@@ -353,7 +353,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
    * Gets the value of the 'platform' field.
    * @return metrics-lib/ServerDescriptor: String getPlatform()
    */
-  public java.lang.CharSequence getPlatform() {
+  public java.lang.String getPlatform() {
     return platform;
   }
 
@@ -362,7 +362,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
    * metrics-lib/ServerDescriptor: String getPlatform()
    * @param value the value to set.
    */
-  public void setPlatform(java.lang.CharSequence value) {
+  public void setPlatform(java.lang.String value) {
     this.platform = value;
   }
 
@@ -370,7 +370,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
    * Gets the value of the 'published' field.
    * @return metrics-lib/ServerDescriptor: long getPublishedMillis()
    */
-  public java.lang.CharSequence getPublished() {
+  public java.lang.String getPublished() {
     return published;
   }
 
@@ -379,7 +379,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
    * metrics-lib/ServerDescriptor: long getPublishedMillis()
    * @param value the value to set.
    */
-  public void setPublished(java.lang.CharSequence value) {
+  public void setPublished(java.lang.String value) {
     this.published = value;
   }
 
@@ -387,7 +387,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
    * Gets the value of the 'fingerprint' field.
    * @return metrics-lib/ServerDescriptor: String getFingerprint()
    */
-  public java.lang.CharSequence getFingerprint() {
+  public java.lang.String getFingerprint() {
     return fingerprint;
   }
 
@@ -396,7 +396,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
    * metrics-lib/ServerDescriptor: String getFingerprint()
    * @param value the value to set.
    */
-  public void setFingerprint(java.lang.CharSequence value) {
+  public void setFingerprint(java.lang.String value) {
     this.fingerprint = value;
   }
 
@@ -521,7 +521,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
    * Gets the value of the 'exit_policy' field.
    * @return metrics-lib/ServerDescriptor: List<String> getExitPolicyLines()
    */
-  public java.util.List<java.lang.CharSequence> getExitPolicy() {
+  public java.util.List<java.lang.String> getExitPolicy() {
     return exit_policy;
   }
 
@@ -530,7 +530,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
    * metrics-lib/ServerDescriptor: List<String> getExitPolicyLines()
    * @param value the value to set.
    */
-  public void setExitPolicy(java.util.List<java.lang.CharSequence> value) {
+  public void setExitPolicy(java.util.List<java.lang.String> value) {
     this.exit_policy = value;
   }
 
@@ -538,7 +538,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
    * Gets the value of the 'ipv6_policy' field.
    * @return metrics-lib/ServerDescriptor: String getIpv6DefaultPolicy()
    */
-  public java.util.List<java.lang.CharSequence> getIpv6Policy() {
+  public java.util.List<java.lang.String> getIpv6Policy() {
     return ipv6_policy;
   }
 
@@ -547,7 +547,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
    * metrics-lib/ServerDescriptor: String getIpv6DefaultPolicy()
    * @param value the value to set.
    */
-  public void setIpv6Policy(java.util.List<java.lang.CharSequence> value) {
+  public void setIpv6Policy(java.util.List<java.lang.String> value) {
     this.ipv6_policy = value;
   }
 
@@ -555,7 +555,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
    * Gets the value of the 'ipv6_portlist' field.
    * @return metrics-lib/ServerDescriptor: String getIpv6PortList()
    */
-  public java.lang.CharSequence getIpv6Portlist() {
+  public java.lang.String getIpv6Portlist() {
     return ipv6_portlist;
   }
 
@@ -564,7 +564,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
    * metrics-lib/ServerDescriptor: String getIpv6PortList()
    * @param value the value to set.
    */
-  public void setIpv6Portlist(java.lang.CharSequence value) {
+  public void setIpv6Portlist(java.lang.String value) {
     this.ipv6_portlist = value;
   }
 
@@ -589,7 +589,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
    * Gets the value of the 'contact' field.
    * @return metrics-lib/ServerDescriptor: String getContact()
    */
-  public java.lang.CharSequence getContact() {
+  public java.lang.String getContact() {
     return contact;
   }
 
@@ -598,7 +598,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
    * metrics-lib/ServerDescriptor: String getContact()
    * @param value the value to set.
    */
-  public void setContact(java.lang.CharSequence value) {
+  public void setContact(java.lang.String value) {
     this.contact = value;
   }
 
@@ -606,7 +606,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
    * Gets the value of the 'family' field.
    * @return metrics-lib/ServerDescriptor: List<String> getFamilyEntries()
    */
-  public java.util.List<java.lang.CharSequence> getFamily() {
+  public java.util.List<java.lang.String> getFamily() {
     return family;
   }
 
@@ -615,7 +615,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
    * metrics-lib/ServerDescriptor: List<String> getFamilyEntries()
    * @param value the value to set.
    */
-  public void setFamily(java.util.List<java.lang.CharSequence> value) {
+  public void setFamily(java.util.List<java.lang.String> value) {
     this.family = value;
   }
 
@@ -691,7 +691,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
    * Gets the value of the 'extra_info_digest' field.
    * @return metrics-lib/ServerDescriptor: String getExtraInfoDigest()
    */
-  public java.lang.CharSequence getExtraInfoDigest() {
+  public java.lang.String getExtraInfoDigest() {
     return extra_info_digest;
   }
 
@@ -700,7 +700,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
    * metrics-lib/ServerDescriptor: String getExtraInfoDigest()
    * @param value the value to set.
    */
-  public void setExtraInfoDigest(java.lang.CharSequence value) {
+  public void setExtraInfoDigest(java.lang.String value) {
     this.extra_info_digest = value;
   }
 
@@ -708,7 +708,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
    * Gets the value of the 'extra_info_digest_sha256' field.
    * @return metrics-lib/ServerDescriptor: String getExtraInfoDigestSha256()
    */
-  public java.lang.CharSequence getExtraInfoDigestSha256() {
+  public java.lang.String getExtraInfoDigestSha256() {
     return extra_info_digest_sha256;
   }
 
@@ -717,7 +717,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
    * metrics-lib/ServerDescriptor: String getExtraInfoDigestSha256()
    * @param value the value to set.
    */
-  public void setExtraInfoDigestSha256(java.lang.CharSequence value) {
+  public void setExtraInfoDigestSha256(java.lang.String value) {
     this.extra_info_digest_sha256 = value;
   }
 
@@ -838,25 +838,25 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Bridge>
     implements org.apache.avro.data.RecordBuilder<Bridge> {
 
-    private java.lang.CharSequence descriptor_type;
+    private java.lang.String descriptor_type;
     /** metrics-lib/ServerDescriptor: String getServerDescriptorDigest() */
-    private java.lang.CharSequence server_descriptor_digest;
+    private java.lang.String server_descriptor_digest;
     /** metrics-lib/ServerDescriptor: String getServerDescriptorDigestSha256() */
-    private java.lang.CharSequence server_descriptor_sha256;
+    private java.lang.String server_descriptor_sha256;
     private converTor.bridge.Router router;
     private converTor.bridge.Router.Builder routerBuilder;
     /** metrics-lib/ServerDescriptor: String getIdentityEd25519() */
     private java.lang.Boolean identity_ed25519;
     /** metrics-lib/ServerDescriptor: String getMasterKeyEd25519() */
-    private java.lang.CharSequence master_key_ed25519;
+    private java.lang.String master_key_ed25519;
     private converTor.bridge.Bandwidth bandwidth;
     private converTor.bridge.Bandwidth.Builder bandwidthBuilder;
     /** metrics-lib/ServerDescriptor: String getPlatform() */
-    private java.lang.CharSequence platform;
+    private java.lang.String platform;
     /** metrics-lib/ServerDescriptor: long getPublishedMillis() */
-    private java.lang.CharSequence published;
+    private java.lang.String published;
     /** metrics-lib/ServerDescriptor: String getFingerprint() */
-    private java.lang.CharSequence fingerprint;
+    private java.lang.String fingerprint;
     /** metrics-lib/ServerDescriptor: boolean isHibernating() */
     private java.lang.Boolean hibernating;
     /** metrics-lib/ServerDescriptor: Long getUptime() */
@@ -872,17 +872,17 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
     /** metrics-lib/ServerDescriptor: String getSigningKey() */
     private java.lang.Boolean signing_key;
     /** metrics-lib/ServerDescriptor: List<String> getExitPolicyLines() */
-    private java.util.List<java.lang.CharSequence> exit_policy;
+    private java.util.List<java.lang.String> exit_policy;
     /** metrics-lib/ServerDescriptor: String getIpv6DefaultPolicy() */
-    private java.util.List<java.lang.CharSequence> ipv6_policy;
+    private java.util.List<java.lang.String> ipv6_policy;
     /** metrics-lib/ServerDescriptor: String getIpv6PortList() */
-    private java.lang.CharSequence ipv6_portlist;
+    private java.lang.String ipv6_portlist;
     /** metrics-lib/ServerDescriptor: String getRouterSignatureEd25519() */
     private java.lang.Boolean router_sig_ed25519;
     /** metrics-lib/ServerDescriptor: String getContact() */
-    private java.lang.CharSequence contact;
+    private java.lang.String contact;
     /** metrics-lib/ServerDescriptor: List<String> getFamilyEntries() */
-    private java.util.List<java.lang.CharSequence> family;
+    private java.util.List<java.lang.String> family;
     /** metrics-lib/ServerDescriptor: BandwidthHistory getReadHistory() */
     private converTor.bridge.ReadHistory read_history;
     private converTor.bridge.ReadHistory.Builder read_historyBuilder;
@@ -894,9 +894,9 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
     /** metrics-lib/ServerDescriptor: boolean getCachesExtraInfo() */
     private java.lang.Boolean caches_extra_info;
     /** metrics-lib/ServerDescriptor: String getExtraInfoDigest() */
-    private java.lang.CharSequence extra_info_digest;
+    private java.lang.String extra_info_digest;
     /** metrics-lib/ServerDescriptor: String getExtraInfoDigestSha256() */
-    private java.lang.CharSequence extra_info_digest_sha256;
+    private java.lang.String extra_info_digest_sha256;
     /** metrics-lib/ServerDescriptor: List<Integer> getHiddenServiceDirVersions() */
     private java.util.List<java.lang.Integer> hidden_service_dir;
     /** metrics-lib/ServerDescriptor: List<Integer> getLinkProtocolVersions() */
@@ -1225,7 +1225,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
       * Gets the value of the 'descriptor_type' field.
       * @return The value.
       */
-    public java.lang.CharSequence getDescriptorType() {
+    public java.lang.String getDescriptorType() {
       return descriptor_type;
     }
 
@@ -1234,7 +1234,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'descriptor_type'.
       * @return This builder.
       */
-    public converTor.bridge.Bridge.Builder setDescriptorType(java.lang.CharSequence value) {
+    public converTor.bridge.Bridge.Builder setDescriptorType(java.lang.String value) {
       validate(fields()[0], value);
       this.descriptor_type = value;
       fieldSetFlags()[0] = true;
@@ -1265,7 +1265,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/ServerDescriptor: String getServerDescriptorDigest()
       * @return The value.
       */
-    public java.lang.CharSequence getServerDescriptorDigest() {
+    public java.lang.String getServerDescriptorDigest() {
       return server_descriptor_digest;
     }
 
@@ -1275,7 +1275,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'server_descriptor_digest'.
       * @return This builder.
       */
-    public converTor.bridge.Bridge.Builder setServerDescriptorDigest(java.lang.CharSequence value) {
+    public converTor.bridge.Bridge.Builder setServerDescriptorDigest(java.lang.String value) {
       validate(fields()[1], value);
       this.server_descriptor_digest = value;
       fieldSetFlags()[1] = true;
@@ -1308,7 +1308,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/ServerDescriptor: String getServerDescriptorDigestSha256()
       * @return The value.
       */
-    public java.lang.CharSequence getServerDescriptorSha256() {
+    public java.lang.String getServerDescriptorSha256() {
       return server_descriptor_sha256;
     }
 
@@ -1318,7 +1318,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'server_descriptor_sha256'.
       * @return This builder.
       */
-    public converTor.bridge.Bridge.Builder setServerDescriptorSha256(java.lang.CharSequence value) {
+    public converTor.bridge.Bridge.Builder setServerDescriptorSha256(java.lang.String value) {
       validate(fields()[2], value);
       this.server_descriptor_sha256 = value;
       fieldSetFlags()[2] = true;
@@ -1467,7 +1467,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/ServerDescriptor: String getMasterKeyEd25519()
       * @return The value.
       */
-    public java.lang.CharSequence getMasterKeyEd25519() {
+    public java.lang.String getMasterKeyEd25519() {
       return master_key_ed25519;
     }
 
@@ -1477,7 +1477,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'master_key_ed25519'.
       * @return This builder.
       */
-    public converTor.bridge.Bridge.Builder setMasterKeyEd25519(java.lang.CharSequence value) {
+    public converTor.bridge.Bridge.Builder setMasterKeyEd25519(java.lang.String value) {
       validate(fields()[5], value);
       this.master_key_ed25519 = value;
       fieldSetFlags()[5] = true;
@@ -1583,7 +1583,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/ServerDescriptor: String getPlatform()
       * @return The value.
       */
-    public java.lang.CharSequence getPlatform() {
+    public java.lang.String getPlatform() {
       return platform;
     }
 
@@ -1593,7 +1593,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'platform'.
       * @return This builder.
       */
-    public converTor.bridge.Bridge.Builder setPlatform(java.lang.CharSequence value) {
+    public converTor.bridge.Bridge.Builder setPlatform(java.lang.String value) {
       validate(fields()[7], value);
       this.platform = value;
       fieldSetFlags()[7] = true;
@@ -1626,7 +1626,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/ServerDescriptor: long getPublishedMillis()
       * @return The value.
       */
-    public java.lang.CharSequence getPublished() {
+    public java.lang.String getPublished() {
       return published;
     }
 
@@ -1636,7 +1636,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'published'.
       * @return This builder.
       */
-    public converTor.bridge.Bridge.Builder setPublished(java.lang.CharSequence value) {
+    public converTor.bridge.Bridge.Builder setPublished(java.lang.String value) {
       validate(fields()[8], value);
       this.published = value;
       fieldSetFlags()[8] = true;
@@ -1669,7 +1669,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/ServerDescriptor: String getFingerprint()
       * @return The value.
       */
-    public java.lang.CharSequence getFingerprint() {
+    public java.lang.String getFingerprint() {
       return fingerprint;
     }
 
@@ -1679,7 +1679,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'fingerprint'.
       * @return This builder.
       */
-    public converTor.bridge.Bridge.Builder setFingerprint(java.lang.CharSequence value) {
+    public converTor.bridge.Bridge.Builder setFingerprint(java.lang.String value) {
       validate(fields()[9], value);
       this.fingerprint = value;
       fieldSetFlags()[9] = true;
@@ -2043,7 +2043,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/ServerDescriptor: List<String> getExitPolicyLines()
       * @return The value.
       */
-    public java.util.List<java.lang.CharSequence> getExitPolicy() {
+    public java.util.List<java.lang.String> getExitPolicy() {
       return exit_policy;
     }
 
@@ -2053,7 +2053,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'exit_policy'.
       * @return This builder.
       */
-    public converTor.bridge.Bridge.Builder setExitPolicy(java.util.List<java.lang.CharSequence> value) {
+    public converTor.bridge.Bridge.Builder setExitPolicy(java.util.List<java.lang.String> value) {
       validate(fields()[17], value);
       this.exit_policy = value;
       fieldSetFlags()[17] = true;
@@ -2086,7 +2086,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/ServerDescriptor: String getIpv6DefaultPolicy()
       * @return The value.
       */
-    public java.util.List<java.lang.CharSequence> getIpv6Policy() {
+    public java.util.List<java.lang.String> getIpv6Policy() {
       return ipv6_policy;
     }
 
@@ -2096,7 +2096,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'ipv6_policy'.
       * @return This builder.
       */
-    public converTor.bridge.Bridge.Builder setIpv6Policy(java.util.List<java.lang.CharSequence> value) {
+    public converTor.bridge.Bridge.Builder setIpv6Policy(java.util.List<java.lang.String> value) {
       validate(fields()[18], value);
       this.ipv6_policy = value;
       fieldSetFlags()[18] = true;
@@ -2129,7 +2129,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/ServerDescriptor: String getIpv6PortList()
       * @return The value.
       */
-    public java.lang.CharSequence getIpv6Portlist() {
+    public java.lang.String getIpv6Portlist() {
       return ipv6_portlist;
     }
 
@@ -2139,7 +2139,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'ipv6_portlist'.
       * @return This builder.
       */
-    public converTor.bridge.Bridge.Builder setIpv6Portlist(java.lang.CharSequence value) {
+    public converTor.bridge.Bridge.Builder setIpv6Portlist(java.lang.String value) {
       validate(fields()[19], value);
       this.ipv6_portlist = value;
       fieldSetFlags()[19] = true;
@@ -2215,7 +2215,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/ServerDescriptor: String getContact()
       * @return The value.
       */
-    public java.lang.CharSequence getContact() {
+    public java.lang.String getContact() {
       return contact;
     }
 
@@ -2225,7 +2225,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'contact'.
       * @return This builder.
       */
-    public converTor.bridge.Bridge.Builder setContact(java.lang.CharSequence value) {
+    public converTor.bridge.Bridge.Builder setContact(java.lang.String value) {
       validate(fields()[21], value);
       this.contact = value;
       fieldSetFlags()[21] = true;
@@ -2258,7 +2258,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/ServerDescriptor: List<String> getFamilyEntries()
       * @return The value.
       */
-    public java.util.List<java.lang.CharSequence> getFamily() {
+    public java.util.List<java.lang.String> getFamily() {
       return family;
     }
 
@@ -2268,7 +2268,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'family'.
       * @return This builder.
       */
-    public converTor.bridge.Bridge.Builder setFamily(java.util.List<java.lang.CharSequence> value) {
+    public converTor.bridge.Bridge.Builder setFamily(java.util.List<java.lang.String> value) {
       validate(fields()[22], value);
       this.family = value;
       fieldSetFlags()[22] = true;
@@ -2547,7 +2547,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/ServerDescriptor: String getExtraInfoDigest()
       * @return The value.
       */
-    public java.lang.CharSequence getExtraInfoDigest() {
+    public java.lang.String getExtraInfoDigest() {
       return extra_info_digest;
     }
 
@@ -2557,7 +2557,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'extra_info_digest'.
       * @return This builder.
       */
-    public converTor.bridge.Bridge.Builder setExtraInfoDigest(java.lang.CharSequence value) {
+    public converTor.bridge.Bridge.Builder setExtraInfoDigest(java.lang.String value) {
       validate(fields()[27], value);
       this.extra_info_digest = value;
       fieldSetFlags()[27] = true;
@@ -2590,7 +2590,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/ServerDescriptor: String getExtraInfoDigestSha256()
       * @return The value.
       */
-    public java.lang.CharSequence getExtraInfoDigestSha256() {
+    public java.lang.String getExtraInfoDigestSha256() {
       return extra_info_digest_sha256;
     }
 
@@ -2600,7 +2600,7 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'extra_info_digest_sha256'.
       * @return This builder.
       */
-    public converTor.bridge.Bridge.Builder setExtraInfoDigestSha256(java.lang.CharSequence value) {
+    public converTor.bridge.Bridge.Builder setExtraInfoDigestSha256(java.lang.String value) {
       validate(fields()[28], value);
       this.extra_info_digest_sha256 = value;
       fieldSetFlags()[28] = true;
@@ -2847,24 +2847,24 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
     public Bridge build() {
       try {
         Bridge record = new Bridge();
-        record.descriptor_type = fieldSetFlags()[0] ? this.descriptor_type : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.server_descriptor_digest = fieldSetFlags()[1] ? this.server_descriptor_digest : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.server_descriptor_sha256 = fieldSetFlags()[2] ? this.server_descriptor_sha256 : (java.lang.CharSequence) defaultValue(fields()[2]);
+        record.descriptor_type = fieldSetFlags()[0] ? this.descriptor_type : (java.lang.String) defaultValue(fields()[0]);
+        record.server_descriptor_digest = fieldSetFlags()[1] ? this.server_descriptor_digest : (java.lang.String) defaultValue(fields()[1]);
+        record.server_descriptor_sha256 = fieldSetFlags()[2] ? this.server_descriptor_sha256 : (java.lang.String) defaultValue(fields()[2]);
         if (routerBuilder != null) {
           record.router = this.routerBuilder.build();
         } else {
           record.router = fieldSetFlags()[3] ? this.router : (converTor.bridge.Router) defaultValue(fields()[3]);
         }
         record.identity_ed25519 = fieldSetFlags()[4] ? this.identity_ed25519 : (java.lang.Boolean) defaultValue(fields()[4]);
-        record.master_key_ed25519 = fieldSetFlags()[5] ? this.master_key_ed25519 : (java.lang.CharSequence) defaultValue(fields()[5]);
+        record.master_key_ed25519 = fieldSetFlags()[5] ? this.master_key_ed25519 : (java.lang.String) defaultValue(fields()[5]);
         if (bandwidthBuilder != null) {
           record.bandwidth = this.bandwidthBuilder.build();
         } else {
           record.bandwidth = fieldSetFlags()[6] ? this.bandwidth : (converTor.bridge.Bandwidth) defaultValue(fields()[6]);
         }
-        record.platform = fieldSetFlags()[7] ? this.platform : (java.lang.CharSequence) defaultValue(fields()[7]);
-        record.published = fieldSetFlags()[8] ? this.published : (java.lang.CharSequence) defaultValue(fields()[8]);
-        record.fingerprint = fieldSetFlags()[9] ? this.fingerprint : (java.lang.CharSequence) defaultValue(fields()[9]);
+        record.platform = fieldSetFlags()[7] ? this.platform : (java.lang.String) defaultValue(fields()[7]);
+        record.published = fieldSetFlags()[8] ? this.published : (java.lang.String) defaultValue(fields()[8]);
+        record.fingerprint = fieldSetFlags()[9] ? this.fingerprint : (java.lang.String) defaultValue(fields()[9]);
         record.hibernating = fieldSetFlags()[10] ? this.hibernating : (java.lang.Boolean) defaultValue(fields()[10]);
         record.uptime = fieldSetFlags()[11] ? this.uptime : (java.lang.Long) defaultValue(fields()[11]);
         record.onion_key = fieldSetFlags()[12] ? this.onion_key : (java.lang.Boolean) defaultValue(fields()[12]);
@@ -2876,12 +2876,12 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
           record.ntor_onion_key_crosscert = fieldSetFlags()[15] ? this.ntor_onion_key_crosscert : (converTor.bridge.NtorCrossCert) defaultValue(fields()[15]);
         }
         record.signing_key = fieldSetFlags()[16] ? this.signing_key : (java.lang.Boolean) defaultValue(fields()[16]);
-        record.exit_policy = fieldSetFlags()[17] ? this.exit_policy : (java.util.List<java.lang.CharSequence>) defaultValue(fields()[17]);
-        record.ipv6_policy = fieldSetFlags()[18] ? this.ipv6_policy : (java.util.List<java.lang.CharSequence>) defaultValue(fields()[18]);
-        record.ipv6_portlist = fieldSetFlags()[19] ? this.ipv6_portlist : (java.lang.CharSequence) defaultValue(fields()[19]);
+        record.exit_policy = fieldSetFlags()[17] ? this.exit_policy : (java.util.List<java.lang.String>) defaultValue(fields()[17]);
+        record.ipv6_policy = fieldSetFlags()[18] ? this.ipv6_policy : (java.util.List<java.lang.String>) defaultValue(fields()[18]);
+        record.ipv6_portlist = fieldSetFlags()[19] ? this.ipv6_portlist : (java.lang.String) defaultValue(fields()[19]);
         record.router_sig_ed25519 = fieldSetFlags()[20] ? this.router_sig_ed25519 : (java.lang.Boolean) defaultValue(fields()[20]);
-        record.contact = fieldSetFlags()[21] ? this.contact : (java.lang.CharSequence) defaultValue(fields()[21]);
-        record.family = fieldSetFlags()[22] ? this.family : (java.util.List<java.lang.CharSequence>) defaultValue(fields()[22]);
+        record.contact = fieldSetFlags()[21] ? this.contact : (java.lang.String) defaultValue(fields()[21]);
+        record.family = fieldSetFlags()[22] ? this.family : (java.util.List<java.lang.String>) defaultValue(fields()[22]);
         if (read_historyBuilder != null) {
           record.read_history = this.read_historyBuilder.build();
         } else {
@@ -2894,8 +2894,8 @@ public class Bridge extends org.apache.avro.specific.SpecificRecordBase implemen
         }
         record.eventdns = fieldSetFlags()[25] ? this.eventdns : (java.lang.Boolean) defaultValue(fields()[25]);
         record.caches_extra_info = fieldSetFlags()[26] ? this.caches_extra_info : (java.lang.Boolean) defaultValue(fields()[26]);
-        record.extra_info_digest = fieldSetFlags()[27] ? this.extra_info_digest : (java.lang.CharSequence) defaultValue(fields()[27]);
-        record.extra_info_digest_sha256 = fieldSetFlags()[28] ? this.extra_info_digest_sha256 : (java.lang.CharSequence) defaultValue(fields()[28]);
+        record.extra_info_digest = fieldSetFlags()[27] ? this.extra_info_digest : (java.lang.String) defaultValue(fields()[27]);
+        record.extra_info_digest_sha256 = fieldSetFlags()[28] ? this.extra_info_digest_sha256 : (java.lang.String) defaultValue(fields()[28]);
         record.hidden_service_dir = fieldSetFlags()[29] ? this.hidden_service_dir : (java.util.List<java.lang.Integer>) defaultValue(fields()[29]);
         record.link_protocol_versions = fieldSetFlags()[30] ? this.link_protocol_versions : (java.util.List<java.lang.Integer>) defaultValue(fields()[30]);
         record.circuit_protocol_versions = fieldSetFlags()[31] ? this.circuit_protocol_versions : (java.util.List<java.lang.Integer>) defaultValue(fields()[31]);

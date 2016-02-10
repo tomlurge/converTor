@@ -8,10 +8,10 @@ package converTor.relayExtra;
 @org.apache.avro.specific.AvroGenerated
 public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = 2115676593962503455L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ConnBiDirect\",\"namespace\":\"converTor.relayExtra\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsIntervalLength()\",\"default\":86400},{\"name\":\"below\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBelow()\"},{\"name\":\"read\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectRead()\"},{\"name\":\"write\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectWrite()\"},{\"name\":\"both\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBoth()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ConnBiDirect\",\"namespace\":\"converTor.relayExtra\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsIntervalLength()\",\"default\":86400},{\"name\":\"below\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBelow()\"},{\"name\":\"read\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectRead()\"},{\"name\":\"write\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectWrite()\"},{\"name\":\"both\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBoth()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis() */
-  @Deprecated public java.lang.CharSequence date;
+  @Deprecated public java.lang.String date;
   /** metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsIntervalLength() */
   @Deprecated public long interval;
   /** metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBelow() */
@@ -39,7 +39,7 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
    * @param write metrics-lib/ExtraInfoDescriptor: int getConnBiDirectWrite()
    * @param both metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBoth()
    */
-  public ConnBiDirect(java.lang.CharSequence date, java.lang.Long interval, java.lang.Integer below, java.lang.Integer read, java.lang.Integer write, java.lang.Integer both) {
+  public ConnBiDirect(java.lang.String date, java.lang.Long interval, java.lang.Integer below, java.lang.Integer read, java.lang.Integer write, java.lang.Integer both) {
     this.date = date;
     this.interval = interval;
     this.below = below;
@@ -65,7 +65,7 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: date = (java.lang.CharSequence)value$; break;
+    case 0: date = (java.lang.String)value$; break;
     case 1: interval = (java.lang.Long)value$; break;
     case 2: below = (java.lang.Integer)value$; break;
     case 3: read = (java.lang.Integer)value$; break;
@@ -79,7 +79,7 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
    * Gets the value of the 'date' field.
    * @return metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis()
    */
-  public java.lang.CharSequence getDate() {
+  public java.lang.String getDate() {
     return date;
   }
 
@@ -88,7 +88,7 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
    * metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis()
    * @param value the value to set.
    */
-  public void setDate(java.lang.CharSequence value) {
+  public void setDate(java.lang.String value) {
     this.date = value;
   }
 
@@ -210,7 +210,7 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
     implements org.apache.avro.data.RecordBuilder<ConnBiDirect> {
 
     /** metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis() */
-    private java.lang.CharSequence date;
+    private java.lang.String date;
     /** metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsIntervalLength() */
     private long interval;
     /** metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBelow() */
@@ -296,7 +296,7 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
       * metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis()
       * @return The value.
       */
-    public java.lang.CharSequence getDate() {
+    public java.lang.String getDate() {
       return date;
     }
 
@@ -306,7 +306,7 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
       * @param value The value of 'date'.
       * @return This builder.
       */
-    public converTor.relayExtra.ConnBiDirect.Builder setDate(java.lang.CharSequence value) {
+    public converTor.relayExtra.ConnBiDirect.Builder setDate(java.lang.String value) {
       validate(fields()[0], value);
       this.date = value;
       fieldSetFlags()[0] = true;
@@ -552,7 +552,7 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
     public ConnBiDirect build() {
       try {
         ConnBiDirect record = new ConnBiDirect();
-        record.date = fieldSetFlags()[0] ? this.date : (java.lang.CharSequence) defaultValue(fields()[0]);
+        record.date = fieldSetFlags()[0] ? this.date : (java.lang.String) defaultValue(fields()[0]);
         record.interval = fieldSetFlags()[1] ? this.interval : (java.lang.Long) defaultValue(fields()[1]);
         record.below = fieldSetFlags()[2] ? this.below : (java.lang.Integer) defaultValue(fields()[2]);
         record.read = fieldSetFlags()[3] ? this.read : (java.lang.Integer) defaultValue(fields()[3]);

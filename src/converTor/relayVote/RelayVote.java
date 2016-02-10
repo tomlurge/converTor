@@ -8,42 +8,42 @@ package converTor.relayVote;
 @org.apache.avro.specific.AvroGenerated
 public class RelayVote extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = 6155161159619727185L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"RelayVote\",\"namespace\":\"converTor.relayVote\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":\"string\",\"doc\":\"metrics-lib/RelayNetworkStatusVote:\",\"default\":\"network-status-vote-3 1.0\"},{\"name\":\"network_status_version\",\"type\":\"int\",\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getNetworkStatusVersion()\",\"default\":3},{\"name\":\"vote_status\",\"type\":[\"null\",\"string\"],\"doc\":\"\\\"vote\\\" per definition, no getter\",\"default\":\"vote\"},{\"name\":\"consensus_methods\",\"type\":{\"type\":\"array\",\"items\":\"int\"},\"doc\":\"metrics-lib/RelayNetworkStatusVote: List<Integer> getConsensusMethods()\"},{\"name\":\"published\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getPublishedMillis()\"},{\"name\":\"valid_after\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getValidAfterMillis()\"},{\"name\":\"flag_tresholds\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"FlagTresholds\",\"fields\":[{\"name\":\"stable_uptime\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getStableUptime()\"},{\"name\":\"stable_mtbf\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getStableMtbf()\"},{\"name\":\"enough_mtbf\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getEnoughMtbfInfo()\"},{\"name\":\"fast_speed\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getFastBandwidth()\"},{\"name\":\"guard_wfu\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: double getGuardWfu()\"},{\"name\":\"guard_tk\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getGuardTk()\"},{\"name\":\"guard_bw_inc_exits\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthIncludingExits()\"},{\"name\":\"guard_bw_exc_exits\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthExcludingExits()\"},{\"name\":\"ignoring_advertised_bws\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getIgnoringAdvertisedBws()\"}]}],\"doc\":\"see above\"},{\"name\":\"fresh_until\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getFreshUntilMillis()\"},{\"name\":\"valid_until\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getValidUntilMillis()\"},{\"name\":\"voting_delay\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Vote\",\"fields\":[{\"name\":\"vote_seconds\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getVoteSeconds()\"},{\"name\":\"dist_seconds\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getDistSeconds()\"}]}],\"doc\":\"see above\"},{\"name\":\"client_versions\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedClientVersions()\"},{\"name\":\"server_versions\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedServerVersions()\"},{\"name\":\"known_flags\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: SortedSet<String> getKnownFlags()\"},{\"name\":\"params\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: SortedMap<String, Integer> getConsensusParams()\"},{\"name\":\"dir_source\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirSource\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getIdentity(\"},{\"name\":\"address\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getAddress()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getDirport()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getOrport()\"}]}],\"doc\":\"see above\"},{\"name\":\"contact\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getContactLine()\"},{\"name\":\"legacy_dir_key\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getLegacyDirKey()\"},{\"name\":\"directory_key\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirKey\",\"fields\":[{\"name\":\"version\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getDirKeyCertificateVersion()\"},{\"name\":\"dir_key_published\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getDirKeyPublishedMillis()\"},{\"name\":\"dir_key_expires\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getDirKeyExpiresMillis()\"}]}],\"doc\":\"see above\"},{\"name\":\"status\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Status\",\"fields\":[{\"name\":\"r\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"R\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDescriptor()\"},{\"name\":\"digest\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: Set<String> getMicrodescriptorDigests()\"},{\"name\":\"publication\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getPublishedMillis()\"},{\"name\":\"ip\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getOrPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getDirPort()\"},{\"name\":\"fingerprint\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getFingerprint() - not in spec, but in metrics-lib\"}]}]},{\"name\":\"a\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: getOrAddresses()\"},{\"name\":\"s\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags()\"},{\"name\":\"v\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getVersion()\"},{\"name\":\"w\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"W\",\"fields\":[{\"name\":\"bandwidth\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getBandwidth()\"},{\"name\":\"measured\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getMeasured()\"},{\"name\":\"unmeasured\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/NetworkStatusEntry: boolean getUnmeasured()\"}]}],\"doc\":\"see above\"},{\"name\":\"p\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Policy\",\"fields\":[{\"name\":\"default_policy\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDefaultPolicy()\"},{\"name\":\"port_summary\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getPortList()\"}]}],\"doc\":\"see above\"},{\"name\":\"id\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ID\",\"fields\":[{\"name\":\"ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getMasterKeyEd25519()\"}]}],\"doc\":\"see above\"}]}}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: SortedMap<String, NetworkStatusEntry> getStatusEntries()\"},{\"name\":\"directory_footer\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirFooter\",\"fields\":[{\"name\":\"directory_signature\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirSig\",\"fields\":[{\"name\":\"algorithm\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/DirectorySignature: String getAlgorithm()\"},{\"name\":\"identity\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/DirectorySignature: String getIdentity()\"},{\"name\":\"signing_key_digest\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/DirectorySignature: String getSigningKeyDigest()\"},{\"name\":\"signature\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/DirectorySignature: String getSignature()\"}]}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: SortedMap<String, DirectorySignature> getDirectorySignatures()\"}]}],\"doc\":\"see above\"},{\"name\":\"signing_key_digest\",\"type\":[\"null\",\"string\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getSigningKeyDigest()\"}],\"aliases\":[\"relay_network_status_vote_3\"]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"RelayVote\",\"namespace\":\"converTor.relayVote\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"metrics-lib/RelayNetworkStatusVote:\",\"default\":\"network-status-vote-3 1.0\"},{\"name\":\"network_status_version\",\"type\":\"int\",\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getNetworkStatusVersion()\",\"default\":3},{\"name\":\"vote_status\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"\\\"vote\\\" per definition, no getter\",\"default\":\"vote\"},{\"name\":\"consensus_methods\",\"type\":{\"type\":\"array\",\"items\":\"int\"},\"doc\":\"metrics-lib/RelayNetworkStatusVote: List<Integer> getConsensusMethods()\"},{\"name\":\"published\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getPublishedMillis()\"},{\"name\":\"valid_after\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getValidAfterMillis()\"},{\"name\":\"flag_tresholds\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"FlagTresholds\",\"fields\":[{\"name\":\"stable_uptime\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getStableUptime()\"},{\"name\":\"stable_mtbf\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getStableMtbf()\"},{\"name\":\"enough_mtbf\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getEnoughMtbfInfo()\"},{\"name\":\"fast_speed\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getFastBandwidth()\"},{\"name\":\"guard_wfu\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: double getGuardWfu()\"},{\"name\":\"guard_tk\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getGuardTk()\"},{\"name\":\"guard_bw_inc_exits\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthIncludingExits()\"},{\"name\":\"guard_bw_exc_exits\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthExcludingExits()\"},{\"name\":\"ignoring_advertised_bws\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getIgnoringAdvertisedBws()\"}]}],\"doc\":\"see above\"},{\"name\":\"fresh_until\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getFreshUntilMillis()\"},{\"name\":\"valid_until\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getValidUntilMillis()\"},{\"name\":\"voting_delay\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Vote\",\"fields\":[{\"name\":\"vote_seconds\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getVoteSeconds()\"},{\"name\":\"dist_seconds\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getDistSeconds()\"}]}],\"doc\":\"see above\"},{\"name\":\"client_versions\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedClientVersions()\"},{\"name\":\"server_versions\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedServerVersions()\"},{\"name\":\"known_flags\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: SortedSet<String> getKnownFlags()\"},{\"name\":\"params\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: SortedMap<String, Integer> getConsensusParams()\"},{\"name\":\"dir_source\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirSource\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getIdentity(\"},{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getAddress()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getDirport()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getOrport()\"}]}],\"doc\":\"see above\"},{\"name\":\"contact\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getContactLine()\"},{\"name\":\"legacy_dir_key\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getLegacyDirKey()\"},{\"name\":\"directory_key\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirKey\",\"fields\":[{\"name\":\"version\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getDirKeyCertificateVersion()\"},{\"name\":\"dir_key_published\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getDirKeyPublishedMillis()\"},{\"name\":\"dir_key_expires\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getDirKeyExpiresMillis()\"}]}],\"doc\":\"see above\"},{\"name\":\"status\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Status\",\"fields\":[{\"name\":\"r\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"R\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDescriptor()\"},{\"name\":\"digest\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/NetworkStatusEntry: Set<String> getMicrodescriptorDigests()\"},{\"name\":\"publication\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: long getPublishedMillis()\"},{\"name\":\"ip\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getOrPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getDirPort()\"},{\"name\":\"fingerprint\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getFingerprint() - not in spec, but in metrics-lib\"}]}]},{\"name\":\"a\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/NetworkStatusEntry: getOrAddresses()\"},{\"name\":\"s\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags()\"},{\"name\":\"v\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getVersion()\"},{\"name\":\"w\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"W\",\"fields\":[{\"name\":\"bandwidth\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getBandwidth()\"},{\"name\":\"measured\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getMeasured()\"},{\"name\":\"unmeasured\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/NetworkStatusEntry: boolean getUnmeasured()\"}]}],\"doc\":\"see above\"},{\"name\":\"p\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Policy\",\"fields\":[{\"name\":\"default_policy\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDefaultPolicy()\"},{\"name\":\"port_summary\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getPortList()\"}]}],\"doc\":\"see above\"},{\"name\":\"id\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ID\",\"fields\":[{\"name\":\"ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getMasterKeyEd25519()\"}]}],\"doc\":\"see above\"}]}}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: SortedMap<String, NetworkStatusEntry> getStatusEntries()\"},{\"name\":\"directory_footer\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirFooter\",\"fields\":[{\"name\":\"directory_signature\",\"type\":[\"null\",{\"ty","pe\":\"record\",\"name\":\"DirSig\",\"fields\":[{\"name\":\"algorithm\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getAlgorithm()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getIdentity()\"},{\"name\":\"signing_key_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getSigningKeyDigest()\"},{\"name\":\"signature\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/DirectorySignature: String getSignature()\"}]}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: SortedMap<String, DirectorySignature> getDirectorySignatures()\"}]}],\"doc\":\"see above\"},{\"name\":\"signing_key_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getSigningKeyDigest()\"}],\"aliases\":[\"relay_network_status_vote_3\"]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/RelayNetworkStatusVote: */
-  @Deprecated public java.lang.CharSequence descriptor_type;
+  @Deprecated public java.lang.String descriptor_type;
   /** metrics-lib/RelayNetworkStatusVote: int getNetworkStatusVersion() */
   @Deprecated public int network_status_version;
   /** "vote" per definition, no getter */
-  @Deprecated public java.lang.CharSequence vote_status;
+  @Deprecated public java.lang.String vote_status;
   /** metrics-lib/RelayNetworkStatusVote: List<Integer> getConsensusMethods() */
   @Deprecated public java.util.List<java.lang.Integer> consensus_methods;
   /** metrics-lib/RelayNetworkStatusVote: long getPublishedMillis() */
-  @Deprecated public java.lang.CharSequence published;
+  @Deprecated public java.lang.String published;
   /** metrics-lib/RelayNetworkStatusVote: long getValidAfterMillis() */
-  @Deprecated public java.lang.CharSequence valid_after;
+  @Deprecated public java.lang.String valid_after;
   /** see above */
   @Deprecated public converTor.relayVote.FlagTresholds flag_tresholds;
   /** metrics-lib/RelayNetworkStatusVote: long getFreshUntilMillis() */
-  @Deprecated public java.lang.CharSequence fresh_until;
+  @Deprecated public java.lang.String fresh_until;
   /** metrics-lib/RelayNetworkStatusVote: long getValidUntilMillis() */
-  @Deprecated public java.lang.CharSequence valid_until;
+  @Deprecated public java.lang.String valid_until;
   /** see above */
   @Deprecated public converTor.relayVote.Vote voting_delay;
   /** metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedClientVersions() */
-  @Deprecated public java.util.List<java.lang.CharSequence> client_versions;
+  @Deprecated public java.util.List<java.lang.String> client_versions;
   /** metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedServerVersions() */
-  @Deprecated public java.util.List<java.lang.CharSequence> server_versions;
+  @Deprecated public java.util.List<java.lang.String> server_versions;
   /** metrics-lib/RelayNetworkStatusVote: SortedSet<String> getKnownFlags() */
-  @Deprecated public java.util.List<java.lang.CharSequence> known_flags;
+  @Deprecated public java.util.List<java.lang.String> known_flags;
   /** metrics-lib/RelayNetworkStatusVote: SortedMap<String, Integer> getConsensusParams() */
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> params;
+  @Deprecated public java.util.Map<java.lang.String,java.lang.Integer> params;
   /** see above */
   @Deprecated public converTor.relayVote.DirSource dir_source;
   /** metrics-lib/RelayNetworkStatusVote: String getContactLine() */
-  @Deprecated public java.lang.CharSequence contact;
+  @Deprecated public java.lang.String contact;
   /** metrics-lib/RelayNetworkStatusVote: String getLegacyDirKey() */
-  @Deprecated public java.lang.CharSequence legacy_dir_key;
+  @Deprecated public java.lang.String legacy_dir_key;
   /** see above */
   @Deprecated public converTor.relayVote.DirKey directory_key;
   /** metrics-lib/RelayNetworkStatusVote: SortedMap<String, NetworkStatusEntry> getStatusEntries() */
@@ -51,7 +51,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
   /** see above */
   @Deprecated public converTor.relayVote.DirFooter directory_footer;
   /** metrics-lib/RelayNetworkStatusVote: String getSigningKeyDigest() */
-  @Deprecated public java.lang.CharSequence signing_key_digest;
+  @Deprecated public java.lang.String signing_key_digest;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -84,7 +84,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * @param directory_footer see above
    * @param signing_key_digest metrics-lib/RelayNetworkStatusVote: String getSigningKeyDigest()
    */
-  public RelayVote(java.lang.CharSequence descriptor_type, java.lang.Integer network_status_version, java.lang.CharSequence vote_status, java.util.List<java.lang.Integer> consensus_methods, java.lang.CharSequence published, java.lang.CharSequence valid_after, converTor.relayVote.FlagTresholds flag_tresholds, java.lang.CharSequence fresh_until, java.lang.CharSequence valid_until, converTor.relayVote.Vote voting_delay, java.util.List<java.lang.CharSequence> client_versions, java.util.List<java.lang.CharSequence> server_versions, java.util.List<java.lang.CharSequence> known_flags, java.util.Map<java.lang.CharSequence,java.lang.Integer> params, converTor.relayVote.DirSource dir_source, java.lang.CharSequence contact, java.lang.CharSequence legacy_dir_key, converTor.relayVote.DirKey directory_key, java.util.List<converTor.relayVote.Status> status, converTor.relayVote.DirFooter directory_footer, java.lang.CharSequence signing_key_digest) {
+  public RelayVote(java.lang.String descriptor_type, java.lang.Integer network_status_version, java.lang.String vote_status, java.util.List<java.lang.Integer> consensus_methods, java.lang.String published, java.lang.String valid_after, converTor.relayVote.FlagTresholds flag_tresholds, java.lang.String fresh_until, java.lang.String valid_until, converTor.relayVote.Vote voting_delay, java.util.List<java.lang.String> client_versions, java.util.List<java.lang.String> server_versions, java.util.List<java.lang.String> known_flags, java.util.Map<java.lang.String,java.lang.Integer> params, converTor.relayVote.DirSource dir_source, java.lang.String contact, java.lang.String legacy_dir_key, converTor.relayVote.DirKey directory_key, java.util.List<converTor.relayVote.Status> status, converTor.relayVote.DirFooter directory_footer, java.lang.String signing_key_digest) {
     this.descriptor_type = descriptor_type;
     this.network_status_version = network_status_version;
     this.vote_status = vote_status;
@@ -140,27 +140,27 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: descriptor_type = (java.lang.CharSequence)value$; break;
+    case 0: descriptor_type = (java.lang.String)value$; break;
     case 1: network_status_version = (java.lang.Integer)value$; break;
-    case 2: vote_status = (java.lang.CharSequence)value$; break;
+    case 2: vote_status = (java.lang.String)value$; break;
     case 3: consensus_methods = (java.util.List<java.lang.Integer>)value$; break;
-    case 4: published = (java.lang.CharSequence)value$; break;
-    case 5: valid_after = (java.lang.CharSequence)value$; break;
+    case 4: published = (java.lang.String)value$; break;
+    case 5: valid_after = (java.lang.String)value$; break;
     case 6: flag_tresholds = (converTor.relayVote.FlagTresholds)value$; break;
-    case 7: fresh_until = (java.lang.CharSequence)value$; break;
-    case 8: valid_until = (java.lang.CharSequence)value$; break;
+    case 7: fresh_until = (java.lang.String)value$; break;
+    case 8: valid_until = (java.lang.String)value$; break;
     case 9: voting_delay = (converTor.relayVote.Vote)value$; break;
-    case 10: client_versions = (java.util.List<java.lang.CharSequence>)value$; break;
-    case 11: server_versions = (java.util.List<java.lang.CharSequence>)value$; break;
-    case 12: known_flags = (java.util.List<java.lang.CharSequence>)value$; break;
-    case 13: params = (java.util.Map<java.lang.CharSequence,java.lang.Integer>)value$; break;
+    case 10: client_versions = (java.util.List<java.lang.String>)value$; break;
+    case 11: server_versions = (java.util.List<java.lang.String>)value$; break;
+    case 12: known_flags = (java.util.List<java.lang.String>)value$; break;
+    case 13: params = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
     case 14: dir_source = (converTor.relayVote.DirSource)value$; break;
-    case 15: contact = (java.lang.CharSequence)value$; break;
-    case 16: legacy_dir_key = (java.lang.CharSequence)value$; break;
+    case 15: contact = (java.lang.String)value$; break;
+    case 16: legacy_dir_key = (java.lang.String)value$; break;
     case 17: directory_key = (converTor.relayVote.DirKey)value$; break;
     case 18: status = (java.util.List<converTor.relayVote.Status>)value$; break;
     case 19: directory_footer = (converTor.relayVote.DirFooter)value$; break;
-    case 20: signing_key_digest = (java.lang.CharSequence)value$; break;
+    case 20: signing_key_digest = (java.lang.String)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -169,7 +169,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * Gets the value of the 'descriptor_type' field.
    * @return metrics-lib/RelayNetworkStatusVote:
    */
-  public java.lang.CharSequence getDescriptorType() {
+  public java.lang.String getDescriptorType() {
     return descriptor_type;
   }
 
@@ -178,7 +178,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * metrics-lib/RelayNetworkStatusVote:
    * @param value the value to set.
    */
-  public void setDescriptorType(java.lang.CharSequence value) {
+  public void setDescriptorType(java.lang.String value) {
     this.descriptor_type = value;
   }
 
@@ -203,7 +203,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * Gets the value of the 'vote_status' field.
    * @return "vote" per definition, no getter
    */
-  public java.lang.CharSequence getVoteStatus() {
+  public java.lang.String getVoteStatus() {
     return vote_status;
   }
 
@@ -212,7 +212,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * "vote" per definition, no getter
    * @param value the value to set.
    */
-  public void setVoteStatus(java.lang.CharSequence value) {
+  public void setVoteStatus(java.lang.String value) {
     this.vote_status = value;
   }
 
@@ -237,7 +237,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * Gets the value of the 'published' field.
    * @return metrics-lib/RelayNetworkStatusVote: long getPublishedMillis()
    */
-  public java.lang.CharSequence getPublished() {
+  public java.lang.String getPublished() {
     return published;
   }
 
@@ -246,7 +246,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * metrics-lib/RelayNetworkStatusVote: long getPublishedMillis()
    * @param value the value to set.
    */
-  public void setPublished(java.lang.CharSequence value) {
+  public void setPublished(java.lang.String value) {
     this.published = value;
   }
 
@@ -254,7 +254,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * Gets the value of the 'valid_after' field.
    * @return metrics-lib/RelayNetworkStatusVote: long getValidAfterMillis()
    */
-  public java.lang.CharSequence getValidAfter() {
+  public java.lang.String getValidAfter() {
     return valid_after;
   }
 
@@ -263,7 +263,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * metrics-lib/RelayNetworkStatusVote: long getValidAfterMillis()
    * @param value the value to set.
    */
-  public void setValidAfter(java.lang.CharSequence value) {
+  public void setValidAfter(java.lang.String value) {
     this.valid_after = value;
   }
 
@@ -288,7 +288,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * Gets the value of the 'fresh_until' field.
    * @return metrics-lib/RelayNetworkStatusVote: long getFreshUntilMillis()
    */
-  public java.lang.CharSequence getFreshUntil() {
+  public java.lang.String getFreshUntil() {
     return fresh_until;
   }
 
@@ -297,7 +297,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * metrics-lib/RelayNetworkStatusVote: long getFreshUntilMillis()
    * @param value the value to set.
    */
-  public void setFreshUntil(java.lang.CharSequence value) {
+  public void setFreshUntil(java.lang.String value) {
     this.fresh_until = value;
   }
 
@@ -305,7 +305,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * Gets the value of the 'valid_until' field.
    * @return metrics-lib/RelayNetworkStatusVote: long getValidUntilMillis()
    */
-  public java.lang.CharSequence getValidUntil() {
+  public java.lang.String getValidUntil() {
     return valid_until;
   }
 
@@ -314,7 +314,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * metrics-lib/RelayNetworkStatusVote: long getValidUntilMillis()
    * @param value the value to set.
    */
-  public void setValidUntil(java.lang.CharSequence value) {
+  public void setValidUntil(java.lang.String value) {
     this.valid_until = value;
   }
 
@@ -339,7 +339,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * Gets the value of the 'client_versions' field.
    * @return metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedClientVersions()
    */
-  public java.util.List<java.lang.CharSequence> getClientVersions() {
+  public java.util.List<java.lang.String> getClientVersions() {
     return client_versions;
   }
 
@@ -348,7 +348,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedClientVersions()
    * @param value the value to set.
    */
-  public void setClientVersions(java.util.List<java.lang.CharSequence> value) {
+  public void setClientVersions(java.util.List<java.lang.String> value) {
     this.client_versions = value;
   }
 
@@ -356,7 +356,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * Gets the value of the 'server_versions' field.
    * @return metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedServerVersions()
    */
-  public java.util.List<java.lang.CharSequence> getServerVersions() {
+  public java.util.List<java.lang.String> getServerVersions() {
     return server_versions;
   }
 
@@ -365,7 +365,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedServerVersions()
    * @param value the value to set.
    */
-  public void setServerVersions(java.util.List<java.lang.CharSequence> value) {
+  public void setServerVersions(java.util.List<java.lang.String> value) {
     this.server_versions = value;
   }
 
@@ -373,7 +373,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * Gets the value of the 'known_flags' field.
    * @return metrics-lib/RelayNetworkStatusVote: SortedSet<String> getKnownFlags()
    */
-  public java.util.List<java.lang.CharSequence> getKnownFlags() {
+  public java.util.List<java.lang.String> getKnownFlags() {
     return known_flags;
   }
 
@@ -382,7 +382,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * metrics-lib/RelayNetworkStatusVote: SortedSet<String> getKnownFlags()
    * @param value the value to set.
    */
-  public void setKnownFlags(java.util.List<java.lang.CharSequence> value) {
+  public void setKnownFlags(java.util.List<java.lang.String> value) {
     this.known_flags = value;
   }
 
@@ -390,7 +390,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * Gets the value of the 'params' field.
    * @return metrics-lib/RelayNetworkStatusVote: SortedMap<String, Integer> getConsensusParams()
    */
-  public java.util.Map<java.lang.CharSequence,java.lang.Integer> getParams() {
+  public java.util.Map<java.lang.String,java.lang.Integer> getParams() {
     return params;
   }
 
@@ -399,7 +399,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * metrics-lib/RelayNetworkStatusVote: SortedMap<String, Integer> getConsensusParams()
    * @param value the value to set.
    */
-  public void setParams(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+  public void setParams(java.util.Map<java.lang.String,java.lang.Integer> value) {
     this.params = value;
   }
 
@@ -424,7 +424,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * Gets the value of the 'contact' field.
    * @return metrics-lib/RelayNetworkStatusVote: String getContactLine()
    */
-  public java.lang.CharSequence getContact() {
+  public java.lang.String getContact() {
     return contact;
   }
 
@@ -433,7 +433,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * metrics-lib/RelayNetworkStatusVote: String getContactLine()
    * @param value the value to set.
    */
-  public void setContact(java.lang.CharSequence value) {
+  public void setContact(java.lang.String value) {
     this.contact = value;
   }
 
@@ -441,7 +441,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * Gets the value of the 'legacy_dir_key' field.
    * @return metrics-lib/RelayNetworkStatusVote: String getLegacyDirKey()
    */
-  public java.lang.CharSequence getLegacyDirKey() {
+  public java.lang.String getLegacyDirKey() {
     return legacy_dir_key;
   }
 
@@ -450,7 +450,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * metrics-lib/RelayNetworkStatusVote: String getLegacyDirKey()
    * @param value the value to set.
    */
-  public void setLegacyDirKey(java.lang.CharSequence value) {
+  public void setLegacyDirKey(java.lang.String value) {
     this.legacy_dir_key = value;
   }
 
@@ -509,7 +509,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * Gets the value of the 'signing_key_digest' field.
    * @return metrics-lib/RelayNetworkStatusVote: String getSigningKeyDigest()
    */
-  public java.lang.CharSequence getSigningKeyDigest() {
+  public java.lang.String getSigningKeyDigest() {
     return signing_key_digest;
   }
 
@@ -518,7 +518,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * metrics-lib/RelayNetworkStatusVote: String getSigningKeyDigest()
    * @param value the value to set.
    */
-  public void setSigningKeyDigest(java.lang.CharSequence value) {
+  public void setSigningKeyDigest(java.lang.String value) {
     this.signing_key_digest = value;
   }
 
@@ -555,42 +555,42 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
     implements org.apache.avro.data.RecordBuilder<RelayVote> {
 
     /** metrics-lib/RelayNetworkStatusVote: */
-    private java.lang.CharSequence descriptor_type;
+    private java.lang.String descriptor_type;
     /** metrics-lib/RelayNetworkStatusVote: int getNetworkStatusVersion() */
     private int network_status_version;
     /** "vote" per definition, no getter */
-    private java.lang.CharSequence vote_status;
+    private java.lang.String vote_status;
     /** metrics-lib/RelayNetworkStatusVote: List<Integer> getConsensusMethods() */
     private java.util.List<java.lang.Integer> consensus_methods;
     /** metrics-lib/RelayNetworkStatusVote: long getPublishedMillis() */
-    private java.lang.CharSequence published;
+    private java.lang.String published;
     /** metrics-lib/RelayNetworkStatusVote: long getValidAfterMillis() */
-    private java.lang.CharSequence valid_after;
+    private java.lang.String valid_after;
     /** see above */
     private converTor.relayVote.FlagTresholds flag_tresholds;
     private converTor.relayVote.FlagTresholds.Builder flag_tresholdsBuilder;
     /** metrics-lib/RelayNetworkStatusVote: long getFreshUntilMillis() */
-    private java.lang.CharSequence fresh_until;
+    private java.lang.String fresh_until;
     /** metrics-lib/RelayNetworkStatusVote: long getValidUntilMillis() */
-    private java.lang.CharSequence valid_until;
+    private java.lang.String valid_until;
     /** see above */
     private converTor.relayVote.Vote voting_delay;
     private converTor.relayVote.Vote.Builder voting_delayBuilder;
     /** metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedClientVersions() */
-    private java.util.List<java.lang.CharSequence> client_versions;
+    private java.util.List<java.lang.String> client_versions;
     /** metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedServerVersions() */
-    private java.util.List<java.lang.CharSequence> server_versions;
+    private java.util.List<java.lang.String> server_versions;
     /** metrics-lib/RelayNetworkStatusVote: SortedSet<String> getKnownFlags() */
-    private java.util.List<java.lang.CharSequence> known_flags;
+    private java.util.List<java.lang.String> known_flags;
     /** metrics-lib/RelayNetworkStatusVote: SortedMap<String, Integer> getConsensusParams() */
-    private java.util.Map<java.lang.CharSequence,java.lang.Integer> params;
+    private java.util.Map<java.lang.String,java.lang.Integer> params;
     /** see above */
     private converTor.relayVote.DirSource dir_source;
     private converTor.relayVote.DirSource.Builder dir_sourceBuilder;
     /** metrics-lib/RelayNetworkStatusVote: String getContactLine() */
-    private java.lang.CharSequence contact;
+    private java.lang.String contact;
     /** metrics-lib/RelayNetworkStatusVote: String getLegacyDirKey() */
-    private java.lang.CharSequence legacy_dir_key;
+    private java.lang.String legacy_dir_key;
     /** see above */
     private converTor.relayVote.DirKey directory_key;
     private converTor.relayVote.DirKey.Builder directory_keyBuilder;
@@ -600,7 +600,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
     private converTor.relayVote.DirFooter directory_footer;
     private converTor.relayVote.DirFooter.Builder directory_footerBuilder;
     /** metrics-lib/RelayNetworkStatusVote: String getSigningKeyDigest() */
-    private java.lang.CharSequence signing_key_digest;
+    private java.lang.String signing_key_digest;
 
     /** Creates a new Builder */
     private Builder() {
@@ -816,7 +816,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/RelayNetworkStatusVote:
       * @return The value.
       */
-    public java.lang.CharSequence getDescriptorType() {
+    public java.lang.String getDescriptorType() {
       return descriptor_type;
     }
 
@@ -826,7 +826,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'descriptor_type'.
       * @return This builder.
       */
-    public converTor.relayVote.RelayVote.Builder setDescriptorType(java.lang.CharSequence value) {
+    public converTor.relayVote.RelayVote.Builder setDescriptorType(java.lang.String value) {
       validate(fields()[0], value);
       this.descriptor_type = value;
       fieldSetFlags()[0] = true;
@@ -901,7 +901,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * "vote" per definition, no getter
       * @return The value.
       */
-    public java.lang.CharSequence getVoteStatus() {
+    public java.lang.String getVoteStatus() {
       return vote_status;
     }
 
@@ -911,7 +911,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'vote_status'.
       * @return This builder.
       */
-    public converTor.relayVote.RelayVote.Builder setVoteStatus(java.lang.CharSequence value) {
+    public converTor.relayVote.RelayVote.Builder setVoteStatus(java.lang.String value) {
       validate(fields()[2], value);
       this.vote_status = value;
       fieldSetFlags()[2] = true;
@@ -987,7 +987,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/RelayNetworkStatusVote: long getPublishedMillis()
       * @return The value.
       */
-    public java.lang.CharSequence getPublished() {
+    public java.lang.String getPublished() {
       return published;
     }
 
@@ -997,7 +997,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'published'.
       * @return This builder.
       */
-    public converTor.relayVote.RelayVote.Builder setPublished(java.lang.CharSequence value) {
+    public converTor.relayVote.RelayVote.Builder setPublished(java.lang.String value) {
       validate(fields()[4], value);
       this.published = value;
       fieldSetFlags()[4] = true;
@@ -1030,7 +1030,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/RelayNetworkStatusVote: long getValidAfterMillis()
       * @return The value.
       */
-    public java.lang.CharSequence getValidAfter() {
+    public java.lang.String getValidAfter() {
       return valid_after;
     }
 
@@ -1040,7 +1040,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'valid_after'.
       * @return This builder.
       */
-    public converTor.relayVote.RelayVote.Builder setValidAfter(java.lang.CharSequence value) {
+    public converTor.relayVote.RelayVote.Builder setValidAfter(java.lang.String value) {
       validate(fields()[5], value);
       this.valid_after = value;
       fieldSetFlags()[5] = true;
@@ -1153,7 +1153,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/RelayNetworkStatusVote: long getFreshUntilMillis()
       * @return The value.
       */
-    public java.lang.CharSequence getFreshUntil() {
+    public java.lang.String getFreshUntil() {
       return fresh_until;
     }
 
@@ -1163,7 +1163,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'fresh_until'.
       * @return This builder.
       */
-    public converTor.relayVote.RelayVote.Builder setFreshUntil(java.lang.CharSequence value) {
+    public converTor.relayVote.RelayVote.Builder setFreshUntil(java.lang.String value) {
       validate(fields()[7], value);
       this.fresh_until = value;
       fieldSetFlags()[7] = true;
@@ -1196,7 +1196,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/RelayNetworkStatusVote: long getValidUntilMillis()
       * @return The value.
       */
-    public java.lang.CharSequence getValidUntil() {
+    public java.lang.String getValidUntil() {
       return valid_until;
     }
 
@@ -1206,7 +1206,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'valid_until'.
       * @return This builder.
       */
-    public converTor.relayVote.RelayVote.Builder setValidUntil(java.lang.CharSequence value) {
+    public converTor.relayVote.RelayVote.Builder setValidUntil(java.lang.String value) {
       validate(fields()[8], value);
       this.valid_until = value;
       fieldSetFlags()[8] = true;
@@ -1319,7 +1319,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedClientVersions()
       * @return The value.
       */
-    public java.util.List<java.lang.CharSequence> getClientVersions() {
+    public java.util.List<java.lang.String> getClientVersions() {
       return client_versions;
     }
 
@@ -1329,7 +1329,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'client_versions'.
       * @return This builder.
       */
-    public converTor.relayVote.RelayVote.Builder setClientVersions(java.util.List<java.lang.CharSequence> value) {
+    public converTor.relayVote.RelayVote.Builder setClientVersions(java.util.List<java.lang.String> value) {
       validate(fields()[10], value);
       this.client_versions = value;
       fieldSetFlags()[10] = true;
@@ -1362,7 +1362,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedServerVersions()
       * @return The value.
       */
-    public java.util.List<java.lang.CharSequence> getServerVersions() {
+    public java.util.List<java.lang.String> getServerVersions() {
       return server_versions;
     }
 
@@ -1372,7 +1372,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'server_versions'.
       * @return This builder.
       */
-    public converTor.relayVote.RelayVote.Builder setServerVersions(java.util.List<java.lang.CharSequence> value) {
+    public converTor.relayVote.RelayVote.Builder setServerVersions(java.util.List<java.lang.String> value) {
       validate(fields()[11], value);
       this.server_versions = value;
       fieldSetFlags()[11] = true;
@@ -1405,7 +1405,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/RelayNetworkStatusVote: SortedSet<String> getKnownFlags()
       * @return The value.
       */
-    public java.util.List<java.lang.CharSequence> getKnownFlags() {
+    public java.util.List<java.lang.String> getKnownFlags() {
       return known_flags;
     }
 
@@ -1415,7 +1415,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'known_flags'.
       * @return This builder.
       */
-    public converTor.relayVote.RelayVote.Builder setKnownFlags(java.util.List<java.lang.CharSequence> value) {
+    public converTor.relayVote.RelayVote.Builder setKnownFlags(java.util.List<java.lang.String> value) {
       validate(fields()[12], value);
       this.known_flags = value;
       fieldSetFlags()[12] = true;
@@ -1448,7 +1448,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/RelayNetworkStatusVote: SortedMap<String, Integer> getConsensusParams()
       * @return The value.
       */
-    public java.util.Map<java.lang.CharSequence,java.lang.Integer> getParams() {
+    public java.util.Map<java.lang.String,java.lang.Integer> getParams() {
       return params;
     }
 
@@ -1458,7 +1458,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'params'.
       * @return This builder.
       */
-    public converTor.relayVote.RelayVote.Builder setParams(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+    public converTor.relayVote.RelayVote.Builder setParams(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[13], value);
       this.params = value;
       fieldSetFlags()[13] = true;
@@ -1571,7 +1571,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/RelayNetworkStatusVote: String getContactLine()
       * @return The value.
       */
-    public java.lang.CharSequence getContact() {
+    public java.lang.String getContact() {
       return contact;
     }
 
@@ -1581,7 +1581,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'contact'.
       * @return This builder.
       */
-    public converTor.relayVote.RelayVote.Builder setContact(java.lang.CharSequence value) {
+    public converTor.relayVote.RelayVote.Builder setContact(java.lang.String value) {
       validate(fields()[15], value);
       this.contact = value;
       fieldSetFlags()[15] = true;
@@ -1614,7 +1614,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/RelayNetworkStatusVote: String getLegacyDirKey()
       * @return The value.
       */
-    public java.lang.CharSequence getLegacyDirKey() {
+    public java.lang.String getLegacyDirKey() {
       return legacy_dir_key;
     }
 
@@ -1624,7 +1624,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'legacy_dir_key'.
       * @return This builder.
       */
-    public converTor.relayVote.RelayVote.Builder setLegacyDirKey(java.lang.CharSequence value) {
+    public converTor.relayVote.RelayVote.Builder setLegacyDirKey(java.lang.String value) {
       validate(fields()[16], value);
       this.legacy_dir_key = value;
       fieldSetFlags()[16] = true;
@@ -1860,7 +1860,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/RelayNetworkStatusVote: String getSigningKeyDigest()
       * @return The value.
       */
-    public java.lang.CharSequence getSigningKeyDigest() {
+    public java.lang.String getSigningKeyDigest() {
       return signing_key_digest;
     }
 
@@ -1870,7 +1870,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'signing_key_digest'.
       * @return This builder.
       */
-    public converTor.relayVote.RelayVote.Builder setSigningKeyDigest(java.lang.CharSequence value) {
+    public converTor.relayVote.RelayVote.Builder setSigningKeyDigest(java.lang.String value) {
       validate(fields()[20], value);
       this.signing_key_digest = value;
       fieldSetFlags()[20] = true;
@@ -1902,35 +1902,35 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
     public RelayVote build() {
       try {
         RelayVote record = new RelayVote();
-        record.descriptor_type = fieldSetFlags()[0] ? this.descriptor_type : (java.lang.CharSequence) defaultValue(fields()[0]);
+        record.descriptor_type = fieldSetFlags()[0] ? this.descriptor_type : (java.lang.String) defaultValue(fields()[0]);
         record.network_status_version = fieldSetFlags()[1] ? this.network_status_version : (java.lang.Integer) defaultValue(fields()[1]);
-        record.vote_status = fieldSetFlags()[2] ? this.vote_status : (java.lang.CharSequence) defaultValue(fields()[2]);
+        record.vote_status = fieldSetFlags()[2] ? this.vote_status : (java.lang.String) defaultValue(fields()[2]);
         record.consensus_methods = fieldSetFlags()[3] ? this.consensus_methods : (java.util.List<java.lang.Integer>) defaultValue(fields()[3]);
-        record.published = fieldSetFlags()[4] ? this.published : (java.lang.CharSequence) defaultValue(fields()[4]);
-        record.valid_after = fieldSetFlags()[5] ? this.valid_after : (java.lang.CharSequence) defaultValue(fields()[5]);
+        record.published = fieldSetFlags()[4] ? this.published : (java.lang.String) defaultValue(fields()[4]);
+        record.valid_after = fieldSetFlags()[5] ? this.valid_after : (java.lang.String) defaultValue(fields()[5]);
         if (flag_tresholdsBuilder != null) {
           record.flag_tresholds = this.flag_tresholdsBuilder.build();
         } else {
           record.flag_tresholds = fieldSetFlags()[6] ? this.flag_tresholds : (converTor.relayVote.FlagTresholds) defaultValue(fields()[6]);
         }
-        record.fresh_until = fieldSetFlags()[7] ? this.fresh_until : (java.lang.CharSequence) defaultValue(fields()[7]);
-        record.valid_until = fieldSetFlags()[8] ? this.valid_until : (java.lang.CharSequence) defaultValue(fields()[8]);
+        record.fresh_until = fieldSetFlags()[7] ? this.fresh_until : (java.lang.String) defaultValue(fields()[7]);
+        record.valid_until = fieldSetFlags()[8] ? this.valid_until : (java.lang.String) defaultValue(fields()[8]);
         if (voting_delayBuilder != null) {
           record.voting_delay = this.voting_delayBuilder.build();
         } else {
           record.voting_delay = fieldSetFlags()[9] ? this.voting_delay : (converTor.relayVote.Vote) defaultValue(fields()[9]);
         }
-        record.client_versions = fieldSetFlags()[10] ? this.client_versions : (java.util.List<java.lang.CharSequence>) defaultValue(fields()[10]);
-        record.server_versions = fieldSetFlags()[11] ? this.server_versions : (java.util.List<java.lang.CharSequence>) defaultValue(fields()[11]);
-        record.known_flags = fieldSetFlags()[12] ? this.known_flags : (java.util.List<java.lang.CharSequence>) defaultValue(fields()[12]);
-        record.params = fieldSetFlags()[13] ? this.params : (java.util.Map<java.lang.CharSequence,java.lang.Integer>) defaultValue(fields()[13]);
+        record.client_versions = fieldSetFlags()[10] ? this.client_versions : (java.util.List<java.lang.String>) defaultValue(fields()[10]);
+        record.server_versions = fieldSetFlags()[11] ? this.server_versions : (java.util.List<java.lang.String>) defaultValue(fields()[11]);
+        record.known_flags = fieldSetFlags()[12] ? this.known_flags : (java.util.List<java.lang.String>) defaultValue(fields()[12]);
+        record.params = fieldSetFlags()[13] ? this.params : (java.util.Map<java.lang.String,java.lang.Integer>) defaultValue(fields()[13]);
         if (dir_sourceBuilder != null) {
           record.dir_source = this.dir_sourceBuilder.build();
         } else {
           record.dir_source = fieldSetFlags()[14] ? this.dir_source : (converTor.relayVote.DirSource) defaultValue(fields()[14]);
         }
-        record.contact = fieldSetFlags()[15] ? this.contact : (java.lang.CharSequence) defaultValue(fields()[15]);
-        record.legacy_dir_key = fieldSetFlags()[16] ? this.legacy_dir_key : (java.lang.CharSequence) defaultValue(fields()[16]);
+        record.contact = fieldSetFlags()[15] ? this.contact : (java.lang.String) defaultValue(fields()[15]);
+        record.legacy_dir_key = fieldSetFlags()[16] ? this.legacy_dir_key : (java.lang.String) defaultValue(fields()[16]);
         if (directory_keyBuilder != null) {
           record.directory_key = this.directory_keyBuilder.build();
         } else {
@@ -1942,7 +1942,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
         } else {
           record.directory_footer = fieldSetFlags()[19] ? this.directory_footer : (converTor.relayVote.DirFooter) defaultValue(fields()[19]);
         }
-        record.signing_key_digest = fieldSetFlags()[20] ? this.signing_key_digest : (java.lang.CharSequence) defaultValue(fields()[20]);
+        record.signing_key_digest = fieldSetFlags()[20] ? this.signing_key_digest : (java.lang.String) defaultValue(fields()[20]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

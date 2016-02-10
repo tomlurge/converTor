@@ -8,10 +8,10 @@ package converTor.bridgeExtra;
 @org.apache.avro.specific.AvroGenerated
 public class EntryStats extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = 5232951924100699371L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"EntryStats\",\"namespace\":\"converTor.bridgeExtra\",\"fields\":[{\"name\":\"date\",\"type\":\"string\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getEntryStatsEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getEntryStatsIntervalLength()\",\"default\":86400}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"EntryStats\",\"namespace\":\"converTor.bridgeExtra\",\"fields\":[{\"name\":\"date\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getEntryStatsEndMillis()\"},{\"name\":\"interval\",\"type\":\"long\",\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getEntryStatsIntervalLength()\",\"default\":86400}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/ExtraInfoDescriptor: long getEntryStatsEndMillis() */
-  @Deprecated public java.lang.CharSequence date;
+  @Deprecated public java.lang.String date;
   /** metrics-lib/ExtraInfoDescriptor: long getEntryStatsIntervalLength() */
   @Deprecated public long interval;
 
@@ -27,7 +27,7 @@ public class EntryStats extends org.apache.avro.specific.SpecificRecordBase impl
    * @param date metrics-lib/ExtraInfoDescriptor: long getEntryStatsEndMillis()
    * @param interval metrics-lib/ExtraInfoDescriptor: long getEntryStatsIntervalLength()
    */
-  public EntryStats(java.lang.CharSequence date, java.lang.Long interval) {
+  public EntryStats(java.lang.String date, java.lang.Long interval) {
     this.date = date;
     this.interval = interval;
   }
@@ -45,7 +45,7 @@ public class EntryStats extends org.apache.avro.specific.SpecificRecordBase impl
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: date = (java.lang.CharSequence)value$; break;
+    case 0: date = (java.lang.String)value$; break;
     case 1: interval = (java.lang.Long)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
@@ -55,7 +55,7 @@ public class EntryStats extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'date' field.
    * @return metrics-lib/ExtraInfoDescriptor: long getEntryStatsEndMillis()
    */
-  public java.lang.CharSequence getDate() {
+  public java.lang.String getDate() {
     return date;
   }
 
@@ -64,7 +64,7 @@ public class EntryStats extends org.apache.avro.specific.SpecificRecordBase impl
    * metrics-lib/ExtraInfoDescriptor: long getEntryStatsEndMillis()
    * @param value the value to set.
    */
-  public void setDate(java.lang.CharSequence value) {
+  public void setDate(java.lang.String value) {
     this.date = value;
   }
 
@@ -118,7 +118,7 @@ public class EntryStats extends org.apache.avro.specific.SpecificRecordBase impl
     implements org.apache.avro.data.RecordBuilder<EntryStats> {
 
     /** metrics-lib/ExtraInfoDescriptor: long getEntryStatsEndMillis() */
-    private java.lang.CharSequence date;
+    private java.lang.String date;
     /** metrics-lib/ExtraInfoDescriptor: long getEntryStatsIntervalLength() */
     private long interval;
 
@@ -164,7 +164,7 @@ public class EntryStats extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: long getEntryStatsEndMillis()
       * @return The value.
       */
-    public java.lang.CharSequence getDate() {
+    public java.lang.String getDate() {
       return date;
     }
 
@@ -174,7 +174,7 @@ public class EntryStats extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'date'.
       * @return This builder.
       */
-    public converTor.bridgeExtra.EntryStats.Builder setDate(java.lang.CharSequence value) {
+    public converTor.bridgeExtra.EntryStats.Builder setDate(java.lang.String value) {
       validate(fields()[0], value);
       this.date = value;
       fieldSetFlags()[0] = true;
@@ -248,7 +248,7 @@ public class EntryStats extends org.apache.avro.specific.SpecificRecordBase impl
     public EntryStats build() {
       try {
         EntryStats record = new EntryStats();
-        record.date = fieldSetFlags()[0] ? this.date : (java.lang.CharSequence) defaultValue(fields()[0]);
+        record.date = fieldSetFlags()[0] ? this.date : (java.lang.String) defaultValue(fields()[0]);
         record.interval = fieldSetFlags()[1] ? this.interval : (java.lang.Long) defaultValue(fields()[1]);
         return record;
       } catch (Exception e) {
