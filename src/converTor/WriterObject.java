@@ -29,14 +29,22 @@ import static converTor.ConverTor.*;
 
 class WriterObject {
 
+
+  //  TODO  not sure about what the constructor should return
+  //        depending on format it should be an Avro, Parquet or JSON writer
+  //        but I'm not aware that they have a common super type
+
+  DataFileWriter<?> dataFileWriter;
+
+
   /*
-   *  append converted data to encoder/writer
+   *  append converted data to encoder/writer todo
    */
-  void append(SpecificRecordBase load) throws IOException {
+  void append(SpecificRecord load) throws IOException {
 
     // append the converted descriptor to it
     if (avro) {
-      //  pseudo todo
+      //  pseudo
       //  DataFileWriter avroWriter = (DataFileWriter) this.encode;
       //  avroWriter.append(load);
     }
@@ -56,34 +64,50 @@ class WriterObject {
 
     String writerID = descType.name + "_" + date;
     File outputFile = new File(outPath + writerID + outputFileEnding);
+    Class<?> clas = descType.schemaClas;
     Schema schema = descType.avsc;
-
-
 
     WriterObject writer = null;
 
     if (avro) {
 
+
+      //  https://avro.apache.org/docs/1.8.0/api/java/org/apache/avro/specific/SpecificDatumWriter.html
+      //  https://avro.apache.org/docs/current/gettingstartedjava.html#Serializing
+      //  TODO  'clas' is not recognized
+      DatumWriter<clas> avroDatumWriter = new SpecificDatumWriter<>(schema;
+      //  TODO  how to cast dataFileWriter which is defined above
+      //        before initialization starts, to the schemaClass?
+      DataFileWriter<clas> tmp = new DataFileWriter<>(avroDatumWriter);
+      dataFileWriter = tmp;
+      dataFileWriter.create(schema, outputFile);
+
+      /*  if the conversion type was known beforehand the above could look like this:
+
+      DatumWriter<Torperf> userDatumWriter = new SpecificDatumWriter<>(Torperf.class);
+      DataFileWriter<Torperf> dataFileWriter = new DataFileWriter<>(userDatumWriter);
+      dataFileWriter.create(schema, outputFile);
+
+       */
+
+
+      /*  trümmerteile
+
+
       //  Class<SpecificRecordBase> classy = (SpecificRecordBase) descType.schemaClas;
       //  Class<?> classy = descType.schemaClas;
 
       // SpecificRecordBase is the super class of all schema classes
-      SpecificRecordBase clas = null;
-      try {
-        clas = (SpecificRecordBase) descType.schemaClas.newInstance();
-      } catch (InstantiationException | IllegalAccessException e) {
-        e.printStackTrace();
-      }
-      clas.getSchema(); // test that clas is alive and kickin' todo remove
-
-      //  https://avro.apache.org/docs/1.8.0/api/java/org/apache/avro/specific/SpecificDatumWriter.html
-      //  https://avro.apache.org/docs/current/gettingstartedjava.html#Serializing
-      // TODO
-      DatumWriter<clas> avroDatumWriter = new SpecificDatumWriter<>(descType.avsc);
-      DataFileWriter<clas> dataFileWriter = new DataFileWriter<>(avroDatumWriter);
-      dataFileWriter.create(schema, outputFile);
+      SpecificRecordBase clas2 = null;
+        try {
+          clas2 = (SpecificRecordBase) descType.schemaClas.newInstance();
+        } catch (InstantiationException | IllegalAccessException e) {
+          e.printStackTrace();
+        }
+        clas2.getClass(); // test that clas is alive and kickin'
 
 
+       */
 
 
     }
@@ -135,9 +159,4 @@ class WriterObject {
 
   }
 
-
-
-
-
 }
-
