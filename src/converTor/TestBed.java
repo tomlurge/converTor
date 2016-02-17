@@ -28,7 +28,7 @@ class TestBed {
 
     ConvertCommons convertClas2 = null;
     try {
-      Class<?> tmp = descType.convertClas;
+      Class<?> tmp = descType.clasName;
       convertClas2 = (ConvertCommons) tmp.newInstance();
     } catch (InstantiationException | IllegalAccessException e) {
       e.printStackTrace();
@@ -40,7 +40,7 @@ class TestBed {
 
     ConvertCommons convertClas3 = null;
     try {
-      convertClas3 = (ConvertCommons) descType.convertClas.newInstance();
+      convertClas3 = (ConvertCommons) descType.clasName.newInstance();
     } catch (InstantiationException | IllegalAccessException e) {
       e.printStackTrace();
     }

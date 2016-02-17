@@ -33,8 +33,6 @@ public class ConverTor {
   public static String format = "parquet";
   public static String inPath = "data/in/";
   public static String outPath = "data/out/" + format + "/";
-  //  String prefix = "";
-  //  String name = "result";
   public static String suffix = "";
   private static int max = 20;
   public static String outputFileEnding;
@@ -164,48 +162,75 @@ public class ConverTor {
 
 /*      //  relay
         if (descriptor instanceof RelayServerDescriptor) {
-          TypeWriter.dispatch(ConvertRelay.convert((RelayServerDescriptor) descriptor));
+          Converted converted = ConvertRelay
+              .convert((RelayServerDescriptor) descriptor);
+          TypeWriter
+              .get(relayType, converted.date)
+              .append(converted.load);
         }
         //  bridge
         if (descriptor instanceof BridgeServerDescriptor) {
-          TypeWriter.dispatch(ConvertBridge.convert((BridgeServerDescriptor) descriptor));
+          Converted converted = ConvertBridge
+              .convert((BridgeServerDescriptor) descriptor);
+          TypeWriter
+              .get(bridgeType, converted.date)
+              .append(converted.load);
         }
         //  relayExtra
         if (descriptor instanceof RelayExtraInfoDescriptor) {
-          TypeWriter.dispatch(ConvertRelayExtra.convert((RelayExtraInfoDescriptor) descriptor));
+          Converted converted = ConvertRelayExtra
+              .convert((RelayExtraInfoDescriptor) descriptor);
+          TypeWriter
+              .get(relayExtraType, converted.date)
+              .append(converted.load);
         }
         //  bridgeExtra
         if (descriptor instanceof BridgeExtraInfoDescriptor) {
-          TypeWriter.dispatch(ConvertBridgeExtra.convert((BridgeExtraInfoDescriptor) descriptor));
+          Converted converted = ConvertBridgeExtra
+              .convert((BridgeExtraInfoDescriptor) descriptor);
+          TypeWriter
+              .get(bridgeExtraType, converted.date)
+              .append(converted.load);
         }
         //  relayVote
         if (descriptor instanceof RelayNetworkStatusVote) {
-          TypeWriter.dispatch(ConvertRelayVote.convert((RelayNetworkStatusVote) descriptor));
+          Converted converted = ConvertRelayVote
+              .convert((RelayNetworkStatusVote) descriptor);
+          TypeWriter
+              .get(relayVoteType, converted.date)
+              .append(converted.load);
         }
         //  relayConsensus
         if (descriptor instanceof RelayNetworkStatusConsensus) {
-          TypeWriter.dispatch(ConvertRelayConsensus.convert((RelayNetworkStatusConsensus) descriptor));
+          Converted converted = ConvertRelayConsensus
+              .convert((RelayNetworkStatusConsensus) descriptor);
+          TypeWriter
+              .get(relayConsensusType, converted.date)
+              .append(converted.load);
         }
         //  bridgeStatus
         if (descriptor instanceof BridgeNetworkStatus) {
-          TypeWriter.dispatch(ConvertBridgeStatus.convert((BridgeNetworkStatus) descriptor));
+          Converted converted = ConvertBridgeStatus
+              .convert((BridgeNetworkStatus) descriptor);
+          TypeWriter
+              .get(bridgeStatusType, converted.date)
+              .append(converted.load);
         }
         //  tordnsel
         if (descriptor instanceof ExitList) {
-          TypeWriter.dispatch(ConvertExitList.convert((ExitList) descriptor));
+          Converted converted = ConvertExitList
+              .convert((ExitList) descriptor);
+          TypeWriter
+              .get(tordnselType, converted.date)
+              .append(converted.load);
         }
 */
         //  torperf
         if (descriptor instanceof TorperfResult) {
-
-          Converted converted = ConvertTorperf.convert((TorperfResult) descriptor);
-          TypeWriter typeWriter = TypeWriter.get(torperfType, converted.date);
-          typeWriter.append(converted.load);
-          /*  more elegant but somewhat unusual
+          Converted c = ConvertTorperf.convert((TorperfResult) descriptor);
           TypeWriter
-              .get(torperfType, converted.date)
-              .append(converted.load);
-          */
+              .get(torperfType, c.date)
+              .append(c.load);
         }
 
         //  handle unrecognized attributes
@@ -218,7 +243,8 @@ public class ConverTor {
       }
     }
 
-    //  after all descriptors have been converted flush writers to disk and clean up
+    //  after all descriptors have been converted
+    // flush writers to disk and clean up
     TypeWriter.wrapUp();
 
   } // end of  main

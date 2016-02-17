@@ -1,77 +1,41 @@
 package converTor;
 
-
 import java.util.HashMap;
 import java.util.Map;
 import java.io.IOException;
-import org.apache.avro.file.DataFileWriter;
-import org.apache.avro.specific.SpecificRecordBase;
-import org.apache.parquet.avro.AvroParquetWriter;
 
 import static converTor.ConverTor.*;
 
 
 class TypeWriter {
 
-  DescriptorType type;
-  String date;
-  Object encode;
-  Object serialize;
-
-  TypeWriter(DescriptorType type, String date, Object encode, Object serialize) {
-    this.type = type;
-    this.date = date;
-    this.encode = encode;
-    this.serialize = serialize;
-  }
-
 
   /*
    *  a map to hold all writers per type + month
    */
-  private static Map<String, TypeWriter> typeWriterMap = new HashMap();
+  private static Map<String, WriterObject> typeWriterMap = new HashMap();
 
-  static TypeWriter get(DescriptorType type, String date) {
 
+  /*
+   *  a getter for that map
+   */
+  static WriterObject get(DescriptorType type, String date) throws IOException {
     // construct writer id
     String writerID = type.name + "_" + date;
-
     //  create if not existant
     if (typeWriterMap.get(writerID) == null) {
-      // create writer
-      // writer = TypeWriterFactory.createWriter(converted.type, converted.date);
-      TypeWriter typeWriter = TypeWriterFactory.createWriter(type, date);
-      typeWriterMap.put(writerID, typeWriter);
+      WriterObject writer = new WriterObject(type, date);
+      typeWriterMap.put(writerID, writer);
     }
     return typeWriterMap.get(writerID);
   }
 
 
   /*
-   * append converted data to encoder/writer
-   */
-  void append(SpecificRecordBase load) throws IOException {
-
-    // append the converted descriptor to it
-    if (avro) {
-      //  pseudo todo
-      DataFileWriter avroWriter = (DataFileWriter) this.encode;
-      avroWriter.append(load);
-    }
-    else if (json) {
-
-    }
-    else { // parquet
-      // AvroParquetWriter parquetWriter = (AvroParquetWriter) writer;
-      // parquetWriter.write(converted.load);
-    }
-  }
-
-  /*
-   * flush dataWriters data to disc
+   *  clean up after the last descriptor has been converted
    */
   static void wrapUp() throws IOException {
-    for ( Object writer : typeWriterMap.values()) {
+    for ( WriterObject writer : typeWriterMap.values()) {
       if (avro) {
         //  pseudo todo
         //  DataFileWriter avroWriter = (DataFileWriter) writer.toDisk;
