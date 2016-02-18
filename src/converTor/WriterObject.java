@@ -1,13 +1,18 @@
 package converTor;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 
 import org.apache.avro.Schema;
 import org.apache.avro.data.Json;
 import org.apache.avro.file.DataFileWriter;
 import org.apache.avro.io.DatumWriter;
 // import org.apache.avro.io.EncoderFactory;
+import org.apache.avro.io.Encoder;
+import org.apache.avro.io.EncoderFactory;
+import org.apache.avro.io.ValidatingEncoder;
 import org.apache.avro.specific.SpecificDatumWriter;
 import org.apache.avro.specific.SpecificRecord;
 import org.apache.avro.specific.SpecificRecordBase;
@@ -29,12 +34,11 @@ import static converTor.ConverTor.*;
 
 class WriterObject {
 
+  //  gets casted within append()
+  Object dataFileWriter;
 
-  //  TODO  not sure about what the constructor should return
-  //        depending on format it should be an Avro, Parquet or JSON writer
-  //        but I'm not aware that they have a common super type
-
-  DataFileWriter<?> dataFileWriter;
+  //  jump through hoop to get the jsonEncoder from Constructor to append()
+  ValidatingEncoder jsonEncoder;
 
 
   /*
@@ -44,12 +48,12 @@ class WriterObject {
 
     // append the converted descriptor to it
     if (avro) {
-      //  pseudo
-      //  DataFileWriter avroWriter = (DataFileWriter) this.encode;
-      //  avroWriter.append(load);
+      DataFileWriter<?> avroWriter = (DataFileWriter) dataFileWriter;
+      avroWriter.append(load);  //  TODO  remove the <?> from DataFileWriter<?> ?
     }
     else if (json) {
-      //
+      Json.ObjectWriter jsonWriter = (Json.ObjectWriter) dataFileWriter;
+      jsonWriter.write(load, jsonEncoder);
     }
     else { // parquet
       // AvroParquetWriter parquetWriter = (AvroParquetWriter) writer;
@@ -67,7 +71,6 @@ class WriterObject {
     Class<?> clas = descType.schemaClas;
     Schema schema = descType.avsc;
 
-    WriterObject writer = null;
 
     if (avro) {
 
@@ -76,60 +79,74 @@ class WriterObject {
       //  https://avro.apache.org/docs/current/gettingstartedjava.html#Serializing
       //  TODO  'clas' is not recognized
       DatumWriter<clas> avroDatumWriter = new SpecificDatumWriter<>(schema;
-      //  TODO  how to cast dataFileWriter which is defined above
-      //        before initialization starts, to the schemaClass?
-      DataFileWriter<clas> tmp = new DataFileWriter<>(avroDatumWriter);
-      dataFileWriter = tmp;
-      dataFileWriter.create(schema, outputFile);
+      DataFileWriter<clas> avroFileWriter = new DataFileWriter<>(avroDatumWriter);
+      avroFileWriter.create(schema, outputFile);
+      dataFileWriter = avroFileWriter;
 
       /*  if the conversion type was known beforehand the above could look like this:
+      DatumWriter<Torperf> avroTorperfDatumWriter = new SpecificDatumWriter<>(Torperf.class);
+      DataFileWriter<Torperf> avroTorperfFileWriter = new DataFileWriter<>(avroTorperfDatumWriter);
+      avroTorperfFileWriter.create(schema, outputFile);
+      dataFileWriter = avroTorperfFileWriter;  */
 
-      DatumWriter<Torperf> userDatumWriter = new SpecificDatumWriter<>(Torperf.class);
-      DataFileWriter<Torperf> dataFileWriter = new DataFileWriter<>(userDatumWriter);
-      dataFileWriter.create(schema, outputFile);
+      /*  TRIAL AND ERROR
+      //  SpecificRecordBase is the super class of all schema classes
 
-       */
+      //  DOESN'T WORK
+          Class<SpecificRecordBase> classy = (SpecificRecordBase) descType.schemaClas;
+          Class<?> classy = descType.schemaClas;
 
-
-      /*  trümmerteile
-
-
-      //  Class<SpecificRecordBase> classy = (SpecificRecordBase) descType.schemaClas;
-      //  Class<?> classy = descType.schemaClas;
-
-      // SpecificRecordBase is the super class of all schema classes
-      SpecificRecordBase clas2 = null;
-        try {
-          clas2 = (SpecificRecordBase) descType.schemaClas.newInstance();
-        } catch (InstantiationException | IllegalAccessException e) {
-          e.printStackTrace();
-        }
-        clas2.getClass(); // test that clas is alive and kickin'
-
+      //  DOESN'T WORK EITHER
+          SpecificRecordBase schemaClass = null;
+          try {
+            Class<?> tmp = Class.forName("converTor.ConvertTorperf"); //("converTor.Convert" + descType.clasName);
+            schemaClass = (SpecificRecordBase) tmp.newInstance();
+          } catch (ClassNotFoundException c) {
+            System.err.println("ClassNotFoundException: "+ c.getMessage());
+            c.printStackTrace();
+          } catch (InstantiationException | IllegalAccessException e) {
+            e.printStackTrace();
+          }
+          schemaClass.getSchema();  // just checking that schemaClass is recognized
 
        */
 
 
     }
-    else if (json) {
+    if (json) {
 
       //  TODO  a mess
-      // Json.ObjectWrite   (where was that from?)
-      // nobody seems to use this - queries return no results
-      // it seems very low level
-      Json.ObjectWriter aJsonDatumWriter = new Json.ObjectWriter();
-      aJsonDatumWriter.setSchema(schema);
+      // Json.ObjectWriter   (where was that from?)
+      // nobody seems to use this - googling return no results
+      // file:///Users/t/Desktop/avro/1.8/avro-1.8.0-javadoc/org/apache/avro/data/Json.ObjectWriter.html
+      Json.ObjectWriter jsonDatumWriter = new Json.ObjectWriter();
+      jsonDatumWriter.setSchema(schema);
+      //  define output stream
+      OutputStream out = new FileOutputStream(outputFile);
+      //  define encoder
+      //  file:///Users/t/Desktop/avro/1.8/avro-1.8.0-javadoc/org/apache/avro/io/JsonEncoder.html
+      Encoder encoder = EncoderFactory.get().jsonEncoder(schema, out, pretty);
+      //  optionally enhance by layering validation on top
+      //  file:///Users/t/Desktop/avro/1.8/avro-1.8.0-javadoc/org/apache/avro/io/EncoderFactory.html#validatingEncoder%28org.apache.avro.Schema,%20org.apache.avro.io.Encoder%29
+      ValidatingEncoder validatingEncoder = EncoderFactory.get().validatingEncoder(schema, encoder);
+      jsonEncoder = validatingEncoder;
+      //  call writer with datum AND encoder
+      //  public void write(Object datum, Encoder out) throws IOException
+      //  that's bad, because we want to return a writer without data, but with encoder preconfigured
+      dataFileWriter = jsonDatumWriter;
 
 
-      /*
-      // or like this - https://gist.github.com/hammer/76996fb8426a0ada233e
-      // together with this- http://www.javased.com/?api=org.apache.avro.io.EncoderFactory - example 10
+      /* maybe an alternative:
+      file:///Users/t/Desktop/avro/1.8/avro-1.8.0-javadoc/org/apache/avro/data/Json.html
+      Json.toString(Object datum) Converts an instance of the object model to a JSON string.
+      ... which maybe we could append to a JSON output file like we did in the ConvertToJson of old
+       */
+
+      /* or like this - https://gist.github.com/hammer/76996fb8426a0ada233e
+         together with this- http://www.javased.com/?api=org.apache.avro.io.EncoderFactory - example 10
       DatumWriter<Torperf> jsonDatumWriter = new SpecificDatumWriter<>(Torperf.class);
-
       ByteArrayOutputStream baos = new ByteArrayOutputStream();
       JsonEncoder jsonEncoder = EncoderFactory.get().jsonEncoder(schema, baos);
-
-
       jsonDatumWriter.write(descType.load, jsonEncoder);
       jsonEncoder.flush();
       System.out.println("JSON encoded record: " + baos); // is this additionally? didn't we write to a file? ah, what file...
@@ -137,19 +154,24 @@ class WriterObject {
 
       // problems with JSON number conversion? see: https://docs.oracle.com/cd/E26161_02/html/GettingStartedGuide/jsonbinding-overview.html
     }
-    else { // parquet, uses parquet-mr
-      // Hadoop Definitive Guide p.375
-      // Path is a Hadoop FileSystem command - not sure how (or if) this works on a normal file system
+    if (parquet) { // uses parquet-mr
+      //  Hadoop Definitive Guide p.375
+      //  Path is a Hadoop FileSystem command - not sure how (or if) this works on a normal file system
       //  Path parquetOutput = new Path(outPath + writerID + outputFileEnding);
       //  AvroParquetWriter<SpecificRecord> parquetWriter = new AvroParquetWriter<>(parquetOutput, schema);
 
-      // todo   nobody answers my cry for help on stackoverflow
+      //  file:///Users/t/Desktop/parquet-avro-1.8.1-javadoc/org/apache/parquet/avro/AvroParquetWriter.Builder.html
+      //  AvroParquetWriter.Builder<T> 	withSchema(org.apache.avro.Schema schema)
+
+
+
+      //  todo  nobody answers my cry for help on stackoverflow (bloody bastards!)
       //        https://stackoverflow.com/questions/35315992/parquet-mr-avroparquetwriter-how-to-convert-data-to-parquet-with-specific-map
       //
       //        so either getting it done by more playing with the code
       //        and more staring at the javadocs
 
-      // todo   or prepare switch to generic mapping
+      //  todo  or prepare switch to generic mapping
       //        which will also solve some other problems with
       //          nested converter code
       //          referencing classes in WriterObject
