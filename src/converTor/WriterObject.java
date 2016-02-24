@@ -38,9 +38,11 @@ import converTor.relayConsensus.*;
 import converTor.bridgeStatus.*;
 import converTor.tordnsel.*;
 import converTor.torperf.*;
+import org.apache.parquet.hadoop.metadata.CompressionCodecName;
 
 
 import static converTor.ConverTor.*;
+import static org.apache.avro.data.Json.SCHEMA;
 
 
 
@@ -51,7 +53,7 @@ class WriterObject<T extends Object> {  // crazy generics
 
   //  jump through hoop to get the jsonEncoder from Constructor to append()
   //  not validating 1 of 2
-  Encoder jsonEncoder;
+  Encoder jsonEncoder = null;
   //  validating 1 of 2
   //ValidatingEncoder jsonEncoder;
 
@@ -59,7 +61,7 @@ class WriterObject<T extends Object> {  // crazy generics
   /*
    *  append converted data to encoder/writer todo
    */
-  void append(SpecificRecord load) throws IOException {
+  void append(SpecificRecord load, Encoder jsonEncoder) throws IOException {
 
     // append the converted descriptor to it
     if (avro) {
@@ -73,7 +75,7 @@ class WriterObject<T extends Object> {  // crazy generics
     else { // parquet
       // AvroParquetWriter parquetWriter = (AvroParquetWriter) writer;
       // parquetWriter.write(converted.load);
-      AvroParquetWriter parquetWriter = (AvroParquetWriter) dataFileWriter;
+      ParquetWriter parquetWriter = (ParquetWriter) dataFileWriter;
       parquetWriter.write(load);
     }
   }
@@ -90,6 +92,8 @@ class WriterObject<T extends Object> {  // crazy generics
     Path outputPath = new Path(outPath + writerID + outputFileEnding);
     Class<?> clas = descType.schemaClas;  // crazy generics - this can go
     Schema schema = descType.avsc;
+    //  trying another deserialization approach
+    //  because of the trouble with JSON conversion
     Schema jsonschema = descType.jsonavsc;
 
 
@@ -125,7 +129,10 @@ class WriterObject<T extends Object> {  // crazy generics
       OutputStream out = new FileOutputStream(outputFile);
       //  define encoder
       //  file:///Users/t/Desktop/avro/1.8/avro-1.8.0-javadoc/org/apache/avro/io/JsonEncoder.html
-      //  TODO  this is inefficient as it creates one encoder per month
+      //  TODO  this is inefficient as it creates one encoder per month and type
+      //        instead of just one encoder per type.
+      //        but a solution is involved since an encoder depends not only on a
+      //        schema but also the output path, which contains the month. so...
       Encoder encoder = EncoderFactory.get().jsonEncoder(schema, out, pretty);
 
       //  not validating 2 of 2
@@ -137,22 +144,25 @@ class WriterObject<T extends Object> {  // crazy generics
       //  ValidatingEncoder validatingEncoder = EncoderFactory.get().validatingEncoder(schema, encoder);
       //  jsonEncoder = validatingEncoder;
 
+
       //  call writer with datum AND encoder
-      //  public void write(Object datum, Encoder out) throws IOException
+      //    public void write(Object datum, Encoder out) throws IOException
       //  that's bad, because we want to return a writer without data, but with encoder preconfigured
       dataFileWriter = jsonDatumWriter;
 
-      /* maybe an alternative:
+
+
+      /*  maybe an alternative:
       file:///Users/t/Desktop/avro/1.8/avro-1.8.0-javadoc/org/apache/avro/data/Json.html
       Json.toString(Object datum) Converts an instance of the object model to a JSON string.
       ... which maybe we could append to a JSON output file like we did in the ConvertToJson of old
        */
 
-      /* or like this - https://gist.github.com/hammer/76996fb8426a0ada233e
-         together with this- http://www.javased.com/?api=org.apache.avro.io.EncoderFactory - example 10
+      /*  or like this - https://gist.github.com/hammer/76996fb8426a0ada233e
+          together with this- http://www.javased.com/?api=org.apache.avro.io.EncoderFactory - example 10
       DatumWriter<Torperf> jsonDatumWriter = new SpecificDatumWriter<>(Torperf.class);
-      ByteArrayOutputStream baos = new ByteArrayOutputStream();
-      JsonEncoder jsonEncoder = EncoderFactory.get().jsonEncoder(schema, baos);
+      OutputStream out = new FileOutputStream(outputFile);
+      JsonEncoder jsonEncoder = EncoderFactory.get().jsonEncoder(schema, out);
       jsonDatumWriter.write(descType.load, jsonEncoder);
       jsonEncoder.flush();
       System.out.println("JSON encoded record: " + baos); // is this additionally? didn't we write to a file? ah, what file...
@@ -164,6 +174,11 @@ class WriterObject<T extends Object> {  // crazy generics
 
     if (parquet) { // uses parquet-mr
 
+      CompressionCodecName cc = CompressionCodecName.UNCOMPRESSED;
+      if (compressed) {
+        cc = CompressionCodecName.SNAPPY;
+      }
+
       //  Hadoop Definitive Guide p.375
       //  Path is a Hadoop FileSystem command - not sure how (or if) this works on a normal file system
       //  Path parquetOutput = new Path(outPath + writerID + outputFileEnding);
@@ -174,40 +189,11 @@ class WriterObject<T extends Object> {  // crazy generics
       //
       //  https://stackoverflow.com/questions/35315992/parquet-mr-avroparquetwriter-how-to-convert-data-to-parquet-with-specific-map
       //  Try AvroParquetWriter.builder :
-      ParquetWriter<Object> avroParquetWriter = AvroParquetWriter.builder(outputPath)
+      ParquetWriter<Object> parquetWriter = AvroParquetWriter.builder(outputPath)
           .withSchema(schema)
+          .withCompressionCodec(cc)
           .build();
-      dataFileWriter = avroParquetWriter;
-
-
-      //  todo  or prepare switch to generic mapping
-      //        which will also solve some other problems with
-      //          nested converter code
-      //          referencing classes in WriterObject
-      //          all examples using generic mapping
-
-      /*  this seemed helpful, but uses generic mapping and deprecated writers
-      //  http://blog.cloudera.com/blog/2014/05/how-to-convert-existing-data-into-parquet/
-      //  load your Avro schema
-      //  Schema avroSchema = new Schema.Parser().parse(in);
-      Schema avroSchema = schema;
-      //  generate the corresponding Parquet schema
-      MessageType parquetSchema = new AvroSchemaConverter().convert(avroSchema);
-      //  create a WriteSupport object to serialize your Avro objects
-      AvroWriteSupport writeSupport = new AvroWriteSupport(parquetSchema, avroSchema);
-      //  choose compression scheme
-      CompressionCodecName  compressionCodecName = CompressionCodecName.SNAPPY;
-      //  set Parquet file block size and page size values
-      int blockSize = 256 * 1024 * 1024;
-      int pageSize = 64 * 1024;
-      Path outputPath = new Path(String.valueOf(outputFile));
-      //  the ParquetWriter object that will consume Avro GenericRecords
-      ParquetWriter parquetWriter = new ParquetWriter(outputPath,
-          writeSupport, compressionCodecName, blockSize, pageSize);
-      for (GenericRecord record : SourceOfRecords) {
-        parquetWriter.write(record);
-      }
-      */
+      dataFileWriter = parquetWriter;
 
     }
 

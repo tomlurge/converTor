@@ -1,7 +1,10 @@
 package converTor;
 
+import org.apache.avro.data.Json;
 import org.apache.avro.file.DataFileWriter;
+import org.apache.avro.io.Encoder;
 import org.apache.parquet.avro.AvroParquetWriter;
+import org.apache.parquet.hadoop.ParquetWriter;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -44,10 +47,11 @@ class TypeWriter {
         ((DataFileWriter) writerObject.dataFileWriter).close();
       }
       if (json) {
-        // todo
+        //  todo  is this right?
+        writerObject.jsonEncoder.flush();
       }
       if (parquet) {
-        ((AvroParquetWriter) writerObject.dataFileWriter).close();
+        ((ParquetWriter) writerObject.dataFileWriter).close();
       }
     }
   }

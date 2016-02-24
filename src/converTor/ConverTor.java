@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.*;
 
 //  metrics-lib
+import org.apache.avro.io.Encoder;
 import org.torproject.descriptor.*;
 
 //  command line interface
@@ -146,7 +147,7 @@ public class ConverTor {
         suffix
         + "."
         + ( compressed && avro ? "snappy." : "")
-        //  + ( compressed && parquet ? "snappy." : "") todo implement
+        + ( compressed && parquet ? "snappy." : "")
         + format
         + ( compressed && json ? ".gz" : "");
 
@@ -181,78 +182,86 @@ public class ConverTor {
       //  initiate conversion according to type
       for (Descriptor descriptor : descriptorFile.getDescriptors()) {
 
-/*      //  relay
-        if (descriptor instanceof RelayServerDescriptor) {
-          Converted converted = ConvertRelay
-              .convert((RelayServerDescriptor) descriptor);
-          TypeWriter
-              .get(relayType, converted.date)
-              .append(converted.load);
-        }
-        //  bridge
-        if (descriptor instanceof BridgeServerDescriptor) {
-          Converted converted = ConvertBridge
-              .convert((BridgeServerDescriptor) descriptor);
-          TypeWriter
-              .get(bridgeType, converted.date)
-              .append(converted.load);
-        }
-        //  relayExtra
-        if (descriptor instanceof RelayExtraInfoDescriptor) {
-          Converted converted = ConvertRelayExtra
-              .convert((RelayExtraInfoDescriptor) descriptor);
-          TypeWriter
-              .get(relayExtraType, converted.date)
-              .append(converted.load);
-        }
-        //  bridgeExtra
-        if (descriptor instanceof BridgeExtraInfoDescriptor) {
-          Converted converted = ConvertBridgeExtra
-              .convert((BridgeExtraInfoDescriptor) descriptor);
-          TypeWriter
-              .get(bridgeExtraType, converted.date)
-              .append(converted.load);
-        }
-        //  relayVote
-        if (descriptor instanceof RelayNetworkStatusVote) {
-          Converted converted = ConvertRelayVote
-              .convert((RelayNetworkStatusVote) descriptor);
-          TypeWriter
-              .get(relayVoteType, converted.date)
-              .append(converted.load);
-        }
-        //  relayConsensus
-        if (descriptor instanceof RelayNetworkStatusConsensus) {
-          Converted converted = ConvertRelayConsensus
-              .convert((RelayNetworkStatusConsensus) descriptor);
-          TypeWriter
-              .get(relayConsensusType, converted.date)
-              .append(converted.load);
-        }
-        //  bridgeStatus
-        if (descriptor instanceof BridgeNetworkStatus) {
-          Converted converted = ConvertBridgeStatus
-              .convert((BridgeNetworkStatus) descriptor);
-          TypeWriter
-              .get(bridgeStatusType, converted.date)
-              .append(converted.load);
-        }
-        //  tordnsel
-        if (descriptor instanceof ExitList) {
-          Converted converted = ConvertExitList
-              .convert((ExitList) descriptor);
-          TypeWriter
-              .get(tordnselType, converted.date)
-              .append(converted.load);
-        }
-*/
+//      //  relay
+//        if (descriptor instanceof RelayServerDescriptor) {
+//          Converted converted = ConvertRelay
+//              .convert((RelayServerDescriptor) descriptor);
+//          TypeWriter
+//              .get(relayType, converted.date)
+//              .append(converted.load);
+//        }
+//        //  bridge
+//        if (descriptor instanceof BridgeServerDescriptor) {
+//          Converted converted = ConvertBridge
+//              .convert((BridgeServerDescriptor) descriptor);
+//          TypeWriter
+//              .get(bridgeType, converted.date)
+//              .append(converted.load);
+//        }
+//        //  relayExtra
+//        if (descriptor instanceof RelayExtraInfoDescriptor) {
+//          Converted converted = ConvertRelayExtra
+//              .convert((RelayExtraInfoDescriptor) descriptor);
+//          TypeWriter
+//              .get(relayExtraType, converted.date)
+//              .append(converted.load);
+//        }
+//        //  bridgeExtra
+//        if (descriptor instanceof BridgeExtraInfoDescriptor) {
+//          Converted converted = ConvertBridgeExtra
+//              .convert((BridgeExtraInfoDescriptor) descriptor);
+//          TypeWriter
+//              .get(bridgeExtraType, converted.date)
+//              .append(converted.load);
+//        }
+//        //  relayVote
+//        if (descriptor instanceof RelayNetworkStatusVote) {
+//          Converted converted = ConvertRelayVote
+//              .convert((RelayNetworkStatusVote) descriptor);
+//          TypeWriter
+//              .get(relayVoteType, converted.date)
+//              .append(converted.load);
+//        }
+//        //  relayConsensus
+//        if (descriptor instanceof RelayNetworkStatusConsensus) {
+//          Converted converted = ConvertRelayConsensus
+//              .convert((RelayNetworkStatusConsensus) descriptor);
+//          TypeWriter
+//              .get(relayConsensusType, converted.date)
+//              .append(converted.load);
+//        }
+//        //  bridgeStatus
+//        if (descriptor instanceof BridgeNetworkStatus) {
+//          Converted converted = ConvertBridgeStatus
+//              .convert((BridgeNetworkStatus) descriptor);
+//          TypeWriter
+//              .get(bridgeStatusType, converted.date)
+//              .append(converted.load);
+//        }
+//        //  tordnsel
+//        if (descriptor instanceof ExitList) {
+//          Converted converted = ConvertExitList
+//              .convert((ExitList) descriptor);
+//          TypeWriter
+//              .get(tordnselType, converted.date)
+//              .append(converted.load);
+//        }
+
         //  torperf
         if (descriptor instanceof TorperfResult) {
           Converted converted = ConvertTorperf
               .convert((TorperfResult) descriptor);
-          TypeWriter
-              .<TorperfResult>get(torperfType, converted.date)  // crazy generics
-              .append(converted.load);
+
+          //  reference to JSON Encoder is handled in WriterObject
+          // TypeWriter
+          //     .<TorperfResult>get(torperfType, converted.date)  // crazy generics
+          //     .append(converted.load);
+
+          // trying to make reference to JSON Encoder more explicit
+          WriterObject<TorperfResult> writer = TypeWriter.<TorperfResult>get(torperfType, converted.date);
+          Encoder jsonEncoder = writer.jsonEncoder;
+          writer.append(converted.load, jsonEncoder);
+
         }
 
         //  handle unrecognized attributes
@@ -269,9 +278,13 @@ public class ConverTor {
     //  close fileWriters (flushing data to disk)
     TypeWriter.wrapUp();
     //  and close the door
+    //  todo  need to close iterator?
     System.out.println("\nDeed done, shutting down.");
     System.exit(42);
 
   } // end of  main
 
 }
+
+/*
+*/
