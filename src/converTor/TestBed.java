@@ -24,30 +24,7 @@ class TestBed {
     convertClas.convert(descriptor2convert);
 
 
-    //  2. try - better than 1, still relatively safe
-
-    ConvertCommons convertClas2 = null;
-    try {
-      Class<?> tmp = descType.clasName;
-      convertClas2 = (ConvertCommons) tmp.newInstance();
-    } catch (InstantiationException | IllegalAccessException e) {
-      e.printStackTrace();
-    }
-    convertClas2.convert(descriptor2convert);
-
-
-    //  3. try - shortest, based on 2, but not sure if this works
-
-    ConvertCommons convertClas3 = null;
-    try {
-      convertClas3 = (ConvertCommons) descType.clasName.newInstance();
-    } catch (InstantiationException | IllegalAccessException e) {
-      e.printStackTrace();
-    }
-    convertClas3.convert(descriptor2convert);
-
-
-    //  4. try
+    //  2. try
 
     ConvertTorperf foo = null; // variant:  ConvertTorperf asdf = new ConvertTorperf();
     Converted bar = foo.convert(descriptor2convert); //  TODO refine

@@ -68,11 +68,9 @@ public class ConverTor {
                     "some SQL engines like Apache Drill require this.");
     //  TODO  implement multi-file compression for JSON
     options.addOption("c", "compressed", false,
-            "does generate .gz archive, \n" +
-                    "(this is only relevant for JSON)");
+            "uses gz codec for JSON and snappy codec for Avro and Parquet");
     options.addOption("p", "pretty", false,
-            "does generate pretty printed JSON output, \n" +
-                    "(obviously this is only relevant for JSON too)");
+            "does generate pretty printed JSON output");
     options.addOption("m", "max", true,
             "maximum file readers to open, \n" +
                     "e.g. '-m=5'\n" +
@@ -95,28 +93,44 @@ public class ConverTor {
       String formatArgument = cmd.getOptionValue("f").toLowerCase();
       if (formatArgument.equals("avro")) {
         avro = true;
+        json = false;
         parquet = false;
         format = formatArgument;
+        outPath = "data/out/" + format + "/";
       }
       else if (formatArgument.equals("json")) {
+        avro = false;
         json = true;
         parquet = false;
         format = formatArgument;
+        outPath = "data/out/" + format + "/";
       }
-      else if (!formatArgument.equals("parquet"))  {
+      else if (formatArgument.equals("parquet")) {
+        avro = false;
+        json = false;
+        parquet = true;
+        format = formatArgument;
+        outPath = "data/out/" + format + "/";
+      }
+      else  {
         HelpFormatter formatter = new HelpFormatter();
         formatter.printHelp( "ConverTor\n\n" +
                 "Sorry, but " + cmd.getOptionValue("f") +
                 " is not a valid format.\n\n", options );
+        // System.out.println("\nShutting down");
+        System.exit(1);
       }
     }
     if(cmd.hasOption("s") && cmd.getOptionValue("s") != null) {
+      //  TODO  sanitize
       suffix  = cmd.getOptionValue("s");
     }
     if(cmd.hasOption("i") && cmd.getOptionValue("i") != null) {
+      //  TODO  sanitize
       inPath = cmd.getOptionValue("i");
     }
     if(cmd.hasOption("o") && cmd.getOptionValue("o") != null) {
+      //  TODO  sanitize
       outPath = cmd.getOptionValue("o");
     }
     if(cmd.hasOption("v")) {
@@ -125,10 +139,16 @@ public class ConverTor {
     if(cmd.hasOption("p")) {
       pretty = true;
     }
-    if(cmd.hasOption("c") && verbose && json) {
+    if(cmd.hasOption("c")) {
       compressed = true;
     }
-    outputFileEnding = suffix + "." + format + ( compressed ? ".gz" : "");
+    outputFileEnding =
+        suffix
+        + "."
+        + ( compressed && avro ? "snappy." : "")
+        //  + ( compressed && parquet ? "snappy." : "") todo implement
+        + format
+        + ( compressed && json ? ".gz" : "");
 
     //  PARAMETERS SET TODO  remove after testing
     System.out.println("format = " + format);
@@ -136,9 +156,10 @@ public class ConverTor {
     System.out.println("inPath = " + inPath);
     System.out.println("outPath = " + outPath);
     System.out.println("verbose = " + verbose);
-    System.out.println("compressed JSON = " + compressed);
+    System.out.println("compressed = " + compressed);
     System.out.println("pretty printed JSON = " + pretty);
     System.out.println("outputFileEnding = " + outputFileEnding);
+    System.out.println();
 
 
     // SET UP ITERATOR OVER INPUT DESCRIPTORS
@@ -227,10 +248,11 @@ public class ConverTor {
 */
         //  torperf
         if (descriptor instanceof TorperfResult) {
-          Converted c = ConvertTorperf.convert((TorperfResult) descriptor);
+          Converted converted = ConvertTorperf
+              .convert((TorperfResult) descriptor);
           TypeWriter
-              .get(torperfType, c.date)
-              .append(c.load);
+              .<TorperfResult>get(torperfType, converted.date)  // crazy generics
+              .append(converted.load);
         }
 
         //  handle unrecognized attributes
@@ -244,8 +266,11 @@ public class ConverTor {
     }
 
     //  after all descriptors have been converted
-    // flush writers to disk and clean up
+    //  close fileWriters (flushing data to disk)
     TypeWriter.wrapUp();
+    //  and close the door
+    System.out.println("\nDeed done, shutting down.");
+    System.exit(42);
 
   } // end of  main
 

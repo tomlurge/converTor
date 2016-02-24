@@ -1,21 +1,30 @@
 # TODO
+* ConverTor
+
+  
+  - make JSON and Parquet conversion work
+  - command line argument extraction is embarrassingly buggy
+  - make TypeWriters extend avro/parquet/json writers and implement a common interface
+      beispiel: WriterObject als interface, dazu AvroWriterObject, 
+      JsonWriterObject, ParquetWriterObject als klassen, die alle 
+      implements WriterObject machen.
+  - organize static attributes in a properties class (also command line arguments)
+      Configuration-object with gettern und settern. state pattern?
+  - build a jar with dependencies
+  - build all the ceonveters, not just torperf
 
 *
-  implement avro writer functionality
-  generate an avro file from torperf
-  set up checking/testing of avro file
-    convert avro to json, check that visually
-    think about testing
   extend tordnsel with exitnode
     difficult...
   write the other converters
   refactor to individual class files per descriptor type
  
 
+
 * TODO ask KL
   anomalies while writing Avro IDL schemas
   - vote
-      there's a method getSigningKeyDigest() which I'm not sure about to ehich property it belongs.
+      there's a method getSigningKeyDigest() which I'm not sure about to which property it belongs.
       another methd of the same name in DirectorySignature makes sense though.
       maybe a double?
   -network status entry
@@ -29,24 +38,11 @@
       befor the converter goes into production this has to be checked specifically
       by someone who knows and understands the details
   - NetworkStatusEntry
-      mapping is unclear:  
+      mapping from spec to metrics-lib is unclear:  
         identity  <->   getFingerprint,   
         digest    <->   getDescriptor 
         ?
  
-    
-* output wird komplett in eine datei geschrieben
-  + verzeichnisstruktur wird igoriert und geht verloren
-  
-  >> Dann Bau doch deine Methoden wie
-  >> JsonRelayServerDescriptor.convert() um in
-  >> convertAndAppendToFile(), wobei jede Json*-Klasse selbst weiß
-  >> wohin sie schreiben soll.
-  
-  >  Mach doch pro Dokumenttyp eine Map<String, Writer>, wobei String der
-  >  Monat im Format YYYY-MM ist und Writer der ensprechend offene Writer
-  >  für die Datei.
-
 * think through the process of mass ingestion  
 * and periodic ingestion  
 

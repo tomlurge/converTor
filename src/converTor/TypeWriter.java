@@ -1,5 +1,8 @@
 package converTor;
 
+import org.apache.avro.file.DataFileWriter;
+import org.apache.parquet.avro.AvroParquetWriter;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.io.IOException;
@@ -19,7 +22,8 @@ class TypeWriter {
   /*
    *  a getter for that map
    */
-  static WriterObject get(DescriptorType type, String date) throws IOException {
+  // static WriterObject get(DescriptorType type, String date) throws IOException {
+  static <T extends Object> WriterObject get(DescriptorType type, String date) throws IOException {  // crazy generics
     // construct writer id
     String writerID = type.name + "_" + date;
     //  create if not existant
@@ -35,19 +39,15 @@ class TypeWriter {
    *  clean up after the last descriptor has been converted
    */
   static void wrapUp() throws IOException {
-    for ( WriterObject writer : typeWriterMap.values()) {
+    for ( WriterObject writerObject : typeWriterMap.values()) {
       if (avro) {
-        //  pseudo todo
-        //  DataFileWriter avroWriter = (DataFileWriter) writer.toDisk;
-        //  avroWriter.close();
+        ((DataFileWriter) writerObject.dataFileWriter).close();
       }
-      else if (json) {
-        //  pseudo todo
+      if (json) {
+        // todo
       }
-      else { // parquet
-        //  pseudo todo
-        //  AvroParquetWriter parquetWriter = (AvroParquetWriter) writer.toDisk;
-        //  parquetWriter.close();
+      if (parquet) {
+        ((AvroParquetWriter) writerObject.dataFileWriter).close();
       }
     }
   }

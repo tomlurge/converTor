@@ -1,6 +1,6 @@
 
 
-    DOCS - 1.8.0 at teh time of this writing
+    DOCS - 1.8.0 at the time of this writing
       intro https://avro.apache.org/docs/current/gettingstartedjava.html
       spec  https://avro.apache.org/docs/current/spec.html
       idl   https://avro.apache.org/docs/current/idl.html
@@ -140,6 +140,8 @@ serialize record to output stream
     
 
 ##  Schemata + Avro TOOLS commands
+
+    avro tools offer plenty of features, but are badly documented - use google!
    
     defining a schema for avro is possible in two ways
       JSON  verbose, cumbersome
@@ -165,7 +167,16 @@ serialize record to output stream
       //  we get type charset instead of string
     
     convert .avro to JSON
-    % java -jar avro-tools-*.jar tojson myFile.avro
+    % java -jar avro-tools-*.jar tojson myFile.avro > myFile.json
+      //  note the ">" - it's not in the docs, but nonetheless mandatory
+      //  optional --pretty
+      //  don't use zotext, use tojson
+      
+    get schema from avro file
+     java -jar avro-tools-*.jar getschema torperf_2015-11.avro
+     
+    some more tips
+    http://www.michael-noll.com/blog/2013/03/17/reading-and-writing-avro-files-from-the-command-line/
     
     
 ## java 

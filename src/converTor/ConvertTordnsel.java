@@ -25,6 +25,23 @@ class ConvertTordnsel extends ConvertCommons {
       String date;
   }
 
+  /*  how to populate nested records/arrays/maps
+
+  Question populating nested records in Avro using a GenericRecord
+  https://stackoverflow.com/questions/5480043/question-populating-nested-records-in-avro-using-a-genericrecord
+
+  Schema  sch =  Schema.parse(schemaFile);
+  DataFileWriter<GenericRecord> fw = new DataFileWriter<GenericRecord>(new GenericDatumWriter<GenericRecord>()).create(sch, new File(outFile));
+  GenericRecord r = new GenericData.Record(sch);
+  r.put(“firstName”, “John”);
+
+  GenericRecord t = new GenericData.Record(sch.getField("address").schema());
+  t.put("city","beijing");
+  r.put("address",t);
+
+  fw.append(r);
+
+  */
 
   /*
   Tordnsel convert(ExitList desc) {
@@ -36,20 +53,6 @@ class ConvertTordnsel extends ConvertCommons {
     }
     tordnsel.setDownloaded(desc.getDownloadedMillis();
     tordnsel.setExitNodes(AvroExitNodes.convert( ));
-
-
-    //how to populate nested records/arrays/maps
-    https://stackoverflow.com/questions/5480043/question-populating-nested-records-in-avro-using-a-genericrecord
-
-    Schema  sch =  Schema.parse(schemaFile);
-    DataFileWriter<GenericRecord> fw = new DataFileWriter<GenericRecord>(new GenericDatumWriter<GenericRecord>()).create(sch, new File(outFile));
-    GenericRecord r = new GenericData.Record(sch);
-    r.put(“firstName”, “John”);
-    fw.append(r);
-
-    GenericRecord t = new GenericData.Record(sch.getField("address").schema());
-    t.put("city","beijing");
-    r.put("address",t);
 
 
     tordnsel.exit_nodes = new ArrayList<>();
