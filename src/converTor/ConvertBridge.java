@@ -1,14 +1,14 @@
 package converTor;
 
-import converTor.relay.Relay;
-import org.torproject.descriptor.RelayServerDescriptor;
+import converTor.bridge.Bridge;
+import org.torproject.descriptor.BridgeServerDescriptor;
 
 
-public class ConvertRelay extends ConvertCommons {
+public class ConvertBridge extends ConvertCommons {
 
-  static Converted convert(RelayServerDescriptor desc) {
+  static Converted convert(BridgeServerDescriptor desc) {
 
-    Relay conversion = new Relay();
+    Bridge conversion = new Bridge();
 
 //  conversion.set
 //  conversion.set
@@ -28,7 +28,7 @@ public class ConvertRelay extends ConvertCommons {
 
 
     Converted converted = new Converted();
-    converted.type = DescriptorType.relayType;
+    converted.type = DescriptorType.bridgeType;
     converted.date = dateTimeFormat.format(desc.getPublishedMillis()).substring(0,7);
     converted.load = conversion;
     return converted;

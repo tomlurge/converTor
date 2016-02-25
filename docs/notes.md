@@ -2,8 +2,9 @@
 * ConverTor
 
   
-  - make JSON and Parquet conversion work
-  - command line argument extraction is embarrassingly buggy
+  - make JSON conversion work
+  - enums for formats
+  - maven pom
   - make TypeWriters extend avro/parquet/json writers and implement a common interface
       beispiel: WriterObject als interface, dazu AvroWriterObject, 
       JsonWriterObject, ParquetWriterObject als klassen, die alle 
@@ -11,14 +12,13 @@
   - organize static attributes in a properties class (also command line arguments)
       Configuration-object with gettern und settern. state pattern?
   - build a jar with dependencies
-  - build all the ceonveters, not just torperf
+  - build all the converters, not just torperf
 
 *
   extend tordnsel with exitnode
     difficult...
   write the other converters
-  refactor to individual class files per descriptor type
- 
+  
 
 
 * TODO ask KL

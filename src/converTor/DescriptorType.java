@@ -69,7 +69,7 @@ class DescriptorType {
 
 
   }
-/*
+
   static DescriptorType relayType          = new DescriptorType("relay");
   static DescriptorType bridgeType         = new DescriptorType("bridge");
   static DescriptorType relayExtraType     = new DescriptorType("relayExtra");
@@ -78,7 +78,7 @@ class DescriptorType {
   static DescriptorType relayConsensusType = new DescriptorType("relayConsensus");
   static DescriptorType bridgeStatusType   = new DescriptorType("bridgeStatus");
   static DescriptorType tordnselType       = new DescriptorType("tordnsel");
-  */static DescriptorType torperfType        = new DescriptorType("torperf");
+  static DescriptorType torperfType        = new DescriptorType("torperf");
 
 
 }

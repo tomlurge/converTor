@@ -31,11 +31,11 @@ class Converted  {
 
 class ConvertCommons {
 
-  /* make ConvertCommons super type of all Converters */
+  /* make ConvertCommons super type of all Converters
   static Converted convert(Descriptor descriptor) {
     return null;
   }
-
+  */
 
   /*  generic key/value objects for verbose output  */
   static class StringInt {

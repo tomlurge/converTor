@@ -1,14 +1,14 @@
 package converTor;
 
-import converTor.relay.Relay;
-import org.torproject.descriptor.RelayServerDescriptor;
+import converTor.relayVote.RelayVote;
+import org.torproject.descriptor.RelayNetworkStatusVote;
 
 
-public class ConvertRelay extends ConvertCommons {
+public class ConvertRelayVote extends ConvertCommons {
 
-  static Converted convert(RelayServerDescriptor desc) {
+  static Converted convert(RelayNetworkStatusVote desc) {
 
-    Relay conversion = new Relay();
+    RelayVote conversion = new RelayVote();
 
 //  conversion.set
 //  conversion.set
@@ -28,7 +28,7 @@ public class ConvertRelay extends ConvertCommons {
 
 
     Converted converted = new Converted();
-    converted.type = DescriptorType.relayType;
+    converted.type = DescriptorType.relayVoteType;
     converted.date = dateTimeFormat.format(desc.getPublishedMillis()).substring(0,7);
     converted.load = conversion;
     return converted;

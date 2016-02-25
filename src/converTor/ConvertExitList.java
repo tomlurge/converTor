@@ -1,5 +1,7 @@
 package converTor;
 
+import converTor.tordnsel.Tordnsel;
+import org.torproject.descriptor.ExitList;
 
 import java.util.List;
 
@@ -8,7 +10,41 @@ import java.util.List;
  * Tordnsel / ExitList
  */
 
-class ConvertTordnsel extends ConvertCommons {
+class ConvertExitList extends ConvertCommons {
+
+  static Converted convert(ExitList desc) {
+
+    Tordnsel conversion = new Tordnsel();
+
+//  conversion.set
+//  conversion.set
+//  conversion.set
+//  conversion.set
+//  conversion.set
+//  conversion.set
+//  conversion.set
+//  conversion.set
+//  conversion.set
+//  conversion.set
+//  conversion.set
+//  conversion.set
+//  conversion.set
+//  conversion.set
+//  conversion.set
+
+
+    Converted converted = new Converted();
+    converted.type = DescriptorType.tordnselType;
+    converted.date = dateTimeFormat.format(desc.getDownloadedMillis()).substring(0,7);
+    converted.load = conversion;
+    return converted;
+
+  }
+
+
+
+
+
 
   List<ExitNode> exit_nodes;
 
