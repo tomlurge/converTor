@@ -61,7 +61,7 @@ class WriterObject<T extends Object> {  // crazy generics
   /*
    *  append converted data to encoder/writer todo
    */
-  void append(SpecificRecord load, Encoder jsonEncoder) throws IOException {
+  void append(SpecificRecord load) throws IOException {
 
     // append the converted descriptor to it
     if (avro) {
@@ -122,8 +122,8 @@ class WriterObject<T extends Object> {  // crazy generics
       // Json.ObjectWriter   ... nobody seems to use this - googling return no results
       // file:///Users/t/Desktop/avro/1.8/avro-1.8.0-javadoc/org/apache/avro/data/Json.ObjectWriter.html
       Json.ObjectWriter jsonDatumWriter = new Json.ObjectWriter();
-      jsonDatumWriter.setSchema(schema);
-
+      // jsonDatumWriter.setSchema(schema);
+      jsonDatumWriter.setSchema(org.apache.avro.data.Json.SCHEMA);
 
       //  define output stream
       OutputStream out = new FileOutputStream(outputFile);
@@ -134,6 +134,7 @@ class WriterObject<T extends Object> {  // crazy generics
       //        but a solution is involved since an encoder depends not only on a
       //        schema but also the output path, which contains the month. so...
       Encoder encoder = EncoderFactory.get().jsonEncoder(schema, out, pretty);
+      // Encoder encoder = EncoderFactory.get().jsonEncoder(org.apache.avro.data.Json.SCHEMA, out, pretty);
 
       //  not validating 2 of 2
       jsonEncoder = encoder;
