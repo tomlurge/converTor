@@ -1,18 +1,28 @@
 # TODO
+
+
+
 * ConverTor
 
-  
-  - make JSON conversion work
+  - code style
+      static ganz raus
+      alles als instanzen wegen testen
+      commons zu util umbenennen
+      config in ein eigenes objekt
+      avro,json,parquet als eigene klassen
+
+  - make JSON conversion work with avro
   - enums for formats
-  - maven pom
+  - parquet maven pom -> ant
   - make TypeWriters extend avro/parquet/json writers and implement a common interface
       beispiel: WriterObject als interface, dazu AvroWriterObject, 
       JsonWriterObject, ParquetWriterObject als klassen, die alle 
       implements WriterObject machen.
   - organize static attributes in a properties class (also command line arguments)
-      Configuration-object with gettern und settern. state pattern?
+      Configuration-object with getters und setters. state pattern?
   - build a jar with dependencies
-  - build all the converters, not just torperf
+
+  - Parquet is still a little shaky (see docs/parquet.md)
 
 *
   extend tordnsel with exitnode
@@ -22,31 +32,22 @@
 
 
 * TODO ask KL
-  anomalies while writing Avro IDL schemas
-  - vote
-      there's a method getSigningKeyDigest() which I'm not sure about to which property it belongs.
-      another methd of the same name in DirectorySignature makes sense though.
-      maybe a double?
-  -network status entry
-      does bridgeStatus status entry "p" map to policy or just getPortList?
-  - extra info transport is spec'ed as  transportname address:port [arglist] NL [Any number.]    
-      but in metrics-lib implemented as List<String> getTransports()
-      and that too seems to be what's in the descriptors
-  - check all things identity/digest/certificate
-      the documentation was often not helpful in finding the right mapping
-      between methods and attributes.
-      befor the converter goes into production this has to be checked specifically
-      by someone who knows and understands the details
-  - NetworkStatusEntry
-      mapping from spec to metrics-lib is unclear:  
-        identity  <->   getFingerprint,   
-        digest    <->   getDescriptor 
-        ?
+      digest ist immer ein hash
+      
+      mail an karsten 
+        mit erinnerung wg accept/reject dekonstruktion
+        mit link zu avdl schematas
+        dates als long oder string?
+        v.a. auf idendity/digest/certificate handling achten
+        defaults?
+      
+      
  
 * think through the process of mass ingestion  
 * and periodic ingestion  
 
-* convert to Parquet 
+* problems with JSON number conversion? see: 
+    https://docs.oracle.com/cd/E26161_02/html/GettingStartedGuide/jsonbinding-overview.html
   
 * check sizes
   + a bunch of Collector descriptors (say: 1 month)

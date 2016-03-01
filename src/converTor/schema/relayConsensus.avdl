@@ -35,10 +35,10 @@ protocol relay_network_status_consensus_3_descriptor {
   record R {
     /** metrics-lib/NetworkStatusEntry: String getNickname() */
     union { null, string } nickname;
-    /** metrics-lib/NetworkStatusEntry: String getDescriptor() */
+    /** metrics-lib/NetworkStatusEntry: String getFingerprint() */
     union { null, string } identity;
-    /** metrics-lib/NetworkStatusEntry: Set<String> getMicrodescriptorDigests() */
-    union { null, array<string> } digest;
+    /** metrics-lib/NetworkStatusEntry: String getDescriptor(); */
+    union { null, string } digest;
     /** metrics-lib/NetworkStatusEntry: long getPublishedMillis() */
     union { null, string } publication;
     /** metrics-lib/NetworkStatusEntry: String getAddress() */
@@ -47,8 +47,6 @@ protocol relay_network_status_consensus_3_descriptor {
     union { null, int } or_port;
     /** metrics-lib/NetworkStatusEntry: int getDirPort() */
     union { null, int } dir_port;
-    /** metrics-lib/NetworkStatusEntry: String getFingerprint() - not in spec, but in metrics-lib */
-    union { null, string } fingerprint;
   }
 
   record W {

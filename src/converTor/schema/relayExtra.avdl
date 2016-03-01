@@ -108,13 +108,6 @@ protocol relay_extra_info_descriptor {
     map<int> obfuscation;
   }
 
-  /* not implemented in metrics-lib (and probably neither in collecTor)
-  record Transport {
-    union { null, string } transportname;
-    union { null, string } address;
-    union { null, int } port;
-    union { null, string } args;
-  } */
 
   @aliases(["relay_extra_info"])
   record RelayExtra {

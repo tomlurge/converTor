@@ -647,8 +647,8 @@ JSON SERIALIZATION
 				...
 			]
 		},
-		"transport": [
-			{
+		"transport": [                        metrics-lib just has List<String> getTransports()
+    	{                                   for security reasons
 				"transportname": "",
 				"adress": "",
 				"port": #,
@@ -656,8 +656,8 @@ JSON SERIALIZATION
 			}
 			...
 		],
-		"router_sig_ed25519": boolean   getRouterSignatureEd25519
-		"router_signature": boolean     getRouterSignature
+		"router_sig_ed25519": boolean         getRouterSignatureEd25519
+		"router_signature": boolean           getRouterSignature
 		"extra_info_digest": "",
 		"extra_info_digest_sha256": "",       getExtraInfoDigestSha256
 		"master_key_ed25519": boolean         getMasterKeyEd25519
@@ -958,8 +958,8 @@ JSON SERIALIZATION
 			"": #,    // key : number
 			...       // more key:number pairs
 		}
-		"transport": [
-			{
+		"transport": [                        metrics-lib just has List<String> getTransports()
+			{                                   for security reasons
 				"name": "",
 				"adress": "",
 				"port": #,
@@ -1182,8 +1182,8 @@ JSON SERIALIZATION
 			  "descriptor_identity",          getDescriptor
 				"r": {                          
 					"nickname": "",               getNickname
-					"identity": "",               getDescriptor
-					"digest": ["","",""...],      getMicrodescriptorDigests
+					"identity": "",               getFingerprint
+					"digest": ["","",""...],      getDescriptor
 					"publication": "",            long getPublishedMillis
 					"ip": "",                     getAddress
 					"or_port": #,                 int getOrPort
@@ -1220,9 +1220,9 @@ JSON SERIALIZATION
 			"directory_signature": {          getDirectorySignatures SortedMap<String, DirectorySignature>
 				"algorithm": "",                getAlgorithm
 				"identity": "",                 getIdentity
-				"signing_key_digest": "",       getSigningKeyDigest
 				"signature": boolean            getSignature
-			}                                 
+			   "signing_key_digest": ""       getSigningKeyDigest // currently not implemented
+			},                                 
 		}                                   
 	}
 	
@@ -1515,8 +1515,8 @@ JSON SERIALIZATION
 			{                             NetworkStatusEntry
 				"r": {                         
 					"nickname": "",,          getNickname
-		 			"identity": "",           getDescriptor
-		 			"digest": "",             getFingerprint
+		 			"identity": "",           getFingerprint
+		 			"digest": "",             getDescriptor
 		 			"published": "",          getPublishedMillis
 		 			"ip": "",                 getAddress
 		 			"or_port": #,             int getOrPort

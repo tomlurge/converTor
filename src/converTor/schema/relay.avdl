@@ -50,7 +50,7 @@ protocol relay_server_descriptor {
 
   record NtorCrossCert {
     /** metrics-lib/ServerDescriptor: String getNtorOnionKeyCrosscert() */
-    string cert;
+    string cert; // todo boolean
     /** metrics-lib/ServerDescriptor: int getNtorOnionKeyCrosscertSign() */
     int bit;
   }

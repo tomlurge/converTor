@@ -25,10 +25,10 @@ protocol bridge_network_status_descriptor {
   record R {
     /** metrics-lib/NetworkStatusEntry: String getNickname() */
     union { null, string } nickname;
-    /** metrics-lib/NetworkStatusEntry: String getDescriptor() */
+    /** metrics-lib/NetworkStatusEntry: String getFingerprint() */
     union { null, string } identity;
-    /** metrics-lib/NetworkStatusEntry: Set<String> getMicrodescriptorDigests() */
-    union { null, array<string> } digest;
+    /** metrics-lib/NetworkStatusEntry: String getDescriptor() */
+    union { null, string } digest;
     /** metrics-lib/NetworkStatusEntry: long getPublishedMillis() */
     union { null, string } published;
     /** metrics-lib/NetworkStatusEntry: String getAddress() */

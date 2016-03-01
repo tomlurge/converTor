@@ -15,7 +15,7 @@ import org.torproject.descriptor.*;
 /* command line interface */
 import org.apache.commons.cli.*;
 
-
+@Deprecated
 public class ConvertToJson {
 
   /*  argument defaults  */
@@ -1463,10 +1463,7 @@ public class ConvertToJson {
   //          theres a method of this name inPath vote AND inPath DirectorySignature
   //          - i'm not sure what the method inPath vote is for
   //          rename Router to Status
-  //          router äh status idendity wird jetzt bespielt von getDescriptor
-  //          und es gibt ein neues fingerprint property (mit getFungerprint von vormals idendity)
-  //          und (auch noch ij r) ganz neu "digest": ["","",""...],      getMicrodescriptorDigests
-  //          und id wurde eine eigene klasse
+  //          and actually maybe even more changes
   static class JsonRelayNetworkStatusVote extends JsonDescriptor {
     String descriptor_type;
     Integer network_status_version;
@@ -1526,7 +1523,7 @@ public class ConvertToJson {
     static class R {
       String nickname;
       String identity;
-      String digest;
+      String digest;  // todo array
       String published;
       String ip;
       Integer or_port;
@@ -1642,7 +1639,7 @@ public class ConvertToJson {
           router.r = new R();
           router.r.nickname = status.getValue().getNickname();
           router.r.identity = status.getValue().getFingerprint();
-          router.r.digest = status.getValue().getDescriptor();
+          router.r.digest = status.getValue().getDescriptor(); // todo array
           router.r.published = dateTimeFormat.format(status.getValue().getPublishedMillis());
           router.r.ip = status.getValue().getAddress();
           router.r.or_port = status.getValue().getOrPort();
@@ -1974,8 +1971,8 @@ public class ConvertToJson {
           Bridge b = new Bridge();
           b.r = new R();
           b.r.nickname = entry.getValue().getNickname();
-          b.r.identity = entry.getValue().getDescriptor();
-          b.r.digest = entry.getValue().getFingerprint();
+          b.r.identity = entry.getValue().getFingerprint();
+          b.r.digest = entry.getValue().getDescriptor();
           b.r.published = dateTimeFormat.format(entry.getValue().getPublishedMillis());
           b.r.ip = entry.getValue().getAddress();
           b.r.or_port = entry.getValue().getOrPort();

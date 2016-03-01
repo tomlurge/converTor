@@ -352,9 +352,8 @@ datastructure before it is written.
     - datastructures are easier to constructs when building the record
     - is more performant
     
-Conclusion: with **constructor**s we'll have better performance and less 
-trouble coding but with **builder**s we'll have more type safety and better 
-handling of defaults. 
+Conclusion: **constructor**s provide better performance and simpler code but 
+**builder**s offer more type safety and better handling of defaults. 
 
 
 ##  e.g. Torperf descriptors
