@@ -7,7 +7,9 @@ import org.torproject.descriptor.TorperfResult;
 class ConvertTorperf extends ConvertCommons {
 
   static Converted convert(TorperfResult desc) {
-
+    //  static hier weg
+    //  dann wird die abstracte convert() in commons wieder interessant
+    //  todo convert long millis to string date
     Torperf conversion = new Torperf();
 
     conversion.setDescriptorType("torperf 1.0");

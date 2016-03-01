@@ -24,7 +24,7 @@ class DescriptorType {
   //  Class<? extends SpecificRecordBase> schemaClas;  todo - would 'extends' be useful?
   File avscFile;        // Avro JSON schema (derived from Avro IDL schema)
   Schema avsc;          // parsed JSON schema
-  Schema jsonavsc;      // parsed JSON schema
+ // Schema jsonavsc;      // parsed JSON schema TODO kann das weg oder ist das code?
 
 
   DescriptorType(String name) {
@@ -57,14 +57,15 @@ class DescriptorType {
     }
 
     //  trying a different way of schema parsing for json
-    try {
-      // this.jsonavsc = Schema.parse(Json.class.getResourceAsStream("/converTor/schema/" + clasName + ".avsc"));
-      Schema.Parser parser = new Schema.Parser();
-      this.jsonavsc = parser.parse(Json.class.getResourceAsStream("/converTor/schema/" + clasName + ".avsc"));
-    } catch (IOException e) {
-      System.err.println("IOException: " + e.getMessage());
-      e.printStackTrace();
-    }
+    //  TODO kann das weg oder ist das code?
+//    try {
+//      // this.jsonavsc = Schema.parse(Json.class.getResourceAsStream("/converTor/schema/" + clasName + ".avsc"));
+//      Schema.Parser parser = new Schema.Parser();
+//      this.jsonavsc = parser.parse(Json.class.getResourceAsStream("/converTor/schema/" + clasName + ".avsc"));
+//    } catch (IOException e) {
+//      System.err.println("IOException: " + e.getMessage());
+//      e.printStackTrace();
+//    }
 
 
 

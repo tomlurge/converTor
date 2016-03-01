@@ -176,6 +176,9 @@ public class ConverTor {
       //  initiate conversion according to type
       for (Descriptor descriptor : descriptorFile.getDescriptors()) {
 
+
+        //  TODO make it one method with parameters
+/*
         //  relay
         if (descriptor instanceof RelayServerDescriptor) {
           Converted converted = ConvertRelay
@@ -240,6 +243,7 @@ public class ConverTor {
               .<ExitList>get(tordnselType, converted.date)
               .append(converted.load);
         }
+*/
         //  torperf
         if (descriptor instanceof TorperfResult) {
           Converted converted = ConvertTorperf

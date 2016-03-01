@@ -1,48 +1,24 @@
 package converTor;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
+import java.io.*;
+import java.util.zip.GZIPOutputStream;
 
-//  stupid ParquetWriter needs Hadoop FS aoutput path
-import org.apache.avro.file.CodecFactory;
-import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.fs.FileSystem;
+import org.apache.avro.io.ValidatingEncoder;
 import org.apache.hadoop.fs.Path;
-
+import org.apache.avro.file.CodecFactory;
 import org.apache.avro.Schema;
 import org.apache.avro.data.Json;
 import org.apache.avro.file.DataFileWriter;
-// import org.apache.avro.generic.GenericRecord;
 import org.apache.avro.io.DatumWriter;
 import org.apache.avro.io.Encoder;
 import org.apache.avro.io.EncoderFactory;
-import org.apache.avro.io.ValidatingEncoder;
 import org.apache.avro.specific.SpecificDatumWriter;
 import org.apache.avro.specific.SpecificRecord;
-import org.apache.avro.specific.SpecificRecordBase;
 import org.apache.parquet.avro.AvroParquetWriter;
 import org.apache.parquet.hadoop.ParquetWriter;
-// import org.apache.parquet.avro.AvroSchemaConverter;
-// import org.apache.parquet.avro.AvroWriteSupport;
-// import org.apache.parquet.hadoop.metadata.CompressionCodecName;
-// import org.apache.parquet.schema.MessageType;
-
-//  avro classes auto-generated from schemas
-import converTor.relay.*;
-import converTor.relayExtra.*;
-import converTor.bridgeExtra.*;
-import converTor.relayVote.*;
-import converTor.relayConsensus.*;
-import converTor.bridgeStatus.*;
-import converTor.tordnsel.*;
-import converTor.torperf.*;
 import org.apache.parquet.hadoop.metadata.CompressionCodecName;
 
-
 import static converTor.ConverTor.*;
-import static org.apache.avro.data.Json.SCHEMA;
 
 
 
@@ -51,11 +27,13 @@ class WriterObject<T extends Object> {  // crazy generics
   //  gets casted within append()
   Object dataFileWriter;
 
+  //  json the AVRO way
   //  jump through hoop to get the jsonEncoder from Constructor to append()
-  //  not validating 1 of 2
-  Encoder jsonEncoder = null;
-  //  validating 1 of 2
-  //ValidatingEncoder jsonEncoder;
+  //  Encoder jsonEncoder;        //  not validating 1 of 2
+  ValidatingEncoder jsonEncoder;  //  validating 1 of 2
+
+  //  json the PEDESTRIAN way
+  int written;
 
 
   /*
@@ -68,11 +46,22 @@ class WriterObject<T extends Object> {  // crazy generics
       DataFileWriter<SpecificRecord> avroWriter = (DataFileWriter) dataFileWriter;
       avroWriter.append(load);
     }
-    else if (json) {
+    if (json) {
+
+      //  the PEDESTRIAN way
+//    System.out.println("PEDESTRIAN");
+//    System.out.println(load);
+//    System.out.println(written);
+//    BufferedWriter jsonWriter = (BufferedWriter) dataFileWriter;
+//    jsonWriter.write((written++ > 0 ? "\n" : "") + load);
+
+      //  the AVRO way
       Json.ObjectWriter jsonWriter = (Json.ObjectWriter) dataFileWriter;
       jsonWriter.write(load, jsonEncoder);
+      ((Json.ObjectWriter) dataFileWriter).write(load, jsonEncoder);
+
     }
-    else { // parquet
+    if (parquet) {
       // AvroParquetWriter parquetWriter = (AvroParquetWriter) writer;
       // parquetWriter.write(converted.load);
       ParquetWriter parquetWriter = (ParquetWriter) dataFileWriter;
@@ -90,68 +79,98 @@ class WriterObject<T extends Object> {  // crazy generics
     String writerID = descType.name + "_" + date;
     File outputFile = new File(outPath + writerID + outputFileEnding);
     Path outputPath = new Path(outPath + writerID + outputFileEnding);
-    Class<?> clas = descType.schemaClas;  // crazy generics - this can go
     Schema schema = descType.avsc;
-    //  trying another deserialization approach
-    //  because of the trouble with JSON conversion
-    Schema jsonschema = descType.jsonavsc;
-
 
     if (avro) {
-
       //  https://avro.apache.org/docs/1.8.0/api/java/org/apache/avro/specific/SpecificDatumWriter.html
       //  https://avro.apache.org/docs/current/gettingstartedjava.html#Serializing
       DatumWriter<T> avroDatumWriter = new SpecificDatumWriter<>(schema); // crazy generics
       DataFileWriter<T> avroFileWriter = new DataFileWriter<>(avroDatumWriter); // crazy generics
-      //  https://avro.apache.org/docs/1.8.0/api/java/org/apache/avro/file/DataFileWriter.html#setCodec(org.apache.avro.file.CodecFactory)
       if (compressed) avroFileWriter.setCodec(CodecFactory.snappyCodec());
       avroFileWriter.create(schema, outputFile);
       dataFileWriter = avroFileWriter;
-
-      /*  if the conversion type was known beforehand the above could look like this:
-      DatumWriter<Torperf> avroTorperfDatumWriter = new SpecificDatumWriter<>(Torperf.class);
-      DataFileWriter<Torperf> avroTorperfFileWriter = new DataFileWriter<>(avroTorperfDatumWriter);
-      avroTorperfFileWriter.create(schema, outputFile);
-      dataFileWriter = avroTorperfFileWriter;  */
-
     }
 
+    if (parquet) { // uses parquet-mr
+      CompressionCodecName cc = CompressionCodecName.UNCOMPRESSED;
+      if (compressed) {
+        cc = CompressionCodecName.SNAPPY;
+      }
+      ParquetWriter<Object> parquetWriter = AvroParquetWriter.builder(outputPath)
+          .withSchema(schema)
+          .withCompressionCodec(cc)
+          .build();
+      dataFileWriter = parquetWriter;
+    }
 
     if (json) {
+
+      //  the PEDESTRIAN way
+
+      Writer pedestrianJsonWriter;
+      if (compressed) {
+        pedestrianJsonWriter = new OutputStreamWriter(new GZIPOutputStream(
+            new FileOutputStream(outputFile)));
+      }
+      else {
+        pedestrianJsonWriter = new FileWriter(outputFile);
+      }
+      BufferedWriter bufferedPedestrianJsonWriter = new BufferedWriter(pedestrianJsonWriter);
+//      dataFileWriter = bufferedPedestrianJsonWriter;   // <- un-comment for PEDESTRIAN way
+      written = 0;
+
+
+      //  the AVRO way
 
       // Json.ObjectWriter   ... nobody seems to use this - googling return no results
       // file:///Users/t/Desktop/avro/1.8/avro-1.8.0-javadoc/org/apache/avro/data/Json.ObjectWriter.html
       Json.ObjectWriter jsonDatumWriter = new Json.ObjectWriter();
-      // jsonDatumWriter.setSchema(schema);
-      jsonDatumWriter.setSchema(org.apache.avro.data.Json.SCHEMA);
-
-      //  define output stream
       OutputStream out = new FileOutputStream(outputFile);
-      //  define encoder
-      //  file:///Users/t/Desktop/avro/1.8/avro-1.8.0-javadoc/org/apache/avro/io/JsonEncoder.html
       //  TODO  this is inefficient as it creates one encoder per month and type
       //        instead of just one encoder per type.
       //        but a solution is involved since an encoder depends not only on a
-      //        schema but also the output path, which contains the month. so...
+      //        schema but also the output path, which contains the month. so..
       Encoder encoder = EncoderFactory.get().jsonEncoder(schema, out, pretty);
-      // Encoder encoder = EncoderFactory.get().jsonEncoder(org.apache.avro.data.Json.SCHEMA, out, pretty);
 
-      //  not validating 2 of 2
-      jsonEncoder = encoder;
-
+      //  jsonEncoder = encoder;    //  not validating 2 of 2
       //  validating 2 of 2
-      //  layering validation on top
-      //  file:///Users/t/Desktop/avro/1.8/avro-1.8.0-javadoc/org/apache/avro/io/EncoderFactory.html#validatingEncoder%28org.apache.avro.Schema,%20org.apache.avro.io.Encoder%29
-      //  ValidatingEncoder validatingEncoder = EncoderFactory.get().validatingEncoder(schema, encoder);
-      //  jsonEncoder = validatingEncoder;
-
+      ValidatingEncoder validatingEncoder = EncoderFactory.get().validatingEncoder(schema, encoder);
+      jsonEncoder = validatingEncoder;
 
       //  call writer with datum AND encoder
       //    public void write(Object datum, Encoder out) throws IOException
       //  that's bad, because we want to return a writer without data, but with encoder preconfigured
+
+      dataFileWriter = jsonDatumWriter;   // <- un-comment for AVRO way
+
+
+      /*   TODO  file bug report
+
+      Json.ObjectWriter jsonDatumWriter = new Json.ObjectWriter();
+      jsonDatumWriter.setSchema((org.apache.avro.data.Json.SCHEMA));
+      OutputStream out = new FileOutputStream(outputFile);
+      Encoder encoder = EncoderFactory.get().jsonEncoder(schema, out, pretty);
+      jsonEncoder = encoder;
       dataFileWriter = jsonDatumWriter;
 
+      throws
+      Exception in thread "main" java.lang.NullPointerException
+        at org.apache.avro.data.Json.write(Json.java:183)
+        at org.apache.avro.data.Json.writeObject(Json.java:272)
+        at org.apache.avro.data.Json.access$000(Json.java:48)
+        at org.apache.avro.data.Json$ObjectWriter.write(Json.java:122)
+        at converTor.WriterObject.append(WriterObject.java:52)
+        at converTor.ConverTor.main(ConverTor.java:251)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 
+       */
+
+
+      //  MATERIALS
 
       /*  maybe an alternative:
       file:///Users/t/Desktop/avro/1.8/avro-1.8.0-javadoc/org/apache/avro/data/Json.html
@@ -168,33 +187,6 @@ class WriterObject<T extends Object> {  // crazy generics
       jsonEncoder.flush();
       System.out.println("JSON encoded record: " + baos); // is this additionally? didn't we write to a file? ah, what file...
       */
-
-      // problems with JSON number conversion? see: https://docs.oracle.com/cd/E26161_02/html/GettingStartedGuide/jsonbinding-overview.html
-    }
-
-
-    if (parquet) { // uses parquet-mr
-
-      CompressionCodecName cc = CompressionCodecName.UNCOMPRESSED;
-      if (compressed) {
-        cc = CompressionCodecName.SNAPPY;
-      }
-
-      //  Hadoop Definitive Guide p.375
-      //  Path is a Hadoop FileSystem command - not sure how (or if) this works on a normal file system
-      //  Path parquetOutput = new Path(outPath + writerID + outputFileEnding);
-      //  AvroParquetWriter<SpecificRecord> parquetWriter = new AvroParquetWriter<>(parquetOutput, schema);
-
-      //  file:///Users/t/Desktop/parquet-avro-1.8.1-javadoc/org/apache/parquet/avro/AvroParquetWriter.Builder.html
-      //  AvroParquetWriter.Builder<T> 	withSchema(org.apache.avro.Schema schema)
-      //
-      //  https://stackoverflow.com/questions/35315992/parquet-mr-avroparquetwriter-how-to-convert-data-to-parquet-with-specific-map
-      //  Try AvroParquetWriter.builder :
-      ParquetWriter<Object> parquetWriter = AvroParquetWriter.builder(outputPath)
-          .withSchema(schema)
-          .withCompressionCodec(cc)
-          .build();
-      dataFileWriter = parquetWriter;
 
     }
 

@@ -6,6 +6,7 @@ import org.apache.avro.io.Encoder;
 import org.apache.parquet.avro.AvroParquetWriter;
 import org.apache.parquet.hadoop.ParquetWriter;
 
+import java.io.BufferedWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.io.IOException;
@@ -25,8 +26,8 @@ class TypeWriter {
   /*
    *  a getter for that map
    */
-  // static WriterObject get(DescriptorType type, String date) throws IOException {
-  static <T extends Object> WriterObject get(DescriptorType type, String date) throws IOException {  // crazy generics
+  static <T extends Object> WriterObject get(DescriptorType type, String date)
+      throws IOException {
     // construct writer id
     String writerID = type.name + "_" + date;
     //  create if not existant
@@ -47,8 +48,13 @@ class TypeWriter {
         ((DataFileWriter) writerObject.dataFileWriter).close();
       }
       if (json) {
-        //  todo  is this right?
-        writerObject.jsonEncoder.flush();
+
+        //  the OLD way
+        //  todo wrap up buffered writer
+        ((BufferedWriter) writerObject.dataFileWriter).close();
+
+        //  the AVRO way
+        //  writerObject.jsonEncoder.flush();
       }
       if (parquet) {
         ((ParquetWriter) writerObject.dataFileWriter).close();
