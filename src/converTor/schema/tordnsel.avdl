@@ -5,9 +5,9 @@ protocol tordnsel_descriptor {
     /** metrics-lib/ExitList.Entry: String getFingerprint() */
     union { null, string } fingerprint;
     /** metrics-lib/ExitList.Entry: long getPublishedMillis() */
-    union { null, string } published;
+    union { null, long } published;
     /** metrics-lib/ExitList.Entry: long getLastStatusMillis() */
-    union { null, string } last_status;
+    union { null, long } last_status;
     /** metrics-lib/ExitList.Entry: Map<String, Long> getExitAddresses() */
     union { null, map<long> } exit_adresses;
   }
@@ -17,7 +17,7 @@ protocol tordnsel_descriptor {
   record Tordnsel {
     string descriptor_type = "tordnsel 1.0";
     /** metrics-lib/ExitList: long getDownloadedMillis() */
-    union { null, string } downloaded;
+    union { null, long } downloaded;
     /** metrics-lib/ExitList: Set<ExitList.Entry> getEntries() */
     union { null, array<ExitNode> } exit_nodes;
   }

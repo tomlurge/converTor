@@ -30,7 +30,7 @@ protocol bridge_network_status_descriptor {
     /** metrics-lib/NetworkStatusEntry: String getDescriptor() */
     union { null, string } digest;
     /** metrics-lib/NetworkStatusEntry: long getPublishedMillis() */
-    union { null, string } published;
+    union { null, long } published;
     /** metrics-lib/NetworkStatusEntry: String getAddress() */
     union { null, string } ip;
     /** metrics-lib/NetworkStatusEntry: int getOrPort() */
@@ -74,7 +74,7 @@ protocol bridge_network_status_descriptor {
   record BridgeStatus {
     string descriptor_type = "bridge-network-status 1.0";
     /** metrics-lib/BridgeNetworkStatus: long getPublishedMillis() */
-    union { null, string } published;
+    union { null, long } published;
     /** see above */
     union { null, FlagTresholds } flag_tresholds;
     /** metrics-lib/BridgeNetworkStatus: SortedMap<String, NetworkStatusEntry> getStatusEntries()

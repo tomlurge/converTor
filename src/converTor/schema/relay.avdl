@@ -32,7 +32,7 @@ protocol relay_server_descriptor {
 
   record ReadHistory {
     /** metrics-lib/BandwidthHistory: long getHistoryEndMillis() */
-    string date;
+    long date;
     /** metrics-lib/BandwidthHistory: long getIntervalLength() */
     long interval;
     /** metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values() */
@@ -41,7 +41,7 @@ protocol relay_server_descriptor {
 
   record WriteHistory {
     /** metrics-lib/BandwidthHistory: long getHistoryEndMillis() */
-    string date;
+    long date;
     /** metrics-lib/BandwidthHistory: long getIntervalLength() */
     long interval;
     /** metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values() */
@@ -75,7 +75,7 @@ protocol relay_server_descriptor {
     /** metrics-lib/ServerDescriptor: String getPlatform() */
     union { null, string } platform;
     /** metrics-lib/ServerDescriptor: long getPublishedMillis() */
-    union { null, string } published;
+    union { null, long } published;
     /** metrics-lib/ServerDescriptor: String getFingerprint() */
     union { null, string } fingerprint;
     /** metrics-lib/ServerDescriptor: boolean isHibernating() */

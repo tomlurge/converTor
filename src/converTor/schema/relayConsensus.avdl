@@ -40,7 +40,7 @@ protocol relay_network_status_consensus_3_descriptor {
     /** metrics-lib/NetworkStatusEntry: String getDescriptor(); */
     union { null, string } digest;
     /** metrics-lib/NetworkStatusEntry: long getPublishedMillis() */
-    union { null, string } publication;
+    union { null, long } publication;
     /** metrics-lib/NetworkStatusEntry: String getAddress() */
     union { null, string } ip;
     /** metrics-lib/NetworkStatusEntry: int getOrPort() */
@@ -113,11 +113,11 @@ protocol relay_network_status_consensus_3_descriptor {
     /** metrics-lib/RelayNetworkStatusConsensus: String getConsensusFlavor() */
     union { null, string } consensus_flavor;
     /** metrics-lib/RelayNetworkStatusConsensus: long getValidAfterMillis() */
-    union { null, string } valid_after;
+    union { null, long } valid_after;
     /** metrics-lib/RelayNetworkStatusConsensus: long getFreshUntilMillis() */
-    union { null, string } fresh_until;
+    union { null, long } fresh_until;
     /** metrics-lib/RelayNetworkStatusConsensus: long getValidUntilMillis() */
-    union { null, string } valid_until;
+    union { null, long } valid_until;
     // see above
     union { null, Vote } voting_delay;
     /** metrics-lib/RelayNetworkStatusConsensus: List<String> getRecommendedClientVersions()*/

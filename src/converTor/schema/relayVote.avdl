@@ -46,9 +46,9 @@ protocol relay_network_status_vote_3_descriptor {
     /** metrics-lib/RelayNetworkStatusVote: int getDirKeyCertificateVersion() */
     union { null, int } version;
     /** metrics-lib/RelayNetworkStatusVote: long getDirKeyPublishedMillis() */
-    union { null, string } dir_key_published;
+    union { null, long } dir_key_published;
     /** metrics-lib/RelayNetworkStatusVote: long getDirKeyExpiresMillis() */
-    union { null, string } dir_key_expires;
+    union { null, long } dir_key_expires;
   }
 
   record R {
@@ -59,7 +59,7 @@ protocol relay_network_status_vote_3_descriptor {
     /** metrics-lib/NetworkStatusEntry: String getDescriptor() */
     union { null, string } digest;
     /** metrics-lib/NetworkStatusEntry: long getPublishedMillis() */
-    union { null, string } publication;
+    union { null, long } publication;
     /** metrics-lib/NetworkStatusEntry: String getAddress() */
     union { null, string } ip;
     /** metrics-lib/NetworkStatusEntry: int getOrPort() */
@@ -134,15 +134,15 @@ protocol relay_network_status_vote_3_descriptor {
     /** metrics-lib/RelayNetworkStatusVote: List<Integer> getConsensusMethods() */
     array<int> consensus_methods;
     /** metrics-lib/RelayNetworkStatusVote: long getPublishedMillis() */
-    union { null, string } published;
+    union { null, long } published;
     /** metrics-lib/RelayNetworkStatusVote: long getValidAfterMillis() */
-    union { null, string } valid_after;
+    union { null, long } valid_after;
     /** see above */
     union { null, FlagTresholds } flag_tresholds;
     /** metrics-lib/RelayNetworkStatusVote: long getFreshUntilMillis() */
-    union { null, string } fresh_until;
+    union { null, long } fresh_until;
     /** metrics-lib/RelayNetworkStatusVote: long getValidUntilMillis() */
-    union { null, string } valid_until;
+    union { null, long } valid_until;
     /** see above */
     union { null, Vote } voting_delay;
     /** metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedClientVersions() */

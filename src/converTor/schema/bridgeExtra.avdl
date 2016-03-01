@@ -10,7 +10,7 @@ protocol bridge_extra_info_descriptor {
 
   record ReadHistory {
     /** metrics-lib/BandwidthHistory: long getHistoryEndMillis() */
-    string date;
+    long date;
     /** metrics-lib/BandwidthHistory: long getIntervalLength() */
     long interval;
     /** metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values() */
@@ -19,7 +19,7 @@ protocol bridge_extra_info_descriptor {
 
   record WriteHistory {
     /** metrics-lib/BandwidthHistory: long getHistoryEndMillis() */
-    string date;
+    long date;
     /** metrics-lib/BandwidthHistory: long getIntervalLength() */
     long interval;
     /** metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values() */
@@ -28,7 +28,7 @@ protocol bridge_extra_info_descriptor {
 
   record DirreqReadHistory {
     /** metrics-lib/BandwidthHistory: long getHistoryEndMillis() */
-    string date;
+    long date;
     /** metrics-lib/BandwidthHistory: long getIntervalLength() */
     long interval;
     /** metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values() */
@@ -37,7 +37,7 @@ protocol bridge_extra_info_descriptor {
 
   record DirreqWriteHistory {
     /** metrics-lib/BandwidthHistory: long getHistoryEndMillis() */
-    string date;
+    long date;
     /** metrics-lib/BandwidthHistory: long getIntervalLength() */
     long interval;
     /** metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values() */
@@ -46,49 +46,49 @@ protocol bridge_extra_info_descriptor {
 
   record BridgeStats {
     /** metrics-lib/ExtraInfoDescriptor: long getBridgeStatsEndMillis() */
-    string date;
+    long date;
     /** metrics-lib/ExtraInfoDescriptor: long getBridgeStatsIntervalLength() */
     long interval = 86400;
   }
 
   record DirreqStats {
     /** metrics-lib/ExtraInfoDescriptor: long getDirreqStatsEndMillis() */
-    string date;
+    long date;
     /** metrics-lib/ExtraInfoDescriptor: long getDirreqStatsIntervalLength() */
     long interval = 86400;
   }
 
   record EntryStats {
     /** metrics-lib/ExtraInfoDescriptor: long getEntryStatsEndMillis() */
-    string date;
+    long date;
     /** metrics-lib/ExtraInfoDescriptor: long getEntryStatsIntervalLength() */
     long interval = 86400;
   }
 
   record CellStats {
     /** metrics-lib/ExtraInfoDescriptor: long getCellStatsEndMillis() */
-    string date;
+    long date;
     /** metrics-lib/ExtraInfoDescriptor: long getCellStatsIntervalLength() */
     long interval = 86400;
   }
 
   record ExitStats {
     /** metrics-lib/ExtraInfoDescriptor: long getExitStatsEndMillis() */
-    string date;
+    long date;
     /** metrics-lib/ExtraInfoDescriptor: long getExitStatsIntervalLength() */
     long interval = 86400;
   }
 
   record HidservStats {
     /** metrics-lib/ExtraInfoDescriptor: long getHidservStatsEndMillis() */
-    string date;
+    long date;
     /** metrics-lib/ExtraInfoDescriptor: long getHidservStatsIntervalLength() */
     long interval = 86400;
   }
 
   record ConnBiDirect {
     /** metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis() */
-    union { null, string } date;
+    union { null, long } date;
     /** metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsIntervalLength() */
     long interval = 86400;
     /** metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBelow() */
@@ -124,7 +124,7 @@ protocol bridge_extra_info_descriptor {
     /** metrics-lib/ExtraInfoDescriptor: String getIdentityEd25519(); */
     union { null, boolean } identity_ed25519;
     /** metrics-lib/ExtraInfoDescriptor: long getPublishedMillis() */
-    union { null, string } published;
+    union { null, long } published;
     /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory() */
     union { null, ReadHistory } read_history;
     /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory() */
