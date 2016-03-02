@@ -3,44 +3,44 @@
 
 
 * ConverTor
-
+      
   - code style
       static ganz raus
       alles als instanzen wegen testen
       commons zu util umbenennen
       config in ein eigenes objekt
       avro,json,parquet als eigene klassen
-
+      make TypeWriters extend avro/parquet/json writers and implement a common interface
+          beispiel: WriterObject als interface, dazu AvroWriterObject, 
+          JsonWriterObject, ParquetWriterObject als klassen, die alle 
+          implements WriterObject machen.
+      organize static attributes in a properties class (also command line arguments)
+          Configuration-object with getters und setters. state pattern?
+     
   - make JSON conversion work with avro
+      either wait for bug fix
+      or try deprecated json conversion method
   - enums for formats
-  - parquet maven pom -> ant
-  - make TypeWriters extend avro/parquet/json writers and implement a common interface
-      beispiel: WriterObject als interface, dazu AvroWriterObject, 
-      JsonWriterObject, ParquetWriterObject als klassen, die alle 
-      implements WriterObject machen.
-  - organize static attributes in a properties class (also command line arguments)
-      Configuration-object with getters und setters. state pattern?
   - build a jar with dependencies
+      with ant
 
   - Parquet is still a little shaky (see docs/parquet.md)
+      hadoop file system on local system?
 
-*
-  extend tordnsel with exitnode
+  - aggregation
+      https://metrics.torproject.org/bandwidth-data.html
+      https://metrics.torproject.org/servers-data.html
+      
+      
+
+* extend tordnsel with exitnode
     difficult...
-  write the other converters
+    write the other converters
   
 
 
-* TODO ask KL
-      digest ist immer ein hash
-      
-      mail an karsten 
-        mit erinnerung wg accept/reject dekonstruktion
-        mit link zu avdl schematas
-        dates als long oder string?
-        v.a. auf idendity/digest/certificate handling achten
-        defaults?
-      
+* digest is always a hash
+       
       
  
 * think through the process of mass ingestion  

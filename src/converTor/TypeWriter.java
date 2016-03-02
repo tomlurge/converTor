@@ -44,20 +44,24 @@ class TypeWriter {
    */
   static void wrapUp() throws IOException {
     for ( WriterObject writerObject : typeWriterMap.values()) {
+/*
       if (avro) {
         ((DataFileWriter) writerObject.dataFileWriter).close();
       }
+      if (parquet) {
+        ((ParquetWriter) writerObject.dataFileWriter).close();
+      }
+*/
+
+
       if (json) {
 
         //  the OLD way
         //  todo wrap up buffered writer
-        ((BufferedWriter) writerObject.dataFileWriter).close();
+        //  ((BufferedWriter) writerObject.dataFileWriter).close();
 
         //  the AVRO way
-        //  writerObject.jsonEncoder.flush();
-      }
-      if (parquet) {
-        ((ParquetWriter) writerObject.dataFileWriter).close();
+        writerObject.jsonEncoder.flush();
       }
     }
   }

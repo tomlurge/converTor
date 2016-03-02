@@ -25,41 +25,46 @@ import static converTor.ConverTor.*;
 class WriterObject<T extends Object> {  // crazy generics
 
   //  gets casted within append()
-  Object dataFileWriter;
+  Json.ObjectWriter dataFileWriter;
+
+
+  //  json the PEDESTRIAN way
+  int written;
 
   //  json the AVRO way
   //  jump through hoop to get the jsonEncoder from Constructor to append()
   //  Encoder jsonEncoder;        //  not validating 1 of 2
   ValidatingEncoder jsonEncoder;  //  validating 1 of 2
 
-  //  json the PEDESTRIAN way
-  int written;
-
 
   /*
-   *  append converted data to encoder/writer todo
+   *  append converted data to encoder/writer
    */
   void append(SpecificRecord load) throws IOException {
 
-    // append the converted descriptor to it
-    if (avro) {
-      DataFileWriter<SpecificRecord> avroWriter = (DataFileWriter) dataFileWriter;
-      avroWriter.append(load);
-    }
-    if (json) {
+    if (json) { // TODO
 
       //  the PEDESTRIAN way
-//    System.out.println("PEDESTRIAN");
-//    System.out.println(load);
-//    System.out.println(written);
-//    BufferedWriter jsonWriter = (BufferedWriter) dataFileWriter;
-//    jsonWriter.write((written++ > 0 ? "\n" : "") + load);
+/*
+      System.out.println("PEDESTRIAN");
+      System.out.println(load);
+      System.out.println(written);
+      BufferedWriter jsonWriter = (BufferedWriter) dataFileWriter;
+      jsonWriter.write((written++ > 0 ? "\n" : "") + load);
+*/
 
       //  the AVRO way
-      Json.ObjectWriter jsonWriter = (Json.ObjectWriter) dataFileWriter;
+      Json.ObjectWriter jsonWriter = dataFileWriter;
+      System.out.println(load);
       jsonWriter.write(load, jsonEncoder);
-      ((Json.ObjectWriter) dataFileWriter).write(load, jsonEncoder);
+      dataFileWriter.write(load, jsonEncoder);
 
+    }
+/*
+    if (avro) {
+      DataFileWriter<SpecificRecord> avroWriter =
+          (DataFileWriter) dataFileWriter;
+      avroWriter.append(load);
     }
     if (parquet) {
       // AvroParquetWriter parquetWriter = (AvroParquetWriter) writer;
@@ -67,12 +72,14 @@ class WriterObject<T extends Object> {  // crazy generics
       ParquetWriter parquetWriter = (ParquetWriter) dataFileWriter;
       parquetWriter.write(load);
     }
+*/
+
   }
 
 
 
   /*
-   *  TODO constructor
+   *  constructor
    */
   WriterObject(DescriptorType descType, String date) throws IOException {
 
@@ -81,32 +88,10 @@ class WriterObject<T extends Object> {  // crazy generics
     Path outputPath = new Path(outPath + writerID + outputFileEnding);
     Schema schema = descType.avsc;
 
-    if (avro) {
-      //  https://avro.apache.org/docs/1.8.0/api/java/org/apache/avro/specific/SpecificDatumWriter.html
-      //  https://avro.apache.org/docs/current/gettingstartedjava.html#Serializing
-      DatumWriter<T> avroDatumWriter = new SpecificDatumWriter<>(schema); // crazy generics
-      DataFileWriter<T> avroFileWriter = new DataFileWriter<>(avroDatumWriter); // crazy generics
-      if (compressed) avroFileWriter.setCodec(CodecFactory.snappyCodec());
-      avroFileWriter.create(schema, outputFile);
-      dataFileWriter = avroFileWriter;
-    }
-
-    if (parquet) { // uses parquet-mr
-      CompressionCodecName cc = CompressionCodecName.UNCOMPRESSED;
-      if (compressed) {
-        cc = CompressionCodecName.SNAPPY;
-      }
-      ParquetWriter<Object> parquetWriter = AvroParquetWriter.builder(outputPath)
-          .withSchema(schema)
-          .withCompressionCodec(cc)
-          .build();
-      dataFileWriter = parquetWriter;
-    }
-
-    if (json) {
+    if (json) { // TODO
 
       //  the PEDESTRIAN way
-
+/*
       Writer pedestrianJsonWriter;
       if (compressed) {
         pedestrianJsonWriter = new OutputStreamWriter(new GZIPOutputStream(
@@ -115,16 +100,18 @@ class WriterObject<T extends Object> {  // crazy generics
       else {
         pedestrianJsonWriter = new FileWriter(outputFile);
       }
-      BufferedWriter bufferedPedestrianJsonWriter = new BufferedWriter(pedestrianJsonWriter);
-//      dataFileWriter = bufferedPedestrianJsonWriter;   // <- un-comment for PEDESTRIAN way
+      BufferedWriter bufferedPedestrianJsonWriter =
+          new BufferedWriter(pedestrianJsonWriter);
+      dataFileWriter = bufferedPedestrianJsonWriter;
       written = 0;
-
+*/
 
       //  the AVRO way
 
       // Json.ObjectWriter   ... nobody seems to use this - googling return no results
       // file:///Users/t/Desktop/avro/1.8/avro-1.8.0-javadoc/org/apache/avro/data/Json.ObjectWriter.html
       Json.ObjectWriter jsonDatumWriter = new Json.ObjectWriter();
+      // jsonDatumWriter.setSchema((org.apache.avro.data.Json.SCHEMA)); // no need
       OutputStream out = new FileOutputStream(outputFile);
       //  TODO  this is inefficient as it creates one encoder per month and type
       //        instead of just one encoder per type.
@@ -134,14 +121,15 @@ class WriterObject<T extends Object> {  // crazy generics
 
       //  jsonEncoder = encoder;    //  not validating 2 of 2
       //  validating 2 of 2
-      ValidatingEncoder validatingEncoder = EncoderFactory.get().validatingEncoder(schema, encoder);
+      ValidatingEncoder validatingEncoder =
+          EncoderFactory.get().validatingEncoder(schema, encoder);
       jsonEncoder = validatingEncoder;
 
       //  call writer with datum AND encoder
       //    public void write(Object datum, Encoder out) throws IOException
       //  that's bad, because we want to return a writer without data, but with encoder preconfigured
 
-      dataFileWriter = jsonDatumWriter;   // <- un-comment for AVRO way
+      dataFileWriter = jsonDatumWriter;
 
 
       /*   TODO  file bug report
@@ -189,6 +177,30 @@ class WriterObject<T extends Object> {  // crazy generics
       */
 
     }
+/*
+
+    if (avro) {
+      //  https://avro.apache.org/docs/1.8.0/api/java/org/apache/avro/specific/SpecificDatumWriter.html
+      //  https://avro.apache.org/docs/current/gettingstartedjava.html#Serializing
+      DatumWriter<T> avroDatumWriter = new SpecificDatumWriter<>(schema); // crazy generics
+      DataFileWriter<T> avroFileWriter = new DataFileWriter<>(avroDatumWriter); // crazy generics
+      if (compressed) avroFileWriter.setCodec(CodecFactory.snappyCodec());
+      avroFileWriter.create(schema, outputFile);
+      dataFileWriter = avroFileWriter;
+    }
+
+    if (parquet) { // uses parquet-mr
+      CompressionCodecName cc = CompressionCodecName.UNCOMPRESSED;
+      if (compressed) {
+        cc = CompressionCodecName.SNAPPY;
+      }
+      ParquetWriter<Object> parquetWriter = AvroParquetWriter.builder(outputPath)
+          .withSchema(schema)
+          .withCompressionCodec(cc)
+          .build();
+      dataFileWriter = parquetWriter;
+    }
+*/
 
   }
 
