@@ -48,18 +48,11 @@ protocol bridge_server_descriptor {
     array<long> `bytes`;
   }
 
-  record NtorCrossCert {
-    /** metrics-lib/ServerDescriptor: String getNtorOnionKeyCrosscert() */
-    string cert;
-    /** metrics-lib/ServerDescriptor: int getNtorOnionKeyCrosscertSign() */
-    int bit;
-  }
 
-
-  /** server-descriptor 1.0 - same as relay but without field 'router_signature' */
+  /** bridge-server-descriptor 1.1 - same as relay but without router_signatures */
   @aliases(["bridge_server"])
   record Bridge {
-    string descriptor_type = "server-descriptor 1.0";
+    string descriptor_type = "bridge-server-descriptor 1.1";
     /** metrics-lib/ServerDescriptor: String getServerDescriptorDigest() */
     union { null, string } server_descriptor_digest;
     /** metrics-lib/ServerDescriptor: String getServerDescriptorDigestSha256() */
@@ -88,18 +81,16 @@ protocol bridge_server_descriptor {
     union { null, boolean } onion_key_crosscert;
     /** metrics-lib/ServerDescriptor: String getNtorOnionKey() */
     union { null, boolean } ntor_onion_key;
-    // see above
-    union { null, NtorCrossCert } ntor_onion_key_crosscert;
+    /** metrics-lib/ServerDescriptor: String getNtorOnionKeyCrosscert() */
+    union { null, boolean } ntor_onion_key_crosscert;
     /** metrics-lib/ServerDescriptor: String getSigningKey() */
     union { null, boolean } signing_key;
     /** metrics-lib/ServerDescriptor: List<String> getExitPolicyLines() */
     union { null, array<string> } exit_policy;
     /** metrics-lib/ServerDescriptor: String getIpv6DefaultPolicy() */
-    union { null, array<string> } ipv6_policy;
+    union { null, string } ipv6_policy;
     /** metrics-lib/ServerDescriptor: String getIpv6PortList() */
     union { null, string } ipv6_portlist;
-    /** metrics-lib/ServerDescriptor: String getRouterSignatureEd25519() */
-    union { null, boolean } router_sig_ed25519;
     /** metrics-lib/ServerDescriptor: String getContact() */
     union { null, string } contact;
     /** metrics-lib/ServerDescriptor: List<String> getFamilyEntries() */

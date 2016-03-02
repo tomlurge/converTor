@@ -48,49 +48,49 @@ protocol bridge_extra_info_descriptor {
     /** metrics-lib/ExtraInfoDescriptor: long getBridgeStatsEndMillis() */
     long date;
     /** metrics-lib/ExtraInfoDescriptor: long getBridgeStatsIntervalLength() */
-    long interval = 86400;
+    long interval;
   }
 
   record DirreqStats {
     /** metrics-lib/ExtraInfoDescriptor: long getDirreqStatsEndMillis() */
     long date;
     /** metrics-lib/ExtraInfoDescriptor: long getDirreqStatsIntervalLength() */
-    long interval = 86400;
+    long interval;
   }
 
   record EntryStats {
     /** metrics-lib/ExtraInfoDescriptor: long getEntryStatsEndMillis() */
     long date;
     /** metrics-lib/ExtraInfoDescriptor: long getEntryStatsIntervalLength() */
-    long interval = 86400;
+    long interval;
   }
 
   record CellStats {
     /** metrics-lib/ExtraInfoDescriptor: long getCellStatsEndMillis() */
     long date;
     /** metrics-lib/ExtraInfoDescriptor: long getCellStatsIntervalLength() */
-    long interval = 86400;
+    long interval;
   }
 
   record ExitStats {
     /** metrics-lib/ExtraInfoDescriptor: long getExitStatsEndMillis() */
     long date;
     /** metrics-lib/ExtraInfoDescriptor: long getExitStatsIntervalLength() */
-    long interval = 86400;
+    long interval;
   }
 
   record HidservStats {
     /** metrics-lib/ExtraInfoDescriptor: long getHidservStatsEndMillis() */
     long date;
     /** metrics-lib/ExtraInfoDescriptor: long getHidservStatsIntervalLength() */
-    long interval = 86400;
+    long interval;
   }
 
   record ConnBiDirect {
     /** metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis() */
     union { null, long } date;
     /** metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsIntervalLength() */
-    long interval = 86400;
+    long interval;
     /** metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBelow() */
     union { null, int } below;
     /** metrics-lib/ExtraInfoDescriptor: int getConnBiDirectRead() */
@@ -105,14 +105,14 @@ protocol bridge_extra_info_descriptor {
     /** metrics-lib/ExtraInfoDescriptor: Double getHidservRendRelayedCells() */
     double cells;
     /** metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservRendRelayedCellsParameters() */
-    map<int> obfuscation;
+    map<double> obfuscation;
   }
 
   record HidservDirOnionsSeen {
     /** metrics-lib/ExtraInfoDescriptor: Double getHidservDirOnionsSeen() */
     double onions;
     /** metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservDirOnionsSeenParameters() */
-    map<int> obfuscation;
+    map<double> obfuscation;
   }
 
 
@@ -133,8 +133,8 @@ protocol bridge_extra_info_descriptor {
     union { null, string } geoip_db_digest;
     /** metrics-lib/ExtraInfoDescriptor: String getGeoip6DbDigest() */
     union { null, string } geoip6_db_digest;
-    /** metrics-lib/ExtraInfoDescriptor: String getGeoipStartTimeMillis() */
-    union { null, string } geoip_start_time;
+    /** metrics-lib/ExtraInfoDescriptor: long getGeoipStartTimeMillis() */
+    union { null, long } geoip_start_time;
     // start bridge only
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getGeoipClientOrigins() */
     union { null, map<int> } geoip_client_origins;
@@ -209,10 +209,6 @@ protocol bridge_extra_info_descriptor {
     union { null, HidservDirOnionsSeen } hidserv_dir_onions_seen;
     /** metrics-lib/ExtraInfoDescriptor: List<String> getTransports() */
     union { null, array<string> } transport;
-    /** metrics-lib/ExtraInfoDescriptor: String getRouterSignatureEd25519() */
-    union { null, boolean } router_sig_ed25519;
-    /** metrics-lib/ExtraInfoDescriptor: String getRouterSignature() */
-    union { null, boolean } router_signature;
     /** metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigest() */
     union { null, string } extra_info_digest;
     /** metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigestSha256() */

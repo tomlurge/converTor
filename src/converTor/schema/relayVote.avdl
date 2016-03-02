@@ -68,6 +68,14 @@ protocol relay_network_status_vote_3_descriptor {
     union { null, int } dir_port;
   }
 
+  record OrAddress {
+    /** metrics-lib/NetworkStatusEntry: getOrAddresses() */
+    /** implementation specific, see actual converter */
+    string address;
+    /** implementation specific, see actual converter */
+    int port;
+  }
+
   record W {
     /** metrics-lib/NetworkStatusEntry: long getBandwidth() */
     union { null, long } bandwidth;
@@ -91,9 +99,9 @@ protocol relay_network_status_vote_3_descriptor {
 
   record Status {
     // see above
-    union { null, R } r;
-    /** metrics-lib/NetworkStatusEntry: getOrAddresses() */
-    union { null, array<string> } a;
+    R r;
+    // see above
+    union { null, array<OrAddress> } a;
     /** metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags() */
     union { null, array<string> } s;
     /** metrics-lib/NetworkStatusEntry: String getVersion() */
