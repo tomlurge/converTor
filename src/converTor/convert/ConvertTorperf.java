@@ -3,7 +3,7 @@ package converTor.convert;
 import converTor.avro.classes.torperf.Torperf;
 import converTor.util.Convert;
 import converTor.util.Converted;
-import converTor.util.DescriptorType;
+import converTor.util.ConvertType;
 import org.torproject.descriptor.TorperfResult;
 
 
@@ -53,7 +53,7 @@ public class ConvertTorperf extends Convert {
     conversion.setUsedBy(desc.getUsedBy());
 
     Converted converted = new Converted();
-    converted.type = DescriptorType.torperfType;
+    converted.type = ConvertType.torperfType;
     converted.date = dateTimeFormat.format(desc.getStartMillis()).substring(0,7);
     converted.load = conversion;
     return converted;

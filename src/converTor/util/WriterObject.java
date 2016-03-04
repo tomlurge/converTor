@@ -17,7 +17,7 @@ import org.apache.parquet.avro.AvroParquetWriter;
 import org.apache.parquet.hadoop.ParquetWriter;
 import org.apache.parquet.hadoop.metadata.CompressionCodecName;
 
-import static converTor.Main.*;
+import static converTor.Config.*;  // some constants
 
 
 
@@ -39,7 +39,7 @@ public class WriterObject<T extends Object> {  // crazy generics
   /*
    *  constructor
    */
-  WriterObject(DescriptorType descType, String date) throws IOException {
+  WriterObject(ConvertType descType, String date) throws IOException {
 
     String writerID = descType.name + "_" + date;
     File outputFile = new File(outPath + writerID + outputFileEnding);
@@ -118,13 +118,11 @@ public class WriterObject<T extends Object> {  // crazy generics
     }
 
     if (parquet) { // uses parquet-mr
-      CompressionCodecName cc = CompressionCodecName.UNCOMPRESSED;
-      if (compressed) {
-        cc = CompressionCodecName.SNAPPY;
-      }
       ParquetWriter<Object> parquetWriter = AvroParquetWriter.builder(outputPath)
           .withSchema(schema)
-          .withCompressionCodec(cc)
+          .withCompressionCodec(
+              compressed ? CompressionCodecName.SNAPPY : CompressionCodecName.UNCOMPRESSED
+          )
           .build();
       dataFileWriter = parquetWriter;
     }

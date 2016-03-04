@@ -2,7 +2,7 @@ package converTor.convert;
 
 import converTor.util.Convert;
 import converTor.util.Converted;
-import converTor.util.DescriptorType;
+import converTor.util.ConvertType;
 import converTor.avro.classes.bridge.Bridge;
 import org.torproject.descriptor.BridgeServerDescriptor;
 
@@ -31,7 +31,7 @@ public class ConvertBridge extends Convert {
 
 
     Converted converted = new Converted();
-    converted.type = DescriptorType.bridgeType;
+    converted.type = ConvertType.bridgeType;
     converted.date = dateTimeFormat.format(desc.getPublishedMillis()).substring(0,7);
     converted.load = conversion;
     return converted;

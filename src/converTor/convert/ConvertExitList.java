@@ -3,7 +3,7 @@ package converTor.convert;
 import converTor.avro.classes.tordnsel.Tordnsel;
 import converTor.util.Convert;
 import converTor.util.Converted;
-import converTor.util.DescriptorType;
+import converTor.util.ConvertType;
 import org.torproject.descriptor.ExitList;
 
 import java.util.List;
@@ -37,7 +37,7 @@ public class ConvertExitList extends Convert {
 
 
     Converted converted = new Converted();
-    converted.type = DescriptorType.tordnselType;
+    converted.type = ConvertType.tordnselType;
     converted.date = dateTimeFormat.format(desc.getDownloadedMillis()).substring(0,7);
     converted.load = conversion;
     return converted;

@@ -1,6 +1,5 @@
 package converTor.util;
 
-import converTor.util.WriterObject;
 import org.apache.avro.file.DataFileWriter;
 import org.apache.parquet.hadoop.ParquetWriter;
 
@@ -8,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.io.IOException;
 
-import static converTor.Main.*;
+import static converTor.Config.*;  // some constants
 
 
 public class TypeWriter {
@@ -23,7 +22,7 @@ public class TypeWriter {
   /*
    *  a getter for that map
    */
-  public static <T extends Object> WriterObject get(DescriptorType type, String date)
+  public static <T extends Object> WriterObject get(ConvertType type, String date)
       throws IOException {
     // construct writer id
     String writerID = type.name + "_" + date;
