@@ -1,0 +1,14 @@
+{
+  "type" : "record",
+  "name" : "HidservStats",
+  "namespace" : "converTor.bridgeExtra",
+  "fields" : [ {
+    "name" : "date",
+    "type" : "long",
+    "doc" : "metrics-lib/ExtraInfoDescriptor: long getHidservStatsEndMillis()"
+  }, {
+    "name" : "interval",
+    "type" : "long",
+    "doc" : "metrics-lib/ExtraInfoDescriptor: long getHidservStatsIntervalLength()"
+  } ]
+}

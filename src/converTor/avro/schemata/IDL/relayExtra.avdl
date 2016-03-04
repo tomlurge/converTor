@@ -1,0 +1,205 @@
+@namespace("converTor.avro.classes.relayExtra")
+protocol relay_extra_info_descriptor {
+
+  record ExtraInfo {
+    /** metrics-lib/ExtraInfoDescriptor: String getNickname() */
+    union { null, string } nickname;
+    /** metrics-lib/ExtraInfoDescriptor: String getFingerprint() */
+    union { null, string } fingerprint;
+  }
+
+  record ReadHistory {
+    /** metrics-lib/BandwidthHistory: long getHistoryEndMillis() */
+    long date;
+    /** metrics-lib/BandwidthHistory: long getIntervalLength() */
+    long interval;
+    /** metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values() */
+    array<long> `bytes`;
+  }
+
+  record WriteHistory {
+    /** metrics-lib/BandwidthHistory: long getHistoryEndMillis() */
+    long date;
+    /** metrics-lib/BandwidthHistory: long getIntervalLength() */
+    long interval;
+    /** metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values() */
+    array<long> `bytes`;
+  }
+
+  record DirreqReadHistory {
+    /** metrics-lib/BandwidthHistory: long getHistoryEndMillis() */
+    long date;
+    /** metrics-lib/BandwidthHistory: long getIntervalLength() */
+    long interval;
+    /** metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values() */
+    array<long> `bytes`;
+  }
+
+  record DirreqWriteHistory {
+    /** metrics-lib/BandwidthHistory: long getHistoryEndMillis() */
+    long date;
+    /** metrics-lib/BandwidthHistory: long getIntervalLength() */
+    long interval;
+    /** metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values() */
+    array<long> `bytes`;
+  }
+
+  record DirreqStats {
+    /** metrics-lib/ExtraInfoDescriptor: long getDirreqStatsEndMillis() */
+    long date;
+    /** metrics-lib/ExtraInfoDescriptor: long getDirreqStatsIntervalLength() */
+    long interval;
+  }
+
+  record EntryStats {
+    /** metrics-lib/ExtraInfoDescriptor: long getEntryStatsEndMillis() */
+    long date;
+    /** metrics-lib/ExtraInfoDescriptor: long getEntryStatsIntervalLength() */
+    long interval;
+  }
+
+  record CellStats {
+    /** metrics-lib/ExtraInfoDescriptor: long getCellStatsEndMillis() */
+    long date;
+    /** metrics-lib/ExtraInfoDescriptor: long getCellStatsIntervalLength() */
+    long interval;
+  }
+
+  record ExitStats {
+    /** metrics-lib/ExtraInfoDescriptor: long getExitStatsEndMillis() */
+    long date;
+    /** metrics-lib/ExtraInfoDescriptor: long getExitStatsIntervalLength() */
+    long interval;
+  }
+
+  record HidservStats {
+    /** metrics-lib/ExtraInfoDescriptor: long getHidservStatsEndMillis() */
+    long date;
+    /** metrics-lib/ExtraInfoDescriptor: long getHidservStatsIntervalLength() */
+    long interval;
+  }
+
+  record ConnBiDirect {
+    /** metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis() */
+    union { null, long } date;
+    /** metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsIntervalLength() */
+    long interval;
+    /** metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBelow() */
+    union { null, int } below;
+    /** metrics-lib/ExtraInfoDescriptor: int getConnBiDirectRead() */
+    union { null, int } read;
+    /** metrics-lib/ExtraInfoDescriptor: int getConnBiDirectWrite() */
+    union { null, int } write;
+    /** metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBoth() */
+    union { null, int } both;
+  }
+
+  record HidservRendRelayedCells {
+    /** metrics-lib/ExtraInfoDescriptor: Double getHidservRendRelayedCells() */
+    double cells;
+    /** metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservRendRelayedCellsParameters() */
+    map<double> obfuscation;
+  }
+
+  record HidservDirOnionsSeen {
+    /** metrics-lib/ExtraInfoDescriptor: Double getHidservDirOnionsSeen() */
+    double onions;
+    /** metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservDirOnionsSeenParameters() */
+    map<double> obfuscation;
+  }
+
+
+  @aliases(["relay_extra_info"])
+  record RelayExtra {
+    string descriptor_type = "extra-info 1.0";
+    // see above
+    union { null, ExtraInfo } extra_info;
+    /** metrics-lib/ExtraInfoDescriptor: String getIdentityEd25519(); */
+    union { null, boolean } identity_ed25519;
+    /** metrics-lib/ExtraInfoDescriptor: long getPublishedMillis() */
+    union { null, long } published;
+    /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory() */
+    union { null, ReadHistory } read_history;
+    /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory() */
+    union { null, WriteHistory } write_history;
+    /** metrics-lib/ExtraInfoDescriptor: String getGeoipDbDigest() */
+    union { null, string } geoip_db_digest;
+    /** metrics-lib/ExtraInfoDescriptor: String getGeoip6DbDigest() */
+    union { null, string } geoip6_db_digest;
+    /** metrics-lib/ExtraInfoDescriptor: long getGeoipStartTimeMillis() */
+    union { null, long } geoip_start_time;
+    // see above
+    union { null, DirreqStats } dirreq_stats_end;
+    /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Ips() */
+    union { null, map<int> } dirreq_v2_ips;
+    /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Ips() */
+    union { null, map<int> } dirreq_v3_ips;
+    /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Reqs() */
+    union { null, map<int> } dirreq_v2_reqs;
+    /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Reqs() */
+    union { null, map<int> } dirreq_v3_reqs;
+    /** metrics-lib/ExtraInfoDescriptor: double getDirreqV2Share() */
+    union { null, double } dirreq_v2_share;
+    /** metrics-lib/ExtraInfoDescriptor: double getDirreqV3Share() */
+    union { null, double } dirreq_v3_share;
+    /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Resp() */
+    union { null, map<int> } dirreq_v2_resp;
+    /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Resp() */
+    union { null, map<int> } dirreq_v3_resp;
+    /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2DirectDl() */
+    union { null, map<int> } dirreq_v2_direct_dl;
+    /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3DirectDl() */
+    union { null, map<int> } dirreq_v3_direct_dl;
+    /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2TunneledDl() */
+    union { null, map<int> } dirreq_v2_tunneled_dl;
+    /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3TunneledDl() */
+    union { null, map<int> } dirreq_v3_tunneled_dl;
+    /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory() */
+    union { null, DirreqReadHistory } dirreq_read_history;
+    /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory() */
+    union { null, DirreqWriteHistory } dirreq_write_history;
+    // see above
+    union { null, EntryStats } entry_stats_end;
+    /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getEntryIps() */
+    union { null, map<int> } entry_ips;
+    // see above
+    union { null, CellStats } cell_stats_end;
+    /** metrics-lib/ExtraInfoDescriptor: List<Integer> getCellProcessedCells() */
+    union { null, array<int> } cell_processed_cells;
+    /** metrics-lib/ExtraInfoDescriptor: List<Double> getCellQueuedCells() */
+    union { null, array<double> } cell_queued_cells;
+    /** metrics-lib/ExtraInfoDescriptor: List<Integer> getCellTimeInQueue() */
+    union { null, array<int> } cell_time_in_queue;
+    /** metrics-lib/ExtraInfoDescriptor: int getCellCircuitsPerDecile() */
+    union { null, int } cell_circuits_per_decile;
+    // see above
+    union { null, ConnBiDirect } conn_bi_direct;
+    // see above
+    union { null, ExitStats } exit_stats_end;
+    /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesWritten() */
+    union { null, map<long> } exit_kibibytes_written;
+    /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesRead() */
+    union { null, map<long> } exit_kibibytes_read;
+    /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitStreamsOpened() */
+    union { null, map<long> } exit_streams_opened;
+    // see above
+    union { null, HidservStats } hidserv_stats_end;
+    // see above
+    union { null, HidservRendRelayedCells } hidserv_rend_relayed_cells;
+    // see above
+    union { null, HidservDirOnionsSeen } hidserv_dir_onions_seen;
+    /** metrics-lib/ExtraInfoDescriptor: List<String> getTransports() */
+    union { null, array<string> } transport;
+    /** metrics-lib/ExtraInfoDescriptor: String getRouterSignatureEd25519() */
+    union { null, boolean } router_sig_ed25519;
+    /** metrics-lib/ExtraInfoDescriptor: String getRouterSignature() */
+    union { null, boolean } router_signature;
+    /** metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigest() */
+    union { null, string } extra_info_digest;
+    /** metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigestSha256() */
+    union { null, string } extra_info_digest_sha256;
+    /** metrics-lib/ExtraInfoDescriptor: String getMasterKeyEd25519() */
+    union { null, string } master_key_ed25519;
+  }
+
+}

@@ -1,0 +1,45 @@
+{
+  "type" : "record",
+  "name" : "Tordnsel",
+  "namespace" : "converTor.avro.classes.tordnsel",
+  "fields" : [ {
+    "name" : "descriptor_type",
+    "type" : "string",
+    "default" : "tordnsel 1.0"
+  }, {
+    "name" : "downloaded",
+    "type" : [ "null", "long" ],
+    "doc" : "metrics-lib/ExitList: long getDownloadedMillis()"
+  }, {
+    "name" : "exit_nodes",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : {
+        "type" : "record",
+        "name" : "ExitNode",
+        "fields" : [ {
+          "name" : "fingerprint",
+          "type" : [ "null", "string" ],
+          "doc" : "metrics-lib/ExitList.Entry: String getFingerprint()"
+        }, {
+          "name" : "published",
+          "type" : [ "null", "long" ],
+          "doc" : "metrics-lib/ExitList.Entry: long getPublishedMillis()"
+        }, {
+          "name" : "last_status",
+          "type" : [ "null", "long" ],
+          "doc" : "metrics-lib/ExitList.Entry: long getLastStatusMillis()"
+        }, {
+          "name" : "exit_adresses",
+          "type" : [ "null", {
+            "type" : "map",
+            "values" : "long"
+          } ],
+          "doc" : "metrics-lib/ExitList.Entry: Map<String, Long> getExitAddresses()"
+        } ]
+      }
+    } ],
+    "doc" : "metrics-lib/ExitList: Set<ExitList.Entry> getEntries()"
+  } ],
+  "aliases" : [ "exitList" ]
+}

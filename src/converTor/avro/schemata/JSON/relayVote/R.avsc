@@ -1,0 +1,34 @@
+{
+  "type" : "record",
+  "name" : "R",
+  "namespace" : "converTor.relayVote",
+  "fields" : [ {
+    "name" : "nickname",
+    "type" : [ "null", "string" ],
+    "doc" : "metrics-lib/NetworkStatusEntry: String getNickname()"
+  }, {
+    "name" : "identity",
+    "type" : [ "null", "string" ],
+    "doc" : "metrics-lib/NetworkStatusEntry: String getFingerprint()"
+  }, {
+    "name" : "digest",
+    "type" : [ "null", "string" ],
+    "doc" : "metrics-lib/NetworkStatusEntry: String getDescriptor()"
+  }, {
+    "name" : "publication",
+    "type" : [ "null", "long" ],
+    "doc" : "metrics-lib/NetworkStatusEntry: long getPublishedMillis()"
+  }, {
+    "name" : "ip",
+    "type" : [ "null", "string" ],
+    "doc" : "metrics-lib/NetworkStatusEntry: String getAddress()"
+  }, {
+    "name" : "or_port",
+    "type" : [ "null", "int" ],
+    "doc" : "metrics-lib/NetworkStatusEntry: int getOrPort()"
+  }, {
+    "name" : "dir_port",
+    "type" : [ "null", "int" ],
+    "doc" : "metrics-lib/NetworkStatusEntry: int getDirPort()"
+  } ]
+}

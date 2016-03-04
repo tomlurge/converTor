@@ -1,0 +1,14 @@
+{
+  "type" : "record",
+  "name" : "OrAddress",
+  "namespace" : "converTor.relayConsensus",
+  "fields" : [ {
+    "name" : "address",
+    "type" : "string",
+    "doc" : "implementation specific, see actual converter"
+  }, {
+    "name" : "port",
+    "type" : "int",
+    "doc" : "implementation specific, see actual converter"
+  } ]
+}

@@ -1,0 +1,25 @@
+{
+  "type" : "record",
+  "name" : "ExitNode",
+  "namespace" : "converTor.tordnsel",
+  "fields" : [ {
+    "name" : "fingerprint",
+    "type" : [ "null", "string" ],
+    "doc" : "metrics-lib/ExitList.Entry: String getFingerprint()"
+  }, {
+    "name" : "published",
+    "type" : [ "null", "long" ],
+    "doc" : "metrics-lib/ExitList.Entry: long getPublishedMillis()"
+  }, {
+    "name" : "last_status",
+    "type" : [ "null", "long" ],
+    "doc" : "metrics-lib/ExitList.Entry: long getLastStatusMillis()"
+  }, {
+    "name" : "exit_adresses",
+    "type" : [ "null", {
+      "type" : "map",
+      "values" : "long"
+    } ],
+    "doc" : "metrics-lib/ExitList.Entry: Map<String, Long> getExitAddresses()"
+  } ]
+}
