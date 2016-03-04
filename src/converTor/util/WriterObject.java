@@ -1,7 +1,6 @@
-package converTor;
+package converTor.util;
 
 import java.io.*;
-import java.util.zip.GZIPOutputStream;
 
 import org.apache.avro.io.ValidatingEncoder;
 import org.apache.hadoop.fs.Path;
@@ -18,14 +17,14 @@ import org.apache.parquet.avro.AvroParquetWriter;
 import org.apache.parquet.hadoop.ParquetWriter;
 import org.apache.parquet.hadoop.metadata.CompressionCodecName;
 
-import static converTor.ConverTor.*;
+import static converTor.Main.*;
 
 
 
-class WriterObject<T extends Object> {  // crazy generics
+public class WriterObject<T extends Object> {  // crazy generics
 
   //  gets casted within append()
-  Json.ObjectWriter dataFileWriter;
+  Object dataFileWriter;
 
 
   //  json the PEDESTRIAN way
@@ -33,48 +32,7 @@ class WriterObject<T extends Object> {  // crazy generics
 
   //  json the AVRO way
   //  jump through hoop to get the jsonEncoder from Constructor to append()
-  //  Encoder jsonEncoder;        //  not validating 1 of 2
-  ValidatingEncoder jsonEncoder;  //  validating 1 of 2
-
-
-  /*
-   *  append converted data to encoder/writer
-   */
-  void append(SpecificRecord load) throws IOException {
-
-    if (json) { // TODO
-
-      //  the PEDESTRIAN way
-/*
-      System.out.println("PEDESTRIAN");
-      System.out.println(load);
-      System.out.println(written);
-      BufferedWriter jsonWriter = (BufferedWriter) dataFileWriter;
-      jsonWriter.write((written++ > 0 ? "\n" : "") + load);
-*/
-
-      //  the AVRO way
-      Json.ObjectWriter jsonWriter = dataFileWriter;
-      System.out.println(load);
-      jsonWriter.write(load, jsonEncoder);
-      dataFileWriter.write(load, jsonEncoder);
-
-    }
-/*
-    if (avro) {
-      DataFileWriter<SpecificRecord> avroWriter =
-          (DataFileWriter) dataFileWriter;
-      avroWriter.append(load);
-    }
-    if (parquet) {
-      // AvroParquetWriter parquetWriter = (AvroParquetWriter) writer;
-      // parquetWriter.write(converted.load);
-      ParquetWriter parquetWriter = (ParquetWriter) dataFileWriter;
-      parquetWriter.write(load);
-    }
-*/
-
-  }
+  ValidatingEncoder jsonEncoder;
 
 
 
@@ -113,14 +71,12 @@ class WriterObject<T extends Object> {  // crazy generics
       Json.ObjectWriter jsonDatumWriter = new Json.ObjectWriter();
       // jsonDatumWriter.setSchema((org.apache.avro.data.Json.SCHEMA)); // no need
       OutputStream out = new FileOutputStream(outputFile);
+      dataFileWriter = jsonDatumWriter;
       //  TODO  this is inefficient as it creates one encoder per month and type
       //        instead of just one encoder per type.
       //        but a solution is involved since an encoder depends not only on a
       //        schema but also the output path, which contains the month. so..
       Encoder encoder = EncoderFactory.get().jsonEncoder(schema, out, pretty);
-
-      //  jsonEncoder = encoder;    //  not validating 2 of 2
-      //  validating 2 of 2
       ValidatingEncoder validatingEncoder =
           EncoderFactory.get().validatingEncoder(schema, encoder);
       jsonEncoder = validatingEncoder;
@@ -129,33 +85,6 @@ class WriterObject<T extends Object> {  // crazy generics
       //    public void write(Object datum, Encoder out) throws IOException
       //  that's bad, because we want to return a writer without data, but with encoder preconfigured
 
-      dataFileWriter = jsonDatumWriter;
-
-
-      /*   TODO  file bug report
-
-      Json.ObjectWriter jsonDatumWriter = new Json.ObjectWriter();
-      jsonDatumWriter.setSchema((org.apache.avro.data.Json.SCHEMA));
-      OutputStream out = new FileOutputStream(outputFile);
-      Encoder encoder = EncoderFactory.get().jsonEncoder(schema, out, pretty);
-      jsonEncoder = encoder;
-      dataFileWriter = jsonDatumWriter;
-
-      throws
-      Exception in thread "main" java.lang.NullPointerException
-        at org.apache.avro.data.Json.write(Json.java:183)
-        at org.apache.avro.data.Json.writeObject(Json.java:272)
-        at org.apache.avro.data.Json.access$000(Json.java:48)
-        at org.apache.avro.data.Json$ObjectWriter.write(Json.java:122)
-        at converTor.WriterObject.append(WriterObject.java:52)
-        at converTor.ConverTor.main(ConverTor.java:251)
-        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-        at java.lang.reflect.Method.invoke(Method.java:606)
-        at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
-
-       */
 
 
       //  MATERIALS
@@ -177,7 +106,6 @@ class WriterObject<T extends Object> {  // crazy generics
       */
 
     }
-/*
 
     if (avro) {
       //  https://avro.apache.org/docs/1.8.0/api/java/org/apache/avro/specific/SpecificDatumWriter.html
@@ -200,7 +128,46 @@ class WriterObject<T extends Object> {  // crazy generics
           .build();
       dataFileWriter = parquetWriter;
     }
+
+  }
+
+
+
+  /*
+   *  append converted data to encoder/writer
+   */
+  public void append(SpecificRecord load) throws IOException {
+
+    if (json) { // TODO
+
+      //  the PEDESTRIAN way
+/*
+      System.out.println("PEDESTRIAN");
+      System.out.println(load);
+      System.out.println(written);
+      BufferedWriter jsonWriter = (BufferedWriter) dataFileWriter;
+      jsonWriter.write((written++ > 0 ? "\n" : "") + load);
 */
+
+      //  the AVRO way
+      Json.ObjectWriter jsonWriter = (Json.ObjectWriter) dataFileWriter;
+      System.out.println(load);
+      jsonWriter.write(load, jsonEncoder);
+      // dataFileWriter.write(load, jsonEncoder);   he? why two times??
+
+    }
+
+    if (avro) {
+      DataFileWriter<SpecificRecord> avroWriter =
+          (DataFileWriter) dataFileWriter;
+      avroWriter.append(load);
+    }
+    if (parquet) {
+      // AvroParquetWriter parquetWriter = (AvroParquetWriter) writer;
+      // parquetWriter.write(converted.load);
+      ParquetWriter parquetWriter = (ParquetWriter) dataFileWriter;
+      parquetWriter.write(load);
+    }
 
   }
 

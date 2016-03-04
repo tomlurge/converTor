@@ -1,15 +1,18 @@
-package converTor;
+package converTor.convert;
 
-import converTor.torperf.Torperf;
+import converTor.avro.classes.torperf.Torperf;
+import converTor.util.Convert;
+import converTor.util.Converted;
+import converTor.util.DescriptorType;
 import org.torproject.descriptor.TorperfResult;
 
 
-class ConvertTorperf extends ConvertCommons {
+public class ConvertTorperf extends Convert {
 
-  static Converted convert(TorperfResult desc) {
-    //  static hier weg
-    //  dann wird die abstracte convert() in commons wieder interessant
-    //  todo convert long millis to string date
+  public static Converted convert(TorperfResult desc) {
+    //  todo  static hier weg
+    //  todo  dann wird die abstracte convert() in commons wieder interessant
+
     Torperf conversion = new Torperf();
 
     conversion.setDescriptorType("torperf 1.0");

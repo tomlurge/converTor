@@ -1,12 +1,15 @@
-package converTor;
+package converTor.convert;
 
-import converTor.bridgeExtra.BridgeExtra;
+import converTor.avro.classes.bridgeExtra.BridgeExtra;
+import converTor.util.Convert;
+import converTor.util.Converted;
+import converTor.util.DescriptorType;
 import org.torproject.descriptor.BridgeExtraInfoDescriptor;
 
 
-public class ConvertBridgeExtra extends ConvertCommons {
+public class ConvertBridgeExtra extends Convert {
 
-  static Converted convert(BridgeExtraInfoDescriptor desc) {
+  public static Converted convert(BridgeExtraInfoDescriptor desc) {
 
     BridgeExtra conversion = new BridgeExtra();
 

@@ -1,14 +1,17 @@
-package converTor;
+package converTor.convert;
 
-import converTor.bridge.Bridge;
-import org.torproject.descriptor.BridgeServerDescriptor;
+import converTor.avro.classes.bridgeStatus.BridgeStatus;
+import converTor.util.Convert;
+import converTor.util.Converted;
+import converTor.util.DescriptorType;
+import org.torproject.descriptor.BridgeNetworkStatus;
 
 
-public class ConvertBridge extends ConvertCommons {
+public class ConvertBridgeStatus extends Convert {
 
-  static Converted convert(BridgeServerDescriptor desc) {
+  public static Converted convert(BridgeNetworkStatus desc) {
 
-    Bridge conversion = new Bridge();
+    BridgeStatus conversion = new BridgeStatus();
 
 //  conversion.set
 //  conversion.set
@@ -28,7 +31,7 @@ public class ConvertBridge extends ConvertCommons {
 
 
     Converted converted = new Converted();
-    converted.type = DescriptorType.bridgeType;
+    converted.type = DescriptorType.bridgeStatusType;
     converted.date = dateTimeFormat.format(desc.getPublishedMillis()).substring(0,7);
     converted.load = conversion;
     return converted;

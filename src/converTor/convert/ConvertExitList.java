@@ -1,6 +1,9 @@
-package converTor;
+package converTor.convert;
 
-import converTor.tordnsel.Tordnsel;
+import converTor.avro.classes.tordnsel.Tordnsel;
+import converTor.util.Convert;
+import converTor.util.Converted;
+import converTor.util.DescriptorType;
 import org.torproject.descriptor.ExitList;
 
 import java.util.List;
@@ -10,9 +13,9 @@ import java.util.List;
  * Tordnsel / ExitList
  */
 
-class ConvertExitList extends ConvertCommons {
+public class ConvertExitList extends Convert {
 
-  static Converted convert(ExitList desc) {
+  public static Converted convert(ExitList desc) {
 
     Tordnsel conversion = new Tordnsel();
 

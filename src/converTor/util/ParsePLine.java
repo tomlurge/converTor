@@ -1,4 +1,4 @@
-package converTor;
+package converTor.util;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +35,7 @@ public class ParsePLine {
   }
 
   private static List<int[]> parsePLine(String pLine) {
-    List<int[]> acceptedPortIntervals = new ArrayList<int[]>();
+    List<int[]> acceptedPortIntervals = new ArrayList<>();
     String[] pLineParts = pLine.split(" ");
     boolean policyIsAccept = "accept".equals(pLineParts[1]);
     String[] portIntervals = pLineParts[2].split(",");

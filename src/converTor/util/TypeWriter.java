@@ -1,20 +1,17 @@
-package converTor;
+package converTor.util;
 
-import org.apache.avro.data.Json;
+import converTor.util.WriterObject;
 import org.apache.avro.file.DataFileWriter;
-import org.apache.avro.io.Encoder;
-import org.apache.parquet.avro.AvroParquetWriter;
 import org.apache.parquet.hadoop.ParquetWriter;
 
-import java.io.BufferedWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.io.IOException;
 
-import static converTor.ConverTor.*;
+import static converTor.Main.*;
 
 
-class TypeWriter {
+public class TypeWriter {
 
 
   /*
@@ -26,7 +23,7 @@ class TypeWriter {
   /*
    *  a getter for that map
    */
-  static <T extends Object> WriterObject get(DescriptorType type, String date)
+  public static <T extends Object> WriterObject get(DescriptorType type, String date)
       throws IOException {
     // construct writer id
     String writerID = type.name + "_" + date;
@@ -42,18 +39,15 @@ class TypeWriter {
   /*
    *  clean up after the last descriptor has been converted
    */
-  static void wrapUp() throws IOException {
+  public static void wrapUp() throws IOException {
     for ( WriterObject writerObject : typeWriterMap.values()) {
-/*
+
       if (avro) {
         ((DataFileWriter) writerObject.dataFileWriter).close();
       }
       if (parquet) {
         ((ParquetWriter) writerObject.dataFileWriter).close();
       }
-*/
-
-
       if (json) {
 
         //  the OLD way
@@ -62,9 +56,9 @@ class TypeWriter {
 
         //  the AVRO way
         writerObject.jsonEncoder.flush();
+
       }
     }
   }
-
 
 }

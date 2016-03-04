@@ -1,4 +1,4 @@
-package converTor;
+package converTor.util;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -15,21 +15,12 @@ import org.apache.avro.specific.SpecificRecordBase;
  * object to return from conversion
  */
 
-class Converted  {
-  // a lot of details about name, schema, schema class etc
-  DescriptorType type;
-  // month of creation of original descriptor, as YYYY_MM
-  String date;
-  // the actual data, converted to an Avro object
-  SpecificRecordBase load;
-}
-
 
 /*
  *  templates for elements common to some or all descriptor types
  */
 
-class ConvertCommons {
+public class Convert {
 
   /* make ConvertCommons super type of all Converters
   static Converted convert(Descriptor descriptor) {
@@ -38,7 +29,7 @@ class ConvertCommons {
   */
 
   /*  generic key/value objects for verbose output  */
-  static class StringInt {
+  public static class StringInt {
     String key;
     int val;
     StringInt(String key, int val) {
@@ -46,7 +37,7 @@ class ConvertCommons {
       this.val = val;
     }
   }
-  static class StringLong {
+  public static class StringLong {
     String key;
     Long val;
     StringLong(String key, Long val) {
@@ -54,7 +45,7 @@ class ConvertCommons {
       this.val = val;
     }
   }
-  static class StringDouble {
+  public static class StringDouble {
     String key;
     Double val;
     StringDouble(String key, Double val) {
@@ -64,23 +55,23 @@ class ConvertCommons {
   }
 
   /* ExtraInfo and Stats objects used in extra info descriptors */
-  static class ExtraInfo {
+  public  static class ExtraInfo {
     String nickname;
     String fingerprint;
   }
-  static class Stats {
+  public static class Stats {
     String date;
-    Long interval = 86400L;   // TODO  is it really useful to insert the default here?
+    Long interval;
   }
 
   /*  Serialize "read-history" and "write-history" lines  */
-  static class BandwidthHistory {
+  public static class BandwidthHistory {
     String date; // format is YYYY-MM-DD HH:MM:SS
     long interval; // seconds
     Collection<Long> bytes;
   }
   /*  Convert read or write history  */
-  static BandwidthHistory convertBandwidthHistory(org.torproject.descriptor.BandwidthHistory hist) {
+  public static BandwidthHistory convertBandwidthHistory(org.torproject.descriptor.BandwidthHistory hist) {
     BandwidthHistory bandwidthHistory = new BandwidthHistory();
     bandwidthHistory.date = dateTimeFormat.format(hist.getHistoryEndMillis());
     bandwidthHistory.interval = hist.getIntervalLength();
@@ -88,10 +79,10 @@ class ConvertCommons {
     return bandwidthHistory;
   }
   /*  Date/time formatter  */
-  static final String dateTimePattern = "yyyy-MM-dd HH:mm:ss";
-  static final Locale dateTimeLocale = Locale.US;
-  static final TimeZone dateTimezone = TimeZone.getTimeZone("UTC");
-  static DateFormat dateTimeFormat;
+  public static final String dateTimePattern = "yyyy-MM-dd HH:mm:ss";
+  public static final Locale dateTimeLocale = Locale.US;
+  public static final TimeZone dateTimezone = TimeZone.getTimeZone("UTC");
+  public static DateFormat dateTimeFormat;
   static {
     dateTimeFormat = new SimpleDateFormat(dateTimePattern, dateTimeLocale);
     dateTimeFormat.setLenient(false);

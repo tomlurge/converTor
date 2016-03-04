@@ -1,14 +1,17 @@
-package converTor;
-
-import converTor.relay.Relay;
-import org.torproject.descriptor.RelayServerDescriptor;
+package converTor.convert;
 
 
-public class ConvertRelay extends ConvertCommons {
+import converTor.avro.classes.relayExtra.RelayExtra;
+import converTor.util.Convert;
+import converTor.util.Converted;
+import converTor.util.DescriptorType;
+import org.torproject.descriptor.RelayExtraInfoDescriptor;
 
-  static Converted convert(RelayServerDescriptor desc) {
+public class ConvertRelayExtra extends Convert {
 
-    Relay conversion = new Relay();
+  public static Converted convert(RelayExtraInfoDescriptor desc) {
+
+    RelayExtra conversion = new RelayExtra();
 
 //  conversion.set
 //  conversion.set
@@ -28,7 +31,7 @@ public class ConvertRelay extends ConvertCommons {
 
 
     Converted converted = new Converted();
-    converted.type = DescriptorType.relayType;
+    converted.type = DescriptorType.relayExtraType;
     converted.date = dateTimeFormat.format(desc.getPublishedMillis()).substring(0,7);
     converted.load = conversion;
     return converted;

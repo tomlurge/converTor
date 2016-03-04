@@ -2,9 +2,12 @@ package converTor;
 
 import java.io.*;
 import java.util.*;
+
+import converTor.util.*;
+import converTor.convert.*;
 import org.torproject.descriptor.*;  // metrics-lib
 import org.apache.commons.cli.*;  // command line interface
-import static converTor.DescriptorType.*;  // some constants
+import static converTor.util.DescriptorType.*;  // some constants
 
 
 /*
@@ -15,7 +18,7 @@ import static converTor.DescriptorType.*;  // some constants
  */
 
 
-public class ConverTor {
+public class Main {
 
   //  ARGUMENT DEFAULTS
   public static boolean verbose = false;
@@ -146,6 +149,7 @@ public class ConverTor {
 
 
     //  PARAMETERS SET TODO  remove after testing
+/*
     System.out.println("format = " + format);
     System.out.println("suffix = " + suffix);
     System.out.println("inPath = " + inPath);
@@ -155,6 +159,7 @@ public class ConverTor {
     System.out.println("pretty printed JSON = " + pretty);
     System.out.println("outputFileEnding = " + outputFileEnding);
     System.out.println();
+*/
 
 
     // SET UP ITERATOR OVER INPUT DESCRIPTORS
@@ -271,7 +276,6 @@ public class ConverTor {
     //  close fileWriters (flushing data to disk)
     TypeWriter.wrapUp();
     //  and close the door
-    //  todo  need to close iterator?
     System.out.println("\nDeed done, shutting down.");
     System.exit(42);
 

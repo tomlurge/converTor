@@ -1,12 +1,15 @@
-package converTor;
+package converTor.convert;
 
-
-import converTor.relayConsensus.RelayConsensus;
+import converTor.avro.classes.relayConsensus.RelayConsensus;
+import converTor.util.Convert;
+import converTor.util.Converted;
+import converTor.util.DescriptorType;
 import org.torproject.descriptor.RelayNetworkStatusConsensus;
 
-public class ConvertRelayConsensus extends ConvertCommons {
 
-  static Converted convert(RelayNetworkStatusConsensus desc) {
+public class ConvertRelayConsensus extends Convert {
+
+  public static Converted convert(RelayNetworkStatusConsensus desc) {
 
     RelayConsensus conversion = new RelayConsensus();
 
