@@ -1,4 +1,19 @@
+most wanted
 
+    extract JSON schema(ta) from an Avro IDL file
+      java -jar avro-tools-*.jar idl2schemata ~/descriptor.idl .
+     
+    compile (generate classes from) a schema
+      java -jar avro-tools-*.jar compile -string schema ~/descriptor.avsc .
+    
+    convert .avro to JSON
+      java -jar avro-tools-*.jar tojson myFile.avro > myFile.json
+      
+    get schema from avro file
+      java -jar avro-tools-*.jar getschema torperf_2015-11.avro
+    
+    
+intro
 
     DOCS - 1.8.0 at the time of this writing
       intro https://avro.apache.org/docs/current/gettingstartedjava.html

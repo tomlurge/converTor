@@ -1,14 +1,10 @@
 # TODO
 
-
-
 * ConverTor
       
   - code style
       static ganz raus
-      alles als instanzen wegen testen
-      commons zu util umbenennen
-      config in ein eigenes objekt
+          alles als instanzen wegen testen
       avro,json,parquet als eigene klassen
       make TypeWriters extend avro/parquet/json writers and implement a common interface
           beispiel: WriterObject als interface, dazu AvroWriterObject, 
@@ -16,7 +12,10 @@
           implements WriterObject machen.
       organize static attributes in a properties class (also command line arguments)
           Configuration-object with getters und setters. state pattern?
-     
+     controller
+          switch
+          method
+      
   - make JSON conversion work with avro
       either wait for bug fix
       or try deprecated json conversion method

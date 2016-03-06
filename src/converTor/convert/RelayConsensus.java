@@ -1,17 +1,16 @@
 package converTor.convert;
 
-import converTor.avro.classes.relayConsensus.RelayConsensus;
-import converTor.util.Convert;
-import converTor.util.Converted;
+import converTor.util.ConvertResult;
 import converTor.util.ConvertType;
 import org.torproject.descriptor.RelayNetworkStatusConsensus;
 
 
-public class ConvertRelayConsensus extends Convert {
+public class RelayConsensus extends ConvertCommons {
 
-  public static Converted convert(RelayNetworkStatusConsensus desc) {
+  public static ConvertResult convert(RelayNetworkStatusConsensus desc) {
 
-    RelayConsensus conversion = new RelayConsensus();
+    converTor.avro.classes.relayConsensus.RelayConsensus conversion =
+        new converTor.avro.classes.relayConsensus.RelayConsensus();
 
 //  conversion.set
 //  conversion.set
@@ -30,7 +29,7 @@ public class ConvertRelayConsensus extends Convert {
 //  conversion.set
 
 
-    Converted converted = new Converted();
+    ConvertResult converted = new ConvertResult();
     converted.type = ConvertType.relayConsensusType;
     converted.date = dateTimeFormat.format(desc.getValidAfterMillis()).substring(0,7);
     converted.load = conversion;

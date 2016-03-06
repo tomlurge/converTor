@@ -5,24 +5,44 @@ import org.apache.commons.cli.*;  // command line interface
 
 public class Config {
 
+  /*
+
+  todo
+
+  private Config c;
+
+  init(args) {
+     if (c == null) c = new Config(args);
+     // done already, no else required
+  }
+
+  probably change all  setters to
+      c.<...> = ...
+  and all getters to
+     return c.<...>;
+
+   */
+
+
+
   //  ARGUMENT DEFAULTS
-  public static boolean verbose = false;
-  public static boolean compressed = false;
-  public static boolean pretty = false;
-  public static boolean json = false;
-  public static boolean avro = false;
-  public static boolean parquet = true;
-  public static String format = "parquet";
-  public static String inPath = "data/in/";
-  public static String outPath = "data/out/" + format + "/";
-  public static String suffix = "";
-  public static int max = 20;
-  public static String outputFileEnding;
+  private static boolean verbose = false;
+  private static boolean compressed = false;
+  private static boolean pretty = false;
+  private static boolean json = false;
+  private static boolean avro = false;
+  private static boolean parquet = true;
+  private static String format = "parquet";
+  private static String inPath = "data/in/";
+  private static String outPath = "data/out/" + getFormat() + "/";
+  private static String suffix = "";
+  private static int max = 20;
+  private static String outputFileEnding;
 
 
-  Config(String[] args) {
+  //  EVALUATE COMMAND LINE ARGUMENTS
+  Config(String[] commandLineArguments) {
 
-    //  COMMAND LINE ARGUMENTS
     //  https://commons.apache.org/proper/commons-cli/usage.html
     Options options = new Options();
     options.addOption("h", "help", false,
@@ -62,7 +82,7 @@ public class Config {
     CommandLineParser parser = new DefaultParser();
     CommandLine cmd = null;
     try {
-      cmd = parser.parse(options, args);
+      cmd = parser.parse(options, commandLineArguments);
     } catch (ParseException e) {
       e.printStackTrace();
     }
@@ -74,25 +94,25 @@ public class Config {
     if(cmd.hasOption("f") && cmd.getOptionValue("f") != null) {
       String formatArgument = cmd.getOptionValue("f").toLowerCase();
       if (formatArgument.equals("avro")) {
-        avro = true;
-        json = false;
-        parquet = false;
-        format = formatArgument;
-        outPath = "data/out/" + format + "/";
+        setAvro(true);
+        setJson(false);
+        setParquet(false);
+        setFormat(formatArgument);
+        setOutPath("data/out/" + getFormat() + "/");
       }
       else if (formatArgument.equals("json")) {
-        avro = false;
-        json = true;
-        parquet = false;
-        format = formatArgument;
-        outPath = "data/out/" + format + "/";
+        setAvro(false);
+        setJson(true);
+        setParquet(false);
+        setFormat(formatArgument);
+        setOutPath("data/out/" + getFormat() + "/");
       }
       else if (formatArgument.equals("parquet")) {
-        avro = false;
-        json = false;
-        parquet = true;
-        format = formatArgument;
-        outPath = "data/out/" + format + "/";
+        setAvro(false);
+        setJson(false);
+        setParquet(true);
+        setFormat(formatArgument);
+        setOutPath("data/out/" + getFormat() + "/");
       }
       else  {
         HelpFormatter formatter = new HelpFormatter();
@@ -102,32 +122,139 @@ public class Config {
       }
     }
     if(cmd.hasOption("s") && cmd.getOptionValue("s") != null) {
-      suffix  = cmd.getOptionValue("s");
+      setSuffix(cmd.getOptionValue("s"));
     }
     if(cmd.hasOption("i") && cmd.getOptionValue("i") != null) {
-      inPath = cmd.getOptionValue("i");
+      setInPath(cmd.getOptionValue("i"));
     }
     if(cmd.hasOption("o") && cmd.getOptionValue("o") != null) {
-      outPath = cmd.getOptionValue("o");
+      setOutPath(cmd.getOptionValue("o"));
     }
     if(cmd.hasOption("v")) {
-      verbose = true;
+      setVerbose(true);
     }
     if(cmd.hasOption("p")) {
-      pretty = true;
+      setPretty(true);
     }
     if(cmd.hasOption("c")) {
-      compressed = true;
+      setCompressed(true);
     }
-    outputFileEnding =
-        suffix
-            + "."
-            + ( compressed && avro ? "snappy." : "")
-            + ( compressed && parquet ? "snappy." : "")
-            + format
-            + ( compressed && json ? ".gz" : "");
+    setOutputFileEnding(getSuffix()
+        + "."
+        + ( isCompressed() && isAvro() ? "snappy." : "")
+        + ( isCompressed() && isParquet() ? "snappy." : "")
+        + getFormat()
+        + ( isCompressed() && isJson() ? ".gz" : ""));
+
+    //  PARAMETERS SET
+    //  TODO  remove after testing
+    System.out.println("format = " + getFormat());
+    System.out.println("suffix = " + getSuffix());
+    System.out.println("inPath = " + getInPath());
+    System.out.println("outPath = " + getOutPath());
+    System.out.println("verbose = " + isVerbose());
+    System.out.println("compressed = " + isCompressed());
+    System.out.println("pretty printed JSON = " + isPretty());
+    System.out.println("outputFileEnding = " + getOutputFileEnding());
+    System.out.println();
 
   }
 
-}
+  public static String getInPath() {
+    return inPath;
+  }
 
+  private static void setInPath(String inPath) {
+    Config.inPath = inPath;
+  }
+
+  public static boolean isVerbose() {
+    return verbose;
+  }
+
+  private static void setVerbose(boolean verbose) {
+    Config.verbose = verbose;
+  }
+
+  public static boolean isCompressed() {
+    return compressed;
+  }
+
+  private static void setCompressed(boolean compressed) {
+    Config.compressed = compressed;
+  }
+
+  public static boolean isPretty() {
+    return pretty;
+  }
+
+  private static void setPretty(boolean pretty) {
+    Config.pretty = pretty;
+  }
+
+  public static boolean isJson() {
+    return json;
+  }
+
+  public static void setJson(boolean json) {
+    Config.json = json;
+  }
+
+  public static boolean isAvro() {
+    return avro;
+  }
+
+  public static void setAvro(boolean avro) {
+    Config.avro = avro;
+  }
+
+  public static boolean isParquet() {
+    return parquet;
+  }
+
+  public static void setParquet(boolean parquet) {
+    Config.parquet = parquet;
+  }
+
+  public static String getFormat() {
+    return format;
+  }
+
+  public static void setFormat(String format) {
+    Config.format = format;
+  }
+
+  public static String getOutPath() {
+    return outPath;
+  }
+
+  public static void setOutPath(String outPath) {
+    Config.outPath = outPath;
+  }
+
+  public static String getSuffix() {
+    return suffix;
+  }
+
+  public static void setSuffix(String suffix) {
+    Config.suffix = suffix;
+  }
+
+  public static int getMax() {
+    return max;
+  }
+
+  public static void setMax(int max) {
+    Config.max = max;
+  }
+
+  public static String getOutputFileEnding() {
+    return outputFileEnding;
+  }
+
+  public static void setOutputFileEnding(String outputFileEnding) {
+    Config.outputFileEnding = outputFileEnding;
+  }
+
+
+}

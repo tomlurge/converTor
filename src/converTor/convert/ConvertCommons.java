@@ -1,4 +1,4 @@
-package converTor.util;
+package converTor.convert;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -20,7 +20,7 @@ import org.apache.avro.specific.SpecificRecordBase;
  *  templates for elements common to some or all descriptor types
  */
 
-public class Convert {
+public class ConvertCommons {
 
   /* make ConvertCommons super type of all Converters
   static Converted convert(Descriptor descriptor) {
@@ -55,7 +55,7 @@ public class Convert {
   }
 
   /* ExtraInfo and Stats objects used in extra info descriptors */
-  public  static class ExtraInfo {
+  public static class ExtraInfo {
     String nickname;
     String fingerprint;
   }

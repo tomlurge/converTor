@@ -11,9 +11,9 @@ import org.apache.avro.Schema;
 
 public class ConvertType {
 
-  String name;          // identifying name of the DescriptorType
-  String clasName;      // Name of the class (name First Letter Capitalized)
-  Schema avsc;          // parsed JSON schema
+  public String name;      // identifying name of the DescriptorType
+  public String clasName;  // Name of class (like 'name', but First Letter Capitalized) // todo rename to 'clas'
+  public Schema avsc;      // parsed JSON schema
 
   ConvertType(String name) {
     this.name = name;

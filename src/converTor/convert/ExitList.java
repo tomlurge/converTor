@@ -1,10 +1,7 @@
 package converTor.convert;
 
-import converTor.avro.classes.tordnsel.Tordnsel;
-import converTor.util.Convert;
-import converTor.util.Converted;
+import converTor.util.ConvertResult;
 import converTor.util.ConvertType;
-import org.torproject.descriptor.ExitList;
 
 import java.util.List;
 
@@ -13,11 +10,12 @@ import java.util.List;
  * Tordnsel / ExitList
  */
 
-public class ConvertExitList extends Convert {
+public class ExitList extends ConvertCommons {
 
-  public static Converted convert(ExitList desc) {
+  public static ConvertResult convert(org.torproject.descriptor.ExitList desc) {
 
-    Tordnsel conversion = new Tordnsel();
+    converTor.avro.classes.tordnsel.Tordnsel conversion =
+        new converTor.avro.classes.tordnsel.Tordnsel();
 
 //  conversion.set
 //  conversion.set
@@ -36,7 +34,7 @@ public class ConvertExitList extends Convert {
 //  conversion.set
 
 
-    Converted converted = new Converted();
+    ConvertResult converted = new ConvertResult();
     converted.type = ConvertType.tordnselType;
     converted.date = dateTimeFormat.format(desc.getDownloadedMillis()).substring(0,7);
     converted.load = conversion;

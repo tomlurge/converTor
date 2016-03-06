@@ -2,6 +2,7 @@ package converTor.util;
 
 import java.util.ArrayList;
 import java.util.List;
+/*
 
 public class ParsePLine {
   public static void main(String[] args) {
@@ -72,3 +73,4 @@ public class ParsePLine {
     System.out.println();
   }
 }
+*/

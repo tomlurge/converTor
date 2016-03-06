@@ -1,7 +1,9 @@
-package converTor.util;
+package converTor.format;
 
 import java.io.*;
 
+import converTor.Config;
+import converTor.util.ConvertType;
 import org.apache.avro.io.ValidatingEncoder;
 import org.apache.hadoop.fs.Path;
 import org.apache.avro.file.CodecFactory;
@@ -17,14 +19,12 @@ import org.apache.parquet.avro.AvroParquetWriter;
 import org.apache.parquet.hadoop.ParquetWriter;
 import org.apache.parquet.hadoop.metadata.CompressionCodecName;
 
-import static converTor.Config.*;  // some constants
-
 
 
 public class WriterObject<T extends Object> {  // crazy generics
 
   //  gets casted within append()
-  Object dataFileWriter;
+  public Object dataFileWriter;
 
 
   //  json the PEDESTRIAN way
@@ -32,21 +32,21 @@ public class WriterObject<T extends Object> {  // crazy generics
 
   //  json the AVRO way
   //  jump through hoop to get the jsonEncoder from Constructor to append()
-  ValidatingEncoder jsonEncoder;
+  public ValidatingEncoder jsonEncoder;
 
 
 
   /*
    *  constructor
    */
-  WriterObject(ConvertType descType, String date) throws IOException {
+  public WriterObject(ConvertType descType, String date) throws IOException {
 
     String writerID = descType.name + "_" + date;
-    File outputFile = new File(outPath + writerID + outputFileEnding);
-    Path outputPath = new Path(outPath + writerID + outputFileEnding);
+    File outputFile = new File(Config.getOutPath() + writerID + Config.getOutputFileEnding());
+    Path outputPath = new Path(Config.getOutPath() + writerID + Config.getOutputFileEnding());
     Schema schema = descType.avsc;
 
-    if (json) { // TODO
+    if (Config.isJson()) { // TODO
 
       //  the PEDESTRIAN way
 /*
@@ -76,7 +76,7 @@ public class WriterObject<T extends Object> {  // crazy generics
       //        instead of just one encoder per type.
       //        but a solution is involved since an encoder depends not only on a
       //        schema but also the output path, which contains the month. so..
-      Encoder encoder = EncoderFactory.get().jsonEncoder(schema, out, pretty);
+      Encoder encoder = EncoderFactory.get().jsonEncoder(schema, out, Config.isPretty());
       ValidatingEncoder validatingEncoder =
           EncoderFactory.get().validatingEncoder(schema, encoder);
       jsonEncoder = validatingEncoder;
@@ -107,21 +107,21 @@ public class WriterObject<T extends Object> {  // crazy generics
 
     }
 
-    if (avro) {
+    if (Config.isAvro()) {
       //  https://avro.apache.org/docs/1.8.0/api/java/org/apache/avro/specific/SpecificDatumWriter.html
       //  https://avro.apache.org/docs/current/gettingstartedjava.html#Serializing
       DatumWriter<T> avroDatumWriter = new SpecificDatumWriter<>(schema); // crazy generics
       DataFileWriter<T> avroFileWriter = new DataFileWriter<>(avroDatumWriter); // crazy generics
-      if (compressed) avroFileWriter.setCodec(CodecFactory.snappyCodec());
+      if (Config.isCompressed()) avroFileWriter.setCodec(CodecFactory.snappyCodec());
       avroFileWriter.create(schema, outputFile);
       dataFileWriter = avroFileWriter;
     }
 
-    if (parquet) { // uses parquet-mr
+    if (Config.isParquet()) { // uses parquet-mr
       ParquetWriter<Object> parquetWriter = AvroParquetWriter.builder(outputPath)
           .withSchema(schema)
           .withCompressionCodec(
-              compressed ? CompressionCodecName.SNAPPY : CompressionCodecName.UNCOMPRESSED
+              Config.isCompressed() ? CompressionCodecName.SNAPPY : CompressionCodecName.UNCOMPRESSED
           )
           .build();
       dataFileWriter = parquetWriter;
@@ -136,7 +136,7 @@ public class WriterObject<T extends Object> {  // crazy generics
    */
   public void append(SpecificRecord load) throws IOException {
 
-    if (json) { // TODO
+    if (Config.isJson()) { // TODO
 
       //  the PEDESTRIAN way
 /*
@@ -155,12 +155,12 @@ public class WriterObject<T extends Object> {  // crazy generics
 
     }
 
-    if (avro) {
+    if (Config.isAvro()) {
       DataFileWriter<SpecificRecord> avroWriter =
           (DataFileWriter) dataFileWriter;
       avroWriter.append(load);
     }
-    if (parquet) {
+    if (Config.isParquet()) {
       // AvroParquetWriter parquetWriter = (AvroParquetWriter) writer;
       // parquetWriter.write(converted.load);
       ParquetWriter parquetWriter = (ParquetWriter) dataFileWriter;

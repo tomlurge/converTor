@@ -1,17 +1,16 @@
 package converTor.convert;
 
-import converTor.avro.classes.relayVote.RelayVote;
-import converTor.util.Convert;
-import converTor.util.Converted;
+import converTor.util.ConvertResult;
 import converTor.util.ConvertType;
-import org.torproject.descriptor.RelayNetworkStatusVote;
+import org.torproject.descriptor.BridgeExtraInfoDescriptor;
 
 
-public class ConvertRelayVote extends Convert {
+public class BridgeExtra extends ConvertCommons {
 
-  public static Converted convert(RelayNetworkStatusVote desc) {
+  public static ConvertResult convert(BridgeExtraInfoDescriptor desc) {
 
-    RelayVote conversion = new RelayVote();
+    converTor.avro.classes.bridgeExtra.BridgeExtra conversion =
+        new converTor.avro.classes.bridgeExtra.BridgeExtra();
 
 //  conversion.set
 //  conversion.set
@@ -30,8 +29,8 @@ public class ConvertRelayVote extends Convert {
 //  conversion.set
 
 
-    Converted converted = new Converted();
-    converted.type = ConvertType.relayVoteType;
+    ConvertResult converted = new ConvertResult();
+    converted.type = ConvertType.bridgeExtraType;
     converted.date = dateTimeFormat.format(desc.getPublishedMillis()).substring(0,7);
     converted.load = conversion;
     return converted;

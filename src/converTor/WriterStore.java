@@ -1,53 +1,50 @@
-package converTor.util;
+package converTor;
 
+import converTor.util.ConvertType;
+import converTor.format.WriterObject;
 import org.apache.avro.file.DataFileWriter;
 import org.apache.parquet.hadoop.ParquetWriter;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.io.IOException;
-
-import static converTor.Config.*;  // some constants
 
 
-public class TypeWriter {
 
+public class WriterStore {
 
-  /*
-   *  a map to hold all writers per type + month
-   */
-  private static Map<String, WriterObject> typeWriterMap = new HashMap();
+  //  A MAP TO HOLD ALL WRITERS PER TYPE + MONTH
+  private static Map<String, WriterObject> writerStoreMap;
 
+  //  MAP INITIALIZED THROUGH CALL IN MAIN
+  public WriterStore() {
+    writerStoreMap = new HashMap();
+  }
 
-  /*
-   *  a getter for that map
-   */
+  //  A GETTER FOR THAT MAP
   public static <T extends Object> WriterObject get(ConvertType type, String date)
       throws IOException {
     // construct writer id
     String writerID = type.name + "_" + date;
     //  create if not existant
-    if (typeWriterMap.get(writerID) == null) {
+    if (writerStoreMap.get(writerID) == null) {
       WriterObject writer = new WriterObject(type, date);
-      typeWriterMap.put(writerID, writer);
+      writerStoreMap.put(writerID, writer);
     }
-    return typeWriterMap.get(writerID);
+    return writerStoreMap.get(writerID);
   }
 
-
-  /*
-   *  clean up after the last descriptor has been converted
-   */
+  //  CLEAN UP AFTER THE LAST DESCRIPTOR HAS BEEN CONVERTED
   public static void wrapUp() throws IOException {
-    for ( WriterObject writerObject : typeWriterMap.values()) {
+    for ( WriterObject writerObject : writerStoreMap.values()) {
 
-      if (avro) {
+      if (Config.isAvro()) {
         ((DataFileWriter) writerObject.dataFileWriter).close();
       }
-      if (parquet) {
+      if (Config.isParquet()) {
         ((ParquetWriter) writerObject.dataFileWriter).close();
       }
-      if (json) {
+      if (Config.isJson()) {
 
         //  the OLD way
         //  todo wrap up buffered writer
