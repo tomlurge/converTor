@@ -1,6 +1,6 @@
 package converTor;
 
-import converTor.util.ConvertType;
+import converTor.Type;
 import converTor.format.WriterObject;
 import org.apache.avro.file.DataFileWriter;
 import org.apache.parquet.hadoop.ParquetWriter;
@@ -32,7 +32,7 @@ public class WriterFactory {
 
 
   //  GET WRITER FROM MAP
-  public <T extends Object> WriterObject get(ConvertType type, String date)
+  public <T extends Object> WriterObject get(Type type, String date)
       throws IOException {
     // construct writer id
     String writerID = type.name + "_" + date;

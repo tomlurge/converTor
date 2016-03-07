@@ -1,7 +1,7 @@
 package converTor.convert;
 
 import converTor.util.ConvertResult;
-import converTor.util.ConvertType;
+import converTor.Type;
 
 import java.util.List;
 
@@ -35,7 +35,7 @@ public class ExitList extends ConvertCommons {
 
 
     ConvertResult converted = new ConvertResult();
-    converted.type = ConvertType.tordnselType;
+    converted.type = Type.tordnselType;
     converted.date = dateTimeFormat.format(desc.getDownloadedMillis()).substring(0,7);
     converted.load = conversion;
     return converted;

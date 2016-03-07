@@ -2,7 +2,7 @@ package converTor.format;
 
 import java.io.*;
 import converTor.Main;
-import converTor.util.ConvertType;
+import converTor.Type;
 import org.apache.avro.io.ValidatingEncoder;
 import org.apache.hadoop.fs.Path;
 import org.apache.avro.file.CodecFactory;
@@ -38,7 +38,7 @@ public class WriterObject<T extends Object> {  // crazy generics
   /*
    *  constructor
    */
-  public WriterObject(ConvertType descType, String date) throws IOException {
+  public WriterObject(Type descType, String date) throws IOException {
 
     String writerID = descType.name + "_" + date;
     File outputFile = new File(Main.config.getOutPath() + writerID + Main.config.getOutputFileEnding());

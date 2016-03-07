@@ -1,7 +1,7 @@
 package converTor.convert;
 
 import converTor.util.ConvertResult;
-import converTor.util.ConvertType;
+import converTor.Type;
 import org.torproject.descriptor.RelayNetworkStatusVote;
 
 
@@ -30,7 +30,7 @@ public class RelayVote extends ConvertCommons {
 
 
     ConvertResult converted = new ConvertResult();
-    converted.type = ConvertType.relayVoteType;
+    converted.type = Type.relayVoteType;
     converted.date = dateTimeFormat.format(desc.getPublishedMillis()).substring(0,7);
     converted.load = conversion;
     return converted;

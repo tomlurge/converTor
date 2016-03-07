@@ -1,7 +1,7 @@
 package converTor.convert;
 
 import converTor.util.ConvertResult;
-import converTor.util.ConvertType;
+import converTor.Type;
 import org.torproject.descriptor.BridgeNetworkStatus;
 
 
@@ -30,7 +30,7 @@ public class BridgeStatus extends ConvertCommons {
 
 
     ConvertResult converted = new ConvertResult();
-    converted.type = ConvertType.bridgeStatusType;
+    converted.type = Type.bridgeStatusType;
     converted.date = dateTimeFormat.format(desc.getPublishedMillis()).substring(0,7);
     converted.load = conversion;
     return converted;
