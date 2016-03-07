@@ -12,11 +12,11 @@ import org.torproject.descriptor.*;
 public class Controller {
 
   //  SET UP ITERATOR OVER INPUT DESCRIPTOR FILES
-  Controller() throws java.io.IOException {
+  Controller(String inPath, int maxFiles) throws java.io.IOException {
 
     DescriptorReader descriptorReader = DescriptorSourceFactory.createDescriptorReader();
-    descriptorReader.addDirectory(new File(Config.getInPath()));
-    descriptorReader.setMaxDescriptorFilesInQueue(Config.getMax());
+    descriptorReader.addDirectory(new File(inPath));
+    descriptorReader.setMaxDescriptorFilesInQueue(maxFiles);
     Iterator<DescriptorFile> descriptorFiles = descriptorReader.readDescriptors();
 
     while (descriptorFiles.hasNext()) {
@@ -127,7 +127,7 @@ public class Controller {
 
           ConvertResult converted = Torperf
               .convert((TorperfResult) descriptor);
-          WriterStore
+          Main.writers
               .<TorperfResult>get(ConvertType.torperfType, converted.date)  // crazy generics
               .append(converted.load);
           // making reference to JSON Encoder more explicit

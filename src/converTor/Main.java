@@ -8,31 +8,31 @@ import java.io.*;
  *  and initiate conversion to the desired format
  */
 
-
 public class Main {
+
+  public static Config config;
+  static WriterFactory writers;
+  static Controller controller;
 
   public static void main(String[] args) throws IOException {
 
     //  SET UP GLOBAL VARIABLES
-    new Config(args);
-    //  Config.init(args)         // todo   without new(), singleton
+    config = new Config(args);
 
     //  SETUP ENCODERS
-    //  EncoderFactory.init();    // todo   without new(), singleton
+    new EncoderFactory();     // todo
 
     //  SETUP CONVERTERS
-    //  ConverterFactory.init();  // todo   without new(), singleton
+    new ConverterFactory();   // todo
 
     //  SETUP OUTPUT WRITERS
-    new WriterStore();
-    //  WriterFactory.init()      // todo   without new(), singleton
+    writers = new WriterFactory();
 
     //  READ INPUT FILES + TRIGGER APPROPRIATE CONVERSION
-    new Controller();
-    //  Controller.iterate(Config.inPath) // todo   without new(), singleton
+    controller = new Controller(config.getInPath(), config.getMax());
 
     //  CLOSE/FLUSH FILE WRITERS + EXIT
-    WriterStore.wrapUp();         // todo   WriterFactory.wrapUp();
+    writers.wrapUp();
     System.exit(0);
 
   }

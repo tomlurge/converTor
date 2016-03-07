@@ -5,43 +5,30 @@ import org.apache.commons.cli.*;  // command line interface
 
 public class Config {
 
-  /*
-
-  todo
-
-  private Config c;
-
-  init(args) {
-     if (c == null) c = new Config(args);
-     // done already, no else required
-  }
-
-  probably change all  setters to
-      c.<...> = ...
-  and all getters to
-     return c.<...>;
-
-   */
-
-
+  //  SINGLETON
+  private Boolean initialized = false;
 
   //  ARGUMENT DEFAULTS
-  private static boolean verbose = false;
-  private static boolean compressed = false;
-  private static boolean pretty = false;
-  private static boolean json = false;
-  private static boolean avro = false;
-  private static boolean parquet = true;
-  private static String format = "parquet";
-  private static String inPath = "data/in/";
-  private static String outPath = "data/out/" + getFormat() + "/";
-  private static String suffix = "";
-  private static int max = 20;
-  private static String outputFileEnding;
+  private boolean verbose = false;
+  private boolean compressed = false;
+  private boolean pretty = false;
+  private boolean json = false;
+  private boolean avro = false;
+  private boolean parquet = true;
+  private String format = "parquet";
+  private String inPath = "data/in/";
+  private String outPath = "data/out/" + getFormat() + "/";
+  private String suffix = "";
+  private int max = 20;
+  private String outputFileEnding;
 
 
-  //  EVALUATE COMMAND LINE ARGUMENTS
+  //  CONSTRUCTOR
+  //  EVALUATES COMMAND LINE ARGUMENTS
   Config(String[] commandLineArguments) {
+
+    if (initialized) return;
+    initialized = true;
 
     //  https://commons.apache.org/proper/commons-cli/usage.html
     Options options = new Options();
@@ -139,6 +126,14 @@ public class Config {
     if(cmd.hasOption("c")) {
       setCompressed(true);
     }
+    if(cmd.hasOption("m")) {
+      try {
+        setMax(Integer.parseInt(cmd.getOptionValue("m")));
+      } catch (NumberFormatException e) {
+        System.out.println("m/max has to be an integer");
+        System.exit(1);
+      }
+    }
     setOutputFileEnding(getSuffix()
         + "."
         + ( isCompressed() && isAvro() ? "snappy." : "")
@@ -155,105 +150,94 @@ public class Config {
     System.out.println("verbose = " + isVerbose());
     System.out.println("compressed = " + isCompressed());
     System.out.println("pretty printed JSON = " + isPretty());
+    System.out.println("max files = " + getMax());
     System.out.println("outputFileEnding = " + getOutputFileEnding());
-    System.out.println();
+    System.out.println("\n");
 
   }
 
-  public static String getInPath() {
+  public String getInPath() {
     return inPath;
   }
-
-  private static void setInPath(String inPath) {
-    Config.inPath = inPath;
+  private void setInPath(String inPath) {
+    this.inPath = inPath;
   }
 
-  public static boolean isVerbose() {
+  public boolean isVerbose() {
     return verbose;
   }
-
-  private static void setVerbose(boolean verbose) {
-    Config.verbose = verbose;
+  private void setVerbose(boolean verbose) {
+    this.verbose = verbose;
   }
 
-  public static boolean isCompressed() {
+  public boolean isCompressed() {
     return compressed;
   }
-
-  private static void setCompressed(boolean compressed) {
-    Config.compressed = compressed;
+  private void setCompressed(boolean compressed) {
+    this.compressed = compressed;
   }
 
-  public static boolean isPretty() {
+  public boolean isPretty() {
     return pretty;
   }
-
-  private static void setPretty(boolean pretty) {
-    Config.pretty = pretty;
+  private void setPretty(boolean pretty) {
+    this.pretty = pretty;
   }
 
-  public static boolean isJson() {
+  public boolean isJson() {
     return json;
   }
-
-  public static void setJson(boolean json) {
-    Config.json = json;
+  private void setJson(boolean json) {
+    this.json = json;
   }
 
-  public static boolean isAvro() {
+  public boolean isAvro() {
     return avro;
   }
-
-  public static void setAvro(boolean avro) {
-    Config.avro = avro;
+  private void setAvro(boolean avro) {
+    this.avro = avro;
   }
 
-  public static boolean isParquet() {
+  public boolean isParquet() {
     return parquet;
   }
-
-  public static void setParquet(boolean parquet) {
-    Config.parquet = parquet;
+  private void setParquet(boolean parquet) {
+    this.parquet = parquet;
   }
 
-  public static String getFormat() {
+  public String getFormat() {
     return format;
   }
-
-  public static void setFormat(String format) {
-    Config.format = format;
+  private void setFormat(String format) {
+    this.format = format;
   }
 
-  public static String getOutPath() {
+  public String getOutPath() {
     return outPath;
   }
-
-  public static void setOutPath(String outPath) {
-    Config.outPath = outPath;
+  private void setOutPath(String outPath) {
+    this.outPath = outPath;
   }
 
-  public static String getSuffix() {
+  public String getSuffix() {
     return suffix;
   }
-
-  public static void setSuffix(String suffix) {
-    Config.suffix = suffix;
+  private void setSuffix(String suffix) {
+    this.suffix = suffix;
   }
 
-  public static int getMax() {
+  public int getMax() {
     return max;
   }
-
-  public static void setMax(int max) {
-    Config.max = max;
+  private void setMax(int max) {
+    this.max = max;
   }
 
-  public static String getOutputFileEnding() {
+  public String getOutputFileEnding() {
     return outputFileEnding;
   }
-
-  public static void setOutputFileEnding(String outputFileEnding) {
-    Config.outputFileEnding = outputFileEnding;
+  private void setOutputFileEnding(String outputFileEnding) {
+    this.outputFileEnding = outputFileEnding;
   }
 
 

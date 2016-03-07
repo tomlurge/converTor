@@ -10,41 +10,52 @@ import java.util.HashMap;
 import java.util.Map;
 
 
+public class WriterFactory {
 
-public class WriterStore {
+  //  SINGLETON
+  private Boolean initialized = false;
 
-  //  A MAP TO HOLD ALL WRITERS PER TYPE + MONTH
-  private static Map<String, WriterObject> writerStoreMap;
+  //  MAP TO HOLD ALL WRITERS PER TYPE + MONTH
+  private Map<String, WriterObject> writerMap;
 
-  //  MAP INITIALIZED THROUGH CALL IN MAIN
-  public WriterStore() {
-    writerStoreMap = new HashMap();
+
+  //  CONSTRUCTOR
+  //  INITIALIZES WRITER MAP
+  WriterFactory() {
+
+    if (initialized) return;
+    initialized = true;
+
+    writerMap = new HashMap();
+
   }
 
-  //  A GETTER FOR THAT MAP
-  public static <T extends Object> WriterObject get(ConvertType type, String date)
+
+  //  GET WRITER FROM MAP
+  public <T extends Object> WriterObject get(ConvertType type, String date)
       throws IOException {
     // construct writer id
     String writerID = type.name + "_" + date;
     //  create if not existant
-    if (writerStoreMap.get(writerID) == null) {
+    if (writerMap.get(writerID) == null) {
       WriterObject writer = new WriterObject(type, date);
-      writerStoreMap.put(writerID, writer);
+      writerMap.put(writerID, writer);
     }
-    return writerStoreMap.get(writerID);
+    return writerMap.get(writerID);
   }
 
-  //  CLEAN UP AFTER THE LAST DESCRIPTOR HAS BEEN CONVERTED
-  public static void wrapUp() throws IOException {
-    for ( WriterObject writerObject : writerStoreMap.values()) {
 
-      if (Config.isAvro()) {
+  //  CLEAN UP AFTER THE LAST DESCRIPTOR HAS BEEN CONVERTED
+  public void wrapUp() throws IOException {
+    for ( WriterObject writerObject : writerMap.values()) {
+
+      if (Main.config.isAvro()) {
         ((DataFileWriter) writerObject.dataFileWriter).close();
       }
-      if (Config.isParquet()) {
+      if (Main.config.isParquet()) {
         ((ParquetWriter) writerObject.dataFileWriter).close();
       }
-      if (Config.isJson()) {
+      if (Main.config.isJson()) {
 
         //  the OLD way
         //  todo wrap up buffered writer
@@ -56,5 +67,6 @@ public class WriterStore {
       }
     }
   }
+
 
 }

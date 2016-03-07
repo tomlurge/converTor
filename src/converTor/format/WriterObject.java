@@ -1,8 +1,7 @@
 package converTor.format;
 
 import java.io.*;
-
-import converTor.Config;
+import converTor.Main;
 import converTor.util.ConvertType;
 import org.apache.avro.io.ValidatingEncoder;
 import org.apache.hadoop.fs.Path;
@@ -42,11 +41,11 @@ public class WriterObject<T extends Object> {  // crazy generics
   public WriterObject(ConvertType descType, String date) throws IOException {
 
     String writerID = descType.name + "_" + date;
-    File outputFile = new File(Config.getOutPath() + writerID + Config.getOutputFileEnding());
-    Path outputPath = new Path(Config.getOutPath() + writerID + Config.getOutputFileEnding());
+    File outputFile = new File(Main.config.getOutPath() + writerID + Main.config.getOutputFileEnding());
+    Path outputPath = new Path(Main.config.getOutPath() + writerID + Main.config.getOutputFileEnding());
     Schema schema = descType.avsc;
 
-    if (Config.isJson()) { // TODO
+    if (Main.config.isJson()) { // TODO
 
       //  the PEDESTRIAN way
 /*
@@ -76,7 +75,7 @@ public class WriterObject<T extends Object> {  // crazy generics
       //        instead of just one encoder per type.
       //        but a solution is involved since an encoder depends not only on a
       //        schema but also the output path, which contains the month. so..
-      Encoder encoder = EncoderFactory.get().jsonEncoder(schema, out, Config.isPretty());
+      Encoder encoder = EncoderFactory.get().jsonEncoder(schema, out, Main.config.isPretty());
       ValidatingEncoder validatingEncoder =
           EncoderFactory.get().validatingEncoder(schema, encoder);
       jsonEncoder = validatingEncoder;
@@ -107,21 +106,21 @@ public class WriterObject<T extends Object> {  // crazy generics
 
     }
 
-    if (Config.isAvro()) {
+    if (Main.config.isAvro()) {
       //  https://avro.apache.org/docs/1.8.0/api/java/org/apache/avro/specific/SpecificDatumWriter.html
       //  https://avro.apache.org/docs/current/gettingstartedjava.html#Serializing
       DatumWriter<T> avroDatumWriter = new SpecificDatumWriter<>(schema); // crazy generics
       DataFileWriter<T> avroFileWriter = new DataFileWriter<>(avroDatumWriter); // crazy generics
-      if (Config.isCompressed()) avroFileWriter.setCodec(CodecFactory.snappyCodec());
+      if (Main.config.isCompressed()) avroFileWriter.setCodec(CodecFactory.snappyCodec());
       avroFileWriter.create(schema, outputFile);
       dataFileWriter = avroFileWriter;
     }
 
-    if (Config.isParquet()) { // uses parquet-mr
+    if (Main.config.isParquet()) { // uses parquet-mr
       ParquetWriter<Object> parquetWriter = AvroParquetWriter.builder(outputPath)
           .withSchema(schema)
           .withCompressionCodec(
-              Config.isCompressed() ? CompressionCodecName.SNAPPY : CompressionCodecName.UNCOMPRESSED
+              Main.config.isCompressed() ? CompressionCodecName.SNAPPY : CompressionCodecName.UNCOMPRESSED
           )
           .build();
       dataFileWriter = parquetWriter;
@@ -136,7 +135,7 @@ public class WriterObject<T extends Object> {  // crazy generics
    */
   public void append(SpecificRecord load) throws IOException {
 
-    if (Config.isJson()) { // TODO
+    if (Main.config.isJson()) { // TODO
 
       //  the PEDESTRIAN way
 /*
@@ -155,12 +154,12 @@ public class WriterObject<T extends Object> {  // crazy generics
 
     }
 
-    if (Config.isAvro()) {
+    if (Main.config.isAvro()) {
       DataFileWriter<SpecificRecord> avroWriter =
           (DataFileWriter) dataFileWriter;
       avroWriter.append(load);
     }
-    if (Config.isParquet()) {
+    if (Main.config.isParquet()) {
       // AvroParquetWriter parquetWriter = (AvroParquetWriter) writer;
       // parquetWriter.write(converted.load);
       ParquetWriter parquetWriter = (ParquetWriter) dataFileWriter;
