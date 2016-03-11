@@ -1,6 +1,5 @@
 package converTor;
 
-import converTor.Type;
 import converTor.format.WriterObject;
 import org.apache.avro.file.DataFileWriter;
 import org.apache.parquet.hadoop.ParquetWriter;
@@ -12,27 +11,24 @@ import java.util.Map;
 
 public class WriterFactory {
 
-  //  SINGLETON
+  //  initialized   SINGLETON
   private Boolean initialized = false;
 
-  //  MAP TO HOLD ALL WRITERS PER TYPE + MONTH
+  //  writerMap   A MAP TO HOLD ALL WRITERS PER TYPE + MONTH
   private Map<String, WriterObject> writerMap;
 
 
-  //  CONSTRUCTOR
-  //  INITIALIZES WRITER MAP
+  //  WriterFactory   CONSTRUCTOR
   WriterFactory() {
-
     if (initialized) return;
-    initialized = true;
-
+    //  initialize writer map
     writerMap = new HashMap();
-
+    initialized = true;
   }
 
 
-  //  GET WRITER FROM MAP
-  public <T extends Object> WriterObject get(Type type, String date)
+  //  getWriter   GET WRITER FROM MAP
+  public <T extends Object> WriterObject getWriter(TypeFactory type, String date)
       throws IOException {
     // construct writer id
     String writerID = type.name + "_" + date;
@@ -45,7 +41,7 @@ public class WriterFactory {
   }
 
 
-  //  CLEAN UP AFTER THE LAST DESCRIPTOR HAS BEEN CONVERTED
+  //  wrapUp    CLEAN UP AFTER THE LAST DESCRIPTOR HAS BEEN CONVERTED
   public void wrapUp() throws IOException {
     for ( WriterObject writerObject : writerMap.values()) {
 

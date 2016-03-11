@@ -1,4 +1,4 @@
-package converTor.convert;
+package converTor.converter;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -6,7 +6,7 @@ import java.util.Collection;
 import java.util.Locale;
 import java.util.TimeZone;
 
-import org.torproject.descriptor.Descriptor;
+import converTor.TypeFactory;
 
 import org.apache.avro.specific.SpecificRecordBase;
 
@@ -20,13 +20,16 @@ import org.apache.avro.specific.SpecificRecordBase;
  *  templates for elements common to some or all descriptor types
  */
 
-public class ConvertCommons {
+public class Convert<C> {
 
-  /* make ConvertCommons super type of all Converters
-  static Converted convert(Descriptor descriptor) {
-    return null;
-  }
-  */
+  // a lot of details about name, schema, schema class etc
+  public TypeFactory type;
+  // month of creation of original descriptor, as YYYY_MM
+  public String date;
+  // the actual data, converted to an Avro object
+  public SpecificRecordBase load;
+
+
 
   /*  generic key/value objects for verbose output  */
   public static class StringInt {

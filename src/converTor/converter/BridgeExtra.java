@@ -1,13 +1,18 @@
-package converTor.convert;
+package converTor.converter;
 
-import converTor.util.ConvertResult;
-import converTor.Type;
+import org.torproject.descriptor.Descriptor;
 import org.torproject.descriptor.BridgeExtraInfoDescriptor;
 
 
-public class BridgeExtra extends ConvertCommons {
+public class BridgeExtra extends Convert {
 
-  public static ConvertResult convert(BridgeExtraInfoDescriptor desc) {
+  //  inherits fields 'type', 'date' and 'load'
+
+  BridgeExtra(Descriptor desc) {
+    convert((BridgeExtraInfoDescriptor) desc);
+  }
+
+  public void convert(BridgeExtraInfoDescriptor desc) {
 
     converTor.avro.classes.bridgeExtra.BridgeExtra conversion =
         new converTor.avro.classes.bridgeExtra.BridgeExtra();
@@ -29,11 +34,8 @@ public class BridgeExtra extends ConvertCommons {
 //  conversion.set
 
 
-    ConvertResult converted = new ConvertResult();
-    converted.type = Type.bridgeExtraType;
-    converted.date = dateTimeFormat.format(desc.getPublishedMillis()).substring(0,7);
-    converted.load = conversion;
-    return converted;
+    this.date = dateTimeFormat.format(desc.getPublishedMillis()).substring(0,7);
+    this.load = conversion;
 
   }
 }

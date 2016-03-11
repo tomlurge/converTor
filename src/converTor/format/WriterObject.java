@@ -2,7 +2,7 @@ package converTor.format;
 
 import java.io.*;
 import converTor.Main;
-import converTor.Type;
+import converTor.TypeFactory;
 import org.apache.avro.io.ValidatingEncoder;
 import org.apache.hadoop.fs.Path;
 import org.apache.avro.file.CodecFactory;
@@ -22,6 +22,15 @@ import org.apache.parquet.hadoop.metadata.CompressionCodecName;
 
 public class WriterObject<T extends Object> {  // crazy generics
 
+
+  /*
+  TODO  make this class combine encoder and writer for the final step
+        and make it compact enough to integrate it into class Conversion
+        shift encoder code to encoder factory
+        and writer code to writer factory
+   */
+
+
   //  gets casted within append()
   public Object dataFileWriter;
 
@@ -38,12 +47,12 @@ public class WriterObject<T extends Object> {  // crazy generics
   /*
    *  constructor
    */
-  public WriterObject(Type descType, String date) throws IOException {
+  public WriterObject(TypeFactory type, String date) throws IOException {
 
-    String writerID = descType.name + "_" + date;
+    String writerID = type.name + "_" + date;
     File outputFile = new File(Main.config.getOutPath() + writerID + Main.config.getOutputFileEnding());
     Path outputPath = new Path(Main.config.getOutPath() + writerID + Main.config.getOutputFileEnding());
-    Schema schema = descType.avsc;
+    Schema schema = type.avsc;
 
     if (Main.config.isJson()) { // TODO
 
@@ -129,10 +138,7 @@ public class WriterObject<T extends Object> {  // crazy generics
   }
 
 
-
-  /*
-   *  append converted data to encoder/writer
-   */
+  //  append    APPEND CONVERTED DATA TO ENCODER/WRITER
   public void append(SpecificRecord load) throws IOException {
 
     if (Main.config.isJson()) { // TODO

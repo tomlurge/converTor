@@ -19,7 +19,7 @@ public class Config {
   private String inPath = "data/in/";
   private String outPath = "data/out/" + getFormat() + "/";
   private String suffix = "";
-  private int max = 20;
+  private int maxFiles = 20;
   private String outputFileEnding;
 
 
@@ -60,7 +60,7 @@ public class Config {
         "uses gz codec for JSON and snappy codec for Avro and Parquet");
     options.addOption("p", "pretty", false,
         "does generate pretty printed JSON output");
-    options.addOption("m", "max", true,
+    options.addOption("m", "maxFiles", true,
         "maximum file readers to open, \n" +
             "e.g. '-m=5'\n" +
             "defaults to 20");
@@ -128,9 +128,9 @@ public class Config {
     }
     if(cmd.hasOption("m")) {
       try {
-        setMax(Integer.parseInt(cmd.getOptionValue("m")));
+        setMaxFiles(Integer.parseInt(cmd.getOptionValue("m")));
       } catch (NumberFormatException e) {
-        System.out.println("m/max has to be an integer");
+        System.out.println("m/maxFiles has to be an integer");
         System.exit(1);
       }
     }
@@ -150,7 +150,7 @@ public class Config {
     System.out.println("verbose = " + isVerbose());
     System.out.println("compressed = " + isCompressed());
     System.out.println("pretty printed JSON = " + isPretty());
-    System.out.println("max files = " + getMax());
+    System.out.println("maxFiles files = " + getMaxFiles());
     System.out.println("outputFileEnding = " + getOutputFileEnding());
     System.out.println("\n");
 
@@ -226,11 +226,11 @@ public class Config {
     this.suffix = suffix;
   }
 
-  public int getMax() {
-    return max;
+  public int getMaxFiles() {
+    return maxFiles;
   }
-  private void setMax(int max) {
-    this.max = max;
+  private void setMaxFiles(int max) {
+    this.maxFiles = max;
   }
 
   public String getOutputFileEnding() {

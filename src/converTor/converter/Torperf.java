@@ -1,15 +1,29 @@
-package converTor.convert;
+package converTor.converter;
 
-import converTor.util.ConvertResult;
-import converTor.Type;
+import org.torproject.descriptor.Descriptor;
 import org.torproject.descriptor.TorperfResult;
 
 
-public class Torperf extends ConvertCommons {
+public class Torperf extends Convert {
 
-  public static ConvertResult convert(TorperfResult desc) {
 
-    converTor.avro.classes.torperf.Torperf conversion = new converTor.avro.classes.torperf.Torperf();
+  //  inherits fields
+  //    type
+  //    date
+  //    load
+
+
+  //  Torperf   CONSTRUCTOR
+  Torperf(Descriptor desc) {
+    convert((TorperfResult) desc);
+  }
+
+
+  //  convert   CONVERT TORPERF DESCRIPTOR
+  public void convert(TorperfResult desc) {
+
+    converTor.avro.classes.torperf.Torperf conversion =
+        new converTor.avro.classes.torperf.Torperf();
 
     conversion.setDescriptorType("torperf 1.0");
     conversion.setSource(desc.getSource());
@@ -26,11 +40,8 @@ public class Torperf extends ConvertCommons {
     conversion.setWritebytes(desc.getWriteBytes());
     conversion.setReadbytes(desc.getReadBytes());
     conversion.setDidtimeout(desc.didTimeout());
-    if (
-        desc.getDataPercentiles() != null
-            &&
-            !desc.getDataPercentiles().isEmpty()
-        ) {
+    if (desc.getDataPercentiles() != null &&
+        !desc.getDataPercentiles().isEmpty()) {
       conversion.setDataperc10(desc.getDataPercentiles().get(10));
       conversion.setDataperc20(desc.getDataPercentiles().get(20));
       conversion.setDataperc30(desc.getDataPercentiles().get(30));
@@ -52,10 +63,10 @@ public class Torperf extends ConvertCommons {
     conversion.setCircId(desc.getCircId());
     conversion.setUsedBy(desc.getUsedBy());
 
-    ConvertResult converted = new ConvertResult();
-    converted.type = Type.torperfType;
-    converted.date = dateTimeFormat.format(desc.getStartMillis()).substring(0,7);
-    converted.load = conversion;
-    return converted;
+    this.date = dateTimeFormat.format(desc.getStartMillis()).substring(0,7);
+    this.load = conversion;
+
   }
+
+
 }

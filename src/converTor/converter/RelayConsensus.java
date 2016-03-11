@@ -1,13 +1,18 @@
-package converTor.convert;
+package converTor.converter;
 
-import converTor.util.ConvertResult;
-import converTor.Type;
+import org.torproject.descriptor.Descriptor;
 import org.torproject.descriptor.RelayNetworkStatusConsensus;
 
 
-public class RelayConsensus extends ConvertCommons {
+public class RelayConsensus extends Convert {
 
-  public static ConvertResult convert(RelayNetworkStatusConsensus desc) {
+  //  inherits fields 'type', 'date' and 'load'
+
+  RelayConsensus(Descriptor desc) {
+    convert((RelayNetworkStatusConsensus) desc);
+  }
+
+  public void convert(RelayNetworkStatusConsensus desc) {
 
     converTor.avro.classes.relayConsensus.RelayConsensus conversion =
         new converTor.avro.classes.relayConsensus.RelayConsensus();
@@ -29,11 +34,8 @@ public class RelayConsensus extends ConvertCommons {
 //  conversion.set
 
 
-    ConvertResult converted = new ConvertResult();
-    converted.type = Type.relayConsensusType;
-    converted.date = dateTimeFormat.format(desc.getValidAfterMillis()).substring(0,7);
-    converted.load = conversion;
-    return converted;
+    this.date = dateTimeFormat.format(desc.getValidAfterMillis()).substring(0,7);
+    this.load = conversion;
 
   }
 }

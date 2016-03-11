@@ -1,18 +1,21 @@
-package converTor.convert;
+package converTor.converter;
 
-import converTor.util.ConvertResult;
-import converTor.Type;
+import org.torproject.descriptor.Descriptor;
+import org.torproject.descriptor.ExitList;
 
 import java.util.List;
 
 
-/*
- * Tordnsel / ExitList
- */
+//Tordnsel == ExitList
+public class Tordnsel extends Convert {
 
-public class ExitList extends ConvertCommons {
+  //  inherits fields 'type', 'date' and 'load'
 
-  public static ConvertResult convert(org.torproject.descriptor.ExitList desc) {
+  Tordnsel(Descriptor desc) {
+    convert((ExitList) desc);
+  }
+
+  public void convert(org.torproject.descriptor.ExitList desc) {
 
     converTor.avro.classes.tordnsel.Tordnsel conversion =
         new converTor.avro.classes.tordnsel.Tordnsel();
@@ -34,11 +37,8 @@ public class ExitList extends ConvertCommons {
 //  conversion.set
 
 
-    ConvertResult converted = new ConvertResult();
-    converted.type = Type.tordnselType;
-    converted.date = dateTimeFormat.format(desc.getDownloadedMillis()).substring(0,7);
-    converted.load = conversion;
-    return converted;
+    this.date = dateTimeFormat.format(desc.getDownloadedMillis()).substring(0,7);
+    this.load = conversion;
 
   }
 
