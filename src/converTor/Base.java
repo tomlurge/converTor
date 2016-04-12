@@ -23,7 +23,8 @@ public class Base {
     try {
       base.run();
     } catch (IOException e) {
-      //  todo    this seems a bit lazy...
+      //  todo    it seems a bit lazy to throw exceptions all over the place
+      //          and only handle them once, here
       e.printStackTrace();
     }
   }
@@ -81,6 +82,7 @@ public class Base {
 
     //  WRAP UP
     closeAllWriters();
+    System.out.println("All done. Hope to see you again soon!");
     System.exit(0);
   }
 
