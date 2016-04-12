@@ -1,21 +1,13 @@
-package converTor;
+package converTor.stuff;
 
-import converTor.format.WriterObject;
-import org.apache.avro.file.DataFileWriter;
-import org.apache.parquet.hadoop.ParquetWriter;
-
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-
-
+@Deprecated
 public class WriterFactory {
-
+/*
   //  initialized   SINGLETON
   private Boolean initialized = false;
 
   //  writerMap   A MAP TO HOLD ALL WRITERS PER TYPE + MONTH
-  private Map<String, WriterObject> writerMap;
+  private Map<String, Write> writerMap;
 
 
   //  WriterFactory   CONSTRUCTOR
@@ -28,13 +20,13 @@ public class WriterFactory {
 
 
   //  getWriter   GET WRITER FROM MAP
-  public <T extends Object> WriterObject getWriter(TypeFactory type, String date)
+  public <T extends Object> Write getWriter(Types type, String date)
       throws IOException {
     // construct writer id
     String writerID = type.name + "_" + date;
     //  create if not existant
     if (writerMap.get(writerID) == null) {
-      WriterObject writer = new WriterObject(type, date);
+      Write writer = new Write(type, date);
       writerMap.put(writerID, writer);
     }
     return writerMap.get(writerID);
@@ -43,15 +35,18 @@ public class WriterFactory {
 
   //  wrapUp    CLEAN UP AFTER THE LAST DESCRIPTOR HAS BEEN CONVERTED
   public void wrapUp() throws IOException {
-    for ( WriterObject writerObject : writerMap.values()) {
 
-      if (Main.config.isAvro()) {
+    Args args = Args.INSTANCE;
+
+    for (Write writerObject : writerMap.values()) {
+
+      if (args.isAvro()) {
         ((DataFileWriter) writerObject.dataFileWriter).close();
       }
-      if (Main.config.isParquet()) {
+      else if (args.isParquet()) {
         ((ParquetWriter) writerObject.dataFileWriter).close();
       }
-      if (Main.config.isJson()) {
+      else if (args.isJson()) {
 
         //  the OLD way
         //  todo wrap up buffered writer
@@ -64,5 +59,5 @@ public class WriterFactory {
     }
   }
 
-
+*/
 }

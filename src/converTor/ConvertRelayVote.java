@@ -1,21 +1,22 @@
-package converTor.converter;
+package converTor;
 
 import org.torproject.descriptor.Descriptor;
-import org.torproject.descriptor.BridgeServerDescriptor;
+import org.torproject.descriptor.RelayNetworkStatusVote;
 
 
-public class Bridge extends Convert {
+public class ConvertRelayVote extends Convert {
 
   //  inherits fields 'type', 'date' and 'load'
 
-  Bridge(Descriptor desc) {
-    convert((BridgeServerDescriptor) desc);
+  ConvertRelayVote(Descriptor desc) {
+    convert((RelayNetworkStatusVote) desc);
   }
 
-  public void convert(BridgeServerDescriptor desc) {
 
-    converTor.avro.classes.bridge.Bridge conversion =
-        new converTor.avro.classes.bridge.Bridge();
+  public void convert(RelayNetworkStatusVote desc) {
+
+    converTor.encoders.classes.relayVote.RelayVote conversion =
+        new converTor.encoders.classes.relayVote.RelayVote();
 
 //  conversion.set
 //  conversion.set
@@ -34,6 +35,7 @@ public class Bridge extends Convert {
 //  conversion.set
 
 
+    this.type = Types.RELAY_VOTE;
     this.date = dateTimeFormat.format(desc.getPublishedMillis()).substring(0,7);
     this.load = conversion;
 

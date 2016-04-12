@@ -1,12 +1,13 @@
-package converTor;
+package converTor.stuff;
 
-import org.apache.commons.cli.*;  // command line interface
+import converTor.Base;
+import org.apache.commons.cli.*;
 
 
-public class Config {
+/*
+ *  Singleton pattern without enum
 
-  //  SINGLETON
-  private Boolean initialized = false;
+public class Args {
 
   //  ARGUMENT DEFAULTS
   private boolean verbose = false;
@@ -23,12 +24,12 @@ public class Config {
   private String outputFileEnding;
 
 
-  //  CONSTRUCTOR
-  //  EVALUATES COMMAND LINE ARGUMENTS
-  Config(String[] commandLineArguments) {
+  //  INITIALIZE SINGLETON
+  public static final Args INSTANCE = new Args(Base.commandLineArguments);
 
-    if (initialized) return;
-    initialized = true;
+
+  //  EVALUATE COMMAND LINE ARGUMENTS
+  private Args(String[] commandLineArguments) {
 
     //  https://commons.apache.org/proper/commons-cli/usage.html
     Options options = new Options();
@@ -156,6 +157,7 @@ public class Config {
 
   }
 
+
   public String getInPath() {
     return inPath;
   }
@@ -242,3 +244,5 @@ public class Config {
 
 
 }
+*/
+

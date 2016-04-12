@@ -1,21 +1,21 @@
-package converTor.converter;
+package converTor;
 
 import org.torproject.descriptor.Descriptor;
-import org.torproject.descriptor.RelayExtraInfoDescriptor;
+import org.torproject.descriptor.BridgeNetworkStatus;
 
 
-public class RelayExtra extends Convert {
+public class ConvertBridgeStatus extends Convert {
 
   //  inherits fields 'type', 'date' and 'load'
 
-  RelayExtra(Descriptor desc) {
-    convert((RelayExtraInfoDescriptor) desc);
+  ConvertBridgeStatus(Descriptor desc) {
+    convert((BridgeNetworkStatus) desc);
   }
 
-  public void convert(RelayExtraInfoDescriptor desc) {
+  public void convert(BridgeNetworkStatus desc) {
 
-    converTor.avro.classes.relayExtra.RelayExtra conversion =
-        new converTor.avro.classes.relayExtra.RelayExtra();
+    converTor.encoders.classes.bridgeStatus.BridgeStatus conversion =
+        new converTor.encoders.classes.bridgeStatus.BridgeStatus();
 
 //  conversion.set
 //  conversion.set
@@ -34,6 +34,7 @@ public class RelayExtra extends Convert {
 //  conversion.set
 
 
+    this.type = Types.BRIDGE_STATUS;
     this.date = dateTimeFormat.format(desc.getPublishedMillis()).substring(0,7);
     this.load = conversion;
 

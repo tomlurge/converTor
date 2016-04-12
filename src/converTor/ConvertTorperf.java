@@ -1,29 +1,29 @@
-package converTor.converter;
+package converTor;
 
 import org.torproject.descriptor.Descriptor;
 import org.torproject.descriptor.TorperfResult;
 
 
-public class Torperf extends Convert {
+public class ConvertTorperf extends Convert {
 
 
-  //  inherits fields
-  //    type
-  //    date
-  //    load
+  //  INHERITED FIELDS
+  //    public Types type;
+  //    public String date;
+  //    public SpecificRecordBase load;
 
 
-  //  Torperf   CONSTRUCTOR
-  Torperf(Descriptor desc) {
+  //  CONSTRUCTOR
+  ConvertTorperf(Descriptor desc) {
     convert((TorperfResult) desc);
   }
 
 
-  //  convert   CONVERT TORPERF DESCRIPTOR
+  //  CONVERT TORPERF DESCRIPTOR
   public void convert(TorperfResult desc) {
 
-    converTor.avro.classes.torperf.Torperf conversion =
-        new converTor.avro.classes.torperf.Torperf();
+    converTor.encoders.classes.torperf.Torperf conversion =
+        new converTor.encoders.classes.torperf.Torperf();
 
     conversion.setDescriptorType("torperf 1.0");
     conversion.setSource(desc.getSource());
@@ -63,6 +63,7 @@ public class Torperf extends Convert {
     conversion.setCircId(desc.getCircId());
     conversion.setUsedBy(desc.getUsedBy());
 
+    this.type = Types.TORPERF;
     this.date = dateTimeFormat.format(desc.getStartMillis()).substring(0,7);
     this.load = conversion;
 
