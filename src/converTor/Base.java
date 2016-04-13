@@ -17,6 +17,8 @@ public class Base {
   Writers writers;
   Iterator iterator;
 
+  Integer testCount = 0;
+
   public static void main(String[] args) {
     Base base = new Base(args);
     //  START CONVERSION
@@ -62,7 +64,9 @@ public class Base {
         //  todo    and obsolete this hardcoded reference to ConvertTorperf
         Convert<?> converted = new ConvertTorperf(descriptor);
 
-        System.out.println("\nc.load:\n" + converted.load);  //  todo    remove
+        //  todo    remove after testing
+        if (testCount++ == 0) System.out.println("1. descriptor: " + converted.load);
+
 
         //  GET APPROPRIATE OUTPUT WRITER
         //  todo    i wonder if I should get a new Write write per descriptor eg
@@ -82,6 +86,7 @@ public class Base {
 
     //  WRAP UP
     closeAllWriters();
+    System.out.println("\n" + testCount + " descriptors counted.");
     System.out.println("All done. Hope to see you again soon!");
     System.exit(0);
   }

@@ -31,9 +31,9 @@ public class Writers {
       try {
 
         switch (Args.INSTANCE.getFormat()) {
-          case ("avro") : writer = new WriteAvro(type, date);;
-          case ("parquet") : writer = new WriteParquet(type, date);;
-          case ("json") : writer = new WriteJson(type, date);;
+          case ("avro") : writer = new WriteAvro(type, date); break;
+          case ("parquet") : writer = new WriteParquet(type, date); break;
+          case ("json") : writer = new WriteJson(type, date); break;
         }
 
       } catch (IOException e1) {

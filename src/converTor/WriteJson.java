@@ -113,7 +113,9 @@ public class WriteJson implements Write {
 
     //  the AVRO way
     Json.ObjectWriter jsonWriter = (Json.ObjectWriter) fileWriter;
-    System.out.println(load);
+
+    System.out.println(load); // todo   test, please remove
+
     jsonWriter.write(load, jsonEncoder);
     // fileWriter.write(load, jsonEncoder);   he? why two times??
 
