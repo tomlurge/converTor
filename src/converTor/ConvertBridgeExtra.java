@@ -2,20 +2,20 @@ package converTor;
 
 import org.torproject.descriptor.Descriptor;
 import org.torproject.descriptor.BridgeExtraInfoDescriptor;
+import converTor.encoders.classes.bridgeExtra.BridgeExtra;
 
 
 public class ConvertBridgeExtra extends Convert {
 
-  //  inherits fields 'type', 'date' and 'load'
-
+  ConvertBridgeExtra(){}
   ConvertBridgeExtra(Descriptor desc) {
     convert((BridgeExtraInfoDescriptor) desc);
   }
 
+
   public void convert(BridgeExtraInfoDescriptor desc) {
 
-    converTor.encoders.classes.bridgeExtra.BridgeExtra conversion =
-        new converTor.encoders.classes.bridgeExtra.BridgeExtra();
+    BridgeExtra conversion = new BridgeExtra();
 
 //  conversion.set
 //  conversion.set
@@ -39,4 +39,5 @@ public class ConvertBridgeExtra extends Convert {
     this.load = conversion;
 
   }
+
 }

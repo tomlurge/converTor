@@ -1,13 +1,14 @@
 package converTor;
+
 import java.io.File;
 import java.io.IOException;
-
 import org.apache.avro.Schema;
 import org.apache.avro.file.CodecFactory;
 import org.apache.avro.file.DataFileWriter;
 import org.apache.avro.io.DatumWriter;
 import org.apache.avro.specific.SpecificDatumWriter;
 import org.apache.avro.specific.SpecificRecord;
+
 
 public class WriteAvro implements Write {
 
@@ -16,6 +17,7 @@ public class WriteAvro implements Write {
   String output;
   File outputFile;
   DataFileWriter fileWriter;
+
 
   WriteAvro(Types type, String date) throws IOException {
 
@@ -35,11 +37,13 @@ public class WriteAvro implements Write {
 
   }
 
+
   //  APPEND CONVERTED DATA TO ENCODER/WRITER
   public void append(SpecificRecord load) throws IOException {
     DataFileWriter<SpecificRecord> avroWriter = (DataFileWriter) fileWriter;
     avroWriter.append(load);
   }
+
 
   //  WRAP UP AFTER ITERATOR HAS FINISHED ITERATING OVER INCOMING DESCRIPTORS
   public void close() throws IOException {

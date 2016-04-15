@@ -2,28 +2,20 @@ package converTor;
 
 import org.torproject.descriptor.Descriptor;
 import org.torproject.descriptor.TorperfResult;
+import converTor.encoders.classes.torperf.Torperf;
 
 
 public class ConvertTorperf extends Convert {
 
-
-  //  INHERITED FIELDS
-  //    public Types type;
-  //    public String date;
-  //    public SpecificRecordBase load;
-
-
-  //  CONSTRUCTOR
+  ConvertTorperf() {}
   ConvertTorperf(Descriptor desc) {
     convert((TorperfResult) desc);
   }
 
 
-  //  CONVERT TORPERF DESCRIPTOR
   public void convert(TorperfResult desc) {
 
-    converTor.encoders.classes.torperf.Torperf conversion =
-        new converTor.encoders.classes.torperf.Torperf();
+    Torperf conversion = new Torperf();
 
     conversion.setDescriptorType("torperf 1.0");
     conversion.setSource(desc.getSource());

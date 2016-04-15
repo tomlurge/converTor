@@ -2,12 +2,12 @@ package converTor;
 
 import org.torproject.descriptor.Descriptor;
 import org.torproject.descriptor.RelayNetworkStatusVote;
+import converTor.encoders.classes.relayVote.RelayVote;
 
 
 public class ConvertRelayVote extends Convert {
 
-  //  inherits fields 'type', 'date' and 'load'
-
+  ConvertRelayVote() {}
   ConvertRelayVote(Descriptor desc) {
     convert((RelayNetworkStatusVote) desc);
   }
@@ -15,8 +15,7 @@ public class ConvertRelayVote extends Convert {
 
   public void convert(RelayNetworkStatusVote desc) {
 
-    converTor.encoders.classes.relayVote.RelayVote conversion =
-        new converTor.encoders.classes.relayVote.RelayVote();
+    RelayVote conversion = new RelayVote();
 
 //  conversion.set
 //  conversion.set

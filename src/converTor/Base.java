@@ -1,7 +1,11 @@
 package converTor;
-import java.io.*;
 
-import org.torproject.descriptor.*;
+import java.io.File;
+import java.io.IOException;
+import org.torproject.descriptor.Descriptor;
+import org.torproject.descriptor.DescriptorFile;
+import org.torproject.descriptor.DescriptorReader;
+import org.torproject.descriptor.DescriptorSourceFactory;
 
 /*
  *  Read all descriptors provided in the 'in' directory
@@ -17,7 +21,7 @@ public class Base {
   Writers writers;
   Iterator iterator;
 
-  Integer testCount = 0;
+  Integer testCount = 0;  //  todo test_remove
 
   public static void main(String[] args) {
     Base base = new Base(args);
@@ -54,7 +58,7 @@ public class Base {
         type = Types.getDescriptorType(descriptor);
 
         //  CONVERT DESCRIPTOR
-        //  todo    parametrize converter according to type e.g. like this:
+        //  TODO    parametrize converter according to type e.g. like this:
         //  choose the right Convert Class
         //  Class<?> ConvertClass = null;
         //  try {
@@ -63,9 +67,13 @@ public class Base {
         //  Convert<?> c = ConvertClass(descriptor);
         //  todo    and obsolete this hardcoded reference to ConvertTorperf
         Convert<?> converted = new ConvertTorperf(descriptor);
+        //  TODO    seperate constructor and method calls
+        //  Convert<?> converted = new ConvertTorperf();
+        //  converted.<org.torproject.descriptor.TorperfResult>convert( descriptor);
 
-        //  todo    remove after testing
-        if (testCount++ == 0) System.out.println("1. descriptor: " + converted.load);
+        //  todo    test__remove after testing
+        if (testCount++ == 0)
+          System.out.println("1. descriptor: " + converted.load);
 
 
         //  GET APPROPRIATE OUTPUT WRITER

@@ -1,11 +1,9 @@
 package converTor;
 
-import org.apache.avro.Schema;
-import org.torproject.descriptor.Descriptor;
-
 import java.io.File;
 import java.io.IOException;
-
+import org.apache.avro.Schema;
+import org.torproject.descriptor.*;
 
 /*
  *  descriptor types and their attributes
@@ -24,13 +22,14 @@ public enum Types {
   TORDNSEL("tordnsel"),
   TORPERF("torperf");
 
+
   public String name;       // identifying name of the DescriptorType
   public String clas;       // Name of class (First Letter Capitalized)
   public Schema avsc;       // parsed JSON schema
   public String fuln;       // full name of metrics-lib descriptor class
   public String cann;       // canonical name of metrics-lib descriptor class
   public Class cast;        // metrics-lib class to cast to
-  //  todo    proper generics, e.g.:  public Convert converter;
+  //  todo    proper generics, e.g.:  public Convert converter
   public Class<?> converter; // Converter
 
 
@@ -48,11 +47,11 @@ public enum Types {
     }
     try {
       String metrics = "org.torproject.descriptor.";
-      String encoder = "converTor.encoders.classes.";
       switch (name) {
         case "relay" :
           this.fuln = "RelayServerDescriptor";
           this.cast = Class.forName(metrics + this.fuln);
+          //  todo    metrics + "impl." + this.fuln + "Impl";
           this.cann = metrics + "impl.RelayServerDescriptorImpl";
           this.converter = Class.forName("converTor.ConvertRelay");
           break;
@@ -111,27 +110,11 @@ public enum Types {
   }
 
 
-  public static Types getDescriptorType(Descriptor desc) {
+  static Types getDescriptorType(Descriptor desc) {
+
     Types type = null;
 
-    //  TODO    check if this works
-    for (Types t : Types.values()) {
-      if (desc.getClass().getCanonicalName().equals(t.cann)) {
-        type = t;
-        break;
-      }
-    }
-
-    /*  OR - but this doesn't work, for reasons unknown
-    for (Types t : Types.values()) {
-      Class cast = t.cast;
-      if (desc instanceof cast) {
-        type = t;
-        break;
-      }
-    }
-    */
-    /*  OR
+    /*  this works but is not very elegant */
     if (desc instanceof RelayServerDescriptor) type = RELAY;
     else if (desc instanceof BridgeServerDescriptor) type = BRIDGE;
     else if (desc instanceof RelayExtraInfoDescriptor) type = RELAY_EXTRA;
@@ -141,40 +124,26 @@ public enum Types {
     else if (desc instanceof BridgeNetworkStatus) type = BRIDGE_STATUS;
     else if (desc instanceof ExitList) type = TORDNSEL;
     else if (desc instanceof TorperfResult) type = TORPERF;
-    */
-    /*  OR
-    //  https://stackoverflow.com/questions/29570767/switch-over-type-in-java
-    switch (desc.getClass().getCanonicalName()) {
-      case ("org.torproject.descriptor.impl.RelayServerDescriptorImpl") :
-        type = RELAY;
+
+    /*  this works but refers to implementation details */
+    for (Types t : Types.values()) {
+      if (desc.getClass().getCanonicalName().equals(t.cann)) {
+        type = t;
         break;
-      case ("org.torproject.descriptor.impl.BridgeServerDescriptorImpl") :
-        type = BRIDGE;
-        break;
-      case ("org.torproject.descriptor.impl.RelayExtraInfoDescriptorImpl") :
-        type = RELAY_EXTRA;
-        break;
-      case ("org.torproject.descriptor.impl.BridgeExtraInfoDescriptorImpl") :
-        type = BRIDGE_EXTRA;
-        break;
-      case ("org.torproject.descriptor.impl.RelayNetworkStatusVoteImpl") :
-        type = RELAY_VOTE;
-        break;
-      case ("org.torproject.descriptor.impl.RelayNetworkStatusConsensusImpl") :
-        type = RELAY_CONSENSUS;
-        break;
-      case ("org.torproject.descriptor.impl.BridgeNetworkStatusImpl") :
-        type = BRIDGE_STATUS;
-        break;
-      case ("org.torproject.descriptor.impl.ExitListImpl") :
-        type = TORDNSEL;
-        break;
-      case ("org.torproject.descriptor.impl.TorperfResultImpl") :
-        type = TORPERF;
-        break;
+      }
     }
-    */
+
+    /*  this doesn't work, for reasons unknown    */
+    for (Types t : Types.values()) {
+      // System.out.println(t.cast);
+      if (desc instanceof this.cast) {
+        type = t;
+        break;
+      }
+    }
+
     return type;
+
   }
 
 }

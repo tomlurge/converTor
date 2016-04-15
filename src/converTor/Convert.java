@@ -2,8 +2,9 @@ package converTor;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.*;
-
+import java.util.Collection;
+import java.util.Locale;
+import java.util.TimeZone;
 import org.apache.avro.specific.SpecificRecordBase;
 import org.torproject.descriptor.Descriptor;
 import org.torproject.descriptor.DescriptorFile;
@@ -26,6 +27,9 @@ public class Convert<C> {
           + descriptorFile.getFileName() + ":");
       System.err.println(descriptor.getUnrecognizedLines());
     }
+  }
+
+  public void convert(Descriptor descriptor) {
   }
 
   /*  generic key/value objects for verbose output  */

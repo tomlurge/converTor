@@ -1,14 +1,15 @@
 package converTor;
-import java.io.IOException;
 
+import java.io.IOException;
 import org.apache.avro.Schema;
-import org.apache.avro.file.DataFileWriter;
 import org.apache.avro.specific.SpecificRecord;
 import org.apache.hadoop.fs.Path;
 import org.apache.parquet.avro.AvroParquetWriter;
 import org.apache.parquet.hadoop.ParquetWriter;
 import org.apache.parquet.hadoop.metadata.CompressionCodecName;
 
+
+//  parquet-mr
 public class WriteParquet implements Write {
 
   Schema schema;
@@ -17,6 +18,7 @@ public class WriteParquet implements Write {
   Path outputPath;
   ParquetWriter fileWriter;
 
+
   WriteParquet(Types type, String date) throws IOException {
 
     schema = type.avsc;
@@ -24,7 +26,6 @@ public class WriteParquet implements Write {
     output = args.getOutPath() + writerID + args.getOutputFileEnding();
     outputPath = new Path(output);
 
-    // uses parquet-mr
     ParquetWriter<Object> parquetWriter = AvroParquetWriter.builder(outputPath)
         .withSchema(schema)
         .withCompressionCodec(
@@ -35,6 +36,7 @@ public class WriteParquet implements Write {
 
   }
 
+
   //  APPEND CONVERTED DATA TO ENCODER/WRITER
   public void append(SpecificRecord load) throws IOException {
 
@@ -43,6 +45,7 @@ public class WriteParquet implements Write {
       ParquetWriter parquetWriter = (ParquetWriter) fileWriter;
       parquetWriter.write(load);
   }
+
 
   //  WRAP UP AFTER ITERATOR HAS FINISHED ITERATING OVER INCOMING DESCRIPTORS
   public void close() throws IOException {

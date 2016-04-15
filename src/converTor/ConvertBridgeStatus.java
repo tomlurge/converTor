@@ -1,21 +1,20 @@
 package converTor;
-
 import org.torproject.descriptor.Descriptor;
 import org.torproject.descriptor.BridgeNetworkStatus;
+import converTor.encoders.classes.bridgeStatus.BridgeStatus;
 
 
 public class ConvertBridgeStatus extends Convert {
 
-  //  inherits fields 'type', 'date' and 'load'
-
+  ConvertBridgeStatus() {}
   ConvertBridgeStatus(Descriptor desc) {
     convert((BridgeNetworkStatus) desc);
   }
 
+
   public void convert(BridgeNetworkStatus desc) {
 
-    converTor.encoders.classes.bridgeStatus.BridgeStatus conversion =
-        new converTor.encoders.classes.bridgeStatus.BridgeStatus();
+    BridgeStatus conversion = new BridgeStatus();
 
 //  conversion.set
 //  conversion.set

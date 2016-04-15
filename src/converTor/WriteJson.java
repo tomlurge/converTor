@@ -1,15 +1,16 @@
 package converTor;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-
 import org.apache.avro.Schema;
 import org.apache.avro.data.Json;
 import org.apache.avro.io.Encoder;
 import org.apache.avro.io.EncoderFactory;
 import org.apache.avro.io.ValidatingEncoder;
 import org.apache.avro.specific.SpecificRecord;
+
 
 public class WriteJson implements Write {
 
@@ -57,11 +58,7 @@ public class WriteJson implements Write {
     // googling returns no results
     // file:///Users/t/Desktop/avro/1.8/avro-1.8.0-javadoc/org/apache/avro/data/Json.ObjectWriter.html
     OutputStream out = new FileOutputStream(outputFile);
-    fileWriter = new Json.ObjectWriter();;
-    //  TODO  this is inefficient as it creates one encoder per month and type
-    //        instead of just one encoder per type.
-    //        but this is slightly involved since an encoder depends not only on a
-    //        schema but also the output path, which contains the month. so...
+    fileWriter = new Json.ObjectWriter();
     Encoder encoder = EncoderFactory.get().jsonEncoder(schema, out, args.isPretty());
     ValidatingEncoder validatingEncoder =
         EncoderFactory.get().validatingEncoder(schema, encoder);
@@ -114,7 +111,7 @@ public class WriteJson implements Write {
     //  the AVRO way
     Json.ObjectWriter jsonWriter = (Json.ObjectWriter) fileWriter;
 
-    System.out.println(load); // todo   test, please remove
+    System.out.println(load); // todo   test__remove after testing
 
     jsonWriter.write(load, jsonEncoder);
     // fileWriter.write(load, jsonEncoder);   he? why two times??

@@ -2,23 +2,22 @@ package converTor;
 
 import org.torproject.descriptor.Descriptor;
 import org.torproject.descriptor.ExitList;
-
 import java.util.List;
+import converTor.encoders.classes.tordnsel.Tordnsel;
 
 
 //Tordnsel == ExitList
 public class ConvertTordnsel extends Convert {
 
-  //  inherits fields 'type', 'date' and 'load'
-
+  ConvertTordnsel() {}
   ConvertTordnsel(Descriptor desc) {
     convert((ExitList) desc);
   }
 
+
   public void convert(org.torproject.descriptor.ExitList desc) {
 
-    converTor.encoders.classes.tordnsel.Tordnsel conversion =
-        new converTor.encoders.classes.tordnsel.Tordnsel();
+    Tordnsel conversion = new Tordnsel();
 
 //  conversion.set
 //  conversion.set

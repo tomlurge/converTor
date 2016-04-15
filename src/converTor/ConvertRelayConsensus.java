@@ -2,20 +2,20 @@ package converTor;
 
 import org.torproject.descriptor.Descriptor;
 import org.torproject.descriptor.RelayNetworkStatusConsensus;
+import converTor.encoders.classes.relayConsensus.RelayConsensus;
 
 
 public class ConvertRelayConsensus extends Convert {
 
-  //  inherits fields 'type', 'date' and 'load'
-
+  ConvertRelayConsensus() {}
   ConvertRelayConsensus(Descriptor desc) {
     convert((RelayNetworkStatusConsensus) desc);
   }
 
+
   public void convert(RelayNetworkStatusConsensus desc) {
 
-    converTor.encoders.classes.relayConsensus.RelayConsensus conversion =
-        new converTor.encoders.classes.relayConsensus.RelayConsensus();
+    RelayConsensus conversion = new RelayConsensus();
 
 //  conversion.set
 //  conversion.set

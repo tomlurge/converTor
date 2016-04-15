@@ -6,11 +6,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 public class Writers {
 
   //  SINGLETON
-  //  TODO    when everything else is done make this an enum
+  //  todo    when everything else is done make this an enum
   public static final Writers INSTANCE = new Writers();
+
 
   //  A MAP TO HOLD ALL WRITERS PER TYPE + MONTH
   private Map<String, Write> writersMap;

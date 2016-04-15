@@ -1,12 +1,26 @@
 package converTor;
 
-import org.apache.commons.cli.*;  // command line interface
 
 
+import org.apache.commons.cli.CommandLine;
+import org.apache.commons.cli.CommandLineParser;
+import org.apache.commons.cli.DefaultParser;
+import org.apache.commons.cli.Options;
+import org.apache.commons.cli.ParseException;
+import org.apache.commons.cli.HelpFormatter;
+/*
+import org.apache.commons.cli.CommandLine;
+import org.apache.commons.cli.CommandLineParser;
+import org.apache.commons.cli.DefaultParser;
+import org.apache.commons.cli.Options;
+import org.apache.commons.cli.ParseException;
+import org.apache.commons.cli.HelpFormatter;
+ */
 
 /*
  *  Singleton pattern with enum - see docs/java/singleton.md
  */
+
 
 public enum Args {
 
@@ -60,7 +74,7 @@ public enum Args {
             "and include all properties with 'null' values (this is only\n" +
             "relevant for the JSON encoding).\n" +
             "some SQL engines like Apache Drill require this.");
-    //  TODO  implement multi-file compression for JSON
+    //  todo  implement multi-file compression for JSON
     options.addOption("c", "compressed", false,
         "uses gz codec for JSON and snappy codec for Avro and Parquet");
     options.addOption("p", "pretty", false,
@@ -141,13 +155,12 @@ public enum Args {
     }
     setOutputFileEnding(getSuffix()
         + "."
-        + ( isCompressed() && isAvro() ? "snappy." : "")
-        + ( isCompressed() && isParquet() ? "snappy." : "")
+        + ( isCompressed() && (isAvro() || isParquet()) ? "snappy." : "")
         + getFormat()
         + ( isCompressed() && isJson() ? ".gz" : ""));
 
     //  PARAMETERS SET
-    //  TODO  remove after testing
+    //  todo    test__remove after testing
     System.out.println("format = " + getFormat());
     System.out.println("suffix = " + getSuffix());
     System.out.println("inPath = " + getInPath());

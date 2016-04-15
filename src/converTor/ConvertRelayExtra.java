@@ -2,20 +2,20 @@ package converTor;
 
 import org.torproject.descriptor.Descriptor;
 import org.torproject.descriptor.RelayExtraInfoDescriptor;
+import converTor.encoders.classes.relayExtra.RelayExtra;
 
 
 public class ConvertRelayExtra extends Convert {
 
-  //  inherits fields 'type', 'date' and 'load'
-
+  ConvertRelayExtra() {}
   ConvertRelayExtra(Descriptor desc) {
     convert((RelayExtraInfoDescriptor) desc);
   }
 
+
   public void convert(RelayExtraInfoDescriptor desc) {
 
-    converTor.encoders.classes.relayExtra.RelayExtra conversion =
-        new converTor.encoders.classes.relayExtra.RelayExtra();
+    RelayExtra conversion = new RelayExtra();
 
 //  conversion.set
 //  conversion.set
