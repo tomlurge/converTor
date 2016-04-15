@@ -136,7 +136,7 @@ public enum Types {
     /*  this doesn't work, for reasons unknown    */
     for (Types t : Types.values()) {
       // System.out.println(t.cast);
-      if (desc instanceof this.cast) {
+      if (desc instanceof t.cast) {
         type = t;
         break;
       }
