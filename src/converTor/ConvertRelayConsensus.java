@@ -5,16 +5,11 @@ import org.torproject.descriptor.RelayNetworkStatusConsensus;
 import converTor.encoders.classes.relayConsensus.RelayConsensus;
 
 
-public class ConvertRelayConsensus extends Convert {
+class ConvertRelayConsensus extends Convert {
 
-  ConvertRelayConsensus() {}
-  ConvertRelayConsensus(Descriptor desc) {
-    convert((RelayNetworkStatusConsensus) desc);
-  }
+  void convert(Descriptor descriptor) {
 
-
-  public void convert(RelayNetworkStatusConsensus desc) {
-
+    RelayNetworkStatusConsensus desc = (RelayNetworkStatusConsensus) descriptor;
     RelayConsensus conversion = new RelayConsensus();
 
 //  conversion.set

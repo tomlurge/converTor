@@ -1,33 +1,17 @@
 package converTor;
 
-
-
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.HelpFormatter;
-/*
-import org.apache.commons.cli.CommandLine;
-import org.apache.commons.cli.CommandLineParser;
-import org.apache.commons.cli.DefaultParser;
-import org.apache.commons.cli.Options;
-import org.apache.commons.cli.ParseException;
-import org.apache.commons.cli.HelpFormatter;
- */
 
 /*
- *  Singleton pattern with enum - see docs/java/singleton.md
+ *  command line arguments evaluation
  */
-
 
 public enum Args {
-
-  //  TEST    this is a test. a lot of resources suggest that it can't work
-  //          because enums are compile time constants
-  //          the can have arguments but not references to fields.
-  //          but it does work :-)
 
   INSTANCE(Base.commandLineArguments);
 
@@ -74,11 +58,12 @@ public enum Args {
             "and include all properties with 'null' values (this is only\n" +
             "relevant for the JSON encoding).\n" +
             "some SQL engines like Apache Drill require this.");
-    //  todo  implement multi-file compression for JSON
     options.addOption("c", "compressed", false,
-        "uses gz codec for JSON and snappy codec for Avro and Parquet");
+        "use gz codec for JSON and snappy codec for Avro and Parquet");
+    // WILL BE AVAILABLE WHEN AVRO FIXES THE BUG IN THEIR JSON ENCODER
     options.addOption("p", "pretty", false,
-        "does generate pretty printed JSON output");
+        "generate pretty printed JSON output. \n" +
+        "this option is not supported yet...");
     options.addOption("m", "maxFiles", true,
         "maximum file readers to open, \n" +
             "e.g. '-m=5'\n" +
@@ -160,7 +145,6 @@ public enum Args {
         + ( isCompressed() && isJson() ? ".gz" : ""));
 
     //  PARAMETERS SET
-    //  todo    test__remove after testing
     System.out.println("format = " + getFormat());
     System.out.println("suffix = " + getSuffix());
     System.out.println("inPath = " + getInPath());
@@ -175,84 +159,84 @@ public enum Args {
   }
 
 
-  public String getInPath() {
+  String getInPath() {
     return inPath;
   }
   private void setInPath(String inPath) {
     this.inPath = inPath;
   }
 
-  public boolean isVerbose() {
+  boolean isVerbose() {
     return verbose;
   }
   private void setVerbose(boolean verbose) {
     this.verbose = verbose;
   }
 
-  public boolean isCompressed() {
+  boolean isCompressed() {
     return compressed;
   }
   private void setCompressed(boolean compressed) {
     this.compressed = compressed;
   }
 
-  public boolean isPretty() {
+  boolean isPretty() {
     return pretty;
   }
   private void setPretty(boolean pretty) {
     this.pretty = pretty;
   }
 
-  public boolean isJson() {
+  boolean isJson() {
     return json;
   }
   private void setJson(boolean json) {
     this.json = json;
   }
 
-  public boolean isAvro() {
+  boolean isAvro() {
     return avro;
   }
   private void setAvro(boolean avro) {
     this.avro = avro;
   }
 
-  public boolean isParquet() {
+  boolean isParquet() {
     return parquet;
   }
   private void setParquet(boolean parquet) {
     this.parquet = parquet;
   }
 
-  public String getFormat() {
+  String getFormat() {
     return format;
   }
   private void setFormat(String format) {
     this.format = format;
   }
 
-  public String getOutPath() {
+  String getOutPath() {
     return outPath;
   }
   private void setOutPath(String outPath) {
     this.outPath = outPath;
   }
 
-  public String getSuffix() {
+  String getSuffix() {
     return suffix;
   }
   private void setSuffix(String suffix) {
     this.suffix = suffix;
   }
 
-  public int getMaxFiles() {
+  int getMaxFiles() {
     return maxFiles;
   }
   private void setMaxFiles(int max) {
     this.maxFiles = max;
   }
 
-  public String getOutputFileEnding() {
+  String getOutputFileEnding() {
     return outputFileEnding;
   }
   private void setOutputFileEnding(String outputFileEnding) {

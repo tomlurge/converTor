@@ -10,11 +10,10 @@ import org.apache.parquet.hadoop.metadata.CompressionCodecName;
 
 
 //  parquet-mr
-public class WriteParquet implements Write {
+class WriteParquet implements Write {
 
   Schema schema;
   String writerID;
-  String output;
   Path outputPath;
   ParquetWriter fileWriter;
 
@@ -23,27 +22,27 @@ public class WriteParquet implements Write {
 
     schema = type.avsc;
     writerID = type.name + "_" + date;
-    output = args.getOutPath() + writerID + args.getOutputFileEnding();
-    outputPath = new Path(output);
+    outputPath = new Path(
+        args.getOutPath() + writerID + args.getOutputFileEnding()
+    );
 
-    ParquetWriter<Object> parquetWriter = AvroParquetWriter.builder(outputPath)
+    fileWriter = AvroParquetWriter.builder(outputPath)
         .withSchema(schema)
         .withCompressionCodec(
-            args.isCompressed() ? CompressionCodecName.SNAPPY : CompressionCodecName.UNCOMPRESSED
+            args.isCompressed()
+                ?
+                CompressionCodecName.SNAPPY
+                :
+                CompressionCodecName.UNCOMPRESSED
         )
         .build();
-    fileWriter = parquetWriter;
 
   }
 
 
   //  APPEND CONVERTED DATA TO ENCODER/WRITER
   public void append(SpecificRecord load) throws IOException {
-
-      // AvroParquetWriter parquetWriter = (AvroParquetWriter) writer;
-      // parquetWriter.write(converted.load);
-      ParquetWriter parquetWriter = (ParquetWriter) fileWriter;
-      parquetWriter.write(load);
+    fileWriter.write(load);
   }
 
 

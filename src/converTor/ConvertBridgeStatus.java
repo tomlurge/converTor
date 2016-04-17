@@ -4,16 +4,11 @@ import org.torproject.descriptor.BridgeNetworkStatus;
 import converTor.encoders.classes.bridgeStatus.BridgeStatus;
 
 
-public class ConvertBridgeStatus extends Convert {
+class ConvertBridgeStatus extends Convert {
 
-  ConvertBridgeStatus() {}
-  ConvertBridgeStatus(Descriptor desc) {
-    convert((BridgeNetworkStatus) desc);
-  }
+  void convert(Descriptor descriptor) {
 
-
-  public void convert(BridgeNetworkStatus desc) {
-
+    BridgeNetworkStatus desc = (BridgeNetworkStatus) descriptor;
     BridgeStatus conversion = new BridgeStatus();
 
 //  conversion.set

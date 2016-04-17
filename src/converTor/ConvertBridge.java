@@ -5,16 +5,11 @@ import org.torproject.descriptor.BridgeServerDescriptor;
 import converTor.encoders.classes.bridge.Bridge;
 
 
-public class ConvertBridge extends Convert {
+class ConvertBridge extends Convert {
 
-  ConvertBridge() {}
-  ConvertBridge(Descriptor desc) {
-    convert((BridgeServerDescriptor) desc);
-  }
+  void convert(Descriptor descriptor) {
 
-
-  public void convert(BridgeServerDescriptor desc) {
-
+    BridgeServerDescriptor desc = (BridgeServerDescriptor) descriptor;
     Bridge conversion = new Bridge();
 
 //  conversion.set

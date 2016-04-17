@@ -5,16 +5,11 @@ import org.torproject.descriptor.RelayNetworkStatusVote;
 import converTor.encoders.classes.relayVote.RelayVote;
 
 
-public class ConvertRelayVote extends Convert {
+class ConvertRelayVote extends Convert {
 
-  ConvertRelayVote() {}
-  ConvertRelayVote(Descriptor desc) {
-    convert((RelayNetworkStatusVote) desc);
-  }
+  void convert(Descriptor descriptor) {
 
-
-  public void convert(RelayNetworkStatusVote desc) {
-
+    RelayNetworkStatusVote desc = (RelayNetworkStatusVote) descriptor;
     RelayVote conversion = new RelayVote();
 
 //  conversion.set

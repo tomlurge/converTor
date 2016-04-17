@@ -5,16 +5,11 @@ import org.torproject.descriptor.RelayExtraInfoDescriptor;
 import converTor.encoders.classes.relayExtra.RelayExtra;
 
 
-public class ConvertRelayExtra extends Convert {
+class ConvertRelayExtra extends Convert {
 
-  ConvertRelayExtra() {}
-  ConvertRelayExtra(Descriptor desc) {
-    convert((RelayExtraInfoDescriptor) desc);
-  }
+  void convert(Descriptor descriptor) {
 
-
-  public void convert(RelayExtraInfoDescriptor desc) {
-
+    RelayExtraInfoDescriptor desc = (RelayExtraInfoDescriptor) descriptor;
     RelayExtra conversion = new RelayExtra();
 
 //  conversion.set

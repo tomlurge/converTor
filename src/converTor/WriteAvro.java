@@ -10,11 +10,10 @@ import org.apache.avro.specific.SpecificDatumWriter;
 import org.apache.avro.specific.SpecificRecord;
 
 
-public class WriteAvro implements Write {
+class WriteAvro implements Write {
 
   Schema schema;
   String writerID;
-  String output;
   File outputFile;
   DataFileWriter fileWriter;
 
@@ -23,17 +22,15 @@ public class WriteAvro implements Write {
 
     schema = type.avsc;
     writerID = type.name + "_" + date;
-    output = args.getOutPath() + writerID + args.getOutputFileEnding();
-    outputFile = new File(output);
+    outputFile = new File(
+        args.getOutPath() + writerID + args.getOutputFileEnding()
+    );
 
-
-    //  https://avro.apache.org/docs/1.8.0/api/java/org/apache/avro/specific/SpecificDatumWriter.html
-    //  https://avro.apache.org/docs/current/gettingstartedjava.html#Serializing
-    DatumWriter avroDatumWriter = new SpecificDatumWriter<>(schema);
-    DataFileWriter avroFileWriter = new DataFileWriter<>(avroDatumWriter);
-    if (args.isCompressed()) avroFileWriter.setCodec(CodecFactory.snappyCodec());
-    avroFileWriter.create(schema, outputFile);
-    fileWriter = avroFileWriter;
+    DatumWriter avroDatumWriter = new SpecificDatumWriter(schema);
+    fileWriter = new DataFileWriter(avroDatumWriter);
+    if (args.isCompressed())
+      fileWriter.setCodec(CodecFactory.snappyCodec());
+    fileWriter.create(schema, outputFile);
 
   }
 

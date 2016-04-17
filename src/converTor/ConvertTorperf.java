@@ -5,16 +5,11 @@ import org.torproject.descriptor.TorperfResult;
 import converTor.encoders.classes.torperf.Torperf;
 
 
-public class ConvertTorperf extends Convert {
+class ConvertTorperf extends Convert {
 
-  ConvertTorperf() {}
-  ConvertTorperf(Descriptor desc) {
-    convert((TorperfResult) desc);
-  }
+  void convert(Descriptor descriptor) {
 
-
-  public void convert(TorperfResult desc) {
-
+    TorperfResult desc = (TorperfResult) descriptor;
     Torperf conversion = new Torperf();
 
     conversion.setDescriptorType("torperf 1.0");

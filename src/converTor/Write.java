@@ -3,18 +3,8 @@ package converTor;
 import java.io.IOException;
 import org.apache.avro.specific.SpecificRecord;
 
-interface Write {  // Write<T extends Object>   crazy generics
 
-  //  THINK   wouldn't this make more sense as an abstract class?
-  //          the concrete classes share not only some methods but also fields:
-  //                Schema schema;
-  //                String writerID;
-  //                String output;
-  //                Object outputFile;  // to be casted in the concrete class
-  //                Object fileWriter;  // to be casted in the concrete class
-  //  THINK   but, OTOH, future output formats could be quite different
-  //          the 'pedestrian' version of JSON already is
-  //          so better stick with the interface approach
+interface Write {
 
   Args args = Args.INSTANCE;
 

@@ -180,36 +180,3 @@
 
 ## MISC
 
-  
-    /*  OR
-    //  https://stackoverflow.com/questions/29570767/switch-over-type-in-java
-    switch (desc.getClass().getCanonicalName()) {
-      case ("org.torproject.descriptor.impl.RelayServerDescriptorImpl") :
-        type = RELAY;
-        break;
-      case ("org.torproject.descriptor.impl.BridgeServerDescriptorImpl") :
-        type = BRIDGE;
-        break;
-      case ("org.torproject.descriptor.impl.RelayExtraInfoDescriptorImpl") :
-        type = RELAY_EXTRA;
-        break;
-      case ("org.torproject.descriptor.impl.BridgeExtraInfoDescriptorImpl") :
-        type = BRIDGE_EXTRA;
-        break;
-      case ("org.torproject.descriptor.impl.RelayNetworkStatusVoteImpl") :
-        type = RELAY_VOTE;
-        break;
-      case ("org.torproject.descriptor.impl.RelayNetworkStatusConsensusImpl") :
-        type = RELAY_CONSENSUS;
-        break;
-      case ("org.torproject.descriptor.impl.BridgeNetworkStatusImpl") :
-        type = BRIDGE_STATUS;
-        break;
-      case ("org.torproject.descriptor.impl.ExitListImpl") :
-        type = TORDNSEL;
-        break;
-      case ("org.torproject.descriptor.impl.TorperfResultImpl") :
-        type = TORPERF;
-        break;
-    }
-    */

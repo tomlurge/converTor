@@ -10,18 +10,21 @@ import org.torproject.descriptor.Descriptor;
 import org.torproject.descriptor.DescriptorFile;
 
 
-public class Convert<C> {
+abstract class Convert<C> {
 
   // a lot of details about name, schema, schema class etc
-  public Types type;
+  Types type;
   // month of creation of original descriptor, as YYYY_MM
-  public String date;
+  String date;
   // the actual data, converted to an Avro object
-  public SpecificRecordBase load;
+  SpecificRecordBase load;
+
+
+  abstract void convert(Descriptor descriptor);
 
 
   //  CHECK FOR UNRECOGNIZED ATTRIBUTES
-  public void checkUnrecognized(Descriptor descriptor, DescriptorFile descriptorFile) {
+  void checkUnrecognized(Descriptor descriptor, DescriptorFile descriptorFile) {
     if (!descriptor.getUnrecognizedLines().isEmpty()) {
       System.err.println("Unrecognized lines in "
           + descriptorFile.getFileName() + ":");
@@ -29,11 +32,8 @@ public class Convert<C> {
     }
   }
 
-  public void convert(Descriptor descriptor) {
-  }
-
   /*  generic key/value objects for verbose output  */
-  public static class StringInt {
+  static class StringInt {
     String key;
     int val;
     StringInt(String key, int val) {
@@ -41,7 +41,7 @@ public class Convert<C> {
       this.val = val;
     }
   }
-  public static class StringLong {
+  static class StringLong {
     String key;
     Long val;
     StringLong(String key, Long val) {
@@ -49,7 +49,7 @@ public class Convert<C> {
       this.val = val;
     }
   }
-  public static class StringDouble {
+  static class StringDouble {
     String key;
     Double val;
     StringDouble(String key, Double val) {
@@ -59,23 +59,23 @@ public class Convert<C> {
   }
 
   /* ExtraInfo and Stats objects used in extra info descriptors */
-  public static class ExtraInfo {
+  static class ExtraInfo {
     String nickname;
     String fingerprint;
   }
-  public static class Stats {
+  static class Stats {
     String date;
     Long interval;
   }
 
   /*  Serialize "read-history" and "write-history" lines  */
-  public static class BandwidthHistory {
+  static class BandwidthHistory {
     String date; // format is YYYY-MM-DD HH:MM:SS
     long interval; // seconds
     Collection<Long> bytes;
   }
   /*  Convert read or write history  */
-  public static BandwidthHistory convertBandwidthHistory(org.torproject.descriptor.BandwidthHistory hist) {
+  static BandwidthHistory convertBandwidthHistory(org.torproject.descriptor.BandwidthHistory hist) {
     BandwidthHistory bandwidthHistory = new BandwidthHistory();
     bandwidthHistory.date = dateTimeFormat.format(hist.getHistoryEndMillis());
     bandwidthHistory.interval = hist.getIntervalLength();
@@ -83,10 +83,10 @@ public class Convert<C> {
     return bandwidthHistory;
   }
   /*  Date/time formatter  */
-  public static final String dateTimePattern = "yyyy-MM-dd HH:mm:ss";
-  public static final Locale dateTimeLocale = Locale.US;
-  public static final TimeZone dateTimezone = TimeZone.getTimeZone("UTC");
-  public static DateFormat dateTimeFormat;
+  static final String dateTimePattern = "yyyy-MM-dd HH:mm:ss";
+  static final Locale dateTimeLocale = Locale.US;
+  static final TimeZone dateTimezone = TimeZone.getTimeZone("UTC");
+  static DateFormat dateTimeFormat;
   static {
     dateTimeFormat = new SimpleDateFormat(dateTimePattern, dateTimeLocale);
     dateTimeFormat.setLenient(false);

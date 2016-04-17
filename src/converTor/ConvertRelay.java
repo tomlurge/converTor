@@ -5,16 +5,11 @@ import org.torproject.descriptor.RelayServerDescriptor;
 import converTor.encoders.classes.relay.Relay;
 
 
-public class ConvertRelay extends Convert {
+class ConvertRelay extends Convert {
 
-  ConvertRelay() {}
-  ConvertRelay(Descriptor desc) {
-    convert((RelayServerDescriptor) desc);
-  }
+  void convert(Descriptor descriptor) {
 
-
-  public void convert(RelayServerDescriptor desc) {
-
+    RelayServerDescriptor desc = (RelayServerDescriptor) descriptor;
     Relay conversion = new Relay();
 
 //  conversion.set
