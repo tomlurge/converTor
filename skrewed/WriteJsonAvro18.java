@@ -11,8 +11,14 @@ import org.apache.avro.io.EncoderFactory;
 import org.apache.avro.io.ValidatingEncoder;
 import org.apache.avro.specific.SpecificRecord;
 
+/*
+    CAUTION   this never worked
+              mainly because of a bug in Avro (presumably)
+              but who knows what else is going wrong
+ */
 
-public class WriteJsonAvro17 implements Write {
+
+public class WriteJsonAvro18 implements Write {
 
   Schema schema;
   String writerID;
@@ -23,13 +29,12 @@ public class WriteJsonAvro17 implements Write {
   public ValidatingEncoder jsonEncoder;
 
 
-  WriteJsonAvro17(Types type, String date) throws IOException {
+  WriteJsonAvro18(Types type, String date) throws IOException {
 
     schema = type.avsc;
     writerID = type.name + "_" + date;
     output = args.getOutPath() + writerID + args.getOutputFileEnding();
     outputFile = new File(output);
-
 
     // Json.ObjectWriter   ... nobody seems to use this -
     // googling returns no results
@@ -86,6 +91,13 @@ public class WriteJsonAvro17 implements Write {
 
   //  WRAP UP AFTER ITERATOR HAS FINISHED ITERATING OVER INCOMING DESCRIPTORS
   public void close() throws IOException {
+    //  the OLD way
+    //  before big refactoring with factories
+    //      ((BufferedWriter) writerObject.fileWriter).close();
+    //  now probably just
+    //      fileWriter.close();
+
+    //  the AVRO way
     jsonEncoder.flush();
   }
 

@@ -39,16 +39,28 @@ class ConvertTorperf extends Convert {
       conversion.setDataperc80(desc.getDataPercentiles().get(80));
       conversion.setDataperc90(desc.getDataPercentiles().get(90));
     }
-    conversion.setLaunch(desc.getLaunchMillis());
-    conversion.setUsedAt(desc.getUsedAtMillis());
+    if (desc.getLaunchMillis() >= 0) {
+      conversion.setLaunch(desc.getLaunchMillis());
+    }
+    if (desc.getUsedAtMillis() >= 0) {
+      conversion.setUsedAt(desc.getUsedAtMillis());
+    }
     if (desc.getPath() != null && !desc.getPath().isEmpty()) {
       conversion.setPath(desc.getPath());
     }
     conversion.setBuildtimes(desc.getBuildTimes());
-    conversion.setTimeout(desc.getTimeout());
-    conversion.setQuantile(desc.getQuantile());
-    conversion.setCircId(desc.getCircId());
-    conversion.setUsedBy(desc.getUsedBy());
+    if (desc.getTimeout() >= 0) {
+      conversion.setTimeout(desc.getTimeout());
+    }
+    if (desc.getQuantile() >= 0) {
+      conversion.setQuantile(desc.getQuantile());
+    }
+    if (desc.getCircId() >= 0) {
+      conversion.setCircId(desc.getCircId());
+    }
+    if (desc.getUsedBy() >= 0) {
+      conversion.setUsedBy(desc.getUsedBy());
+    }
 
     this.type = Types.TORPERF;
     this.date = dateTimeFormat.format(desc.getStartMillis()).substring(0,7);

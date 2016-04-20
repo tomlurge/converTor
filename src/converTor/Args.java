@@ -55,15 +55,17 @@ public enum Args {
     options.addOption("v", "verbose", false,
         "encode 'jagged' maps (objects with non-uniform attribute sets) \n" +
             "additionally as 'flattened' arrays (with suffix '_FLAT')\n" +
-            "and include all properties with 'null' values (this is only\n" +
-            "relevant for the JSON encoding).\n" +
-            "some SQL engines like Apache Drill require this.");
+            "and include all properties with 'null' values (the latter is\n" +
+            "only relevant for the JSON encoding).\n" +
+            "some SQL engines like Apache Drill require this.\n" +
+            "CAUTION: this option is not supported yet...");
+            // depending on fixing a bug in the Avro 1.8.0 JSON encoder
     options.addOption("c", "compressed", false,
         "use gz codec for JSON and snappy codec for Avro and Parquet");
-    // WILL BE AVAILABLE WHEN AVRO FIXES THE BUG IN THEIR JSON ENCODER
     options.addOption("p", "pretty", false,
         "generate pretty printed JSON output. \n" +
-        "this option is not supported yet...");
+            "CAUTION: this option is not supported yet...");
+            // depending on fixing a bug in the Avro 1.8.0 JSON encoder
     options.addOption("m", "maxFiles", true,
         "maximum file readers to open, \n" +
             "e.g. '-m=5'\n" +

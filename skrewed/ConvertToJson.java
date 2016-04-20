@@ -23,11 +23,11 @@ public class ConvertToJson {
   static boolean nulled = true;
   static boolean compressed = true;
   static String format = "json";
-  static String in = "data/inPath/";
-  static String out = "data/outPath/";
+  static String in = "data/in/";
+  static String out = "data/out/";
   static String name = "result";
 
-  /*  Read all descriptors inPath the provided directory and
+  /*  Read all descriptors in the provided directory and
    *  convert them to the appropriate JSON format.  */
   public static void main(String[] args) throws IOException {
 
@@ -42,7 +42,7 @@ public class ConvertToJson {
             "probably wise to document this setting with a prefix/suffix");
     options.addOption("w", "withoutNulls", false,
             "attributes with value null are not emitted \n" +
-            "which gains a little advantage inPath storage space");
+            "which gains a little advantage in storage space");
     options.addOption("u", "uncompressed", false,
             "does not generate .gz archive, \n" +
             "mainly useful for testing");
@@ -52,13 +52,13 @@ public class ConvertToJson {
             "defaults to 'json'\n" +
             "(currently only 'json' is supported)");
     options.addOption("i", "inPath", true,
-            "e.g. '-i=/my/data/inPath/dir'\n" +
+            "e.g. '-i=/my/data/in/dir'\n" +
             "from which directory to read data\n" +
-            "defaults to 'data/inPath/'");
+            "defaults to 'data/in/'");
     options.addOption("o", "outPath", true,
-            "e.g. '-i=/my/data/outPath/dir'\n" +
+            "e.g. '-i=/my/data/out/dir'\n" +
             "to which directory to write the converted data\n" +
-            "defaults to 'data/outPath/'");
+            "defaults to 'data/out/'");
     CommandLineParser parser = new DefaultParser();
     CommandLine cmd = null;
     try {
@@ -130,7 +130,7 @@ public class ConvertToJson {
       DescriptorFile descriptorFile = descriptorFiles.next();
       if(null != descriptorFile.getException()){
         System.err.print(descriptorFile.getException()
-                + "\n    inPath " + descriptorFile.getFileName() + "\n");
+                + "\n    in " + descriptorFile.getFileName() + "\n");
       }
 
       for (Descriptor descriptor : descriptorFile.getDescriptors()) {
@@ -183,7 +183,7 @@ public class ConvertToJson {
         }
 
         if (!descriptor.getUnrecognizedLines().isEmpty()) {
-          System.err.println("Unrecognized lines inPath "
+          System.err.println("Unrecognized lines in "
                   + descriptorFile.getFileName() + ":");
           System.err.println(descriptor.getUnrecognizedLines());
           continue;
@@ -228,7 +228,7 @@ public class ConvertToJson {
       }
     }
 
-    /* ExtraInfo and Stats objects used inPath extra info descriptors */
+    /* ExtraInfo and Stats objects used in extra info descriptors */
     static class ExtraInfo {
       String nickname;
       String fingerprint;
@@ -245,7 +245,8 @@ public class ConvertToJson {
       Collection<Long> bytes;
     }
     /*  Convert read or write history  */
-    static BandwidthHistory convertBandwidthHistory(org.torproject.descriptor.BandwidthHistory hist) {
+    static BandwidthHistory convertBandwidthHistory(
+        org.torproject.descriptor.BandwidthHistory hist) {
       BandwidthHistory bandwidthHistory = new BandwidthHistory();
       bandwidthHistory.date = dateTimeFormat.format(hist.getHistoryEndMillis());
       bandwidthHistory.interval = hist.getIntervalLength();
@@ -282,7 +283,7 @@ public class ConvertToJson {
     static class Bandwidth {
       Integer avg;
       Integer burst;
-      Integer observed;  // missing inPath older descriptors!
+      Integer observed;  // missing in older descriptors!
     }
     String platform;  // though usually set
     String published;   // format YYYY-MM-DD HH:MM:SS
@@ -335,7 +336,7 @@ public class ConvertToJson {
       relay.bandwidth = new Bandwidth();
       relay.bandwidth.avg = desc.getBandwidthRate();
       relay.bandwidth.burst = desc.getBandwidthBurst();
-      //  can be '-1' if null. inPath that case we don't touch it here, leaving the
+      //  can be '-1' if null. in that case we don't touch it here, leaving the
       //  default from the class definition intact
       if (desc.getBandwidthObserved() >= 0) {
         relay.bandwidth.observed = desc.getBandwidthObserved();
@@ -344,7 +345,7 @@ public class ConvertToJson {
       relay.published = dateTimeFormat.format(desc.getPublishedMillis());
       relay.fingerprint = desc.getFingerprint().toUpperCase();
       //  isHibernating can't return 'null' because it's of type 'boolean'
-      //  (with little 'b') but it's only present inPath the collecTor data if it's
+      //  (with little 'b') but it's only present in the collecTor data if it's
       //  true. therefor we check for it's existence and include it if it
       //  exists. otherwise we leave it alone / to the default value from
       //  the class definition above (which is null)
@@ -363,7 +364,8 @@ public class ConvertToJson {
       //  verbose testing because of List type
       //  first check that the list is not null, then if it's empty
       //  (checking for emptiness right away could lead to null pointer exc)
-      if (desc.getExitPolicyLines() != null && !desc.getExitPolicyLines().isEmpty()) {
+      if (desc.getExitPolicyLines() != null &&
+          !desc.getExitPolicyLines().isEmpty()) {
         relay.exit_policy = desc.getExitPolicyLines();
       }
       relay.ipv6_policy = desc.getIpv6DefaultPolicy();
@@ -371,13 +373,18 @@ public class ConvertToJson {
       relay.router_sig_ed25519 = desc.getRouterSignatureEd25519() != null;
       relay.router_signature = desc.getRouterSignature() != null;
       relay.contact = desc.getContact();
-      if (desc.getFamilyEntries() != null && !desc.getFamilyEntries().isEmpty()) {
+      if (desc.getFamilyEntries() != null &&
+          !desc.getFamilyEntries().isEmpty()) {
         relay.family = desc.getFamilyEntries();
       }
       //  check for 'null' first because we want to run a method on it
       //  and not get a null pointer exception meanwhile
       if (desc.getReadHistory() != null) {
+
+
         relay.read_history = convertBandwidthHistory(desc.getReadHistory());
+
+
       }
       if (desc.getWriteHistory() != null) {
         relay.write_history = convertBandwidthHistory(desc.getWriteHistory());
@@ -388,16 +395,22 @@ public class ConvertToJson {
         relay.extra_info_digest = desc.getExtraInfoDigest().toUpperCase();
       }
       relay.extra_info_digest_sha256 = desc.getExtraInfoDigestSha256();
-      if (desc.getFamilyEntries() != null && !desc.getFamilyEntries().isEmpty()) {
+      if (desc.getFamilyEntries() != null &&
+          !desc.getFamilyEntries().isEmpty()) {
         relay.hidden_service_dir = desc.getHiddenServiceDirVersions();
       }
-      if (desc.getLinkProtocolVersions() != null && !desc.getLinkProtocolVersions().isEmpty()) {
+      if (desc.getLinkProtocolVersions() != null &&
+          !desc.getLinkProtocolVersions().isEmpty()) {
         relay.link_protocol_versions = desc.getLinkProtocolVersions();
       }
-      if (desc.getCircuitProtocolVersions() != null && !desc.getCircuitProtocolVersions().isEmpty()) {
+      if (desc.getCircuitProtocolVersions() != null &&
+          !desc.getCircuitProtocolVersions().isEmpty()) {
         relay.circuit_protocol_versions = desc.getCircuitProtocolVersions();
       }
       relay.allow_single_hop_exits = desc.getAllowSingleHopExits();
+
+
+
       if (desc.getOrAddresses() != null && !desc.getOrAddresses().isEmpty()) {
         if (jagged) {
           //  List<String> getOrAddresses();
@@ -462,7 +475,7 @@ public class ConvertToJson {
     static class Bandwidth {
       Integer avg;
       Integer burst;
-      Integer observed;  // missing inPath older descriptors!
+      Integer observed;  // missing in older descriptors!
     }
     String platform;  // though usually set
     String published;   // format YYYY-MM-DD HH:MM:SS
@@ -514,7 +527,7 @@ public class ConvertToJson {
       bridge.bandwidth = new Bandwidth();
       bridge.bandwidth.avg = desc.getBandwidthRate();
       bridge.bandwidth.burst = desc.getBandwidthBurst();
-      //  can be '-1' if null. inPath that case we don't touch it here, leaving the
+      //  can be '-1' if null. in that case we don't touch it here, leaving the
       //  default from the class definition intact
       if (desc.getBandwidthObserved() >= 0) {
         bridge.bandwidth.observed = desc.getBandwidthObserved();
@@ -523,7 +536,7 @@ public class ConvertToJson {
       bridge.published = dateTimeFormat.format(desc.getPublishedMillis());
       bridge.fingerprint = desc.getFingerprint().toUpperCase();
       //  isHibernating can't return 'null' because it's of type 'boolean'
-      //  (with little 'b') but it's only present inPath the collecTor data if it's
+      //  (with little 'b') but it's only present in the collecTor data if it's
       //  true. therefor we check for it's existence and include it if it
       //  exists. otherwise we leave it alone / to the default value from
       //  the class definition above (which is null)
@@ -1460,8 +1473,8 @@ public class ConvertToJson {
   //  network status vote
   //  TODO  nickname unklar
   //        String getSigningKeyDigest()
-  //          theres a method of this name inPath vote AND inPath DirectorySignature
-  //          - i'm not sure what the method inPath vote is for
+  //          theres a method of this name in vote AND in DirectorySignature
+  //          - i'm not sure what the method in vote is for
   //          rename Router to Status
   //          and actually maybe even more changes
   static class JsonRelayNetworkStatusVote extends JsonDescriptor {
@@ -1694,7 +1707,7 @@ public class ConvertToJson {
   //    as value an array of DirSource entries
   static class JsonRelayNetworkStatusConsensus extends JsonDescriptor {
     String descriptor_type;
-    String published;     // this property is not inPath the spec but eases querying
+    String published;     // this property is not in the spec but eases querying
     Integer network_status_version;
     String vote_status;
     Integer consensus_method;

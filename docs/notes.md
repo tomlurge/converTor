@@ -1,20 +1,27 @@
 # TODO
 
+* metrics-lib updates
+     - Include the hostname in directory source entries of consensuses
+       and votes.
+       (11.04.16)
+
+
 
 * PROBLEMS
 
-  - a lot of TODOs in the code
-
-  - args   to enum or not to enum
+  - relay.avdl
+      rename 
+        union { null, array<OrAddress> } or_address 
+      to or_addresses ?
    
   - multithreading
       is that an issue?
   
-  - make JSON conversion work with avro
-      either wait for bug fix
-      or try deprecated json conversion method
-      or the 'pedestrian' version from Convert2json
-      
+  - JSON conversion works 
+      no nulls (probably?!), no pretty printing
+      bug fix in new avro json converter would solve this
+      how much effort to put into the old json converter?
+  
   - build a jar with dependencies
       with ant
 
@@ -24,41 +31,15 @@
   - aggregation
       https://metrics.torproject.org/bandwidth-data.html
       https://metrics.torproject.org/servers-data.html
-  
-  
-  
-  ENUM
-  
-  nice example of a switch with enums in proEE design patterns p.67
-  
-    public enum CoffeeType {
-      ESPRESSO, LATTE
-    }
-    
-    public Drink dispenseDrink(CoffeeType type) { 
-      Drink coffee = null;
-      switch (type) {
-        case ESPRESSO: coffee = new Espresso();
-        case LATTE: coffee = new Latte(); }
-    return coffee; }
-  
-     
-      
-      
-      
 
-* extend tordnsel with exitnode
-    difficult...
-    write the other converters
-  
 
 
 * digest is always a hash
        
-      
- 
-* think through the process of mass ingestion  
-* and periodic ingestion  
+
+* think through the process of ingestion  
+    mass ingestion
+    periodic ingestion  
 
 * problems with JSON number conversion? see: 
     https://docs.oracle.com/cd/E26161_02/html/GettingStartedGuide/jsonbinding-overview.html
@@ -180,3 +161,19 @@
 
 ## MISC
 
+
+  
+  ENUM
+  
+  nice example of a switch with enums in proEE design patterns p.67
+  
+    public enum CoffeeType {
+      ESPRESSO, LATTE
+    }
+    
+    public Drink dispenseDrink(CoffeeType type) { 
+      Drink coffee = null;
+      switch (type) {
+        case ESPRESSO: coffee = new Espresso();
+        case LATTE: coffee = new Latte(); }
+    return coffee; }

@@ -1,138 +1,59 @@
 package converTor;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.torproject.descriptor.Descriptor;
 import org.torproject.descriptor.ExitList;
 import converTor.encoders.classes.tordnsel.Tordnsel;
+import converTor.encoders.classes.tordnsel.ExitNode;
 
 
-//Tordnsel == ExitList
+//  Tordnsel == ExitList
 class ConvertTordnsel extends Convert {
 
+  //  EXITLIST
   void convert(Descriptor descriptor) {
 
     ExitList desc = (ExitList) descriptor;
     Tordnsel conversion = new Tordnsel();
 
-//  conversion.set
-//  conversion.set
-//  conversion.set
-//  conversion.set
-//  conversion.set
-//  conversion.set
-//  conversion.set
-//  conversion.set
-//  conversion.set
-//  conversion.set
-//  conversion.set
-//  conversion.set
-//  conversion.set
-//  conversion.set
-//  conversion.set
+    conversion.setDescriptorType("tordnsel 1.0");
+    conversion.setDownloaded(desc.getDownloadedMillis());
+    conversion.setExitNodes(convertExitNodesList(desc));
 
 
     this.type = Types.TORDNSEL;
-    this.date = dateTimeFormat.format(desc.getDownloadedMillis()).substring(0,7);
+    this.date = dateTimeFormat
+        .format(desc.getDownloadedMillis()).substring(0,7);
     this.load = conversion;
 
   }
 
+  //  EXITLIST NODES
+  private List<ExitNode> convertExitNodesList(ExitList desc) {
+
+    List<ExitNode> conversionExitNodesList = new ArrayList<>();
 
 
-
-
-
-  List<ExitNode> exit_nodes;
-
-  class ExitNode {
-      String fingerprint;
-      String published;
-      String last_status;
-      // List<Exit> exit_list;
-      Object exit_list;
-  }
-
-  class Exit {
-      String ip;
-      String date;
-  }
-
-  /*  how to populate nested records/arrays/maps
-
-  Question populating nested records in Avro using a GenericRecord
-  https://stackoverflow.com/questions/5480043/question-populating-nested-records-in-avro-using-a-genericrecord
-
-  Schema  sch =  Schema.parse(schemaFile);
-  DataFileWriter<GenericRecord> fw = new DataFileWriter<GenericRecord>(new GenericDatumWriter<GenericRecord>()).create(sch, new File(outFile));
-  GenericRecord r = new GenericData.Record(sch);
-  r.put(“firstName”, “John”);
-
-  GenericRecord t = new GenericData.Record(sch.getField("address").schema());
-  t.put("city","beijing");
-  r.put("address",t);
-
-  fw.append(r);
-
-  */
-
-  /*
-  Tordnsel convert(ExitList desc) {
-
-
-    Tordnsel tordnsel = new Tordnsel();
-    for (String annotation : desc.getAnnotations()) {
-      tordnsel.setDescriptorType(annotation.substring("@type ".length()));
-    }
-    tordnsel.setDownloaded(desc.getDownloadedMillis();
-    tordnsel.setExitNodes(AvroExitNodes.convert( ));
-
-
-    tordnsel.exit_nodes = new ArrayList<>();
     if (desc.getEntries() != null && !desc.getEntries().isEmpty()) {
-      for(ExitList.Entry exitEntry : desc.getEntries()) {
-        ExitNode exitNode = new ExitNode();
-        exitNode.fingerprint = exitEntry.getFingerprint();
-        exitNode.published = dateTimeFormat.format(exitEntry.getPublishedMillis());
-        exitNode.last_status = dateTimeFormat.format(exitEntry.getLastStatusMillis());
-        if (exitEntry.getExitAddresses() != null && !exitEntry.getExitAddresses().isEmpty()) {
-          *//**//**//**//* jagged *//**//**//**//*
-          exitNode.exit_list = new HashMap<String, String>();
-          HashMap<String, String> jaggedList = new HashMap<>();
-          for (Map.Entry<String, Long> exitAddress : exitEntry.getExitAddresses().entrySet()) {
-            jaggedList.put(exitAddress.getKey(), dateTimeFormat.format(exitAddress.getValue()));
-          }
-          exitNode.exit_list = jaggedList;
-          if (verbose) {
-            exitNode.exit_list_VERBOSE = new ArrayList<Exit>();
-            ArrayList<Exit> flatExit = new ArrayList<>();
-            for (Map.Entry<String, Long> exitAddress : exitEntry.getExitAddresses().entrySet()) {
-              Exit exit = new Exit();
-              exit.ip = exitAddress.getKey();
-              exit.date = dateTimeFormat.format(exitAddress.getValue());
-              flatExit.add(exit);
-            }
-            exitNode.exit_list = flatExit;
-          }
+
+      for (ExitList.Entry entry : desc.getEntries()) {
+
+        ExitNode conversionExitNode = new ExitNode();
+        conversionExitNode.setFingerprint(entry.getFingerprint());
+        conversionExitNode.setPublished(entry.getPublishedMillis());
+        conversionExitNode.setLastStatus(entry.getLastStatusMillis());
+        if (entry.getExitAddresses() != null &&
+            !entry.getExitAddresses().isEmpty()) {
+          conversionExitNode.setExitAdresses(entry.getExitAddresses());
         }
-        tordnsel.exit_nodes.add(exitNode);
+
+        conversionExitNodesList.add(conversionExitNode);
       }
     }
 
-
-    //  inner class exitList
-    class AvroExitNodes extends AvroDescriptor {
-      Torperf convert(TorperfResult desc) {
-        Torperf torperf = new Torperf();
-        torperf.setDescriptorType("torperf 1.0");
-        torperf.setSource(desc.getSource());
-        torperf.setFilesize(desc.getFileSize());
-        return torperf;
-      }
-    }
-
-    return tordnsel;
+    return conversionExitNodesList;
   }
-  */
 
 }
 
