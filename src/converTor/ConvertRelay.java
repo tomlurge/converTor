@@ -113,26 +113,26 @@ class ConvertRelay extends Convert {
 
 
   private Router convertRouter(RelayServerDescriptor desc) {
-    Router conversionRouter = new Router();
-    conversionRouter.setNickname(desc.getNickname());
-    conversionRouter.setAddress(desc.getAddress());
-    conversionRouter.setOrPort(desc.getOrPort());
-    conversionRouter.setSocksPort(desc.getSocksPort());
-    conversionRouter.setDirPort(desc.getDirPort());
-    return conversionRouter;
+    Router con = new Router();
+    con.setNickname(desc.getNickname());
+    con.setAddress(desc.getAddress());
+    con.setOrPort(desc.getOrPort());
+    con.setSocksPort(desc.getSocksPort());
+    con.setDirPort(desc.getDirPort());
+    return con;
   }
 
 
   private Bandwidth convertBandwidth(RelayServerDescriptor desc) {
-    Bandwidth conversionBandwidth = new Bandwidth();
-    conversionBandwidth.setAvg(desc.getBandwidthRate());
-    conversionBandwidth.setBurst(desc.getBandwidthBurst());
+    Bandwidth con = new Bandwidth();
+    con.setAvg(desc.getBandwidthRate());
+    con.setBurst(desc.getBandwidthBurst());
     //  can be '-1' if null. in that case we don't touch it here, leaving the
     //  default from the class definition intact
     if (desc.getBandwidthObserved() >= 0) {
-      conversionBandwidth.setObserved(desc.getBandwidthObserved());
+      con.setObserved(desc.getBandwidthObserved());
     }
-    return conversionBandwidth;
+    return con;
   }
 
 
@@ -154,7 +154,7 @@ class ConvertRelay extends Convert {
   }
 
 
-  private List<OrAddress> convertOrAdresses(List<String>  orAddresses) {
+  private List<OrAddress> convertOrAdresses(List<String> orAddresses) {
     List<OrAddress> con = new ArrayList();
     for (String orAddress : orAddresses) {
       if (!orAddress.contains(":")) {

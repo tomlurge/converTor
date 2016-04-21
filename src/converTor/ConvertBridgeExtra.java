@@ -17,14 +17,14 @@ class ConvertBridgeExtra extends Convert {
     BridgeExtra conversion = new BridgeExtra();
 
     conversion.setDescriptorType("bridge-extra-info 1.3");
-    conversion.setExtraInfo(convertExtraInfo(desc));  // <- convert
+    conversion.setExtraInfo(convertExtraInfo(desc));
     conversion.setIdentityEd25519(desc.getIdentityEd25519() != null);
     conversion.setPublished(desc.getPublishedMillis());
     if (desc.getReadHistory() != null) {
-      conversion.setReadHistory(convertReadHistory(desc.getReadHistory()));  // <- convert
+      conversion.setReadHistory(convertReadHistory(desc.getReadHistory()));
     }
     if (desc.getWriteHistory() != null) {
-      conversion.setWriteHistory(convertWriteHistory(desc.getWriteHistory()));  // <- convert
+      conversion.setWriteHistory(convertWriteHistory(desc.getWriteHistory()));
     }
     conversion.setGeoipDbDigest(desc.getGeoipDbDigest());
     conversion.setGeoip6DbDigest(desc.getGeoip6DbDigest());
@@ -32,13 +32,24 @@ class ConvertBridgeExtra extends Convert {
       conversion.setGeoipStartTime(desc.getGeoipStartTimeMillis());
     }
     // start bridge only
-    conversion.setGeoipClientOrigins(desc.getGeoipClientOrigins());
+    if (desc.getGeoipClientOrigins() != null && 
+        !desc.getGeoipClientOrigins().isEmpty()) {
+      conversion.setGeoipClientOrigins(desc.getGeoipClientOrigins());
+    }
     conversion.setBridgeStatsEnd(convertBridgeStats(desc));
-    conversion.setBridgeIps(desc.getBridgeIps());
-    conversion.setBridgeIpVersions(desc.getBridgeIpVersions());
-    conversion.setBridgeIpTransports(desc.getBridgeIpTransports());
+    if (desc.getBridgeIps() != null && !desc.getBridgeIps().isEmpty()) {
+      conversion.setBridgeIps(desc.getBridgeIps());
+    }
+    if (desc.getBridgeIpVersions() != null && 
+        !desc.getBridgeIpVersions().isEmpty()) {
+      conversion.setBridgeIpVersions(desc.getBridgeIpVersions());
+    }
+    if (desc.getBridgeIpTransports() != null && 
+        !desc.getBridgeIpTransports().isEmpty()) {
+      conversion.setBridgeIpTransports(desc.getBridgeIpTransports());
+    }
     // end bridge only
-    conversion.setDirreqStatsEnd(convertDirreqStats(desc));  // <- convert
+    conversion.setDirreqStatsEnd(convertDirreqStats(desc));
     if (desc.getDirreqV2Ips() != null && !desc.getDirreqV2Ips().isEmpty()) {
       conversion.setDirreqV2Ips(desc.getDirreqV2Ips());
     }
@@ -77,19 +88,19 @@ class ConvertBridgeExtra extends Convert {
     }
     if (desc.getDirreqReadHistory() != null) {
       conversion.setDirreqReadHistory(
-          convertDirreqReadHistory(desc.getDirreqReadHistory())  // <- convert
+          convertDirreqReadHistory(desc.getDirreqReadHistory())
       );
     }
     if (desc.getDirreqWriteHistory() != null) {
       conversion.setDirreqWriteHistory(
-          convertDirreqWriteHistory(desc.getDirreqWriteHistory())  // <- convert
+          convertDirreqWriteHistory(desc.getDirreqWriteHistory())
       );
     }
-    conversion.setEntryStatsEnd(convertEntryStats(desc));  // <- convert
+    conversion.setEntryStatsEnd(convertEntryStats(desc));
     if (desc.getEntryIps() != null && !desc.getEntryIps().isEmpty()) {
       conversion.setEntryIps(desc.getEntryIps());
     }
-    conversion.setCellStatsEnd(convertCellStats(desc));  // <- convert
+    conversion.setCellStatsEnd(convertCellStats(desc));
     if (desc.getCellProcessedCells() != null && !desc.getCellProcessedCells().isEmpty()) {
       conversion.setCellProcessedCells(desc.getCellProcessedCells());
     }
@@ -102,8 +113,8 @@ class ConvertBridgeExtra extends Convert {
     if (desc.getCellCircuitsPerDecile() >= 0) {
       conversion.setCellCircuitsPerDecile(desc.getCellCircuitsPerDecile());
     }
-    conversion.setConnBiDirect(convertConnBiDirect(desc));  // <- convert
-    conversion.setExitStatsEnd(convertExitStats(desc));  // <- convert
+    conversion.setConnBiDirect(convertConnBiDirect(desc));
+    conversion.setExitStatsEnd(convertExitStats(desc));
     if (desc.getExitKibibytesWritten() != null && !desc.getExitKibibytesWritten().isEmpty()) {
       conversion.setExitKibibytesWritten(desc.getExitKibibytesWritten());
     }
@@ -113,9 +124,9 @@ class ConvertBridgeExtra extends Convert {
     if (desc.getExitStreamsOpened() != null && !desc.getExitStreamsOpened().isEmpty()) {
       conversion.setExitStreamsOpened(desc.getExitStreamsOpened());
     }
-    conversion.setHidservStatsEnd(convertHidservStats(desc));  // <- convert
-    conversion.setHidservRendRelayedCells(convertHidservRendRelayedCells(desc));  // <- convert
-    conversion.setHidservDirOnionsSeen(convertHidservDirOnionsSeen(desc));  // <- convert
+    conversion.setHidservStatsEnd(convertHidservStats(desc));
+    conversion.setHidservRendRelayedCells(convertHidservRendRelayedCells(desc));
+    conversion.setHidservDirOnionsSeen(convertHidservDirOnionsSeen(desc));
     conversion.setTransport(desc.getTransports());
     conversion.setExtraInfoDigest(desc.getExtraInfoDigest());
     conversion.setExtraInfoDigestSha256(desc.getExtraInfoDigestSha256());
@@ -126,12 +137,15 @@ class ConvertBridgeExtra extends Convert {
     this.load = conversion;
 
   }
+
+
   private ExtraInfo convertExtraInfo(BridgeExtraInfoDescriptor desc) {
     ExtraInfo con = new ExtraInfo();
     con.setNickname(desc.getNickname());
     con.setFingerprint(desc.getFingerprint());
     return con;
   }
+
 
   private ReadHistory convertReadHistory(BandwidthHistory hist) {
     ReadHistory con = new ReadHistory();
@@ -141,6 +155,7 @@ class ConvertBridgeExtra extends Convert {
     return con;
   }
 
+
   private WriteHistory convertWriteHistory(BandwidthHistory hist) {
     WriteHistory con = new WriteHistory();
     con.setDate(hist.getHistoryEndMillis());
@@ -149,12 +164,14 @@ class ConvertBridgeExtra extends Convert {
     return con;
   }
 
+
   private DirreqReadHistory convertDirreqReadHistory(BandwidthHistory hist) {
     DirreqReadHistory con = new DirreqReadHistory();
     con.setDate(hist.getHistoryEndMillis());
     con.setBytes(new ArrayList<Long>(hist.getBandwidthValues().values()));
     return con;
   }
+
 
   private DirreqWriteHistory convertDirreqWriteHistory(BandwidthHistory hist) {
     DirreqWriteHistory con = new DirreqWriteHistory();
@@ -163,6 +180,7 @@ class ConvertBridgeExtra extends Convert {
     con.setBytes(new ArrayList<Long>(hist.getBandwidthValues().values()));
     return con;
   }
+
 
   private BridgeStats convertBridgeStats(BridgeExtraInfoDescriptor desc) {
     BridgeStats con = new BridgeStats();
@@ -175,6 +193,7 @@ class ConvertBridgeExtra extends Convert {
     return con;
   }
 
+
   private DirreqStats convertDirreqStats(BridgeExtraInfoDescriptor desc) {
     DirreqStats con = new DirreqStats();
     if (desc.getDirreqStatsEndMillis() >= 0) {
@@ -185,6 +204,7 @@ class ConvertBridgeExtra extends Convert {
     }
     return con;
   }
+
 
   private EntryStats convertEntryStats(BridgeExtraInfoDescriptor desc) {
     EntryStats con = new EntryStats();
@@ -197,6 +217,7 @@ class ConvertBridgeExtra extends Convert {
     return con;
   }
 
+
   private CellStats convertCellStats(BridgeExtraInfoDescriptor desc) {
     CellStats con = new CellStats();
     if (desc.getCellStatsEndMillis() >= 0) {
@@ -207,6 +228,7 @@ class ConvertBridgeExtra extends Convert {
     }
     return con;
   }
+
 
   private ConnBiDirect convertConnBiDirect(BridgeExtraInfoDescriptor desc) {
     ConnBiDirect con = new ConnBiDirect();
@@ -231,6 +253,7 @@ class ConvertBridgeExtra extends Convert {
     return con;
   }
 
+
   private ExitStats convertExitStats(BridgeExtraInfoDescriptor desc) {
     ExitStats con = new ExitStats();
     if (desc.getExitStatsEndMillis() >= 0) {
@@ -242,6 +265,7 @@ class ConvertBridgeExtra extends Convert {
     return con;
   }
 
+
   private HidservStats convertHidservStats(BridgeExtraInfoDescriptor desc) {
     HidservStats con = new HidservStats();
     if (desc.getHidservStatsEndMillis() >= 0) {
@@ -252,6 +276,7 @@ class ConvertBridgeExtra extends Convert {
     }
     return con;
   }
+
 
   private HidservRendRelayedCells convertHidservRendRelayedCells(
       BridgeExtraInfoDescriptor desc
@@ -267,6 +292,7 @@ class ConvertBridgeExtra extends Convert {
     return con;
   }
 
+
   private HidservDirOnionsSeen convertHidservDirOnionsSeen(
       BridgeExtraInfoDescriptor desc
   ) {
@@ -280,7 +306,6 @@ class ConvertBridgeExtra extends Convert {
     }
     return con;
   }
-
 
 
 }

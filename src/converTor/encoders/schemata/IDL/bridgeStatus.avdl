@@ -67,6 +67,7 @@ protocol bridge_network_status_descriptor {
     // see above
     R r;
     // see above
+    /** metrics-lib/NetworkStatusEntry: getOrAddresses() */
     union { null, array<OrAddress> } a;
     /** metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags() */
     union { null, array<string> } s;

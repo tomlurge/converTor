@@ -127,6 +127,7 @@ class ConvertRelayExtra extends Convert {
     return con;
   }
 
+
   private ReadHistory convertReadHistory(BandwidthHistory hist) {
     ReadHistory con = new ReadHistory();
     con.setDate(hist.getHistoryEndMillis());
@@ -134,6 +135,7 @@ class ConvertRelayExtra extends Convert {
     con.setBytes(new ArrayList<Long>(hist.getBandwidthValues().values()));
     return con;
   }
+
 
   private WriteHistory convertWriteHistory(BandwidthHistory hist) {
     WriteHistory con = new WriteHistory();
@@ -143,12 +145,14 @@ class ConvertRelayExtra extends Convert {
     return con;
   }
 
+
   private DirreqReadHistory convertDirreqReadHistory(BandwidthHistory hist) {
     DirreqReadHistory con = new DirreqReadHistory();
     con.setDate(hist.getHistoryEndMillis());
     con.setBytes(new ArrayList<Long>(hist.getBandwidthValues().values()));
     return con;
   }
+
 
   private DirreqWriteHistory convertDirreqWriteHistory(BandwidthHistory hist) {
     DirreqWriteHistory con = new DirreqWriteHistory();
@@ -157,6 +161,7 @@ class ConvertRelayExtra extends Convert {
     con.setBytes(new ArrayList<Long>(hist.getBandwidthValues().values()));
     return con;
   }
+
 
   private DirreqStats convertDirreqStats(RelayExtraInfoDescriptor desc) {
     DirreqStats con = new DirreqStats();
@@ -169,6 +174,7 @@ class ConvertRelayExtra extends Convert {
     return con;
   }
 
+
   private EntryStats convertEntryStats(RelayExtraInfoDescriptor desc) {
     EntryStats con = new EntryStats();
     if (desc.getEntryStatsEndMillis() >= 0) {
@@ -180,6 +186,7 @@ class ConvertRelayExtra extends Convert {
     return con;
   }
 
+
   private CellStats convertCellStats(RelayExtraInfoDescriptor desc) {
     CellStats con = new CellStats();
     if (desc.getCellStatsEndMillis() >= 0) {
@@ -190,6 +197,7 @@ class ConvertRelayExtra extends Convert {
     }
     return con;
   }
+
 
   private ConnBiDirect convertConnBiDirect(RelayExtraInfoDescriptor desc) {
     ConnBiDirect con = new ConnBiDirect();
@@ -214,6 +222,7 @@ class ConvertRelayExtra extends Convert {
     return con;
   }
 
+
   private ExitStats convertExitStats(RelayExtraInfoDescriptor desc) {
     ExitStats con = new ExitStats();
     if (desc.getExitStatsEndMillis() >= 0) {
@@ -225,6 +234,7 @@ class ConvertRelayExtra extends Convert {
     return con;
   }
 
+
   private HidservStats convertHidservStats(RelayExtraInfoDescriptor desc) {
     HidservStats con = new HidservStats();
     if (desc.getHidservStatsEndMillis() >= 0) {
@@ -235,6 +245,7 @@ class ConvertRelayExtra extends Convert {
     }
     return con;
   }
+
 
   private HidservRendRelayedCells convertHidservRendRelayedCells(
       RelayExtraInfoDescriptor desc
@@ -250,6 +261,7 @@ class ConvertRelayExtra extends Convert {
     return con;
   }
 
+
   private HidservDirOnionsSeen convertHidservDirOnionsSeen(
       RelayExtraInfoDescriptor desc
   ) {
@@ -263,7 +275,6 @@ class ConvertRelayExtra extends Convert {
     }
     return con;
   }
-
 
 
 }

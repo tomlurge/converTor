@@ -13,6 +13,14 @@
       rename 
         union { null, array<OrAddress> } or_address 
       to or_addresses ?
+      
+  - bridgeStatus
+      con.setFastSpeed  desc.getFastBandwidth()); // fastSpeed? stupid name!
+      union { null, array<Status> } status; 
+        müsste eigentlich
+           union { null, array<Status> } statuses; 
+        heissen. sowas gabs bei relay oder tordnsel auch
+      umbenamsung FlagTresholds.setIgnoringAdvertisedBws
    
   - multithreading
       is that an issue?
