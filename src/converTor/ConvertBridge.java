@@ -20,34 +20,28 @@ class ConvertBridge extends Convert {
     BridgeServerDescriptor desc = (BridgeServerDescriptor) descriptor;
     Bridge conversion = new Bridge();
 
-    conversion.setDescriptorType("server-descriptor 1.0");
+    conversion.setDescriptorType("bridge-server-descriptor 1.1");
     conversion.setServerDescriptorDigest(
-        desc.getServerDescriptorDigest().toUpperCase()
+      desc.getServerDescriptorDigest().toUpperCase()
     );
     conversion.setServerDescriptorSha256(
-        desc.getServerDescriptorDigestSha256()
+      desc.getServerDescriptorDigestSha256()
     );
     conversion.setRouter(
-        convertRouter(desc)
+      convertRouter(desc)
     );
     conversion.setIdentityEd25519(desc.getIdentityEd25519() != null);
     conversion.setMasterKeyEd25519(desc.getMasterKeyEd25519());
     conversion.setBandwidth(
-        convertBandwidth(desc)
+      convertBandwidth(desc)
     );
     conversion.setPlatform(desc.getPlatform());
     conversion.setPublished(desc.getPublishedMillis());
     conversion.setFingerprint(desc.getFingerprint());
-    //  isHibernating can't return 'null' because it's of type 'boolean'
-    //  (with little 'b') but it's only present in the collecTor data if it's
-    //  true. therefor we check for it's existence and include it if it
-    //  exists. otherwise we leave it alone / to the default value from
-    //  the class definition above (which is null)
     if (desc.isHibernating()) {
       conversion.setHibernating(desc.isHibernating());
     }
     conversion.setUptime(desc.getUptime());
-    //  test, if there is a key: return 'true' if yes, 'false' otherwise
     conversion.setOnionKey(desc.getOnionKey() != null);
     conversion.setOnionKeyCrosscert(desc.getOnionKeyCrosscert() != null);
     conversion.setNtorOnionKey(desc.getNtorOnionKey() != null);
@@ -55,9 +49,6 @@ class ConvertBridge extends Convert {
         desc.getNtorOnionKeyCrosscert() != null
     );
     conversion.setSigningKey(desc.getSigningKey() != null);
-    //  verbose testing because of List type
-    //  first check that the list is not null, then if it's empty
-    //  (checking for emptiness right away could lead to null pointer exc)
     if (desc.getExitPolicyLines() != null &&
         !desc.getExitPolicyLines().isEmpty()) {
       conversion.setExitPolicy(desc.getExitPolicyLines());
@@ -66,8 +57,6 @@ class ConvertBridge extends Convert {
     conversion.setIpv6Portlist(desc.getIpv6PortList());
     conversion.setContact(desc.getContact());
     conversion.setFamily(desc.getFamilyEntries());
-    //  check for 'null' first because we want to run a method on it
-    //  and not get a null pointer exception meanwhile
     if (desc.getReadHistory() != null) {
       conversion.setReadHistory(
           convertReadHistory(desc.getReadHistory())
@@ -111,53 +100,47 @@ class ConvertBridge extends Convert {
 
 
   private Router convertRouter(BridgeServerDescriptor desc) {
-    Router conversionRouter = new Router();
-    conversionRouter.setNickname(desc.getNickname());
-    conversionRouter.setAddress(desc.getAddress());
-    conversionRouter.setOrPort(desc.getOrPort());
-    conversionRouter.setSocksPort(desc.getSocksPort());
-    conversionRouter.setDirPort(desc.getDirPort());
-    return conversionRouter;
+    Router con = new Router();
+    con.setNickname(desc.getNickname());
+    con.setAddress(desc.getAddress());
+    con.setOrPort(desc.getOrPort());
+    con.setSocksPort(desc.getSocksPort());
+    con.setDirPort(desc.getDirPort());
+    return con;
   }
 
 
   private Bandwidth convertBandwidth(BridgeServerDescriptor desc) {
-    Bandwidth conversionBandwidth = new Bandwidth();
-    conversionBandwidth.setAvg(desc.getBandwidthRate());
-    conversionBandwidth.setBurst(desc.getBandwidthBurst());
-    //  can be '-1' if null. in that case we don't touch it here, leaving the
-    //  default from the class definition intact
+    Bandwidth con = new Bandwidth();
+    con.setAvg(desc.getBandwidthRate());
+    con.setBurst(desc.getBandwidthBurst());
     if (desc.getBandwidthObserved() >= 0) {
-      conversionBandwidth.setObserved(desc.getBandwidthObserved());
+      con.setObserved(desc.getBandwidthObserved());
     }
-    return conversionBandwidth;
+    return con;
   }
 
 
   private ReadHistory convertReadHistory(BandwidthHistory hist) {
-    ReadHistory conversionReadHistory = new ReadHistory();
-    conversionReadHistory.setDate(hist.getHistoryEndMillis());
-    conversionReadHistory.setInterval(hist.getIntervalLength());
-    conversionReadHistory.setBytes(
-        (ArrayList<Long>) hist.getBandwidthValues().values()
-    );
-    return conversionReadHistory;
+    ReadHistory con = new ReadHistory();
+    con.setDate(hist.getHistoryEndMillis());
+    con.setInterval(hist.getIntervalLength());
+    con.setBytes(new ArrayList<Long>(hist.getBandwidthValues().values()));
+    return con;
   }
 
 
   private WriteHistory convertWriteHistory(BandwidthHistory hist) {
-    WriteHistory conversionWriteHistory = new WriteHistory();
-    conversionWriteHistory.setDate(hist.getHistoryEndMillis());
-    conversionWriteHistory.setInterval(hist.getIntervalLength());
-    conversionWriteHistory.setBytes(
-        (ArrayList<Long>) hist.getBandwidthValues().values()
-    );
-    return conversionWriteHistory;
+    WriteHistory con = new WriteHistory();
+    con.setDate(hist.getHistoryEndMillis());
+    con.setInterval(hist.getIntervalLength());
+    con.setBytes(new ArrayList<Long>(hist.getBandwidthValues().values()));
+    return con;
   }
 
 
   private List<OrAddress> convertOrAdresses(List<String>  orAddresses) {
-    List<OrAddress> conversionOrAddresses = new ArrayList();
+    List<OrAddress> con = new ArrayList();
     for (String orAddress : orAddresses) {
       if (!orAddress.contains(":")) {
         continue;
@@ -167,12 +150,12 @@ class ConvertBridge extends Convert {
       try {
         ora.setAddress(orAddress.substring(0, lastColon));
         ora.setPort(Integer.parseInt(orAddress.substring(lastColon + 1)));
-        conversionOrAddresses.add(ora);
+        con.add(ora);
       } catch (NumberFormatException e) {
         continue;
       }
     }
-    return conversionOrAddresses;
+    return con;
   }
 
 }

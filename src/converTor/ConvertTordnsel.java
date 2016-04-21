@@ -39,16 +39,16 @@ class ConvertTordnsel extends Convert {
 
       for (ExitList.Entry entry : desc.getEntries()) {
 
-        ExitNode conversionExitNode = new ExitNode();
-        conversionExitNode.setFingerprint(entry.getFingerprint());
-        conversionExitNode.setPublished(entry.getPublishedMillis());
-        conversionExitNode.setLastStatus(entry.getLastStatusMillis());
+        ExitNode con = new ExitNode();
+        con.setFingerprint(entry.getFingerprint());
+        con.setPublished(entry.getPublishedMillis());
+        con.setLastStatus(entry.getLastStatusMillis());
         if (entry.getExitAddresses() != null &&
             !entry.getExitAddresses().isEmpty()) {
-          conversionExitNode.setExitAdresses(entry.getExitAddresses());
+          con.setExitAdresses(entry.getExitAddresses());
         }
 
-        conversionExitNodesList.add(conversionExitNode);
+        conversionExitNodesList.add(con);
       }
     }
 

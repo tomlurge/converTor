@@ -137,29 +137,25 @@ class ConvertRelay extends Convert {
 
 
   private ReadHistory convertReadHistory(BandwidthHistory hist) {
-    ReadHistory conversionReadHistory = new ReadHistory();
-    conversionReadHistory.setDate(hist.getHistoryEndMillis());
-    conversionReadHistory.setInterval(hist.getIntervalLength());
-    conversionReadHistory.setBytes(
-        (ArrayList<Long>) hist.getBandwidthValues().values()
-    );
-    return conversionReadHistory;
+    ReadHistory con = new ReadHistory();
+    con.setDate(hist.getHistoryEndMillis());
+    con.setInterval(hist.getIntervalLength());
+    con.setBytes(new ArrayList<Long>(hist.getBandwidthValues().values()));
+    return con;
   }
 
 
   private WriteHistory convertWriteHistory(BandwidthHistory hist) {
-    WriteHistory conversionWriteHistory = new WriteHistory();
-    conversionWriteHistory.setDate(hist.getHistoryEndMillis());
-    conversionWriteHistory.setInterval(hist.getIntervalLength());
-    conversionWriteHistory.setBytes(
-        (ArrayList<Long>) hist.getBandwidthValues().values()
-    );
-    return conversionWriteHistory;
+    WriteHistory con = new WriteHistory();
+    con.setDate(hist.getHistoryEndMillis());
+    con.setInterval(hist.getIntervalLength());
+    con.setBytes(new ArrayList<Long>(hist.getBandwidthValues().values()));
+    return con;
   }
 
 
   private List<OrAddress> convertOrAdresses(List<String>  orAddresses) {
-    List<OrAddress> conversionOrAddresses = new ArrayList();
+    List<OrAddress> con = new ArrayList();
     for (String orAddress : orAddresses) {
       if (!orAddress.contains(":")) {
         continue;
@@ -169,12 +165,12 @@ class ConvertRelay extends Convert {
       try {
         ora.setAddress(orAddress.substring(0, lastColon));
         ora.setPort(Integer.parseInt(orAddress.substring(lastColon + 1)));
-        conversionOrAddresses.add(ora);
+        con.add(ora);
       } catch (NumberFormatException e) {
         continue;
       }
     }
-    return conversionOrAddresses;
+    return con;
   }
 
 

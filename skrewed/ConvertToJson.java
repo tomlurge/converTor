@@ -700,7 +700,7 @@ public class ConvertToJson {
     Boolean router_signature;                                                   // getRouterSignature
     String extra_info_digest;
     String extra_info_digest_sha256;                                            // getExtraInfoDigestSha256
-    Boolean master_key_ed25519;                                                  // getMasterKeyEd25519
+    Boolean master_key_ed25519;                                                 // getMasterKeyEd25519
 
     static String convert(RelayExtraInfoDescriptor desc) {
       JsonRelayExtraInfoDescriptor relayExtra = new JsonRelayExtraInfoDescriptor();
@@ -984,6 +984,7 @@ public class ConvertToJson {
       if (desc.getHidservStatsIntervalLength() >= 0) {
         relayExtra.hidserv_stats_end.interval = desc.getHidservStatsIntervalLength();
       }
+
       relayExtra.hidserv_rend_relayed_cells = new HidRend();
       relayExtra.hidserv_rend_relayed_cells.cells = desc.getHidservRendRelayedCells();
       if (desc.getHidservRendRelayedCellsParameters() != null &&
@@ -998,6 +999,7 @@ public class ConvertToJson {
           relayExtra.hidserv_rend_relayed_cells.obfuscation = tmpList;
         }
       }
+
       relayExtra.hidserv_dir_onions_seen = new HidDir();
       relayExtra.hidserv_dir_onions_seen.onions = desc.getHidservDirOnionsSeen();
       if (desc.getHidservRendRelayedCellsParameters() != null &&

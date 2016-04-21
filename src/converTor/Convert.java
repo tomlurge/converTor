@@ -34,16 +34,6 @@ abstract class Convert<C> {
     }
   }
 
-  /* ExtraInfo and Stats objects used in extra info descriptors */
-  class ExtraInfo {
-    String nickname;
-    String fingerprint;
-  }
-  class Stats {
-    String date;
-    Long interval;
-  }
-
   /*  Date/time formatter  */
   static final String dateTimePattern = "yyyy-MM-dd HH:mm:ss";
   static final Locale dateTimeLocale = Locale.US;
