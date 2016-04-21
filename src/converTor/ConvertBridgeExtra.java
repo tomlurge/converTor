@@ -16,7 +16,7 @@ class ConvertBridgeExtra extends Convert {
     BridgeExtraInfoDescriptor desc = (BridgeExtraInfoDescriptor) descriptor;
     BridgeExtra conversion = new BridgeExtra();
 
-    conversion.setDescriptorType("extra-info 1.0");
+    conversion.setDescriptorType("bridge-extra-info 1.3");
     conversion.setExtraInfo(convertExtraInfo(desc));  // <- convert
     conversion.setIdentityEd25519(desc.getIdentityEd25519() != null);
     conversion.setPublished(desc.getPublishedMillis());
@@ -31,6 +31,13 @@ class ConvertBridgeExtra extends Convert {
     if (desc.getGeoipStartTimeMillis() >= 0) {
       conversion.setGeoipStartTime(desc.getGeoipStartTimeMillis());
     }
+    // start bridge only
+    conversion.setGeoipClientOrigins(desc.getGeoipClientOrigins());
+    conversion.setBridgeStatsEnd(convertBridgeStats(desc));
+    conversion.setBridgeIps(desc.getBridgeIps());
+    conversion.setBridgeIpVersions(desc.getBridgeIpVersions());
+    conversion.setBridgeIpTransports(desc.getBridgeIpTransports());
+    // end bridge only
     conversion.setDirreqStatsEnd(convertDirreqStats(desc));  // <- convert
     if (desc.getDirreqV2Ips() != null && !desc.getDirreqV2Ips().isEmpty()) {
       conversion.setDirreqV2Ips(desc.getDirreqV2Ips());
@@ -154,6 +161,17 @@ class ConvertBridgeExtra extends Convert {
     con.setDate(hist.getHistoryEndMillis());
     con.setInterval(hist.getIntervalLength());
     con.setBytes(new ArrayList<Long>(hist.getBandwidthValues().values()));
+    return con;
+  }
+
+  private BridgeStats convertBridgeStats(BridgeExtraInfoDescriptor desc) {
+    BridgeStats con = new BridgeStats();
+    if (desc.getBridgeStatsEndMillis() >= 0) {
+      con.setDate(desc.getBridgeStatsEndMillis());
+    }
+    if (desc.getBridgeStatsIntervalLength() >= 0) {
+      con.setInterval(desc.getBridgeStatsIntervalLength());
+    }
     return con;
   }
 
