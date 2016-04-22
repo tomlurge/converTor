@@ -1,12 +1,11 @@
 package converTor;
 
+import java.util.ArrayList;
 import org.torproject.descriptor.BandwidthHistory;
 import org.torproject.descriptor.Descriptor;
 import org.torproject.descriptor.BridgeExtraInfoDescriptor;
-import converTor.encoders.classes.bridgeExtra.BridgeExtra;
 import converTor.encoders.classes.bridgeExtra.*;
 
-import java.util.ArrayList;
 
 
 class ConvertBridgeExtra extends Convert {
@@ -16,7 +15,9 @@ class ConvertBridgeExtra extends Convert {
     BridgeExtraInfoDescriptor desc = (BridgeExtraInfoDescriptor) descriptor;
     BridgeExtra conversion = new BridgeExtra();
 
-    conversion.setDescriptorType("bridge-extra-info 1.3");
+    for (String annotation : desc.getAnnotations()) {
+      conversion.setDescriptorType(annotation.substring("@type ".length()));
+    }
     conversion.setExtraInfo(convertExtraInfo(desc));
     conversion.setIdentityEd25519(desc.getIdentityEd25519() != null);
     conversion.setPublished(desc.getPublishedMillis());
@@ -306,6 +307,5 @@ class ConvertBridgeExtra extends Convert {
     }
     return con;
   }
-
 
 }

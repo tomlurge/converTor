@@ -20,7 +20,9 @@ class ConvertRelay extends Convert {
     RelayServerDescriptor desc = (RelayServerDescriptor) descriptor;
     Relay conversion = new Relay();
 
-    conversion.setDescriptorType("server-descriptor 1.0");
+    for (String annotation : desc.getAnnotations()) {
+      conversion.setDescriptorType(annotation.substring("@type ".length()));
+    }
     conversion.setServerDescriptorDigest(
         desc.getServerDescriptorDigest().toUpperCase()
     );
@@ -41,8 +43,8 @@ class ConvertRelay extends Convert {
     //  isHibernating can't return 'null' because it's of type 'boolean'
     //  (with little 'b') but it's only present in the collecTor data if it's
     //  true. therefor we check for it's existence and include it if it
-    //  exists. otherwise we leave it alone / to the default value from
-    //  the class definition above (which is null)
+    //  exists. otherwise we leave it alone / to the default value from the
+    //  schema (which is null)
     if (desc.isHibernating()) {
       conversion.setHibernating(desc.isHibernating());
     }
@@ -155,22 +157,22 @@ class ConvertRelay extends Convert {
 
 
   private List<OrAddress> convertOrAdresses(List<String> orAddresses) {
-    List<OrAddress> con = new ArrayList();
+    List<OrAddress> conList = new ArrayList();
     for (String orAddress : orAddresses) {
       if (!orAddress.contains(":")) {
         continue;
       }
-      OrAddress ora = new OrAddress();
+      OrAddress con = new OrAddress();
       int lastColon = orAddress.lastIndexOf(":");
       try {
-        ora.setAddress(orAddress.substring(0, lastColon));
-        ora.setPort(Integer.parseInt(orAddress.substring(lastColon + 1)));
-        con.add(ora);
+        con.setAddress(orAddress.substring(0, lastColon));
+        con.setPort(Integer.parseInt(orAddress.substring(lastColon + 1)));
+        conList.add(con);
       } catch (NumberFormatException e) {
         continue;
       }
     }
-    return con;
+    return conList;
   }
 
 

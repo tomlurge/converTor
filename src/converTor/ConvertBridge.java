@@ -5,12 +5,7 @@ import java.util.ArrayList;
 import org.torproject.descriptor.Descriptor;
 import org.torproject.descriptor.BridgeServerDescriptor;
 import org.torproject.descriptor.BandwidthHistory;
-import converTor.encoders.classes.bridge.Bridge;
-import converTor.encoders.classes.bridge.Router;
-import converTor.encoders.classes.bridge.Bandwidth;
-import converTor.encoders.classes.bridge.OrAddress;
-import converTor.encoders.classes.bridge.ReadHistory;
-import converTor.encoders.classes.bridge.WriteHistory;
+import converTor.encoders.classes.bridge.*;
 
 
 class ConvertBridge extends Convert {
@@ -20,7 +15,9 @@ class ConvertBridge extends Convert {
     BridgeServerDescriptor desc = (BridgeServerDescriptor) descriptor;
     Bridge conversion = new Bridge();
 
-    conversion.setDescriptorType("bridge-server-descriptor 1.1");
+    for (String annotation : desc.getAnnotations()) {
+      conversion.setDescriptorType(annotation.substring("@type ".length()));
+    }
     conversion.setServerDescriptorDigest(
       desc.getServerDescriptorDigest().toUpperCase()
     );
@@ -140,22 +137,22 @@ class ConvertBridge extends Convert {
 
 
   private List<OrAddress> convertOrAdresses(List<String>  orAddresses) {
-    List<OrAddress> con = new ArrayList();
+    List<OrAddress> conList = new ArrayList();
     for (String orAddress : orAddresses) {
       if (!orAddress.contains(":")) {
         continue;
       }
-      OrAddress ora = new OrAddress();
+      OrAddress con = new OrAddress();
       int lastColon = orAddress.lastIndexOf(":");
       try {
-        ora.setAddress(orAddress.substring(0, lastColon));
-        ora.setPort(Integer.parseInt(orAddress.substring(lastColon + 1)));
-        con.add(ora);
+        con.setAddress(orAddress.substring(0, lastColon));
+        con.setPort(Integer.parseInt(orAddress.substring(lastColon + 1)));
+        conList.add(con);
       } catch (NumberFormatException e) {
         continue;
       }
     }
-    return con;
+    return conList;
   }
 
 }

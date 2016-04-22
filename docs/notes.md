@@ -1,57 +1,74 @@
 # TODO
 
-* metrics-lib updates
-     - Include the hostname in directory source entries of consensuses
-       and votes.
-       (11.04.16)
-
-
-
-* PROBLEMS
-
-  - relay.avdl
-      rename 
-        union { null, array<OrAddress> } or_address 
-      to or_addresses ?
-      
-  - bridgeStatus
-      con.setFastSpeed  desc.getFastBandwidth()); // fastSpeed? stupid name!
-      union { null, array<Status> } status; 
-        müsste eigentlich
-           union { null, array<Status> } statuses; 
-        heissen. sowas gabs bei relay oder tordnsel auch
-      umbenamsung FlagTresholds.setIgnoringAdvertisedBws
-   
-  - multithreading
-      is that an issue?
-  
-  - JSON conversion works 
-      no nulls (probably?!), no pretty printing
-      bug fix in new avro json converter would solve this
-      how much effort to put into the old json converter?
-  
-  - build a jar with dependencies
-      with ant
-
-  - Parquet is still a little shaky (see docs/parquet.md)
-      hadoop file system on local system?
-
-  - aggregation
+newly generate classes from IDLs
+  bridgeStatus, relayVote, relayConsensus
+parse pline
+documentation
+ant build-script
+parquet - shaky on local (non-HDFS) file system 
+multithreading - is there an issue?
+exception handling - maybe too lax?
+tests in converter code - do they make sense
+massive testing
+json - pretty printing without Avro
+aggregation
       https://metrics.torproject.org/bandwidth-data.html
       https://metrics.torproject.org/servers-data.html
+      visionion
+      karstens use case
+spark
+hbase
+drill
 
 
 
-* digest is always a hash
+
+# PROBLEMS      
+
+      
+  - bridgeStatus
+      PROCRASTINATED 
+        
+      - con.setFastSpeed  desc.getFastBandwidth()); // fastSpeed? stupid name!
+      
+      - datumsfeld in allen konvertierten descriptoren
+          muß in die IDL ? wie benamsen? 
+          in welche descriptoren genau?
+          oder erst in HBase/RDDs? <- GENAU
+      
+      NO - IT'S IN THE SPEC
+        -   union { null, array<Status> } status; 
+            müsste eigentlich
+              union { null, array<Status> } statuses; 
+           heissen. sowas gabs bei relay oder tordnsel auch
+         
+        -   setPublished in bridgeStatus.R
+            setPublication in relayVote.R
+        
+        -   fastSpeed zu fastBandwidth
+        
+     DONE  
+      umbenamsung bridgeStatus.FlagTresholds.setIgnoringAdvertisedBws
+       
+      bridgeStatus.avdl z92 array > map
+      ConvertBridgeStatus.java z47 ff
+      
+      relayVote.avdl z81 array > map
+      ConvertRelayVote z93 ff
+
+      metrics-lib updates
+        - Include the hostname in directory source entries of consensuses
+          and votes. (11.04.16)
+      
+      
+
+# PROJECTS
        
 
 * think through the process of ingestion  
     mass ingestion
     periodic ingestion  
 
-* problems with JSON number conversion? see: 
-    https://docs.oracle.com/cd/E26161_02/html/GettingStartedGuide/jsonbinding-overview.html
-  
 * check sizes
   + a bunch of Collector descriptors (say: 1 month)
   + converted to verbose and gzipped JSON
@@ -70,7 +87,6 @@
   +  convert one tarball per type 
       to see if there is one suspiciously big JSON result
   
-* modularize
 * write tests
   + that would involve writing test descriptors too i guess
   + which would mean learning how to write collector data
@@ -94,9 +110,14 @@
   [c] angenommen f. hätte so eine datenbank gehabt,
   [c] was hätte er machen können?
   
-  
-# BUGS
 
+# NOTES
+
+* digest is always a hash
+
+* problems with JSON number conversion? see: 
+    https://docs.oracle.com/cd/E26161_02/html/GettingStartedGuide/jsonbinding-overview.html
+  
 
 
 # CONSTRUCTION MATERIALS

@@ -14,7 +14,9 @@ class ConvertRelayExtra extends Convert {
     RelayExtraInfoDescriptor desc = (RelayExtraInfoDescriptor) descriptor;
     RelayExtra conversion = new RelayExtra();
 
-    conversion.setDescriptorType("extra-info 1.0");
+    for (String annotation : desc.getAnnotations()) {
+      conversion.setDescriptorType(annotation.substring("@type ".length()));
+    }
     conversion.setExtraInfo(convertExtraInfo(desc));
     conversion.setIdentityEd25519(desc.getIdentityEd25519() != null);
     conversion.setPublished(desc.getPublishedMillis());
@@ -117,6 +119,7 @@ class ConvertRelayExtra extends Convert {
     this.type = Types.RELAY_EXTRA;
     this.date = dateTimeFormat.format(desc.getPublishedMillis()).substring(0,7);
     this.load = conversion;
+
   }
 
 
@@ -275,6 +278,5 @@ class ConvertRelayExtra extends Convert {
     }
     return con;
   }
-
 
 }

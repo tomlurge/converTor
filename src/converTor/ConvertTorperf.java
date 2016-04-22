@@ -12,7 +12,9 @@ class ConvertTorperf extends Convert {
     TorperfResult desc = (TorperfResult) descriptor;
     Torperf conversion = new Torperf();
 
-    conversion.setDescriptorType("torperf 1.0");
+    for (String annotation : desc.getAnnotations()) {
+      conversion.setDescriptorType(annotation.substring("@type ".length()));
+    }
     conversion.setSource(desc.getSource());
     conversion.setFilesize(desc.getFileSize());
     conversion.setStart(desc.getStartMillis());
@@ -67,6 +69,5 @@ class ConvertTorperf extends Convert {
     this.load = conversion;
 
   }
-
 
 }

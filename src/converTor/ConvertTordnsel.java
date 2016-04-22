@@ -1,7 +1,7 @@
 package converTor;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
 import org.torproject.descriptor.Descriptor;
 import org.torproject.descriptor.ExitList;
 import converTor.encoders.classes.tordnsel.Tordnsel;
@@ -11,16 +11,16 @@ import converTor.encoders.classes.tordnsel.ExitNode;
 //  Tordnsel == ExitList
 class ConvertTordnsel extends Convert {
 
-  //  EXITLIST
   void convert(Descriptor descriptor) {
 
     ExitList desc = (ExitList) descriptor;
     Tordnsel conversion = new Tordnsel();
 
-    conversion.setDescriptorType("tordnsel 1.0");
+    for (String annotation : desc.getAnnotations()) {
+      conversion.setDescriptorType(annotation.substring("@type ".length()));
+    }
     conversion.setDownloaded(desc.getDownloadedMillis());
     conversion.setExitNodes(convertExitNodesList(desc));
-
 
     this.type = Types.TORDNSEL;
     this.date = dateTimeFormat
@@ -29,14 +29,11 @@ class ConvertTordnsel extends Convert {
 
   }
 
-  //  EXITLIST NODES
+
   private List<ExitNode> convertExitNodesList(ExitList desc) {
-
-    List<ExitNode> conversionExitNodesList = new ArrayList<>();
-
+    List<ExitNode> conList = new ArrayList<>();
 
     if (desc.getEntries() != null && !desc.getEntries().isEmpty()) {
-
       for (ExitList.Entry entry : desc.getEntries()) {
 
         ExitNode con = new ExitNode();
@@ -47,12 +44,11 @@ class ConvertTordnsel extends Convert {
             !entry.getExitAddresses().isEmpty()) {
           con.setExitAdresses(entry.getExitAddresses());
         }
-
-        conversionExitNodesList.add(con);
+        conList.add(con);
       }
     }
 
-    return conversionExitNodesList;
+    return conList;
   }
 
 }

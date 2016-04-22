@@ -1,7 +1,7 @@
 most wanted
 
     extract JSON schema(ta) from an Avro IDL file
-      java -jar avro-tools-*.jar idl2schemata ~/descriptor.idl .
+      java -jar avro-tools-*.jar idl2schemata /some/dir/descriptor.idl .
      
     compile (generate classes from) a schema
       java -jar avro-tools-*.jar compile -string schema ~/descriptor.avsc .
@@ -15,7 +15,7 @@ most wanted
     
 intro
 
-    DOCS - 1.8.0 at the time of this writing
+    DOCS - 1.8.0 at the time of writing
       intro https://avro.apache.org/docs/current/gettingstartedjava.html
       spec  https://avro.apache.org/docs/current/spec.html
       idl   https://avro.apache.org/docs/current/idl.html
@@ -67,7 +67,7 @@ TYPES
     bytes
     string
     array     items
-    map       values, key is always of type string
+    map       values, key has to be of type string
     record    fields
     enum      symbols
     fixed

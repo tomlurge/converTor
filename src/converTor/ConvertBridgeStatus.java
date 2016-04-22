@@ -1,13 +1,13 @@
 package converTor;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
-import converTor.encoders.classes.bridgeStatus.*;
-import converTor.encoders.classes.bridgeStatus.OrAddress;
 import org.torproject.descriptor.Descriptor;
 import org.torproject.descriptor.BridgeNetworkStatus;
 import org.torproject.descriptor.NetworkStatusEntry;
+import converTor.encoders.classes.bridgeStatus.*;
 
 
 class ConvertBridgeStatus extends Convert {
@@ -17,10 +17,14 @@ class ConvertBridgeStatus extends Convert {
     BridgeNetworkStatus desc = (BridgeNetworkStatus) descriptor;
     BridgeStatus conversion = new BridgeStatus();
 
-    conversion.setDescriptorType("bridge-network-status 1.0");
+    for (String annotation : desc.getAnnotations()) {
+      conversion.setDescriptorType(annotation.substring("@type ".length()));
+    }
     conversion.setPublished(desc.getPublishedMillis());
     conversion.setFlagTresholds(convertFlagTresholds(desc));
-    conversion.setStatus(convertStatus(desc));
+    if (desc.getStatusEntries() != null && !desc.getStatusEntries().isEmpty()) {
+      conversion.setStatus(convertStatus(desc));
+    }
 
     this.type = Types.BRIDGE_STATUS;
     this.date = dateTimeFormat.format(desc.getPublishedMillis()).substring(0,7);
@@ -31,35 +35,56 @@ class ConvertBridgeStatus extends Convert {
 
   private FlagTresholds convertFlagTresholds(BridgeNetworkStatus desc) {
     FlagTresholds con = new FlagTresholds();
-    con.setStableUptime(desc.getStableUptime());
-    con.setStableMtbf(desc.getStableMtbf());
-    con.setEnoughMtbf(desc.getEnoughMtbfInfo());
-    con.setFastSpeed(desc.getFastBandwidth());
-    con.setGuardWfu(desc.getGuardWfu());
-    con.setGuardTk(desc.getGuardTk());
-    con.setGuardBwIncExits(desc.getGuardBandwidthIncludingExits());
-    con.setGuardBwExcExits(desc.getGuardBandwidthExcludingExits());
-    con.setIgnoringAdvertised(desc.getIgnoringAdvertisedBws());
+    if (desc.getStableUptime() >= 0) {
+      con.setStableUptime(desc.getStableUptime());
+    }
+    if (desc.getStableMtbf() >= 0) {
+      con.setStableMtbf(desc.getStableMtbf());
+    }
+    if (desc.getEnoughMtbfInfo() >= 0) {
+      con.setEnoughMtbf(desc.getEnoughMtbfInfo());
+    }
+    if (desc.getFastBandwidth() >= 0) {
+      con.setFastSpeed(desc.getFastBandwidth());
+    }
+    if (desc.getGuardWfu() >= 0) {
+      con.setGuardWfu(desc.getGuardWfu());
+    }
+    if (desc.getGuardTk() >= 0) {
+      con.setGuardTk(desc.getGuardTk());
+    }
+    if (desc.getGuardBandwidthIncludingExits() >= 0) {
+      con.setGuardBwIncExits(desc.getGuardBandwidthIncludingExits());
+    }
+    if (desc.getGuardBandwidthExcludingExits() >= 0) {
+      con.setGuardBwExcExits(desc.getGuardBandwidthExcludingExits());
+    }
+    if (desc.getIgnoringAdvertisedBws() >= 0) {
+      con.setIgnoringAdvertisedBws(desc.getIgnoringAdvertisedBws());
+    }
     return con;
   }
 
 
-  private List<Status> convertStatus(BridgeNetworkStatus desc) {
-    List<Status> cons = new ArrayList<>();
+  private Map<String,Status> convertStatus(BridgeNetworkStatus desc) {
+    Map<String,Status> conMap = new HashMap<>();
     for (
-      Map.Entry<String,NetworkStatusEntry> entry :
-      desc.getStatusEntries().entrySet()
-    ) {
+        Map.Entry<String,NetworkStatusEntry> entry :
+        desc.getStatusEntries().entrySet()
+      ) {
       Status con = new Status();
       con.setR(convertR(entry.getValue()));
       con.setA(convertOrAdresses(entry.getValue().getOrAddresses()));
-      con.setS(new ArrayList<String>(entry.getValue().getFlags()));
+      if (entry.getValue().getFlags() != null &&
+          !entry.getValue().getFlags().isEmpty()) {
+        con.setS(new ArrayList<String>(entry.getValue().getFlags()));
+      }
       con.setV(entry.getValue().getVersion());
       con.setW(convertW(entry.getValue()));
       con.setP(convertPolicy(entry.getValue()));
-      cons.add(con);
+      conMap.put(entry.getKey(),con);
     }
-    return cons;
+    return conMap;
   }
 
 
@@ -77,29 +102,33 @@ class ConvertBridgeStatus extends Convert {
 
 
   private List<OrAddress> convertOrAdresses(List<String> orAddresses) {
-    List<OrAddress> cons = new ArrayList<>();
+    List<OrAddress> conList = new ArrayList<>();
     for (String orAddress : orAddresses) {
       if (!orAddress.contains(":")) {
         continue;
       }
-      OrAddress ora = new OrAddress();
+      OrAddress con = new OrAddress();
       int lastColon = orAddress.lastIndexOf(":");
       try {
-        ora.setAddress(orAddress.substring(0, lastColon));
-        ora.setPort(Integer.parseInt(orAddress.substring(lastColon + 1)));
-        cons.add(ora);
+        con.setAddress(orAddress.substring(0, lastColon));
+        con.setPort(Integer.parseInt(orAddress.substring(lastColon + 1)));
+        conList.add(con);
       } catch (NumberFormatException e) {
         continue;
       }
     }
-    return cons;
+    return conList;
   }
 
 
   private W convertW(NetworkStatusEntry entry) {
     W con = new W();
-    con.setBandwidth(entry.getBandwidth());
-    con.setMeasured(entry.getMeasured());
+    if (entry.getBandwidth() >= 0) {
+      con.setBandwidth(entry.getBandwidth());
+    }
+    if (entry.getMeasured() >= 0) {
+      con.setMeasured(entry.getMeasured());
+    }
     con.setUnmeasured(entry.getUnmeasured());
     return con;
   }
@@ -111,6 +140,5 @@ class ConvertBridgeStatus extends Convert {
     con.setPortSummary(entry.getPortList());
     return con;
   }
-
 
 }
