@@ -1,4 +1,4 @@
-@namespace("converTor.avro.classes.relayExtra")
+@namespace("converTor.encoders.classes.relayExtra")
 protocol relay_extra_info_descriptor {
 
   record ExtraInfo {

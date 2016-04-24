@@ -1,4 +1,4 @@
-@namespace("converTor.avro.classes.bridgeExtra")
+@namespace("converTor.encoders.classes.bridgeExtra")
 protocol bridge_extra_info_descriptor {
 
   record ExtraInfo {

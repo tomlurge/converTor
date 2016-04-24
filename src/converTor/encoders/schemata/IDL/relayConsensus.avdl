@@ -1,4 +1,4 @@
-@namespace("converTor.avro.classes.relayConsensus")
+@namespace("converTor.encoders.classes.relayConsensus")
 protocol relay_network_status_consensus_3_descriptor {
 
   record Vote {
@@ -13,11 +13,13 @@ protocol relay_network_status_consensus_3_descriptor {
     union { null, string } nickname;
     /** metrics-lib/DirSourceEntry: String getIdentity() */
     union { null, string } identity;
-    /** metrics-lib/DirSourceEntry: String getAddress() */
+    /** metrics-lib/DirSourceEntry: String getHostname() */
+    union { null, string } hostname;
+    /** metrics-lib/DirSourceEntry: String getIp() */
     union { null, string } address;
-    /** metrics-lib/DirSourceEntry: int getDirport() */
+    /** metrics-lib/DirSourceEntry: int getDirPort() */
     union { null, int } dir_port;
-    /** metrics-lib/DirSourceEntry: int getOrport() */
+    /** metrics-lib/DirSourceEntry: int getOrPort() */
     union { null, int } or_port;
     /** metrics-lib/DirSourceEntry: boolean isLegacy() */
     union { null, boolean } is_legacy;
@@ -50,7 +52,7 @@ protocol relay_network_status_consensus_3_descriptor {
   }
 
   record OrAddress {
-    /** metrics-lib/NetworkStatusEntry: getOrAddresses() */
+    /** metrics-lib/NetworkStatusEntry: List<String> getOrAddresses() */
     /** implementation specific, see actual converter */
     string address;
     /** implementation specific, see actual converter */
@@ -100,11 +102,13 @@ protocol relay_network_status_consensus_3_descriptor {
   }
 
   record DirFooter {
-    /** metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, Integer> getBandwidthWeights() */
+    /** metrics-lib/RelayNetworkStatusConsensus:
+        SortedMap<String, Integer> getBandwidthWeights() */
     union { null, map<int> } bandwidth_weights;
     /** metrics-lib/RelayNetworkStatusConsensus: String getConsensusDigest() */
     union { null, string } consensus_digest;
-    /** metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, DirectorySignature> getDirectorySignatures() */
+    /** metrics-lib/RelayNetworkStatusConsensus:
+        SortedMap<String, DirectorySignature> getDirectorySignatures() */
     union { null, map<DirSig> } directory_signature;
   }
 
@@ -128,20 +132,30 @@ protocol relay_network_status_consensus_3_descriptor {
     union { null, long } valid_until;
     // see above
     union { null, Vote } voting_delay;
-    /** metrics-lib/RelayNetworkStatusConsensus: List<String> getRecommendedClientVersions()*/
+    /** metrics-lib/RelayNetworkStatusConsensus:
+        List<String> getRecommendedClientVersions()*/
     union { null, array<string> } client_versions;
-    /** metrics-lib/RelayNetworkStatusConsensus: List<String> getRecommendedServerVersions() */
+    /** metrics-lib/RelayNetworkStatusConsensus:
+        List<String> getRecommendedServerVersions() */
     union { null, array<string> } server_versions;
-    /** metrics-lib/RelayNetworkStatusConsensus: SortedSet<String> getKnownFlags() */
+    /** metrics-lib/RelayNetworkStatusConsensus:
+        SortedSet<String> getKnownFlags() */
     union { null, array<string> } known_flags;
-    /** metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, Integer> getConsensusParams() */
+    /** metrics-lib/RelayNetworkStatusConsensus:
+        SortedMap<String, Integer> getConsensusParams() */
     union { null, map<int> } params;
-    /** metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, DirSourceEntry> getDirSourceEntries()
-     dir-source entries representing the directories of which votes are contained in this consensus */
+
+    /** metrics-lib/RelayNetworkStatusConsensus:
+        SortedMap<String, DirSourceEntry> getDirSourceEntries()
+        dir-source entries representing the directories of which votes are
+        contained in this consensus */
     union { null, map<Authority> } authorities;
-    /** metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, NetworkStatusEntry> getStatusEntries()
-     status entries, one for each contained relay */
+
+    /** metrics-lib/RelayNetworkStatusConsensus:
+        SortedMap<String, NetworkStatusEntry> getStatusEntries()
+        status entries, one for each contained relay */
     union { null, map<Status> } status;
+
     // see above
     union { null, DirFooter } directory_footer;
   }

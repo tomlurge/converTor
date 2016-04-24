@@ -1,7 +1,7 @@
 {
   "type" : "record",
   "name" : "RelayVote",
-  "namespace" : "converTor.avro.classes.relayVote",
+  "namespace" : "converTor.encoders.classes.relayVote",
   "fields" : [ {
     "name" : "descriptor_type",
     "type" : "string",
@@ -23,7 +23,7 @@
       "type" : "array",
       "items" : "int"
     },
-    "doc" : "metrics-lib/RelayNetworkStatusVote: List<Integer> getConsensusMethods()"
+    "doc" : "metrics-lib/RelayNetworkStatusVote:\n        List<Integer> getConsensusMethods()"
   }, {
     "name" : "published",
     "type" : [ "null", "long" ],
@@ -64,11 +64,11 @@
       }, {
         "name" : "guard_bw_inc_exits",
         "type" : [ "null", "long" ],
-        "doc" : "metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthIncludingExits()"
+        "doc" : "metrics-lib/RelayNetworkStatusVote:\n        long getGuardBandwidthIncludingExits()"
       }, {
         "name" : "guard_bw_exc_exits",
         "type" : [ "null", "long" ],
-        "doc" : "metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthExcludingExits()"
+        "doc" : "metrics-lib/RelayNetworkStatusVote:\n        long getGuardBandwidthExcludingExits()"
       }, {
         "name" : "ignoring_advertised_bws",
         "type" : [ "null", "int" ],
@@ -106,14 +106,14 @@
       "type" : "array",
       "items" : "string"
     } ],
-    "doc" : "metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedClientVersions()"
+    "doc" : "metrics-lib/RelayNetworkStatusVote:\n        List<String> getRecommendedClientVersions()"
   }, {
     "name" : "server_versions",
     "type" : [ "null", {
       "type" : "array",
       "items" : "string"
     } ],
-    "doc" : "metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedServerVersions()"
+    "doc" : "metrics-lib/RelayNetworkStatusVote:\n        List<String> getRecommendedServerVersions()"
   }, {
     "name" : "known_flags",
     "type" : [ "null", {
@@ -127,7 +127,7 @@
       "type" : "map",
       "values" : "int"
     } ],
-    "doc" : "metrics-lib/RelayNetworkStatusVote: SortedMap<String, Integer> getConsensusParams()"
+    "doc" : "metrics-lib/RelayNetworkStatusVote:\n        SortedMap<String, Integer> getConsensusParams()"
   }, {
     "name" : "dir_source",
     "type" : [ "null", {
@@ -141,6 +141,10 @@
         "name" : "identity",
         "type" : [ "null", "string" ],
         "doc" : "metrics-lib/RelayNetworkStatusVote: String getIdentity("
+      }, {
+        "name" : "hostname",
+        "type" : [ "null", "string" ],
+        "doc" : "metrics-lib/RelayNetworkStatusVote: String getHostname()"
       }, {
         "name" : "address",
         "type" : [ "null", "string" ],
@@ -187,8 +191,8 @@
   }, {
     "name" : "status",
     "type" : [ "null", {
-      "type" : "array",
-      "items" : {
+      "type" : "map",
+      "values" : {
         "type" : "record",
         "name" : "Status",
         "fields" : [ {
@@ -306,7 +310,7 @@
         } ]
       }
     } ],
-    "doc" : "metrics-lib/RelayNetworkStatusVote: SortedMap<String, NetworkStatusEntry> getStatusEntries()"
+    "doc" : "metrics-lib/RelayNetworkStatusVote:\n        SortedMap<String, NetworkStatusEntry> getStatusEntries()"
   }, {
     "name" : "directory_footer",
     "type" : [ "null", {
@@ -335,7 +339,7 @@
             "doc" : "metrics-lib/DirectorySignature: String getSignature()"
           } ]
         } ],
-        "doc" : "metrics-lib/RelayNetworkStatusVote: SortedMap<String, DirectorySignature> getDirectorySignatures()"
+        "doc" : "metrics-lib/RelayNetworkStatusVote:\n        SortedMap<String, DirectorySignature> getDirectorySignatures()"
       } ]
     } ],
     "doc" : "see above"

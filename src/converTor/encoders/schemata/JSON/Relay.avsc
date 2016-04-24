@@ -1,12 +1,12 @@
 {
   "type" : "record",
-  "name" : "Bridge",
-  "namespace" : "converTor.avro.classes.bridge",
-  "doc" : "bridge-server-descriptor 1.1 - same as relay but without router_signatures",
+  "name" : "Relay",
+  "namespace" : "converTor.encoders.classes.relay",
+  "doc" : "server-descriptor 1.0 - same as bridge but additional field 'router_signature'",
   "fields" : [ {
     "name" : "descriptor_type",
     "type" : "string",
-    "default" : "bridge-server-descriptor 1.1"
+    "default" : "server-descriptor 1.0"
   }, {
     "name" : "server_descriptor_digest",
     "type" : [ "null", "string" ],
@@ -125,6 +125,14 @@
     "type" : [ "null", "string" ],
     "doc" : "metrics-lib/ServerDescriptor: String getIpv6PortList()"
   }, {
+    "name" : "router_sig_ed25519",
+    "type" : [ "null", "boolean" ],
+    "doc" : "metrics-lib/ServerDescriptor: String getRouterSignatureEd25519()"
+  }, {
+    "name" : "router_signature",
+    "type" : [ "null", "boolean" ],
+    "doc" : "metrics-lib/ServerDescriptor: String getRouterSignature()"
+  }, {
     "name" : "contact",
     "type" : [ "null", "string" ],
     "doc" : "metrics-lib/ServerDescriptor: String getContact()"
@@ -232,15 +240,15 @@
         "fields" : [ {
           "name" : "address",
           "type" : "string",
-          "doc" : "implementation specific, see actual converter"
+          "doc" : "implementation specific"
         }, {
           "name" : "port",
           "type" : "int",
-          "doc" : "implementation specific, see actual converter"
+          "doc" : "implementation specific"
         } ]
       }
     } ],
     "doc" : "metrics-lib/ServerDescriptor: List<String> getOrAddresses()"
   } ],
-  "aliases" : [ "bridge_server" ]
+  "aliases" : [ "relay_server" ]
 }

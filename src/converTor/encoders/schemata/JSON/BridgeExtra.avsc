@@ -1,11 +1,11 @@
 {
   "type" : "record",
-  "name" : "RelayExtra",
-  "namespace" : "converTor.relayExtra",
+  "name" : "BridgeExtra",
+  "namespace" : "converTor.encoders.classes.bridgeExtra",
   "fields" : [ {
     "name" : "descriptor_type",
     "type" : "string",
-    "default" : "extra-info 1.0"
+    "default" : "bridge-extra-info 1.3"
   }, {
     "name" : "extra_info",
     "type" : [ "null", {
@@ -87,6 +87,49 @@
     "name" : "geoip_start_time",
     "type" : [ "null", "long" ],
     "doc" : "metrics-lib/ExtraInfoDescriptor: long getGeoipStartTimeMillis()"
+  }, {
+    "name" : "geoip_client_origins",
+    "type" : [ "null", {
+      "type" : "map",
+      "values" : "int"
+    } ],
+    "doc" : "metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getGeoipClientOrigins()"
+  }, {
+    "name" : "bridge_stats_end",
+    "type" : [ "null", {
+      "type" : "record",
+      "name" : "BridgeStats",
+      "fields" : [ {
+        "name" : "date",
+        "type" : "long",
+        "doc" : "metrics-lib/ExtraInfoDescriptor: long getBridgeStatsEndMillis()"
+      }, {
+        "name" : "interval",
+        "type" : "long",
+        "doc" : "metrics-lib/ExtraInfoDescriptor: long getBridgeStatsIntervalLength()"
+      } ]
+    } ]
+  }, {
+    "name" : "bridge_ips",
+    "type" : [ "null", {
+      "type" : "map",
+      "values" : "int"
+    } ],
+    "doc" : "metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIps()"
+  }, {
+    "name" : "bridge_ip_versions",
+    "type" : [ "null", {
+      "type" : "map",
+      "values" : "int"
+    } ],
+    "doc" : "metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIpVersions()"
+  }, {
+    "name" : "bridge_ip_transports",
+    "type" : [ "null", {
+      "type" : "map",
+      "values" : "int"
+    } ],
+    "doc" : "metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIpTransports()"
   }, {
     "name" : "dirreq_stats_end",
     "type" : [ "null", {
@@ -414,14 +457,6 @@
     } ],
     "doc" : "metrics-lib/ExtraInfoDescriptor: List<String> getTransports()"
   }, {
-    "name" : "router_sig_ed25519",
-    "type" : [ "null", "boolean" ],
-    "doc" : "metrics-lib/ExtraInfoDescriptor: String getRouterSignatureEd25519()"
-  }, {
-    "name" : "router_signature",
-    "type" : [ "null", "boolean" ],
-    "doc" : "metrics-lib/ExtraInfoDescriptor: String getRouterSignature()"
-  }, {
     "name" : "extra_info_digest",
     "type" : [ "null", "string" ],
     "doc" : "metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigest()"
@@ -434,5 +469,5 @@
     "type" : [ "null", "string" ],
     "doc" : "metrics-lib/ExtraInfoDescriptor: String getMasterKeyEd25519()"
   } ],
-  "aliases" : [ "relay_extra_info" ]
+  "aliases" : [ "bridge_extra_info" ]
 }

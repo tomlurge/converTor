@@ -1,4 +1,4 @@
-@namespace("converTor.avro.classes.relayVote")
+@namespace("converTor.encoders.classes.relayVote")
 protocol relay_network_status_vote_3_descriptor {
 
   record FlagTresholds {
@@ -14,9 +14,11 @@ protocol relay_network_status_vote_3_descriptor {
     union { null, double } guard_wfu;
     /** metrics-lib/RelayNetworkStatusVote: long getGuardTk() */
     union { null, long } guard_tk;
-    /** metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthIncludingExits() */
+    /** metrics-lib/RelayNetworkStatusVote:
+        long getGuardBandwidthIncludingExits() */
     union { null, long } guard_bw_inc_exits;
-    /** metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthExcludingExits() */
+    /** metrics-lib/RelayNetworkStatusVote:
+        long getGuardBandwidthExcludingExits() */
     union { null, long } guard_bw_exc_exits;
     /** metrics-lib/RelayNetworkStatusVote: int getIgnoringAdvertisedBws() */
     union { null, int } ignoring_advertised_bws;
@@ -34,12 +36,15 @@ protocol relay_network_status_vote_3_descriptor {
     union { null, string } nickname;
     /** metrics-lib/RelayNetworkStatusVote: String getIdentity( */
     union { null, string } identity;
+    /** metrics-lib/RelayNetworkStatusVote: String getHostname() */
+    union { null, string } hostname;
     /** metrics-lib/RelayNetworkStatusVote: String getAddress() */
     union { null, string } address;
     /** metrics-lib/RelayNetworkStatusVote: int getDirport() */
     union { null, int } dir_port;
     /** metrics-lib/RelayNetworkStatusVote: int getOrport() */
     union { null, int } or_port;
+
   }
 
   record DirKey {
@@ -69,7 +74,7 @@ protocol relay_network_status_vote_3_descriptor {
   }
 
   record OrAddress {
-    /** metrics-lib/NetworkStatusEntry: getOrAddresses() */
+    /** metrics-lib/NetworkStatusEntry: List<String> getOrAddresses() */
     /** implementation specific, see actual converter */
     string address;
     /** implementation specific, see actual converter */
@@ -126,7 +131,8 @@ protocol relay_network_status_vote_3_descriptor {
   }
 
   record DirFooter {
-    /** metrics-lib/RelayNetworkStatusVote: SortedMap<String, DirectorySignature> getDirectorySignatures() */
+    /** metrics-lib/RelayNetworkStatusVote:
+        SortedMap<String, DirectorySignature> getDirectorySignatures() */
     union { null, DirSig } directory_signature;
   }
 
@@ -139,7 +145,8 @@ protocol relay_network_status_vote_3_descriptor {
     int network_status_version = 3;
     /** "vote" per definition, no getter */
     union { null, string } vote_status = "vote";
-    /** metrics-lib/RelayNetworkStatusVote: List<Integer> getConsensusMethods() */
+    /** metrics-lib/RelayNetworkStatusVote:
+        List<Integer> getConsensusMethods() */
     array<int> consensus_methods;
     /** metrics-lib/RelayNetworkStatusVote: long getPublishedMillis() */
     union { null, long } published;
@@ -153,13 +160,16 @@ protocol relay_network_status_vote_3_descriptor {
     union { null, long } valid_until;
     /** see above */
     union { null, Vote } voting_delay;
-    /** metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedClientVersions() */
+    /** metrics-lib/RelayNetworkStatusVote:
+        List<String> getRecommendedClientVersions() */
     union { null, array<string> } client_versions;
-    /** metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedServerVersions() */
+    /** metrics-lib/RelayNetworkStatusVote:
+        List<String> getRecommendedServerVersions() */
     union { null, array<string> } server_versions;
     /** metrics-lib/RelayNetworkStatusVote: SortedSet<String> getKnownFlags() */
     union { null, array<string> } known_flags;
-    /** metrics-lib/RelayNetworkStatusVote: SortedMap<String, Integer> getConsensusParams() */
+    /** metrics-lib/RelayNetworkStatusVote:
+        SortedMap<String, Integer> getConsensusParams() */
     union { null, map<int> } params;
     /** see above */
     union { null, DirSource } dir_source;
@@ -169,8 +179,9 @@ protocol relay_network_status_vote_3_descriptor {
     union { null, string } legacy_dir_key;
     /** see above */
     union { null, DirKey } directory_key;
-    /** metrics-lib/RelayNetworkStatusVote: SortedMap<String, NetworkStatusEntry> getStatusEntries() */
-    union { null, array<Status> } status;
+    /** metrics-lib/RelayNetworkStatusVote:
+        SortedMap<String, NetworkStatusEntry> getStatusEntries() */
+    union { null, map<Status> } status;
     /** see above */
     union { null, DirFooter } directory_footer;
     /** metrics-lib/RelayNetworkStatusVote: String getSigningKeyDigest() */

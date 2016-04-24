@@ -1,4 +1,4 @@
-@namespace("converTor.avro.classes.bridgeStatus")
+@namespace("converTor.encoders.classes.bridgeStatus")
 protocol bridge_network_status_descriptor {
 
   record FlagTresholds {
@@ -19,7 +19,7 @@ protocol bridge_network_status_descriptor {
     /** metrics-lib/BridgeNetworkStatus: long getGuardBandwidthExcludingExits() */
     union { null, long } guard_bw_exc_exits;
     /** metrics-lib/BridgeNetworkStatus: int getIgnoringAdvertisedBws() */
-    union { null, int } ignoring_advertised;
+    union { null, int } ignoring_advertised_bws;
   }
 
   record R {
@@ -40,7 +40,7 @@ protocol bridge_network_status_descriptor {
   }
 
   record OrAddress {
-    /** metrics-lib/NetworkStatusEntry: getOrAddresses() */
+    /** metrics-lib/NetworkStatusEntry: List<String> getOrAddresses() */
     /** implementation specific, see actual converter */
     string address;
     /** implementation specific, see actual converter */
@@ -89,7 +89,7 @@ protocol bridge_network_status_descriptor {
     union { null, FlagTresholds } flag_tresholds;
     /** metrics-lib/BridgeNetworkStatus: SortedMap<String, NetworkStatusEntry> getStatusEntries()
      status entries, one for each contained bridge */
-    union { null, array<Status> } status;
+    union { null, map<Status> } status;
   }
 
 }

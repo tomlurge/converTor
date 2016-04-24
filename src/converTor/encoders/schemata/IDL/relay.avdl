@@ -1,4 +1,4 @@
-@namespace("converTor.avro.classes.relay")
+@namespace("converTor.encoders.classes.relay")
 protocol relay_server_descriptor {
 
   record Router {

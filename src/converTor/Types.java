@@ -33,7 +33,7 @@ enum Types {
     try {
       Schema.Parser parser = new Schema.Parser();
       this.avsc = parser.parse(
-          new File("src/converTor/encoders/schemata/" + this.name + ".avsc")
+          new File("src/converTor/encoders/schemata/JSON/" + this.name + ".avsc")
       );
     } catch (IOException e) {
       System.err.println("IOException for JSON schema:");

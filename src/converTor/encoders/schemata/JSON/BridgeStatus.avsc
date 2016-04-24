@@ -1,7 +1,7 @@
 {
   "type" : "record",
   "name" : "BridgeStatus",
-  "namespace" : "converTor.bridgeStatus",
+  "namespace" : "converTor.encoders.classes.bridgeStatus",
   "fields" : [ {
     "name" : "descriptor_type",
     "type" : "string",
@@ -48,7 +48,7 @@
         "type" : [ "null", "long" ],
         "doc" : "metrics-lib/BridgeNetworkStatus: long getGuardBandwidthExcludingExits()"
       }, {
-        "name" : "ignoring_advertised",
+        "name" : "ignoring_advertised_bws",
         "type" : [ "null", "int" ],
         "doc" : "metrics-lib/BridgeNetworkStatus: int getIgnoringAdvertisedBws()"
       } ]
@@ -57,8 +57,8 @@
   }, {
     "name" : "status",
     "type" : [ "null", {
-      "type" : "array",
-      "items" : {
+      "type" : "map",
+      "values" : {
         "type" : "record",
         "name" : "Status",
         "fields" : [ {
@@ -113,7 +113,8 @@
                 "doc" : "implementation specific, see actual converter"
               } ]
             }
-          } ]
+          } ],
+          "doc" : "metrics-lib/NetworkStatusEntry: getOrAddresses()"
         }, {
           "name" : "s",
           "type" : [ "null", {

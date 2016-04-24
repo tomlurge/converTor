@@ -1,11 +1,21 @@
 most wanted
 
     extract JSON schema(ta) from an Avro IDL file
-      java -jar avro-tools-*.jar idl2schemata /some/dir/descriptor.idl .
-     
+      java -jar avro-tools-*.jar idl2schemata descriptor.avdl .
+            generates a complete JSON schema for the the IDL schema
+            under the same name, with different ending
+            and also one schema per nested record in the IDL schema
+            those nested schemata can be deleted - we dont need them 
+            
     compile (generate classes from) a schema
-      java -jar avro-tools-*.jar compile -string schema ~/descriptor.avsc .
-    
+      java -jar avro-tools-*.jar compile -string schema descriptor.avsc .
+            generates one class per schema and any nested record
+            we need all those classes
+            it generates the classpath as indicated in the @namespace
+            attribute at the top of the IDL. tha namepace attribute has to 
+            reflect the actual project structure or things will fall apart
+            
+            
     convert .avro to JSON
       java -jar avro-tools-*.jar tojson myFile.avro > myFile.json
       

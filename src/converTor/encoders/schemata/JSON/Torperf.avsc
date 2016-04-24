@@ -1,7 +1,7 @@
 {
   "type" : "record",
   "name" : "Torperf",
-  "namespace" : "converTor.torperf",
+  "namespace" : "converTor.encoders.classes.torperf",
   "fields" : [ {
     "name" : "descriptor_type",
     "type" : "string",
