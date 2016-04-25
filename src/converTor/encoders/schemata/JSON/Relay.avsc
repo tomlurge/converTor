@@ -1,7 +1,7 @@
 {
   "type" : "record",
   "name" : "Relay",
-  "namespace" : "converTor.encoders.classes.relay",
+  "namespace" : "converTor.encoders.java.relay",
   "doc" : "server-descriptor 1.0 - same as bridge but additional field 'router_signature'",
   "fields" : [ {
     "name" : "descriptor_type",
@@ -150,18 +150,18 @@
       "name" : "ReadHistory",
       "fields" : [ {
         "name" : "date",
-        "type" : "long",
+        "type" : [ "null", "long" ],
         "doc" : "metrics-lib/BandwidthHistory: long getHistoryEndMillis()"
       }, {
         "name" : "interval",
-        "type" : "long",
+        "type" : [ "null", "long" ],
         "doc" : "metrics-lib/BandwidthHistory: long getIntervalLength()"
       }, {
         "name" : "bytes",
-        "type" : {
+        "type" : [ "null", {
           "type" : "array",
           "items" : "long"
-        },
+        } ],
         "doc" : "metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()"
       } ]
     } ],
@@ -173,18 +173,18 @@
       "name" : "WriteHistory",
       "fields" : [ {
         "name" : "date",
-        "type" : "long",
+        "type" : [ "null", "long" ],
         "doc" : "metrics-lib/BandwidthHistory: long getHistoryEndMillis()"
       }, {
         "name" : "interval",
-        "type" : "long",
+        "type" : [ "null", "long" ],
         "doc" : "metrics-lib/BandwidthHistory: long getIntervalLength()"
       }, {
         "name" : "bytes",
-        "type" : {
+        "type" : [ "null", {
           "type" : "array",
           "items" : "long"
-        },
+        } ],
         "doc" : "metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()"
       } ]
     } ],
@@ -239,11 +239,11 @@
         "name" : "OrAddress",
         "fields" : [ {
           "name" : "address",
-          "type" : "string",
+          "type" : [ "null", "string" ],
           "doc" : "implementation specific"
         }, {
           "name" : "port",
-          "type" : "int",
+          "type" : [ "null", "int" ],
           "doc" : "implementation specific"
         } ]
       }

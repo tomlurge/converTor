@@ -1,4 +1,4 @@
-@namespace("converTor.encoders.classes.tordnsel")
+@namespace("converTor.encoders.java.tordnsel")
 protocol tordnsel_descriptor {
 
   record ExitNode {

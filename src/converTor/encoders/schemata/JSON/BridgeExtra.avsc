@@ -1,7 +1,7 @@
 {
   "type" : "record",
   "name" : "BridgeExtra",
-  "namespace" : "converTor.encoders.classes.bridgeExtra",
+  "namespace" : "converTor.encoders.java.bridgeExtra",
   "fields" : [ {
     "name" : "descriptor_type",
     "type" : "string",
@@ -36,18 +36,18 @@
       "name" : "ReadHistory",
       "fields" : [ {
         "name" : "date",
-        "type" : "long",
+        "type" : [ "null", "long" ],
         "doc" : "metrics-lib/BandwidthHistory: long getHistoryEndMillis()"
       }, {
         "name" : "interval",
-        "type" : "long",
+        "type" : [ "null", "long" ],
         "doc" : "metrics-lib/BandwidthHistory: long getIntervalLength()"
       }, {
         "name" : "bytes",
-        "type" : {
+        "type" : [ "null", {
           "type" : "array",
           "items" : "long"
-        },
+        } ],
         "doc" : "metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()"
       } ]
     } ],
@@ -59,18 +59,18 @@
       "name" : "WriteHistory",
       "fields" : [ {
         "name" : "date",
-        "type" : "long",
+        "type" : [ "null", "long" ],
         "doc" : "metrics-lib/BandwidthHistory: long getHistoryEndMillis()"
       }, {
         "name" : "interval",
-        "type" : "long",
+        "type" : [ "null", "long" ],
         "doc" : "metrics-lib/BandwidthHistory: long getIntervalLength()"
       }, {
         "name" : "bytes",
-        "type" : {
+        "type" : [ "null", {
           "type" : "array",
           "items" : "long"
-        },
+        } ],
         "doc" : "metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()"
       } ]
     } ],
@@ -101,11 +101,11 @@
       "name" : "BridgeStats",
       "fields" : [ {
         "name" : "date",
-        "type" : "long",
+        "type" : [ "null", "long" ],
         "doc" : "metrics-lib/ExtraInfoDescriptor: long getBridgeStatsEndMillis()"
       }, {
         "name" : "interval",
-        "type" : "long",
+        "type" : [ "null", "long" ],
         "doc" : "metrics-lib/ExtraInfoDescriptor: long getBridgeStatsIntervalLength()"
       } ]
     } ]
@@ -137,11 +137,11 @@
       "name" : "DirreqStats",
       "fields" : [ {
         "name" : "date",
-        "type" : "long",
+        "type" : [ "null", "long" ],
         "doc" : "metrics-lib/ExtraInfoDescriptor: long getDirreqStatsEndMillis()"
       }, {
         "name" : "interval",
-        "type" : "long",
+        "type" : [ "null", "long" ],
         "doc" : "metrics-lib/ExtraInfoDescriptor: long getDirreqStatsIntervalLength()"
       } ]
     } ]
@@ -230,18 +230,18 @@
       "name" : "DirreqReadHistory",
       "fields" : [ {
         "name" : "date",
-        "type" : "long",
+        "type" : [ "null", "long" ],
         "doc" : "metrics-lib/BandwidthHistory: long getHistoryEndMillis()"
       }, {
         "name" : "interval",
-        "type" : "long",
+        "type" : [ "null", "long" ],
         "doc" : "metrics-lib/BandwidthHistory: long getIntervalLength()"
       }, {
         "name" : "bytes",
-        "type" : {
+        "type" : [ "null", {
           "type" : "array",
           "items" : "long"
-        },
+        } ],
         "doc" : "metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()"
       } ]
     } ],
@@ -253,18 +253,18 @@
       "name" : "DirreqWriteHistory",
       "fields" : [ {
         "name" : "date",
-        "type" : "long",
+        "type" : [ "null", "long" ],
         "doc" : "metrics-lib/BandwidthHistory: long getHistoryEndMillis()"
       }, {
         "name" : "interval",
-        "type" : "long",
+        "type" : [ "null", "long" ],
         "doc" : "metrics-lib/BandwidthHistory: long getIntervalLength()"
       }, {
         "name" : "bytes",
-        "type" : {
+        "type" : [ "null", {
           "type" : "array",
           "items" : "long"
-        },
+        } ],
         "doc" : "metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()"
       } ]
     } ],
@@ -276,11 +276,11 @@
       "name" : "EntryStats",
       "fields" : [ {
         "name" : "date",
-        "type" : "long",
+        "type" : [ "null", "long" ],
         "doc" : "metrics-lib/ExtraInfoDescriptor: long getEntryStatsEndMillis()"
       }, {
         "name" : "interval",
-        "type" : "long",
+        "type" : [ "null", "long" ],
         "doc" : "metrics-lib/ExtraInfoDescriptor: long getEntryStatsIntervalLength()"
       } ]
     } ]
@@ -298,11 +298,11 @@
       "name" : "CellStats",
       "fields" : [ {
         "name" : "date",
-        "type" : "long",
+        "type" : [ "null", "long" ],
         "doc" : "metrics-lib/ExtraInfoDescriptor: long getCellStatsEndMillis()"
       }, {
         "name" : "interval",
-        "type" : "long",
+        "type" : [ "null", "long" ],
         "doc" : "metrics-lib/ExtraInfoDescriptor: long getCellStatsIntervalLength()"
       } ]
     } ]
@@ -342,7 +342,7 @@
         "doc" : "metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis()"
       }, {
         "name" : "interval",
-        "type" : "long",
+        "type" : [ "null", "long" ],
         "doc" : "metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsIntervalLength()"
       }, {
         "name" : "below",
@@ -369,11 +369,11 @@
       "name" : "ExitStats",
       "fields" : [ {
         "name" : "date",
-        "type" : "long",
+        "type" : [ "null", "long" ],
         "doc" : "metrics-lib/ExtraInfoDescriptor: long getExitStatsEndMillis()"
       }, {
         "name" : "interval",
-        "type" : "long",
+        "type" : [ "null", "long" ],
         "doc" : "metrics-lib/ExtraInfoDescriptor: long getExitStatsIntervalLength()"
       } ]
     } ]
@@ -405,11 +405,11 @@
       "name" : "HidservStats",
       "fields" : [ {
         "name" : "date",
-        "type" : "long",
+        "type" : [ "null", "long" ],
         "doc" : "metrics-lib/ExtraInfoDescriptor: long getHidservStatsEndMillis()"
       }, {
         "name" : "interval",
-        "type" : "long",
+        "type" : [ "null", "long" ],
         "doc" : "metrics-lib/ExtraInfoDescriptor: long getHidservStatsIntervalLength()"
       } ]
     } ]
@@ -420,14 +420,14 @@
       "name" : "HidservRendRelayedCells",
       "fields" : [ {
         "name" : "cells",
-        "type" : "double",
+        "type" : [ "null", "double" ],
         "doc" : "metrics-lib/ExtraInfoDescriptor: Double getHidservRendRelayedCells()"
       }, {
         "name" : "obfuscation",
-        "type" : {
+        "type" : [ "null", {
           "type" : "map",
           "values" : "double"
-        },
+        } ],
         "doc" : "metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservRendRelayedCellsParameters()"
       } ]
     } ]
@@ -438,14 +438,14 @@
       "name" : "HidservDirOnionsSeen",
       "fields" : [ {
         "name" : "onions",
-        "type" : "double",
+        "type" : [ "null", "double" ],
         "doc" : "metrics-lib/ExtraInfoDescriptor: Double getHidservDirOnionsSeen()"
       }, {
         "name" : "obfuscation",
-        "type" : {
+        "type" : [ "null", {
           "type" : "map",
           "values" : "double"
-        },
+        } ],
         "doc" : "metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservDirOnionsSeenParameters()"
       } ]
     } ]

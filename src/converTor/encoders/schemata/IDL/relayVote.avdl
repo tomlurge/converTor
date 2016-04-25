@@ -1,4 +1,4 @@
-@namespace("converTor.encoders.classes.relayVote")
+@namespace("converTor.encoders.java.relayVote")
 protocol relay_network_status_vote_3_descriptor {
 
   record FlagTresholds {
@@ -76,9 +76,9 @@ protocol relay_network_status_vote_3_descriptor {
   record OrAddress {
     /** metrics-lib/NetworkStatusEntry: List<String> getOrAddresses() */
     /** implementation specific, see actual converter */
-    string address;
+    union { null, string } address;
     /** implementation specific, see actual converter */
-    int port;
+    union { null, int } port;
   }
 
   record W {
@@ -104,7 +104,7 @@ protocol relay_network_status_vote_3_descriptor {
 
   record Status {
     // see above
-    R r;
+    union { null, R }  r;
     // see above
     union { null, array<OrAddress> } a;
     /** metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags() */

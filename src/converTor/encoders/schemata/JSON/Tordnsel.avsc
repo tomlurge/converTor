@@ -1,7 +1,7 @@
 {
   "type" : "record",
   "name" : "Tordnsel",
-  "namespace" : "converTor.encoders.classes.tordnsel",
+  "namespace" : "converTor.encoders.java.tordnsel",
   "fields" : [ {
     "name" : "descriptor_type",
     "type" : "string",

@@ -1,4 +1,4 @@
-@namespace("converTor.encoders.classes.bridgeStatus")
+@namespace("converTor.encoders.java.bridgeStatus")
 protocol bridge_network_status_descriptor {
 
   record FlagTresholds {
@@ -42,9 +42,9 @@ protocol bridge_network_status_descriptor {
   record OrAddress {
     /** metrics-lib/NetworkStatusEntry: List<String> getOrAddresses() */
     /** implementation specific, see actual converter */
-    string address;
+    union { null, string } address;
     /** implementation specific, see actual converter */
-    int port;
+    union { null, int } port;
   }
 
   record W {
@@ -65,7 +65,7 @@ protocol bridge_network_status_descriptor {
 
   record Status {
     // see above
-    R r;
+    union { null, R } r;
     // see above
     /** metrics-lib/NetworkStatusEntry: getOrAddresses() */
     union { null, array<OrAddress> } a;

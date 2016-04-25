@@ -1,4 +1,4 @@
-@namespace("converTor.encoders.classes.relayConsensus")
+@namespace("converTor.encoders.java.relayConsensus")
 protocol relay_network_status_consensus_3_descriptor {
 
   record Vote {
@@ -54,9 +54,9 @@ protocol relay_network_status_consensus_3_descriptor {
   record OrAddress {
     /** metrics-lib/NetworkStatusEntry: List<String> getOrAddresses() */
     /** implementation specific, see actual converter */
-    string address;
+    union { null, string } address;
     /** implementation specific, see actual converter */
-    int port;
+    union { null, int } port;
   }
 
   record W {
@@ -77,7 +77,7 @@ protocol relay_network_status_consensus_3_descriptor {
 
   record Status {
     // see above
-    R r;
+    union { null, R }  r;
     // see above
     union { null, array<OrAddress> } a;
     /** metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags() */

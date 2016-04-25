@@ -1,4 +1,4 @@
-@namespace("converTor.encoders.classes.bridge")
+@namespace("converTor.encoders.java.bridge")
 protocol bridge_server_descriptor {
 
   record Router {
@@ -25,27 +25,27 @@ protocol bridge_server_descriptor {
 
   record OrAddress {
     /** implementation specific, see actual converter */
-    string address;
+    union { null, string } address;
     /** implementation specific, see actual converter */
-    int port;
+    union { null, int } port;
   }
 
   record ReadHistory {
     /** metrics-lib/BandwidthHistory: long getHistoryEndMillis() */
-    long date;
+    union { null, long }  date;
     /** metrics-lib/BandwidthHistory: long getIntervalLength() */
-    long interval;
+    union { null, long }  interval;
     /** metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values() */
-    array<long> `bytes`;
+    union { null, array<long> } `bytes`;
   }
 
   record WriteHistory {
     /** metrics-lib/BandwidthHistory: long getHistoryEndMillis() */
-    long date;
+    union { null, long }  date;
     /** metrics-lib/BandwidthHistory: long getIntervalLength() */
-    long interval;
+    union { null, long }  interval;
     /** metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values() */
-    array<long> `bytes`;
+    union { null, array<long> } `bytes`;
   }
 
 

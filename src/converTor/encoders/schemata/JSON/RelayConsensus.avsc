@@ -1,7 +1,7 @@
 {
   "type" : "record",
   "name" : "RelayConsensus",
-  "namespace" : "converTor.encoders.classes.relayConsensus",
+  "namespace" : "converTor.encoders.java.relayConsensus",
   "fields" : [ {
     "name" : "descriptor_type",
     "type" : "string",
@@ -142,7 +142,7 @@
         "name" : "Status",
         "fields" : [ {
           "name" : "r",
-          "type" : {
+          "type" : [ "null", {
             "type" : "record",
             "name" : "R",
             "fields" : [ {
@@ -174,7 +174,7 @@
               "type" : [ "null", "int" ],
               "doc" : "metrics-lib/NetworkStatusEntry: int getDirPort()"
             } ]
-          }
+          } ]
         }, {
           "name" : "a",
           "type" : [ "null", {
@@ -184,11 +184,11 @@
               "name" : "OrAddress",
               "fields" : [ {
                 "name" : "address",
-                "type" : "string",
+                "type" : [ "null", "string" ],
                 "doc" : "implementation specific, see actual converter"
               }, {
                 "name" : "port",
-                "type" : "int",
+                "type" : [ "null", "int" ],
                 "doc" : "implementation specific, see actual converter"
               } ]
             }

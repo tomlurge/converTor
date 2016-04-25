@@ -1,4 +1,4 @@
-@namespace("converTor.encoders.classes.relayExtra")
+@namespace("converTor.encoders.java.relayExtra")
 protocol relay_extra_info_descriptor {
 
   record ExtraInfo {
@@ -10,80 +10,80 @@ protocol relay_extra_info_descriptor {
 
   record ReadHistory {
     /** metrics-lib/BandwidthHistory: long getHistoryEndMillis() */
-    long date;
+    union { null, long } date;
     /** metrics-lib/BandwidthHistory: long getIntervalLength() */
-    long interval;
+    union { null, long } interval;
     /** metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values() */
-    array<long> `bytes`;
+    union { null, array<long> } `bytes`;
   }
 
   record WriteHistory {
     /** metrics-lib/BandwidthHistory: long getHistoryEndMillis() */
-    long date;
+    union { null, long } date;
     /** metrics-lib/BandwidthHistory: long getIntervalLength() */
-    long interval;
+    union { null, long } interval;
     /** metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values() */
-    array<long> `bytes`;
+    union { null, array<long> } `bytes`;
   }
 
   record DirreqReadHistory {
     /** metrics-lib/BandwidthHistory: long getHistoryEndMillis() */
-    long date;
+    union { null, long } date;
     /** metrics-lib/BandwidthHistory: long getIntervalLength() */
-    long interval;
+    union { null, long } interval;
     /** metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values() */
-    array<long> `bytes`;
+    union { null, array<long> }`bytes`;
   }
 
   record DirreqWriteHistory {
     /** metrics-lib/BandwidthHistory: long getHistoryEndMillis() */
-    long date;
+    union { null, long } date;
     /** metrics-lib/BandwidthHistory: long getIntervalLength() */
-    long interval;
+    union { null, long } interval;
     /** metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values() */
-    array<long> `bytes`;
+    union { null, array<long> } `bytes`;
   }
 
   record DirreqStats {
     /** metrics-lib/ExtraInfoDescriptor: long getDirreqStatsEndMillis() */
-    long date;
+    union { null, long } date;
     /** metrics-lib/ExtraInfoDescriptor: long getDirreqStatsIntervalLength() */
-    long interval;
+    union { null, long } interval;
   }
 
   record EntryStats {
     /** metrics-lib/ExtraInfoDescriptor: long getEntryStatsEndMillis() */
-    long date;
+    union { null, long } date;
     /** metrics-lib/ExtraInfoDescriptor: long getEntryStatsIntervalLength() */
-    long interval;
+    union { null, long } interval;
   }
 
   record CellStats {
     /** metrics-lib/ExtraInfoDescriptor: long getCellStatsEndMillis() */
-    long date;
+    union { null, long } date;
     /** metrics-lib/ExtraInfoDescriptor: long getCellStatsIntervalLength() */
-    long interval;
+    union { null, long } interval;
   }
 
   record ExitStats {
     /** metrics-lib/ExtraInfoDescriptor: long getExitStatsEndMillis() */
-    long date;
+    union { null, long } date;
     /** metrics-lib/ExtraInfoDescriptor: long getExitStatsIntervalLength() */
-    long interval;
+    union { null, long } interval;
   }
 
   record HidservStats {
     /** metrics-lib/ExtraInfoDescriptor: long getHidservStatsEndMillis() */
-    long date;
+    union { null, long } date;
     /** metrics-lib/ExtraInfoDescriptor: long getHidservStatsIntervalLength() */
-    long interval;
+    union { null, long } interval;
   }
 
   record ConnBiDirect {
     /** metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis() */
     union { null, long } date;
     /** metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsIntervalLength() */
-    long interval;
+    union { null, long } interval;
     /** metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBelow() */
     union { null, int } below;
     /** metrics-lib/ExtraInfoDescriptor: int getConnBiDirectRead() */
@@ -96,16 +96,16 @@ protocol relay_extra_info_descriptor {
 
   record HidservRendRelayedCells {
     /** metrics-lib/ExtraInfoDescriptor: Double getHidservRendRelayedCells() */
-    double cells;
+    union { null, double } cells;
     /** metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservRendRelayedCellsParameters() */
-    map<double> obfuscation;
+    union { null, map<double> } obfuscation;
   }
 
   record HidservDirOnionsSeen {
     /** metrics-lib/ExtraInfoDescriptor: Double getHidservDirOnionsSeen() */
-    double onions;
+    union { null, double }  onions;
     /** metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservDirOnionsSeenParameters() */
-    map<double> obfuscation;
+    union { null, map<double> } obfuscation;
   }
 
 
