@@ -16,6 +16,44 @@ most wanted
             reflect the actual project structure or things will fall apart
             
             
+    verbose description of how to compile java classes from IDL schemata
+            copy all IDLs to a working directory together with avro-tools.jar
+            in that directory execute
+                
+                ash:work t$ java -jar atools.jar idl2schemata bridge.avdl schemata
+                ash:work t$ java -jar atools.jar idl2schemata bridgeExtra.avdl schemata
+                ash:work t$ java -jar atools.jar idl2schemata bridgeStatus.avdl schemata
+                ash:work t$ java -jar atools.jar idl2schemata relay.avdl schemata
+                ash:work t$ java -jar atools.jar idl2schemata relayExtra.avdl schemata
+                ash:work t$ java -jar atools.jar idl2schemata relayVote.avdl schemata
+                ash:work t$ java -jar atools.jar idl2schemata relayConsensus.avdl schemata
+                ash:work t$ java -jar atools.jar idl2schemata tordnsel.avdl schemata
+                ash:work t$ java -jar atools.jar idl2schemata torperf.avdl schemata
+                
+            this will generate JSON schemata from the IDL schemata in teh folder 'schemata'
+                one for each IDL, named the same, but with ending .avsc instead of .avdl
+                and a lot of .avdl-files for each nested record in the IDLs.
+                copy only the main .avsc files to the root directory
+                and to the src/encoders/json directory (for reference)
+                delete the nested record .avsc files, the folder 'schemata' and the avdl-files
+                
+            from the working directory, that now should only contain the avro-tools.jar
+            and the 9 avsc schema files generate the avro java classes
+            
+                ash:work t$ java -jar atools.jar compile -string schema relay.avsc .
+                ash:work t$ java -jar atools.jar compile -string schema relayExtra.avsc .
+                ash:work t$ java -jar atools.jar compile -string schema relayVote.avsc .
+                ash:work t$ java -jar atools.jar compile -string schema relayConsensus.avsc .
+                ash:work t$ java -jar atools.jar compile -string schema bridge.avsc .
+                ash:work t$ java -jar atools.jar compile -string schema bridgeExtra.avsc .
+                ash:work t$ java -jar atools.jar compile -string schema bridgeStatus.avsc .
+                ash:work t$ java -jar atools.jar compile -string schema tordnsel.avsc .
+                ash:work t$ java -jar atools.jar compile -string schema torperf.avsc .
+
+             now you've got 'converTor.encoders.classes' folder with subfolders for each
+             descriptor type. copy those to the same path in teh /src directory. enjoy.
+            
+            
     convert .avro to JSON
       java -jar avro-tools-*.jar tojson myFile.avro > myFile.json
       

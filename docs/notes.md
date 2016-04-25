@@ -1,13 +1,24 @@
 # TODO
 
-newly generate classes from IDLs
-  bridgeStatus, relayVote, relayConsensus
 parse pline
+  relay         exit policy
+  relayCons     Policy
+  relayVote     Policy
+  bridge        exit policy
+  bridgeStatus  Policy
+  
+parquet
+  file.list
+  file.delete
+  
+bugs 
+  in avro+parquet NPE for obfuscation
+    maybe add union (nul ...) to idl?
+    maybe add null option to all IDLs and remove all checks in converters?
 documentation
 ant build-script
 parquet - shaky on local (non-HDFS) file system 
 multithreading - is there an issue?
-exception handling - maybe too lax?
 tests in converter code - do they make sense
 massive testing
 json - pretty printing without Avro
