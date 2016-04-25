@@ -5,12 +5,7 @@ import java.util.ArrayList;
 import org.torproject.descriptor.Descriptor;
 import org.torproject.descriptor.RelayServerDescriptor;
 import org.torproject.descriptor.BandwidthHistory;
-import converTor.encoders.classes.relay.Relay;
-import converTor.encoders.classes.relay.Router;
-import converTor.encoders.classes.relay.Bandwidth;
-import converTor.encoders.classes.relay.OrAddress;
-import converTor.encoders.classes.relay.ReadHistory;
-import converTor.encoders.classes.relay.WriteHistory;
+import converTor.encoders.java.relay.*;
 
 
 class ConvertRelay extends Convert {

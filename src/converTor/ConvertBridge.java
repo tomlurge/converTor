@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.torproject.descriptor.Descriptor;
 import org.torproject.descriptor.BridgeServerDescriptor;
 import org.torproject.descriptor.BandwidthHistory;
-import converTor.encoders.classes.bridge.*;
+import converTor.encoders.java.bridge.*;
 
 
 class ConvertBridge extends Convert {

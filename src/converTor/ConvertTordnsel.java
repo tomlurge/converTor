@@ -4,8 +4,7 @@ import java.util.List;
 import java.util.ArrayList;
 import org.torproject.descriptor.Descriptor;
 import org.torproject.descriptor.ExitList;
-import converTor.encoders.classes.tordnsel.Tordnsel;
-import converTor.encoders.classes.tordnsel.ExitNode;
+import converTor.encoders.java.tordnsel.*;
 
 
 //  Tordnsel == ExitList

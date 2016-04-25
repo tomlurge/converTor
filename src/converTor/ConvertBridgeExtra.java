@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.torproject.descriptor.BandwidthHistory;
 import org.torproject.descriptor.Descriptor;
 import org.torproject.descriptor.BridgeExtraInfoDescriptor;
-import converTor.encoders.classes.bridgeExtra.*;
+import converTor.encoders.java.bridgeExtra.*;
 
 
 
