@@ -86,7 +86,7 @@ class ConvertRelayConsensus extends Convert {
     DirSource con = new DirSource();
     con.setNickname(entry.getNickname());
     con.setIdentity(entry.getIdentity());
-    //  todo  con.setHostname(entry.getHostname());
+    con.setHostname(entry.getHostname());  //  todo   1.1.0-dev
     con.setAddress(entry.getIp());
     con.setDirPort(entry.getDirPort());
     con.setOrPort(entry.getOrPort());

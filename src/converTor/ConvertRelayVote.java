@@ -109,7 +109,7 @@ class ConvertRelayVote extends Convert {
   private DirSource convertDirSource(RelayNetworkStatusVote desc) {
     DirSource con = new DirSource();
     con.setNickname(desc.getNickname());
-    //  todo  con.setHostname(desc.getHostname());
+    con.setHostname(desc.getHostname());  //  todo   1.1.0-dev
     con.setIdentity(desc.getIdentity());
     con.setAddress(desc.getAddress());
     con.setDirPort(desc.getDirport());
