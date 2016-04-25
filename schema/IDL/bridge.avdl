@@ -1,4 +1,4 @@
-@namespace("converTor.encoders.java.bridge")
+@namespace("converTor.encoders.bridge")
 protocol bridge_server_descriptor {
 
   record Router {

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.torproject.descriptor.BandwidthHistory;
 import org.torproject.descriptor.Descriptor;
 import org.torproject.descriptor.RelayExtraInfoDescriptor;
-import converTor.encoders.java.relayExtra.*;
+import converTor.encoders.relayExtra.*;
 
 
 class ConvertRelayExtra extends Convert {

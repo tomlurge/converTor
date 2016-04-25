@@ -1,4 +1,4 @@
-@namespace("converTor.encoders.java.relayExtra")
+@namespace("converTor.encoders.relayExtra")
 protocol relay_extra_info_descriptor {
 
   record ExtraInfo {

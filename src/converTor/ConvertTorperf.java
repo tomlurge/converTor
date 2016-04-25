@@ -2,7 +2,7 @@ package converTor;
 
 import org.torproject.descriptor.Descriptor;
 import org.torproject.descriptor.TorperfResult;
-import converTor.encoders.java.torperf.Torperf;
+import converTor.encoders.torperf.Torperf;
 
 
 class ConvertTorperf extends Convert {

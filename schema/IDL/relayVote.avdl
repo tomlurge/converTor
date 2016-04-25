@@ -1,4 +1,4 @@
-@namespace("converTor.encoders.java.relayVote")
+@namespace("converTor.encoders.relayVote")
 protocol relay_network_status_vote_3_descriptor {
 
   record FlagTresholds {

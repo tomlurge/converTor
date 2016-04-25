@@ -63,7 +63,7 @@ class Base {
         converter.convert(descriptor);
 
         //  todo    remove test
-        System.out.println(converter.load);
+        //  System.out.println(converter.load);
 
         //  GET APPROPRIATE OUTPUT WRITER
         Write writer = writers.getWriter(converter.type, converter.date);
@@ -78,7 +78,7 @@ class Base {
 
     //  WRAP UP
     closeAllWriters();
-    System.out.println("\nTHIS MACHINE KILLS FASCISTS\n");
+    System.out.println("\nTHIS MACHINE KILLS FASCISTS");
     System.exit(0);
   }
 

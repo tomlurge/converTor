@@ -8,7 +8,7 @@ import org.torproject.descriptor.Descriptor;
 import org.torproject.descriptor.DirectorySignature;
 import org.torproject.descriptor.NetworkStatusEntry;
 import org.torproject.descriptor.RelayNetworkStatusVote;
-import converTor.encoders.java.relayVote.*;
+import converTor.encoders.relayVote.*;
 
 
 class ConvertRelayVote extends Convert {

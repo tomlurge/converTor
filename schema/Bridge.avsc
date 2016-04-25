@@ -1,7 +1,7 @@
 {
   "type" : "record",
   "name" : "Bridge",
-  "namespace" : "converTor.encoders.java.bridge",
+  "namespace" : "converTor.encoders.bridge",
   "doc" : "bridge-server-descriptor 1.1 - same as relay but without router_signatures",
   "fields" : [ {
     "name" : "descriptor_type",

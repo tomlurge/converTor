@@ -1,4 +1,4 @@
-@namespace("converTor.encoders.java.relayConsensus")
+@namespace("converTor.encoders.relayConsensus")
 protocol relay_network_status_consensus_3_descriptor {
 
   record Vote {

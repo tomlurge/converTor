@@ -1,7 +1,7 @@
 {
   "type" : "record",
   "name" : "BridgeStatus",
-  "namespace" : "converTor.encoders.java.bridgeStatus",
+  "namespace" : "converTor.encoders.bridgeStatus",
   "fields" : [ {
     "name" : "descriptor_type",
     "type" : "string",

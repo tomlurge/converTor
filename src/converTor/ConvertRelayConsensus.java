@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
 import org.torproject.descriptor.*;
-import converTor.encoders.java.relayConsensus.*;
+import converTor.encoders.relayConsensus.*;
 
 
 class ConvertRelayConsensus extends Convert {

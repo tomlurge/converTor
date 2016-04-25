@@ -1,7 +1,7 @@
 {
   "type" : "record",
   "name" : "RelayExtra",
-  "namespace" : "converTor.encoders.java.relayExtra",
+  "namespace" : "converTor.encoders.relayExtra",
   "fields" : [ {
     "name" : "descriptor_type",
     "type" : "string",

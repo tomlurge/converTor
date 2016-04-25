@@ -1,4 +1,4 @@
-@namespace("converTor.encoders.java.relay")
+@namespace("converTor.encoders.relay")
 protocol relay_server_descriptor {
 
   record Router {

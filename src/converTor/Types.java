@@ -33,7 +33,8 @@ enum Types {
     try {
       Schema.Parser parser = new Schema.Parser();
       this.avsc = parser.parse(
-          new File("src/converTor/encoders/schemata/JSON/" + this.name + ".avsc")
+          // new File("src/converTor/encoders/schema/" + this.name + ".avsc")
+          new File("schema/" + this.name + ".avsc")
       );
     } catch (IOException e) {
       System.err.println("IOException for JSON schema:");
@@ -79,7 +80,7 @@ enum Types {
           break;
       }
     } catch (ClassNotFoundException e) {
-      System.err.println("ClassNotFoundException for metrics-lib descriptor class:");
+      System.err.println("ClassNotFoundException for metrics-lib descriptor:");
       System.err.println(e.getMessage());
     }
   }

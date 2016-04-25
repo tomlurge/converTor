@@ -1,7 +1,7 @@
 {
   "type" : "record",
   "name" : "Relay",
-  "namespace" : "converTor.encoders.java.relay",
+  "namespace" : "converTor.encoders.relay",
   "doc" : "server-descriptor 1.0 - same as bridge but additional field 'router_signature'",
   "fields" : [ {
     "name" : "descriptor_type",

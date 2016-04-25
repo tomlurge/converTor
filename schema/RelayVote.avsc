@@ -1,7 +1,7 @@
 {
   "type" : "record",
   "name" : "RelayVote",
-  "namespace" : "converTor.encoders.java.relayVote",
+  "namespace" : "converTor.encoders.relayVote",
   "fields" : [ {
     "name" : "descriptor_type",
     "type" : "string",
