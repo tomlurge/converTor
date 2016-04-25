@@ -39,6 +39,7 @@ class Base {
   }
 
   void run() throws IOException {
+    int counter = 0;
 
     //  SET UP ITERATOR OVER INPUT FILES
     iterator = new Iterator(args.getInPath(), args.getMaxFiles());
@@ -73,12 +74,16 @@ class Base {
 
         //  CHECK FOR UNRECOGNIZED ATTRIBUTES
         converter.checkUnrecognized(descriptor, currentFile);
+
+        counter++;
       }
     }
 
     //  WRAP UP
     closeAllWriters();
-    System.out.println("\nTHIS MACHINE KILLS FASCISTS");
+    System.out.println(
+      "\nTHIS MACHINE KILLS FASCISTS\n" + counter + " descriptors converted"
+    );
     System.exit(0);
   }
 

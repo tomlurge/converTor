@@ -150,16 +150,16 @@ public enum Args {
     System.out.println(
         "\nConverter from Tor CollecTor data to JSON, Parquet or Avro.\n" +
         "Call with parameter '-h' for help and more options.\n");
-    System.out.println("Current parameters:");
-    System.out.println("  format               " + getFormat());
-    System.out.println("  suffix               " + getSuffix());
-    System.out.println("  inPath               " + getInPath());
-    System.out.println("  outPath              " + getOutPath());
-    System.out.println("  verbose              " + isVerbose());
-    System.out.println("  compressed           " + isCompressed());
-    System.out.println("  pretty printed JSON  " + isPretty());
-    System.out.println("  maxFiles files       " + getMaxFiles());
-    System.out.println("  outputFileEnding     " + getOutputFileEnding());
+    System.out.println("  Current parameters:\n");
+    System.out.println("  format                " + getFormat());
+    System.out.println("  suffix                " + getSuffix());
+    System.out.println("  inPath                " + getInPath());
+    System.out.println("  outPath               " + getOutPath());
+    System.out.println("  verbose               " + isVerbose());
+    System.out.println("  compressed            " + isCompressed());
+    System.out.println("  pretty printed JSON   " + isPretty());
+    System.out.println("  maxFiles files        " + getMaxFiles());
+    System.out.println("  outputFileEnding      " + getOutputFileEnding());
     System.out.println("\n");
 
   }

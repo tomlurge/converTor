@@ -83,7 +83,8 @@
         <mkdir dir="${dist.lib.dir}" />
         <mkdir dir="${dist.docs.dir}" />
 
-        <jar jarfile="${dist.dir}/${projectName}.jar" basedir="${build.dir}">
+        <jar jarfile="${dist.dir}/${projectName}-${release.version}-${git.revision}.jar"
+             basedir="${build.dir}">
             <manifest>
                 <attribute name="Implementation-Title" value="ConverTor"/>
                 <attribute name="Created-By"
