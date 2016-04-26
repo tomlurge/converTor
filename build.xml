@@ -2,6 +2,7 @@
 <project basedir="." default="main" name="converTor">
     <property name="projectName" value="converTor" />
     <property name="release.version" value="0.2-dev" />
+    <property name="root.dir" location="" />
     <property name="src.dir" location="src" />
     <property name="src.schema.dir" location="schema" />
     <property name="src.docs.dir" location="docs" />
@@ -48,6 +49,11 @@
                classpathref="classpath" />
     </target>
     <target name="copy-dependencies">
+        <copy todir="${dist.dir}">
+            <fileset dir="${root.dir}"
+                     includes="build.xml, README.md"
+                     excludes="**/.*.*, **/*.iml" />
+        </copy>
         <copy todir="${dist.lib.dir}">
             <fileset dir="${lib.dir}"
                      includes="**/*.jar"
