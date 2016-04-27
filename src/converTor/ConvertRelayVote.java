@@ -236,13 +236,14 @@ class ConvertRelayVote extends Convert {
       con.setIdentity(entry.getValue().getIdentity());
       con.setSigningKeyDigest(entry.getValue().getSigningKeyDigest());
       con.setSignature(entry.getValue().getSignature() != null);
-      if (desc.getDirectorySignatures().entrySet().size() > 1) {
+      if (desc.getDirectorySignatures().size() > 1) {
         System.out.println(
-            "RelayVote descriptor contains more than 1 Directory Signature. " +
-            "Omitting all Directory Signatures but the first one."
+          "RelayVote descriptor contains more than 1 Directory Signature:\n"
+          + desc +
+          "\nOmitting all Directory Signatures but the first one."
         );
       }
-      return con;
+      break;
     }
     return con;
   }
