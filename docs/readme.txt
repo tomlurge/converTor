@@ -1,4 +1,4 @@
-Base is the class, that contains the main method.
+Base is the class that contains the main method.
 
 Main initializes a new Base base, which in turn initializes Args and Writers
 singletons.

@@ -82,7 +82,8 @@ class Base {
     //  WRAP UP
     closeAllWriters();
     System.out.println(
-      "\nTHIS MACHINE KILLS FASCISTS\n" + counter + " descriptors converted"
+      "\nTHIS MACHINE KILLS FASCISTS\n" + counter + " descriptor" +
+          (counter < 1 || counter > 1 ? "s" : "") + " converted"
     );
     System.exit(0);
   }

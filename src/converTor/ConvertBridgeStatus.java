@@ -137,7 +137,7 @@ class ConvertBridgeStatus extends Convert {
   private Policy convertPolicy(NetworkStatusEntry entry) {
     Policy con = new Policy();
     con.setDefaultPolicy(entry.getDefaultPolicy());
-    con.setPortSummary(entry.getPortList());
+    con.setPortSummary(entry.getPortList()); //  todo    policy
     return con;
   }
 

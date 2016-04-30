@@ -54,7 +54,7 @@ class ConvertRelay extends Convert {
     conversion.setSigningKey(desc.getSigningKey() != null);
     //  verbose testing because of List type
     //  first check that the list is not null, then if it's empty
-    //  (checking for emptiness right away could lead to null pointer exc)
+    //  (checking for emptiness right away could lead to NPE)
     if (desc.getExitPolicyLines() != null &&
         !desc.getExitPolicyLines().isEmpty()) {
       conversion.setExitPolicy(desc.getExitPolicyLines());

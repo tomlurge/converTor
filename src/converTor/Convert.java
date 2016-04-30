@@ -32,6 +32,7 @@ abstract class Convert<C> {
     }
   }
 
+
   //  DATE-TIME FORMATTER
   static final String dateTimePattern = "yyyy-MM-dd HH:mm:ss";
   static final Locale dateTimeLocale = Locale.US;
@@ -79,7 +80,6 @@ abstract class Convert<C> {
     }
     return accepted;
   }
-
 
 
 }

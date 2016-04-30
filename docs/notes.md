@@ -2,22 +2,24 @@
 
 parse pline
   relay         exit policy
+  bridge        exit policy
   relayCons     Policy
   relayVote     Policy
-  bridge        exit policy
   bridgeStatus  Policy
   
-parquet
-  file.list
-  file.delete
+  the easy way would be to just convert reject lines in relayConsensus/relayVote/
+  bridgeStatus to accept lines and be done with it.
+  a comprehensive approach would convert both relay/bridge and 
+  relayConsensus/relayVote/bridgeStatus to the same format.
+  but it seems that this is not really possible. at least that's my impression
+  from KLs latetst mail on the subject - see mail exchange from 26.-28.4., 
+  subject "accept/reject policies"
   
-bugs 
-  in avro+parquet NPE for obfuscation
-    maybe add union (nul ...) to idl?
-    maybe add null option to all IDLs and remove all checks in converters?
+parquet
+  parquet chokes on non-empty output directories if they are not HDFS
+  but it is possible to have HDFS on mac.
+  
 documentation
-ant build-script
-parquet - shaky on local (non-HDFS) file system 
 multithreading - is there an issue?
 tests in converter code - do they make sense
 massive testing
