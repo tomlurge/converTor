@@ -109,7 +109,7 @@ class ConvertRelayVote extends Convert {
   private DirSource convertDirSource(RelayNetworkStatusVote desc) {
     DirSource con = new DirSource();
     con.setNickname(desc.getNickname());
-    con.setHostname(desc.getHostname());  //  todo   1.1.0-dev
+    con.setHostname(desc.getHostname());
     con.setIdentity(desc.getIdentity());
     con.setAddress(desc.getAddress());
     con.setDirPort(desc.getDirport());
@@ -201,7 +201,7 @@ class ConvertRelayVote extends Convert {
   private Policy convertPolicy(NetworkStatusEntry entry) {
     Policy con = new Policy();
     con.setDefaultPolicy(entry.getDefaultPolicy());
-    con.setPortSummary(entry.getPortList());
+    con.setPortSummary(entry.getPortList());  //  todo    policy
     return con;
   }
 
@@ -238,8 +238,8 @@ class ConvertRelayVote extends Convert {
       con.setSignature(entry.getValue().getSignature() != null);
       if (desc.getDirectorySignatures().size() > 1) {
         System.out.println(
-          "RelayVote descriptor contains more than 1 Directory Signature:\n"
-          + desc +
+          "RelayVote descriptor contains more than 1 Directory Signature:\n    "
+          + desc.getValidAfterMillis() + "\n    " + desc.getIdentity() +
           "\nOmitting all Directory Signatures but the first one."
         );
       }

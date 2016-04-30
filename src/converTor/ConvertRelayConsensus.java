@@ -86,7 +86,7 @@ class ConvertRelayConsensus extends Convert {
     DirSource con = new DirSource();
     con.setNickname(entry.getNickname());
     con.setIdentity(entry.getIdentity());
-    con.setHostname(entry.getHostname());  //  todo   1.1.0-dev
+    con.setHostname(entry.getHostname());
     con.setAddress(entry.getIp());
     con.setDirPort(entry.getDirPort());
     con.setOrPort(entry.getOrPort());
@@ -169,7 +169,7 @@ class ConvertRelayConsensus extends Convert {
   private Policy convertPolicy(NetworkStatusEntry entry) {
     Policy con = new Policy();
     con.setDefaultPolicy(entry.getDefaultPolicy());
-    con.setPortSummary(entry.getPortList());
+    con.setPortSummary(entry.getPortList()); //  todo    policy
     return con;
   }
 
