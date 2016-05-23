@@ -168,8 +168,10 @@ class ConvertRelayConsensus extends Convert {
 
   private Policy convertPolicy(NetworkStatusEntry entry) {
     Policy con = new Policy();
-    con.setDefaultPolicy(entry.getDefaultPolicy());
-    con.setPortSummary(entry.getPortList()); //  todo    policy
+    con.setDefaultPolicy("accept");
+    con.setPortSummary(
+        acceptedPortIntervals(entry.getDefaultPolicy(),entry.getPortList())
+    );
     return con;
   }
 

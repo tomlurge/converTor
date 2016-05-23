@@ -63,39 +63,57 @@ abstract class Convert<C> {
   }
 
 
-  //  POLICY FORMATTER
-  List<int[]> parsePLine(String pLine) {
-    List<int[]> accepted = new ArrayList<>();
-    String[] pLineParts = pLine.split(" ");
-    boolean policyIsAccept = "accept".equals(pLineParts[1]);
-    String[] portIntervals = pLineParts[2].split(",");
+  /**
+   * Derive accepted ports
+   */
+  String acceptedPortIntervals(String policy, String ports) {
+
+    /**
+     * incoming policy - accept or reject
+     */
+    Boolean policyIsAccept = "accept".equals(policy);
+
+    /**
+     * incoming port intervals as array
+     */
+    String[] incomingIntervals = ports.split(",");
+
+    /**
+     * outgoing string containing all accepted ports
+     */
+    String accepted = "";
+
+    /* derive array of accepted port intervals */
+    List<int[]> intervalsArrays = new ArrayList<>();
     int lastToPort = 0;
-    for (String portInterval : portIntervals) {
-      String[] ports = portInterval.split("-");
-      int fromPort = Integer.parseInt(ports[0]);
-      int toPort = (ports.length == 1 ? fromPort : Integer.parseInt(ports[1]));
+    for (String incomingInterval : incomingIntervals) {
+      String[] incomingIntervalPorts = incomingInterval.split("-");
+      int fromPort = Integer.parseInt(incomingIntervalPorts[0]);
+      int toPort = ( incomingIntervalPorts.length == 1
+              ? fromPort
+              : Integer.parseInt(incomingIntervalPorts[1])
+      );
       if (policyIsAccept) {
-        accepted.add(new int[] { fromPort, toPort });
+        intervalsArrays.add(new int[] { fromPort, toPort });
       } else if (fromPort > lastToPort + 1) {
-        accepted.add(new int[] { lastToPort + 1, fromPort - 1 });
+        intervalsArrays.add(new int[] { lastToPort + 1, fromPort - 1 });
       }
       lastToPort = toPort;
     }
     if (!policyIsAccept && lastToPort < 65535) {
-      accepted.add(new int[] { lastToPort + 1, 65535 });
+      intervalsArrays.add(new int[] { lastToPort + 1, 65535 });
     }
-    return accepted;
-  }
 
-  String acceptedPortIntervals(List<int[]> intervals) {
-    String accepted = "p accept ";
+
+    /* write array of accepted port intervals to string */
     int writtenIntervals = 0;
-    for (int[] interval : intervals) {
+    for (int[] interval : intervalsArrays) {
       accepted = accepted + (writtenIntervals++ > 0 ? "," : "") + interval[0];
       if (interval[1] > interval[0]) {
         accepted = accepted + "-" + interval[1];
       }
     }
+
     return accepted;
   }
 
