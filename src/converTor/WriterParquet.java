@@ -10,7 +10,7 @@ import org.apache.parquet.hadoop.metadata.CompressionCodecName;
 
 
 //  parquet-mr
-class WriteParquet implements Write {
+class WriterParquet implements Writer {
 
   Schema schema;
   String writerID;
@@ -18,7 +18,7 @@ class WriteParquet implements Write {
   ParquetWriter fileWriter;
 
 
-  WriteParquet(Types type, String date) throws IOException {
+  WriterParquet(Types type, String date) throws IOException {
 
     schema = type.avsc;
     writerID = type.name + "_" + date;
@@ -39,14 +39,10 @@ class WriteParquet implements Write {
 
   }
 
-
-  //  APPEND CONVERTED DATA TO ENCODER/WRITER
   public void append(SpecificRecord load) throws IOException {
     fileWriter.write(load);
   }
 
-
-  //  WRAP UP AFTER ITERATOR HAS FINISHED ITERATING OVER INCOMING DESCRIPTORS
   public void close() throws IOException {
     fileWriter.close();
   }

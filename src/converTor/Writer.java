@@ -4,14 +4,18 @@ import java.io.IOException;
 import org.apache.avro.specific.SpecificRecord;
 
 
-interface Write {
+interface Writer {
 
   Args args = Args.INSTANCE;
 
-  //  APPEND CONVERTED DATA TO APPROPRIATE FILE WRITER
+  /**
+   * append converted data to appropriate file writer
+   */
   void append(SpecificRecord load) throws IOException;
 
-  //  WRAP UP AFTER ITERATOR HAS FINISHED ITERATING OVER INCOMING DESCRIPTORS
+  /**
+   * wrap up after iterator has finished iterating over incoming descriptors
+   */
   void close() throws IOException;
 
 
