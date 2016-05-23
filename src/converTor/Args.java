@@ -7,15 +7,19 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.HelpFormatter;
 
-/*
- *  command line arguments evaluation
+/**
+ * Evaluates command line arguments
  */
-
 public enum Args {
 
+  /**
+   * Initializes Singleton with CLI arguments
+   */
   INSTANCE(Base.commandLineArguments);
 
-  //  ARGUMENT DEFAULTS
+  /**
+   * Provide argument defaults
+   */
   private boolean verbose = false;
   private boolean compressed = false;
   private boolean pretty = false;
@@ -30,10 +34,12 @@ public enum Args {
   private String outputFileEnding;
 
 
-  //  EVALUATE COMMAND LINE ARGUMENTS
+  /**
+   * Evaluates command line arguments
+   * @see https://commons.apache.org/proper/commons-cli/usage.html
+   */
   Args(String[] commandLineArguments) {
 
-    //  https://commons.apache.org/proper/commons-cli/usage.html
     Options options = new Options();
     options.addOption("h", "help", false,
         "display this help text");
@@ -71,7 +77,7 @@ public enum Args {
             "e.g. '-m=5'\n" +
             "defaults to 20");
 
-    //  PARSE ARGUMENTS, SET PARAMETERS
+    /* Parse arguments, set parameters */
     CommandLineParser parser = new DefaultParser();
     CommandLine cmd = null;
     try {
@@ -146,7 +152,6 @@ public enum Args {
         + getFormat()
         + ( isCompressed() && isJson() ? ".gz" : ""));
 
-    //  PARAMETERS SET
     System.out.println(
         "\nConverter from Tor CollecTor data to JSON, Parquet or Avro.\n" +
         "Call with parameter '-h' for help and more options.\n");

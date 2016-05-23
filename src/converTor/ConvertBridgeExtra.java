@@ -7,7 +7,6 @@ import org.torproject.descriptor.BridgeExtraInfoDescriptor;
 import converTor.encoders.bridgeExtra.*;
 
 
-
 class ConvertBridgeExtra extends Convert {
 
   void convert(Descriptor descriptor) {
@@ -32,7 +31,7 @@ class ConvertBridgeExtra extends Convert {
     if (desc.getGeoipStartTimeMillis() >= 0) {
       conversion.setGeoipStartTime(desc.getGeoipStartTimeMillis());
     }
-    // start bridge only
+    /* start bridge only */
     if (desc.getGeoipClientOrigins() != null && 
         !desc.getGeoipClientOrigins().isEmpty()) {
       conversion.setGeoipClientOrigins(desc.getGeoipClientOrigins());
@@ -49,7 +48,7 @@ class ConvertBridgeExtra extends Convert {
         !desc.getBridgeIpTransports().isEmpty()) {
       conversion.setBridgeIpTransports(desc.getBridgeIpTransports());
     }
-    // end bridge only
+    /* end bridge only */
     conversion.setDirreqStatsEnd(convertDirreqStats(desc));
     if (desc.getDirreqV2Ips() != null && !desc.getDirreqV2Ips().isEmpty()) {
       conversion.setDirreqV2Ips(desc.getDirreqV2Ips());

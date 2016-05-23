@@ -5,12 +5,14 @@ import java.io.IOException;
 import org.apache.avro.Schema;
 import org.torproject.descriptor.*;
 
-/*
- *  descriptor types and their attributes
+/**
+ * Configures descriptor types and their attributes
  */
-
 enum Types {
 
+  /**
+   * Initializes singleton per type
+   */
   RELAY("Relay"),
   BRIDGE("Bridge"),
   RELAY_EXTRA("RelayExtra"),
@@ -21,19 +23,36 @@ enum Types {
   TORDNSEL("Tordnsel"),
   TORPERF("Torperf");
 
+  /**
+   * Name of descriptor type and class
+   */
+  String name;
 
-  String name;                         // of descriptor type and class
-  Schema avsc;                         // parsed JSON schema
-  Class<? extends Convert> converter;  // concrete converter
-  Class cast;                          // metrics-lib class to cast to
+  /**
+   * Parsed JSON schema
+   */
+  Schema avsc;
 
+  /**
+   * Converter by type
+   */
+  Class<? extends Convert> converter;
 
+  /**
+   * Metrics-lib class to cast to
+   */
+  Class cast;
+
+  /**
+   * Sets up and configures type singletons
+   * @param name  Name of descriptor type
+   */
   Types(String name) {
     this.name = name;
     try {
       Schema.Parser parser = new Schema.Parser();
       this.avsc = parser.parse(
-          // new File("src/converTor/encoders/schema/" + this.name + ".avsc")
+          // new File("src/converTor/encoders/schema/" + this.name + ".avsc") todo remove after testing
           new File("schema/" + this.name + ".avsc")
       );
     } catch (IOException e) {
@@ -85,7 +104,11 @@ enum Types {
     }
   }
 
-
+  /**
+   *
+   * @param desc  Incoming descriptor
+   * @return      Type of incoming descriptor
+   */
   static Types getDescriptorType(Descriptor desc) {
     Types type = null;
     for (Types t : Types.values()) {

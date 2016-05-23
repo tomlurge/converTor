@@ -7,7 +7,7 @@ import org.torproject.descriptor.ExitList;
 import converTor.encoders.tordnsel.*;
 
 
-//  Tordnsel == ExitList
+/* Tordnsel == ExitList */
 class ConvertTordnsel extends Convert {
 
   void convert(Descriptor descriptor) {

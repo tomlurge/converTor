@@ -9,21 +9,37 @@ import org.torproject.descriptor.BandwidthHistory;
 import org.torproject.descriptor.Descriptor;
 import org.torproject.descriptor.DescriptorFile;
 
-
+/**
+ * Provides fields and methods that all types of converters need
+ * @param <C>   type of incoming descriptor
+ */
 abstract class Convert<C> {
 
-  // a lot of details about name, schema, avro schema class etc
+  /**
+   * Details about type: name, schema, avro schema class etc
+   */
   Types type;
-  // month of creation of original descriptor, as YYYY_MM
+
+  /**
+   * Month of creation of original descriptor, as YYYY_MM
+   */
   String date;
-  // the actual data, converted to an Avro object
+
+  /**
+   * Avro object, containing the converted descriptor
+   */
   SpecificRecordBase load;
 
-
+  /**
+   * Abstract convert method
+   * @param descriptor   incoming descriptor
+   */
   abstract void convert(Descriptor descriptor);
 
 
-  //  CHECK FOR UNRECOGNIZED ATTRIBUTES
+  /**
+   * Check for unrecognized attributes
+   */
   void checkUnrecognized(Descriptor descriptor, DescriptorFile descriptorFile) {
     if (!descriptor.getUnrecognizedLines().isEmpty()) {
       System.err.println("Unrecognized lines in "
@@ -33,7 +49,9 @@ abstract class Convert<C> {
   }
 
 
-  //  DATE-TIME FORMATTER
+  /**
+   * Date-time formatter
+   */
   static final String dateTimePattern = "yyyy-MM-dd HH:mm:ss";
   static final Locale dateTimeLocale = Locale.US;
   static final TimeZone dateTimezone = TimeZone.getTimeZone("UTC");

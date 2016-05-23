@@ -222,12 +222,13 @@ class ConvertRelayVote extends Convert {
 
   private DirSig convertDirSig(RelayNetworkStatusVote desc) {
     DirSig con = new DirSig();
-    //  Spec says that a vote can contain at most 1 Directory Signature
-    //  but metrics.lib RelayNetworkStatusVote's getDirectorySignatures()
-    //  returns a map. See:
-    //  https://trac.torproject.org/projects/tor/ticket/18875
-    //  As a workaround we always use the first entry but check the length of
-    //  the map and print a warning to the console if there are more than one.
+    /*  The spec says that a vote can contain at most 1 Directory Signature
+     *  but metrics.lib RelayNetworkStatusVote's getDirectorySignatures()
+     *  returns a map. See:
+     *  https://trac.torproject.org/projects/tor/ticket/18875
+     *  As a workaround we always use the first entry but check the length of
+     *  the map and print a warning to the console if there are more than one.
+     */
     for (
         Map.Entry<String, DirectorySignature> entry :
         desc.getDirectorySignatures().entrySet()

@@ -35,16 +35,17 @@ class ConvertRelay extends Convert {
     conversion.setPlatform(desc.getPlatform());
     conversion.setPublished(desc.getPublishedMillis());
     conversion.setFingerprint(desc.getFingerprint());
-    //  isHibernating can't return 'null' because it's of type 'boolean'
-    //  (with little 'b') but it's only present in the collecTor data if it's
-    //  true. therefor we check for it's existence and include it if it
-    //  exists. otherwise we leave it alone / to the default value from the
-    //  schema (which is null)
+    /* isHibernating can't return 'null' because it's of type 'boolean'
+     * (with little 'b') but it's only present in the collecTor data if it's
+     * true. therefor we check for it's existence and include it if it
+     * exists. otherwise we leave it alone / to the default value from the
+     * schema (which is null)
+     */
     if (desc.isHibernating()) {
       conversion.setHibernating(desc.isHibernating());
     }
     conversion.setUptime(desc.getUptime());
-    //  test, if there is a key: return 'true' if yes, 'false' otherwise
+    /* test, if there is a key: return 'true' if yes, 'false' otherwise */
     conversion.setOnionKey(desc.getOnionKey() != null);
     conversion.setOnionKeyCrosscert(desc.getOnionKeyCrosscert() != null);
     conversion.setNtorOnionKey(desc.getNtorOnionKey() != null);
@@ -52,9 +53,10 @@ class ConvertRelay extends Convert {
         desc.getNtorOnionKeyCrosscert() != null
     );
     conversion.setSigningKey(desc.getSigningKey() != null);
-    //  verbose testing because of List type
-    //  first check that the list is not null, then if it's empty
-    //  (checking for emptiness right away could lead to NPE)
+    /* verbose testing because of List type
+     * first check that the list is not null, then if it's empty
+     * (checking for emptiness right away could lead to NPE)
+     */
     if (desc.getExitPolicyLines() != null &&
         !desc.getExitPolicyLines().isEmpty()) {
       conversion.setExitPolicy(desc.getExitPolicyLines());
@@ -65,8 +67,9 @@ class ConvertRelay extends Convert {
     conversion.setRouterSignature(desc.getRouterSignature() != null);
     conversion.setContact(desc.getContact());
     conversion.setFamily(desc.getFamilyEntries());
-    //  check for 'null' first because we want to run a method on it
-    //  and not get a null pointer exception meanwhile
+    /* check for 'null' first because we want to run a method on it
+     * and not get a null pointer exception meanwhile
+     */
     if (desc.getReadHistory() != null) {
       conversion.setReadHistory(
           convertReadHistory(desc.getReadHistory())
@@ -124,8 +127,9 @@ class ConvertRelay extends Convert {
     Bandwidth con = new Bandwidth();
     con.setAvg(desc.getBandwidthRate());
     con.setBurst(desc.getBandwidthBurst());
-    //  can be '-1' if null. in that case we don't touch it here, leaving the
-    //  default from the class definition intact
+    /* can be '-1' if null. in that case we don't touch it here, leaving the
+     * default from the class definition intact
+     */
     if (desc.getBandwidthObserved() >= 0) {
       con.setObserved(desc.getBandwidthObserved());
     }

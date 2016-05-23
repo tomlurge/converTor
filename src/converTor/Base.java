@@ -5,54 +5,66 @@ import java.io.IOException;
 
 import org.torproject.descriptor.*;
 
-/*
- *  Read all descriptors provided in the 'in' directory
- *  and for each initiate conversion to the desired format
+/**
+ *  Read all descriptor files provided in the 'in' directory
+ *  and convert them to the format specified in arguments.
  */
-
 class Base {
 
   static String[] commandLineArguments;
   Args args;
   Types type;
   Writers writers;
-  Iterator iterator;
+  Walker walker;
 
 
   public static void main(String[] args) {
     Base base = new Base(args);
-    //  START CONVERSION
+    /* start conversion */
     try {
-      base.run();
+      base.runConversion();
     } catch (IOException e) {
       e.printStackTrace();
     }
   }
 
+  /**
+   * Sets up conversion environment by evaluating input arguments
+   * and initializing output file writers.
+   * @param args    arguments provided to the command line interface
+   */
   Base(String[] args) {
-    //  MAKE COMMAND LINE ARGS AVAILABLE TO SINGLETON 'ARGS'
+    /* make command line args available to singleton 'args' */
     commandLineArguments = args;
-    //  SETUP ARGUMENTS SINGLETON
+    /* setup arguments singleton */
     this.args = Args.INSTANCE;
-    //  SETUP OUTPUT WRITERS MAP SINGLETON
+    /* setup output writers map singleton */
     this.writers = Writers.INSTANCE;
   }
 
-  void run() throws IOException {
+  /**
+   * Iterates over all files in input directory, calls appropriate converter
+   * and writes conversion to disc.
+   * @throws IOException
+   */
+  void runConversion() throws IOException {
     int counter = 0;
 
-    //  SET UP ITERATOR OVER INPUT FILES
-    iterator = new Iterator(args.getInPath(), args.getMaxFiles());
-    //  ITERATE OVER INPUT FILES
-    while (iterator.descriptorFiles.hasNext()) {
-      DescriptorFile currentFile = iterator.getNextFile();
-      //  ITERATE OVER DESCRIPTORS IN EACH INPUT FILE
+    /* set up iterator over input files */
+    walker = new Walker(args.getInPath(), args.getMaxFiles());
+
+    /* iterate over input files */
+    while (walker.descriptorFiles.hasNext()) {
+
+      DescriptorFile currentFile = walker.getNextFile();
+
+      /* iterate over descriptors in each input file */
       for (Descriptor descriptor : currentFile.getDescriptors()) {
 
-        //  DETERMINE DESCRIPTOR TYPE
+        /* determine descriptor type */
         type = Types.getDescriptorType(descriptor);
 
-        //  INITIALIZE CONVERTER
+        /* initialize converter */
         Convert<? extends Convert> converter = null;
         try {
           converter = type.converter.newInstance();
@@ -60,41 +72,44 @@ class Base {
           e.printStackTrace();
         }
 
-        //  CONVERT DESCRIPTOR
+        /* convert descriptor */
         converter.convert(descriptor);
 
         //  todo    remove test
         //  System.out.println(converter.load);
 
-        //  GET APPROPRIATE OUTPUT WRITER
-        Write writer = writers.getWriter(converter.type, converter.date);
+        /* get appropriate output writer */
+        Writer writer = writers.getWriter(converter.type, converter.date);
 
-        //  APPEND CONVERTED DESCRIPTOR TO OUTPUT WRITER
+        /* append converted descriptor to output writer */
         writer.append(converter.load);
 
-        //  CHECK FOR UNRECOGNIZED ATTRIBUTES
+        /* check for unrecognized attributes */
         converter.checkUnrecognized(descriptor, currentFile);
 
         counter++;
       }
     }
 
-    //  WRAP UP
+    /* wrap up */
     closeAllWriters();
     System.out.println(
       "\nTHIS MACHINE KILLS FASCISTS\n" + counter + " descriptor" +
           (counter < 1 || counter > 1 ? "s" : "") + " converted"
     );
     System.exit(0);
+
   }
 
 
-  //  FILE ITERATOR
-  private class Iterator {
+  /**
+   * Iterates through files in input directory
+   */
+  private class Walker {
 
     private java.util.Iterator<DescriptorFile> descriptorFiles;
 
-    Iterator(String inPath, int maxFiles) {
+    Walker(String inPath, int maxFiles) {
       DescriptorReader descriptorReader =
           DescriptorSourceFactory.createDescriptorReader();
       descriptorReader.addDirectory(new File(inPath));
@@ -104,7 +119,7 @@ class Base {
 
     private DescriptorFile getNextFile() {
       DescriptorFile nextFile = descriptorFiles.next();
-      //  check for exceptions
+      /* check for exceptions */
       if (null != nextFile.getException()) {
         System.err.print(nextFile.getException()
             + "\n    in " + nextFile.getFileName() + "\n");
@@ -115,10 +130,13 @@ class Base {
   }
 
 
-  //  WRAP UP AFTER ITERATOR HAS FINISHED ITERATING OVER INCOMING DESCRIPTORS
+  /**
+   * Makes sure all writers properly finish and write their content to disk
+   * after iterator has finished iterating over incoming descriptors
+   */
   void closeAllWriters() throws IOException {
-    for (Write write : writers.getAllWriters()) {
-      write.close();
+    for (Writer writer : writers.getAllWriters()) {
+      writer.close();
     }
   }
 
