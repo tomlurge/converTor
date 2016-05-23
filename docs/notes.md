@@ -1,29 +1,43 @@
 # TODO
-
-parse pline
-  relay         exit policy
-  bridge        exit policy
-  relayCons     Policy
-  relayVote     Policy
-  bridgeStatus  Policy
+    
+defaults
+  it is possible to have defaults with Avro, but they have to be declared 
+  explicitly and the corresponding type has to be the first in the union.
+    see:
+    https://avro.apache.org/docs/current/spec.html#Unions
+      Unions, as mentioned above, are represented using JSON arrays. For 
+      example, ["null", "string"] declares a schema which may be either a null 
+      or string.
+      (Note that when a default value is specified for a record field whose type 
+      is a union, the type of the default value must match the first element of 
+      the union. Thus, for unions containing "null", the "null" is usually 
+      listed first, since the default value of such unions is typically null.)
+    https://avro.apache.org/docs/current/spec.html#schema_record
+      Default values for union fields correspond to the first schema in the 
+      union.
   
-  the easy way would be to just convert reject lines in relayConsensus/relayVote/
-  bridgeStatus to accept lines and be done with it.
-  a comprehensive approach would convert both relay/bridge and 
-  relayConsensus/relayVote/bridgeStatus to the same format.
-  but it seems that this is not really possible. at least that's my impression
-  from KLs latetst mail on the subject - see mail exchange from 26.-28.4., 
-  subject "accept/reject policies"
-  
+json 
+  - test avro 1.8.1 patch
+      that should now indicate where the problem is
+      check why my guess (unimplemented abstract class) was wrong
+        and Blues explanation
+      give feedback
+      submit feature request
+  - implement deprecated json converson
+      with pretty printing
+      
 parquet
   parquet chokes on non-empty output directories if they are not HDFS
   but it is possible to have HDFS on mac.
+  install HDFS on mac (and document how to do that)
   
 documentation
-multithreading - is there an issue?
+  rationale
+  tools used
+  inner workings
+  
 tests in converter code - do they make sense
 massive testing
-json - pretty printing without Avro
 aggregation
       https://metrics.torproject.org/bandwidth-data.html
       https://metrics.torproject.org/servers-data.html

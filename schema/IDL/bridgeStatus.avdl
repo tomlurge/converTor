@@ -87,7 +87,8 @@ protocol bridge_network_status_descriptor {
     union { null, long } published;
     /** see above */
     union { null, FlagTresholds } flag_tresholds;
-    /** metrics-lib/BridgeNetworkStatus: SortedMap<String, NetworkStatusEntry> getStatusEntries()
+    /** metrics-lib/BridgeNetworkStatus:
+     SortedMap<String, NetworkStatusEntry> getStatusEntries()
      status entries, one for each contained bridge */
     union { null, map<Status> } status;
   }
