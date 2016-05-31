@@ -21,7 +21,8 @@ public enum Args {
    * Provide argument defaults
    */
   private boolean verbose = false;
-  private boolean compressed = false;
+  private boolean compressedZ = false;
+  private boolean compressedSnappy = false;
   private boolean pretty = false;
   private boolean json = false;
   private boolean avro = false;
@@ -42,40 +43,40 @@ public enum Args {
 
     Options options = new Options();
     options.addOption("h", "help", false,
-        "display this help text");
+        "Display this help text.");
     options.addOption("f", "format", true,
         "e.g. '-f=json'\n" +
-            "to which serialization format to convert\n" +
-            "defaults to 'parquet'\n" +
-            "possible values are 'avro', 'parquet' and 'json'");
+            "To which serialization format to convert.\n" +
+            "Defaults to 'parquet'.\n" +
+            "Possible values are 'avro', 'parquet' and 'json'.");
     options.addOption("s", "suffix", true,
         "e.g. '-s=_Suffix'");
     options.addOption("i", "inPath", true,
         "e.g. '-i=/my/data/in/dir'\n" +
-            "from which directory to read data\n" +
-            "defaults to 'data/in/'");
+            "From which directory to read data.\n" +
+            "Defaults to 'data/in/'.");
     options.addOption("o", "outPath", true,
-        "e.g. '-o=/my/data/out/dir'\n" +
-            "to which directory to write the converted data\n" +
-            "defaults to 'data/out/<format>/'");
+        "e.g. '-outPath=/my/data/out/dir'\n" +
+            "To which directory to write the converted data.\n" +
+            "Defaults to 'data/out/<format>/'.");
     options.addOption("v", "verbose", false,
-        "encode 'jagged' maps (objects with non-uniform attribute sets) \n" +
-            "additionally as 'flattened' arrays (with suffix '_FLAT')\n" +
-            "and include all properties with 'null' values (the latter is\n" +
-            "only relevant for the JSON encoding).\n" +
-            "some SQL engines like Apache Drill require this.\n" +
-            "CAUTION: this option is not supported yet...");
-            // depending on fixing a bug in the Avro 1.8.0 JSON encoder
-    options.addOption("c", "compressed", false,
-        "use gz codec for JSON and snappy codec for Avro and Parquet");
+        "\nEncodes 'jagged' maps (objects with non-uniform attribute sets)\n" +
+            "additionally as 'flattened' arrays (with suffix '_FLAT').\n" +
+            "Some SQL engines like Apache Drill require this.\n" +
+            "CAVEAT: this option is not supported yet.");
+            // todo
+    options.addOption("cs", "compressedSnappy", false,
+        "compresses output with 'snappy' codec.\n" +
+            "CAVEAT: do not use together with Z compression.");
+    options.addOption("cz", "compressedZ", false,
+        "compresses output with GZip codec (Parquet and JSON) or BZip2 codec (Avro).\n" +
+            "CAVEAT: do not use together with snappy compression.");
     options.addOption("p", "pretty", false,
-        "generate pretty printed JSON output. \n" +
-            "CAUTION: this option is not supported yet...");
-            // depending on fixing a bug in the Avro 1.8.0 JSON encoder
+        "generates pretty printed JSON output.");
     options.addOption("m", "maxFiles", true,
-        "maximum file readers to open, \n" +
-            "e.g. '-m=5'\n" +
-            "defaults to 20");
+        "e.g. '-m=5'\n" +
+            "Maximum file readers to open,\n" +
+            "Defaults to 20");
 
     /* Parse arguments, set parameters */
     CommandLineParser parser = new DefaultParser();
@@ -135,8 +136,13 @@ public enum Args {
     if(cmd.hasOption("p")) {
       setPretty(true);
     }
-    if(cmd.hasOption("c")) {
-      setCompressed(true);
+    if(cmd.hasOption("cs")) {
+      setCompressedSnappy(true);
+      setCompressedZ(false);
+    }
+    if(cmd.hasOption("cz")) {
+      setCompressedZ(true);
+      setCompressedSnappy(false);
     }
     if(cmd.hasOption("m")) {
       try {
@@ -148,23 +154,26 @@ public enum Args {
     }
     setOutputFileEnding(getSuffix()
         + "."
-        + ( isCompressed() && (isAvro() || isParquet()) ? "snappy." : "")
         + getFormat()
-        + ( isCompressed() && isJson() ? ".gz" : ""));
+        + ( isCompressedSnappy() ? ".snappy" : "")
+        + ( isCompressedZ() && (isJson() || isParquet()) ? ".gz" : "")
+        + ( isCompressedZ() && isAvro() ? ".bz2" : "")
+    );
 
     System.out.println(
         "\nConverter from Tor CollecTor data to JSON, Parquet or Avro.\n" +
         "Call with parameter '-h' for help and more options.\n");
     System.out.println("  Current parameters:\n");
-    System.out.println("  format                " + getFormat());
-    System.out.println("  suffix                " + getSuffix());
-    System.out.println("  inPath                " + getInPath());
-    System.out.println("  outPath               " + getOutPath());
-    System.out.println("  verbose               " + isVerbose());
-    System.out.println("  compressed            " + isCompressed());
-    System.out.println("  pretty printed JSON   " + isPretty());
-    System.out.println("  maxFiles files        " + getMaxFiles());
-    System.out.println("  outputFileEnding      " + getOutputFileEnding());
+    System.out.println("  f   format            ('parquet', 'json' or 'avro')    " + getFormat());
+    System.out.println("  s   suffix                                             " + getSuffix());
+    System.out.println("  i   inPath                                             " + getInPath());
+    System.out.println("  o   outPath                                            " + getOutPath());
+    System.out.println("  v   verbose           (only relevant for JSON)         " + isVerbose());
+    System.out.println("  cs  compressedSnappy                                   " + isCompressedSnappy());
+    System.out.println("  cz  compressedZ       (Avro:BZip2, Parquet/JSON:GZip)  " + isCompressedZ());
+    System.out.println("  p   pretty            (pretty printed JSON)            " + isPretty());
+    System.out.println("  m   maxFiles                                           " + getMaxFiles());
+    System.out.println("      outputFileEnding                                   " + getOutputFileEnding());
     System.out.println("\n");
 
   }
@@ -184,11 +193,17 @@ public enum Args {
     this.verbose = verbose;
   }
 
-  boolean isCompressed() {
-    return compressed;
+  boolean isCompressedZ() {
+    return compressedZ;
   }
-  private void setCompressed(boolean compressed) {
-    this.compressed = compressed;
+  private void setCompressedZ(boolean compressedZ) {
+    this.compressedZ = compressedZ;
+  }
+  boolean isCompressedSnappy() {
+    return compressedSnappy;
+  }
+  private void setCompressedSnappy(boolean compressedSnappy) {
+    this.compressedSnappy = compressedSnappy;
   }
 
   boolean isPretty() {

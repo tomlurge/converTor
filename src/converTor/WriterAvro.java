@@ -26,16 +26,27 @@ class WriterAvro implements Writer {
         args.getOutPath() + writerID + args.getOutputFileEnding()
     );
 
+    /* specific datum writer */
     DatumWriter avroDatumWriter = new SpecificDatumWriter(schema);
+
+    /* file writer */
     fileWriter = new DataFileWriter(avroDatumWriter);
-    if (args.isCompressed())
+    if (args.isCompressedSnappy()) {
       fileWriter.setCodec(CodecFactory.snappyCodec());
+    }
+    else if (args.isCompressedZ()) {
+      fileWriter.setCodec(CodecFactory.bzip2Codec());
+      // fileWriter.setCodec(CodecFactory.deflateCodec(CodecFactory.DEFAULT_DEFLATE_LEVEL));
+      // fileWriter.setCodec(CodecFactory.xzCodec(CodecFactory.DEFAULT_XZ_LEVEL));
+    }
     fileWriter.create(schema, outputFile);
 
   }
 
   public void append(SpecificRecord load) throws IOException {
+    /*  call fileWriter (which holds datumWriter/schema) */
     DataFileWriter<SpecificRecord> avroWriter = (DataFileWriter) fileWriter;
+    /*  append load to fileWriter */
     avroWriter.append(load);
   }
 

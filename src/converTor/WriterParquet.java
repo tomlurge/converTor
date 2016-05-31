@@ -9,7 +9,7 @@ import org.apache.parquet.hadoop.ParquetWriter;
 import org.apache.parquet.hadoop.metadata.CompressionCodecName;
 
 
-//  parquet-mr
+/* uses parquet-mr */
 class WriterParquet implements Writer {
 
   Schema schema;
@@ -29,11 +29,16 @@ class WriterParquet implements Writer {
     fileWriter = AvroParquetWriter.builder(outputPath)
         .withSchema(schema)
         .withCompressionCodec(
-            args.isCompressed()
+            args.isCompressedSnappy()
+              ?
+              CompressionCodecName.SNAPPY
+              :
+              args.isCompressedZ()
                 ?
-                CompressionCodecName.SNAPPY
+                CompressionCodecName.GZIP
                 :
                 CompressionCodecName.UNCOMPRESSED
+
         )
         .build();
 

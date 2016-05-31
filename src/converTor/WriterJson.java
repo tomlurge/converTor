@@ -1,9 +1,14 @@
 package converTor;
 
 import java.io.*;
-import java.util.zip.GZIPOutputStream;
 import org.apache.avro.Schema;
 import org.apache.avro.specific.SpecificRecord;
+import org.xerial.snappy.SnappyOutputStream;
+
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
+import java.util.zip.GZIPOutputStream;
 
 
 class WriterJson implements Writer {
@@ -23,7 +28,16 @@ class WriterJson implements Writer {
     );
 
     java.io.Writer jsonWriter;
-    if (args.isCompressed()) {
+
+    if (args.isCompressedSnappy()) {
+      jsonWriter =
+          new OutputStreamWriter(
+              new SnappyOutputStream(
+                  new FileOutputStream(outputFile)
+              )
+          );
+    }
+    else if (args.isCompressedZ()) {
       jsonWriter =
           new OutputStreamWriter(
               new GZIPOutputStream(
@@ -39,7 +53,21 @@ class WriterJson implements Writer {
   }
 
   public void append(SpecificRecord load) throws IOException {
-    fileWriter.write(load + "\n");
+    if (args.isPretty()) {
+      ScriptEngineManager manager = new ScriptEngineManager();
+      ScriptEngine scriptEngine = manager.getEngineByName("JavaScript");
+      scriptEngine.put("jsonString", load);
+      try {
+        scriptEngine.eval("result = JSON.stringify(JSON.parse(jsonString), null, 2)");
+      } catch (ScriptException e) {
+        e.printStackTrace();
+      }
+      String prettyLoad = (String) scriptEngine.get("result");
+      fileWriter.write(prettyLoad + "\n");
+    }
+    else {
+      fileWriter.write(load + "\n");
+    }
   }
 
   public void close() throws IOException {
