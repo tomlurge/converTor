@@ -1,4 +1,6 @@
 # TODO
+
+verbosity
     
 defaults
   it is possible to have defaults with Avro, but they have to be declared 
@@ -15,16 +17,6 @@ defaults
     https://avro.apache.org/docs/current/spec.html#schema_record
       Default values for union fields correspond to the first schema in the 
       union.
-  
-json 
-  - test avro 1.8.1 patch
-      that should now indicate where the problem is
-      check why my guess (unimplemented abstract class) was wrong
-        and Blues explanation
-      give feedback
-      submit feature request
-  - implement deprecated json converson
-      with pretty printing
       
 parquet
   parquet chokes on non-empty output directories if they are not HDFS
@@ -145,8 +137,47 @@ drill
 * problems with JSON number conversion? see: 
     https://docs.oracle.com/cd/E26161_02/html/GettingStartedGuide/jsonbinding-overview.html
   
+* compression
+    
+      avro        (1) deflate snappy      (6)               bzip2       xz
+      parquet-mr  (2)         snappy      gzip  lzo
+      json        (3)         snappy (4)  gzip        zip   bzip2 (5)
 
-
+   
+  (1) https://avro.apache.org/docs/current/api/java/org/apache/avro/file/CodecFactory.html
+  (2) https://github.com/Parquet/parquet-mr/blob/master/parquet-hadoop/src/main/java/parquet/hadoop/metadata/CompressionCodecName.java
+  (3) https://docs.oracle.com/javase/7/docs/api/java/util/zip/DeflaterOutputStream.html
+  (4) https://github.com/dain/snappy/blob/master/src/main/java/org/iq80/snappy/SnappyOutputStream.java
+  (5) https://www.google.de/#q=bzip2OutputStream
+  
+  more 
+      https://www.cloudera.com/documentation/archive/impala/1-x/1-0-1/Installing-and-Using-Impala/ciiu_file_formats.html
+      (6) some remarks on the interwebs suggest that "deflate" is the same as 
+          gzip but i'm not sure
+  snappy is a well established hadoop format and available out of the box for 
+  avro and parquet, so a no-brainer
+  "z compression" is not that easy though. gz and xz are popular in the unix 
+  world, but both not supported by all 3 formats. 
+  bzip2 has the advantage (also over snappy) of being splittable and therefore 
+  well suited for parallelized settings but only avro supports it out of the 
+  box.
+  but gzip is much faster than bzip2.
+    https://blogs.oracle.com/datawarehousing/entry/hadoop_compression_choosing_compression_codec
+  gzip is very effective (bzip2 even more so), snappy is very fast.
+    see http://www.slideshare.net/Hadoop_Summit/kamat-singh-june27425pmroom210cv2 slide 8
+  i guess that in the end all codecs are available for all formats if one only 
+  knows where to look and how to do it
+  i would like to support
+      snappy    fast (still good compression), ubiquitous in hadoop land
+      gz        good compression (still fast), ubiquitous in unix land
+      bzip2     splittable, very good compression (but can be slow)
+       
+  so far i settled for snappy (all formats), gzip (parquet and json) and bzip2 
+  (avro). that should give something for everybody.
+   
+   
+  
+   
 # CONSTRUCTION MATERIALS
 
 

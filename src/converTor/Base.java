@@ -75,7 +75,7 @@ class Base {
         /* convert descriptor */
         converter.convert(descriptor);
 
-        //  todo    remove test
+        //  todo   remove after testing
         //  System.out.println(converter.load);
 
         /* get appropriate output writer */

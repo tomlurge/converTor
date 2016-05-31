@@ -52,7 +52,6 @@ enum Types {
     try {
       Schema.Parser parser = new Schema.Parser();
       this.avsc = parser.parse(
-          // new File("src/converTor/encoders/schema/" + this.name + ".avsc") todo remove after testing
           new File("schema/" + this.name + ".avsc")
       );
     } catch (IOException e) {
