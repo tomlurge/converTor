@@ -20,7 +20,6 @@ public enum Args {
   /**
    * Provide argument defaults
    */
-  private boolean verbose = false;
   private boolean compressedZ = false;
   private boolean compressedSnappy = false;
   private boolean pretty = false;
@@ -59,12 +58,6 @@ public enum Args {
         "e.g. '-outPath=/my/data/out/dir'\n" +
             "To which directory to write the converted data.\n" +
             "Defaults to 'data/out/<format>/'.");
-    options.addOption("v", "verbose", false,
-        "\nEncodes 'jagged' maps (objects with non-uniform attribute sets)\n" +
-            "additionally as 'flattened' arrays (with suffix '_FLAT').\n" +
-            "Some SQL engines like Apache Drill require this.\n" +
-            "CAVEAT: this option is not supported yet.");
-            // todo
     options.addOption("cs", "compressedSnappy", false,
         "compresses output with 'snappy' codec.\n" +
             "CAVEAT: do not use together with Z compression.");
@@ -130,9 +123,6 @@ public enum Args {
     if(cmd.hasOption("o") && cmd.getOptionValue("o") != null) {
       setOutPath(cmd.getOptionValue("o"));
     }
-    if(cmd.hasOption("v")) {
-      setVerbose(true);
-    }
     if(cmd.hasOption("p")) {
       setPretty(true);
     }
@@ -168,7 +158,6 @@ public enum Args {
     System.out.println("  s   suffix                                             " + getSuffix());
     System.out.println("  i   inPath                                             " + getInPath());
     System.out.println("  o   outPath                                            " + getOutPath());
-    System.out.println("  v   verbose           (only relevant for JSON)         " + isVerbose());
     System.out.println("  cs  compressedSnappy                                   " + isCompressedSnappy());
     System.out.println("  cz  compressedZ       (Avro:BZip2, Parquet/JSON:GZip)  " + isCompressedZ());
     System.out.println("  p   pretty            (pretty printed JSON)            " + isPretty());
@@ -184,13 +173,6 @@ public enum Args {
   }
   private void setInPath(String inPath) {
     this.inPath = inPath;
-  }
-
-  boolean isVerbose() {
-    return verbose;
-  }
-  private void setVerbose(boolean verbose) {
-    this.verbose = verbose;
   }
 
   boolean isCompressedZ() {
