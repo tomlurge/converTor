@@ -34,12 +34,14 @@
         </mapper>
     </pathconvert>
 
+
     <!-- targets -->
     <target name="init">
         <mkdir dir="${build.dir}" />
     </target>
 
-    <!-- To work with external libraries, need classpath to compile -->
+
+    <!-- To work with external libraries, needs classpath to compile -->
     <target name="compile"
             depends="init"
             description="compile the source ">
@@ -48,20 +50,19 @@
                destdir="${build.dir}"
                classpathref="classpath" />
     </target>
-    <target name="copy-dependencies">
+
+    <target name="copy-schemata">
+        <copy todir="${dist.schema.dir}">
+            <fileset dir="${src.schema.dir}"
+                     includes="**/*.avsc" />
+        </copy>
+    </target>
+
+    <target name="copy-doc">
         <copy todir="${dist.dir}">
             <fileset dir="${root.dir}"
                      includes="build.xml, README.md"
                      excludes="**/.*.*, **/*.iml" />
-        </copy>
-        <copy todir="${dist.lib.dir}">
-            <fileset dir="${lib.dir}"
-                     includes="**/*.jar"
-                     excludes="**/*sources.jar, **/*javadoc.jar" />
-        </copy>
-        <copy todir="${dist.schema.dir}">
-            <fileset dir="${src.schema.dir}"
-                     includes="**/*.avsc" />
         </copy>
         <copy todir="${dist.docs.dir}">
             <fileset dir="${src.docs.dir}"
@@ -70,10 +71,18 @@
         </copy>
     </target>
 
+    <target name="copy-dependencies">
+        <copy todir="${dist.lib.dir}">
+            <fileset dir="${lib.dir}"
+                     includes="**/*.jar"
+                     excludes="**/*sources.jar, **/*javadoc.jar" />
+        </copy>
+    </target>
 
-    <!-- jar it, and declares the ext libraries in manifest.mf file -->
+
+    <!-- jar it, and declare the ext libraries in manifest.mf file -->
     <target name="jar"
-            depends="compile, copy-dependencies"
+            depends="compile, copy-schemata, copy-doc, copy-dependencies"
             description="package, output to JAR">
 
         <exec executable="git" outputproperty="git.revision">
@@ -103,12 +112,47 @@
         </jar>
     </target>
 
+
+    <!-- jar it, bundle dependencies -->
+    <target name="bundle"
+            depends="compile"
+            description="package, output to JAR. include dependencies and schemata">
+
+        <exec executable="git" outputproperty="git.revision">
+            <arg value="rev-parse" />
+            <arg value="--short" />
+            <arg value="HEAD" />
+        </exec>
+
+        <echo message="classpath.name : ${classpath.name} " />
+
+        <mkdir dir="${dist.dir}" />
+
+        <jar jarfile="${dist.dir}/${projectName}.jar"
+             basedir="${build.dir}">
+            <zipgroupfileset dir="lib" includes="*.jar"/>
+            <zipfileset dir="schema" prefix="schema" includes="*.avsc"/>
+            <manifest>
+                <attribute name="Implementation-Title" value="ConverTor"/>
+                <attribute name="Created-By"
+                           value="~oma for (but not by) The Tor Project" />
+                <attribute name="Implementation-Version"
+                           value="${release.version}-${git.revision}"/>
+                <attribute name="Main-Class" value="${main-class}" />
+                <attribute name="Class-Path" value="${classpath.name}" />
+            </manifest>
+        </jar>
+    </target>
+
+
     <target name="clean" description="clean up">
         <delete dir="${build.dir}" />
         <delete dir="${dist.dir}" />
     </target>
 
+
     <!-- Default, run this -->
     <target name="main" depends="clean, compile, jar" />
+
 
 </project>
