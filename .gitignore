@@ -1,25 +1,8 @@
-/out
-### TextMate template
-*.tmproj
-*.tmproject
-tmtags
 .idea
 
-# Created by .ignore support plugin (hsz.mobi)
-gson-2.4.jar
-gson-2.3.1-javadoc.jar
-gson-2.3.1-sources.jar
-
-
-# tomlurge
-/collected
-/bin
-/src/org
-/mteam/TestMe.java
-TestMe.java
-TestMeToo.java
 *.pdf
 *.iml
-classes
 build
 /jar-*
+/out
+/data
