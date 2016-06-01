@@ -6,11 +6,11 @@
     <property name="src.dir" location="src" />
     <property name="src.schema.dir" location="schema" />
     <property name="src.docs.dir" location="docs" />
-    <property name="build.dir" location="jar-build" />
-    <property name="dist.dir" location="jar-dist" />
-    <property name="dist.lib.dir" location="jar-dist/lib" />
-    <property name="dist.schema.dir" location="jar-dist/schema" />
-    <property name="dist.docs.dir" location="jar-dist/docs" />
+    <property name="build.dir" location="build" />
+    <property name="dist.dir" location="dist" />
+    <property name="dist.lib.dir" location="dist/lib" />
+    <property name="dist.schema.dir" location="dist/schema" />
+    <property name="dist.docs.dir" location="dist/docs" />
     <property name="lib.dir" value="lib" />
     <property name="main-class" value="converTor.Base" />
 
