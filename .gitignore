@@ -1,7 +1,9 @@
+# directories
 .idea
-
-*.pdf
-*.iml
 build
 out
 data
+
+# file types
+*.pdf
+*.iml
