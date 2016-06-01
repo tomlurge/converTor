@@ -1,6 +1,17 @@
 todo  this needs more love
 
 
+    build convertor
+      on the shell navigate to project directory (same level as build.xml)
+      standard: 
+        run 'ant jar'
+      bundled with dependencies and schemata:
+        run 'ant jar bundle'
+      look into ./jar-dist for result
+      
+
+
+
     building metrics-lib
         add a directory <root-dir>/lib alongside <root>/src
         download and add all dependencies mentioned in build.xml to /lib

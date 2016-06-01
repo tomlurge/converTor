@@ -1,22 +1,4 @@
 # TODO
-
-verbosity
-    
-defaults
-  it is possible to have defaults with Avro, but they have to be declared 
-  explicitly and the corresponding type has to be the first in the union.
-    see:
-    https://avro.apache.org/docs/current/spec.html#Unions
-      Unions, as mentioned above, are represented using JSON arrays. For 
-      example, ["null", "string"] declares a schema which may be either a null 
-      or string.
-      (Note that when a default value is specified for a record field whose type 
-      is a union, the type of the default value must match the first element of 
-      the union. Thus, for unions containing "null", the "null" is usually 
-      listed first, since the default value of such unions is typically null.)
-    https://avro.apache.org/docs/current/spec.html#schema_record
-      Default values for union fields correspond to the first schema in the 
-      union.
       
 parquet
   parquet chokes on non-empty output directories if they are not HDFS
@@ -47,8 +29,6 @@ drill
       
   - bridgeStatus
       PROCRASTINATED 
-        
-      - con.setFastSpeed  desc.getFastBandwidth()); // fastSpeed? stupid name!
       
       - datumsfeld in allen konvertierten descriptoren
           muß in die IDL ? wie benamsen? 
@@ -65,20 +45,7 @@ drill
             setPublication in relayVote.R
         
         -   fastSpeed zu fastBandwidth
-        
-     DONE  
-      umbenamsung bridgeStatus.FlagTresholds.setIgnoringAdvertisedBws
        
-      bridgeStatus.avdl z92 array > map
-      ConvertBridgeStatus.java z47 ff
-      
-      relayVote.avdl z81 array > map
-      ConvertRelayVote z93 ff
-
-      metrics-lib updates
-        - Include the hostname in directory source entries of consensuses
-          and votes. (11.04.16)
-      
       
 
 # PROJECTS
@@ -137,6 +104,31 @@ drill
 * problems with JSON number conversion? see: 
     https://docs.oracle.com/cd/E26161_02/html/GettingStartedGuide/jsonbinding-overview.html
   
+
+* verbosity
+  removed option for verbose output ("flattened" instead of "jagged" arrays, 
+  suitable for Drill).
+  realizing this option would require to modify the schemata and break the way 
+  how they currently nicely document the spec. this and the added complexity 
+  seems not to be worth the effort. "Drill-able" arrays will have to be created 
+  later on when need arises.
+    
+* defaults
+  it is possible to have defaults with Avro, but they have to be declared 
+  explicitly and the corresponding type has to be the first in the union.
+    see:
+    https://avro.apache.org/docs/current/spec.html#Unions
+      Unions, as mentioned above, are represented using JSON arrays. For 
+      example, ["null", "string"] declares a schema which may be either a null 
+      or string.
+      (Note that when a default value is specified for a record field whose type 
+      is a union, the type of the default value must match the first element of 
+      the union. Thus, for unions containing "null", the "null" is usually 
+      listed first, since the default value of such unions is typically null.)
+    https://avro.apache.org/docs/current/spec.html#schema_record
+      Default values for union fields correspond to the first schema in the 
+      union.
+      
 * compression
     
       avro        (1) deflate snappy      (6)               bzip2       xz
