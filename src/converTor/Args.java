@@ -30,6 +30,7 @@ public enum Args {
   private String inPath = "data/in/";
   private String outPath = "data/out/" + getFormat() + "/";
   private String suffix = "";
+  private boolean debug = false;
   private int maxFiles = 20;
   private String outputFileEnding;
 
@@ -70,6 +71,8 @@ public enum Args {
         "e.g. '-m=5'\n" +
             "Maximum file readers to open,\n" +
             "Defaults to 20");
+    options.addOption("d", "debug", false,
+        "Print JSON representation of each converted descriptor to console.");
 
     /* Parse arguments, set parameters */
     CommandLineParser parser = new DefaultParser();
@@ -142,6 +145,9 @@ public enum Args {
         System.exit(1);
       }
     }
+    if(cmd.hasOption("d")) {
+      setDebug(true);
+    }
     setOutputFileEnding(getSuffix()
         + "."
         + getFormat()
@@ -162,6 +168,7 @@ public enum Args {
     System.out.println("  cz  compressedZ       (Avro:BZip2, Parquet/JSON:GZip)  " + isCompressedZ());
     System.out.println("  p   pretty            (pretty printed JSON)            " + isPretty());
     System.out.println("  m   maxFiles                                           " + getMaxFiles());
+    System.out.println("  d   debug             (print descriptors to console)   " + getDebug());
     System.out.println("      outputFileEnding                                   " + getOutputFileEnding());
     System.out.println("\n");
 
@@ -235,6 +242,13 @@ public enum Args {
   }
   private void setSuffix(String suffix) {
     this.suffix = suffix;
+  }
+
+  boolean getDebug() {
+    return debug;
+  }
+  private void setDebug(boolean debug) {
+    this.debug = debug;
   }
 
   int getMaxFiles() {
