@@ -76,7 +76,7 @@ class Base {
         converter.convert(descriptor);
 
         //  todo   remove after testing
-        //  System.out.println(converter.load);
+        System.out.println(converter.load);
 
         /* get appropriate output writer */
         Writer writer = writers.getWriter(converter.type, converter.date);
