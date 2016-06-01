@@ -98,8 +98,8 @@
         <mkdir dir="${dist.lib.dir}" />
         <mkdir dir="${dist.docs.dir}" />
 
-        <jar jarfile="${dist.dir}/${projectName}-${release.version}-${git.revision}.jar"
-             basedir="${build.dir}">
+        <jar basedir="${build.dir}"
+             jarfile="${dist.dir}/${projectName}-${release.version}.jar"><!-- -${git.revision} -->
             <manifest>
                 <attribute name="Implementation-Title" value="ConverTor"/>
                 <attribute name="Created-By"
@@ -128,7 +128,7 @@
 
         <mkdir dir="${dist.dir}" />
 
-        <jar jarfile="${dist.dir}/${projectName}.jar"
+        <jar jarfile="${dist.dir}/${projectName}-bundle-${release.version}.jar"
              basedir="${build.dir}">
             <zipgroupfileset dir="lib" includes="*.jar"/>
             <zipfileset dir="schema" prefix="schema" includes="*.avsc"/>

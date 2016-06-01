@@ -1,0 +1,352 @@
+{
+  "type" : "record",
+  "name" : "RelayVote",
+  "namespace" : "converTor.encoders.relayVote",
+  "fields" : [ {
+    "name" : "descriptor_type",
+    "type" : "string",
+    "doc" : "metrics-lib/RelayNetworkStatusVote:",
+    "default" : "network-status-vote-3 1.0"
+  }, {
+    "name" : "network_status_version",
+    "type" : "int",
+    "doc" : "metrics-lib/RelayNetworkStatusVote: int getNetworkStatusVersion()",
+    "default" : 3
+  }, {
+    "name" : "vote_status",
+    "type" : [ "null", "string" ],
+    "doc" : "\"vote\" per definition, no getter",
+    "default" : "vote"
+  }, {
+    "name" : "consensus_methods",
+    "type" : {
+      "type" : "array",
+      "items" : "int"
+    },
+    "doc" : "metrics-lib/RelayNetworkStatusVote:\n        List<Integer> getConsensusMethods()"
+  }, {
+    "name" : "published",
+    "type" : [ "null", "long" ],
+    "doc" : "metrics-lib/RelayNetworkStatusVote: long getPublishedMillis()"
+  }, {
+    "name" : "valid_after",
+    "type" : [ "null", "long" ],
+    "doc" : "metrics-lib/RelayNetworkStatusVote: long getValidAfterMillis()"
+  }, {
+    "name" : "flag_tresholds",
+    "type" : [ "null", {
+      "type" : "record",
+      "name" : "FlagTresholds",
+      "fields" : [ {
+        "name" : "stable_uptime",
+        "type" : [ "null", "long" ],
+        "doc" : "metrics-lib/RelayNetworkStatusVote: long getStableUptime()"
+      }, {
+        "name" : "stable_mtbf",
+        "type" : [ "null", "long" ],
+        "doc" : "metrics-lib/RelayNetworkStatusVote: long getStableMtbf()"
+      }, {
+        "name" : "enough_mtbf",
+        "type" : [ "null", "int" ],
+        "doc" : "metrics-lib/RelayNetworkStatusVote: int getEnoughMtbfInfo()"
+      }, {
+        "name" : "fast_speed",
+        "type" : [ "null", "long" ],
+        "doc" : "metrics-lib/RelayNetworkStatusVote: long getFastBandwidth()"
+      }, {
+        "name" : "guard_wfu",
+        "type" : [ "null", "double" ],
+        "doc" : "metrics-lib/RelayNetworkStatusVote: double getGuardWfu()"
+      }, {
+        "name" : "guard_tk",
+        "type" : [ "null", "long" ],
+        "doc" : "metrics-lib/RelayNetworkStatusVote: long getGuardTk()"
+      }, {
+        "name" : "guard_bw_inc_exits",
+        "type" : [ "null", "long" ],
+        "doc" : "metrics-lib/RelayNetworkStatusVote:\n        long getGuardBandwidthIncludingExits()"
+      }, {
+        "name" : "guard_bw_exc_exits",
+        "type" : [ "null", "long" ],
+        "doc" : "metrics-lib/RelayNetworkStatusVote:\n        long getGuardBandwidthExcludingExits()"
+      }, {
+        "name" : "ignoring_advertised_bws",
+        "type" : [ "null", "int" ],
+        "doc" : "metrics-lib/RelayNetworkStatusVote: int getIgnoringAdvertisedBws()"
+      } ]
+    } ],
+    "doc" : "see above"
+  }, {
+    "name" : "fresh_until",
+    "type" : [ "null", "long" ],
+    "doc" : "metrics-lib/RelayNetworkStatusVote: long getFreshUntilMillis()"
+  }, {
+    "name" : "valid_until",
+    "type" : [ "null", "long" ],
+    "doc" : "metrics-lib/RelayNetworkStatusVote: long getValidUntilMillis()"
+  }, {
+    "name" : "voting_delay",
+    "type" : [ "null", {
+      "type" : "record",
+      "name" : "Vote",
+      "fields" : [ {
+        "name" : "vote_seconds",
+        "type" : [ "null", "long" ],
+        "doc" : "metrics-lib/RelayNetworkStatusVote: long getVoteSeconds()"
+      }, {
+        "name" : "dist_seconds",
+        "type" : [ "null", "long" ],
+        "doc" : "metrics-lib/RelayNetworkStatusVote: long getDistSeconds()"
+      } ]
+    } ],
+    "doc" : "see above"
+  }, {
+    "name" : "client_versions",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "doc" : "metrics-lib/RelayNetworkStatusVote:\n        List<String> getRecommendedClientVersions()"
+  }, {
+    "name" : "server_versions",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "doc" : "metrics-lib/RelayNetworkStatusVote:\n        List<String> getRecommendedServerVersions()"
+  }, {
+    "name" : "known_flags",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "doc" : "metrics-lib/RelayNetworkStatusVote: SortedSet<String> getKnownFlags()"
+  }, {
+    "name" : "params",
+    "type" : [ "null", {
+      "type" : "map",
+      "values" : "int"
+    } ],
+    "doc" : "metrics-lib/RelayNetworkStatusVote:\n        SortedMap<String, Integer> getConsensusParams()"
+  }, {
+    "name" : "dir_source",
+    "type" : [ "null", {
+      "type" : "record",
+      "name" : "DirSource",
+      "fields" : [ {
+        "name" : "nickname",
+        "type" : [ "null", "string" ],
+        "doc" : "metrics-lib/RelayNetworkStatusVote: String getNickname()"
+      }, {
+        "name" : "identity",
+        "type" : [ "null", "string" ],
+        "doc" : "metrics-lib/RelayNetworkStatusVote: String getIdentity("
+      }, {
+        "name" : "hostname",
+        "type" : [ "null", "string" ],
+        "doc" : "metrics-lib/RelayNetworkStatusVote: String getHostname()"
+      }, {
+        "name" : "address",
+        "type" : [ "null", "string" ],
+        "doc" : "metrics-lib/RelayNetworkStatusVote: String getAddress()"
+      }, {
+        "name" : "dir_port",
+        "type" : [ "null", "int" ],
+        "doc" : "metrics-lib/RelayNetworkStatusVote: int getDirport()"
+      }, {
+        "name" : "or_port",
+        "type" : [ "null", "int" ],
+        "doc" : "metrics-lib/RelayNetworkStatusVote: int getOrport()"
+      } ]
+    } ],
+    "doc" : "see above"
+  }, {
+    "name" : "contact",
+    "type" : [ "null", "string" ],
+    "doc" : "metrics-lib/RelayNetworkStatusVote: String getContactLine()"
+  }, {
+    "name" : "legacy_dir_key",
+    "type" : [ "null", "string" ],
+    "doc" : "metrics-lib/RelayNetworkStatusVote: String getLegacyDirKey()"
+  }, {
+    "name" : "directory_key",
+    "type" : [ "null", {
+      "type" : "record",
+      "name" : "DirKey",
+      "fields" : [ {
+        "name" : "version",
+        "type" : [ "null", "int" ],
+        "doc" : "metrics-lib/RelayNetworkStatusVote: int getDirKeyCertificateVersion()"
+      }, {
+        "name" : "dir_key_published",
+        "type" : [ "null", "long" ],
+        "doc" : "metrics-lib/RelayNetworkStatusVote: long getDirKeyPublishedMillis()"
+      }, {
+        "name" : "dir_key_expires",
+        "type" : [ "null", "long" ],
+        "doc" : "metrics-lib/RelayNetworkStatusVote: long getDirKeyExpiresMillis()"
+      } ]
+    } ],
+    "doc" : "see above"
+  }, {
+    "name" : "status",
+    "type" : [ "null", {
+      "type" : "map",
+      "values" : {
+        "type" : "record",
+        "name" : "Status",
+        "fields" : [ {
+          "name" : "r",
+          "type" : [ "null", {
+            "type" : "record",
+            "name" : "R",
+            "fields" : [ {
+              "name" : "nickname",
+              "type" : [ "null", "string" ],
+              "doc" : "metrics-lib/NetworkStatusEntry: String getNickname()"
+            }, {
+              "name" : "identity",
+              "type" : [ "null", "string" ],
+              "doc" : "metrics-lib/NetworkStatusEntry: String getFingerprint()"
+            }, {
+              "name" : "digest",
+              "type" : [ "null", "string" ],
+              "doc" : "metrics-lib/NetworkStatusEntry: String getDescriptor()"
+            }, {
+              "name" : "publication",
+              "type" : [ "null", "long" ],
+              "doc" : "metrics-lib/NetworkStatusEntry: long getPublishedMillis()"
+            }, {
+              "name" : "ip",
+              "type" : [ "null", "string" ],
+              "doc" : "metrics-lib/NetworkStatusEntry: String getAddress()"
+            }, {
+              "name" : "or_port",
+              "type" : [ "null", "int" ],
+              "doc" : "metrics-lib/NetworkStatusEntry: int getOrPort()"
+            }, {
+              "name" : "dir_port",
+              "type" : [ "null", "int" ],
+              "doc" : "metrics-lib/NetworkStatusEntry: int getDirPort()"
+            } ]
+          } ]
+        }, {
+          "name" : "a",
+          "type" : [ "null", {
+            "type" : "array",
+            "items" : {
+              "type" : "record",
+              "name" : "OrAddress",
+              "fields" : [ {
+                "name" : "address",
+                "type" : [ "null", "string" ],
+                "doc" : "implementation specific, see actual converter"
+              }, {
+                "name" : "port",
+                "type" : [ "null", "int" ],
+                "doc" : "implementation specific, see actual converter"
+              } ]
+            }
+          } ]
+        }, {
+          "name" : "s",
+          "type" : [ "null", {
+            "type" : "array",
+            "items" : "string"
+          } ],
+          "doc" : "metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags()"
+        }, {
+          "name" : "v",
+          "type" : [ "null", "string" ],
+          "doc" : "metrics-lib/NetworkStatusEntry: String getVersion()"
+        }, {
+          "name" : "w",
+          "type" : [ "null", {
+            "type" : "record",
+            "name" : "W",
+            "fields" : [ {
+              "name" : "bandwidth",
+              "type" : [ "null", "long" ],
+              "doc" : "metrics-lib/NetworkStatusEntry: long getBandwidth()"
+            }, {
+              "name" : "measured",
+              "type" : [ "null", "long" ],
+              "doc" : "metrics-lib/NetworkStatusEntry: long getMeasured()"
+            }, {
+              "name" : "unmeasured",
+              "type" : [ "null", "boolean" ],
+              "doc" : "metrics-lib/NetworkStatusEntry: boolean getUnmeasured()"
+            } ]
+          } ],
+          "doc" : "see above"
+        }, {
+          "name" : "p",
+          "type" : [ "null", {
+            "type" : "record",
+            "name" : "Policy",
+            "fields" : [ {
+              "name" : "default_policy",
+              "type" : [ "null", "string" ],
+              "doc" : "metrics-lib/NetworkStatusEntry: String getDefaultPolicy()"
+            }, {
+              "name" : "port_summary",
+              "type" : [ "null", "string" ],
+              "doc" : "metrics-lib/NetworkStatusEntry: String getPortList()"
+            } ]
+          } ],
+          "doc" : "see above"
+        }, {
+          "name" : "id",
+          "type" : [ "null", {
+            "type" : "record",
+            "name" : "ID",
+            "fields" : [ {
+              "name" : "ed25519",
+              "type" : [ "null", "boolean" ],
+              "doc" : "metrics-lib/NetworkStatusEntry: String getMasterKeyEd25519()"
+            } ]
+          } ],
+          "doc" : "see above"
+        } ]
+      }
+    } ],
+    "doc" : "metrics-lib/RelayNetworkStatusVote:\n        SortedMap<String, NetworkStatusEntry> getStatusEntries()"
+  }, {
+    "name" : "directory_footer",
+    "type" : [ "null", {
+      "type" : "record",
+      "name" : "DirFooter",
+      "fields" : [ {
+        "name" : "directory_signature",
+        "type" : [ "null", {
+          "type" : "record",
+          "name" : "DirSig",
+          "fields" : [ {
+            "name" : "algorithm",
+            "type" : [ "null", "string" ],
+            "doc" : "metrics-lib/DirectorySignature: String getAlgorithm()"
+          }, {
+            "name" : "identity",
+            "type" : [ "null", "string" ],
+            "doc" : "metrics-lib/DirectorySignature: String getIdentity()"
+          }, {
+            "name" : "signing_key_digest",
+            "type" : [ "null", "string" ],
+            "doc" : "metrics-lib/DirectorySignature: String getSigningKeyDigest()"
+          }, {
+            "name" : "signature",
+            "type" : [ "null", "boolean" ],
+            "doc" : "metrics-lib/DirectorySignature: String getSignature()"
+          } ]
+        } ],
+        "doc" : "metrics-lib/RelayNetworkStatusVote:\n        SortedMap<String, DirectorySignature> getDirectorySignatures()"
+      } ]
+    } ],
+    "doc" : "see above"
+  }, {
+    "name" : "signing_key_digest",
+    "type" : [ "null", "string" ],
+    "doc" : "metrics-lib/RelayNetworkStatusVote: String getSigningKeyDigest()"
+  } ],
+  "aliases" : [ "relay_network_status_vote_3" ]
+}
