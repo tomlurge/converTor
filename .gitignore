@@ -3,6 +3,5 @@
 *.pdf
 *.iml
 build
-/jar-*
-/out
-/data
+out
+data
