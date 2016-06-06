@@ -1,5 +1,18 @@
 # TODO
-      
+
+torperf
+  incorporate descriptor 1.2 update
+  build new version of convertor
+  update github
+  write documentation
+  ask iwekah for review
+
+repair hdfs on server
+
+start conversion to .parquet.snappy
+  
+  
+  
 parquet
   parquet chokes on non-empty output directories if they are not HDFS
   but it is possible to have HDFS on mac.
@@ -11,7 +24,7 @@ documentation
   inner workings
   
 tests in converter code - do they make sense
-massive testing
+
 aggregation
       https://metrics.torproject.org/bandwidth-data.html
       https://metrics.torproject.org/servers-data.html

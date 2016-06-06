@@ -168,7 +168,7 @@ public enum Args {
     System.out.println("  cz  compressedZ       (Avro:BZip2, Parquet/JSON:GZip)  " + isCompressedZ());
     System.out.println("  p   pretty            (pretty printed JSON)            " + isPretty());
     System.out.println("  m   maxFiles                                           " + getMaxFiles());
-    System.out.println("  d   debug             (print descriptors to console)   " + getDebug());
+    System.out.println("  d   debug             (print descriptors to console)   " + isDebug());
     System.out.println("      outputFileEnding                                   " + getOutputFileEnding());
     System.out.println("\n");
 
@@ -244,7 +244,7 @@ public enum Args {
     this.suffix = suffix;
   }
 
-  boolean getDebug() {
+  boolean isDebug() {
     return debug;
   }
   private void setDebug(boolean debug) {

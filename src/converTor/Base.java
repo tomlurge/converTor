@@ -74,8 +74,7 @@ class Base {
 
         /* convert descriptor */
         converter.convert(descriptor);
-
-        if (args.getDebug()) {
+        if (args.isDebug()) {
           System.out.println(converter.load);
         }
 
@@ -83,7 +82,15 @@ class Base {
         Writer writer = writers.getWriter(converter.type, converter.date);
 
         /* append converted descriptor to output writer */
-        writer.append(converter.load);
+        try {
+          writer.append(converter.load);
+        }
+        catch (Throwable e){
+          System.out.println(e);
+          System.out.println("in descriptor of type " + converter.type
+              + " at date " + converter.date + " with data:");
+          System.out.println(converter.load);
+        }
 
         /* check for unrecognized attributes */
         converter.checkUnrecognized(descriptor, currentFile);
