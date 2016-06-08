@@ -6,7 +6,8 @@ logging
   what's wrong with sl4j and do we need it?
   how to exclude .DS_Store warning on mac
 
-build nochmal
+build
+  put this into documentation
 
 write documentation
   rationale

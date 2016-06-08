@@ -10,6 +10,11 @@ todo  this needs more love
       look into ./jar-dist for result
       
 
+      annoying java.lang.SecurityException: 
+      Invalid signature file digest for Manifest main attributes
+      https://stackoverflow.com/questions/1274879/ant-exclude-files-from-merged-jar-file
+        answer #2 (alberto) saved my ass
+        makes the build.xml slihjtly more involved though...
 
 
     building metrics-lib

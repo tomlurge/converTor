@@ -36,6 +36,7 @@
 
 
     <!-- targets -->
+
     <target name="init">
         <mkdir dir="${build.dir}" />
     </target>
@@ -103,7 +104,7 @@
             <manifest>
                 <attribute name="Implementation-Title" value="ConverTor"/>
                 <attribute name="Created-By"
-                           value="~oma for (but not by) The Tor Project" />
+                           value="oma" />
                 <attribute name="Implementation-Version"
                            value="${release.version}-${git.revision}"/>
                 <attribute name="Main-Class" value="${main-class}" />
@@ -128,13 +129,22 @@
 
         <mkdir dir="${dist.dir}" />
 
-        <jar jarfile="${dist.dir}/${projectName}-bundle-${release.version}.jar"
-             basedir="${build.dir}">
+
+        <jar jarfile="${dist.dir}/lib/external-libs.jar">
             <zipgroupfileset
                     dir="lib"
-                    excludes="META-INF/**/*">
-                    <include name="*.jar" />
-            </zipgroupfileset>
+                    includes="*.jar" />
+        </jar>
+
+        <sleep seconds="1"/>
+
+        <jar jarfile="${dist.dir}/${projectName}-bundle-${release.version}.jar"
+             basedir="${build.dir}">
+
+            <zipfileset src="${dist.dir}/lib/external-libs.jar">
+                <exclude name="META-INF/**/*" />
+            </zipfileset>
+
             <zipfileset
                     dir="schema"
                     prefix="schema"
@@ -142,7 +152,7 @@
             <manifest>
                 <attribute name="Implementation-Title" value="ConverTor"/>
                 <attribute name="Created-By"
-                           value="~oma for (but not by) The Tor Project" />
+                           value="oma" />
                 <attribute name="Implementation-Version"
                            value="${release.version}-${git.revision}"/>
                 <attribute name="Main-Class" value="${main-class}" />
