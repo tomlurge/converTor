@@ -130,8 +130,14 @@
 
         <jar jarfile="${dist.dir}/${projectName}-bundle-${release.version}.jar"
              basedir="${build.dir}">
-            <zipgroupfileset dir="lib" includes="*.jar"/>
-            <zipfileset dir="schema" prefix="schema" includes="*.avsc"/>
+            <zipgroupfileset
+                    dir="lib"
+                    excludes="META-INF/**/*"
+                    includes="*.jar"/>
+            <zipfileset
+                    dir="schema"
+                    prefix="schema"
+                    includes="*.avsc"/>
             <manifest>
                 <attribute name="Implementation-Title" value="ConverTor"/>
                 <attribute name="Created-By"
