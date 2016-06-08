@@ -42,14 +42,15 @@ abstract class Convert<C> {
    */
   void checkUnrecognized(Descriptor descriptor, DescriptorFile descriptorFile) {
     if (!descriptor.getUnrecognizedLines().isEmpty()) {
-      System.err.println("Unrecognized lines in "
-          + descriptorFile.getFileName() + ":");
-      System.err.println(descriptor.getUnrecognizedLines());
       if (Args.INSTANCE.isLog()) {
         Base.logger.warning(
             "Unrecognized lines in " + descriptorFile.getFileName() + ":\n" +
             descriptor.getUnrecognizedLines()
         );
+      } else {
+        System.err.println("Unrecognized lines in "
+            + descriptorFile.getFileName() + ":");
+        System.err.println(descriptor.getUnrecognizedLines());
       }
     }
   }

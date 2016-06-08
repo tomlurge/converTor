@@ -53,6 +53,25 @@ class Base {
     this.writers = Writers.INSTANCE;
 
     /* logging */
+    String argz = "";
+    for (String arg : commandLineArguments) {argz = argz.concat(arg) + " ";}
+    String message =
+        "      Conversion with arguments: " + argz + "\n" +
+        "\n" +
+        "      Current parameters:\n" +
+        "      -f    --format     <arg>    default: json, optional: parquet, avro   " + args.getFormat() + "\n" +
+        "      -s    --suffix                                                       " + args.getSuffix() + "\n" +
+        "      -i    --inPath     <arg>    default: current working directory       " + args.getInPath() + "\n" +
+        "      -o    --outPath    <arg>    default: current working directory       " + args.getOutPath() + "\n" +
+        "      -l    --logsPath   <arg>    default: current working directory       " + args.getLogsPath() + "\n" +
+        "      -cs   --snappy                                                       " + args.isSnappy() + "\n" +
+        "      -cz   --zip                 Avro as BZip2, Parquet & JSON as GZip    " + args.isZip() + "\n" +
+        "      -p    --pretty              pretty printed JSON                      " + args.isPretty() + "\n" +
+        "      -m    --maxFiles   <arg>    default: 20                              " + args.getMaxFiles() + "\n" +
+        "      -d    --debug               print JSON descriptors to console        " + args.isDebug() + "\n" +
+        "      -g    --log                 log to file 'converTor.log'              " + args.isLog() + "\n" +
+        "\n";
+
     if (args.isLog()) {
       logger = Logger.getLogger("ConversionLog");
       FileHandler fh;
@@ -69,31 +88,14 @@ class Base {
         SimpleFormatter formatter = new SimpleFormatter();
         fh.setFormatter(formatter);
 
-        String argz = "";
-        for (String arg : commandLineArguments) {argz = argz.concat(arg) + " ";}
-
-        logger.info(
-          "Conversion with arguments:\n      " + argz + "\n" +
-          "\n" +
-          "      Current parameters:\n" +
-          "      -f     --format      <arg>    'json' (default),'parquet' or 'avro'    " + args.getFormat() + "\n" +
-          "      -s     --suffix                                                       " + args.getSuffix() + "\n" +
-          "      -i     --inPath      <arg>     defaults to working directory          " + args.getInPath() + "\n" +
-          "      -o     --outPath     <arg>     defaults to working directory          " + args.getOutPath() + "\n" +
-          "      -l     --logsPath    <arg>     defaults to working directory          " + args.getLogsPath() + "\n" +
-          "      -cs    --snappy                                                       " + args.isSnappy() + "\n" +
-          "      -cz    --zip                   Avro as BZip2, Parquet/JSON as GZip    " + args.isZip() + "\n" +
-          "      -p     --pretty                pretty printed JSON                    " + args.isPretty() + "\n" +
-          "      -m     --maxFiles    <arg>     default: 20                            " + args.getMaxFiles() + "\n" +
-          "      -d     --debug                 print JSON descriptors to console      " + args.isDebug() + "\n" +
-          "      -g     --log                   log to file 'converTor.log'            " + args.isLog() + "\n" +
-          "\n"
-        );
+        logger.info("\n" + message);
       } catch (SecurityException e) {
         e.printStackTrace();
       } catch (IOException e) {
         e.printStackTrace();
       }
+    } else {
+      System.out.println(message);
     }
 
   }
@@ -148,8 +150,8 @@ class Base {
             logger.info(converter.load.toString());
             logger.info(e.toString());
           } else {
-            System.out.println("Exception in descriptor of type " + converter.type
-                + " at date " + converter.date + ":");
+            System.out.println("Exception in descriptor of type "
+                + converter.type + " at date " + converter.date + ":");
             System.out.println(converter.load);
             System.out.println(e);
           }
