@@ -2,10 +2,10 @@
 .idea
 build
 out
-data/in
-data/out
-data/version2
+data
 
 # file types
 *.pdf
 *.iml
+*.log*
+external-libs.jar
