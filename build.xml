@@ -132,8 +132,9 @@
              basedir="${build.dir}">
             <zipgroupfileset
                     dir="lib"
-                    excludes="META-INF/**/*"
-                    includes="*.jar"/>
+                    excludes="META-INF/**/*">
+                    <include name="*.jar" />
+            </zipgroupfileset>
             <zipfileset
                     dir="schema"
                     prefix="schema"
