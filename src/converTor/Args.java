@@ -92,6 +92,7 @@ public enum Args {
     if(cmd.hasOption("h")) {
       HelpFormatter formatter = new HelpFormatter();
       formatter.printHelp( "ConverTor\n", options );
+      System.exit(0);
     }
     if(cmd.hasOption("i") && cmd.getOptionValue("i") != null) {
       setInPath(cmd.getOptionValue("i"));
