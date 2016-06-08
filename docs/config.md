@@ -59,7 +59,7 @@ Name: mteam
 
 ### Open tasks:
   
-  - karsten: install thrift    
+  - install thrift    
 
 	  
 	- t: check how to set max RAM for java on debian

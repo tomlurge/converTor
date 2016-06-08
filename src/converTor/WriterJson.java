@@ -29,7 +29,7 @@ class WriterJson implements Writer {
 
     java.io.Writer jsonWriter;
 
-    if (args.isCompressedSnappy()) {
+    if (args.isSnappy()) {
       jsonWriter =
           new OutputStreamWriter(
               new SnappyOutputStream(
@@ -37,7 +37,7 @@ class WriterJson implements Writer {
               )
           );
     }
-    else if (args.isCompressedZ()) {
+    else if (args.isZip()) {
       jsonWriter =
           new OutputStreamWriter(
               new GZIPOutputStream(

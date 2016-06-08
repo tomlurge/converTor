@@ -26,19 +26,19 @@ class WriterParquet implements Writer {
         args.getOutPath() + writerID + args.getOutputFileEnding()
     );
 
-    fileWriter = AvroParquetWriter.builder(outputPath)
+    fileWriter = AvroParquetWriter
+        .builder(outputPath)
         .withSchema(schema)
         .withCompressionCodec(
-            args.isCompressedSnappy()
+            args.isSnappy()
               ?
               CompressionCodecName.SNAPPY
               :
-              args.isCompressedZ()
+              args.isZip()
                 ?
                 CompressionCodecName.GZIP
                 :
                 CompressionCodecName.UNCOMPRESSED
-
         )
         .build();
 

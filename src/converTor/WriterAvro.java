@@ -31,10 +31,10 @@ class WriterAvro implements Writer {
 
     /* file writer */
     fileWriter = new DataFileWriter(avroDatumWriter);
-    if (args.isCompressedSnappy()) {
+    if (args.isSnappy()) {
       fileWriter.setCodec(CodecFactory.snappyCodec());
     }
-    else if (args.isCompressedZ()) {
+    else if (args.isZip()) {
       fileWriter.setCodec(CodecFactory.bzip2Codec());
       // fileWriter.setCodec(CodecFactory.deflateCodec(CodecFactory.DEFAULT_DEFLATE_LEVEL));
       // fileWriter.setCodec(CodecFactory.xzCodec(CodecFactory.DEFAULT_XZ_LEVEL));

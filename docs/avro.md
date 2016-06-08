@@ -82,7 +82,7 @@ intro
     import org.apache.avro.specific.SpecificDatumWriter;
 
 
-spec: https://avro.apache.org/docs/1.7.7/spec.html  
+spec: https://avro.apache.org/docs/1.8.1/spec.html  
 intro: https://avro.apache.org/docs/current/gettingstartedjava.html    
 good example of a complex schema: https://stackoverflow.com/questions/28163225/how-to-define-avro-schema-for-complex-json-document    
 

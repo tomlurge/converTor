@@ -1,9 +1,19 @@
 # TODO
 
-torperf
-  update github
-  write documentation
-  ask iwekah for review
+better handling of falsy command line arguments
+
+logging
+  what's wrong with sl4j and do we need it?
+  how to exclude .DS_Store warning on mac
+
+build nochmal
+
+write documentation
+  rationale
+  tools used
+  inner workings
+
+ask iwekah for review
 
 repair hdfs on server
 
@@ -15,13 +25,6 @@ parquet
   parquet chokes on non-empty output directories if they are not HDFS
   but it is possible to have HDFS on mac.
   install HDFS on mac (and document how to do that)
-  
-documentation
-  rationale
-  tools used
-  inner workings
-  
-tests in converter code - do they make sense
 
 aggregation
       https://metrics.torproject.org/bandwidth-data.html
@@ -37,53 +40,16 @@ drill
 
 # PROBLEMS      
 
-      
-  - bridgeStatus
-      PROCRASTINATED 
-      
-      - datumsfeld in allen konvertierten descriptoren
-          muß in die IDL ? wie benamsen? 
-          in welche descriptoren genau?
-          oder erst in HBase/RDDs? <- GENAU
-      
-      NO - IT'S IN THE SPEC
-        -   union { null, array<Status> } status; 
-            müsste eigentlich
-              union { null, array<Status> } statuses; 
-           heissen. sowas gabs bei relay oder tordnsel auch
-         
-        -   setPublished in bridgeStatus.R
-            setPublication in relayVote.R
-        
-        -   fastSpeed zu fastBandwidth
        
       
 
 # PROJECTS
        
 
-* think through the process of ingestion  
+* ingestion  
     mass ingestion
     periodic ingestion  
 
-* check sizes
-  + a bunch of Collector descriptors (say: 1 month)
-  + converted to verbose and gzipped JSON
-  + converted to non-verbose and gzipped JSON
-  + converted to - the same - in Parquet
-  + check: 
-    - all descriptor samples uncompressed in directories -> 57 MB
-    - the same as JSON, non-verbose                      -> 67 MB
-                                                 compressed 15 MB
-    - the same as JSON, but verbose, uncompressed        -> 72 MB
-                                                 compressed 15,1 MB
-* check sizes again
-  + a bunch of archives, XZ, one of each type            ->  1 GB
-  + the same as JSON, GZ, with nulls and chatty arrays   ->  5.7 GB
-  + the same as JSON, GZ, with chatty arrays             ->  5.63 GB
-  +  convert one tarball per type 
-      to see if there is one suspiciously big JSON result
-  
 * write tests
   + that would involve writing test descriptors too i guess
   + which would mean learning how to write collector data
@@ -114,7 +80,6 @@ drill
 
 * problems with JSON number conversion? see: 
     https://docs.oracle.com/cd/E26161_02/html/GettingStartedGuide/jsonbinding-overview.html
-  
 
 * verbosity
   removed option for verbose output ("flattened" instead of "jagged" arrays, 

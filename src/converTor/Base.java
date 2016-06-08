@@ -2,6 +2,9 @@ package converTor;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 import org.torproject.descriptor.*;
 
@@ -16,30 +19,83 @@ class Base {
   Types type;
   Writers writers;
   Walker walker;
-
+  Logger logger;
 
   public static void main(String[] args) {
+
+    System.out.println(
+        "\nConverter from Tor CollecTor data to JSON, Parquet or Avro.\n" +
+        "Call with parameter '-h' for help and more options.\n"
+    );
+
     Base base = new Base(args);
+
     /* start conversion */
     try {
       base.runConversion();
     } catch (IOException e) {
       e.printStackTrace();
     }
+
   }
 
   /**
    * Sets up conversion environment by evaluating input arguments
    * and initializing output file writers.
-   * @param args    arguments provided to the command line interface
+   * @param arguments    arguments provided to the command line interface
    */
-  Base(String[] args) {
+  Base(String[] arguments) {
     /* make command line args available to singleton 'args' */
-    commandLineArguments = args;
+    commandLineArguments = arguments;
     /* setup arguments singleton */
-    this.args = Args.INSTANCE;
+    args = Args.INSTANCE;
     /* setup output writers map singleton */
     this.writers = Writers.INSTANCE;
+
+
+    if (args.isLog()) {
+      logger = Logger.getLogger("ConversionLog");
+      FileHandler fh;
+
+      try {
+        // Configure the logger with handler and formatter
+        fh = new FileHandler(
+            this.args.getLogsPath() + "convertor.log",
+            100000000,  // 100 MB
+            100,
+            true
+        );
+        logger.addHandler(fh);
+        SimpleFormatter formatter = new SimpleFormatter();
+        fh.setFormatter(formatter);
+
+        String argz = "";
+        for (String arg : commandLineArguments) {argz = argz.concat(arg) + " ";}
+
+        logger.info(
+          "Conversion with arguments:\n      " + argz + "\n" +
+          "\n" +
+          "      Current parameters:\n" +
+          "      -f     -format       'parquet', 'json' or 'avro'            " + args.getFormat() + "\n" +
+          "      -s     -suffix                                              " + args.getSuffix() + "\n" +
+          "      -i     -inPath                                              " + args.getInPath() + "\n" +
+          "      -o     -outPath                                             " + args.getOutPath() + "\n" +
+          "      -l     -logsPath                                            " + args.getLogsPath() + "\n" +
+          "      -cs    -snappy                                              " + args.isSnappy() + "\n" +
+          "      -cz    -zip          Avro as BZip2, Parquet/JSON as GZip    " + args.isZip() + "\n" +
+          "      -p     -pretty       pretty printed JSON                    " + args.isPretty() + "\n" +
+          "      -m     -maxFiles                                            " + args.getMaxFiles() + "\n" +
+          "      -d     -debug        print JSON descriptors to console      " + args.isDebug() + "\n" +
+          "      -log                 log to file 'convertor.log'            " + args.isLog() + "\n" +
+          "\n"
+        );
+      } catch (SecurityException e) {
+        e.printStackTrace();
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+
   }
 
   /**
@@ -85,15 +141,22 @@ class Base {
         try {
           writer.append(converter.load);
         }
-        catch (Throwable e){
-          System.out.println(e);
-          System.out.println("in descriptor of type " + converter.type
-              + " at date " + converter.date + " with data:");
-          System.out.println(converter.load);
+        catch (Exception e){
+          if (args.isLog()) {
+            logger.warning("Exception in descriptor of type " + converter.type
+              + " at date " + converter.date + ":");
+            logger.info(converter.load.toString());
+            logger.info(e.toString());
+          } else {
+            System.out.println("Exception in descriptor of type " + converter.type
+                + " at date " + converter.date + ":");
+            System.out.println(converter.load);
+            System.out.println(e);
+          }
         }
 
         /* check for unrecognized attributes */
-        converter.checkUnrecognized(descriptor, currentFile);
+        converter.checkUnrecognized(descriptor,currentFile);
 
         counter++;
       }
@@ -101,10 +164,15 @@ class Base {
 
     /* wrap up */
     closeAllWriters();
-    System.out.println(
-      "\nTHIS MACHINE KILLS FASCISTS\n" + counter + " descriptor" +
-          (counter < 1 || counter > 1 ? "s" : "") + " converted"
-    );
+    if (args.isLog()) {
+      logger.info( counter + " descriptor" +
+          (counter < 1 || counter > 1 ? "s" : "") + " converted");
+    } else {
+      System.out.println(
+          counter + " descriptor" +
+              (counter < 1 || counter > 1 ? "s" : "") + " converted"
+      );
+    }
     System.exit(0);
 
   }
