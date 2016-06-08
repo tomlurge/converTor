@@ -19,7 +19,7 @@ class Base {
   Types type;
   Writers writers;
   Walker walker;
-  Logger logger;
+  static Logger logger;
 
   public static void main(String[] args) {
 
@@ -52,7 +52,7 @@ class Base {
     /* setup output writers map singleton */
     this.writers = Writers.INSTANCE;
 
-
+    /* logging */
     if (args.isLog()) {
       logger = Logger.getLogger("ConversionLog");
       FileHandler fh;
@@ -60,7 +60,7 @@ class Base {
       try {
         // Configure the logger with handler and formatter
         fh = new FileHandler(
-            this.args.getLogsPath() + "convertor.log",
+            args.getLogsPath() + "converTor.log",
             100000000,  // 100 MB
             100,
             true
@@ -76,17 +76,17 @@ class Base {
           "Conversion with arguments:\n      " + argz + "\n" +
           "\n" +
           "      Current parameters:\n" +
-          "      -f     -format       'parquet', 'json' or 'avro'            " + args.getFormat() + "\n" +
-          "      -s     -suffix                                              " + args.getSuffix() + "\n" +
-          "      -i     -inPath                                              " + args.getInPath() + "\n" +
-          "      -o     -outPath                                             " + args.getOutPath() + "\n" +
-          "      -l     -logsPath                                            " + args.getLogsPath() + "\n" +
-          "      -cs    -snappy                                              " + args.isSnappy() + "\n" +
-          "      -cz    -zip          Avro as BZip2, Parquet/JSON as GZip    " + args.isZip() + "\n" +
-          "      -p     -pretty       pretty printed JSON                    " + args.isPretty() + "\n" +
-          "      -m     -maxFiles                                            " + args.getMaxFiles() + "\n" +
-          "      -d     -debug        print JSON descriptors to console      " + args.isDebug() + "\n" +
-          "      -log                 log to file 'convertor.log'            " + args.isLog() + "\n" +
+          "      -f     --format      <arg>    'json' (default),'parquet' or 'avro'    " + args.getFormat() + "\n" +
+          "      -s     --suffix                                                       " + args.getSuffix() + "\n" +
+          "      -i     --inPath      <arg>     defaults to working directory          " + args.getInPath() + "\n" +
+          "      -o     --outPath     <arg>     defaults to working directory          " + args.getOutPath() + "\n" +
+          "      -l     --logsPath    <arg>     defaults to working directory          " + args.getLogsPath() + "\n" +
+          "      -cs    --snappy                                                       " + args.isSnappy() + "\n" +
+          "      -cz    --zip                   Avro as BZip2, Parquet/JSON as GZip    " + args.isZip() + "\n" +
+          "      -p     --pretty                pretty printed JSON                    " + args.isPretty() + "\n" +
+          "      -m     --maxFiles    <arg>     default: 20                            " + args.getMaxFiles() + "\n" +
+          "      -d     --debug                 print JSON descriptors to console      " + args.isDebug() + "\n" +
+          "      -g     --log                   log to file 'converTor.log'            " + args.isLog() + "\n" +
           "\n"
         );
       } catch (SecurityException e) {

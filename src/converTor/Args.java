@@ -26,7 +26,7 @@ public enum Args {
   private boolean json = false;
   private boolean avro = false;
   private boolean parquet = true;
-  private String format = "parquet";
+  private String format = "json";
   private String inPath = "";
   private String outPath = "";
   private String logsPath = "";
@@ -45,38 +45,41 @@ public enum Args {
 
     Options options = new Options();
     options.addOption("h", "help", false,
-        "Display this help text.");
+        "Displays this help text.");
     options.addOption("f", "format", true,
-        "e.g. '-f=json'\n" +
-            "To which serialization format to convert.\n" +
-            "Defaults to 'parquet'.\n" +
-            "Possible values are 'avro', 'parquet' and 'json'.");
+        "To which serialization format to convert.\n" +
+        "Possible values are 'avro', 'parquet' and 'json'.\n" +
+        "Default: 'json'.\n" +
+        "e.g. '-f=parquet'" );
     options.addOption("s", "suffix", true,
-        "e.g. '-s=_Suffix'"+
-            "Any string that might be helpful.");
+        "Any string that might be helpful.\n" +
+        "e.g. '-s=_Suffix'\n\n");
     options.addOption("i", "inPath", true,
-        "e.g. '-i=/my/data/in'\n" +
-            "From which directory to read data.");
+        "From which directory to read data.\n" +
+        "Default: current working directory.\n" +
+        "e.g. '-i=/my/data/in'");
     options.addOption("o", "outPath", true,
-        "e.g. '-outPath=/my/data/out/format'\n" +
-            "To which directory to write the converted data.");
+        "To which directory to write the converted data.\n" +
+        "Default: current working directory.\n" +
+        "e.g. '-outPath=/my/data/out/format'" );
     options.addOption("l", "logsPath", true,
-        "e.g. '-l=/my/data/logs/'\n" +
-            "From which directory to read data.");
+        "To which directory to write log files.\n" +
+        "Default: current working directory.\n" +
+        "e.g. '-l=/my/data/logs/'");
     options.addOption("cs", "snappy", false,
-        "compresses output with 'snappy' codec.\n");
+        "Compresses output with 'snappy' codec.");
     options.addOption("cz", "zip", false,
-        "compresses output with GZip codec (Parquet and JSON) or BZip2 codec (Avro).\n");
+        "Compresses output with GZip codec (Parquet and JSON) or BZip2 codec (Avro).");
     options.addOption("p", "pretty", false,
-        "generates pretty printed JSON output.");
+        "Pretty printed JSON output.");
     options.addOption("m", "maxFiles", true,
-        "e.g. '-m=5'\n" +
-            "Maximum file readers to open,\n" +
-            "Defaults to 20");
+        "Maximum file readers to open.\n" +
+        "Default: 20" +
+        "e.g. '-m=5'\n" );
     options.addOption("d", "debug", false,
-        "Print JSON representation of each converted descriptor to console.");
-    options.addOption("log", false,
-        "Print logs to file ./conversion.log.");
+        "Prints JSON representation of each converted descriptor to terminal.");
+    options.addOption("g", "log", false,
+        "Prints logging statements to 'converTor.log'.");
 
     /* Parse arguments, set parameters */
     CommandLineParser parser = new DefaultParser();
@@ -151,7 +154,7 @@ public enum Args {
     if(cmd.hasOption("d")) {
       setDebug(true);
     }
-    if(cmd.hasOption("log")) {
+    if(cmd.hasOption("g")) {
       setLog(true);
     }
     setOutputFileEnding(getSuffix()

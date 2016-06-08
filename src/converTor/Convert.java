@@ -45,6 +45,12 @@ abstract class Convert<C> {
       System.err.println("Unrecognized lines in "
           + descriptorFile.getFileName() + ":");
       System.err.println(descriptor.getUnrecognizedLines());
+      if (Args.INSTANCE.isLog()) {
+        Base.logger.warning(
+            "Unrecognized lines in " + descriptorFile.getFileName() + ":\n" +
+            descriptor.getUnrecognizedLines()
+        );
+      }
     }
   }
 
@@ -103,7 +109,6 @@ abstract class Convert<C> {
     if (!policyIsAccept && lastToPort < 65535) {
       intervalsArrays.add(new int[] { lastToPort + 1, 65535 });
     }
-
 
     /* write array of accepted port intervals to string */
     int writtenIntervals = 0;
