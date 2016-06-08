@@ -102,7 +102,7 @@
         <jar basedir="${build.dir}"
              jarfile="${dist.dir}/${projectName}-${release.version}.jar"><!-- -${git.revision} -->
             <manifest>
-                <attribute name="Implementation-Title" value="ConverTor"/>
+                <attribute name="Implementation-Title" value="converTor"/>
                 <attribute name="Created-By"
                            value="oma" />
                 <attribute name="Implementation-Version"
@@ -129,26 +129,10 @@
 
         <mkdir dir="${dist.dir}" />
 
-
-        <jar jarfile="${dist.dir}/lib/external-libs.jar">
-            <zipgroupfileset
-                    dir="lib"
-                    includes="*.jar" />
-        </jar>
-
-        <sleep seconds="1"/>
-
         <jar jarfile="${dist.dir}/${projectName}-bundle-${release.version}.jar"
              basedir="${build.dir}">
-
-            <zipfileset src="${dist.dir}/lib/external-libs.jar">
-                <exclude name="META-INF/**/*" />
-            </zipfileset>
-
-            <zipfileset
-                    dir="schema"
-                    prefix="schema"
-                    includes="*.avsc"/>
+            <zipgroupfileset dir="lib" includes="*.jar"/>
+            <zipfileset dir="schema" prefix="schema" includes="*.avsc"/>
             <manifest>
                 <attribute name="Implementation-Title" value="ConverTor"/>
                 <attribute name="Created-By"
