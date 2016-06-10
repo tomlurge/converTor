@@ -49,6 +49,7 @@ class ConvertRelayConsensus extends Convert {
         !desc.getStatusEntries().isEmpty()) {
       try {
         conversion.setStatus(convertStatus(desc));
+        System.out.println("no npe");
       } catch (NullPointerException npe) {
         System.out.println(npe);
         System.out.println(dateTimeFormat.format(desc.getValidAfterMillis()).substring(0,7));
