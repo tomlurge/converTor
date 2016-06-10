@@ -47,14 +47,7 @@ class ConvertRelayConsensus extends Convert {
     }
     if (desc.getStatusEntries() != null &&
         !desc.getStatusEntries().isEmpty()) {
-      try {
-        conversion.setStatus(convertStatus(desc));
-        System.out.println("no npe");
-      } catch (NullPointerException npe) {
-        System.out.println(npe);
-        System.out.println(dateTimeFormat.format(desc.getValidAfterMillis()).substring(0,7));
-        System.out.println(conversion);
-      }
+      conversion.setStatus(convertStatus(desc));
     }
     conversion.setDirectoryFooter(convertDirFooter(desc));
 
@@ -102,7 +95,7 @@ class ConvertRelayConsensus extends Convert {
   }
 
 
-  private Map<String,Status> convertStatus(RelayNetworkStatusConsensus desc) throws NullPointerException{
+  private Map<String,Status> convertStatus(RelayNetworkStatusConsensus desc) {
     Map<String,Status> conMap = new HashMap<>();
     for (
         Map.Entry<String, NetworkStatusEntry> entry :
@@ -120,7 +113,13 @@ class ConvertRelayConsensus extends Convert {
       }
       con.setV(entry.getValue().getVersion());
       con.setW(convertW(entry.getValue()));
-      con.setP(convertPolicy(entry.getValue()));
+        //  todo    remove debugging code
+      if (entry.getValue().getDefaultPolicy() != null && entry.getValue().getPortList() != null) {
+        con.setP(convertPolicy(entry.getValue()));
+        System.out.println("entry.getValue().getDefaultPolicy() && entry.getValue().getPortList() was fine");
+      } else {
+        System.out.println("entry.getValue().getDefaultPolicy() &| entry.getValue().getPortList() was nuuuuuuuuuullllllllllll");
+      }
       conMap.put(entry.getKey(),con);
     }
     return conMap;
@@ -173,21 +172,15 @@ class ConvertRelayConsensus extends Convert {
   }
 
 
-  private Policy convertPolicy(NetworkStatusEntry entry) throws NullPointerException{
+  private Policy convertPolicy(NetworkStatusEntry entry) {
     Policy con = new Policy();
     con.setDefaultPolicy("accept");
-    con.setPortSummary(acceptedPortIntervals(entry.getDefaultPolicy(), entry.getPortList()));
-    // todo  remove after testing
-    // String portList = "Possibly a NullPointerException";
-    // try {
-    //   portList = acceptedPortIntervals(entry.getDefaultPolicy(), entry.getPortList());
-    // } catch (NullPointerException n){
-    //   System.out.println(n);
-    //   System.out.println(this.date);
-    //   System.out.println(this.load);
-    // } finally {
-    //   con.setPortSummary(portList);
-    // }
+    con.setPortSummary(
+      acceptedPortIntervals(
+        entry.getDefaultPolicy(), entry.getPortList()
+      )
+    );
+    System.out.println("one more acceptedPortIntervals()");  // todo  remove after testing
     return con;
   }
 
