@@ -9,6 +9,8 @@ NullPointerException in Convert.acceptedPortIntervals
   find source
   fix method
 
+bundle schemata with executable jar
+
 better handling of falsy command line arguments
 
 logging

@@ -113,12 +113,9 @@ class ConvertRelayConsensus extends Convert {
       }
       con.setV(entry.getValue().getVersion());
       con.setW(convertW(entry.getValue()));
-        //  todo    remove debugging code
-      if (entry.getValue().getDefaultPolicy() != null && entry.getValue().getPortList() != null) {
+      if (entry.getValue().getDefaultPolicy() != null
+          && entry.getValue().getPortList() != null) {
         con.setP(convertPolicy(entry.getValue()));
-        System.out.println("entry.getValue().getDefaultPolicy() && entry.getValue().getPortList() was fine");
-      } else {
-        System.out.println("entry.getValue().getDefaultPolicy() &| entry.getValue().getPortList() was nuuuuuuuuuullllllllllll");
       }
       conMap.put(entry.getKey(),con);
     }
@@ -176,11 +173,8 @@ class ConvertRelayConsensus extends Convert {
     Policy con = new Policy();
     con.setDefaultPolicy("accept");
     con.setPortSummary(
-      acceptedPortIntervals(
-        entry.getDefaultPolicy(), entry.getPortList()
-      )
+      acceptedPortIntervals(entry.getDefaultPolicy(), entry.getPortList())
     );
-    System.out.println("one more acceptedPortIntervals()");  // todo  remove after testing
     return con;
   }
 

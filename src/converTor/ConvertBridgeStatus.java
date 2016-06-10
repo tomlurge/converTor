@@ -81,7 +81,10 @@ class ConvertBridgeStatus extends Convert {
       }
       con.setV(entry.getValue().getVersion());
       con.setW(convertW(entry.getValue()));
-      con.setP(convertPolicy(entry.getValue()));
+      if (entry.getValue().getDefaultPolicy() != null
+          && entry.getValue().getPortList() != null) {
+        con.setP(convertPolicy(entry.getValue()));
+      }
       conMap.put(entry.getKey(),con);
     }
     return conMap;
