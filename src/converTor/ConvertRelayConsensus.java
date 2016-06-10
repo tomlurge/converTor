@@ -47,7 +47,13 @@ class ConvertRelayConsensus extends Convert {
     }
     if (desc.getStatusEntries() != null &&
         !desc.getStatusEntries().isEmpty()) {
-      conversion.setStatus(convertStatus(desc));
+      try {
+        conversion.setStatus(convertStatus(desc));
+      } catch (NullPointerException npe) {
+        System.out.println(npe);
+        System.out.println(this.date);
+        System.out.println(this.load);
+      }
     }
     conversion.setDirectoryFooter(convertDirFooter(desc));
 
@@ -95,7 +101,7 @@ class ConvertRelayConsensus extends Convert {
   }
 
 
-  private Map<String,Status> convertStatus(RelayNetworkStatusConsensus desc) {
+  private Map<String,Status> convertStatus(RelayNetworkStatusConsensus desc) throws NullPointerException{
     Map<String,Status> conMap = new HashMap<>();
     for (
         Map.Entry<String, NetworkStatusEntry> entry :
@@ -166,19 +172,21 @@ class ConvertRelayConsensus extends Convert {
   }
 
 
-  private Policy convertPolicy(NetworkStatusEntry entry) {
+  private Policy convertPolicy(NetworkStatusEntry entry) throws NullPointerException{
     Policy con = new Policy();
     con.setDefaultPolicy("accept");
-    String portList = "Possibly a NullPointerException";
-    try {
-      portList = acceptedPortIntervals(entry.getDefaultPolicy(), entry.getPortList());
-    } catch (NullPointerException n){
-      System.out.println(n);
-      System.out.println(this.date);
-      System.out.println(this.load);
-    } finally {
-      con.setPortSummary(portList);
-    }
+    con.setPortSummary(acceptedPortIntervals(entry.getDefaultPolicy(), entry.getPortList()));
+    // todo  remove after testing
+    // String portList = "Possibly a NullPointerException";
+    // try {
+    //   portList = acceptedPortIntervals(entry.getDefaultPolicy(), entry.getPortList());
+    // } catch (NullPointerException n){
+    //   System.out.println(n);
+    //   System.out.println(this.date);
+    //   System.out.println(this.load);
+    // } finally {
+    //   con.setPortSummary(portList);
+    // }
     return con;
   }
 
