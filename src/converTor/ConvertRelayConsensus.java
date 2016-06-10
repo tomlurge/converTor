@@ -169,9 +169,16 @@ class ConvertRelayConsensus extends Convert {
   private Policy convertPolicy(NetworkStatusEntry entry) {
     Policy con = new Policy();
     con.setDefaultPolicy("accept");
-    con.setPortSummary(
-        acceptedPortIntervals(entry.getDefaultPolicy(),entry.getPortList())
-    );
+    String portList = "Possibly a NullPointerException";
+    try {
+      portList = acceptedPortIntervals(entry.getDefaultPolicy(), entry.getPortList());
+    } catch (NullPointerException n){
+      System.out.println(n);
+      System.out.println(this.date);
+      System.out.println(this.load);
+    } finally {
+      con.setPortSummary(portList);
+    }
     return con;
   }
 

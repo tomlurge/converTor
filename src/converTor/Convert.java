@@ -73,7 +73,8 @@ abstract class Convert<C> {
   /**
    * Derive accepted ports
    */
-  String acceptedPortIntervals(String policy, String ports) {
+  String acceptedPortIntervals(String policy, String ports)
+      throws NullPointerException {
 
     /**
      * incoming policy - accept or reject
