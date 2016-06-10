@@ -51,8 +51,8 @@ class ConvertRelayConsensus extends Convert {
         conversion.setStatus(convertStatus(desc));
       } catch (NullPointerException npe) {
         System.out.println(npe);
-        System.out.println(this.date);
-        System.out.println(this.load);
+        System.out.println(dateTimeFormat.format(desc.getValidAfterMillis()).substring(0,7));
+        System.out.println(conversion);
       }
     }
     conversion.setDirectoryFooter(convertDirFooter(desc));
