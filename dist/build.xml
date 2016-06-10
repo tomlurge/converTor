@@ -134,7 +134,7 @@
             <zipgroupfileset dir="lib" includes="*.jar"/>
             <zipfileset dir="schema" prefix="schema" includes="*.avsc"/>
             <manifest>
-                <attribute name="Implementation-Title" value="ConverTor"/>
+                <attribute name="Implementation-Title" value="converTor"/>
                 <attribute name="Created-By"
                            value="oma" />
                 <attribute name="Implementation-Version"

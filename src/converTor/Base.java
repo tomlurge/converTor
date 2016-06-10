@@ -175,6 +175,7 @@ class Base {
               (counter < 1 || counter > 1 ? "s" : "") + " converted"
       );
     }
+    java.awt.Toolkit.getDefaultToolkit().beep();
     System.exit(0);
 
   }
