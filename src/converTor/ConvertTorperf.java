@@ -68,6 +68,11 @@ class ConvertTorperf extends Convert {
     this.date = dateTimeFormat.format(desc.getStartMillis()).substring(0,7);
     this.load = conversion;
 
+    if (Args.INSTANCE.isLog()) {
+      Base.logger.info("Unrecognized keys: " + desc.getUnrecognizedKeys());
+    } else {
+      System.out.println("Unrecognized keys: " + desc.getUnrecognizedKeys());
+    }
   }
 
 }
