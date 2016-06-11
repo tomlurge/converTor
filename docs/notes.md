@@ -1,15 +1,5 @@
 # TODO
 
-NullPointerException in Convert.acceptedPortIntervals
-  relayVote
-  relayConsensus
-  bridge...
-  
-  catch it
-  find source
-  fix method
-
-bundle schemata with executable jar
 
 better handling of falsy command line arguments
 

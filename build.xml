@@ -129,7 +129,7 @@
 
         <mkdir dir="${dist.dir}" />
 
-        <jar jarfile="${dist.dir}/${projectName}-bundle-${release.version}.jar"
+        <jar jarfile="${dist.dir}/${projectName}.jar"
              basedir="${build.dir}">
             <zipgroupfileset dir="lib" includes="*.jar"/>
             <zipfileset dir="schema" prefix="schema" includes="*.avsc"/>

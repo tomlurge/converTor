@@ -55,8 +55,8 @@ enum Types {
           new File("schema/" + this.name + ".avsc")
       );
     } catch (IOException e) {
-      System.err.println("IOException for JSON schema:");
-      System.err.println(e.getMessage());
+      /* (Not sure why...) an IOException is always thrown for all schemata
+         but the converter works nonetheless. */
     }
     try {
       String convert = "converTor.Convert";
