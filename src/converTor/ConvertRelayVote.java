@@ -59,7 +59,7 @@ class ConvertRelayVote extends Convert {
     conversion.setSigningKeyDigest(desc.getSigningKeyDigest());
 
     this.type = Types.RELAY_VOTE;
-    this.date = dateTimeFormat.format(desc.getPublishedMillis()).substring(0,7);
+    this.date = dateTimeFormat.format(desc.getValidAfterMillis()).substring(0,7);
     this.load = conversion;
 
   }
