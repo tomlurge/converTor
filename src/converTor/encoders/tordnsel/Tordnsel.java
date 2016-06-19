@@ -3,18 +3,18 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.encoders.tordnsel;  
+package convertor.encoders.tordnsel;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = 4918008985824344009L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Tordnsel\",\"namespace\":\"converTor.encoders.tordnsel\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"tordnsel 1.0\"},{\"name\":\"downloaded\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExitList: long getDownloadedMillis()\"},{\"name\":\"exit_nodes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"ExitNode\",\"fields\":[{\"name\":\"fingerprint\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExitList.Entry: String getFingerprint()\"},{\"name\":\"published\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExitList.Entry: long getPublishedMillis()\"},{\"name\":\"last_status\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExitList.Entry: long getLastStatusMillis()\"},{\"name\":\"exit_adresses\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"long\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExitList.Entry: Map<String, Long> getExitAddresses()\"}]}}],\"doc\":\"metrics-lib/ExitList: Set<ExitList.Entry> getEntries()\"}],\"aliases\":[\"exitList\"]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Tordnsel\",\"namespace\":\"convertor.encoders.tordnsel\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"tordnsel 1.0\"},{\"name\":\"downloaded\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExitList: long getDownloadedMillis()\"},{\"name\":\"exit_nodes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"ExitNode\",\"fields\":[{\"name\":\"fingerprint\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExitList.Entry: String getFingerprint()\"},{\"name\":\"published\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExitList.Entry: long getPublishedMillis()\"},{\"name\":\"last_status\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExitList.Entry: long getLastStatusMillis()\"},{\"name\":\"exit_adresses\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"long\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExitList.Entry: Map<String, Long> getExitAddresses()\"}]}}],\"doc\":\"metrics-lib/ExitList: Set<ExitList.Entry> getEntries()\"}],\"aliases\":[\"exitList\"]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   @Deprecated public java.lang.String descriptor_type;
   /** metrics-lib/ExitList: long getDownloadedMillis() */
   @Deprecated public java.lang.Long downloaded;
   /** metrics-lib/ExitList: Set<ExitList.Entry> getEntries() */
-  @Deprecated public java.util.List<converTor.encoders.tordnsel.ExitNode> exit_nodes;
+  @Deprecated public java.util.List<convertor.encoders.tordnsel.ExitNode> exit_nodes;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -28,7 +28,7 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
    * @param downloaded metrics-lib/ExitList: long getDownloadedMillis()
    * @param exit_nodes metrics-lib/ExitList: Set<ExitList.Entry> getEntries()
    */
-  public Tordnsel(java.lang.String descriptor_type, java.lang.Long downloaded, java.util.List<converTor.encoders.tordnsel.ExitNode> exit_nodes) {
+  public Tordnsel(java.lang.String descriptor_type, java.lang.Long downloaded, java.util.List<convertor.encoders.tordnsel.ExitNode> exit_nodes) {
     this.descriptor_type = descriptor_type;
     this.downloaded = downloaded;
     this.exit_nodes = exit_nodes;
@@ -50,7 +50,7 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
     switch (field$) {
     case 0: descriptor_type = (java.lang.String)value$; break;
     case 1: downloaded = (java.lang.Long)value$; break;
-    case 2: exit_nodes = (java.util.List<converTor.encoders.tordnsel.ExitNode>)value$; break;
+    case 2: exit_nodes = (java.util.List<convertor.encoders.tordnsel.ExitNode>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -91,7 +91,7 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
    * Gets the value of the 'exit_nodes' field.
    * @return metrics-lib/ExitList: Set<ExitList.Entry> getEntries()
    */
-  public java.util.List<converTor.encoders.tordnsel.ExitNode> getExitNodes() {
+  public java.util.List<convertor.encoders.tordnsel.ExitNode> getExitNodes() {
     return exit_nodes;
   }
 
@@ -100,7 +100,7 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
    * metrics-lib/ExitList: Set<ExitList.Entry> getEntries()
    * @param value the value to set.
    */
-  public void setExitNodes(java.util.List<converTor.encoders.tordnsel.ExitNode> value) {
+  public void setExitNodes(java.util.List<convertor.encoders.tordnsel.ExitNode> value) {
     this.exit_nodes = value;
   }
 
@@ -108,8 +108,8 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
    * Creates a new Tordnsel RecordBuilder.
    * @return A new Tordnsel RecordBuilder
    */
-  public static converTor.encoders.tordnsel.Tordnsel.Builder newBuilder() {
-    return new converTor.encoders.tordnsel.Tordnsel.Builder();
+  public static convertor.encoders.tordnsel.Tordnsel.Builder newBuilder() {
+    return new convertor.encoders.tordnsel.Tordnsel.Builder();
   }
   
   /**
@@ -117,8 +117,8 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
    * @param other The existing builder to copy.
    * @return A new Tordnsel RecordBuilder
    */
-  public static converTor.encoders.tordnsel.Tordnsel.Builder newBuilder(converTor.encoders.tordnsel.Tordnsel.Builder other) {
-    return new converTor.encoders.tordnsel.Tordnsel.Builder(other);
+  public static convertor.encoders.tordnsel.Tordnsel.Builder newBuilder(convertor.encoders.tordnsel.Tordnsel.Builder other) {
+    return new convertor.encoders.tordnsel.Tordnsel.Builder(other);
   }
   
   /**
@@ -126,8 +126,8 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
    * @param other The existing instance to copy.
    * @return A new Tordnsel RecordBuilder
    */
-  public static converTor.encoders.tordnsel.Tordnsel.Builder newBuilder(converTor.encoders.tordnsel.Tordnsel other) {
-    return new converTor.encoders.tordnsel.Tordnsel.Builder(other);
+  public static convertor.encoders.tordnsel.Tordnsel.Builder newBuilder(convertor.encoders.tordnsel.Tordnsel other) {
+    return new convertor.encoders.tordnsel.Tordnsel.Builder(other);
   }
   
   /**
@@ -140,18 +140,18 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
     /** metrics-lib/ExitList: long getDownloadedMillis() */
     private java.lang.Long downloaded;
     /** metrics-lib/ExitList: Set<ExitList.Entry> getEntries() */
-    private java.util.List<converTor.encoders.tordnsel.ExitNode> exit_nodes;
+    private java.util.List<convertor.encoders.tordnsel.ExitNode> exit_nodes;
 
     /** Creates a new Builder */
     private Builder() {
-      super(converTor.encoders.tordnsel.Tordnsel.SCHEMA$);
+      super(convertor.encoders.tordnsel.Tordnsel.SCHEMA$);
     }
     
     /**
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(converTor.encoders.tordnsel.Tordnsel.Builder other) {
+    private Builder(convertor.encoders.tordnsel.Tordnsel.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.descriptor_type)) {
         this.descriptor_type = data().deepCopy(fields()[0].schema(), other.descriptor_type);
@@ -171,8 +171,8 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
      * Creates a Builder by copying an existing Tordnsel instance
      * @param other The existing instance to copy.
      */
-    private Builder(converTor.encoders.tordnsel.Tordnsel other) {
-            super(converTor.encoders.tordnsel.Tordnsel.SCHEMA$);
+    private Builder(convertor.encoders.tordnsel.Tordnsel other) {
+            super(convertor.encoders.tordnsel.Tordnsel.SCHEMA$);
       if (isValidValue(fields()[0], other.descriptor_type)) {
         this.descriptor_type = data().deepCopy(fields()[0].schema(), other.descriptor_type);
         fieldSetFlags()[0] = true;
@@ -200,7 +200,7 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'descriptor_type'.
       * @return This builder.
       */
-    public converTor.encoders.tordnsel.Tordnsel.Builder setDescriptorType(java.lang.String value) {
+    public convertor.encoders.tordnsel.Tordnsel.Builder setDescriptorType(java.lang.String value) {
       validate(fields()[0], value);
       this.descriptor_type = value;
       fieldSetFlags()[0] = true;
@@ -220,7 +220,7 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'descriptor_type' field.
       * @return This builder.
       */
-    public converTor.encoders.tordnsel.Tordnsel.Builder clearDescriptorType() {
+    public convertor.encoders.tordnsel.Tordnsel.Builder clearDescriptorType() {
       descriptor_type = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -241,7 +241,7 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'downloaded'.
       * @return This builder.
       */
-    public converTor.encoders.tordnsel.Tordnsel.Builder setDownloaded(java.lang.Long value) {
+    public convertor.encoders.tordnsel.Tordnsel.Builder setDownloaded(java.lang.Long value) {
       validate(fields()[1], value);
       this.downloaded = value;
       fieldSetFlags()[1] = true;
@@ -263,7 +263,7 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
       * metrics-lib/ExitList: long getDownloadedMillis()
       * @return This builder.
       */
-    public converTor.encoders.tordnsel.Tordnsel.Builder clearDownloaded() {
+    public convertor.encoders.tordnsel.Tordnsel.Builder clearDownloaded() {
       downloaded = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -274,7 +274,7 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
       * metrics-lib/ExitList: Set<ExitList.Entry> getEntries()
       * @return The value.
       */
-    public java.util.List<converTor.encoders.tordnsel.ExitNode> getExitNodes() {
+    public java.util.List<convertor.encoders.tordnsel.ExitNode> getExitNodes() {
       return exit_nodes;
     }
 
@@ -284,7 +284,7 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'exit_nodes'.
       * @return This builder.
       */
-    public converTor.encoders.tordnsel.Tordnsel.Builder setExitNodes(java.util.List<converTor.encoders.tordnsel.ExitNode> value) {
+    public convertor.encoders.tordnsel.Tordnsel.Builder setExitNodes(java.util.List<convertor.encoders.tordnsel.ExitNode> value) {
       validate(fields()[2], value);
       this.exit_nodes = value;
       fieldSetFlags()[2] = true;
@@ -306,7 +306,7 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
       * metrics-lib/ExitList: Set<ExitList.Entry> getEntries()
       * @return This builder.
       */
-    public converTor.encoders.tordnsel.Tordnsel.Builder clearExitNodes() {
+    public convertor.encoders.tordnsel.Tordnsel.Builder clearExitNodes() {
       exit_nodes = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -318,7 +318,7 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
         Tordnsel record = new Tordnsel();
         record.descriptor_type = fieldSetFlags()[0] ? this.descriptor_type : (java.lang.String) defaultValue(fields()[0]);
         record.downloaded = fieldSetFlags()[1] ? this.downloaded : (java.lang.Long) defaultValue(fields()[1]);
-        record.exit_nodes = fieldSetFlags()[2] ? this.exit_nodes : (java.util.List<converTor.encoders.tordnsel.ExitNode>) defaultValue(fields()[2]);
+        record.exit_nodes = fieldSetFlags()[2] ? this.exit_nodes : (java.util.List<convertor.encoders.tordnsel.ExitNode>) defaultValue(fields()[2]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

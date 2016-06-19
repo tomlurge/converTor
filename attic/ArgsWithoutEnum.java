@@ -1,6 +1,6 @@
-package converTor.stuff;
+package convertor.stuff;
 
-import converTor.Base;
+import convertor.Base;
 import org.apache.commons.cli.*;
 
 

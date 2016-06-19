@@ -3,12 +3,12 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.encoders.relayVote;  
+package convertor.encoders.relayVote;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -4912433943891894443L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FlagTresholds\",\"namespace\":\"converTor.encoders.relayVote\",\"fields\":[{\"name\":\"stable_uptime\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getStableUptime()\"},{\"name\":\"stable_mtbf\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getStableMtbf()\"},{\"name\":\"enough_mtbf\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getEnoughMtbfInfo()\"},{\"name\":\"fast_speed\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getFastBandwidth()\"},{\"name\":\"guard_wfu\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: double getGuardWfu()\"},{\"name\":\"guard_tk\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getGuardTk()\"},{\"name\":\"guard_bw_inc_exits\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote:\\n        long getGuardBandwidthIncludingExits()\"},{\"name\":\"guard_bw_exc_exits\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote:\\n        long getGuardBandwidthExcludingExits()\"},{\"name\":\"ignoring_advertised_bws\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getIgnoringAdvertisedBws()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FlagTresholds\",\"namespace\":\"convertor.encoders.relayVote\",\"fields\":[{\"name\":\"stable_uptime\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getStableUptime()\"},{\"name\":\"stable_mtbf\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getStableMtbf()\"},{\"name\":\"enough_mtbf\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getEnoughMtbfInfo()\"},{\"name\":\"fast_speed\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getFastBandwidth()\"},{\"name\":\"guard_wfu\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: double getGuardWfu()\"},{\"name\":\"guard_tk\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getGuardTk()\"},{\"name\":\"guard_bw_inc_exits\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote:\\n        long getGuardBandwidthIncludingExits()\"},{\"name\":\"guard_bw_exc_exits\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote:\\n        long getGuardBandwidthExcludingExits()\"},{\"name\":\"ignoring_advertised_bws\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getIgnoringAdvertisedBws()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/RelayNetworkStatusVote: long getStableUptime() */
   @Deprecated public java.lang.Long stable_uptime;
@@ -258,8 +258,8 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
    * Creates a new FlagTresholds RecordBuilder.
    * @return A new FlagTresholds RecordBuilder
    */
-  public static converTor.encoders.relayVote.FlagTresholds.Builder newBuilder() {
-    return new converTor.encoders.relayVote.FlagTresholds.Builder();
+  public static convertor.encoders.relayVote.FlagTresholds.Builder newBuilder() {
+    return new convertor.encoders.relayVote.FlagTresholds.Builder();
   }
   
   /**
@@ -267,8 +267,8 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
    * @param other The existing builder to copy.
    * @return A new FlagTresholds RecordBuilder
    */
-  public static converTor.encoders.relayVote.FlagTresholds.Builder newBuilder(converTor.encoders.relayVote.FlagTresholds.Builder other) {
-    return new converTor.encoders.relayVote.FlagTresholds.Builder(other);
+  public static convertor.encoders.relayVote.FlagTresholds.Builder newBuilder(convertor.encoders.relayVote.FlagTresholds.Builder other) {
+    return new convertor.encoders.relayVote.FlagTresholds.Builder(other);
   }
   
   /**
@@ -276,8 +276,8 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
    * @param other The existing instance to copy.
    * @return A new FlagTresholds RecordBuilder
    */
-  public static converTor.encoders.relayVote.FlagTresholds.Builder newBuilder(converTor.encoders.relayVote.FlagTresholds other) {
-    return new converTor.encoders.relayVote.FlagTresholds.Builder(other);
+  public static convertor.encoders.relayVote.FlagTresholds.Builder newBuilder(convertor.encoders.relayVote.FlagTresholds other) {
+    return new convertor.encoders.relayVote.FlagTresholds.Builder(other);
   }
   
   /**
@@ -309,14 +309,14 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
 
     /** Creates a new Builder */
     private Builder() {
-      super(converTor.encoders.relayVote.FlagTresholds.SCHEMA$);
+      super(convertor.encoders.relayVote.FlagTresholds.SCHEMA$);
     }
     
     /**
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(converTor.encoders.relayVote.FlagTresholds.Builder other) {
+    private Builder(convertor.encoders.relayVote.FlagTresholds.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.stable_uptime)) {
         this.stable_uptime = data().deepCopy(fields()[0].schema(), other.stable_uptime);
@@ -360,8 +360,8 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
      * Creates a Builder by copying an existing FlagTresholds instance
      * @param other The existing instance to copy.
      */
-    private Builder(converTor.encoders.relayVote.FlagTresholds other) {
-            super(converTor.encoders.relayVote.FlagTresholds.SCHEMA$);
+    private Builder(convertor.encoders.relayVote.FlagTresholds other) {
+            super(convertor.encoders.relayVote.FlagTresholds.SCHEMA$);
       if (isValidValue(fields()[0], other.stable_uptime)) {
         this.stable_uptime = data().deepCopy(fields()[0].schema(), other.stable_uptime);
         fieldSetFlags()[0] = true;
@@ -415,7 +415,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'stable_uptime'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.FlagTresholds.Builder setStableUptime(java.lang.Long value) {
+    public convertor.encoders.relayVote.FlagTresholds.Builder setStableUptime(java.lang.Long value) {
       validate(fields()[0], value);
       this.stable_uptime = value;
       fieldSetFlags()[0] = true;
@@ -437,7 +437,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
       * metrics-lib/RelayNetworkStatusVote: long getStableUptime()
       * @return This builder.
       */
-    public converTor.encoders.relayVote.FlagTresholds.Builder clearStableUptime() {
+    public convertor.encoders.relayVote.FlagTresholds.Builder clearStableUptime() {
       stable_uptime = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -458,7 +458,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'stable_mtbf'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.FlagTresholds.Builder setStableMtbf(java.lang.Long value) {
+    public convertor.encoders.relayVote.FlagTresholds.Builder setStableMtbf(java.lang.Long value) {
       validate(fields()[1], value);
       this.stable_mtbf = value;
       fieldSetFlags()[1] = true;
@@ -480,7 +480,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
       * metrics-lib/RelayNetworkStatusVote: long getStableMtbf()
       * @return This builder.
       */
-    public converTor.encoders.relayVote.FlagTresholds.Builder clearStableMtbf() {
+    public convertor.encoders.relayVote.FlagTresholds.Builder clearStableMtbf() {
       stable_mtbf = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -501,7 +501,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'enough_mtbf'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.FlagTresholds.Builder setEnoughMtbf(java.lang.Integer value) {
+    public convertor.encoders.relayVote.FlagTresholds.Builder setEnoughMtbf(java.lang.Integer value) {
       validate(fields()[2], value);
       this.enough_mtbf = value;
       fieldSetFlags()[2] = true;
@@ -523,7 +523,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
       * metrics-lib/RelayNetworkStatusVote: int getEnoughMtbfInfo()
       * @return This builder.
       */
-    public converTor.encoders.relayVote.FlagTresholds.Builder clearEnoughMtbf() {
+    public convertor.encoders.relayVote.FlagTresholds.Builder clearEnoughMtbf() {
       enough_mtbf = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -544,7 +544,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'fast_speed'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.FlagTresholds.Builder setFastSpeed(java.lang.Long value) {
+    public convertor.encoders.relayVote.FlagTresholds.Builder setFastSpeed(java.lang.Long value) {
       validate(fields()[3], value);
       this.fast_speed = value;
       fieldSetFlags()[3] = true;
@@ -566,7 +566,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
       * metrics-lib/RelayNetworkStatusVote: long getFastBandwidth()
       * @return This builder.
       */
-    public converTor.encoders.relayVote.FlagTresholds.Builder clearFastSpeed() {
+    public convertor.encoders.relayVote.FlagTresholds.Builder clearFastSpeed() {
       fast_speed = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -587,7 +587,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'guard_wfu'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.FlagTresholds.Builder setGuardWfu(java.lang.Double value) {
+    public convertor.encoders.relayVote.FlagTresholds.Builder setGuardWfu(java.lang.Double value) {
       validate(fields()[4], value);
       this.guard_wfu = value;
       fieldSetFlags()[4] = true;
@@ -609,7 +609,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
       * metrics-lib/RelayNetworkStatusVote: double getGuardWfu()
       * @return This builder.
       */
-    public converTor.encoders.relayVote.FlagTresholds.Builder clearGuardWfu() {
+    public convertor.encoders.relayVote.FlagTresholds.Builder clearGuardWfu() {
       guard_wfu = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -630,7 +630,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'guard_tk'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.FlagTresholds.Builder setGuardTk(java.lang.Long value) {
+    public convertor.encoders.relayVote.FlagTresholds.Builder setGuardTk(java.lang.Long value) {
       validate(fields()[5], value);
       this.guard_tk = value;
       fieldSetFlags()[5] = true;
@@ -652,7 +652,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
       * metrics-lib/RelayNetworkStatusVote: long getGuardTk()
       * @return This builder.
       */
-    public converTor.encoders.relayVote.FlagTresholds.Builder clearGuardTk() {
+    public convertor.encoders.relayVote.FlagTresholds.Builder clearGuardTk() {
       guard_tk = null;
       fieldSetFlags()[5] = false;
       return this;
@@ -675,7 +675,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'guard_bw_inc_exits'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.FlagTresholds.Builder setGuardBwIncExits(java.lang.Long value) {
+    public convertor.encoders.relayVote.FlagTresholds.Builder setGuardBwIncExits(java.lang.Long value) {
       validate(fields()[6], value);
       this.guard_bw_inc_exits = value;
       fieldSetFlags()[6] = true;
@@ -699,7 +699,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
         long getGuardBandwidthIncludingExits()
       * @return This builder.
       */
-    public converTor.encoders.relayVote.FlagTresholds.Builder clearGuardBwIncExits() {
+    public convertor.encoders.relayVote.FlagTresholds.Builder clearGuardBwIncExits() {
       guard_bw_inc_exits = null;
       fieldSetFlags()[6] = false;
       return this;
@@ -722,7 +722,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'guard_bw_exc_exits'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.FlagTresholds.Builder setGuardBwExcExits(java.lang.Long value) {
+    public convertor.encoders.relayVote.FlagTresholds.Builder setGuardBwExcExits(java.lang.Long value) {
       validate(fields()[7], value);
       this.guard_bw_exc_exits = value;
       fieldSetFlags()[7] = true;
@@ -746,7 +746,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
         long getGuardBandwidthExcludingExits()
       * @return This builder.
       */
-    public converTor.encoders.relayVote.FlagTresholds.Builder clearGuardBwExcExits() {
+    public convertor.encoders.relayVote.FlagTresholds.Builder clearGuardBwExcExits() {
       guard_bw_exc_exits = null;
       fieldSetFlags()[7] = false;
       return this;
@@ -767,7 +767,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'ignoring_advertised_bws'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.FlagTresholds.Builder setIgnoringAdvertisedBws(java.lang.Integer value) {
+    public convertor.encoders.relayVote.FlagTresholds.Builder setIgnoringAdvertisedBws(java.lang.Integer value) {
       validate(fields()[8], value);
       this.ignoring_advertised_bws = value;
       fieldSetFlags()[8] = true;
@@ -789,7 +789,7 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
       * metrics-lib/RelayNetworkStatusVote: int getIgnoringAdvertisedBws()
       * @return This builder.
       */
-    public converTor.encoders.relayVote.FlagTresholds.Builder clearIgnoringAdvertisedBws() {
+    public convertor.encoders.relayVote.FlagTresholds.Builder clearIgnoringAdvertisedBws() {
       ignoring_advertised_bws = null;
       fieldSetFlags()[8] = false;
       return this;

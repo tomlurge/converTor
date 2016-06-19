@@ -3,12 +3,12 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.encoders.bridgeStatus;  
+package convertor.encoders.bridgeStatus;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class W extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = 8096703306586637829L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"W\",\"namespace\":\"converTor.encoders.bridgeStatus\",\"fields\":[{\"name\":\"bandwidth\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getBandwidth()\"},{\"name\":\"measured\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getMeasured()\"},{\"name\":\"unmeasured\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/NetworkStatusEntry: boolean getUnmeasured()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"W\",\"namespace\":\"convertor.encoders.bridgeStatus\",\"fields\":[{\"name\":\"bandwidth\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getBandwidth()\"},{\"name\":\"measured\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getMeasured()\"},{\"name\":\"unmeasured\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/NetworkStatusEntry: boolean getUnmeasured()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/NetworkStatusEntry: long getBandwidth() */
   @Deprecated public java.lang.Long bandwidth;
@@ -112,8 +112,8 @@ public class W extends org.apache.avro.specific.SpecificRecordBase implements or
    * Creates a new W RecordBuilder.
    * @return A new W RecordBuilder
    */
-  public static converTor.encoders.bridgeStatus.W.Builder newBuilder() {
-    return new converTor.encoders.bridgeStatus.W.Builder();
+  public static convertor.encoders.bridgeStatus.W.Builder newBuilder() {
+    return new convertor.encoders.bridgeStatus.W.Builder();
   }
   
   /**
@@ -121,8 +121,8 @@ public class W extends org.apache.avro.specific.SpecificRecordBase implements or
    * @param other The existing builder to copy.
    * @return A new W RecordBuilder
    */
-  public static converTor.encoders.bridgeStatus.W.Builder newBuilder(converTor.encoders.bridgeStatus.W.Builder other) {
-    return new converTor.encoders.bridgeStatus.W.Builder(other);
+  public static convertor.encoders.bridgeStatus.W.Builder newBuilder(convertor.encoders.bridgeStatus.W.Builder other) {
+    return new convertor.encoders.bridgeStatus.W.Builder(other);
   }
   
   /**
@@ -130,8 +130,8 @@ public class W extends org.apache.avro.specific.SpecificRecordBase implements or
    * @param other The existing instance to copy.
    * @return A new W RecordBuilder
    */
-  public static converTor.encoders.bridgeStatus.W.Builder newBuilder(converTor.encoders.bridgeStatus.W other) {
-    return new converTor.encoders.bridgeStatus.W.Builder(other);
+  public static convertor.encoders.bridgeStatus.W.Builder newBuilder(convertor.encoders.bridgeStatus.W other) {
+    return new convertor.encoders.bridgeStatus.W.Builder(other);
   }
   
   /**
@@ -149,14 +149,14 @@ public class W extends org.apache.avro.specific.SpecificRecordBase implements or
 
     /** Creates a new Builder */
     private Builder() {
-      super(converTor.encoders.bridgeStatus.W.SCHEMA$);
+      super(convertor.encoders.bridgeStatus.W.SCHEMA$);
     }
     
     /**
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(converTor.encoders.bridgeStatus.W.Builder other) {
+    private Builder(convertor.encoders.bridgeStatus.W.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.bandwidth)) {
         this.bandwidth = data().deepCopy(fields()[0].schema(), other.bandwidth);
@@ -176,8 +176,8 @@ public class W extends org.apache.avro.specific.SpecificRecordBase implements or
      * Creates a Builder by copying an existing W instance
      * @param other The existing instance to copy.
      */
-    private Builder(converTor.encoders.bridgeStatus.W other) {
-            super(converTor.encoders.bridgeStatus.W.SCHEMA$);
+    private Builder(convertor.encoders.bridgeStatus.W other) {
+            super(convertor.encoders.bridgeStatus.W.SCHEMA$);
       if (isValidValue(fields()[0], other.bandwidth)) {
         this.bandwidth = data().deepCopy(fields()[0].schema(), other.bandwidth);
         fieldSetFlags()[0] = true;
@@ -207,7 +207,7 @@ public class W extends org.apache.avro.specific.SpecificRecordBase implements or
       * @param value The value of 'bandwidth'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeStatus.W.Builder setBandwidth(java.lang.Long value) {
+    public convertor.encoders.bridgeStatus.W.Builder setBandwidth(java.lang.Long value) {
       validate(fields()[0], value);
       this.bandwidth = value;
       fieldSetFlags()[0] = true;
@@ -229,7 +229,7 @@ public class W extends org.apache.avro.specific.SpecificRecordBase implements or
       * metrics-lib/NetworkStatusEntry: long getBandwidth()
       * @return This builder.
       */
-    public converTor.encoders.bridgeStatus.W.Builder clearBandwidth() {
+    public convertor.encoders.bridgeStatus.W.Builder clearBandwidth() {
       bandwidth = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -250,7 +250,7 @@ public class W extends org.apache.avro.specific.SpecificRecordBase implements or
       * @param value The value of 'measured'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeStatus.W.Builder setMeasured(java.lang.Long value) {
+    public convertor.encoders.bridgeStatus.W.Builder setMeasured(java.lang.Long value) {
       validate(fields()[1], value);
       this.measured = value;
       fieldSetFlags()[1] = true;
@@ -272,7 +272,7 @@ public class W extends org.apache.avro.specific.SpecificRecordBase implements or
       * metrics-lib/NetworkStatusEntry: long getMeasured()
       * @return This builder.
       */
-    public converTor.encoders.bridgeStatus.W.Builder clearMeasured() {
+    public convertor.encoders.bridgeStatus.W.Builder clearMeasured() {
       measured = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -293,7 +293,7 @@ public class W extends org.apache.avro.specific.SpecificRecordBase implements or
       * @param value The value of 'unmeasured'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeStatus.W.Builder setUnmeasured(java.lang.Boolean value) {
+    public convertor.encoders.bridgeStatus.W.Builder setUnmeasured(java.lang.Boolean value) {
       validate(fields()[2], value);
       this.unmeasured = value;
       fieldSetFlags()[2] = true;
@@ -315,7 +315,7 @@ public class W extends org.apache.avro.specific.SpecificRecordBase implements or
       * metrics-lib/NetworkStatusEntry: boolean getUnmeasured()
       * @return This builder.
       */
-    public converTor.encoders.bridgeStatus.W.Builder clearUnmeasured() {
+    public convertor.encoders.bridgeStatus.W.Builder clearUnmeasured() {
       unmeasured = null;
       fieldSetFlags()[2] = false;
       return this;

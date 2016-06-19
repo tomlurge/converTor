@@ -3,12 +3,12 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.encoders.relayExtra;  
+package convertor.encoders.relayExtra;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class DirreqReadHistory extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -1445224117907662792L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DirreqReadHistory\",\"namespace\":\"converTor.encoders.relayExtra\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DirreqReadHistory\",\"namespace\":\"convertor.encoders.relayExtra\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/BandwidthHistory: long getHistoryEndMillis() */
   @Deprecated public java.lang.Long date;
@@ -112,8 +112,8 @@ public class DirreqReadHistory extends org.apache.avro.specific.SpecificRecordBa
    * Creates a new DirreqReadHistory RecordBuilder.
    * @return A new DirreqReadHistory RecordBuilder
    */
-  public static converTor.encoders.relayExtra.DirreqReadHistory.Builder newBuilder() {
-    return new converTor.encoders.relayExtra.DirreqReadHistory.Builder();
+  public static convertor.encoders.relayExtra.DirreqReadHistory.Builder newBuilder() {
+    return new convertor.encoders.relayExtra.DirreqReadHistory.Builder();
   }
   
   /**
@@ -121,8 +121,8 @@ public class DirreqReadHistory extends org.apache.avro.specific.SpecificRecordBa
    * @param other The existing builder to copy.
    * @return A new DirreqReadHistory RecordBuilder
    */
-  public static converTor.encoders.relayExtra.DirreqReadHistory.Builder newBuilder(converTor.encoders.relayExtra.DirreqReadHistory.Builder other) {
-    return new converTor.encoders.relayExtra.DirreqReadHistory.Builder(other);
+  public static convertor.encoders.relayExtra.DirreqReadHistory.Builder newBuilder(convertor.encoders.relayExtra.DirreqReadHistory.Builder other) {
+    return new convertor.encoders.relayExtra.DirreqReadHistory.Builder(other);
   }
   
   /**
@@ -130,8 +130,8 @@ public class DirreqReadHistory extends org.apache.avro.specific.SpecificRecordBa
    * @param other The existing instance to copy.
    * @return A new DirreqReadHistory RecordBuilder
    */
-  public static converTor.encoders.relayExtra.DirreqReadHistory.Builder newBuilder(converTor.encoders.relayExtra.DirreqReadHistory other) {
-    return new converTor.encoders.relayExtra.DirreqReadHistory.Builder(other);
+  public static convertor.encoders.relayExtra.DirreqReadHistory.Builder newBuilder(convertor.encoders.relayExtra.DirreqReadHistory other) {
+    return new convertor.encoders.relayExtra.DirreqReadHistory.Builder(other);
   }
   
   /**
@@ -149,14 +149,14 @@ public class DirreqReadHistory extends org.apache.avro.specific.SpecificRecordBa
 
     /** Creates a new Builder */
     private Builder() {
-      super(converTor.encoders.relayExtra.DirreqReadHistory.SCHEMA$);
+      super(convertor.encoders.relayExtra.DirreqReadHistory.SCHEMA$);
     }
     
     /**
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(converTor.encoders.relayExtra.DirreqReadHistory.Builder other) {
+    private Builder(convertor.encoders.relayExtra.DirreqReadHistory.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.date)) {
         this.date = data().deepCopy(fields()[0].schema(), other.date);
@@ -176,8 +176,8 @@ public class DirreqReadHistory extends org.apache.avro.specific.SpecificRecordBa
      * Creates a Builder by copying an existing DirreqReadHistory instance
      * @param other The existing instance to copy.
      */
-    private Builder(converTor.encoders.relayExtra.DirreqReadHistory other) {
-            super(converTor.encoders.relayExtra.DirreqReadHistory.SCHEMA$);
+    private Builder(convertor.encoders.relayExtra.DirreqReadHistory other) {
+            super(convertor.encoders.relayExtra.DirreqReadHistory.SCHEMA$);
       if (isValidValue(fields()[0], other.date)) {
         this.date = data().deepCopy(fields()[0].schema(), other.date);
         fieldSetFlags()[0] = true;
@@ -207,7 +207,7 @@ public class DirreqReadHistory extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'date'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.DirreqReadHistory.Builder setDate(java.lang.Long value) {
+    public convertor.encoders.relayExtra.DirreqReadHistory.Builder setDate(java.lang.Long value) {
       validate(fields()[0], value);
       this.date = value;
       fieldSetFlags()[0] = true;
@@ -229,7 +229,7 @@ public class DirreqReadHistory extends org.apache.avro.specific.SpecificRecordBa
       * metrics-lib/BandwidthHistory: long getHistoryEndMillis()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.DirreqReadHistory.Builder clearDate() {
+    public convertor.encoders.relayExtra.DirreqReadHistory.Builder clearDate() {
       date = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -250,7 +250,7 @@ public class DirreqReadHistory extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'interval'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.DirreqReadHistory.Builder setInterval(java.lang.Long value) {
+    public convertor.encoders.relayExtra.DirreqReadHistory.Builder setInterval(java.lang.Long value) {
       validate(fields()[1], value);
       this.interval = value;
       fieldSetFlags()[1] = true;
@@ -272,7 +272,7 @@ public class DirreqReadHistory extends org.apache.avro.specific.SpecificRecordBa
       * metrics-lib/BandwidthHistory: long getIntervalLength()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.DirreqReadHistory.Builder clearInterval() {
+    public convertor.encoders.relayExtra.DirreqReadHistory.Builder clearInterval() {
       interval = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -293,7 +293,7 @@ public class DirreqReadHistory extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'bytes'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.DirreqReadHistory.Builder setBytes(java.util.List<java.lang.Long> value) {
+    public convertor.encoders.relayExtra.DirreqReadHistory.Builder setBytes(java.util.List<java.lang.Long> value) {
       validate(fields()[2], value);
       this.bytes = value;
       fieldSetFlags()[2] = true;
@@ -315,7 +315,7 @@ public class DirreqReadHistory extends org.apache.avro.specific.SpecificRecordBa
       * metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.DirreqReadHistory.Builder clearBytes() {
+    public convertor.encoders.relayExtra.DirreqReadHistory.Builder clearBytes() {
       bytes = null;
       fieldSetFlags()[2] = false;
       return this;

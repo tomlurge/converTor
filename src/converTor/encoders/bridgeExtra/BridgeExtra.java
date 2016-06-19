@@ -3,23 +3,23 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.encoders.bridgeExtra;  
+package convertor.encoders.bridgeExtra;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -117082533703832902L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"BridgeExtra\",\"namespace\":\"converTor.encoders.bridgeExtra\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"bridge-extra-info 1.3\"},{\"name\":\"extra_info\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ExtraInfo\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getNickname()\"},{\"name\":\"fingerprint\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getFingerprint()\"}]}]},{\"name\":\"identity_ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getIdentityEd25519();\"},{\"name\":\"published\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getPublishedMillis()\"},{\"name\":\"read_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ReadHistory\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory()\"},{\"name\":\"write_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"WriteHistory\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory()\"},{\"name\":\"geoip_db_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getGeoipDbDigest()\"},{\"name\":\"geoip6_db_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getGeoip6DbDigest()\"},{\"name\":\"geoip_start_time\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getGeoipStartTimeMillis()\"},{\"name\":\"geoip_client_origins\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getGeoipClientOrigins()\"},{\"name\":\"bridge_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"BridgeStats\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getBridgeStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getBridgeStatsIntervalLength()\"}]}]},{\"name\":\"bridge_ips\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIps()\"},{\"name\":\"bridge_ip_versions\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIpVersions()\"},{\"name\":\"bridge_ip_transports\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIpTransports()\"},{\"name\":\"dirreq_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirreqStats\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getDirreqStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getDirreqStatsIntervalLength()\"}]}]},{\"name\":\"dirreq_v2_ips\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Ips()\"},{\"name\":\"dirreq_v3_ips\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Ips()\"},{\"name\":\"dirreq_v2_reqs\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Reqs()\"},{\"name\":\"dirreq_v3_reqs\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Reqs()\"},{\"name\":\"dirreq_v2_share\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: double getDirreqV2Share()\"},{\"name\":\"dirreq_v3_share\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: double getDirreqV3Share()\"},{\"name\":\"dirreq_v2_resp\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Resp()\"},{\"name\":\"dirreq_v3_resp\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Resp()\"},{\"name\":\"dirreq_v2_direct_dl\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2DirectDl()\"},{\"name\":\"dirreq_v3_direct_dl\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3DirectDl()\"},{\"name\":\"dirreq_v2_tunneled_dl\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2TunneledDl()\"},{\"name\":\"dirreq_v3_tunneled_dl\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3TunneledDl()\"},{\"name\":\"dirreq_read_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirreqReadHistory\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory()\"},{\"name\":\"dirreq_write_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirreqWriteHistory\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory()\"},{\"name\":\"entry_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"EntryStats\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getEntryStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getEntryStatsIntervalLength()\"}]}]},{\"name\":\"entry_ips\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getEntryIps()\"},{\"name\":\"cell_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"CellStats\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getCellStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getCellStatsIntervalLength()\"}]}]},{\"name\":\"cell_processed_cells\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: List<Integer> getCellProcessedCells()\"},{\"name\":\"cell_queued_cells\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"double\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: List<Double> getCellQueuedCells()\"},{\"name\":\"cell_time_in_queue\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoD","escriptor: List<Integer> getCellTimeInQueue()\"},{\"name\":\"cell_circuits_per_decile\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getCellCircuitsPerDecile()\"},{\"name\":\"conn_bi_direct\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ConnBiDirect\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsIntervalLength()\"},{\"name\":\"below\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBelow()\"},{\"name\":\"read\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectRead()\"},{\"name\":\"write\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectWrite()\"},{\"name\":\"both\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBoth()\"}]}]},{\"name\":\"exit_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ExitStats\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getExitStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getExitStatsIntervalLength()\"}]}]},{\"name\":\"exit_kibibytes_written\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"long\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesWritten()\"},{\"name\":\"exit_kibibytes_read\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"long\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesRead()\"},{\"name\":\"exit_streams_opened\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"long\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitStreamsOpened()\"},{\"name\":\"hidserv_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"HidservStats\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getHidservStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getHidservStatsIntervalLength()\"}]}]},{\"name\":\"hidserv_rend_relayed_cells\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"HidservRendRelayedCells\",\"fields\":[{\"name\":\"cells\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: Double getHidservRendRelayedCells()\"},{\"name\":\"obfuscation\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"double\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservRendRelayedCellsParameters()\"}]}]},{\"name\":\"hidserv_dir_onions_seen\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"HidservDirOnionsSeen\",\"fields\":[{\"name\":\"onions\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: Double getHidservDirOnionsSeen()\"},{\"name\":\"obfuscation\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"double\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservDirOnionsSeenParameters()\"}]}]},{\"name\":\"transport\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: List<String> getTransports()\"},{\"name\":\"extra_info_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigest()\"},{\"name\":\"extra_info_digest_sha256\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigestSha256()\"},{\"name\":\"master_key_ed25519\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getMasterKeyEd25519()\"}],\"aliases\":[\"bridge_extra_info\"]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"BridgeExtra\",\"namespace\":\"convertor.encoders.bridgeExtra\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"bridge-extra-info 1.3\"},{\"name\":\"extra_info\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ExtraInfo\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getNickname()\"},{\"name\":\"fingerprint\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getFingerprint()\"}]}]},{\"name\":\"identity_ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getIdentityEd25519();\"},{\"name\":\"published\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getPublishedMillis()\"},{\"name\":\"read_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ReadHistory\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory()\"},{\"name\":\"write_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"WriteHistory\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory()\"},{\"name\":\"geoip_db_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getGeoipDbDigest()\"},{\"name\":\"geoip6_db_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getGeoip6DbDigest()\"},{\"name\":\"geoip_start_time\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getGeoipStartTimeMillis()\"},{\"name\":\"geoip_client_origins\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getGeoipClientOrigins()\"},{\"name\":\"bridge_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"BridgeStats\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getBridgeStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getBridgeStatsIntervalLength()\"}]}]},{\"name\":\"bridge_ips\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIps()\"},{\"name\":\"bridge_ip_versions\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIpVersions()\"},{\"name\":\"bridge_ip_transports\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIpTransports()\"},{\"name\":\"dirreq_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirreqStats\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getDirreqStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getDirreqStatsIntervalLength()\"}]}]},{\"name\":\"dirreq_v2_ips\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Ips()\"},{\"name\":\"dirreq_v3_ips\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Ips()\"},{\"name\":\"dirreq_v2_reqs\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Reqs()\"},{\"name\":\"dirreq_v3_reqs\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Reqs()\"},{\"name\":\"dirreq_v2_share\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: double getDirreqV2Share()\"},{\"name\":\"dirreq_v3_share\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: double getDirreqV3Share()\"},{\"name\":\"dirreq_v2_resp\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Resp()\"},{\"name\":\"dirreq_v3_resp\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Resp()\"},{\"name\":\"dirreq_v2_direct_dl\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2DirectDl()\"},{\"name\":\"dirreq_v3_direct_dl\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3DirectDl()\"},{\"name\":\"dirreq_v2_tunneled_dl\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2TunneledDl()\"},{\"name\":\"dirreq_v3_tunneled_dl\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3TunneledDl()\"},{\"name\":\"dirreq_read_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirreqReadHistory\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory()\"},{\"name\":\"dirreq_write_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirreqWriteHistory\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory()\"},{\"name\":\"entry_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"EntryStats\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getEntryStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getEntryStatsIntervalLength()\"}]}]},{\"name\":\"entry_ips\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getEntryIps()\"},{\"name\":\"cell_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"CellStats\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getCellStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getCellStatsIntervalLength()\"}]}]},{\"name\":\"cell_processed_cells\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: List<Integer> getCellProcessedCells()\"},{\"name\":\"cell_queued_cells\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"double\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: List<Double> getCellQueuedCells()\"},{\"name\":\"cell_time_in_queue\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoD","escriptor: List<Integer> getCellTimeInQueue()\"},{\"name\":\"cell_circuits_per_decile\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getCellCircuitsPerDecile()\"},{\"name\":\"conn_bi_direct\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ConnBiDirect\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsIntervalLength()\"},{\"name\":\"below\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBelow()\"},{\"name\":\"read\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectRead()\"},{\"name\":\"write\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectWrite()\"},{\"name\":\"both\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBoth()\"}]}]},{\"name\":\"exit_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ExitStats\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getExitStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getExitStatsIntervalLength()\"}]}]},{\"name\":\"exit_kibibytes_written\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"long\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesWritten()\"},{\"name\":\"exit_kibibytes_read\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"long\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesRead()\"},{\"name\":\"exit_streams_opened\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"long\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitStreamsOpened()\"},{\"name\":\"hidserv_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"HidservStats\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getHidservStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getHidservStatsIntervalLength()\"}]}]},{\"name\":\"hidserv_rend_relayed_cells\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"HidservRendRelayedCells\",\"fields\":[{\"name\":\"cells\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: Double getHidservRendRelayedCells()\"},{\"name\":\"obfuscation\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"double\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservRendRelayedCellsParameters()\"}]}]},{\"name\":\"hidserv_dir_onions_seen\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"HidservDirOnionsSeen\",\"fields\":[{\"name\":\"onions\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: Double getHidservDirOnionsSeen()\"},{\"name\":\"obfuscation\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"double\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservDirOnionsSeenParameters()\"}]}]},{\"name\":\"transport\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: List<String> getTransports()\"},{\"name\":\"extra_info_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigest()\"},{\"name\":\"extra_info_digest_sha256\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigestSha256()\"},{\"name\":\"master_key_ed25519\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getMasterKeyEd25519()\"}],\"aliases\":[\"bridge_extra_info\"]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   @Deprecated public java.lang.String descriptor_type;
-  @Deprecated public converTor.encoders.bridgeExtra.ExtraInfo extra_info;
+  @Deprecated public convertor.encoders.bridgeExtra.ExtraInfo extra_info;
   /** metrics-lib/ExtraInfoDescriptor: String getIdentityEd25519(); */
   @Deprecated public java.lang.Boolean identity_ed25519;
   /** metrics-lib/ExtraInfoDescriptor: long getPublishedMillis() */
   @Deprecated public java.lang.Long published;
   /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory() */
-  @Deprecated public converTor.encoders.bridgeExtra.ReadHistory read_history;
+  @Deprecated public convertor.encoders.bridgeExtra.ReadHistory read_history;
   /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory() */
-  @Deprecated public converTor.encoders.bridgeExtra.WriteHistory write_history;
+  @Deprecated public convertor.encoders.bridgeExtra.WriteHistory write_history;
   /** metrics-lib/ExtraInfoDescriptor: String getGeoipDbDigest() */
   @Deprecated public java.lang.String geoip_db_digest;
   /** metrics-lib/ExtraInfoDescriptor: String getGeoip6DbDigest() */
@@ -28,14 +28,14 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
   @Deprecated public java.lang.Long geoip_start_time;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getGeoipClientOrigins() */
   @Deprecated public java.util.Map<java.lang.String,java.lang.Integer> geoip_client_origins;
-  @Deprecated public converTor.encoders.bridgeExtra.BridgeStats bridge_stats_end;
+  @Deprecated public convertor.encoders.bridgeExtra.BridgeStats bridge_stats_end;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIps() */
   @Deprecated public java.util.Map<java.lang.String,java.lang.Integer> bridge_ips;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIpVersions() */
   @Deprecated public java.util.Map<java.lang.String,java.lang.Integer> bridge_ip_versions;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIpTransports() */
   @Deprecated public java.util.Map<java.lang.String,java.lang.Integer> bridge_ip_transports;
-  @Deprecated public converTor.encoders.bridgeExtra.DirreqStats dirreq_stats_end;
+  @Deprecated public convertor.encoders.bridgeExtra.DirreqStats dirreq_stats_end;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Ips() */
   @Deprecated public java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_ips;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Ips() */
@@ -61,13 +61,13 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3TunneledDl() */
   @Deprecated public java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_tunneled_dl;
   /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory() */
-  @Deprecated public converTor.encoders.bridgeExtra.DirreqReadHistory dirreq_read_history;
+  @Deprecated public convertor.encoders.bridgeExtra.DirreqReadHistory dirreq_read_history;
   /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory() */
-  @Deprecated public converTor.encoders.bridgeExtra.DirreqWriteHistory dirreq_write_history;
-  @Deprecated public converTor.encoders.bridgeExtra.EntryStats entry_stats_end;
+  @Deprecated public convertor.encoders.bridgeExtra.DirreqWriteHistory dirreq_write_history;
+  @Deprecated public convertor.encoders.bridgeExtra.EntryStats entry_stats_end;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getEntryIps() */
   @Deprecated public java.util.Map<java.lang.String,java.lang.Integer> entry_ips;
-  @Deprecated public converTor.encoders.bridgeExtra.CellStats cell_stats_end;
+  @Deprecated public convertor.encoders.bridgeExtra.CellStats cell_stats_end;
   /** metrics-lib/ExtraInfoDescriptor: List<Integer> getCellProcessedCells() */
   @Deprecated public java.util.List<java.lang.Integer> cell_processed_cells;
   /** metrics-lib/ExtraInfoDescriptor: List<Double> getCellQueuedCells() */
@@ -76,17 +76,17 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
   @Deprecated public java.util.List<java.lang.Integer> cell_time_in_queue;
   /** metrics-lib/ExtraInfoDescriptor: int getCellCircuitsPerDecile() */
   @Deprecated public java.lang.Integer cell_circuits_per_decile;
-  @Deprecated public converTor.encoders.bridgeExtra.ConnBiDirect conn_bi_direct;
-  @Deprecated public converTor.encoders.bridgeExtra.ExitStats exit_stats_end;
+  @Deprecated public convertor.encoders.bridgeExtra.ConnBiDirect conn_bi_direct;
+  @Deprecated public convertor.encoders.bridgeExtra.ExitStats exit_stats_end;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesWritten() */
   @Deprecated public java.util.Map<java.lang.String,java.lang.Long> exit_kibibytes_written;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesRead() */
   @Deprecated public java.util.Map<java.lang.String,java.lang.Long> exit_kibibytes_read;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitStreamsOpened() */
   @Deprecated public java.util.Map<java.lang.String,java.lang.Long> exit_streams_opened;
-  @Deprecated public converTor.encoders.bridgeExtra.HidservStats hidserv_stats_end;
-  @Deprecated public converTor.encoders.bridgeExtra.HidservRendRelayedCells hidserv_rend_relayed_cells;
-  @Deprecated public converTor.encoders.bridgeExtra.HidservDirOnionsSeen hidserv_dir_onions_seen;
+  @Deprecated public convertor.encoders.bridgeExtra.HidservStats hidserv_stats_end;
+  @Deprecated public convertor.encoders.bridgeExtra.HidservRendRelayedCells hidserv_rend_relayed_cells;
+  @Deprecated public convertor.encoders.bridgeExtra.HidservDirOnionsSeen hidserv_dir_onions_seen;
   /** metrics-lib/ExtraInfoDescriptor: List<String> getTransports() */
   @Deprecated public java.util.List<java.lang.String> transport;
   /** metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigest() */
@@ -143,7 +143,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * @param extra_info_digest_sha256 metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigestSha256()
    * @param master_key_ed25519 metrics-lib/ExtraInfoDescriptor: String getMasterKeyEd25519()
    */
-  public BridgeExtra(java.lang.String descriptor_type, converTor.encoders.bridgeExtra.ExtraInfo extra_info, java.lang.Boolean identity_ed25519, java.lang.Long published, converTor.encoders.bridgeExtra.ReadHistory read_history, converTor.encoders.bridgeExtra.WriteHistory write_history, java.lang.String geoip_db_digest, java.lang.String geoip6_db_digest, java.lang.Long geoip_start_time, java.util.Map<java.lang.String,java.lang.Integer> geoip_client_origins, converTor.encoders.bridgeExtra.BridgeStats bridge_stats_end, java.util.Map<java.lang.String,java.lang.Integer> bridge_ips, java.util.Map<java.lang.String,java.lang.Integer> bridge_ip_versions, java.util.Map<java.lang.String,java.lang.Integer> bridge_ip_transports, converTor.encoders.bridgeExtra.DirreqStats dirreq_stats_end, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_ips, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_ips, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_reqs, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_reqs, java.lang.Double dirreq_v2_share, java.lang.Double dirreq_v3_share, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_resp, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_resp, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_direct_dl, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_direct_dl, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_tunneled_dl, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_tunneled_dl, converTor.encoders.bridgeExtra.DirreqReadHistory dirreq_read_history, converTor.encoders.bridgeExtra.DirreqWriteHistory dirreq_write_history, converTor.encoders.bridgeExtra.EntryStats entry_stats_end, java.util.Map<java.lang.String,java.lang.Integer> entry_ips, converTor.encoders.bridgeExtra.CellStats cell_stats_end, java.util.List<java.lang.Integer> cell_processed_cells, java.util.List<java.lang.Double> cell_queued_cells, java.util.List<java.lang.Integer> cell_time_in_queue, java.lang.Integer cell_circuits_per_decile, converTor.encoders.bridgeExtra.ConnBiDirect conn_bi_direct, converTor.encoders.bridgeExtra.ExitStats exit_stats_end, java.util.Map<java.lang.String,java.lang.Long> exit_kibibytes_written, java.util.Map<java.lang.String,java.lang.Long> exit_kibibytes_read, java.util.Map<java.lang.String,java.lang.Long> exit_streams_opened, converTor.encoders.bridgeExtra.HidservStats hidserv_stats_end, converTor.encoders.bridgeExtra.HidservRendRelayedCells hidserv_rend_relayed_cells, converTor.encoders.bridgeExtra.HidservDirOnionsSeen hidserv_dir_onions_seen, java.util.List<java.lang.String> transport, java.lang.String extra_info_digest, java.lang.String extra_info_digest_sha256, java.lang.String master_key_ed25519) {
+  public BridgeExtra(java.lang.String descriptor_type, convertor.encoders.bridgeExtra.ExtraInfo extra_info, java.lang.Boolean identity_ed25519, java.lang.Long published, convertor.encoders.bridgeExtra.ReadHistory read_history, convertor.encoders.bridgeExtra.WriteHistory write_history, java.lang.String geoip_db_digest, java.lang.String geoip6_db_digest, java.lang.Long geoip_start_time, java.util.Map<java.lang.String,java.lang.Integer> geoip_client_origins, convertor.encoders.bridgeExtra.BridgeStats bridge_stats_end, java.util.Map<java.lang.String,java.lang.Integer> bridge_ips, java.util.Map<java.lang.String,java.lang.Integer> bridge_ip_versions, java.util.Map<java.lang.String,java.lang.Integer> bridge_ip_transports, convertor.encoders.bridgeExtra.DirreqStats dirreq_stats_end, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_ips, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_ips, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_reqs, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_reqs, java.lang.Double dirreq_v2_share, java.lang.Double dirreq_v3_share, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_resp, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_resp, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_direct_dl, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_direct_dl, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_tunneled_dl, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_tunneled_dl, convertor.encoders.bridgeExtra.DirreqReadHistory dirreq_read_history, convertor.encoders.bridgeExtra.DirreqWriteHistory dirreq_write_history, convertor.encoders.bridgeExtra.EntryStats entry_stats_end, java.util.Map<java.lang.String,java.lang.Integer> entry_ips, convertor.encoders.bridgeExtra.CellStats cell_stats_end, java.util.List<java.lang.Integer> cell_processed_cells, java.util.List<java.lang.Double> cell_queued_cells, java.util.List<java.lang.Integer> cell_time_in_queue, java.lang.Integer cell_circuits_per_decile, convertor.encoders.bridgeExtra.ConnBiDirect conn_bi_direct, convertor.encoders.bridgeExtra.ExitStats exit_stats_end, java.util.Map<java.lang.String,java.lang.Long> exit_kibibytes_written, java.util.Map<java.lang.String,java.lang.Long> exit_kibibytes_read, java.util.Map<java.lang.String,java.lang.Long> exit_streams_opened, convertor.encoders.bridgeExtra.HidservStats hidserv_stats_end, convertor.encoders.bridgeExtra.HidservRendRelayedCells hidserv_rend_relayed_cells, convertor.encoders.bridgeExtra.HidservDirOnionsSeen hidserv_dir_onions_seen, java.util.List<java.lang.String> transport, java.lang.String extra_info_digest, java.lang.String extra_info_digest_sha256, java.lang.String master_key_ed25519) {
     this.descriptor_type = descriptor_type;
     this.extra_info = extra_info;
     this.identity_ed25519 = identity_ed25519;
@@ -254,20 +254,20 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
     case 0: descriptor_type = (java.lang.String)value$; break;
-    case 1: extra_info = (converTor.encoders.bridgeExtra.ExtraInfo)value$; break;
+    case 1: extra_info = (convertor.encoders.bridgeExtra.ExtraInfo)value$; break;
     case 2: identity_ed25519 = (java.lang.Boolean)value$; break;
     case 3: published = (java.lang.Long)value$; break;
-    case 4: read_history = (converTor.encoders.bridgeExtra.ReadHistory)value$; break;
-    case 5: write_history = (converTor.encoders.bridgeExtra.WriteHistory)value$; break;
+    case 4: read_history = (convertor.encoders.bridgeExtra.ReadHistory)value$; break;
+    case 5: write_history = (convertor.encoders.bridgeExtra.WriteHistory)value$; break;
     case 6: geoip_db_digest = (java.lang.String)value$; break;
     case 7: geoip6_db_digest = (java.lang.String)value$; break;
     case 8: geoip_start_time = (java.lang.Long)value$; break;
     case 9: geoip_client_origins = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
-    case 10: bridge_stats_end = (converTor.encoders.bridgeExtra.BridgeStats)value$; break;
+    case 10: bridge_stats_end = (convertor.encoders.bridgeExtra.BridgeStats)value$; break;
     case 11: bridge_ips = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
     case 12: bridge_ip_versions = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
     case 13: bridge_ip_transports = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
-    case 14: dirreq_stats_end = (converTor.encoders.bridgeExtra.DirreqStats)value$; break;
+    case 14: dirreq_stats_end = (convertor.encoders.bridgeExtra.DirreqStats)value$; break;
     case 15: dirreq_v2_ips = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
     case 16: dirreq_v3_ips = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
     case 17: dirreq_v2_reqs = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
@@ -280,23 +280,23 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
     case 24: dirreq_v3_direct_dl = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
     case 25: dirreq_v2_tunneled_dl = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
     case 26: dirreq_v3_tunneled_dl = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
-    case 27: dirreq_read_history = (converTor.encoders.bridgeExtra.DirreqReadHistory)value$; break;
-    case 28: dirreq_write_history = (converTor.encoders.bridgeExtra.DirreqWriteHistory)value$; break;
-    case 29: entry_stats_end = (converTor.encoders.bridgeExtra.EntryStats)value$; break;
+    case 27: dirreq_read_history = (convertor.encoders.bridgeExtra.DirreqReadHistory)value$; break;
+    case 28: dirreq_write_history = (convertor.encoders.bridgeExtra.DirreqWriteHistory)value$; break;
+    case 29: entry_stats_end = (convertor.encoders.bridgeExtra.EntryStats)value$; break;
     case 30: entry_ips = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
-    case 31: cell_stats_end = (converTor.encoders.bridgeExtra.CellStats)value$; break;
+    case 31: cell_stats_end = (convertor.encoders.bridgeExtra.CellStats)value$; break;
     case 32: cell_processed_cells = (java.util.List<java.lang.Integer>)value$; break;
     case 33: cell_queued_cells = (java.util.List<java.lang.Double>)value$; break;
     case 34: cell_time_in_queue = (java.util.List<java.lang.Integer>)value$; break;
     case 35: cell_circuits_per_decile = (java.lang.Integer)value$; break;
-    case 36: conn_bi_direct = (converTor.encoders.bridgeExtra.ConnBiDirect)value$; break;
-    case 37: exit_stats_end = (converTor.encoders.bridgeExtra.ExitStats)value$; break;
+    case 36: conn_bi_direct = (convertor.encoders.bridgeExtra.ConnBiDirect)value$; break;
+    case 37: exit_stats_end = (convertor.encoders.bridgeExtra.ExitStats)value$; break;
     case 38: exit_kibibytes_written = (java.util.Map<java.lang.String,java.lang.Long>)value$; break;
     case 39: exit_kibibytes_read = (java.util.Map<java.lang.String,java.lang.Long>)value$; break;
     case 40: exit_streams_opened = (java.util.Map<java.lang.String,java.lang.Long>)value$; break;
-    case 41: hidserv_stats_end = (converTor.encoders.bridgeExtra.HidservStats)value$; break;
-    case 42: hidserv_rend_relayed_cells = (converTor.encoders.bridgeExtra.HidservRendRelayedCells)value$; break;
-    case 43: hidserv_dir_onions_seen = (converTor.encoders.bridgeExtra.HidservDirOnionsSeen)value$; break;
+    case 41: hidserv_stats_end = (convertor.encoders.bridgeExtra.HidservStats)value$; break;
+    case 42: hidserv_rend_relayed_cells = (convertor.encoders.bridgeExtra.HidservRendRelayedCells)value$; break;
+    case 43: hidserv_dir_onions_seen = (convertor.encoders.bridgeExtra.HidservDirOnionsSeen)value$; break;
     case 44: transport = (java.util.List<java.lang.String>)value$; break;
     case 45: extra_info_digest = (java.lang.String)value$; break;
     case 46: extra_info_digest_sha256 = (java.lang.String)value$; break;
@@ -323,7 +323,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
   /**
    * Gets the value of the 'extra_info' field.
    */
-  public converTor.encoders.bridgeExtra.ExtraInfo getExtraInfo() {
+  public convertor.encoders.bridgeExtra.ExtraInfo getExtraInfo() {
     return extra_info;
   }
 
@@ -331,7 +331,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Sets the value of the 'extra_info' field.
    * @param value the value to set.
    */
-  public void setExtraInfo(converTor.encoders.bridgeExtra.ExtraInfo value) {
+  public void setExtraInfo(convertor.encoders.bridgeExtra.ExtraInfo value) {
     this.extra_info = value;
   }
 
@@ -373,7 +373,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Gets the value of the 'read_history' field.
    * @return metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory()
    */
-  public converTor.encoders.bridgeExtra.ReadHistory getReadHistory() {
+  public convertor.encoders.bridgeExtra.ReadHistory getReadHistory() {
     return read_history;
   }
 
@@ -382,7 +382,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory()
    * @param value the value to set.
    */
-  public void setReadHistory(converTor.encoders.bridgeExtra.ReadHistory value) {
+  public void setReadHistory(convertor.encoders.bridgeExtra.ReadHistory value) {
     this.read_history = value;
   }
 
@@ -390,7 +390,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Gets the value of the 'write_history' field.
    * @return metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory()
    */
-  public converTor.encoders.bridgeExtra.WriteHistory getWriteHistory() {
+  public convertor.encoders.bridgeExtra.WriteHistory getWriteHistory() {
     return write_history;
   }
 
@@ -399,7 +399,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory()
    * @param value the value to set.
    */
-  public void setWriteHistory(converTor.encoders.bridgeExtra.WriteHistory value) {
+  public void setWriteHistory(convertor.encoders.bridgeExtra.WriteHistory value) {
     this.write_history = value;
   }
 
@@ -474,7 +474,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
   /**
    * Gets the value of the 'bridge_stats_end' field.
    */
-  public converTor.encoders.bridgeExtra.BridgeStats getBridgeStatsEnd() {
+  public convertor.encoders.bridgeExtra.BridgeStats getBridgeStatsEnd() {
     return bridge_stats_end;
   }
 
@@ -482,7 +482,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Sets the value of the 'bridge_stats_end' field.
    * @param value the value to set.
    */
-  public void setBridgeStatsEnd(converTor.encoders.bridgeExtra.BridgeStats value) {
+  public void setBridgeStatsEnd(convertor.encoders.bridgeExtra.BridgeStats value) {
     this.bridge_stats_end = value;
   }
 
@@ -540,7 +540,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
   /**
    * Gets the value of the 'dirreq_stats_end' field.
    */
-  public converTor.encoders.bridgeExtra.DirreqStats getDirreqStatsEnd() {
+  public convertor.encoders.bridgeExtra.DirreqStats getDirreqStatsEnd() {
     return dirreq_stats_end;
   }
 
@@ -548,7 +548,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Sets the value of the 'dirreq_stats_end' field.
    * @param value the value to set.
    */
-  public void setDirreqStatsEnd(converTor.encoders.bridgeExtra.DirreqStats value) {
+  public void setDirreqStatsEnd(convertor.encoders.bridgeExtra.DirreqStats value) {
     this.dirreq_stats_end = value;
   }
 
@@ -760,7 +760,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Gets the value of the 'dirreq_read_history' field.
    * @return metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory()
    */
-  public converTor.encoders.bridgeExtra.DirreqReadHistory getDirreqReadHistory() {
+  public convertor.encoders.bridgeExtra.DirreqReadHistory getDirreqReadHistory() {
     return dirreq_read_history;
   }
 
@@ -769,7 +769,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory()
    * @param value the value to set.
    */
-  public void setDirreqReadHistory(converTor.encoders.bridgeExtra.DirreqReadHistory value) {
+  public void setDirreqReadHistory(convertor.encoders.bridgeExtra.DirreqReadHistory value) {
     this.dirreq_read_history = value;
   }
 
@@ -777,7 +777,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Gets the value of the 'dirreq_write_history' field.
    * @return metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory()
    */
-  public converTor.encoders.bridgeExtra.DirreqWriteHistory getDirreqWriteHistory() {
+  public convertor.encoders.bridgeExtra.DirreqWriteHistory getDirreqWriteHistory() {
     return dirreq_write_history;
   }
 
@@ -786,14 +786,14 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory()
    * @param value the value to set.
    */
-  public void setDirreqWriteHistory(converTor.encoders.bridgeExtra.DirreqWriteHistory value) {
+  public void setDirreqWriteHistory(convertor.encoders.bridgeExtra.DirreqWriteHistory value) {
     this.dirreq_write_history = value;
   }
 
   /**
    * Gets the value of the 'entry_stats_end' field.
    */
-  public converTor.encoders.bridgeExtra.EntryStats getEntryStatsEnd() {
+  public convertor.encoders.bridgeExtra.EntryStats getEntryStatsEnd() {
     return entry_stats_end;
   }
 
@@ -801,7 +801,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Sets the value of the 'entry_stats_end' field.
    * @param value the value to set.
    */
-  public void setEntryStatsEnd(converTor.encoders.bridgeExtra.EntryStats value) {
+  public void setEntryStatsEnd(convertor.encoders.bridgeExtra.EntryStats value) {
     this.entry_stats_end = value;
   }
 
@@ -825,7 +825,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
   /**
    * Gets the value of the 'cell_stats_end' field.
    */
-  public converTor.encoders.bridgeExtra.CellStats getCellStatsEnd() {
+  public convertor.encoders.bridgeExtra.CellStats getCellStatsEnd() {
     return cell_stats_end;
   }
 
@@ -833,7 +833,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Sets the value of the 'cell_stats_end' field.
    * @param value the value to set.
    */
-  public void setCellStatsEnd(converTor.encoders.bridgeExtra.CellStats value) {
+  public void setCellStatsEnd(convertor.encoders.bridgeExtra.CellStats value) {
     this.cell_stats_end = value;
   }
 
@@ -908,7 +908,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
   /**
    * Gets the value of the 'conn_bi_direct' field.
    */
-  public converTor.encoders.bridgeExtra.ConnBiDirect getConnBiDirect() {
+  public convertor.encoders.bridgeExtra.ConnBiDirect getConnBiDirect() {
     return conn_bi_direct;
   }
 
@@ -916,14 +916,14 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Sets the value of the 'conn_bi_direct' field.
    * @param value the value to set.
    */
-  public void setConnBiDirect(converTor.encoders.bridgeExtra.ConnBiDirect value) {
+  public void setConnBiDirect(convertor.encoders.bridgeExtra.ConnBiDirect value) {
     this.conn_bi_direct = value;
   }
 
   /**
    * Gets the value of the 'exit_stats_end' field.
    */
-  public converTor.encoders.bridgeExtra.ExitStats getExitStatsEnd() {
+  public convertor.encoders.bridgeExtra.ExitStats getExitStatsEnd() {
     return exit_stats_end;
   }
 
@@ -931,7 +931,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Sets the value of the 'exit_stats_end' field.
    * @param value the value to set.
    */
-  public void setExitStatsEnd(converTor.encoders.bridgeExtra.ExitStats value) {
+  public void setExitStatsEnd(convertor.encoders.bridgeExtra.ExitStats value) {
     this.exit_stats_end = value;
   }
 
@@ -989,7 +989,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
   /**
    * Gets the value of the 'hidserv_stats_end' field.
    */
-  public converTor.encoders.bridgeExtra.HidservStats getHidservStatsEnd() {
+  public convertor.encoders.bridgeExtra.HidservStats getHidservStatsEnd() {
     return hidserv_stats_end;
   }
 
@@ -997,14 +997,14 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Sets the value of the 'hidserv_stats_end' field.
    * @param value the value to set.
    */
-  public void setHidservStatsEnd(converTor.encoders.bridgeExtra.HidservStats value) {
+  public void setHidservStatsEnd(convertor.encoders.bridgeExtra.HidservStats value) {
     this.hidserv_stats_end = value;
   }
 
   /**
    * Gets the value of the 'hidserv_rend_relayed_cells' field.
    */
-  public converTor.encoders.bridgeExtra.HidservRendRelayedCells getHidservRendRelayedCells() {
+  public convertor.encoders.bridgeExtra.HidservRendRelayedCells getHidservRendRelayedCells() {
     return hidserv_rend_relayed_cells;
   }
 
@@ -1012,14 +1012,14 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Sets the value of the 'hidserv_rend_relayed_cells' field.
    * @param value the value to set.
    */
-  public void setHidservRendRelayedCells(converTor.encoders.bridgeExtra.HidservRendRelayedCells value) {
+  public void setHidservRendRelayedCells(convertor.encoders.bridgeExtra.HidservRendRelayedCells value) {
     this.hidserv_rend_relayed_cells = value;
   }
 
   /**
    * Gets the value of the 'hidserv_dir_onions_seen' field.
    */
-  public converTor.encoders.bridgeExtra.HidservDirOnionsSeen getHidservDirOnionsSeen() {
+  public convertor.encoders.bridgeExtra.HidservDirOnionsSeen getHidservDirOnionsSeen() {
     return hidserv_dir_onions_seen;
   }
 
@@ -1027,7 +1027,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Sets the value of the 'hidserv_dir_onions_seen' field.
    * @param value the value to set.
    */
-  public void setHidservDirOnionsSeen(converTor.encoders.bridgeExtra.HidservDirOnionsSeen value) {
+  public void setHidservDirOnionsSeen(convertor.encoders.bridgeExtra.HidservDirOnionsSeen value) {
     this.hidserv_dir_onions_seen = value;
   }
 
@@ -1103,8 +1103,8 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * Creates a new BridgeExtra RecordBuilder.
    * @return A new BridgeExtra RecordBuilder
    */
-  public static converTor.encoders.bridgeExtra.BridgeExtra.Builder newBuilder() {
-    return new converTor.encoders.bridgeExtra.BridgeExtra.Builder();
+  public static convertor.encoders.bridgeExtra.BridgeExtra.Builder newBuilder() {
+    return new convertor.encoders.bridgeExtra.BridgeExtra.Builder();
   }
   
   /**
@@ -1112,8 +1112,8 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * @param other The existing builder to copy.
    * @return A new BridgeExtra RecordBuilder
    */
-  public static converTor.encoders.bridgeExtra.BridgeExtra.Builder newBuilder(converTor.encoders.bridgeExtra.BridgeExtra.Builder other) {
-    return new converTor.encoders.bridgeExtra.BridgeExtra.Builder(other);
+  public static convertor.encoders.bridgeExtra.BridgeExtra.Builder newBuilder(convertor.encoders.bridgeExtra.BridgeExtra.Builder other) {
+    return new convertor.encoders.bridgeExtra.BridgeExtra.Builder(other);
   }
   
   /**
@@ -1121,8 +1121,8 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
    * @param other The existing instance to copy.
    * @return A new BridgeExtra RecordBuilder
    */
-  public static converTor.encoders.bridgeExtra.BridgeExtra.Builder newBuilder(converTor.encoders.bridgeExtra.BridgeExtra other) {
-    return new converTor.encoders.bridgeExtra.BridgeExtra.Builder(other);
+  public static convertor.encoders.bridgeExtra.BridgeExtra.Builder newBuilder(convertor.encoders.bridgeExtra.BridgeExtra other) {
+    return new convertor.encoders.bridgeExtra.BridgeExtra.Builder(other);
   }
   
   /**
@@ -1132,18 +1132,18 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
     implements org.apache.avro.data.RecordBuilder<BridgeExtra> {
 
     private java.lang.String descriptor_type;
-    private converTor.encoders.bridgeExtra.ExtraInfo extra_info;
-    private converTor.encoders.bridgeExtra.ExtraInfo.Builder extra_infoBuilder;
+    private convertor.encoders.bridgeExtra.ExtraInfo extra_info;
+    private convertor.encoders.bridgeExtra.ExtraInfo.Builder extra_infoBuilder;
     /** metrics-lib/ExtraInfoDescriptor: String getIdentityEd25519(); */
     private java.lang.Boolean identity_ed25519;
     /** metrics-lib/ExtraInfoDescriptor: long getPublishedMillis() */
     private java.lang.Long published;
     /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory() */
-    private converTor.encoders.bridgeExtra.ReadHistory read_history;
-    private converTor.encoders.bridgeExtra.ReadHistory.Builder read_historyBuilder;
+    private convertor.encoders.bridgeExtra.ReadHistory read_history;
+    private convertor.encoders.bridgeExtra.ReadHistory.Builder read_historyBuilder;
     /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory() */
-    private converTor.encoders.bridgeExtra.WriteHistory write_history;
-    private converTor.encoders.bridgeExtra.WriteHistory.Builder write_historyBuilder;
+    private convertor.encoders.bridgeExtra.WriteHistory write_history;
+    private convertor.encoders.bridgeExtra.WriteHistory.Builder write_historyBuilder;
     /** metrics-lib/ExtraInfoDescriptor: String getGeoipDbDigest() */
     private java.lang.String geoip_db_digest;
     /** metrics-lib/ExtraInfoDescriptor: String getGeoip6DbDigest() */
@@ -1152,16 +1152,16 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
     private java.lang.Long geoip_start_time;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getGeoipClientOrigins() */
     private java.util.Map<java.lang.String,java.lang.Integer> geoip_client_origins;
-    private converTor.encoders.bridgeExtra.BridgeStats bridge_stats_end;
-    private converTor.encoders.bridgeExtra.BridgeStats.Builder bridge_stats_endBuilder;
+    private convertor.encoders.bridgeExtra.BridgeStats bridge_stats_end;
+    private convertor.encoders.bridgeExtra.BridgeStats.Builder bridge_stats_endBuilder;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIps() */
     private java.util.Map<java.lang.String,java.lang.Integer> bridge_ips;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIpVersions() */
     private java.util.Map<java.lang.String,java.lang.Integer> bridge_ip_versions;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIpTransports() */
     private java.util.Map<java.lang.String,java.lang.Integer> bridge_ip_transports;
-    private converTor.encoders.bridgeExtra.DirreqStats dirreq_stats_end;
-    private converTor.encoders.bridgeExtra.DirreqStats.Builder dirreq_stats_endBuilder;
+    private convertor.encoders.bridgeExtra.DirreqStats dirreq_stats_end;
+    private convertor.encoders.bridgeExtra.DirreqStats.Builder dirreq_stats_endBuilder;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Ips() */
     private java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_ips;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Ips() */
@@ -1187,17 +1187,17 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3TunneledDl() */
     private java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_tunneled_dl;
     /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory() */
-    private converTor.encoders.bridgeExtra.DirreqReadHistory dirreq_read_history;
-    private converTor.encoders.bridgeExtra.DirreqReadHistory.Builder dirreq_read_historyBuilder;
+    private convertor.encoders.bridgeExtra.DirreqReadHistory dirreq_read_history;
+    private convertor.encoders.bridgeExtra.DirreqReadHistory.Builder dirreq_read_historyBuilder;
     /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory() */
-    private converTor.encoders.bridgeExtra.DirreqWriteHistory dirreq_write_history;
-    private converTor.encoders.bridgeExtra.DirreqWriteHistory.Builder dirreq_write_historyBuilder;
-    private converTor.encoders.bridgeExtra.EntryStats entry_stats_end;
-    private converTor.encoders.bridgeExtra.EntryStats.Builder entry_stats_endBuilder;
+    private convertor.encoders.bridgeExtra.DirreqWriteHistory dirreq_write_history;
+    private convertor.encoders.bridgeExtra.DirreqWriteHistory.Builder dirreq_write_historyBuilder;
+    private convertor.encoders.bridgeExtra.EntryStats entry_stats_end;
+    private convertor.encoders.bridgeExtra.EntryStats.Builder entry_stats_endBuilder;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getEntryIps() */
     private java.util.Map<java.lang.String,java.lang.Integer> entry_ips;
-    private converTor.encoders.bridgeExtra.CellStats cell_stats_end;
-    private converTor.encoders.bridgeExtra.CellStats.Builder cell_stats_endBuilder;
+    private convertor.encoders.bridgeExtra.CellStats cell_stats_end;
+    private convertor.encoders.bridgeExtra.CellStats.Builder cell_stats_endBuilder;
     /** metrics-lib/ExtraInfoDescriptor: List<Integer> getCellProcessedCells() */
     private java.util.List<java.lang.Integer> cell_processed_cells;
     /** metrics-lib/ExtraInfoDescriptor: List<Double> getCellQueuedCells() */
@@ -1206,22 +1206,22 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
     private java.util.List<java.lang.Integer> cell_time_in_queue;
     /** metrics-lib/ExtraInfoDescriptor: int getCellCircuitsPerDecile() */
     private java.lang.Integer cell_circuits_per_decile;
-    private converTor.encoders.bridgeExtra.ConnBiDirect conn_bi_direct;
-    private converTor.encoders.bridgeExtra.ConnBiDirect.Builder conn_bi_directBuilder;
-    private converTor.encoders.bridgeExtra.ExitStats exit_stats_end;
-    private converTor.encoders.bridgeExtra.ExitStats.Builder exit_stats_endBuilder;
+    private convertor.encoders.bridgeExtra.ConnBiDirect conn_bi_direct;
+    private convertor.encoders.bridgeExtra.ConnBiDirect.Builder conn_bi_directBuilder;
+    private convertor.encoders.bridgeExtra.ExitStats exit_stats_end;
+    private convertor.encoders.bridgeExtra.ExitStats.Builder exit_stats_endBuilder;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesWritten() */
     private java.util.Map<java.lang.String,java.lang.Long> exit_kibibytes_written;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesRead() */
     private java.util.Map<java.lang.String,java.lang.Long> exit_kibibytes_read;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitStreamsOpened() */
     private java.util.Map<java.lang.String,java.lang.Long> exit_streams_opened;
-    private converTor.encoders.bridgeExtra.HidservStats hidserv_stats_end;
-    private converTor.encoders.bridgeExtra.HidservStats.Builder hidserv_stats_endBuilder;
-    private converTor.encoders.bridgeExtra.HidservRendRelayedCells hidserv_rend_relayed_cells;
-    private converTor.encoders.bridgeExtra.HidservRendRelayedCells.Builder hidserv_rend_relayed_cellsBuilder;
-    private converTor.encoders.bridgeExtra.HidservDirOnionsSeen hidserv_dir_onions_seen;
-    private converTor.encoders.bridgeExtra.HidservDirOnionsSeen.Builder hidserv_dir_onions_seenBuilder;
+    private convertor.encoders.bridgeExtra.HidservStats hidserv_stats_end;
+    private convertor.encoders.bridgeExtra.HidservStats.Builder hidserv_stats_endBuilder;
+    private convertor.encoders.bridgeExtra.HidservRendRelayedCells hidserv_rend_relayed_cells;
+    private convertor.encoders.bridgeExtra.HidservRendRelayedCells.Builder hidserv_rend_relayed_cellsBuilder;
+    private convertor.encoders.bridgeExtra.HidservDirOnionsSeen hidserv_dir_onions_seen;
+    private convertor.encoders.bridgeExtra.HidservDirOnionsSeen.Builder hidserv_dir_onions_seenBuilder;
     /** metrics-lib/ExtraInfoDescriptor: List<String> getTransports() */
     private java.util.List<java.lang.String> transport;
     /** metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigest() */
@@ -1233,14 +1233,14 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
 
     /** Creates a new Builder */
     private Builder() {
-      super(converTor.encoders.bridgeExtra.BridgeExtra.SCHEMA$);
+      super(convertor.encoders.bridgeExtra.BridgeExtra.SCHEMA$);
     }
     
     /**
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(converTor.encoders.bridgeExtra.BridgeExtra.Builder other) {
+    private Builder(convertor.encoders.bridgeExtra.BridgeExtra.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.descriptor_type)) {
         this.descriptor_type = data().deepCopy(fields()[0].schema(), other.descriptor_type);
@@ -1251,7 +1251,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
         fieldSetFlags()[1] = true;
       }
       if (other.hasExtraInfoBuilder()) {
-        this.extra_infoBuilder = converTor.encoders.bridgeExtra.ExtraInfo.newBuilder(other.getExtraInfoBuilder());
+        this.extra_infoBuilder = convertor.encoders.bridgeExtra.ExtraInfo.newBuilder(other.getExtraInfoBuilder());
       }
       if (isValidValue(fields()[2], other.identity_ed25519)) {
         this.identity_ed25519 = data().deepCopy(fields()[2].schema(), other.identity_ed25519);
@@ -1266,14 +1266,14 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
         fieldSetFlags()[4] = true;
       }
       if (other.hasReadHistoryBuilder()) {
-        this.read_historyBuilder = converTor.encoders.bridgeExtra.ReadHistory.newBuilder(other.getReadHistoryBuilder());
+        this.read_historyBuilder = convertor.encoders.bridgeExtra.ReadHistory.newBuilder(other.getReadHistoryBuilder());
       }
       if (isValidValue(fields()[5], other.write_history)) {
         this.write_history = data().deepCopy(fields()[5].schema(), other.write_history);
         fieldSetFlags()[5] = true;
       }
       if (other.hasWriteHistoryBuilder()) {
-        this.write_historyBuilder = converTor.encoders.bridgeExtra.WriteHistory.newBuilder(other.getWriteHistoryBuilder());
+        this.write_historyBuilder = convertor.encoders.bridgeExtra.WriteHistory.newBuilder(other.getWriteHistoryBuilder());
       }
       if (isValidValue(fields()[6], other.geoip_db_digest)) {
         this.geoip_db_digest = data().deepCopy(fields()[6].schema(), other.geoip_db_digest);
@@ -1296,7 +1296,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
         fieldSetFlags()[10] = true;
       }
       if (other.hasBridgeStatsEndBuilder()) {
-        this.bridge_stats_endBuilder = converTor.encoders.bridgeExtra.BridgeStats.newBuilder(other.getBridgeStatsEndBuilder());
+        this.bridge_stats_endBuilder = convertor.encoders.bridgeExtra.BridgeStats.newBuilder(other.getBridgeStatsEndBuilder());
       }
       if (isValidValue(fields()[11], other.bridge_ips)) {
         this.bridge_ips = data().deepCopy(fields()[11].schema(), other.bridge_ips);
@@ -1315,7 +1315,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
         fieldSetFlags()[14] = true;
       }
       if (other.hasDirreqStatsEndBuilder()) {
-        this.dirreq_stats_endBuilder = converTor.encoders.bridgeExtra.DirreqStats.newBuilder(other.getDirreqStatsEndBuilder());
+        this.dirreq_stats_endBuilder = convertor.encoders.bridgeExtra.DirreqStats.newBuilder(other.getDirreqStatsEndBuilder());
       }
       if (isValidValue(fields()[15], other.dirreq_v2_ips)) {
         this.dirreq_v2_ips = data().deepCopy(fields()[15].schema(), other.dirreq_v2_ips);
@@ -1370,21 +1370,21 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
         fieldSetFlags()[27] = true;
       }
       if (other.hasDirreqReadHistoryBuilder()) {
-        this.dirreq_read_historyBuilder = converTor.encoders.bridgeExtra.DirreqReadHistory.newBuilder(other.getDirreqReadHistoryBuilder());
+        this.dirreq_read_historyBuilder = convertor.encoders.bridgeExtra.DirreqReadHistory.newBuilder(other.getDirreqReadHistoryBuilder());
       }
       if (isValidValue(fields()[28], other.dirreq_write_history)) {
         this.dirreq_write_history = data().deepCopy(fields()[28].schema(), other.dirreq_write_history);
         fieldSetFlags()[28] = true;
       }
       if (other.hasDirreqWriteHistoryBuilder()) {
-        this.dirreq_write_historyBuilder = converTor.encoders.bridgeExtra.DirreqWriteHistory.newBuilder(other.getDirreqWriteHistoryBuilder());
+        this.dirreq_write_historyBuilder = convertor.encoders.bridgeExtra.DirreqWriteHistory.newBuilder(other.getDirreqWriteHistoryBuilder());
       }
       if (isValidValue(fields()[29], other.entry_stats_end)) {
         this.entry_stats_end = data().deepCopy(fields()[29].schema(), other.entry_stats_end);
         fieldSetFlags()[29] = true;
       }
       if (other.hasEntryStatsEndBuilder()) {
-        this.entry_stats_endBuilder = converTor.encoders.bridgeExtra.EntryStats.newBuilder(other.getEntryStatsEndBuilder());
+        this.entry_stats_endBuilder = convertor.encoders.bridgeExtra.EntryStats.newBuilder(other.getEntryStatsEndBuilder());
       }
       if (isValidValue(fields()[30], other.entry_ips)) {
         this.entry_ips = data().deepCopy(fields()[30].schema(), other.entry_ips);
@@ -1395,7 +1395,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
         fieldSetFlags()[31] = true;
       }
       if (other.hasCellStatsEndBuilder()) {
-        this.cell_stats_endBuilder = converTor.encoders.bridgeExtra.CellStats.newBuilder(other.getCellStatsEndBuilder());
+        this.cell_stats_endBuilder = convertor.encoders.bridgeExtra.CellStats.newBuilder(other.getCellStatsEndBuilder());
       }
       if (isValidValue(fields()[32], other.cell_processed_cells)) {
         this.cell_processed_cells = data().deepCopy(fields()[32].schema(), other.cell_processed_cells);
@@ -1418,14 +1418,14 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
         fieldSetFlags()[36] = true;
       }
       if (other.hasConnBiDirectBuilder()) {
-        this.conn_bi_directBuilder = converTor.encoders.bridgeExtra.ConnBiDirect.newBuilder(other.getConnBiDirectBuilder());
+        this.conn_bi_directBuilder = convertor.encoders.bridgeExtra.ConnBiDirect.newBuilder(other.getConnBiDirectBuilder());
       }
       if (isValidValue(fields()[37], other.exit_stats_end)) {
         this.exit_stats_end = data().deepCopy(fields()[37].schema(), other.exit_stats_end);
         fieldSetFlags()[37] = true;
       }
       if (other.hasExitStatsEndBuilder()) {
-        this.exit_stats_endBuilder = converTor.encoders.bridgeExtra.ExitStats.newBuilder(other.getExitStatsEndBuilder());
+        this.exit_stats_endBuilder = convertor.encoders.bridgeExtra.ExitStats.newBuilder(other.getExitStatsEndBuilder());
       }
       if (isValidValue(fields()[38], other.exit_kibibytes_written)) {
         this.exit_kibibytes_written = data().deepCopy(fields()[38].schema(), other.exit_kibibytes_written);
@@ -1444,21 +1444,21 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
         fieldSetFlags()[41] = true;
       }
       if (other.hasHidservStatsEndBuilder()) {
-        this.hidserv_stats_endBuilder = converTor.encoders.bridgeExtra.HidservStats.newBuilder(other.getHidservStatsEndBuilder());
+        this.hidserv_stats_endBuilder = convertor.encoders.bridgeExtra.HidservStats.newBuilder(other.getHidservStatsEndBuilder());
       }
       if (isValidValue(fields()[42], other.hidserv_rend_relayed_cells)) {
         this.hidserv_rend_relayed_cells = data().deepCopy(fields()[42].schema(), other.hidserv_rend_relayed_cells);
         fieldSetFlags()[42] = true;
       }
       if (other.hasHidservRendRelayedCellsBuilder()) {
-        this.hidserv_rend_relayed_cellsBuilder = converTor.encoders.bridgeExtra.HidservRendRelayedCells.newBuilder(other.getHidservRendRelayedCellsBuilder());
+        this.hidserv_rend_relayed_cellsBuilder = convertor.encoders.bridgeExtra.HidservRendRelayedCells.newBuilder(other.getHidservRendRelayedCellsBuilder());
       }
       if (isValidValue(fields()[43], other.hidserv_dir_onions_seen)) {
         this.hidserv_dir_onions_seen = data().deepCopy(fields()[43].schema(), other.hidserv_dir_onions_seen);
         fieldSetFlags()[43] = true;
       }
       if (other.hasHidservDirOnionsSeenBuilder()) {
-        this.hidserv_dir_onions_seenBuilder = converTor.encoders.bridgeExtra.HidservDirOnionsSeen.newBuilder(other.getHidservDirOnionsSeenBuilder());
+        this.hidserv_dir_onions_seenBuilder = convertor.encoders.bridgeExtra.HidservDirOnionsSeen.newBuilder(other.getHidservDirOnionsSeenBuilder());
       }
       if (isValidValue(fields()[44], other.transport)) {
         this.transport = data().deepCopy(fields()[44].schema(), other.transport);
@@ -1482,8 +1482,8 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
      * Creates a Builder by copying an existing BridgeExtra instance
      * @param other The existing instance to copy.
      */
-    private Builder(converTor.encoders.bridgeExtra.BridgeExtra other) {
-            super(converTor.encoders.bridgeExtra.BridgeExtra.SCHEMA$);
+    private Builder(convertor.encoders.bridgeExtra.BridgeExtra other) {
+            super(convertor.encoders.bridgeExtra.BridgeExtra.SCHEMA$);
       if (isValidValue(fields()[0], other.descriptor_type)) {
         this.descriptor_type = data().deepCopy(fields()[0].schema(), other.descriptor_type);
         fieldSetFlags()[0] = true;
@@ -1705,7 +1705,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'descriptor_type'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setDescriptorType(java.lang.String value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setDescriptorType(java.lang.String value) {
       validate(fields()[0], value);
       this.descriptor_type = value;
       fieldSetFlags()[0] = true;
@@ -1725,7 +1725,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * Clears the value of the 'descriptor_type' field.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearDescriptorType() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearDescriptorType() {
       descriptor_type = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -1735,7 +1735,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * Gets the value of the 'extra_info' field.
       * @return The value.
       */
-    public converTor.encoders.bridgeExtra.ExtraInfo getExtraInfo() {
+    public convertor.encoders.bridgeExtra.ExtraInfo getExtraInfo() {
       return extra_info;
     }
 
@@ -1744,7 +1744,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'extra_info'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setExtraInfo(converTor.encoders.bridgeExtra.ExtraInfo value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setExtraInfo(convertor.encoders.bridgeExtra.ExtraInfo value) {
       validate(fields()[1], value);
       this.extra_infoBuilder = null;
       this.extra_info = value;
@@ -1764,12 +1764,12 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
      * Gets the Builder instance for the 'extra_info' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public converTor.encoders.bridgeExtra.ExtraInfo.Builder getExtraInfoBuilder() {
+    public convertor.encoders.bridgeExtra.ExtraInfo.Builder getExtraInfoBuilder() {
       if (extra_infoBuilder == null) {
         if (hasExtraInfo()) {
-          setExtraInfoBuilder(converTor.encoders.bridgeExtra.ExtraInfo.newBuilder(extra_info));
+          setExtraInfoBuilder(convertor.encoders.bridgeExtra.ExtraInfo.newBuilder(extra_info));
         } else {
-          setExtraInfoBuilder(converTor.encoders.bridgeExtra.ExtraInfo.newBuilder());
+          setExtraInfoBuilder(convertor.encoders.bridgeExtra.ExtraInfo.newBuilder());
         }
       }
       return extra_infoBuilder;
@@ -1779,7 +1779,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
      * Sets the Builder instance for the 'extra_info' field
      * @return This builder.
      */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setExtraInfoBuilder(converTor.encoders.bridgeExtra.ExtraInfo.Builder value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setExtraInfoBuilder(convertor.encoders.bridgeExtra.ExtraInfo.Builder value) {
       clearExtraInfo();
       extra_infoBuilder = value;
       return this;
@@ -1797,7 +1797,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * Clears the value of the 'extra_info' field.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearExtraInfo() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearExtraInfo() {
       extra_info = null;
       extra_infoBuilder = null;
       fieldSetFlags()[1] = false;
@@ -1819,7 +1819,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'identity_ed25519'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setIdentityEd25519(java.lang.Boolean value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setIdentityEd25519(java.lang.Boolean value) {
       validate(fields()[2], value);
       this.identity_ed25519 = value;
       fieldSetFlags()[2] = true;
@@ -1841,7 +1841,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: String getIdentityEd25519();
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearIdentityEd25519() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearIdentityEd25519() {
       identity_ed25519 = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -1862,7 +1862,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'published'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setPublished(java.lang.Long value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setPublished(java.lang.Long value) {
       validate(fields()[3], value);
       this.published = value;
       fieldSetFlags()[3] = true;
@@ -1884,7 +1884,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: long getPublishedMillis()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearPublished() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearPublished() {
       published = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -1895,7 +1895,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory()
       * @return The value.
       */
-    public converTor.encoders.bridgeExtra.ReadHistory getReadHistory() {
+    public convertor.encoders.bridgeExtra.ReadHistory getReadHistory() {
       return read_history;
     }
 
@@ -1905,7 +1905,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'read_history'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setReadHistory(converTor.encoders.bridgeExtra.ReadHistory value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setReadHistory(convertor.encoders.bridgeExtra.ReadHistory value) {
       validate(fields()[4], value);
       this.read_historyBuilder = null;
       this.read_history = value;
@@ -1927,12 +1927,12 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
      * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory()
      * @return This builder.
      */
-    public converTor.encoders.bridgeExtra.ReadHistory.Builder getReadHistoryBuilder() {
+    public convertor.encoders.bridgeExtra.ReadHistory.Builder getReadHistoryBuilder() {
       if (read_historyBuilder == null) {
         if (hasReadHistory()) {
-          setReadHistoryBuilder(converTor.encoders.bridgeExtra.ReadHistory.newBuilder(read_history));
+          setReadHistoryBuilder(convertor.encoders.bridgeExtra.ReadHistory.newBuilder(read_history));
         } else {
-          setReadHistoryBuilder(converTor.encoders.bridgeExtra.ReadHistory.newBuilder());
+          setReadHistoryBuilder(convertor.encoders.bridgeExtra.ReadHistory.newBuilder());
         }
       }
       return read_historyBuilder;
@@ -1943,7 +1943,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
      * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory()
      * @return This builder.
      */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setReadHistoryBuilder(converTor.encoders.bridgeExtra.ReadHistory.Builder value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setReadHistoryBuilder(convertor.encoders.bridgeExtra.ReadHistory.Builder value) {
       clearReadHistory();
       read_historyBuilder = value;
       return this;
@@ -1963,7 +1963,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearReadHistory() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearReadHistory() {
       read_history = null;
       read_historyBuilder = null;
       fieldSetFlags()[4] = false;
@@ -1975,7 +1975,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory()
       * @return The value.
       */
-    public converTor.encoders.bridgeExtra.WriteHistory getWriteHistory() {
+    public convertor.encoders.bridgeExtra.WriteHistory getWriteHistory() {
       return write_history;
     }
 
@@ -1985,7 +1985,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'write_history'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setWriteHistory(converTor.encoders.bridgeExtra.WriteHistory value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setWriteHistory(convertor.encoders.bridgeExtra.WriteHistory value) {
       validate(fields()[5], value);
       this.write_historyBuilder = null;
       this.write_history = value;
@@ -2007,12 +2007,12 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
      * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory()
      * @return This builder.
      */
-    public converTor.encoders.bridgeExtra.WriteHistory.Builder getWriteHistoryBuilder() {
+    public convertor.encoders.bridgeExtra.WriteHistory.Builder getWriteHistoryBuilder() {
       if (write_historyBuilder == null) {
         if (hasWriteHistory()) {
-          setWriteHistoryBuilder(converTor.encoders.bridgeExtra.WriteHistory.newBuilder(write_history));
+          setWriteHistoryBuilder(convertor.encoders.bridgeExtra.WriteHistory.newBuilder(write_history));
         } else {
-          setWriteHistoryBuilder(converTor.encoders.bridgeExtra.WriteHistory.newBuilder());
+          setWriteHistoryBuilder(convertor.encoders.bridgeExtra.WriteHistory.newBuilder());
         }
       }
       return write_historyBuilder;
@@ -2023,7 +2023,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
      * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory()
      * @return This builder.
      */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setWriteHistoryBuilder(converTor.encoders.bridgeExtra.WriteHistory.Builder value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setWriteHistoryBuilder(convertor.encoders.bridgeExtra.WriteHistory.Builder value) {
       clearWriteHistory();
       write_historyBuilder = value;
       return this;
@@ -2043,7 +2043,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearWriteHistory() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearWriteHistory() {
       write_history = null;
       write_historyBuilder = null;
       fieldSetFlags()[5] = false;
@@ -2065,7 +2065,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'geoip_db_digest'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setGeoipDbDigest(java.lang.String value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setGeoipDbDigest(java.lang.String value) {
       validate(fields()[6], value);
       this.geoip_db_digest = value;
       fieldSetFlags()[6] = true;
@@ -2087,7 +2087,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: String getGeoipDbDigest()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearGeoipDbDigest() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearGeoipDbDigest() {
       geoip_db_digest = null;
       fieldSetFlags()[6] = false;
       return this;
@@ -2108,7 +2108,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'geoip6_db_digest'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setGeoip6DbDigest(java.lang.String value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setGeoip6DbDigest(java.lang.String value) {
       validate(fields()[7], value);
       this.geoip6_db_digest = value;
       fieldSetFlags()[7] = true;
@@ -2130,7 +2130,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: String getGeoip6DbDigest()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearGeoip6DbDigest() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearGeoip6DbDigest() {
       geoip6_db_digest = null;
       fieldSetFlags()[7] = false;
       return this;
@@ -2151,7 +2151,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'geoip_start_time'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setGeoipStartTime(java.lang.Long value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setGeoipStartTime(java.lang.Long value) {
       validate(fields()[8], value);
       this.geoip_start_time = value;
       fieldSetFlags()[8] = true;
@@ -2173,7 +2173,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: long getGeoipStartTimeMillis()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearGeoipStartTime() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearGeoipStartTime() {
       geoip_start_time = null;
       fieldSetFlags()[8] = false;
       return this;
@@ -2194,7 +2194,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'geoip_client_origins'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setGeoipClientOrigins(java.util.Map<java.lang.String,java.lang.Integer> value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setGeoipClientOrigins(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[9], value);
       this.geoip_client_origins = value;
       fieldSetFlags()[9] = true;
@@ -2216,7 +2216,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getGeoipClientOrigins()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearGeoipClientOrigins() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearGeoipClientOrigins() {
       geoip_client_origins = null;
       fieldSetFlags()[9] = false;
       return this;
@@ -2226,7 +2226,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * Gets the value of the 'bridge_stats_end' field.
       * @return The value.
       */
-    public converTor.encoders.bridgeExtra.BridgeStats getBridgeStatsEnd() {
+    public convertor.encoders.bridgeExtra.BridgeStats getBridgeStatsEnd() {
       return bridge_stats_end;
     }
 
@@ -2235,7 +2235,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'bridge_stats_end'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setBridgeStatsEnd(converTor.encoders.bridgeExtra.BridgeStats value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setBridgeStatsEnd(convertor.encoders.bridgeExtra.BridgeStats value) {
       validate(fields()[10], value);
       this.bridge_stats_endBuilder = null;
       this.bridge_stats_end = value;
@@ -2255,12 +2255,12 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
      * Gets the Builder instance for the 'bridge_stats_end' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public converTor.encoders.bridgeExtra.BridgeStats.Builder getBridgeStatsEndBuilder() {
+    public convertor.encoders.bridgeExtra.BridgeStats.Builder getBridgeStatsEndBuilder() {
       if (bridge_stats_endBuilder == null) {
         if (hasBridgeStatsEnd()) {
-          setBridgeStatsEndBuilder(converTor.encoders.bridgeExtra.BridgeStats.newBuilder(bridge_stats_end));
+          setBridgeStatsEndBuilder(convertor.encoders.bridgeExtra.BridgeStats.newBuilder(bridge_stats_end));
         } else {
-          setBridgeStatsEndBuilder(converTor.encoders.bridgeExtra.BridgeStats.newBuilder());
+          setBridgeStatsEndBuilder(convertor.encoders.bridgeExtra.BridgeStats.newBuilder());
         }
       }
       return bridge_stats_endBuilder;
@@ -2270,7 +2270,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
      * Sets the Builder instance for the 'bridge_stats_end' field
      * @return This builder.
      */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setBridgeStatsEndBuilder(converTor.encoders.bridgeExtra.BridgeStats.Builder value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setBridgeStatsEndBuilder(convertor.encoders.bridgeExtra.BridgeStats.Builder value) {
       clearBridgeStatsEnd();
       bridge_stats_endBuilder = value;
       return this;
@@ -2288,7 +2288,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * Clears the value of the 'bridge_stats_end' field.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearBridgeStatsEnd() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearBridgeStatsEnd() {
       bridge_stats_end = null;
       bridge_stats_endBuilder = null;
       fieldSetFlags()[10] = false;
@@ -2310,7 +2310,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'bridge_ips'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setBridgeIps(java.util.Map<java.lang.String,java.lang.Integer> value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setBridgeIps(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[11], value);
       this.bridge_ips = value;
       fieldSetFlags()[11] = true;
@@ -2332,7 +2332,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIps()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearBridgeIps() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearBridgeIps() {
       bridge_ips = null;
       fieldSetFlags()[11] = false;
       return this;
@@ -2353,7 +2353,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'bridge_ip_versions'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setBridgeIpVersions(java.util.Map<java.lang.String,java.lang.Integer> value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setBridgeIpVersions(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[12], value);
       this.bridge_ip_versions = value;
       fieldSetFlags()[12] = true;
@@ -2375,7 +2375,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIpVersions()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearBridgeIpVersions() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearBridgeIpVersions() {
       bridge_ip_versions = null;
       fieldSetFlags()[12] = false;
       return this;
@@ -2396,7 +2396,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'bridge_ip_transports'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setBridgeIpTransports(java.util.Map<java.lang.String,java.lang.Integer> value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setBridgeIpTransports(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[13], value);
       this.bridge_ip_transports = value;
       fieldSetFlags()[13] = true;
@@ -2418,7 +2418,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getBridgeIpTransports()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearBridgeIpTransports() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearBridgeIpTransports() {
       bridge_ip_transports = null;
       fieldSetFlags()[13] = false;
       return this;
@@ -2428,7 +2428,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * Gets the value of the 'dirreq_stats_end' field.
       * @return The value.
       */
-    public converTor.encoders.bridgeExtra.DirreqStats getDirreqStatsEnd() {
+    public convertor.encoders.bridgeExtra.DirreqStats getDirreqStatsEnd() {
       return dirreq_stats_end;
     }
 
@@ -2437,7 +2437,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'dirreq_stats_end'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqStatsEnd(converTor.encoders.bridgeExtra.DirreqStats value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqStatsEnd(convertor.encoders.bridgeExtra.DirreqStats value) {
       validate(fields()[14], value);
       this.dirreq_stats_endBuilder = null;
       this.dirreq_stats_end = value;
@@ -2457,12 +2457,12 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
      * Gets the Builder instance for the 'dirreq_stats_end' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public converTor.encoders.bridgeExtra.DirreqStats.Builder getDirreqStatsEndBuilder() {
+    public convertor.encoders.bridgeExtra.DirreqStats.Builder getDirreqStatsEndBuilder() {
       if (dirreq_stats_endBuilder == null) {
         if (hasDirreqStatsEnd()) {
-          setDirreqStatsEndBuilder(converTor.encoders.bridgeExtra.DirreqStats.newBuilder(dirreq_stats_end));
+          setDirreqStatsEndBuilder(convertor.encoders.bridgeExtra.DirreqStats.newBuilder(dirreq_stats_end));
         } else {
-          setDirreqStatsEndBuilder(converTor.encoders.bridgeExtra.DirreqStats.newBuilder());
+          setDirreqStatsEndBuilder(convertor.encoders.bridgeExtra.DirreqStats.newBuilder());
         }
       }
       return dirreq_stats_endBuilder;
@@ -2472,7 +2472,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
      * Sets the Builder instance for the 'dirreq_stats_end' field
      * @return This builder.
      */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqStatsEndBuilder(converTor.encoders.bridgeExtra.DirreqStats.Builder value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqStatsEndBuilder(convertor.encoders.bridgeExtra.DirreqStats.Builder value) {
       clearDirreqStatsEnd();
       dirreq_stats_endBuilder = value;
       return this;
@@ -2490,7 +2490,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * Clears the value of the 'dirreq_stats_end' field.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearDirreqStatsEnd() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearDirreqStatsEnd() {
       dirreq_stats_end = null;
       dirreq_stats_endBuilder = null;
       fieldSetFlags()[14] = false;
@@ -2512,7 +2512,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'dirreq_v2_ips'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqV2Ips(java.util.Map<java.lang.String,java.lang.Integer> value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqV2Ips(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[15], value);
       this.dirreq_v2_ips = value;
       fieldSetFlags()[15] = true;
@@ -2534,7 +2534,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Ips()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearDirreqV2Ips() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearDirreqV2Ips() {
       dirreq_v2_ips = null;
       fieldSetFlags()[15] = false;
       return this;
@@ -2555,7 +2555,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'dirreq_v3_ips'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqV3Ips(java.util.Map<java.lang.String,java.lang.Integer> value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqV3Ips(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[16], value);
       this.dirreq_v3_ips = value;
       fieldSetFlags()[16] = true;
@@ -2577,7 +2577,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Ips()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearDirreqV3Ips() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearDirreqV3Ips() {
       dirreq_v3_ips = null;
       fieldSetFlags()[16] = false;
       return this;
@@ -2598,7 +2598,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'dirreq_v2_reqs'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqV2Reqs(java.util.Map<java.lang.String,java.lang.Integer> value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqV2Reqs(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[17], value);
       this.dirreq_v2_reqs = value;
       fieldSetFlags()[17] = true;
@@ -2620,7 +2620,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Reqs()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearDirreqV2Reqs() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearDirreqV2Reqs() {
       dirreq_v2_reqs = null;
       fieldSetFlags()[17] = false;
       return this;
@@ -2641,7 +2641,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'dirreq_v3_reqs'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqV3Reqs(java.util.Map<java.lang.String,java.lang.Integer> value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqV3Reqs(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[18], value);
       this.dirreq_v3_reqs = value;
       fieldSetFlags()[18] = true;
@@ -2663,7 +2663,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Reqs()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearDirreqV3Reqs() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearDirreqV3Reqs() {
       dirreq_v3_reqs = null;
       fieldSetFlags()[18] = false;
       return this;
@@ -2684,7 +2684,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'dirreq_v2_share'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqV2Share(java.lang.Double value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqV2Share(java.lang.Double value) {
       validate(fields()[19], value);
       this.dirreq_v2_share = value;
       fieldSetFlags()[19] = true;
@@ -2706,7 +2706,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: double getDirreqV2Share()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearDirreqV2Share() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearDirreqV2Share() {
       dirreq_v2_share = null;
       fieldSetFlags()[19] = false;
       return this;
@@ -2727,7 +2727,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'dirreq_v3_share'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqV3Share(java.lang.Double value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqV3Share(java.lang.Double value) {
       validate(fields()[20], value);
       this.dirreq_v3_share = value;
       fieldSetFlags()[20] = true;
@@ -2749,7 +2749,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: double getDirreqV3Share()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearDirreqV3Share() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearDirreqV3Share() {
       dirreq_v3_share = null;
       fieldSetFlags()[20] = false;
       return this;
@@ -2770,7 +2770,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'dirreq_v2_resp'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqV2Resp(java.util.Map<java.lang.String,java.lang.Integer> value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqV2Resp(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[21], value);
       this.dirreq_v2_resp = value;
       fieldSetFlags()[21] = true;
@@ -2792,7 +2792,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Resp()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearDirreqV2Resp() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearDirreqV2Resp() {
       dirreq_v2_resp = null;
       fieldSetFlags()[21] = false;
       return this;
@@ -2813,7 +2813,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'dirreq_v3_resp'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqV3Resp(java.util.Map<java.lang.String,java.lang.Integer> value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqV3Resp(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[22], value);
       this.dirreq_v3_resp = value;
       fieldSetFlags()[22] = true;
@@ -2835,7 +2835,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Resp()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearDirreqV3Resp() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearDirreqV3Resp() {
       dirreq_v3_resp = null;
       fieldSetFlags()[22] = false;
       return this;
@@ -2856,7 +2856,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'dirreq_v2_direct_dl'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqV2DirectDl(java.util.Map<java.lang.String,java.lang.Integer> value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqV2DirectDl(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[23], value);
       this.dirreq_v2_direct_dl = value;
       fieldSetFlags()[23] = true;
@@ -2878,7 +2878,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2DirectDl()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearDirreqV2DirectDl() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearDirreqV2DirectDl() {
       dirreq_v2_direct_dl = null;
       fieldSetFlags()[23] = false;
       return this;
@@ -2899,7 +2899,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'dirreq_v3_direct_dl'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqV3DirectDl(java.util.Map<java.lang.String,java.lang.Integer> value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqV3DirectDl(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[24], value);
       this.dirreq_v3_direct_dl = value;
       fieldSetFlags()[24] = true;
@@ -2921,7 +2921,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3DirectDl()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearDirreqV3DirectDl() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearDirreqV3DirectDl() {
       dirreq_v3_direct_dl = null;
       fieldSetFlags()[24] = false;
       return this;
@@ -2942,7 +2942,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'dirreq_v2_tunneled_dl'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqV2TunneledDl(java.util.Map<java.lang.String,java.lang.Integer> value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqV2TunneledDl(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[25], value);
       this.dirreq_v2_tunneled_dl = value;
       fieldSetFlags()[25] = true;
@@ -2964,7 +2964,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2TunneledDl()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearDirreqV2TunneledDl() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearDirreqV2TunneledDl() {
       dirreq_v2_tunneled_dl = null;
       fieldSetFlags()[25] = false;
       return this;
@@ -2985,7 +2985,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'dirreq_v3_tunneled_dl'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqV3TunneledDl(java.util.Map<java.lang.String,java.lang.Integer> value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqV3TunneledDl(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[26], value);
       this.dirreq_v3_tunneled_dl = value;
       fieldSetFlags()[26] = true;
@@ -3007,7 +3007,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3TunneledDl()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearDirreqV3TunneledDl() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearDirreqV3TunneledDl() {
       dirreq_v3_tunneled_dl = null;
       fieldSetFlags()[26] = false;
       return this;
@@ -3018,7 +3018,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory()
       * @return The value.
       */
-    public converTor.encoders.bridgeExtra.DirreqReadHistory getDirreqReadHistory() {
+    public convertor.encoders.bridgeExtra.DirreqReadHistory getDirreqReadHistory() {
       return dirreq_read_history;
     }
 
@@ -3028,7 +3028,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'dirreq_read_history'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqReadHistory(converTor.encoders.bridgeExtra.DirreqReadHistory value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqReadHistory(convertor.encoders.bridgeExtra.DirreqReadHistory value) {
       validate(fields()[27], value);
       this.dirreq_read_historyBuilder = null;
       this.dirreq_read_history = value;
@@ -3050,12 +3050,12 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
      * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory()
      * @return This builder.
      */
-    public converTor.encoders.bridgeExtra.DirreqReadHistory.Builder getDirreqReadHistoryBuilder() {
+    public convertor.encoders.bridgeExtra.DirreqReadHistory.Builder getDirreqReadHistoryBuilder() {
       if (dirreq_read_historyBuilder == null) {
         if (hasDirreqReadHistory()) {
-          setDirreqReadHistoryBuilder(converTor.encoders.bridgeExtra.DirreqReadHistory.newBuilder(dirreq_read_history));
+          setDirreqReadHistoryBuilder(convertor.encoders.bridgeExtra.DirreqReadHistory.newBuilder(dirreq_read_history));
         } else {
-          setDirreqReadHistoryBuilder(converTor.encoders.bridgeExtra.DirreqReadHistory.newBuilder());
+          setDirreqReadHistoryBuilder(convertor.encoders.bridgeExtra.DirreqReadHistory.newBuilder());
         }
       }
       return dirreq_read_historyBuilder;
@@ -3066,7 +3066,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
      * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory()
      * @return This builder.
      */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqReadHistoryBuilder(converTor.encoders.bridgeExtra.DirreqReadHistory.Builder value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqReadHistoryBuilder(convertor.encoders.bridgeExtra.DirreqReadHistory.Builder value) {
       clearDirreqReadHistory();
       dirreq_read_historyBuilder = value;
       return this;
@@ -3086,7 +3086,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearDirreqReadHistory() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearDirreqReadHistory() {
       dirreq_read_history = null;
       dirreq_read_historyBuilder = null;
       fieldSetFlags()[27] = false;
@@ -3098,7 +3098,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory()
       * @return The value.
       */
-    public converTor.encoders.bridgeExtra.DirreqWriteHistory getDirreqWriteHistory() {
+    public convertor.encoders.bridgeExtra.DirreqWriteHistory getDirreqWriteHistory() {
       return dirreq_write_history;
     }
 
@@ -3108,7 +3108,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'dirreq_write_history'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqWriteHistory(converTor.encoders.bridgeExtra.DirreqWriteHistory value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqWriteHistory(convertor.encoders.bridgeExtra.DirreqWriteHistory value) {
       validate(fields()[28], value);
       this.dirreq_write_historyBuilder = null;
       this.dirreq_write_history = value;
@@ -3130,12 +3130,12 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
      * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory()
      * @return This builder.
      */
-    public converTor.encoders.bridgeExtra.DirreqWriteHistory.Builder getDirreqWriteHistoryBuilder() {
+    public convertor.encoders.bridgeExtra.DirreqWriteHistory.Builder getDirreqWriteHistoryBuilder() {
       if (dirreq_write_historyBuilder == null) {
         if (hasDirreqWriteHistory()) {
-          setDirreqWriteHistoryBuilder(converTor.encoders.bridgeExtra.DirreqWriteHistory.newBuilder(dirreq_write_history));
+          setDirreqWriteHistoryBuilder(convertor.encoders.bridgeExtra.DirreqWriteHistory.newBuilder(dirreq_write_history));
         } else {
-          setDirreqWriteHistoryBuilder(converTor.encoders.bridgeExtra.DirreqWriteHistory.newBuilder());
+          setDirreqWriteHistoryBuilder(convertor.encoders.bridgeExtra.DirreqWriteHistory.newBuilder());
         }
       }
       return dirreq_write_historyBuilder;
@@ -3146,7 +3146,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
      * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory()
      * @return This builder.
      */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqWriteHistoryBuilder(converTor.encoders.bridgeExtra.DirreqWriteHistory.Builder value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setDirreqWriteHistoryBuilder(convertor.encoders.bridgeExtra.DirreqWriteHistory.Builder value) {
       clearDirreqWriteHistory();
       dirreq_write_historyBuilder = value;
       return this;
@@ -3166,7 +3166,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearDirreqWriteHistory() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearDirreqWriteHistory() {
       dirreq_write_history = null;
       dirreq_write_historyBuilder = null;
       fieldSetFlags()[28] = false;
@@ -3177,7 +3177,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * Gets the value of the 'entry_stats_end' field.
       * @return The value.
       */
-    public converTor.encoders.bridgeExtra.EntryStats getEntryStatsEnd() {
+    public convertor.encoders.bridgeExtra.EntryStats getEntryStatsEnd() {
       return entry_stats_end;
     }
 
@@ -3186,7 +3186,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'entry_stats_end'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setEntryStatsEnd(converTor.encoders.bridgeExtra.EntryStats value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setEntryStatsEnd(convertor.encoders.bridgeExtra.EntryStats value) {
       validate(fields()[29], value);
       this.entry_stats_endBuilder = null;
       this.entry_stats_end = value;
@@ -3206,12 +3206,12 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
      * Gets the Builder instance for the 'entry_stats_end' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public converTor.encoders.bridgeExtra.EntryStats.Builder getEntryStatsEndBuilder() {
+    public convertor.encoders.bridgeExtra.EntryStats.Builder getEntryStatsEndBuilder() {
       if (entry_stats_endBuilder == null) {
         if (hasEntryStatsEnd()) {
-          setEntryStatsEndBuilder(converTor.encoders.bridgeExtra.EntryStats.newBuilder(entry_stats_end));
+          setEntryStatsEndBuilder(convertor.encoders.bridgeExtra.EntryStats.newBuilder(entry_stats_end));
         } else {
-          setEntryStatsEndBuilder(converTor.encoders.bridgeExtra.EntryStats.newBuilder());
+          setEntryStatsEndBuilder(convertor.encoders.bridgeExtra.EntryStats.newBuilder());
         }
       }
       return entry_stats_endBuilder;
@@ -3221,7 +3221,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
      * Sets the Builder instance for the 'entry_stats_end' field
      * @return This builder.
      */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setEntryStatsEndBuilder(converTor.encoders.bridgeExtra.EntryStats.Builder value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setEntryStatsEndBuilder(convertor.encoders.bridgeExtra.EntryStats.Builder value) {
       clearEntryStatsEnd();
       entry_stats_endBuilder = value;
       return this;
@@ -3239,7 +3239,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * Clears the value of the 'entry_stats_end' field.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearEntryStatsEnd() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearEntryStatsEnd() {
       entry_stats_end = null;
       entry_stats_endBuilder = null;
       fieldSetFlags()[29] = false;
@@ -3261,7 +3261,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'entry_ips'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setEntryIps(java.util.Map<java.lang.String,java.lang.Integer> value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setEntryIps(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[30], value);
       this.entry_ips = value;
       fieldSetFlags()[30] = true;
@@ -3283,7 +3283,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getEntryIps()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearEntryIps() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearEntryIps() {
       entry_ips = null;
       fieldSetFlags()[30] = false;
       return this;
@@ -3293,7 +3293,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * Gets the value of the 'cell_stats_end' field.
       * @return The value.
       */
-    public converTor.encoders.bridgeExtra.CellStats getCellStatsEnd() {
+    public convertor.encoders.bridgeExtra.CellStats getCellStatsEnd() {
       return cell_stats_end;
     }
 
@@ -3302,7 +3302,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'cell_stats_end'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setCellStatsEnd(converTor.encoders.bridgeExtra.CellStats value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setCellStatsEnd(convertor.encoders.bridgeExtra.CellStats value) {
       validate(fields()[31], value);
       this.cell_stats_endBuilder = null;
       this.cell_stats_end = value;
@@ -3322,12 +3322,12 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
      * Gets the Builder instance for the 'cell_stats_end' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public converTor.encoders.bridgeExtra.CellStats.Builder getCellStatsEndBuilder() {
+    public convertor.encoders.bridgeExtra.CellStats.Builder getCellStatsEndBuilder() {
       if (cell_stats_endBuilder == null) {
         if (hasCellStatsEnd()) {
-          setCellStatsEndBuilder(converTor.encoders.bridgeExtra.CellStats.newBuilder(cell_stats_end));
+          setCellStatsEndBuilder(convertor.encoders.bridgeExtra.CellStats.newBuilder(cell_stats_end));
         } else {
-          setCellStatsEndBuilder(converTor.encoders.bridgeExtra.CellStats.newBuilder());
+          setCellStatsEndBuilder(convertor.encoders.bridgeExtra.CellStats.newBuilder());
         }
       }
       return cell_stats_endBuilder;
@@ -3337,7 +3337,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
      * Sets the Builder instance for the 'cell_stats_end' field
      * @return This builder.
      */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setCellStatsEndBuilder(converTor.encoders.bridgeExtra.CellStats.Builder value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setCellStatsEndBuilder(convertor.encoders.bridgeExtra.CellStats.Builder value) {
       clearCellStatsEnd();
       cell_stats_endBuilder = value;
       return this;
@@ -3355,7 +3355,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * Clears the value of the 'cell_stats_end' field.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearCellStatsEnd() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearCellStatsEnd() {
       cell_stats_end = null;
       cell_stats_endBuilder = null;
       fieldSetFlags()[31] = false;
@@ -3377,7 +3377,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'cell_processed_cells'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setCellProcessedCells(java.util.List<java.lang.Integer> value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setCellProcessedCells(java.util.List<java.lang.Integer> value) {
       validate(fields()[32], value);
       this.cell_processed_cells = value;
       fieldSetFlags()[32] = true;
@@ -3399,7 +3399,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: List<Integer> getCellProcessedCells()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearCellProcessedCells() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearCellProcessedCells() {
       cell_processed_cells = null;
       fieldSetFlags()[32] = false;
       return this;
@@ -3420,7 +3420,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'cell_queued_cells'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setCellQueuedCells(java.util.List<java.lang.Double> value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setCellQueuedCells(java.util.List<java.lang.Double> value) {
       validate(fields()[33], value);
       this.cell_queued_cells = value;
       fieldSetFlags()[33] = true;
@@ -3442,7 +3442,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: List<Double> getCellQueuedCells()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearCellQueuedCells() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearCellQueuedCells() {
       cell_queued_cells = null;
       fieldSetFlags()[33] = false;
       return this;
@@ -3463,7 +3463,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'cell_time_in_queue'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setCellTimeInQueue(java.util.List<java.lang.Integer> value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setCellTimeInQueue(java.util.List<java.lang.Integer> value) {
       validate(fields()[34], value);
       this.cell_time_in_queue = value;
       fieldSetFlags()[34] = true;
@@ -3485,7 +3485,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: List<Integer> getCellTimeInQueue()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearCellTimeInQueue() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearCellTimeInQueue() {
       cell_time_in_queue = null;
       fieldSetFlags()[34] = false;
       return this;
@@ -3506,7 +3506,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'cell_circuits_per_decile'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setCellCircuitsPerDecile(java.lang.Integer value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setCellCircuitsPerDecile(java.lang.Integer value) {
       validate(fields()[35], value);
       this.cell_circuits_per_decile = value;
       fieldSetFlags()[35] = true;
@@ -3528,7 +3528,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: int getCellCircuitsPerDecile()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearCellCircuitsPerDecile() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearCellCircuitsPerDecile() {
       cell_circuits_per_decile = null;
       fieldSetFlags()[35] = false;
       return this;
@@ -3538,7 +3538,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * Gets the value of the 'conn_bi_direct' field.
       * @return The value.
       */
-    public converTor.encoders.bridgeExtra.ConnBiDirect getConnBiDirect() {
+    public convertor.encoders.bridgeExtra.ConnBiDirect getConnBiDirect() {
       return conn_bi_direct;
     }
 
@@ -3547,7 +3547,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'conn_bi_direct'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setConnBiDirect(converTor.encoders.bridgeExtra.ConnBiDirect value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setConnBiDirect(convertor.encoders.bridgeExtra.ConnBiDirect value) {
       validate(fields()[36], value);
       this.conn_bi_directBuilder = null;
       this.conn_bi_direct = value;
@@ -3567,12 +3567,12 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
      * Gets the Builder instance for the 'conn_bi_direct' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public converTor.encoders.bridgeExtra.ConnBiDirect.Builder getConnBiDirectBuilder() {
+    public convertor.encoders.bridgeExtra.ConnBiDirect.Builder getConnBiDirectBuilder() {
       if (conn_bi_directBuilder == null) {
         if (hasConnBiDirect()) {
-          setConnBiDirectBuilder(converTor.encoders.bridgeExtra.ConnBiDirect.newBuilder(conn_bi_direct));
+          setConnBiDirectBuilder(convertor.encoders.bridgeExtra.ConnBiDirect.newBuilder(conn_bi_direct));
         } else {
-          setConnBiDirectBuilder(converTor.encoders.bridgeExtra.ConnBiDirect.newBuilder());
+          setConnBiDirectBuilder(convertor.encoders.bridgeExtra.ConnBiDirect.newBuilder());
         }
       }
       return conn_bi_directBuilder;
@@ -3582,7 +3582,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
      * Sets the Builder instance for the 'conn_bi_direct' field
      * @return This builder.
      */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setConnBiDirectBuilder(converTor.encoders.bridgeExtra.ConnBiDirect.Builder value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setConnBiDirectBuilder(convertor.encoders.bridgeExtra.ConnBiDirect.Builder value) {
       clearConnBiDirect();
       conn_bi_directBuilder = value;
       return this;
@@ -3600,7 +3600,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * Clears the value of the 'conn_bi_direct' field.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearConnBiDirect() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearConnBiDirect() {
       conn_bi_direct = null;
       conn_bi_directBuilder = null;
       fieldSetFlags()[36] = false;
@@ -3611,7 +3611,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * Gets the value of the 'exit_stats_end' field.
       * @return The value.
       */
-    public converTor.encoders.bridgeExtra.ExitStats getExitStatsEnd() {
+    public convertor.encoders.bridgeExtra.ExitStats getExitStatsEnd() {
       return exit_stats_end;
     }
 
@@ -3620,7 +3620,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'exit_stats_end'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setExitStatsEnd(converTor.encoders.bridgeExtra.ExitStats value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setExitStatsEnd(convertor.encoders.bridgeExtra.ExitStats value) {
       validate(fields()[37], value);
       this.exit_stats_endBuilder = null;
       this.exit_stats_end = value;
@@ -3640,12 +3640,12 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
      * Gets the Builder instance for the 'exit_stats_end' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public converTor.encoders.bridgeExtra.ExitStats.Builder getExitStatsEndBuilder() {
+    public convertor.encoders.bridgeExtra.ExitStats.Builder getExitStatsEndBuilder() {
       if (exit_stats_endBuilder == null) {
         if (hasExitStatsEnd()) {
-          setExitStatsEndBuilder(converTor.encoders.bridgeExtra.ExitStats.newBuilder(exit_stats_end));
+          setExitStatsEndBuilder(convertor.encoders.bridgeExtra.ExitStats.newBuilder(exit_stats_end));
         } else {
-          setExitStatsEndBuilder(converTor.encoders.bridgeExtra.ExitStats.newBuilder());
+          setExitStatsEndBuilder(convertor.encoders.bridgeExtra.ExitStats.newBuilder());
         }
       }
       return exit_stats_endBuilder;
@@ -3655,7 +3655,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
      * Sets the Builder instance for the 'exit_stats_end' field
      * @return This builder.
      */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setExitStatsEndBuilder(converTor.encoders.bridgeExtra.ExitStats.Builder value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setExitStatsEndBuilder(convertor.encoders.bridgeExtra.ExitStats.Builder value) {
       clearExitStatsEnd();
       exit_stats_endBuilder = value;
       return this;
@@ -3673,7 +3673,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * Clears the value of the 'exit_stats_end' field.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearExitStatsEnd() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearExitStatsEnd() {
       exit_stats_end = null;
       exit_stats_endBuilder = null;
       fieldSetFlags()[37] = false;
@@ -3695,7 +3695,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'exit_kibibytes_written'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setExitKibibytesWritten(java.util.Map<java.lang.String,java.lang.Long> value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setExitKibibytesWritten(java.util.Map<java.lang.String,java.lang.Long> value) {
       validate(fields()[38], value);
       this.exit_kibibytes_written = value;
       fieldSetFlags()[38] = true;
@@ -3717,7 +3717,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesWritten()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearExitKibibytesWritten() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearExitKibibytesWritten() {
       exit_kibibytes_written = null;
       fieldSetFlags()[38] = false;
       return this;
@@ -3738,7 +3738,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'exit_kibibytes_read'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setExitKibibytesRead(java.util.Map<java.lang.String,java.lang.Long> value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setExitKibibytesRead(java.util.Map<java.lang.String,java.lang.Long> value) {
       validate(fields()[39], value);
       this.exit_kibibytes_read = value;
       fieldSetFlags()[39] = true;
@@ -3760,7 +3760,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesRead()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearExitKibibytesRead() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearExitKibibytesRead() {
       exit_kibibytes_read = null;
       fieldSetFlags()[39] = false;
       return this;
@@ -3781,7 +3781,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'exit_streams_opened'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setExitStreamsOpened(java.util.Map<java.lang.String,java.lang.Long> value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setExitStreamsOpened(java.util.Map<java.lang.String,java.lang.Long> value) {
       validate(fields()[40], value);
       this.exit_streams_opened = value;
       fieldSetFlags()[40] = true;
@@ -3803,7 +3803,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitStreamsOpened()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearExitStreamsOpened() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearExitStreamsOpened() {
       exit_streams_opened = null;
       fieldSetFlags()[40] = false;
       return this;
@@ -3813,7 +3813,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * Gets the value of the 'hidserv_stats_end' field.
       * @return The value.
       */
-    public converTor.encoders.bridgeExtra.HidservStats getHidservStatsEnd() {
+    public convertor.encoders.bridgeExtra.HidservStats getHidservStatsEnd() {
       return hidserv_stats_end;
     }
 
@@ -3822,7 +3822,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'hidserv_stats_end'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setHidservStatsEnd(converTor.encoders.bridgeExtra.HidservStats value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setHidservStatsEnd(convertor.encoders.bridgeExtra.HidservStats value) {
       validate(fields()[41], value);
       this.hidserv_stats_endBuilder = null;
       this.hidserv_stats_end = value;
@@ -3842,12 +3842,12 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
      * Gets the Builder instance for the 'hidserv_stats_end' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public converTor.encoders.bridgeExtra.HidservStats.Builder getHidservStatsEndBuilder() {
+    public convertor.encoders.bridgeExtra.HidservStats.Builder getHidservStatsEndBuilder() {
       if (hidserv_stats_endBuilder == null) {
         if (hasHidservStatsEnd()) {
-          setHidservStatsEndBuilder(converTor.encoders.bridgeExtra.HidservStats.newBuilder(hidserv_stats_end));
+          setHidservStatsEndBuilder(convertor.encoders.bridgeExtra.HidservStats.newBuilder(hidserv_stats_end));
         } else {
-          setHidservStatsEndBuilder(converTor.encoders.bridgeExtra.HidservStats.newBuilder());
+          setHidservStatsEndBuilder(convertor.encoders.bridgeExtra.HidservStats.newBuilder());
         }
       }
       return hidserv_stats_endBuilder;
@@ -3857,7 +3857,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
      * Sets the Builder instance for the 'hidserv_stats_end' field
      * @return This builder.
      */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setHidservStatsEndBuilder(converTor.encoders.bridgeExtra.HidservStats.Builder value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setHidservStatsEndBuilder(convertor.encoders.bridgeExtra.HidservStats.Builder value) {
       clearHidservStatsEnd();
       hidserv_stats_endBuilder = value;
       return this;
@@ -3875,7 +3875,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * Clears the value of the 'hidserv_stats_end' field.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearHidservStatsEnd() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearHidservStatsEnd() {
       hidserv_stats_end = null;
       hidserv_stats_endBuilder = null;
       fieldSetFlags()[41] = false;
@@ -3886,7 +3886,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * Gets the value of the 'hidserv_rend_relayed_cells' field.
       * @return The value.
       */
-    public converTor.encoders.bridgeExtra.HidservRendRelayedCells getHidservRendRelayedCells() {
+    public convertor.encoders.bridgeExtra.HidservRendRelayedCells getHidservRendRelayedCells() {
       return hidserv_rend_relayed_cells;
     }
 
@@ -3895,7 +3895,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'hidserv_rend_relayed_cells'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setHidservRendRelayedCells(converTor.encoders.bridgeExtra.HidservRendRelayedCells value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setHidservRendRelayedCells(convertor.encoders.bridgeExtra.HidservRendRelayedCells value) {
       validate(fields()[42], value);
       this.hidserv_rend_relayed_cellsBuilder = null;
       this.hidserv_rend_relayed_cells = value;
@@ -3915,12 +3915,12 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
      * Gets the Builder instance for the 'hidserv_rend_relayed_cells' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public converTor.encoders.bridgeExtra.HidservRendRelayedCells.Builder getHidservRendRelayedCellsBuilder() {
+    public convertor.encoders.bridgeExtra.HidservRendRelayedCells.Builder getHidservRendRelayedCellsBuilder() {
       if (hidserv_rend_relayed_cellsBuilder == null) {
         if (hasHidservRendRelayedCells()) {
-          setHidservRendRelayedCellsBuilder(converTor.encoders.bridgeExtra.HidservRendRelayedCells.newBuilder(hidserv_rend_relayed_cells));
+          setHidservRendRelayedCellsBuilder(convertor.encoders.bridgeExtra.HidservRendRelayedCells.newBuilder(hidserv_rend_relayed_cells));
         } else {
-          setHidservRendRelayedCellsBuilder(converTor.encoders.bridgeExtra.HidservRendRelayedCells.newBuilder());
+          setHidservRendRelayedCellsBuilder(convertor.encoders.bridgeExtra.HidservRendRelayedCells.newBuilder());
         }
       }
       return hidserv_rend_relayed_cellsBuilder;
@@ -3930,7 +3930,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
      * Sets the Builder instance for the 'hidserv_rend_relayed_cells' field
      * @return This builder.
      */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setHidservRendRelayedCellsBuilder(converTor.encoders.bridgeExtra.HidservRendRelayedCells.Builder value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setHidservRendRelayedCellsBuilder(convertor.encoders.bridgeExtra.HidservRendRelayedCells.Builder value) {
       clearHidservRendRelayedCells();
       hidserv_rend_relayed_cellsBuilder = value;
       return this;
@@ -3948,7 +3948,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * Clears the value of the 'hidserv_rend_relayed_cells' field.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearHidservRendRelayedCells() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearHidservRendRelayedCells() {
       hidserv_rend_relayed_cells = null;
       hidserv_rend_relayed_cellsBuilder = null;
       fieldSetFlags()[42] = false;
@@ -3959,7 +3959,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * Gets the value of the 'hidserv_dir_onions_seen' field.
       * @return The value.
       */
-    public converTor.encoders.bridgeExtra.HidservDirOnionsSeen getHidservDirOnionsSeen() {
+    public convertor.encoders.bridgeExtra.HidservDirOnionsSeen getHidservDirOnionsSeen() {
       return hidserv_dir_onions_seen;
     }
 
@@ -3968,7 +3968,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'hidserv_dir_onions_seen'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setHidservDirOnionsSeen(converTor.encoders.bridgeExtra.HidservDirOnionsSeen value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setHidservDirOnionsSeen(convertor.encoders.bridgeExtra.HidservDirOnionsSeen value) {
       validate(fields()[43], value);
       this.hidserv_dir_onions_seenBuilder = null;
       this.hidserv_dir_onions_seen = value;
@@ -3988,12 +3988,12 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
      * Gets the Builder instance for the 'hidserv_dir_onions_seen' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public converTor.encoders.bridgeExtra.HidservDirOnionsSeen.Builder getHidservDirOnionsSeenBuilder() {
+    public convertor.encoders.bridgeExtra.HidservDirOnionsSeen.Builder getHidservDirOnionsSeenBuilder() {
       if (hidserv_dir_onions_seenBuilder == null) {
         if (hasHidservDirOnionsSeen()) {
-          setHidservDirOnionsSeenBuilder(converTor.encoders.bridgeExtra.HidservDirOnionsSeen.newBuilder(hidserv_dir_onions_seen));
+          setHidservDirOnionsSeenBuilder(convertor.encoders.bridgeExtra.HidservDirOnionsSeen.newBuilder(hidserv_dir_onions_seen));
         } else {
-          setHidservDirOnionsSeenBuilder(converTor.encoders.bridgeExtra.HidservDirOnionsSeen.newBuilder());
+          setHidservDirOnionsSeenBuilder(convertor.encoders.bridgeExtra.HidservDirOnionsSeen.newBuilder());
         }
       }
       return hidserv_dir_onions_seenBuilder;
@@ -4003,7 +4003,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
      * Sets the Builder instance for the 'hidserv_dir_onions_seen' field
      * @return This builder.
      */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setHidservDirOnionsSeenBuilder(converTor.encoders.bridgeExtra.HidservDirOnionsSeen.Builder value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setHidservDirOnionsSeenBuilder(convertor.encoders.bridgeExtra.HidservDirOnionsSeen.Builder value) {
       clearHidservDirOnionsSeen();
       hidserv_dir_onions_seenBuilder = value;
       return this;
@@ -4021,7 +4021,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * Clears the value of the 'hidserv_dir_onions_seen' field.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearHidservDirOnionsSeen() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearHidservDirOnionsSeen() {
       hidserv_dir_onions_seen = null;
       hidserv_dir_onions_seenBuilder = null;
       fieldSetFlags()[43] = false;
@@ -4043,7 +4043,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'transport'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setTransport(java.util.List<java.lang.String> value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setTransport(java.util.List<java.lang.String> value) {
       validate(fields()[44], value);
       this.transport = value;
       fieldSetFlags()[44] = true;
@@ -4065,7 +4065,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: List<String> getTransports()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearTransport() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearTransport() {
       transport = null;
       fieldSetFlags()[44] = false;
       return this;
@@ -4086,7 +4086,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'extra_info_digest'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setExtraInfoDigest(java.lang.String value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setExtraInfoDigest(java.lang.String value) {
       validate(fields()[45], value);
       this.extra_info_digest = value;
       fieldSetFlags()[45] = true;
@@ -4108,7 +4108,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigest()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearExtraInfoDigest() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearExtraInfoDigest() {
       extra_info_digest = null;
       fieldSetFlags()[45] = false;
       return this;
@@ -4129,7 +4129,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'extra_info_digest_sha256'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setExtraInfoDigestSha256(java.lang.String value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setExtraInfoDigestSha256(java.lang.String value) {
       validate(fields()[46], value);
       this.extra_info_digest_sha256 = value;
       fieldSetFlags()[46] = true;
@@ -4151,7 +4151,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigestSha256()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearExtraInfoDigestSha256() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearExtraInfoDigestSha256() {
       extra_info_digest_sha256 = null;
       fieldSetFlags()[46] = false;
       return this;
@@ -4172,7 +4172,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'master_key_ed25519'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder setMasterKeyEd25519(java.lang.String value) {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder setMasterKeyEd25519(java.lang.String value) {
       validate(fields()[47], value);
       this.master_key_ed25519 = value;
       fieldSetFlags()[47] = true;
@@ -4194,7 +4194,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/ExtraInfoDescriptor: String getMasterKeyEd25519()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.BridgeExtra.Builder clearMasterKeyEd25519() {
+    public convertor.encoders.bridgeExtra.BridgeExtra.Builder clearMasterKeyEd25519() {
       master_key_ed25519 = null;
       fieldSetFlags()[47] = false;
       return this;
@@ -4208,19 +4208,19 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
         if (extra_infoBuilder != null) {
           record.extra_info = this.extra_infoBuilder.build();
         } else {
-          record.extra_info = fieldSetFlags()[1] ? this.extra_info : (converTor.encoders.bridgeExtra.ExtraInfo) defaultValue(fields()[1]);
+          record.extra_info = fieldSetFlags()[1] ? this.extra_info : (convertor.encoders.bridgeExtra.ExtraInfo) defaultValue(fields()[1]);
         }
         record.identity_ed25519 = fieldSetFlags()[2] ? this.identity_ed25519 : (java.lang.Boolean) defaultValue(fields()[2]);
         record.published = fieldSetFlags()[3] ? this.published : (java.lang.Long) defaultValue(fields()[3]);
         if (read_historyBuilder != null) {
           record.read_history = this.read_historyBuilder.build();
         } else {
-          record.read_history = fieldSetFlags()[4] ? this.read_history : (converTor.encoders.bridgeExtra.ReadHistory) defaultValue(fields()[4]);
+          record.read_history = fieldSetFlags()[4] ? this.read_history : (convertor.encoders.bridgeExtra.ReadHistory) defaultValue(fields()[4]);
         }
         if (write_historyBuilder != null) {
           record.write_history = this.write_historyBuilder.build();
         } else {
-          record.write_history = fieldSetFlags()[5] ? this.write_history : (converTor.encoders.bridgeExtra.WriteHistory) defaultValue(fields()[5]);
+          record.write_history = fieldSetFlags()[5] ? this.write_history : (convertor.encoders.bridgeExtra.WriteHistory) defaultValue(fields()[5]);
         }
         record.geoip_db_digest = fieldSetFlags()[6] ? this.geoip_db_digest : (java.lang.String) defaultValue(fields()[6]);
         record.geoip6_db_digest = fieldSetFlags()[7] ? this.geoip6_db_digest : (java.lang.String) defaultValue(fields()[7]);
@@ -4229,7 +4229,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
         if (bridge_stats_endBuilder != null) {
           record.bridge_stats_end = this.bridge_stats_endBuilder.build();
         } else {
-          record.bridge_stats_end = fieldSetFlags()[10] ? this.bridge_stats_end : (converTor.encoders.bridgeExtra.BridgeStats) defaultValue(fields()[10]);
+          record.bridge_stats_end = fieldSetFlags()[10] ? this.bridge_stats_end : (convertor.encoders.bridgeExtra.BridgeStats) defaultValue(fields()[10]);
         }
         record.bridge_ips = fieldSetFlags()[11] ? this.bridge_ips : (java.util.Map<java.lang.String,java.lang.Integer>) defaultValue(fields()[11]);
         record.bridge_ip_versions = fieldSetFlags()[12] ? this.bridge_ip_versions : (java.util.Map<java.lang.String,java.lang.Integer>) defaultValue(fields()[12]);
@@ -4237,7 +4237,7 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
         if (dirreq_stats_endBuilder != null) {
           record.dirreq_stats_end = this.dirreq_stats_endBuilder.build();
         } else {
-          record.dirreq_stats_end = fieldSetFlags()[14] ? this.dirreq_stats_end : (converTor.encoders.bridgeExtra.DirreqStats) defaultValue(fields()[14]);
+          record.dirreq_stats_end = fieldSetFlags()[14] ? this.dirreq_stats_end : (convertor.encoders.bridgeExtra.DirreqStats) defaultValue(fields()[14]);
         }
         record.dirreq_v2_ips = fieldSetFlags()[15] ? this.dirreq_v2_ips : (java.util.Map<java.lang.String,java.lang.Integer>) defaultValue(fields()[15]);
         record.dirreq_v3_ips = fieldSetFlags()[16] ? this.dirreq_v3_ips : (java.util.Map<java.lang.String,java.lang.Integer>) defaultValue(fields()[16]);
@@ -4254,23 +4254,23 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
         if (dirreq_read_historyBuilder != null) {
           record.dirreq_read_history = this.dirreq_read_historyBuilder.build();
         } else {
-          record.dirreq_read_history = fieldSetFlags()[27] ? this.dirreq_read_history : (converTor.encoders.bridgeExtra.DirreqReadHistory) defaultValue(fields()[27]);
+          record.dirreq_read_history = fieldSetFlags()[27] ? this.dirreq_read_history : (convertor.encoders.bridgeExtra.DirreqReadHistory) defaultValue(fields()[27]);
         }
         if (dirreq_write_historyBuilder != null) {
           record.dirreq_write_history = this.dirreq_write_historyBuilder.build();
         } else {
-          record.dirreq_write_history = fieldSetFlags()[28] ? this.dirreq_write_history : (converTor.encoders.bridgeExtra.DirreqWriteHistory) defaultValue(fields()[28]);
+          record.dirreq_write_history = fieldSetFlags()[28] ? this.dirreq_write_history : (convertor.encoders.bridgeExtra.DirreqWriteHistory) defaultValue(fields()[28]);
         }
         if (entry_stats_endBuilder != null) {
           record.entry_stats_end = this.entry_stats_endBuilder.build();
         } else {
-          record.entry_stats_end = fieldSetFlags()[29] ? this.entry_stats_end : (converTor.encoders.bridgeExtra.EntryStats) defaultValue(fields()[29]);
+          record.entry_stats_end = fieldSetFlags()[29] ? this.entry_stats_end : (convertor.encoders.bridgeExtra.EntryStats) defaultValue(fields()[29]);
         }
         record.entry_ips = fieldSetFlags()[30] ? this.entry_ips : (java.util.Map<java.lang.String,java.lang.Integer>) defaultValue(fields()[30]);
         if (cell_stats_endBuilder != null) {
           record.cell_stats_end = this.cell_stats_endBuilder.build();
         } else {
-          record.cell_stats_end = fieldSetFlags()[31] ? this.cell_stats_end : (converTor.encoders.bridgeExtra.CellStats) defaultValue(fields()[31]);
+          record.cell_stats_end = fieldSetFlags()[31] ? this.cell_stats_end : (convertor.encoders.bridgeExtra.CellStats) defaultValue(fields()[31]);
         }
         record.cell_processed_cells = fieldSetFlags()[32] ? this.cell_processed_cells : (java.util.List<java.lang.Integer>) defaultValue(fields()[32]);
         record.cell_queued_cells = fieldSetFlags()[33] ? this.cell_queued_cells : (java.util.List<java.lang.Double>) defaultValue(fields()[33]);
@@ -4279,12 +4279,12 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
         if (conn_bi_directBuilder != null) {
           record.conn_bi_direct = this.conn_bi_directBuilder.build();
         } else {
-          record.conn_bi_direct = fieldSetFlags()[36] ? this.conn_bi_direct : (converTor.encoders.bridgeExtra.ConnBiDirect) defaultValue(fields()[36]);
+          record.conn_bi_direct = fieldSetFlags()[36] ? this.conn_bi_direct : (convertor.encoders.bridgeExtra.ConnBiDirect) defaultValue(fields()[36]);
         }
         if (exit_stats_endBuilder != null) {
           record.exit_stats_end = this.exit_stats_endBuilder.build();
         } else {
-          record.exit_stats_end = fieldSetFlags()[37] ? this.exit_stats_end : (converTor.encoders.bridgeExtra.ExitStats) defaultValue(fields()[37]);
+          record.exit_stats_end = fieldSetFlags()[37] ? this.exit_stats_end : (convertor.encoders.bridgeExtra.ExitStats) defaultValue(fields()[37]);
         }
         record.exit_kibibytes_written = fieldSetFlags()[38] ? this.exit_kibibytes_written : (java.util.Map<java.lang.String,java.lang.Long>) defaultValue(fields()[38]);
         record.exit_kibibytes_read = fieldSetFlags()[39] ? this.exit_kibibytes_read : (java.util.Map<java.lang.String,java.lang.Long>) defaultValue(fields()[39]);
@@ -4292,17 +4292,17 @@ public class BridgeExtra extends org.apache.avro.specific.SpecificRecordBase imp
         if (hidserv_stats_endBuilder != null) {
           record.hidserv_stats_end = this.hidserv_stats_endBuilder.build();
         } else {
-          record.hidserv_stats_end = fieldSetFlags()[41] ? this.hidserv_stats_end : (converTor.encoders.bridgeExtra.HidservStats) defaultValue(fields()[41]);
+          record.hidserv_stats_end = fieldSetFlags()[41] ? this.hidserv_stats_end : (convertor.encoders.bridgeExtra.HidservStats) defaultValue(fields()[41]);
         }
         if (hidserv_rend_relayed_cellsBuilder != null) {
           record.hidserv_rend_relayed_cells = this.hidserv_rend_relayed_cellsBuilder.build();
         } else {
-          record.hidserv_rend_relayed_cells = fieldSetFlags()[42] ? this.hidserv_rend_relayed_cells : (converTor.encoders.bridgeExtra.HidservRendRelayedCells) defaultValue(fields()[42]);
+          record.hidserv_rend_relayed_cells = fieldSetFlags()[42] ? this.hidserv_rend_relayed_cells : (convertor.encoders.bridgeExtra.HidservRendRelayedCells) defaultValue(fields()[42]);
         }
         if (hidserv_dir_onions_seenBuilder != null) {
           record.hidserv_dir_onions_seen = this.hidserv_dir_onions_seenBuilder.build();
         } else {
-          record.hidserv_dir_onions_seen = fieldSetFlags()[43] ? this.hidserv_dir_onions_seen : (converTor.encoders.bridgeExtra.HidservDirOnionsSeen) defaultValue(fields()[43]);
+          record.hidserv_dir_onions_seen = fieldSetFlags()[43] ? this.hidserv_dir_onions_seen : (convertor.encoders.bridgeExtra.HidservDirOnionsSeen) defaultValue(fields()[43]);
         }
         record.transport = fieldSetFlags()[44] ? this.transport : (java.util.List<java.lang.String>) defaultValue(fields()[44]);
         record.extra_info_digest = fieldSetFlags()[45] ? this.extra_info_digest : (java.lang.String) defaultValue(fields()[45]);

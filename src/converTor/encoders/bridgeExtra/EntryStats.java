@@ -3,12 +3,12 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.encoders.bridgeExtra;  
+package convertor.encoders.bridgeExtra;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class EntryStats extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = 2735071773796111401L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"EntryStats\",\"namespace\":\"converTor.encoders.bridgeExtra\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getEntryStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getEntryStatsIntervalLength()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"EntryStats\",\"namespace\":\"convertor.encoders.bridgeExtra\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getEntryStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getEntryStatsIntervalLength()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/ExtraInfoDescriptor: long getEntryStatsEndMillis() */
   @Deprecated public java.lang.Long date;
@@ -89,8 +89,8 @@ public class EntryStats extends org.apache.avro.specific.SpecificRecordBase impl
    * Creates a new EntryStats RecordBuilder.
    * @return A new EntryStats RecordBuilder
    */
-  public static converTor.encoders.bridgeExtra.EntryStats.Builder newBuilder() {
-    return new converTor.encoders.bridgeExtra.EntryStats.Builder();
+  public static convertor.encoders.bridgeExtra.EntryStats.Builder newBuilder() {
+    return new convertor.encoders.bridgeExtra.EntryStats.Builder();
   }
   
   /**
@@ -98,8 +98,8 @@ public class EntryStats extends org.apache.avro.specific.SpecificRecordBase impl
    * @param other The existing builder to copy.
    * @return A new EntryStats RecordBuilder
    */
-  public static converTor.encoders.bridgeExtra.EntryStats.Builder newBuilder(converTor.encoders.bridgeExtra.EntryStats.Builder other) {
-    return new converTor.encoders.bridgeExtra.EntryStats.Builder(other);
+  public static convertor.encoders.bridgeExtra.EntryStats.Builder newBuilder(convertor.encoders.bridgeExtra.EntryStats.Builder other) {
+    return new convertor.encoders.bridgeExtra.EntryStats.Builder(other);
   }
   
   /**
@@ -107,8 +107,8 @@ public class EntryStats extends org.apache.avro.specific.SpecificRecordBase impl
    * @param other The existing instance to copy.
    * @return A new EntryStats RecordBuilder
    */
-  public static converTor.encoders.bridgeExtra.EntryStats.Builder newBuilder(converTor.encoders.bridgeExtra.EntryStats other) {
-    return new converTor.encoders.bridgeExtra.EntryStats.Builder(other);
+  public static convertor.encoders.bridgeExtra.EntryStats.Builder newBuilder(convertor.encoders.bridgeExtra.EntryStats other) {
+    return new convertor.encoders.bridgeExtra.EntryStats.Builder(other);
   }
   
   /**
@@ -124,14 +124,14 @@ public class EntryStats extends org.apache.avro.specific.SpecificRecordBase impl
 
     /** Creates a new Builder */
     private Builder() {
-      super(converTor.encoders.bridgeExtra.EntryStats.SCHEMA$);
+      super(convertor.encoders.bridgeExtra.EntryStats.SCHEMA$);
     }
     
     /**
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(converTor.encoders.bridgeExtra.EntryStats.Builder other) {
+    private Builder(convertor.encoders.bridgeExtra.EntryStats.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.date)) {
         this.date = data().deepCopy(fields()[0].schema(), other.date);
@@ -147,8 +147,8 @@ public class EntryStats extends org.apache.avro.specific.SpecificRecordBase impl
      * Creates a Builder by copying an existing EntryStats instance
      * @param other The existing instance to copy.
      */
-    private Builder(converTor.encoders.bridgeExtra.EntryStats other) {
-            super(converTor.encoders.bridgeExtra.EntryStats.SCHEMA$);
+    private Builder(convertor.encoders.bridgeExtra.EntryStats other) {
+            super(convertor.encoders.bridgeExtra.EntryStats.SCHEMA$);
       if (isValidValue(fields()[0], other.date)) {
         this.date = data().deepCopy(fields()[0].schema(), other.date);
         fieldSetFlags()[0] = true;
@@ -174,7 +174,7 @@ public class EntryStats extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'date'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.EntryStats.Builder setDate(java.lang.Long value) {
+    public convertor.encoders.bridgeExtra.EntryStats.Builder setDate(java.lang.Long value) {
       validate(fields()[0], value);
       this.date = value;
       fieldSetFlags()[0] = true;
@@ -196,7 +196,7 @@ public class EntryStats extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: long getEntryStatsEndMillis()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.EntryStats.Builder clearDate() {
+    public convertor.encoders.bridgeExtra.EntryStats.Builder clearDate() {
       date = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -217,7 +217,7 @@ public class EntryStats extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'interval'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.EntryStats.Builder setInterval(java.lang.Long value) {
+    public convertor.encoders.bridgeExtra.EntryStats.Builder setInterval(java.lang.Long value) {
       validate(fields()[1], value);
       this.interval = value;
       fieldSetFlags()[1] = true;
@@ -239,7 +239,7 @@ public class EntryStats extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: long getEntryStatsIntervalLength()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.EntryStats.Builder clearInterval() {
+    public convertor.encoders.bridgeExtra.EntryStats.Builder clearInterval() {
       interval = null;
       fieldSetFlags()[1] = false;
       return this;

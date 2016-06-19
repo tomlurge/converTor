@@ -3,12 +3,12 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.encoders.bridgeExtra;  
+package convertor.encoders.bridgeExtra;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class CellStats extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = 6684909999778319764L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"CellStats\",\"namespace\":\"converTor.encoders.bridgeExtra\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getCellStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getCellStatsIntervalLength()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"CellStats\",\"namespace\":\"convertor.encoders.bridgeExtra\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getCellStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getCellStatsIntervalLength()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/ExtraInfoDescriptor: long getCellStatsEndMillis() */
   @Deprecated public java.lang.Long date;
@@ -89,8 +89,8 @@ public class CellStats extends org.apache.avro.specific.SpecificRecordBase imple
    * Creates a new CellStats RecordBuilder.
    * @return A new CellStats RecordBuilder
    */
-  public static converTor.encoders.bridgeExtra.CellStats.Builder newBuilder() {
-    return new converTor.encoders.bridgeExtra.CellStats.Builder();
+  public static convertor.encoders.bridgeExtra.CellStats.Builder newBuilder() {
+    return new convertor.encoders.bridgeExtra.CellStats.Builder();
   }
   
   /**
@@ -98,8 +98,8 @@ public class CellStats extends org.apache.avro.specific.SpecificRecordBase imple
    * @param other The existing builder to copy.
    * @return A new CellStats RecordBuilder
    */
-  public static converTor.encoders.bridgeExtra.CellStats.Builder newBuilder(converTor.encoders.bridgeExtra.CellStats.Builder other) {
-    return new converTor.encoders.bridgeExtra.CellStats.Builder(other);
+  public static convertor.encoders.bridgeExtra.CellStats.Builder newBuilder(convertor.encoders.bridgeExtra.CellStats.Builder other) {
+    return new convertor.encoders.bridgeExtra.CellStats.Builder(other);
   }
   
   /**
@@ -107,8 +107,8 @@ public class CellStats extends org.apache.avro.specific.SpecificRecordBase imple
    * @param other The existing instance to copy.
    * @return A new CellStats RecordBuilder
    */
-  public static converTor.encoders.bridgeExtra.CellStats.Builder newBuilder(converTor.encoders.bridgeExtra.CellStats other) {
-    return new converTor.encoders.bridgeExtra.CellStats.Builder(other);
+  public static convertor.encoders.bridgeExtra.CellStats.Builder newBuilder(convertor.encoders.bridgeExtra.CellStats other) {
+    return new convertor.encoders.bridgeExtra.CellStats.Builder(other);
   }
   
   /**
@@ -124,14 +124,14 @@ public class CellStats extends org.apache.avro.specific.SpecificRecordBase imple
 
     /** Creates a new Builder */
     private Builder() {
-      super(converTor.encoders.bridgeExtra.CellStats.SCHEMA$);
+      super(convertor.encoders.bridgeExtra.CellStats.SCHEMA$);
     }
     
     /**
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(converTor.encoders.bridgeExtra.CellStats.Builder other) {
+    private Builder(convertor.encoders.bridgeExtra.CellStats.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.date)) {
         this.date = data().deepCopy(fields()[0].schema(), other.date);
@@ -147,8 +147,8 @@ public class CellStats extends org.apache.avro.specific.SpecificRecordBase imple
      * Creates a Builder by copying an existing CellStats instance
      * @param other The existing instance to copy.
      */
-    private Builder(converTor.encoders.bridgeExtra.CellStats other) {
-            super(converTor.encoders.bridgeExtra.CellStats.SCHEMA$);
+    private Builder(convertor.encoders.bridgeExtra.CellStats other) {
+            super(convertor.encoders.bridgeExtra.CellStats.SCHEMA$);
       if (isValidValue(fields()[0], other.date)) {
         this.date = data().deepCopy(fields()[0].schema(), other.date);
         fieldSetFlags()[0] = true;
@@ -174,7 +174,7 @@ public class CellStats extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'date'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.CellStats.Builder setDate(java.lang.Long value) {
+    public convertor.encoders.bridgeExtra.CellStats.Builder setDate(java.lang.Long value) {
       validate(fields()[0], value);
       this.date = value;
       fieldSetFlags()[0] = true;
@@ -196,7 +196,7 @@ public class CellStats extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/ExtraInfoDescriptor: long getCellStatsEndMillis()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.CellStats.Builder clearDate() {
+    public convertor.encoders.bridgeExtra.CellStats.Builder clearDate() {
       date = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -217,7 +217,7 @@ public class CellStats extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'interval'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.CellStats.Builder setInterval(java.lang.Long value) {
+    public convertor.encoders.bridgeExtra.CellStats.Builder setInterval(java.lang.Long value) {
       validate(fields()[1], value);
       this.interval = value;
       fieldSetFlags()[1] = true;
@@ -239,7 +239,7 @@ public class CellStats extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/ExtraInfoDescriptor: long getCellStatsIntervalLength()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.CellStats.Builder clearInterval() {
+    public convertor.encoders.bridgeExtra.CellStats.Builder clearInterval() {
       interval = null;
       fieldSetFlags()[1] = false;
       return this;

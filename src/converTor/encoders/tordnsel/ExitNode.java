@@ -3,12 +3,12 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.encoders.tordnsel;  
+package convertor.encoders.tordnsel;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = 7561811580665961897L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ExitNode\",\"namespace\":\"converTor.encoders.tordnsel\",\"fields\":[{\"name\":\"fingerprint\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExitList.Entry: String getFingerprint()\"},{\"name\":\"published\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExitList.Entry: long getPublishedMillis()\"},{\"name\":\"last_status\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExitList.Entry: long getLastStatusMillis()\"},{\"name\":\"exit_adresses\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"long\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExitList.Entry: Map<String, Long> getExitAddresses()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ExitNode\",\"namespace\":\"convertor.encoders.tordnsel\",\"fields\":[{\"name\":\"fingerprint\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExitList.Entry: String getFingerprint()\"},{\"name\":\"published\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExitList.Entry: long getPublishedMillis()\"},{\"name\":\"last_status\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExitList.Entry: long getLastStatusMillis()\"},{\"name\":\"exit_adresses\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"long\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExitList.Entry: Map<String, Long> getExitAddresses()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/ExitList.Entry: String getFingerprint() */
   @Deprecated public java.lang.String fingerprint;
@@ -135,8 +135,8 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
    * Creates a new ExitNode RecordBuilder.
    * @return A new ExitNode RecordBuilder
    */
-  public static converTor.encoders.tordnsel.ExitNode.Builder newBuilder() {
-    return new converTor.encoders.tordnsel.ExitNode.Builder();
+  public static convertor.encoders.tordnsel.ExitNode.Builder newBuilder() {
+    return new convertor.encoders.tordnsel.ExitNode.Builder();
   }
   
   /**
@@ -144,8 +144,8 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
    * @param other The existing builder to copy.
    * @return A new ExitNode RecordBuilder
    */
-  public static converTor.encoders.tordnsel.ExitNode.Builder newBuilder(converTor.encoders.tordnsel.ExitNode.Builder other) {
-    return new converTor.encoders.tordnsel.ExitNode.Builder(other);
+  public static convertor.encoders.tordnsel.ExitNode.Builder newBuilder(convertor.encoders.tordnsel.ExitNode.Builder other) {
+    return new convertor.encoders.tordnsel.ExitNode.Builder(other);
   }
   
   /**
@@ -153,8 +153,8 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
    * @param other The existing instance to copy.
    * @return A new ExitNode RecordBuilder
    */
-  public static converTor.encoders.tordnsel.ExitNode.Builder newBuilder(converTor.encoders.tordnsel.ExitNode other) {
-    return new converTor.encoders.tordnsel.ExitNode.Builder(other);
+  public static convertor.encoders.tordnsel.ExitNode.Builder newBuilder(convertor.encoders.tordnsel.ExitNode other) {
+    return new convertor.encoders.tordnsel.ExitNode.Builder(other);
   }
   
   /**
@@ -174,14 +174,14 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
 
     /** Creates a new Builder */
     private Builder() {
-      super(converTor.encoders.tordnsel.ExitNode.SCHEMA$);
+      super(convertor.encoders.tordnsel.ExitNode.SCHEMA$);
     }
     
     /**
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(converTor.encoders.tordnsel.ExitNode.Builder other) {
+    private Builder(convertor.encoders.tordnsel.ExitNode.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.fingerprint)) {
         this.fingerprint = data().deepCopy(fields()[0].schema(), other.fingerprint);
@@ -205,8 +205,8 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
      * Creates a Builder by copying an existing ExitNode instance
      * @param other The existing instance to copy.
      */
-    private Builder(converTor.encoders.tordnsel.ExitNode other) {
-            super(converTor.encoders.tordnsel.ExitNode.SCHEMA$);
+    private Builder(convertor.encoders.tordnsel.ExitNode other) {
+            super(convertor.encoders.tordnsel.ExitNode.SCHEMA$);
       if (isValidValue(fields()[0], other.fingerprint)) {
         this.fingerprint = data().deepCopy(fields()[0].schema(), other.fingerprint);
         fieldSetFlags()[0] = true;
@@ -240,7 +240,7 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'fingerprint'.
       * @return This builder.
       */
-    public converTor.encoders.tordnsel.ExitNode.Builder setFingerprint(java.lang.String value) {
+    public convertor.encoders.tordnsel.ExitNode.Builder setFingerprint(java.lang.String value) {
       validate(fields()[0], value);
       this.fingerprint = value;
       fieldSetFlags()[0] = true;
@@ -262,7 +262,7 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
       * metrics-lib/ExitList.Entry: String getFingerprint()
       * @return This builder.
       */
-    public converTor.encoders.tordnsel.ExitNode.Builder clearFingerprint() {
+    public convertor.encoders.tordnsel.ExitNode.Builder clearFingerprint() {
       fingerprint = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -283,7 +283,7 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'published'.
       * @return This builder.
       */
-    public converTor.encoders.tordnsel.ExitNode.Builder setPublished(java.lang.Long value) {
+    public convertor.encoders.tordnsel.ExitNode.Builder setPublished(java.lang.Long value) {
       validate(fields()[1], value);
       this.published = value;
       fieldSetFlags()[1] = true;
@@ -305,7 +305,7 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
       * metrics-lib/ExitList.Entry: long getPublishedMillis()
       * @return This builder.
       */
-    public converTor.encoders.tordnsel.ExitNode.Builder clearPublished() {
+    public convertor.encoders.tordnsel.ExitNode.Builder clearPublished() {
       published = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -326,7 +326,7 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'last_status'.
       * @return This builder.
       */
-    public converTor.encoders.tordnsel.ExitNode.Builder setLastStatus(java.lang.Long value) {
+    public convertor.encoders.tordnsel.ExitNode.Builder setLastStatus(java.lang.Long value) {
       validate(fields()[2], value);
       this.last_status = value;
       fieldSetFlags()[2] = true;
@@ -348,7 +348,7 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
       * metrics-lib/ExitList.Entry: long getLastStatusMillis()
       * @return This builder.
       */
-    public converTor.encoders.tordnsel.ExitNode.Builder clearLastStatus() {
+    public convertor.encoders.tordnsel.ExitNode.Builder clearLastStatus() {
       last_status = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -369,7 +369,7 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'exit_adresses'.
       * @return This builder.
       */
-    public converTor.encoders.tordnsel.ExitNode.Builder setExitAdresses(java.util.Map<java.lang.String,java.lang.Long> value) {
+    public convertor.encoders.tordnsel.ExitNode.Builder setExitAdresses(java.util.Map<java.lang.String,java.lang.Long> value) {
       validate(fields()[3], value);
       this.exit_adresses = value;
       fieldSetFlags()[3] = true;
@@ -391,7 +391,7 @@ public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implem
       * metrics-lib/ExitList.Entry: Map<String, Long> getExitAddresses()
       * @return This builder.
       */
-    public converTor.encoders.tordnsel.ExitNode.Builder clearExitAdresses() {
+    public convertor.encoders.tordnsel.ExitNode.Builder clearExitAdresses() {
       exit_adresses = null;
       fieldSetFlags()[3] = false;
       return this;

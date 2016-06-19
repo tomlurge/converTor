@@ -12,7 +12,7 @@
     <property name="dist.schema.dir" location="dist/schema" />
     <property name="dist.docs.dir" location="dist/docs" />
     <property name="lib.dir" value="lib" />
-    <property name="main-class" value="converTor.Base" />
+    <property name="main-class" value="convertor.Base" />
 
     <!-- external libraries classpath, we don't need sources and javadoc -->
     <path id="classpath">

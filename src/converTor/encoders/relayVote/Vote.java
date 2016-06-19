@@ -3,12 +3,12 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.encoders.relayVote;  
+package convertor.encoders.relayVote;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Vote extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -4386631226835491419L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Vote\",\"namespace\":\"converTor.encoders.relayVote\",\"fields\":[{\"name\":\"vote_seconds\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getVoteSeconds()\"},{\"name\":\"dist_seconds\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getDistSeconds()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Vote\",\"namespace\":\"convertor.encoders.relayVote\",\"fields\":[{\"name\":\"vote_seconds\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getVoteSeconds()\"},{\"name\":\"dist_seconds\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getDistSeconds()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/RelayNetworkStatusVote: long getVoteSeconds() */
   @Deprecated public java.lang.Long vote_seconds;
@@ -89,8 +89,8 @@ public class Vote extends org.apache.avro.specific.SpecificRecordBase implements
    * Creates a new Vote RecordBuilder.
    * @return A new Vote RecordBuilder
    */
-  public static converTor.encoders.relayVote.Vote.Builder newBuilder() {
-    return new converTor.encoders.relayVote.Vote.Builder();
+  public static convertor.encoders.relayVote.Vote.Builder newBuilder() {
+    return new convertor.encoders.relayVote.Vote.Builder();
   }
   
   /**
@@ -98,8 +98,8 @@ public class Vote extends org.apache.avro.specific.SpecificRecordBase implements
    * @param other The existing builder to copy.
    * @return A new Vote RecordBuilder
    */
-  public static converTor.encoders.relayVote.Vote.Builder newBuilder(converTor.encoders.relayVote.Vote.Builder other) {
-    return new converTor.encoders.relayVote.Vote.Builder(other);
+  public static convertor.encoders.relayVote.Vote.Builder newBuilder(convertor.encoders.relayVote.Vote.Builder other) {
+    return new convertor.encoders.relayVote.Vote.Builder(other);
   }
   
   /**
@@ -107,8 +107,8 @@ public class Vote extends org.apache.avro.specific.SpecificRecordBase implements
    * @param other The existing instance to copy.
    * @return A new Vote RecordBuilder
    */
-  public static converTor.encoders.relayVote.Vote.Builder newBuilder(converTor.encoders.relayVote.Vote other) {
-    return new converTor.encoders.relayVote.Vote.Builder(other);
+  public static convertor.encoders.relayVote.Vote.Builder newBuilder(convertor.encoders.relayVote.Vote other) {
+    return new convertor.encoders.relayVote.Vote.Builder(other);
   }
   
   /**
@@ -124,14 +124,14 @@ public class Vote extends org.apache.avro.specific.SpecificRecordBase implements
 
     /** Creates a new Builder */
     private Builder() {
-      super(converTor.encoders.relayVote.Vote.SCHEMA$);
+      super(convertor.encoders.relayVote.Vote.SCHEMA$);
     }
     
     /**
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(converTor.encoders.relayVote.Vote.Builder other) {
+    private Builder(convertor.encoders.relayVote.Vote.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.vote_seconds)) {
         this.vote_seconds = data().deepCopy(fields()[0].schema(), other.vote_seconds);
@@ -147,8 +147,8 @@ public class Vote extends org.apache.avro.specific.SpecificRecordBase implements
      * Creates a Builder by copying an existing Vote instance
      * @param other The existing instance to copy.
      */
-    private Builder(converTor.encoders.relayVote.Vote other) {
-            super(converTor.encoders.relayVote.Vote.SCHEMA$);
+    private Builder(convertor.encoders.relayVote.Vote other) {
+            super(convertor.encoders.relayVote.Vote.SCHEMA$);
       if (isValidValue(fields()[0], other.vote_seconds)) {
         this.vote_seconds = data().deepCopy(fields()[0].schema(), other.vote_seconds);
         fieldSetFlags()[0] = true;
@@ -174,7 +174,7 @@ public class Vote extends org.apache.avro.specific.SpecificRecordBase implements
       * @param value The value of 'vote_seconds'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.Vote.Builder setVoteSeconds(java.lang.Long value) {
+    public convertor.encoders.relayVote.Vote.Builder setVoteSeconds(java.lang.Long value) {
       validate(fields()[0], value);
       this.vote_seconds = value;
       fieldSetFlags()[0] = true;
@@ -196,7 +196,7 @@ public class Vote extends org.apache.avro.specific.SpecificRecordBase implements
       * metrics-lib/RelayNetworkStatusVote: long getVoteSeconds()
       * @return This builder.
       */
-    public converTor.encoders.relayVote.Vote.Builder clearVoteSeconds() {
+    public convertor.encoders.relayVote.Vote.Builder clearVoteSeconds() {
       vote_seconds = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -217,7 +217,7 @@ public class Vote extends org.apache.avro.specific.SpecificRecordBase implements
       * @param value The value of 'dist_seconds'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.Vote.Builder setDistSeconds(java.lang.Long value) {
+    public convertor.encoders.relayVote.Vote.Builder setDistSeconds(java.lang.Long value) {
       validate(fields()[1], value);
       this.dist_seconds = value;
       fieldSetFlags()[1] = true;
@@ -239,7 +239,7 @@ public class Vote extends org.apache.avro.specific.SpecificRecordBase implements
       * metrics-lib/RelayNetworkStatusVote: long getDistSeconds()
       * @return This builder.
       */
-    public converTor.encoders.relayVote.Vote.Builder clearDistSeconds() {
+    public convertor.encoders.relayVote.Vote.Builder clearDistSeconds() {
       dist_seconds = null;
       fieldSetFlags()[1] = false;
       return this;

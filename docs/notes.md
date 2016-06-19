@@ -8,15 +8,15 @@ make new aggregator project
 identity
   how to establish identity on converted descriptors
     
-    relay         type + fingerprint
-    relayExtra    type + fingerprint
-    relayVote     type + published (or valid-after?)
-    relayCons     type + valid-after
-    bridge        type + fingerprint
-    bridgeExtra   type + fingerprint
+    relay         type + fingerprint + published
+    relayExtra    type + fingerprint + published
+    relayVote     type + identity + published
+    relayConsens  type + valid-after
+    bridge        type + fingerprint + published
+    bridgeExtra   type + fingerprint + published
     bridgeStatus  type + published
     torperf       type + start
-    tordnsel      type + downloaded 
+    tordnsel      type + downloaded
     
 sizes
   data converted on the server seems very big - 10 to 20 time the collector data
@@ -29,20 +29,14 @@ readme
     pretty printed JSON is primarily for debugging
     eg spark can't ingest it, although mongodb won't complain
   
-  
 document where arrays would need to be flattened for use with SQL
 
 add option to have dates human readable instead of millis
   maybe just for pretty printed json?
 
-noncamelcasedname
-
-license
-
 handle updates on conversion results (files)
   writer initialization should check if file already exists 
   and, if yes, open it
-
 
 better handling of falsy command line arguments
 

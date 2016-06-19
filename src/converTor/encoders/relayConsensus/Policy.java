@@ -3,12 +3,12 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.encoders.relayConsensus;  
+package convertor.encoders.relayConsensus;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Policy extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = 6274685588427857864L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Policy\",\"namespace\":\"converTor.encoders.relayConsensus\",\"fields\":[{\"name\":\"default_policy\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDefaultPolicy()\"},{\"name\":\"port_summary\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getPortList()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Policy\",\"namespace\":\"convertor.encoders.relayConsensus\",\"fields\":[{\"name\":\"default_policy\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDefaultPolicy()\"},{\"name\":\"port_summary\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getPortList()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/NetworkStatusEntry: String getDefaultPolicy() */
   @Deprecated public java.lang.String default_policy;
@@ -89,8 +89,8 @@ public class Policy extends org.apache.avro.specific.SpecificRecordBase implemen
    * Creates a new Policy RecordBuilder.
    * @return A new Policy RecordBuilder
    */
-  public static converTor.encoders.relayConsensus.Policy.Builder newBuilder() {
-    return new converTor.encoders.relayConsensus.Policy.Builder();
+  public static convertor.encoders.relayConsensus.Policy.Builder newBuilder() {
+    return new convertor.encoders.relayConsensus.Policy.Builder();
   }
   
   /**
@@ -98,8 +98,8 @@ public class Policy extends org.apache.avro.specific.SpecificRecordBase implemen
    * @param other The existing builder to copy.
    * @return A new Policy RecordBuilder
    */
-  public static converTor.encoders.relayConsensus.Policy.Builder newBuilder(converTor.encoders.relayConsensus.Policy.Builder other) {
-    return new converTor.encoders.relayConsensus.Policy.Builder(other);
+  public static convertor.encoders.relayConsensus.Policy.Builder newBuilder(convertor.encoders.relayConsensus.Policy.Builder other) {
+    return new convertor.encoders.relayConsensus.Policy.Builder(other);
   }
   
   /**
@@ -107,8 +107,8 @@ public class Policy extends org.apache.avro.specific.SpecificRecordBase implemen
    * @param other The existing instance to copy.
    * @return A new Policy RecordBuilder
    */
-  public static converTor.encoders.relayConsensus.Policy.Builder newBuilder(converTor.encoders.relayConsensus.Policy other) {
-    return new converTor.encoders.relayConsensus.Policy.Builder(other);
+  public static convertor.encoders.relayConsensus.Policy.Builder newBuilder(convertor.encoders.relayConsensus.Policy other) {
+    return new convertor.encoders.relayConsensus.Policy.Builder(other);
   }
   
   /**
@@ -124,14 +124,14 @@ public class Policy extends org.apache.avro.specific.SpecificRecordBase implemen
 
     /** Creates a new Builder */
     private Builder() {
-      super(converTor.encoders.relayConsensus.Policy.SCHEMA$);
+      super(convertor.encoders.relayConsensus.Policy.SCHEMA$);
     }
     
     /**
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(converTor.encoders.relayConsensus.Policy.Builder other) {
+    private Builder(convertor.encoders.relayConsensus.Policy.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.default_policy)) {
         this.default_policy = data().deepCopy(fields()[0].schema(), other.default_policy);
@@ -147,8 +147,8 @@ public class Policy extends org.apache.avro.specific.SpecificRecordBase implemen
      * Creates a Builder by copying an existing Policy instance
      * @param other The existing instance to copy.
      */
-    private Builder(converTor.encoders.relayConsensus.Policy other) {
-            super(converTor.encoders.relayConsensus.Policy.SCHEMA$);
+    private Builder(convertor.encoders.relayConsensus.Policy other) {
+            super(convertor.encoders.relayConsensus.Policy.SCHEMA$);
       if (isValidValue(fields()[0], other.default_policy)) {
         this.default_policy = data().deepCopy(fields()[0].schema(), other.default_policy);
         fieldSetFlags()[0] = true;
@@ -174,7 +174,7 @@ public class Policy extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'default_policy'.
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.Policy.Builder setDefaultPolicy(java.lang.String value) {
+    public convertor.encoders.relayConsensus.Policy.Builder setDefaultPolicy(java.lang.String value) {
       validate(fields()[0], value);
       this.default_policy = value;
       fieldSetFlags()[0] = true;
@@ -196,7 +196,7 @@ public class Policy extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/NetworkStatusEntry: String getDefaultPolicy()
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.Policy.Builder clearDefaultPolicy() {
+    public convertor.encoders.relayConsensus.Policy.Builder clearDefaultPolicy() {
       default_policy = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -217,7 +217,7 @@ public class Policy extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'port_summary'.
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.Policy.Builder setPortSummary(java.lang.String value) {
+    public convertor.encoders.relayConsensus.Policy.Builder setPortSummary(java.lang.String value) {
       validate(fields()[1], value);
       this.port_summary = value;
       fieldSetFlags()[1] = true;
@@ -239,7 +239,7 @@ public class Policy extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/NetworkStatusEntry: String getPortList()
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.Policy.Builder clearPortSummary() {
+    public convertor.encoders.relayConsensus.Policy.Builder clearPortSummary() {
       port_summary = null;
       fieldSetFlags()[1] = false;
       return this;

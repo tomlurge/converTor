@@ -3,12 +3,12 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.encoders.relay;  
+package convertor.encoders.relay;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Router extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -4481963979409266759L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Router\",\"namespace\":\"converTor.encoders.relay\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getNickname()\"},{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getOrPort()\"},{\"name\":\"socks_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getSocksPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getDirPort()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Router\",\"namespace\":\"convertor.encoders.relay\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getNickname()\"},{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getOrPort()\"},{\"name\":\"socks_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getSocksPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getDirPort()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/ServerDescriptor: String getNickname() */
   @Deprecated public java.lang.String nickname;
@@ -158,8 +158,8 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
    * Creates a new Router RecordBuilder.
    * @return A new Router RecordBuilder
    */
-  public static converTor.encoders.relay.Router.Builder newBuilder() {
-    return new converTor.encoders.relay.Router.Builder();
+  public static convertor.encoders.relay.Router.Builder newBuilder() {
+    return new convertor.encoders.relay.Router.Builder();
   }
   
   /**
@@ -167,8 +167,8 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
    * @param other The existing builder to copy.
    * @return A new Router RecordBuilder
    */
-  public static converTor.encoders.relay.Router.Builder newBuilder(converTor.encoders.relay.Router.Builder other) {
-    return new converTor.encoders.relay.Router.Builder(other);
+  public static convertor.encoders.relay.Router.Builder newBuilder(convertor.encoders.relay.Router.Builder other) {
+    return new convertor.encoders.relay.Router.Builder(other);
   }
   
   /**
@@ -176,8 +176,8 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
    * @param other The existing instance to copy.
    * @return A new Router RecordBuilder
    */
-  public static converTor.encoders.relay.Router.Builder newBuilder(converTor.encoders.relay.Router other) {
-    return new converTor.encoders.relay.Router.Builder(other);
+  public static convertor.encoders.relay.Router.Builder newBuilder(convertor.encoders.relay.Router other) {
+    return new convertor.encoders.relay.Router.Builder(other);
   }
   
   /**
@@ -199,14 +199,14 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
 
     /** Creates a new Builder */
     private Builder() {
-      super(converTor.encoders.relay.Router.SCHEMA$);
+      super(convertor.encoders.relay.Router.SCHEMA$);
     }
     
     /**
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(converTor.encoders.relay.Router.Builder other) {
+    private Builder(convertor.encoders.relay.Router.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.nickname)) {
         this.nickname = data().deepCopy(fields()[0].schema(), other.nickname);
@@ -234,8 +234,8 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
      * Creates a Builder by copying an existing Router instance
      * @param other The existing instance to copy.
      */
-    private Builder(converTor.encoders.relay.Router other) {
-            super(converTor.encoders.relay.Router.SCHEMA$);
+    private Builder(convertor.encoders.relay.Router other) {
+            super(convertor.encoders.relay.Router.SCHEMA$);
       if (isValidValue(fields()[0], other.nickname)) {
         this.nickname = data().deepCopy(fields()[0].schema(), other.nickname);
         fieldSetFlags()[0] = true;
@@ -273,7 +273,7 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'nickname'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Router.Builder setNickname(java.lang.String value) {
+    public convertor.encoders.relay.Router.Builder setNickname(java.lang.String value) {
       validate(fields()[0], value);
       this.nickname = value;
       fieldSetFlags()[0] = true;
@@ -295,7 +295,7 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/ServerDescriptor: String getNickname()
       * @return This builder.
       */
-    public converTor.encoders.relay.Router.Builder clearNickname() {
+    public convertor.encoders.relay.Router.Builder clearNickname() {
       nickname = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -316,7 +316,7 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'address'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Router.Builder setAddress(java.lang.String value) {
+    public convertor.encoders.relay.Router.Builder setAddress(java.lang.String value) {
       validate(fields()[1], value);
       this.address = value;
       fieldSetFlags()[1] = true;
@@ -338,7 +338,7 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/ServerDescriptor: String getAddress()
       * @return This builder.
       */
-    public converTor.encoders.relay.Router.Builder clearAddress() {
+    public convertor.encoders.relay.Router.Builder clearAddress() {
       address = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -359,7 +359,7 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'or_port'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Router.Builder setOrPort(java.lang.Integer value) {
+    public convertor.encoders.relay.Router.Builder setOrPort(java.lang.Integer value) {
       validate(fields()[2], value);
       this.or_port = value;
       fieldSetFlags()[2] = true;
@@ -381,7 +381,7 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/ServerDescriptor: int getOrPort()
       * @return This builder.
       */
-    public converTor.encoders.relay.Router.Builder clearOrPort() {
+    public convertor.encoders.relay.Router.Builder clearOrPort() {
       or_port = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -402,7 +402,7 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'socks_port'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Router.Builder setSocksPort(java.lang.Integer value) {
+    public convertor.encoders.relay.Router.Builder setSocksPort(java.lang.Integer value) {
       validate(fields()[3], value);
       this.socks_port = value;
       fieldSetFlags()[3] = true;
@@ -424,7 +424,7 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/ServerDescriptor: int getSocksPort()
       * @return This builder.
       */
-    public converTor.encoders.relay.Router.Builder clearSocksPort() {
+    public convertor.encoders.relay.Router.Builder clearSocksPort() {
       socks_port = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -445,7 +445,7 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'dir_port'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Router.Builder setDirPort(java.lang.Integer value) {
+    public convertor.encoders.relay.Router.Builder setDirPort(java.lang.Integer value) {
       validate(fields()[4], value);
       this.dir_port = value;
       fieldSetFlags()[4] = true;
@@ -467,7 +467,7 @@ public class Router extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/ServerDescriptor: int getDirPort()
       * @return This builder.
       */
-    public converTor.encoders.relay.Router.Builder clearDirPort() {
+    public convertor.encoders.relay.Router.Builder clearDirPort() {
       dir_port = null;
       fieldSetFlags()[4] = false;
       return this;

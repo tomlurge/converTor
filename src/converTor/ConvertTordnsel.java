@@ -1,10 +1,10 @@
-package converTor;
+package convertor;
 
 import java.util.List;
 import java.util.ArrayList;
 import org.torproject.descriptor.Descriptor;
 import org.torproject.descriptor.ExitList;
-import converTor.encoders.tordnsel.*;
+import convertor.encoders.tordnsel.*;
 
 
 /* Tordnsel == ExitList */

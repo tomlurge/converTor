@@ -3,12 +3,12 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.encoders.bridgeExtra;  
+package convertor.encoders.bridgeExtra;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class HidservRendRelayedCells extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = 6773377055183281606L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"HidservRendRelayedCells\",\"namespace\":\"converTor.encoders.bridgeExtra\",\"fields\":[{\"name\":\"cells\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: Double getHidservRendRelayedCells()\"},{\"name\":\"obfuscation\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"double\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservRendRelayedCellsParameters()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"HidservRendRelayedCells\",\"namespace\":\"convertor.encoders.bridgeExtra\",\"fields\":[{\"name\":\"cells\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: Double getHidservRendRelayedCells()\"},{\"name\":\"obfuscation\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"double\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservRendRelayedCellsParameters()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/ExtraInfoDescriptor: Double getHidservRendRelayedCells() */
   @Deprecated public java.lang.Double cells;
@@ -89,8 +89,8 @@ public class HidservRendRelayedCells extends org.apache.avro.specific.SpecificRe
    * Creates a new HidservRendRelayedCells RecordBuilder.
    * @return A new HidservRendRelayedCells RecordBuilder
    */
-  public static converTor.encoders.bridgeExtra.HidservRendRelayedCells.Builder newBuilder() {
-    return new converTor.encoders.bridgeExtra.HidservRendRelayedCells.Builder();
+  public static convertor.encoders.bridgeExtra.HidservRendRelayedCells.Builder newBuilder() {
+    return new convertor.encoders.bridgeExtra.HidservRendRelayedCells.Builder();
   }
   
   /**
@@ -98,8 +98,8 @@ public class HidservRendRelayedCells extends org.apache.avro.specific.SpecificRe
    * @param other The existing builder to copy.
    * @return A new HidservRendRelayedCells RecordBuilder
    */
-  public static converTor.encoders.bridgeExtra.HidservRendRelayedCells.Builder newBuilder(converTor.encoders.bridgeExtra.HidservRendRelayedCells.Builder other) {
-    return new converTor.encoders.bridgeExtra.HidservRendRelayedCells.Builder(other);
+  public static convertor.encoders.bridgeExtra.HidservRendRelayedCells.Builder newBuilder(convertor.encoders.bridgeExtra.HidservRendRelayedCells.Builder other) {
+    return new convertor.encoders.bridgeExtra.HidservRendRelayedCells.Builder(other);
   }
   
   /**
@@ -107,8 +107,8 @@ public class HidservRendRelayedCells extends org.apache.avro.specific.SpecificRe
    * @param other The existing instance to copy.
    * @return A new HidservRendRelayedCells RecordBuilder
    */
-  public static converTor.encoders.bridgeExtra.HidservRendRelayedCells.Builder newBuilder(converTor.encoders.bridgeExtra.HidservRendRelayedCells other) {
-    return new converTor.encoders.bridgeExtra.HidservRendRelayedCells.Builder(other);
+  public static convertor.encoders.bridgeExtra.HidservRendRelayedCells.Builder newBuilder(convertor.encoders.bridgeExtra.HidservRendRelayedCells other) {
+    return new convertor.encoders.bridgeExtra.HidservRendRelayedCells.Builder(other);
   }
   
   /**
@@ -124,14 +124,14 @@ public class HidservRendRelayedCells extends org.apache.avro.specific.SpecificRe
 
     /** Creates a new Builder */
     private Builder() {
-      super(converTor.encoders.bridgeExtra.HidservRendRelayedCells.SCHEMA$);
+      super(convertor.encoders.bridgeExtra.HidservRendRelayedCells.SCHEMA$);
     }
     
     /**
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(converTor.encoders.bridgeExtra.HidservRendRelayedCells.Builder other) {
+    private Builder(convertor.encoders.bridgeExtra.HidservRendRelayedCells.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.cells)) {
         this.cells = data().deepCopy(fields()[0].schema(), other.cells);
@@ -147,8 +147,8 @@ public class HidservRendRelayedCells extends org.apache.avro.specific.SpecificRe
      * Creates a Builder by copying an existing HidservRendRelayedCells instance
      * @param other The existing instance to copy.
      */
-    private Builder(converTor.encoders.bridgeExtra.HidservRendRelayedCells other) {
-            super(converTor.encoders.bridgeExtra.HidservRendRelayedCells.SCHEMA$);
+    private Builder(convertor.encoders.bridgeExtra.HidservRendRelayedCells other) {
+            super(convertor.encoders.bridgeExtra.HidservRendRelayedCells.SCHEMA$);
       if (isValidValue(fields()[0], other.cells)) {
         this.cells = data().deepCopy(fields()[0].schema(), other.cells);
         fieldSetFlags()[0] = true;
@@ -174,7 +174,7 @@ public class HidservRendRelayedCells extends org.apache.avro.specific.SpecificRe
       * @param value The value of 'cells'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.HidservRendRelayedCells.Builder setCells(java.lang.Double value) {
+    public convertor.encoders.bridgeExtra.HidservRendRelayedCells.Builder setCells(java.lang.Double value) {
       validate(fields()[0], value);
       this.cells = value;
       fieldSetFlags()[0] = true;
@@ -196,7 +196,7 @@ public class HidservRendRelayedCells extends org.apache.avro.specific.SpecificRe
       * metrics-lib/ExtraInfoDescriptor: Double getHidservRendRelayedCells()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.HidservRendRelayedCells.Builder clearCells() {
+    public convertor.encoders.bridgeExtra.HidservRendRelayedCells.Builder clearCells() {
       cells = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -217,7 +217,7 @@ public class HidservRendRelayedCells extends org.apache.avro.specific.SpecificRe
       * @param value The value of 'obfuscation'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.HidservRendRelayedCells.Builder setObfuscation(java.util.Map<java.lang.String,java.lang.Double> value) {
+    public convertor.encoders.bridgeExtra.HidservRendRelayedCells.Builder setObfuscation(java.util.Map<java.lang.String,java.lang.Double> value) {
       validate(fields()[1], value);
       this.obfuscation = value;
       fieldSetFlags()[1] = true;
@@ -239,7 +239,7 @@ public class HidservRendRelayedCells extends org.apache.avro.specific.SpecificRe
       * metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservRendRelayedCellsParameters()
       * @return This builder.
       */
-    public converTor.encoders.bridgeExtra.HidservRendRelayedCells.Builder clearObfuscation() {
+    public convertor.encoders.bridgeExtra.HidservRendRelayedCells.Builder clearObfuscation() {
       obfuscation = null;
       fieldSetFlags()[1] = false;
       return this;

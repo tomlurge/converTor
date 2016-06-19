@@ -1,7 +1,7 @@
 {
   "type" : "record",
   "name" : "RelayConsensus",
-  "namespace" : "converTor.encoders.relayConsensus",
+  "namespace" : "convertor.encoders.relayConsensus",
   "fields" : [ {
     "name" : "descriptor_type",
     "type" : "string",

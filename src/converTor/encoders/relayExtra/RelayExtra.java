@@ -3,30 +3,30 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.encoders.relayExtra;  
+package convertor.encoders.relayExtra;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -8095754948502730180L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"RelayExtra\",\"namespace\":\"converTor.encoders.relayExtra\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"extra-info 1.0\"},{\"name\":\"extra_info\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ExtraInfo\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getNickname()\"},{\"name\":\"fingerprint\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getFingerprint()\"}]}]},{\"name\":\"identity_ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getIdentityEd25519();\"},{\"name\":\"published\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getPublishedMillis()\"},{\"name\":\"read_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ReadHistory\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory()\"},{\"name\":\"write_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"WriteHistory\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory()\"},{\"name\":\"geoip_db_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getGeoipDbDigest()\"},{\"name\":\"geoip6_db_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getGeoip6DbDigest()\"},{\"name\":\"geoip_start_time\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getGeoipStartTimeMillis()\"},{\"name\":\"dirreq_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirreqStats\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getDirreqStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getDirreqStatsIntervalLength()\"}]}]},{\"name\":\"dirreq_v2_ips\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Ips()\"},{\"name\":\"dirreq_v3_ips\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Ips()\"},{\"name\":\"dirreq_v2_reqs\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Reqs()\"},{\"name\":\"dirreq_v3_reqs\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Reqs()\"},{\"name\":\"dirreq_v2_share\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: double getDirreqV2Share()\"},{\"name\":\"dirreq_v3_share\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: double getDirreqV3Share()\"},{\"name\":\"dirreq_v2_resp\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Resp()\"},{\"name\":\"dirreq_v3_resp\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Resp()\"},{\"name\":\"dirreq_v2_direct_dl\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2DirectDl()\"},{\"name\":\"dirreq_v3_direct_dl\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3DirectDl()\"},{\"name\":\"dirreq_v2_tunneled_dl\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2TunneledDl()\"},{\"name\":\"dirreq_v3_tunneled_dl\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3TunneledDl()\"},{\"name\":\"dirreq_read_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirreqReadHistory\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory()\"},{\"name\":\"dirreq_write_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirreqWriteHistory\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory()\"},{\"name\":\"entry_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"EntryStats\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getEntryStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getEntryStatsIntervalLength()\"}]}]},{\"name\":\"entry_ips\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getEntryIps()\"},{\"name\":\"cell_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"CellStats\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getCellStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getCellStatsIntervalLength()\"}]}]},{\"name\":\"cell_processed_cells\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: List<Integer> getCellProcessedCells()\"},{\"name\":\"cell_queued_cells\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"double\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: List<Double> getCellQueuedCells()\"},{\"name\":\"cell_time_in_queue\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: List<Integer> getCellTimeInQueue()\"},{\"name\":\"cell_circuits_per_decile\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getCellCircuitsPerDecile()\"},{\"name\":\"conn_bi_direct\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ConnBiDirect\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsIntervalLength()\"},{\"name\":\"below\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBelow()\"},{\"name\":\"read\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectRead()\"},{\"name\":\"write\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectWrite()\"},{\"name\":\"both\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBoth()\"}]}]},{\"name\":\"exit_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ExitStats\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: l","ong getExitStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getExitStatsIntervalLength()\"}]}]},{\"name\":\"exit_kibibytes_written\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"long\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesWritten()\"},{\"name\":\"exit_kibibytes_read\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"long\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesRead()\"},{\"name\":\"exit_streams_opened\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"long\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitStreamsOpened()\"},{\"name\":\"hidserv_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"HidservStats\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getHidservStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getHidservStatsIntervalLength()\"}]}]},{\"name\":\"hidserv_rend_relayed_cells\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"HidservRendRelayedCells\",\"fields\":[{\"name\":\"cells\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: Double getHidservRendRelayedCells()\"},{\"name\":\"obfuscation\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"double\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservRendRelayedCellsParameters()\"}]}]},{\"name\":\"hidserv_dir_onions_seen\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"HidservDirOnionsSeen\",\"fields\":[{\"name\":\"onions\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: Double getHidservDirOnionsSeen()\"},{\"name\":\"obfuscation\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"double\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservDirOnionsSeenParameters()\"}]}]},{\"name\":\"transport\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: List<String> getTransports()\"},{\"name\":\"router_sig_ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getRouterSignatureEd25519()\"},{\"name\":\"router_signature\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getRouterSignature()\"},{\"name\":\"extra_info_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigest()\"},{\"name\":\"extra_info_digest_sha256\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigestSha256()\"},{\"name\":\"master_key_ed25519\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getMasterKeyEd25519()\"}],\"aliases\":[\"relay_extra_info\"]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"RelayExtra\",\"namespace\":\"convertor.encoders.relayExtra\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"extra-info 1.0\"},{\"name\":\"extra_info\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ExtraInfo\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getNickname()\"},{\"name\":\"fingerprint\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getFingerprint()\"}]}]},{\"name\":\"identity_ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getIdentityEd25519();\"},{\"name\":\"published\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getPublishedMillis()\"},{\"name\":\"read_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ReadHistory\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory()\"},{\"name\":\"write_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"WriteHistory\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory()\"},{\"name\":\"geoip_db_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getGeoipDbDigest()\"},{\"name\":\"geoip6_db_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getGeoip6DbDigest()\"},{\"name\":\"geoip_start_time\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getGeoipStartTimeMillis()\"},{\"name\":\"dirreq_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirreqStats\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getDirreqStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getDirreqStatsIntervalLength()\"}]}]},{\"name\":\"dirreq_v2_ips\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Ips()\"},{\"name\":\"dirreq_v3_ips\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Ips()\"},{\"name\":\"dirreq_v2_reqs\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Reqs()\"},{\"name\":\"dirreq_v3_reqs\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Reqs()\"},{\"name\":\"dirreq_v2_share\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: double getDirreqV2Share()\"},{\"name\":\"dirreq_v3_share\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: double getDirreqV3Share()\"},{\"name\":\"dirreq_v2_resp\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Resp()\"},{\"name\":\"dirreq_v3_resp\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Resp()\"},{\"name\":\"dirreq_v2_direct_dl\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2DirectDl()\"},{\"name\":\"dirreq_v3_direct_dl\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3DirectDl()\"},{\"name\":\"dirreq_v2_tunneled_dl\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2TunneledDl()\"},{\"name\":\"dirreq_v3_tunneled_dl\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3TunneledDl()\"},{\"name\":\"dirreq_read_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirreqReadHistory\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory()\"},{\"name\":\"dirreq_write_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirreqWriteHistory\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory()\"},{\"name\":\"entry_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"EntryStats\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getEntryStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getEntryStatsIntervalLength()\"}]}]},{\"name\":\"entry_ips\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getEntryIps()\"},{\"name\":\"cell_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"CellStats\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getCellStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getCellStatsIntervalLength()\"}]}]},{\"name\":\"cell_processed_cells\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: List<Integer> getCellProcessedCells()\"},{\"name\":\"cell_queued_cells\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"double\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: List<Double> getCellQueuedCells()\"},{\"name\":\"cell_time_in_queue\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: List<Integer> getCellTimeInQueue()\"},{\"name\":\"cell_circuits_per_decile\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getCellCircuitsPerDecile()\"},{\"name\":\"conn_bi_direct\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ConnBiDirect\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsIntervalLength()\"},{\"name\":\"below\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBelow()\"},{\"name\":\"read\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectRead()\"},{\"name\":\"write\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectWrite()\"},{\"name\":\"both\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBoth()\"}]}]},{\"name\":\"exit_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ExitStats\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: l","ong getExitStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getExitStatsIntervalLength()\"}]}]},{\"name\":\"exit_kibibytes_written\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"long\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesWritten()\"},{\"name\":\"exit_kibibytes_read\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"long\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesRead()\"},{\"name\":\"exit_streams_opened\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"long\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitStreamsOpened()\"},{\"name\":\"hidserv_stats_end\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"HidservStats\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getHidservStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getHidservStatsIntervalLength()\"}]}]},{\"name\":\"hidserv_rend_relayed_cells\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"HidservRendRelayedCells\",\"fields\":[{\"name\":\"cells\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: Double getHidservRendRelayedCells()\"},{\"name\":\"obfuscation\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"double\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservRendRelayedCellsParameters()\"}]}]},{\"name\":\"hidserv_dir_onions_seen\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"HidservDirOnionsSeen\",\"fields\":[{\"name\":\"onions\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: Double getHidservDirOnionsSeen()\"},{\"name\":\"obfuscation\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"double\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservDirOnionsSeenParameters()\"}]}]},{\"name\":\"transport\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: List<String> getTransports()\"},{\"name\":\"router_sig_ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getRouterSignatureEd25519()\"},{\"name\":\"router_signature\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getRouterSignature()\"},{\"name\":\"extra_info_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigest()\"},{\"name\":\"extra_info_digest_sha256\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigestSha256()\"},{\"name\":\"master_key_ed25519\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getMasterKeyEd25519()\"}],\"aliases\":[\"relay_extra_info\"]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   @Deprecated public java.lang.String descriptor_type;
-  @Deprecated public converTor.encoders.relayExtra.ExtraInfo extra_info;
+  @Deprecated public convertor.encoders.relayExtra.ExtraInfo extra_info;
   /** metrics-lib/ExtraInfoDescriptor: String getIdentityEd25519(); */
   @Deprecated public java.lang.Boolean identity_ed25519;
   /** metrics-lib/ExtraInfoDescriptor: long getPublishedMillis() */
   @Deprecated public java.lang.Long published;
   /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory() */
-  @Deprecated public converTor.encoders.relayExtra.ReadHistory read_history;
+  @Deprecated public convertor.encoders.relayExtra.ReadHistory read_history;
   /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory() */
-  @Deprecated public converTor.encoders.relayExtra.WriteHistory write_history;
+  @Deprecated public convertor.encoders.relayExtra.WriteHistory write_history;
   /** metrics-lib/ExtraInfoDescriptor: String getGeoipDbDigest() */
   @Deprecated public java.lang.String geoip_db_digest;
   /** metrics-lib/ExtraInfoDescriptor: String getGeoip6DbDigest() */
   @Deprecated public java.lang.String geoip6_db_digest;
   /** metrics-lib/ExtraInfoDescriptor: long getGeoipStartTimeMillis() */
   @Deprecated public java.lang.Long geoip_start_time;
-  @Deprecated public converTor.encoders.relayExtra.DirreqStats dirreq_stats_end;
+  @Deprecated public convertor.encoders.relayExtra.DirreqStats dirreq_stats_end;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Ips() */
   @Deprecated public java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_ips;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Ips() */
@@ -52,13 +52,13 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3TunneledDl() */
   @Deprecated public java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_tunneled_dl;
   /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory() */
-  @Deprecated public converTor.encoders.relayExtra.DirreqReadHistory dirreq_read_history;
+  @Deprecated public convertor.encoders.relayExtra.DirreqReadHistory dirreq_read_history;
   /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory() */
-  @Deprecated public converTor.encoders.relayExtra.DirreqWriteHistory dirreq_write_history;
-  @Deprecated public converTor.encoders.relayExtra.EntryStats entry_stats_end;
+  @Deprecated public convertor.encoders.relayExtra.DirreqWriteHistory dirreq_write_history;
+  @Deprecated public convertor.encoders.relayExtra.EntryStats entry_stats_end;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getEntryIps() */
   @Deprecated public java.util.Map<java.lang.String,java.lang.Integer> entry_ips;
-  @Deprecated public converTor.encoders.relayExtra.CellStats cell_stats_end;
+  @Deprecated public convertor.encoders.relayExtra.CellStats cell_stats_end;
   /** metrics-lib/ExtraInfoDescriptor: List<Integer> getCellProcessedCells() */
   @Deprecated public java.util.List<java.lang.Integer> cell_processed_cells;
   /** metrics-lib/ExtraInfoDescriptor: List<Double> getCellQueuedCells() */
@@ -67,17 +67,17 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
   @Deprecated public java.util.List<java.lang.Integer> cell_time_in_queue;
   /** metrics-lib/ExtraInfoDescriptor: int getCellCircuitsPerDecile() */
   @Deprecated public java.lang.Integer cell_circuits_per_decile;
-  @Deprecated public converTor.encoders.relayExtra.ConnBiDirect conn_bi_direct;
-  @Deprecated public converTor.encoders.relayExtra.ExitStats exit_stats_end;
+  @Deprecated public convertor.encoders.relayExtra.ConnBiDirect conn_bi_direct;
+  @Deprecated public convertor.encoders.relayExtra.ExitStats exit_stats_end;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesWritten() */
   @Deprecated public java.util.Map<java.lang.String,java.lang.Long> exit_kibibytes_written;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesRead() */
   @Deprecated public java.util.Map<java.lang.String,java.lang.Long> exit_kibibytes_read;
   /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitStreamsOpened() */
   @Deprecated public java.util.Map<java.lang.String,java.lang.Long> exit_streams_opened;
-  @Deprecated public converTor.encoders.relayExtra.HidservStats hidserv_stats_end;
-  @Deprecated public converTor.encoders.relayExtra.HidservRendRelayedCells hidserv_rend_relayed_cells;
-  @Deprecated public converTor.encoders.relayExtra.HidservDirOnionsSeen hidserv_dir_onions_seen;
+  @Deprecated public convertor.encoders.relayExtra.HidservStats hidserv_stats_end;
+  @Deprecated public convertor.encoders.relayExtra.HidservRendRelayedCells hidserv_rend_relayed_cells;
+  @Deprecated public convertor.encoders.relayExtra.HidservDirOnionsSeen hidserv_dir_onions_seen;
   /** metrics-lib/ExtraInfoDescriptor: List<String> getTransports() */
   @Deprecated public java.util.List<java.lang.String> transport;
   /** metrics-lib/ExtraInfoDescriptor: String getRouterSignatureEd25519() */
@@ -136,7 +136,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
    * @param extra_info_digest_sha256 metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigestSha256()
    * @param master_key_ed25519 metrics-lib/ExtraInfoDescriptor: String getMasterKeyEd25519()
    */
-  public RelayExtra(java.lang.String descriptor_type, converTor.encoders.relayExtra.ExtraInfo extra_info, java.lang.Boolean identity_ed25519, java.lang.Long published, converTor.encoders.relayExtra.ReadHistory read_history, converTor.encoders.relayExtra.WriteHistory write_history, java.lang.String geoip_db_digest, java.lang.String geoip6_db_digest, java.lang.Long geoip_start_time, converTor.encoders.relayExtra.DirreqStats dirreq_stats_end, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_ips, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_ips, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_reqs, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_reqs, java.lang.Double dirreq_v2_share, java.lang.Double dirreq_v3_share, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_resp, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_resp, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_direct_dl, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_direct_dl, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_tunneled_dl, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_tunneled_dl, converTor.encoders.relayExtra.DirreqReadHistory dirreq_read_history, converTor.encoders.relayExtra.DirreqWriteHistory dirreq_write_history, converTor.encoders.relayExtra.EntryStats entry_stats_end, java.util.Map<java.lang.String,java.lang.Integer> entry_ips, converTor.encoders.relayExtra.CellStats cell_stats_end, java.util.List<java.lang.Integer> cell_processed_cells, java.util.List<java.lang.Double> cell_queued_cells, java.util.List<java.lang.Integer> cell_time_in_queue, java.lang.Integer cell_circuits_per_decile, converTor.encoders.relayExtra.ConnBiDirect conn_bi_direct, converTor.encoders.relayExtra.ExitStats exit_stats_end, java.util.Map<java.lang.String,java.lang.Long> exit_kibibytes_written, java.util.Map<java.lang.String,java.lang.Long> exit_kibibytes_read, java.util.Map<java.lang.String,java.lang.Long> exit_streams_opened, converTor.encoders.relayExtra.HidservStats hidserv_stats_end, converTor.encoders.relayExtra.HidservRendRelayedCells hidserv_rend_relayed_cells, converTor.encoders.relayExtra.HidservDirOnionsSeen hidserv_dir_onions_seen, java.util.List<java.lang.String> transport, java.lang.Boolean router_sig_ed25519, java.lang.Boolean router_signature, java.lang.String extra_info_digest, java.lang.String extra_info_digest_sha256, java.lang.String master_key_ed25519) {
+  public RelayExtra(java.lang.String descriptor_type, convertor.encoders.relayExtra.ExtraInfo extra_info, java.lang.Boolean identity_ed25519, java.lang.Long published, convertor.encoders.relayExtra.ReadHistory read_history, convertor.encoders.relayExtra.WriteHistory write_history, java.lang.String geoip_db_digest, java.lang.String geoip6_db_digest, java.lang.Long geoip_start_time, convertor.encoders.relayExtra.DirreqStats dirreq_stats_end, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_ips, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_ips, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_reqs, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_reqs, java.lang.Double dirreq_v2_share, java.lang.Double dirreq_v3_share, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_resp, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_resp, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_direct_dl, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_direct_dl, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_tunneled_dl, java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_tunneled_dl, convertor.encoders.relayExtra.DirreqReadHistory dirreq_read_history, convertor.encoders.relayExtra.DirreqWriteHistory dirreq_write_history, convertor.encoders.relayExtra.EntryStats entry_stats_end, java.util.Map<java.lang.String,java.lang.Integer> entry_ips, convertor.encoders.relayExtra.CellStats cell_stats_end, java.util.List<java.lang.Integer> cell_processed_cells, java.util.List<java.lang.Double> cell_queued_cells, java.util.List<java.lang.Integer> cell_time_in_queue, java.lang.Integer cell_circuits_per_decile, convertor.encoders.relayExtra.ConnBiDirect conn_bi_direct, convertor.encoders.relayExtra.ExitStats exit_stats_end, java.util.Map<java.lang.String,java.lang.Long> exit_kibibytes_written, java.util.Map<java.lang.String,java.lang.Long> exit_kibibytes_read, java.util.Map<java.lang.String,java.lang.Long> exit_streams_opened, convertor.encoders.relayExtra.HidservStats hidserv_stats_end, convertor.encoders.relayExtra.HidservRendRelayedCells hidserv_rend_relayed_cells, convertor.encoders.relayExtra.HidservDirOnionsSeen hidserv_dir_onions_seen, java.util.List<java.lang.String> transport, java.lang.Boolean router_sig_ed25519, java.lang.Boolean router_signature, java.lang.String extra_info_digest, java.lang.String extra_info_digest_sha256, java.lang.String master_key_ed25519) {
     this.descriptor_type = descriptor_type;
     this.extra_info = extra_info;
     this.identity_ed25519 = identity_ed25519;
@@ -241,15 +241,15 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
     case 0: descriptor_type = (java.lang.String)value$; break;
-    case 1: extra_info = (converTor.encoders.relayExtra.ExtraInfo)value$; break;
+    case 1: extra_info = (convertor.encoders.relayExtra.ExtraInfo)value$; break;
     case 2: identity_ed25519 = (java.lang.Boolean)value$; break;
     case 3: published = (java.lang.Long)value$; break;
-    case 4: read_history = (converTor.encoders.relayExtra.ReadHistory)value$; break;
-    case 5: write_history = (converTor.encoders.relayExtra.WriteHistory)value$; break;
+    case 4: read_history = (convertor.encoders.relayExtra.ReadHistory)value$; break;
+    case 5: write_history = (convertor.encoders.relayExtra.WriteHistory)value$; break;
     case 6: geoip_db_digest = (java.lang.String)value$; break;
     case 7: geoip6_db_digest = (java.lang.String)value$; break;
     case 8: geoip_start_time = (java.lang.Long)value$; break;
-    case 9: dirreq_stats_end = (converTor.encoders.relayExtra.DirreqStats)value$; break;
+    case 9: dirreq_stats_end = (convertor.encoders.relayExtra.DirreqStats)value$; break;
     case 10: dirreq_v2_ips = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
     case 11: dirreq_v3_ips = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
     case 12: dirreq_v2_reqs = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
@@ -262,23 +262,23 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
     case 19: dirreq_v3_direct_dl = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
     case 20: dirreq_v2_tunneled_dl = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
     case 21: dirreq_v3_tunneled_dl = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
-    case 22: dirreq_read_history = (converTor.encoders.relayExtra.DirreqReadHistory)value$; break;
-    case 23: dirreq_write_history = (converTor.encoders.relayExtra.DirreqWriteHistory)value$; break;
-    case 24: entry_stats_end = (converTor.encoders.relayExtra.EntryStats)value$; break;
+    case 22: dirreq_read_history = (convertor.encoders.relayExtra.DirreqReadHistory)value$; break;
+    case 23: dirreq_write_history = (convertor.encoders.relayExtra.DirreqWriteHistory)value$; break;
+    case 24: entry_stats_end = (convertor.encoders.relayExtra.EntryStats)value$; break;
     case 25: entry_ips = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
-    case 26: cell_stats_end = (converTor.encoders.relayExtra.CellStats)value$; break;
+    case 26: cell_stats_end = (convertor.encoders.relayExtra.CellStats)value$; break;
     case 27: cell_processed_cells = (java.util.List<java.lang.Integer>)value$; break;
     case 28: cell_queued_cells = (java.util.List<java.lang.Double>)value$; break;
     case 29: cell_time_in_queue = (java.util.List<java.lang.Integer>)value$; break;
     case 30: cell_circuits_per_decile = (java.lang.Integer)value$; break;
-    case 31: conn_bi_direct = (converTor.encoders.relayExtra.ConnBiDirect)value$; break;
-    case 32: exit_stats_end = (converTor.encoders.relayExtra.ExitStats)value$; break;
+    case 31: conn_bi_direct = (convertor.encoders.relayExtra.ConnBiDirect)value$; break;
+    case 32: exit_stats_end = (convertor.encoders.relayExtra.ExitStats)value$; break;
     case 33: exit_kibibytes_written = (java.util.Map<java.lang.String,java.lang.Long>)value$; break;
     case 34: exit_kibibytes_read = (java.util.Map<java.lang.String,java.lang.Long>)value$; break;
     case 35: exit_streams_opened = (java.util.Map<java.lang.String,java.lang.Long>)value$; break;
-    case 36: hidserv_stats_end = (converTor.encoders.relayExtra.HidservStats)value$; break;
-    case 37: hidserv_rend_relayed_cells = (converTor.encoders.relayExtra.HidservRendRelayedCells)value$; break;
-    case 38: hidserv_dir_onions_seen = (converTor.encoders.relayExtra.HidservDirOnionsSeen)value$; break;
+    case 36: hidserv_stats_end = (convertor.encoders.relayExtra.HidservStats)value$; break;
+    case 37: hidserv_rend_relayed_cells = (convertor.encoders.relayExtra.HidservRendRelayedCells)value$; break;
+    case 38: hidserv_dir_onions_seen = (convertor.encoders.relayExtra.HidservDirOnionsSeen)value$; break;
     case 39: transport = (java.util.List<java.lang.String>)value$; break;
     case 40: router_sig_ed25519 = (java.lang.Boolean)value$; break;
     case 41: router_signature = (java.lang.Boolean)value$; break;
@@ -307,7 +307,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
   /**
    * Gets the value of the 'extra_info' field.
    */
-  public converTor.encoders.relayExtra.ExtraInfo getExtraInfo() {
+  public convertor.encoders.relayExtra.ExtraInfo getExtraInfo() {
     return extra_info;
   }
 
@@ -315,7 +315,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
    * Sets the value of the 'extra_info' field.
    * @param value the value to set.
    */
-  public void setExtraInfo(converTor.encoders.relayExtra.ExtraInfo value) {
+  public void setExtraInfo(convertor.encoders.relayExtra.ExtraInfo value) {
     this.extra_info = value;
   }
 
@@ -357,7 +357,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'read_history' field.
    * @return metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory()
    */
-  public converTor.encoders.relayExtra.ReadHistory getReadHistory() {
+  public convertor.encoders.relayExtra.ReadHistory getReadHistory() {
     return read_history;
   }
 
@@ -366,7 +366,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
    * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory()
    * @param value the value to set.
    */
-  public void setReadHistory(converTor.encoders.relayExtra.ReadHistory value) {
+  public void setReadHistory(convertor.encoders.relayExtra.ReadHistory value) {
     this.read_history = value;
   }
 
@@ -374,7 +374,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'write_history' field.
    * @return metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory()
    */
-  public converTor.encoders.relayExtra.WriteHistory getWriteHistory() {
+  public convertor.encoders.relayExtra.WriteHistory getWriteHistory() {
     return write_history;
   }
 
@@ -383,7 +383,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
    * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory()
    * @param value the value to set.
    */
-  public void setWriteHistory(converTor.encoders.relayExtra.WriteHistory value) {
+  public void setWriteHistory(convertor.encoders.relayExtra.WriteHistory value) {
     this.write_history = value;
   }
 
@@ -441,7 +441,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
   /**
    * Gets the value of the 'dirreq_stats_end' field.
    */
-  public converTor.encoders.relayExtra.DirreqStats getDirreqStatsEnd() {
+  public convertor.encoders.relayExtra.DirreqStats getDirreqStatsEnd() {
     return dirreq_stats_end;
   }
 
@@ -449,7 +449,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
    * Sets the value of the 'dirreq_stats_end' field.
    * @param value the value to set.
    */
-  public void setDirreqStatsEnd(converTor.encoders.relayExtra.DirreqStats value) {
+  public void setDirreqStatsEnd(convertor.encoders.relayExtra.DirreqStats value) {
     this.dirreq_stats_end = value;
   }
 
@@ -661,7 +661,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'dirreq_read_history' field.
    * @return metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory()
    */
-  public converTor.encoders.relayExtra.DirreqReadHistory getDirreqReadHistory() {
+  public convertor.encoders.relayExtra.DirreqReadHistory getDirreqReadHistory() {
     return dirreq_read_history;
   }
 
@@ -670,7 +670,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
    * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory()
    * @param value the value to set.
    */
-  public void setDirreqReadHistory(converTor.encoders.relayExtra.DirreqReadHistory value) {
+  public void setDirreqReadHistory(convertor.encoders.relayExtra.DirreqReadHistory value) {
     this.dirreq_read_history = value;
   }
 
@@ -678,7 +678,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'dirreq_write_history' field.
    * @return metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory()
    */
-  public converTor.encoders.relayExtra.DirreqWriteHistory getDirreqWriteHistory() {
+  public convertor.encoders.relayExtra.DirreqWriteHistory getDirreqWriteHistory() {
     return dirreq_write_history;
   }
 
@@ -687,14 +687,14 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
    * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory()
    * @param value the value to set.
    */
-  public void setDirreqWriteHistory(converTor.encoders.relayExtra.DirreqWriteHistory value) {
+  public void setDirreqWriteHistory(convertor.encoders.relayExtra.DirreqWriteHistory value) {
     this.dirreq_write_history = value;
   }
 
   /**
    * Gets the value of the 'entry_stats_end' field.
    */
-  public converTor.encoders.relayExtra.EntryStats getEntryStatsEnd() {
+  public convertor.encoders.relayExtra.EntryStats getEntryStatsEnd() {
     return entry_stats_end;
   }
 
@@ -702,7 +702,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
    * Sets the value of the 'entry_stats_end' field.
    * @param value the value to set.
    */
-  public void setEntryStatsEnd(converTor.encoders.relayExtra.EntryStats value) {
+  public void setEntryStatsEnd(convertor.encoders.relayExtra.EntryStats value) {
     this.entry_stats_end = value;
   }
 
@@ -726,7 +726,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
   /**
    * Gets the value of the 'cell_stats_end' field.
    */
-  public converTor.encoders.relayExtra.CellStats getCellStatsEnd() {
+  public convertor.encoders.relayExtra.CellStats getCellStatsEnd() {
     return cell_stats_end;
   }
 
@@ -734,7 +734,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
    * Sets the value of the 'cell_stats_end' field.
    * @param value the value to set.
    */
-  public void setCellStatsEnd(converTor.encoders.relayExtra.CellStats value) {
+  public void setCellStatsEnd(convertor.encoders.relayExtra.CellStats value) {
     this.cell_stats_end = value;
   }
 
@@ -809,7 +809,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
   /**
    * Gets the value of the 'conn_bi_direct' field.
    */
-  public converTor.encoders.relayExtra.ConnBiDirect getConnBiDirect() {
+  public convertor.encoders.relayExtra.ConnBiDirect getConnBiDirect() {
     return conn_bi_direct;
   }
 
@@ -817,14 +817,14 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
    * Sets the value of the 'conn_bi_direct' field.
    * @param value the value to set.
    */
-  public void setConnBiDirect(converTor.encoders.relayExtra.ConnBiDirect value) {
+  public void setConnBiDirect(convertor.encoders.relayExtra.ConnBiDirect value) {
     this.conn_bi_direct = value;
   }
 
   /**
    * Gets the value of the 'exit_stats_end' field.
    */
-  public converTor.encoders.relayExtra.ExitStats getExitStatsEnd() {
+  public convertor.encoders.relayExtra.ExitStats getExitStatsEnd() {
     return exit_stats_end;
   }
 
@@ -832,7 +832,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
    * Sets the value of the 'exit_stats_end' field.
    * @param value the value to set.
    */
-  public void setExitStatsEnd(converTor.encoders.relayExtra.ExitStats value) {
+  public void setExitStatsEnd(convertor.encoders.relayExtra.ExitStats value) {
     this.exit_stats_end = value;
   }
 
@@ -890,7 +890,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
   /**
    * Gets the value of the 'hidserv_stats_end' field.
    */
-  public converTor.encoders.relayExtra.HidservStats getHidservStatsEnd() {
+  public convertor.encoders.relayExtra.HidservStats getHidservStatsEnd() {
     return hidserv_stats_end;
   }
 
@@ -898,14 +898,14 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
    * Sets the value of the 'hidserv_stats_end' field.
    * @param value the value to set.
    */
-  public void setHidservStatsEnd(converTor.encoders.relayExtra.HidservStats value) {
+  public void setHidservStatsEnd(convertor.encoders.relayExtra.HidservStats value) {
     this.hidserv_stats_end = value;
   }
 
   /**
    * Gets the value of the 'hidserv_rend_relayed_cells' field.
    */
-  public converTor.encoders.relayExtra.HidservRendRelayedCells getHidservRendRelayedCells() {
+  public convertor.encoders.relayExtra.HidservRendRelayedCells getHidservRendRelayedCells() {
     return hidserv_rend_relayed_cells;
   }
 
@@ -913,14 +913,14 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
    * Sets the value of the 'hidserv_rend_relayed_cells' field.
    * @param value the value to set.
    */
-  public void setHidservRendRelayedCells(converTor.encoders.relayExtra.HidservRendRelayedCells value) {
+  public void setHidservRendRelayedCells(convertor.encoders.relayExtra.HidservRendRelayedCells value) {
     this.hidserv_rend_relayed_cells = value;
   }
 
   /**
    * Gets the value of the 'hidserv_dir_onions_seen' field.
    */
-  public converTor.encoders.relayExtra.HidservDirOnionsSeen getHidservDirOnionsSeen() {
+  public convertor.encoders.relayExtra.HidservDirOnionsSeen getHidservDirOnionsSeen() {
     return hidserv_dir_onions_seen;
   }
 
@@ -928,7 +928,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
    * Sets the value of the 'hidserv_dir_onions_seen' field.
    * @param value the value to set.
    */
-  public void setHidservDirOnionsSeen(converTor.encoders.relayExtra.HidservDirOnionsSeen value) {
+  public void setHidservDirOnionsSeen(convertor.encoders.relayExtra.HidservDirOnionsSeen value) {
     this.hidserv_dir_onions_seen = value;
   }
 
@@ -1038,8 +1038,8 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
    * Creates a new RelayExtra RecordBuilder.
    * @return A new RelayExtra RecordBuilder
    */
-  public static converTor.encoders.relayExtra.RelayExtra.Builder newBuilder() {
-    return new converTor.encoders.relayExtra.RelayExtra.Builder();
+  public static convertor.encoders.relayExtra.RelayExtra.Builder newBuilder() {
+    return new convertor.encoders.relayExtra.RelayExtra.Builder();
   }
   
   /**
@@ -1047,8 +1047,8 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
    * @param other The existing builder to copy.
    * @return A new RelayExtra RecordBuilder
    */
-  public static converTor.encoders.relayExtra.RelayExtra.Builder newBuilder(converTor.encoders.relayExtra.RelayExtra.Builder other) {
-    return new converTor.encoders.relayExtra.RelayExtra.Builder(other);
+  public static convertor.encoders.relayExtra.RelayExtra.Builder newBuilder(convertor.encoders.relayExtra.RelayExtra.Builder other) {
+    return new convertor.encoders.relayExtra.RelayExtra.Builder(other);
   }
   
   /**
@@ -1056,8 +1056,8 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
    * @param other The existing instance to copy.
    * @return A new RelayExtra RecordBuilder
    */
-  public static converTor.encoders.relayExtra.RelayExtra.Builder newBuilder(converTor.encoders.relayExtra.RelayExtra other) {
-    return new converTor.encoders.relayExtra.RelayExtra.Builder(other);
+  public static convertor.encoders.relayExtra.RelayExtra.Builder newBuilder(convertor.encoders.relayExtra.RelayExtra other) {
+    return new convertor.encoders.relayExtra.RelayExtra.Builder(other);
   }
   
   /**
@@ -1067,26 +1067,26 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
     implements org.apache.avro.data.RecordBuilder<RelayExtra> {
 
     private java.lang.String descriptor_type;
-    private converTor.encoders.relayExtra.ExtraInfo extra_info;
-    private converTor.encoders.relayExtra.ExtraInfo.Builder extra_infoBuilder;
+    private convertor.encoders.relayExtra.ExtraInfo extra_info;
+    private convertor.encoders.relayExtra.ExtraInfo.Builder extra_infoBuilder;
     /** metrics-lib/ExtraInfoDescriptor: String getIdentityEd25519(); */
     private java.lang.Boolean identity_ed25519;
     /** metrics-lib/ExtraInfoDescriptor: long getPublishedMillis() */
     private java.lang.Long published;
     /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory() */
-    private converTor.encoders.relayExtra.ReadHistory read_history;
-    private converTor.encoders.relayExtra.ReadHistory.Builder read_historyBuilder;
+    private convertor.encoders.relayExtra.ReadHistory read_history;
+    private convertor.encoders.relayExtra.ReadHistory.Builder read_historyBuilder;
     /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory() */
-    private converTor.encoders.relayExtra.WriteHistory write_history;
-    private converTor.encoders.relayExtra.WriteHistory.Builder write_historyBuilder;
+    private convertor.encoders.relayExtra.WriteHistory write_history;
+    private convertor.encoders.relayExtra.WriteHistory.Builder write_historyBuilder;
     /** metrics-lib/ExtraInfoDescriptor: String getGeoipDbDigest() */
     private java.lang.String geoip_db_digest;
     /** metrics-lib/ExtraInfoDescriptor: String getGeoip6DbDigest() */
     private java.lang.String geoip6_db_digest;
     /** metrics-lib/ExtraInfoDescriptor: long getGeoipStartTimeMillis() */
     private java.lang.Long geoip_start_time;
-    private converTor.encoders.relayExtra.DirreqStats dirreq_stats_end;
-    private converTor.encoders.relayExtra.DirreqStats.Builder dirreq_stats_endBuilder;
+    private convertor.encoders.relayExtra.DirreqStats dirreq_stats_end;
+    private convertor.encoders.relayExtra.DirreqStats.Builder dirreq_stats_endBuilder;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Ips() */
     private java.util.Map<java.lang.String,java.lang.Integer> dirreq_v2_ips;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Ips() */
@@ -1112,17 +1112,17 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3TunneledDl() */
     private java.util.Map<java.lang.String,java.lang.Integer> dirreq_v3_tunneled_dl;
     /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory() */
-    private converTor.encoders.relayExtra.DirreqReadHistory dirreq_read_history;
-    private converTor.encoders.relayExtra.DirreqReadHistory.Builder dirreq_read_historyBuilder;
+    private convertor.encoders.relayExtra.DirreqReadHistory dirreq_read_history;
+    private convertor.encoders.relayExtra.DirreqReadHistory.Builder dirreq_read_historyBuilder;
     /** metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory() */
-    private converTor.encoders.relayExtra.DirreqWriteHistory dirreq_write_history;
-    private converTor.encoders.relayExtra.DirreqWriteHistory.Builder dirreq_write_historyBuilder;
-    private converTor.encoders.relayExtra.EntryStats entry_stats_end;
-    private converTor.encoders.relayExtra.EntryStats.Builder entry_stats_endBuilder;
+    private convertor.encoders.relayExtra.DirreqWriteHistory dirreq_write_history;
+    private convertor.encoders.relayExtra.DirreqWriteHistory.Builder dirreq_write_historyBuilder;
+    private convertor.encoders.relayExtra.EntryStats entry_stats_end;
+    private convertor.encoders.relayExtra.EntryStats.Builder entry_stats_endBuilder;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getEntryIps() */
     private java.util.Map<java.lang.String,java.lang.Integer> entry_ips;
-    private converTor.encoders.relayExtra.CellStats cell_stats_end;
-    private converTor.encoders.relayExtra.CellStats.Builder cell_stats_endBuilder;
+    private convertor.encoders.relayExtra.CellStats cell_stats_end;
+    private convertor.encoders.relayExtra.CellStats.Builder cell_stats_endBuilder;
     /** metrics-lib/ExtraInfoDescriptor: List<Integer> getCellProcessedCells() */
     private java.util.List<java.lang.Integer> cell_processed_cells;
     /** metrics-lib/ExtraInfoDescriptor: List<Double> getCellQueuedCells() */
@@ -1131,22 +1131,22 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
     private java.util.List<java.lang.Integer> cell_time_in_queue;
     /** metrics-lib/ExtraInfoDescriptor: int getCellCircuitsPerDecile() */
     private java.lang.Integer cell_circuits_per_decile;
-    private converTor.encoders.relayExtra.ConnBiDirect conn_bi_direct;
-    private converTor.encoders.relayExtra.ConnBiDirect.Builder conn_bi_directBuilder;
-    private converTor.encoders.relayExtra.ExitStats exit_stats_end;
-    private converTor.encoders.relayExtra.ExitStats.Builder exit_stats_endBuilder;
+    private convertor.encoders.relayExtra.ConnBiDirect conn_bi_direct;
+    private convertor.encoders.relayExtra.ConnBiDirect.Builder conn_bi_directBuilder;
+    private convertor.encoders.relayExtra.ExitStats exit_stats_end;
+    private convertor.encoders.relayExtra.ExitStats.Builder exit_stats_endBuilder;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesWritten() */
     private java.util.Map<java.lang.String,java.lang.Long> exit_kibibytes_written;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesRead() */
     private java.util.Map<java.lang.String,java.lang.Long> exit_kibibytes_read;
     /** metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitStreamsOpened() */
     private java.util.Map<java.lang.String,java.lang.Long> exit_streams_opened;
-    private converTor.encoders.relayExtra.HidservStats hidserv_stats_end;
-    private converTor.encoders.relayExtra.HidservStats.Builder hidserv_stats_endBuilder;
-    private converTor.encoders.relayExtra.HidservRendRelayedCells hidserv_rend_relayed_cells;
-    private converTor.encoders.relayExtra.HidservRendRelayedCells.Builder hidserv_rend_relayed_cellsBuilder;
-    private converTor.encoders.relayExtra.HidservDirOnionsSeen hidserv_dir_onions_seen;
-    private converTor.encoders.relayExtra.HidservDirOnionsSeen.Builder hidserv_dir_onions_seenBuilder;
+    private convertor.encoders.relayExtra.HidservStats hidserv_stats_end;
+    private convertor.encoders.relayExtra.HidservStats.Builder hidserv_stats_endBuilder;
+    private convertor.encoders.relayExtra.HidservRendRelayedCells hidserv_rend_relayed_cells;
+    private convertor.encoders.relayExtra.HidservRendRelayedCells.Builder hidserv_rend_relayed_cellsBuilder;
+    private convertor.encoders.relayExtra.HidservDirOnionsSeen hidserv_dir_onions_seen;
+    private convertor.encoders.relayExtra.HidservDirOnionsSeen.Builder hidserv_dir_onions_seenBuilder;
     /** metrics-lib/ExtraInfoDescriptor: List<String> getTransports() */
     private java.util.List<java.lang.String> transport;
     /** metrics-lib/ExtraInfoDescriptor: String getRouterSignatureEd25519() */
@@ -1162,14 +1162,14 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
 
     /** Creates a new Builder */
     private Builder() {
-      super(converTor.encoders.relayExtra.RelayExtra.SCHEMA$);
+      super(convertor.encoders.relayExtra.RelayExtra.SCHEMA$);
     }
     
     /**
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(converTor.encoders.relayExtra.RelayExtra.Builder other) {
+    private Builder(convertor.encoders.relayExtra.RelayExtra.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.descriptor_type)) {
         this.descriptor_type = data().deepCopy(fields()[0].schema(), other.descriptor_type);
@@ -1180,7 +1180,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
         fieldSetFlags()[1] = true;
       }
       if (other.hasExtraInfoBuilder()) {
-        this.extra_infoBuilder = converTor.encoders.relayExtra.ExtraInfo.newBuilder(other.getExtraInfoBuilder());
+        this.extra_infoBuilder = convertor.encoders.relayExtra.ExtraInfo.newBuilder(other.getExtraInfoBuilder());
       }
       if (isValidValue(fields()[2], other.identity_ed25519)) {
         this.identity_ed25519 = data().deepCopy(fields()[2].schema(), other.identity_ed25519);
@@ -1195,14 +1195,14 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
         fieldSetFlags()[4] = true;
       }
       if (other.hasReadHistoryBuilder()) {
-        this.read_historyBuilder = converTor.encoders.relayExtra.ReadHistory.newBuilder(other.getReadHistoryBuilder());
+        this.read_historyBuilder = convertor.encoders.relayExtra.ReadHistory.newBuilder(other.getReadHistoryBuilder());
       }
       if (isValidValue(fields()[5], other.write_history)) {
         this.write_history = data().deepCopy(fields()[5].schema(), other.write_history);
         fieldSetFlags()[5] = true;
       }
       if (other.hasWriteHistoryBuilder()) {
-        this.write_historyBuilder = converTor.encoders.relayExtra.WriteHistory.newBuilder(other.getWriteHistoryBuilder());
+        this.write_historyBuilder = convertor.encoders.relayExtra.WriteHistory.newBuilder(other.getWriteHistoryBuilder());
       }
       if (isValidValue(fields()[6], other.geoip_db_digest)) {
         this.geoip_db_digest = data().deepCopy(fields()[6].schema(), other.geoip_db_digest);
@@ -1221,7 +1221,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
         fieldSetFlags()[9] = true;
       }
       if (other.hasDirreqStatsEndBuilder()) {
-        this.dirreq_stats_endBuilder = converTor.encoders.relayExtra.DirreqStats.newBuilder(other.getDirreqStatsEndBuilder());
+        this.dirreq_stats_endBuilder = convertor.encoders.relayExtra.DirreqStats.newBuilder(other.getDirreqStatsEndBuilder());
       }
       if (isValidValue(fields()[10], other.dirreq_v2_ips)) {
         this.dirreq_v2_ips = data().deepCopy(fields()[10].schema(), other.dirreq_v2_ips);
@@ -1276,21 +1276,21 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
         fieldSetFlags()[22] = true;
       }
       if (other.hasDirreqReadHistoryBuilder()) {
-        this.dirreq_read_historyBuilder = converTor.encoders.relayExtra.DirreqReadHistory.newBuilder(other.getDirreqReadHistoryBuilder());
+        this.dirreq_read_historyBuilder = convertor.encoders.relayExtra.DirreqReadHistory.newBuilder(other.getDirreqReadHistoryBuilder());
       }
       if (isValidValue(fields()[23], other.dirreq_write_history)) {
         this.dirreq_write_history = data().deepCopy(fields()[23].schema(), other.dirreq_write_history);
         fieldSetFlags()[23] = true;
       }
       if (other.hasDirreqWriteHistoryBuilder()) {
-        this.dirreq_write_historyBuilder = converTor.encoders.relayExtra.DirreqWriteHistory.newBuilder(other.getDirreqWriteHistoryBuilder());
+        this.dirreq_write_historyBuilder = convertor.encoders.relayExtra.DirreqWriteHistory.newBuilder(other.getDirreqWriteHistoryBuilder());
       }
       if (isValidValue(fields()[24], other.entry_stats_end)) {
         this.entry_stats_end = data().deepCopy(fields()[24].schema(), other.entry_stats_end);
         fieldSetFlags()[24] = true;
       }
       if (other.hasEntryStatsEndBuilder()) {
-        this.entry_stats_endBuilder = converTor.encoders.relayExtra.EntryStats.newBuilder(other.getEntryStatsEndBuilder());
+        this.entry_stats_endBuilder = convertor.encoders.relayExtra.EntryStats.newBuilder(other.getEntryStatsEndBuilder());
       }
       if (isValidValue(fields()[25], other.entry_ips)) {
         this.entry_ips = data().deepCopy(fields()[25].schema(), other.entry_ips);
@@ -1301,7 +1301,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
         fieldSetFlags()[26] = true;
       }
       if (other.hasCellStatsEndBuilder()) {
-        this.cell_stats_endBuilder = converTor.encoders.relayExtra.CellStats.newBuilder(other.getCellStatsEndBuilder());
+        this.cell_stats_endBuilder = convertor.encoders.relayExtra.CellStats.newBuilder(other.getCellStatsEndBuilder());
       }
       if (isValidValue(fields()[27], other.cell_processed_cells)) {
         this.cell_processed_cells = data().deepCopy(fields()[27].schema(), other.cell_processed_cells);
@@ -1324,14 +1324,14 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
         fieldSetFlags()[31] = true;
       }
       if (other.hasConnBiDirectBuilder()) {
-        this.conn_bi_directBuilder = converTor.encoders.relayExtra.ConnBiDirect.newBuilder(other.getConnBiDirectBuilder());
+        this.conn_bi_directBuilder = convertor.encoders.relayExtra.ConnBiDirect.newBuilder(other.getConnBiDirectBuilder());
       }
       if (isValidValue(fields()[32], other.exit_stats_end)) {
         this.exit_stats_end = data().deepCopy(fields()[32].schema(), other.exit_stats_end);
         fieldSetFlags()[32] = true;
       }
       if (other.hasExitStatsEndBuilder()) {
-        this.exit_stats_endBuilder = converTor.encoders.relayExtra.ExitStats.newBuilder(other.getExitStatsEndBuilder());
+        this.exit_stats_endBuilder = convertor.encoders.relayExtra.ExitStats.newBuilder(other.getExitStatsEndBuilder());
       }
       if (isValidValue(fields()[33], other.exit_kibibytes_written)) {
         this.exit_kibibytes_written = data().deepCopy(fields()[33].schema(), other.exit_kibibytes_written);
@@ -1350,21 +1350,21 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
         fieldSetFlags()[36] = true;
       }
       if (other.hasHidservStatsEndBuilder()) {
-        this.hidserv_stats_endBuilder = converTor.encoders.relayExtra.HidservStats.newBuilder(other.getHidservStatsEndBuilder());
+        this.hidserv_stats_endBuilder = convertor.encoders.relayExtra.HidservStats.newBuilder(other.getHidservStatsEndBuilder());
       }
       if (isValidValue(fields()[37], other.hidserv_rend_relayed_cells)) {
         this.hidserv_rend_relayed_cells = data().deepCopy(fields()[37].schema(), other.hidserv_rend_relayed_cells);
         fieldSetFlags()[37] = true;
       }
       if (other.hasHidservRendRelayedCellsBuilder()) {
-        this.hidserv_rend_relayed_cellsBuilder = converTor.encoders.relayExtra.HidservRendRelayedCells.newBuilder(other.getHidservRendRelayedCellsBuilder());
+        this.hidserv_rend_relayed_cellsBuilder = convertor.encoders.relayExtra.HidservRendRelayedCells.newBuilder(other.getHidservRendRelayedCellsBuilder());
       }
       if (isValidValue(fields()[38], other.hidserv_dir_onions_seen)) {
         this.hidserv_dir_onions_seen = data().deepCopy(fields()[38].schema(), other.hidserv_dir_onions_seen);
         fieldSetFlags()[38] = true;
       }
       if (other.hasHidservDirOnionsSeenBuilder()) {
-        this.hidserv_dir_onions_seenBuilder = converTor.encoders.relayExtra.HidservDirOnionsSeen.newBuilder(other.getHidservDirOnionsSeenBuilder());
+        this.hidserv_dir_onions_seenBuilder = convertor.encoders.relayExtra.HidservDirOnionsSeen.newBuilder(other.getHidservDirOnionsSeenBuilder());
       }
       if (isValidValue(fields()[39], other.transport)) {
         this.transport = data().deepCopy(fields()[39].schema(), other.transport);
@@ -1396,8 +1396,8 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
      * Creates a Builder by copying an existing RelayExtra instance
      * @param other The existing instance to copy.
      */
-    private Builder(converTor.encoders.relayExtra.RelayExtra other) {
-            super(converTor.encoders.relayExtra.RelayExtra.SCHEMA$);
+    private Builder(convertor.encoders.relayExtra.RelayExtra other) {
+            super(convertor.encoders.relayExtra.RelayExtra.SCHEMA$);
       if (isValidValue(fields()[0], other.descriptor_type)) {
         this.descriptor_type = data().deepCopy(fields()[0].schema(), other.descriptor_type);
         fieldSetFlags()[0] = true;
@@ -1606,7 +1606,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'descriptor_type'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setDescriptorType(java.lang.String value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setDescriptorType(java.lang.String value) {
       validate(fields()[0], value);
       this.descriptor_type = value;
       fieldSetFlags()[0] = true;
@@ -1626,7 +1626,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'descriptor_type' field.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearDescriptorType() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearDescriptorType() {
       descriptor_type = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -1636,7 +1636,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'extra_info' field.
       * @return The value.
       */
-    public converTor.encoders.relayExtra.ExtraInfo getExtraInfo() {
+    public convertor.encoders.relayExtra.ExtraInfo getExtraInfo() {
       return extra_info;
     }
 
@@ -1645,7 +1645,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'extra_info'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setExtraInfo(converTor.encoders.relayExtra.ExtraInfo value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setExtraInfo(convertor.encoders.relayExtra.ExtraInfo value) {
       validate(fields()[1], value);
       this.extra_infoBuilder = null;
       this.extra_info = value;
@@ -1665,12 +1665,12 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
      * Gets the Builder instance for the 'extra_info' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public converTor.encoders.relayExtra.ExtraInfo.Builder getExtraInfoBuilder() {
+    public convertor.encoders.relayExtra.ExtraInfo.Builder getExtraInfoBuilder() {
       if (extra_infoBuilder == null) {
         if (hasExtraInfo()) {
-          setExtraInfoBuilder(converTor.encoders.relayExtra.ExtraInfo.newBuilder(extra_info));
+          setExtraInfoBuilder(convertor.encoders.relayExtra.ExtraInfo.newBuilder(extra_info));
         } else {
-          setExtraInfoBuilder(converTor.encoders.relayExtra.ExtraInfo.newBuilder());
+          setExtraInfoBuilder(convertor.encoders.relayExtra.ExtraInfo.newBuilder());
         }
       }
       return extra_infoBuilder;
@@ -1680,7 +1680,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
      * Sets the Builder instance for the 'extra_info' field
      * @return This builder.
      */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setExtraInfoBuilder(converTor.encoders.relayExtra.ExtraInfo.Builder value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setExtraInfoBuilder(convertor.encoders.relayExtra.ExtraInfo.Builder value) {
       clearExtraInfo();
       extra_infoBuilder = value;
       return this;
@@ -1698,7 +1698,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'extra_info' field.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearExtraInfo() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearExtraInfo() {
       extra_info = null;
       extra_infoBuilder = null;
       fieldSetFlags()[1] = false;
@@ -1720,7 +1720,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'identity_ed25519'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setIdentityEd25519(java.lang.Boolean value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setIdentityEd25519(java.lang.Boolean value) {
       validate(fields()[2], value);
       this.identity_ed25519 = value;
       fieldSetFlags()[2] = true;
@@ -1742,7 +1742,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: String getIdentityEd25519();
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearIdentityEd25519() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearIdentityEd25519() {
       identity_ed25519 = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -1763,7 +1763,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'published'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setPublished(java.lang.Long value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setPublished(java.lang.Long value) {
       validate(fields()[3], value);
       this.published = value;
       fieldSetFlags()[3] = true;
@@ -1785,7 +1785,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: long getPublishedMillis()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearPublished() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearPublished() {
       published = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -1796,7 +1796,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory()
       * @return The value.
       */
-    public converTor.encoders.relayExtra.ReadHistory getReadHistory() {
+    public convertor.encoders.relayExtra.ReadHistory getReadHistory() {
       return read_history;
     }
 
@@ -1806,7 +1806,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'read_history'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setReadHistory(converTor.encoders.relayExtra.ReadHistory value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setReadHistory(convertor.encoders.relayExtra.ReadHistory value) {
       validate(fields()[4], value);
       this.read_historyBuilder = null;
       this.read_history = value;
@@ -1828,12 +1828,12 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
      * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory()
      * @return This builder.
      */
-    public converTor.encoders.relayExtra.ReadHistory.Builder getReadHistoryBuilder() {
+    public convertor.encoders.relayExtra.ReadHistory.Builder getReadHistoryBuilder() {
       if (read_historyBuilder == null) {
         if (hasReadHistory()) {
-          setReadHistoryBuilder(converTor.encoders.relayExtra.ReadHistory.newBuilder(read_history));
+          setReadHistoryBuilder(convertor.encoders.relayExtra.ReadHistory.newBuilder(read_history));
         } else {
-          setReadHistoryBuilder(converTor.encoders.relayExtra.ReadHistory.newBuilder());
+          setReadHistoryBuilder(convertor.encoders.relayExtra.ReadHistory.newBuilder());
         }
       }
       return read_historyBuilder;
@@ -1844,7 +1844,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
      * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory()
      * @return This builder.
      */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setReadHistoryBuilder(converTor.encoders.relayExtra.ReadHistory.Builder value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setReadHistoryBuilder(convertor.encoders.relayExtra.ReadHistory.Builder value) {
       clearReadHistory();
       read_historyBuilder = value;
       return this;
@@ -1864,7 +1864,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getReadHistory()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearReadHistory() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearReadHistory() {
       read_history = null;
       read_historyBuilder = null;
       fieldSetFlags()[4] = false;
@@ -1876,7 +1876,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory()
       * @return The value.
       */
-    public converTor.encoders.relayExtra.WriteHistory getWriteHistory() {
+    public convertor.encoders.relayExtra.WriteHistory getWriteHistory() {
       return write_history;
     }
 
@@ -1886,7 +1886,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'write_history'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setWriteHistory(converTor.encoders.relayExtra.WriteHistory value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setWriteHistory(convertor.encoders.relayExtra.WriteHistory value) {
       validate(fields()[5], value);
       this.write_historyBuilder = null;
       this.write_history = value;
@@ -1908,12 +1908,12 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
      * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory()
      * @return This builder.
      */
-    public converTor.encoders.relayExtra.WriteHistory.Builder getWriteHistoryBuilder() {
+    public convertor.encoders.relayExtra.WriteHistory.Builder getWriteHistoryBuilder() {
       if (write_historyBuilder == null) {
         if (hasWriteHistory()) {
-          setWriteHistoryBuilder(converTor.encoders.relayExtra.WriteHistory.newBuilder(write_history));
+          setWriteHistoryBuilder(convertor.encoders.relayExtra.WriteHistory.newBuilder(write_history));
         } else {
-          setWriteHistoryBuilder(converTor.encoders.relayExtra.WriteHistory.newBuilder());
+          setWriteHistoryBuilder(convertor.encoders.relayExtra.WriteHistory.newBuilder());
         }
       }
       return write_historyBuilder;
@@ -1924,7 +1924,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
      * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory()
      * @return This builder.
      */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setWriteHistoryBuilder(converTor.encoders.relayExtra.WriteHistory.Builder value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setWriteHistoryBuilder(convertor.encoders.relayExtra.WriteHistory.Builder value) {
       clearWriteHistory();
       write_historyBuilder = value;
       return this;
@@ -1944,7 +1944,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getWriteHistory()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearWriteHistory() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearWriteHistory() {
       write_history = null;
       write_historyBuilder = null;
       fieldSetFlags()[5] = false;
@@ -1966,7 +1966,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'geoip_db_digest'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setGeoipDbDigest(java.lang.String value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setGeoipDbDigest(java.lang.String value) {
       validate(fields()[6], value);
       this.geoip_db_digest = value;
       fieldSetFlags()[6] = true;
@@ -1988,7 +1988,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: String getGeoipDbDigest()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearGeoipDbDigest() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearGeoipDbDigest() {
       geoip_db_digest = null;
       fieldSetFlags()[6] = false;
       return this;
@@ -2009,7 +2009,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'geoip6_db_digest'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setGeoip6DbDigest(java.lang.String value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setGeoip6DbDigest(java.lang.String value) {
       validate(fields()[7], value);
       this.geoip6_db_digest = value;
       fieldSetFlags()[7] = true;
@@ -2031,7 +2031,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: String getGeoip6DbDigest()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearGeoip6DbDigest() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearGeoip6DbDigest() {
       geoip6_db_digest = null;
       fieldSetFlags()[7] = false;
       return this;
@@ -2052,7 +2052,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'geoip_start_time'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setGeoipStartTime(java.lang.Long value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setGeoipStartTime(java.lang.Long value) {
       validate(fields()[8], value);
       this.geoip_start_time = value;
       fieldSetFlags()[8] = true;
@@ -2074,7 +2074,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: long getGeoipStartTimeMillis()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearGeoipStartTime() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearGeoipStartTime() {
       geoip_start_time = null;
       fieldSetFlags()[8] = false;
       return this;
@@ -2084,7 +2084,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'dirreq_stats_end' field.
       * @return The value.
       */
-    public converTor.encoders.relayExtra.DirreqStats getDirreqStatsEnd() {
+    public convertor.encoders.relayExtra.DirreqStats getDirreqStatsEnd() {
       return dirreq_stats_end;
     }
 
@@ -2093,7 +2093,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'dirreq_stats_end'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setDirreqStatsEnd(converTor.encoders.relayExtra.DirreqStats value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setDirreqStatsEnd(convertor.encoders.relayExtra.DirreqStats value) {
       validate(fields()[9], value);
       this.dirreq_stats_endBuilder = null;
       this.dirreq_stats_end = value;
@@ -2113,12 +2113,12 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
      * Gets the Builder instance for the 'dirreq_stats_end' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public converTor.encoders.relayExtra.DirreqStats.Builder getDirreqStatsEndBuilder() {
+    public convertor.encoders.relayExtra.DirreqStats.Builder getDirreqStatsEndBuilder() {
       if (dirreq_stats_endBuilder == null) {
         if (hasDirreqStatsEnd()) {
-          setDirreqStatsEndBuilder(converTor.encoders.relayExtra.DirreqStats.newBuilder(dirreq_stats_end));
+          setDirreqStatsEndBuilder(convertor.encoders.relayExtra.DirreqStats.newBuilder(dirreq_stats_end));
         } else {
-          setDirreqStatsEndBuilder(converTor.encoders.relayExtra.DirreqStats.newBuilder());
+          setDirreqStatsEndBuilder(convertor.encoders.relayExtra.DirreqStats.newBuilder());
         }
       }
       return dirreq_stats_endBuilder;
@@ -2128,7 +2128,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
      * Sets the Builder instance for the 'dirreq_stats_end' field
      * @return This builder.
      */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setDirreqStatsEndBuilder(converTor.encoders.relayExtra.DirreqStats.Builder value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setDirreqStatsEndBuilder(convertor.encoders.relayExtra.DirreqStats.Builder value) {
       clearDirreqStatsEnd();
       dirreq_stats_endBuilder = value;
       return this;
@@ -2146,7 +2146,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'dirreq_stats_end' field.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearDirreqStatsEnd() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearDirreqStatsEnd() {
       dirreq_stats_end = null;
       dirreq_stats_endBuilder = null;
       fieldSetFlags()[9] = false;
@@ -2168,7 +2168,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'dirreq_v2_ips'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setDirreqV2Ips(java.util.Map<java.lang.String,java.lang.Integer> value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setDirreqV2Ips(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[10], value);
       this.dirreq_v2_ips = value;
       fieldSetFlags()[10] = true;
@@ -2190,7 +2190,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Ips()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearDirreqV2Ips() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearDirreqV2Ips() {
       dirreq_v2_ips = null;
       fieldSetFlags()[10] = false;
       return this;
@@ -2211,7 +2211,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'dirreq_v3_ips'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setDirreqV3Ips(java.util.Map<java.lang.String,java.lang.Integer> value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setDirreqV3Ips(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[11], value);
       this.dirreq_v3_ips = value;
       fieldSetFlags()[11] = true;
@@ -2233,7 +2233,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Ips()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearDirreqV3Ips() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearDirreqV3Ips() {
       dirreq_v3_ips = null;
       fieldSetFlags()[11] = false;
       return this;
@@ -2254,7 +2254,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'dirreq_v2_reqs'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setDirreqV2Reqs(java.util.Map<java.lang.String,java.lang.Integer> value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setDirreqV2Reqs(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[12], value);
       this.dirreq_v2_reqs = value;
       fieldSetFlags()[12] = true;
@@ -2276,7 +2276,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Reqs()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearDirreqV2Reqs() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearDirreqV2Reqs() {
       dirreq_v2_reqs = null;
       fieldSetFlags()[12] = false;
       return this;
@@ -2297,7 +2297,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'dirreq_v3_reqs'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setDirreqV3Reqs(java.util.Map<java.lang.String,java.lang.Integer> value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setDirreqV3Reqs(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[13], value);
       this.dirreq_v3_reqs = value;
       fieldSetFlags()[13] = true;
@@ -2319,7 +2319,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Reqs()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearDirreqV3Reqs() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearDirreqV3Reqs() {
       dirreq_v3_reqs = null;
       fieldSetFlags()[13] = false;
       return this;
@@ -2340,7 +2340,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'dirreq_v2_share'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setDirreqV2Share(java.lang.Double value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setDirreqV2Share(java.lang.Double value) {
       validate(fields()[14], value);
       this.dirreq_v2_share = value;
       fieldSetFlags()[14] = true;
@@ -2362,7 +2362,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: double getDirreqV2Share()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearDirreqV2Share() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearDirreqV2Share() {
       dirreq_v2_share = null;
       fieldSetFlags()[14] = false;
       return this;
@@ -2383,7 +2383,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'dirreq_v3_share'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setDirreqV3Share(java.lang.Double value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setDirreqV3Share(java.lang.Double value) {
       validate(fields()[15], value);
       this.dirreq_v3_share = value;
       fieldSetFlags()[15] = true;
@@ -2405,7 +2405,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: double getDirreqV3Share()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearDirreqV3Share() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearDirreqV3Share() {
       dirreq_v3_share = null;
       fieldSetFlags()[15] = false;
       return this;
@@ -2426,7 +2426,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'dirreq_v2_resp'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setDirreqV2Resp(java.util.Map<java.lang.String,java.lang.Integer> value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setDirreqV2Resp(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[16], value);
       this.dirreq_v2_resp = value;
       fieldSetFlags()[16] = true;
@@ -2448,7 +2448,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2Resp()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearDirreqV2Resp() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearDirreqV2Resp() {
       dirreq_v2_resp = null;
       fieldSetFlags()[16] = false;
       return this;
@@ -2469,7 +2469,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'dirreq_v3_resp'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setDirreqV3Resp(java.util.Map<java.lang.String,java.lang.Integer> value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setDirreqV3Resp(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[17], value);
       this.dirreq_v3_resp = value;
       fieldSetFlags()[17] = true;
@@ -2491,7 +2491,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3Resp()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearDirreqV3Resp() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearDirreqV3Resp() {
       dirreq_v3_resp = null;
       fieldSetFlags()[17] = false;
       return this;
@@ -2512,7 +2512,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'dirreq_v2_direct_dl'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setDirreqV2DirectDl(java.util.Map<java.lang.String,java.lang.Integer> value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setDirreqV2DirectDl(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[18], value);
       this.dirreq_v2_direct_dl = value;
       fieldSetFlags()[18] = true;
@@ -2534,7 +2534,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2DirectDl()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearDirreqV2DirectDl() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearDirreqV2DirectDl() {
       dirreq_v2_direct_dl = null;
       fieldSetFlags()[18] = false;
       return this;
@@ -2555,7 +2555,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'dirreq_v3_direct_dl'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setDirreqV3DirectDl(java.util.Map<java.lang.String,java.lang.Integer> value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setDirreqV3DirectDl(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[19], value);
       this.dirreq_v3_direct_dl = value;
       fieldSetFlags()[19] = true;
@@ -2577,7 +2577,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3DirectDl()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearDirreqV3DirectDl() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearDirreqV3DirectDl() {
       dirreq_v3_direct_dl = null;
       fieldSetFlags()[19] = false;
       return this;
@@ -2598,7 +2598,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'dirreq_v2_tunneled_dl'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setDirreqV2TunneledDl(java.util.Map<java.lang.String,java.lang.Integer> value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setDirreqV2TunneledDl(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[20], value);
       this.dirreq_v2_tunneled_dl = value;
       fieldSetFlags()[20] = true;
@@ -2620,7 +2620,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV2TunneledDl()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearDirreqV2TunneledDl() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearDirreqV2TunneledDl() {
       dirreq_v2_tunneled_dl = null;
       fieldSetFlags()[20] = false;
       return this;
@@ -2641,7 +2641,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'dirreq_v3_tunneled_dl'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setDirreqV3TunneledDl(java.util.Map<java.lang.String,java.lang.Integer> value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setDirreqV3TunneledDl(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[21], value);
       this.dirreq_v3_tunneled_dl = value;
       fieldSetFlags()[21] = true;
@@ -2663,7 +2663,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getDirreqV3TunneledDl()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearDirreqV3TunneledDl() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearDirreqV3TunneledDl() {
       dirreq_v3_tunneled_dl = null;
       fieldSetFlags()[21] = false;
       return this;
@@ -2674,7 +2674,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory()
       * @return The value.
       */
-    public converTor.encoders.relayExtra.DirreqReadHistory getDirreqReadHistory() {
+    public convertor.encoders.relayExtra.DirreqReadHistory getDirreqReadHistory() {
       return dirreq_read_history;
     }
 
@@ -2684,7 +2684,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'dirreq_read_history'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setDirreqReadHistory(converTor.encoders.relayExtra.DirreqReadHistory value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setDirreqReadHistory(convertor.encoders.relayExtra.DirreqReadHistory value) {
       validate(fields()[22], value);
       this.dirreq_read_historyBuilder = null;
       this.dirreq_read_history = value;
@@ -2706,12 +2706,12 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
      * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory()
      * @return This builder.
      */
-    public converTor.encoders.relayExtra.DirreqReadHistory.Builder getDirreqReadHistoryBuilder() {
+    public convertor.encoders.relayExtra.DirreqReadHistory.Builder getDirreqReadHistoryBuilder() {
       if (dirreq_read_historyBuilder == null) {
         if (hasDirreqReadHistory()) {
-          setDirreqReadHistoryBuilder(converTor.encoders.relayExtra.DirreqReadHistory.newBuilder(dirreq_read_history));
+          setDirreqReadHistoryBuilder(convertor.encoders.relayExtra.DirreqReadHistory.newBuilder(dirreq_read_history));
         } else {
-          setDirreqReadHistoryBuilder(converTor.encoders.relayExtra.DirreqReadHistory.newBuilder());
+          setDirreqReadHistoryBuilder(convertor.encoders.relayExtra.DirreqReadHistory.newBuilder());
         }
       }
       return dirreq_read_historyBuilder;
@@ -2722,7 +2722,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
      * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory()
      * @return This builder.
      */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setDirreqReadHistoryBuilder(converTor.encoders.relayExtra.DirreqReadHistory.Builder value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setDirreqReadHistoryBuilder(convertor.encoders.relayExtra.DirreqReadHistory.Builder value) {
       clearDirreqReadHistory();
       dirreq_read_historyBuilder = value;
       return this;
@@ -2742,7 +2742,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqReadHistory()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearDirreqReadHistory() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearDirreqReadHistory() {
       dirreq_read_history = null;
       dirreq_read_historyBuilder = null;
       fieldSetFlags()[22] = false;
@@ -2754,7 +2754,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory()
       * @return The value.
       */
-    public converTor.encoders.relayExtra.DirreqWriteHistory getDirreqWriteHistory() {
+    public convertor.encoders.relayExtra.DirreqWriteHistory getDirreqWriteHistory() {
       return dirreq_write_history;
     }
 
@@ -2764,7 +2764,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'dirreq_write_history'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setDirreqWriteHistory(converTor.encoders.relayExtra.DirreqWriteHistory value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setDirreqWriteHistory(convertor.encoders.relayExtra.DirreqWriteHistory value) {
       validate(fields()[23], value);
       this.dirreq_write_historyBuilder = null;
       this.dirreq_write_history = value;
@@ -2786,12 +2786,12 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
      * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory()
      * @return This builder.
      */
-    public converTor.encoders.relayExtra.DirreqWriteHistory.Builder getDirreqWriteHistoryBuilder() {
+    public convertor.encoders.relayExtra.DirreqWriteHistory.Builder getDirreqWriteHistoryBuilder() {
       if (dirreq_write_historyBuilder == null) {
         if (hasDirreqWriteHistory()) {
-          setDirreqWriteHistoryBuilder(converTor.encoders.relayExtra.DirreqWriteHistory.newBuilder(dirreq_write_history));
+          setDirreqWriteHistoryBuilder(convertor.encoders.relayExtra.DirreqWriteHistory.newBuilder(dirreq_write_history));
         } else {
-          setDirreqWriteHistoryBuilder(converTor.encoders.relayExtra.DirreqWriteHistory.newBuilder());
+          setDirreqWriteHistoryBuilder(convertor.encoders.relayExtra.DirreqWriteHistory.newBuilder());
         }
       }
       return dirreq_write_historyBuilder;
@@ -2802,7 +2802,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
      * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory()
      * @return This builder.
      */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setDirreqWriteHistoryBuilder(converTor.encoders.relayExtra.DirreqWriteHistory.Builder value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setDirreqWriteHistoryBuilder(convertor.encoders.relayExtra.DirreqWriteHistory.Builder value) {
       clearDirreqWriteHistory();
       dirreq_write_historyBuilder = value;
       return this;
@@ -2822,7 +2822,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: BandwidthHistory getDirreqWriteHistory()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearDirreqWriteHistory() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearDirreqWriteHistory() {
       dirreq_write_history = null;
       dirreq_write_historyBuilder = null;
       fieldSetFlags()[23] = false;
@@ -2833,7 +2833,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'entry_stats_end' field.
       * @return The value.
       */
-    public converTor.encoders.relayExtra.EntryStats getEntryStatsEnd() {
+    public convertor.encoders.relayExtra.EntryStats getEntryStatsEnd() {
       return entry_stats_end;
     }
 
@@ -2842,7 +2842,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'entry_stats_end'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setEntryStatsEnd(converTor.encoders.relayExtra.EntryStats value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setEntryStatsEnd(convertor.encoders.relayExtra.EntryStats value) {
       validate(fields()[24], value);
       this.entry_stats_endBuilder = null;
       this.entry_stats_end = value;
@@ -2862,12 +2862,12 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
      * Gets the Builder instance for the 'entry_stats_end' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public converTor.encoders.relayExtra.EntryStats.Builder getEntryStatsEndBuilder() {
+    public convertor.encoders.relayExtra.EntryStats.Builder getEntryStatsEndBuilder() {
       if (entry_stats_endBuilder == null) {
         if (hasEntryStatsEnd()) {
-          setEntryStatsEndBuilder(converTor.encoders.relayExtra.EntryStats.newBuilder(entry_stats_end));
+          setEntryStatsEndBuilder(convertor.encoders.relayExtra.EntryStats.newBuilder(entry_stats_end));
         } else {
-          setEntryStatsEndBuilder(converTor.encoders.relayExtra.EntryStats.newBuilder());
+          setEntryStatsEndBuilder(convertor.encoders.relayExtra.EntryStats.newBuilder());
         }
       }
       return entry_stats_endBuilder;
@@ -2877,7 +2877,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
      * Sets the Builder instance for the 'entry_stats_end' field
      * @return This builder.
      */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setEntryStatsEndBuilder(converTor.encoders.relayExtra.EntryStats.Builder value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setEntryStatsEndBuilder(convertor.encoders.relayExtra.EntryStats.Builder value) {
       clearEntryStatsEnd();
       entry_stats_endBuilder = value;
       return this;
@@ -2895,7 +2895,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'entry_stats_end' field.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearEntryStatsEnd() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearEntryStatsEnd() {
       entry_stats_end = null;
       entry_stats_endBuilder = null;
       fieldSetFlags()[24] = false;
@@ -2917,7 +2917,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'entry_ips'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setEntryIps(java.util.Map<java.lang.String,java.lang.Integer> value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setEntryIps(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[25], value);
       this.entry_ips = value;
       fieldSetFlags()[25] = true;
@@ -2939,7 +2939,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Integer> getEntryIps()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearEntryIps() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearEntryIps() {
       entry_ips = null;
       fieldSetFlags()[25] = false;
       return this;
@@ -2949,7 +2949,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'cell_stats_end' field.
       * @return The value.
       */
-    public converTor.encoders.relayExtra.CellStats getCellStatsEnd() {
+    public convertor.encoders.relayExtra.CellStats getCellStatsEnd() {
       return cell_stats_end;
     }
 
@@ -2958,7 +2958,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'cell_stats_end'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setCellStatsEnd(converTor.encoders.relayExtra.CellStats value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setCellStatsEnd(convertor.encoders.relayExtra.CellStats value) {
       validate(fields()[26], value);
       this.cell_stats_endBuilder = null;
       this.cell_stats_end = value;
@@ -2978,12 +2978,12 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
      * Gets the Builder instance for the 'cell_stats_end' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public converTor.encoders.relayExtra.CellStats.Builder getCellStatsEndBuilder() {
+    public convertor.encoders.relayExtra.CellStats.Builder getCellStatsEndBuilder() {
       if (cell_stats_endBuilder == null) {
         if (hasCellStatsEnd()) {
-          setCellStatsEndBuilder(converTor.encoders.relayExtra.CellStats.newBuilder(cell_stats_end));
+          setCellStatsEndBuilder(convertor.encoders.relayExtra.CellStats.newBuilder(cell_stats_end));
         } else {
-          setCellStatsEndBuilder(converTor.encoders.relayExtra.CellStats.newBuilder());
+          setCellStatsEndBuilder(convertor.encoders.relayExtra.CellStats.newBuilder());
         }
       }
       return cell_stats_endBuilder;
@@ -2993,7 +2993,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
      * Sets the Builder instance for the 'cell_stats_end' field
      * @return This builder.
      */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setCellStatsEndBuilder(converTor.encoders.relayExtra.CellStats.Builder value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setCellStatsEndBuilder(convertor.encoders.relayExtra.CellStats.Builder value) {
       clearCellStatsEnd();
       cell_stats_endBuilder = value;
       return this;
@@ -3011,7 +3011,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'cell_stats_end' field.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearCellStatsEnd() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearCellStatsEnd() {
       cell_stats_end = null;
       cell_stats_endBuilder = null;
       fieldSetFlags()[26] = false;
@@ -3033,7 +3033,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'cell_processed_cells'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setCellProcessedCells(java.util.List<java.lang.Integer> value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setCellProcessedCells(java.util.List<java.lang.Integer> value) {
       validate(fields()[27], value);
       this.cell_processed_cells = value;
       fieldSetFlags()[27] = true;
@@ -3055,7 +3055,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: List<Integer> getCellProcessedCells()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearCellProcessedCells() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearCellProcessedCells() {
       cell_processed_cells = null;
       fieldSetFlags()[27] = false;
       return this;
@@ -3076,7 +3076,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'cell_queued_cells'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setCellQueuedCells(java.util.List<java.lang.Double> value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setCellQueuedCells(java.util.List<java.lang.Double> value) {
       validate(fields()[28], value);
       this.cell_queued_cells = value;
       fieldSetFlags()[28] = true;
@@ -3098,7 +3098,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: List<Double> getCellQueuedCells()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearCellQueuedCells() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearCellQueuedCells() {
       cell_queued_cells = null;
       fieldSetFlags()[28] = false;
       return this;
@@ -3119,7 +3119,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'cell_time_in_queue'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setCellTimeInQueue(java.util.List<java.lang.Integer> value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setCellTimeInQueue(java.util.List<java.lang.Integer> value) {
       validate(fields()[29], value);
       this.cell_time_in_queue = value;
       fieldSetFlags()[29] = true;
@@ -3141,7 +3141,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: List<Integer> getCellTimeInQueue()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearCellTimeInQueue() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearCellTimeInQueue() {
       cell_time_in_queue = null;
       fieldSetFlags()[29] = false;
       return this;
@@ -3162,7 +3162,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'cell_circuits_per_decile'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setCellCircuitsPerDecile(java.lang.Integer value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setCellCircuitsPerDecile(java.lang.Integer value) {
       validate(fields()[30], value);
       this.cell_circuits_per_decile = value;
       fieldSetFlags()[30] = true;
@@ -3184,7 +3184,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: int getCellCircuitsPerDecile()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearCellCircuitsPerDecile() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearCellCircuitsPerDecile() {
       cell_circuits_per_decile = null;
       fieldSetFlags()[30] = false;
       return this;
@@ -3194,7 +3194,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'conn_bi_direct' field.
       * @return The value.
       */
-    public converTor.encoders.relayExtra.ConnBiDirect getConnBiDirect() {
+    public convertor.encoders.relayExtra.ConnBiDirect getConnBiDirect() {
       return conn_bi_direct;
     }
 
@@ -3203,7 +3203,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'conn_bi_direct'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setConnBiDirect(converTor.encoders.relayExtra.ConnBiDirect value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setConnBiDirect(convertor.encoders.relayExtra.ConnBiDirect value) {
       validate(fields()[31], value);
       this.conn_bi_directBuilder = null;
       this.conn_bi_direct = value;
@@ -3223,12 +3223,12 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
      * Gets the Builder instance for the 'conn_bi_direct' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public converTor.encoders.relayExtra.ConnBiDirect.Builder getConnBiDirectBuilder() {
+    public convertor.encoders.relayExtra.ConnBiDirect.Builder getConnBiDirectBuilder() {
       if (conn_bi_directBuilder == null) {
         if (hasConnBiDirect()) {
-          setConnBiDirectBuilder(converTor.encoders.relayExtra.ConnBiDirect.newBuilder(conn_bi_direct));
+          setConnBiDirectBuilder(convertor.encoders.relayExtra.ConnBiDirect.newBuilder(conn_bi_direct));
         } else {
-          setConnBiDirectBuilder(converTor.encoders.relayExtra.ConnBiDirect.newBuilder());
+          setConnBiDirectBuilder(convertor.encoders.relayExtra.ConnBiDirect.newBuilder());
         }
       }
       return conn_bi_directBuilder;
@@ -3238,7 +3238,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
      * Sets the Builder instance for the 'conn_bi_direct' field
      * @return This builder.
      */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setConnBiDirectBuilder(converTor.encoders.relayExtra.ConnBiDirect.Builder value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setConnBiDirectBuilder(convertor.encoders.relayExtra.ConnBiDirect.Builder value) {
       clearConnBiDirect();
       conn_bi_directBuilder = value;
       return this;
@@ -3256,7 +3256,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'conn_bi_direct' field.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearConnBiDirect() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearConnBiDirect() {
       conn_bi_direct = null;
       conn_bi_directBuilder = null;
       fieldSetFlags()[31] = false;
@@ -3267,7 +3267,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'exit_stats_end' field.
       * @return The value.
       */
-    public converTor.encoders.relayExtra.ExitStats getExitStatsEnd() {
+    public convertor.encoders.relayExtra.ExitStats getExitStatsEnd() {
       return exit_stats_end;
     }
 
@@ -3276,7 +3276,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'exit_stats_end'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setExitStatsEnd(converTor.encoders.relayExtra.ExitStats value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setExitStatsEnd(convertor.encoders.relayExtra.ExitStats value) {
       validate(fields()[32], value);
       this.exit_stats_endBuilder = null;
       this.exit_stats_end = value;
@@ -3296,12 +3296,12 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
      * Gets the Builder instance for the 'exit_stats_end' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public converTor.encoders.relayExtra.ExitStats.Builder getExitStatsEndBuilder() {
+    public convertor.encoders.relayExtra.ExitStats.Builder getExitStatsEndBuilder() {
       if (exit_stats_endBuilder == null) {
         if (hasExitStatsEnd()) {
-          setExitStatsEndBuilder(converTor.encoders.relayExtra.ExitStats.newBuilder(exit_stats_end));
+          setExitStatsEndBuilder(convertor.encoders.relayExtra.ExitStats.newBuilder(exit_stats_end));
         } else {
-          setExitStatsEndBuilder(converTor.encoders.relayExtra.ExitStats.newBuilder());
+          setExitStatsEndBuilder(convertor.encoders.relayExtra.ExitStats.newBuilder());
         }
       }
       return exit_stats_endBuilder;
@@ -3311,7 +3311,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
      * Sets the Builder instance for the 'exit_stats_end' field
      * @return This builder.
      */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setExitStatsEndBuilder(converTor.encoders.relayExtra.ExitStats.Builder value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setExitStatsEndBuilder(convertor.encoders.relayExtra.ExitStats.Builder value) {
       clearExitStatsEnd();
       exit_stats_endBuilder = value;
       return this;
@@ -3329,7 +3329,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'exit_stats_end' field.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearExitStatsEnd() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearExitStatsEnd() {
       exit_stats_end = null;
       exit_stats_endBuilder = null;
       fieldSetFlags()[32] = false;
@@ -3351,7 +3351,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'exit_kibibytes_written'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setExitKibibytesWritten(java.util.Map<java.lang.String,java.lang.Long> value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setExitKibibytesWritten(java.util.Map<java.lang.String,java.lang.Long> value) {
       validate(fields()[33], value);
       this.exit_kibibytes_written = value;
       fieldSetFlags()[33] = true;
@@ -3373,7 +3373,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesWritten()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearExitKibibytesWritten() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearExitKibibytesWritten() {
       exit_kibibytes_written = null;
       fieldSetFlags()[33] = false;
       return this;
@@ -3394,7 +3394,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'exit_kibibytes_read'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setExitKibibytesRead(java.util.Map<java.lang.String,java.lang.Long> value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setExitKibibytesRead(java.util.Map<java.lang.String,java.lang.Long> value) {
       validate(fields()[34], value);
       this.exit_kibibytes_read = value;
       fieldSetFlags()[34] = true;
@@ -3416,7 +3416,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitKibibytesRead()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearExitKibibytesRead() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearExitKibibytesRead() {
       exit_kibibytes_read = null;
       fieldSetFlags()[34] = false;
       return this;
@@ -3437,7 +3437,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'exit_streams_opened'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setExitStreamsOpened(java.util.Map<java.lang.String,java.lang.Long> value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setExitStreamsOpened(java.util.Map<java.lang.String,java.lang.Long> value) {
       validate(fields()[35], value);
       this.exit_streams_opened = value;
       fieldSetFlags()[35] = true;
@@ -3459,7 +3459,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: SortedMap<String, Long> getExitStreamsOpened()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearExitStreamsOpened() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearExitStreamsOpened() {
       exit_streams_opened = null;
       fieldSetFlags()[35] = false;
       return this;
@@ -3469,7 +3469,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'hidserv_stats_end' field.
       * @return The value.
       */
-    public converTor.encoders.relayExtra.HidservStats getHidservStatsEnd() {
+    public convertor.encoders.relayExtra.HidservStats getHidservStatsEnd() {
       return hidserv_stats_end;
     }
 
@@ -3478,7 +3478,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'hidserv_stats_end'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setHidservStatsEnd(converTor.encoders.relayExtra.HidservStats value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setHidservStatsEnd(convertor.encoders.relayExtra.HidservStats value) {
       validate(fields()[36], value);
       this.hidserv_stats_endBuilder = null;
       this.hidserv_stats_end = value;
@@ -3498,12 +3498,12 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
      * Gets the Builder instance for the 'hidserv_stats_end' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public converTor.encoders.relayExtra.HidservStats.Builder getHidservStatsEndBuilder() {
+    public convertor.encoders.relayExtra.HidservStats.Builder getHidservStatsEndBuilder() {
       if (hidserv_stats_endBuilder == null) {
         if (hasHidservStatsEnd()) {
-          setHidservStatsEndBuilder(converTor.encoders.relayExtra.HidservStats.newBuilder(hidserv_stats_end));
+          setHidservStatsEndBuilder(convertor.encoders.relayExtra.HidservStats.newBuilder(hidserv_stats_end));
         } else {
-          setHidservStatsEndBuilder(converTor.encoders.relayExtra.HidservStats.newBuilder());
+          setHidservStatsEndBuilder(convertor.encoders.relayExtra.HidservStats.newBuilder());
         }
       }
       return hidserv_stats_endBuilder;
@@ -3513,7 +3513,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
      * Sets the Builder instance for the 'hidserv_stats_end' field
      * @return This builder.
      */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setHidservStatsEndBuilder(converTor.encoders.relayExtra.HidservStats.Builder value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setHidservStatsEndBuilder(convertor.encoders.relayExtra.HidservStats.Builder value) {
       clearHidservStatsEnd();
       hidserv_stats_endBuilder = value;
       return this;
@@ -3531,7 +3531,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'hidserv_stats_end' field.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearHidservStatsEnd() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearHidservStatsEnd() {
       hidserv_stats_end = null;
       hidserv_stats_endBuilder = null;
       fieldSetFlags()[36] = false;
@@ -3542,7 +3542,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'hidserv_rend_relayed_cells' field.
       * @return The value.
       */
-    public converTor.encoders.relayExtra.HidservRendRelayedCells getHidservRendRelayedCells() {
+    public convertor.encoders.relayExtra.HidservRendRelayedCells getHidservRendRelayedCells() {
       return hidserv_rend_relayed_cells;
     }
 
@@ -3551,7 +3551,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'hidserv_rend_relayed_cells'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setHidservRendRelayedCells(converTor.encoders.relayExtra.HidservRendRelayedCells value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setHidservRendRelayedCells(convertor.encoders.relayExtra.HidservRendRelayedCells value) {
       validate(fields()[37], value);
       this.hidserv_rend_relayed_cellsBuilder = null;
       this.hidserv_rend_relayed_cells = value;
@@ -3571,12 +3571,12 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
      * Gets the Builder instance for the 'hidserv_rend_relayed_cells' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public converTor.encoders.relayExtra.HidservRendRelayedCells.Builder getHidservRendRelayedCellsBuilder() {
+    public convertor.encoders.relayExtra.HidservRendRelayedCells.Builder getHidservRendRelayedCellsBuilder() {
       if (hidserv_rend_relayed_cellsBuilder == null) {
         if (hasHidservRendRelayedCells()) {
-          setHidservRendRelayedCellsBuilder(converTor.encoders.relayExtra.HidservRendRelayedCells.newBuilder(hidserv_rend_relayed_cells));
+          setHidservRendRelayedCellsBuilder(convertor.encoders.relayExtra.HidservRendRelayedCells.newBuilder(hidserv_rend_relayed_cells));
         } else {
-          setHidservRendRelayedCellsBuilder(converTor.encoders.relayExtra.HidservRendRelayedCells.newBuilder());
+          setHidservRendRelayedCellsBuilder(convertor.encoders.relayExtra.HidservRendRelayedCells.newBuilder());
         }
       }
       return hidserv_rend_relayed_cellsBuilder;
@@ -3586,7 +3586,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
      * Sets the Builder instance for the 'hidserv_rend_relayed_cells' field
      * @return This builder.
      */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setHidservRendRelayedCellsBuilder(converTor.encoders.relayExtra.HidservRendRelayedCells.Builder value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setHidservRendRelayedCellsBuilder(convertor.encoders.relayExtra.HidservRendRelayedCells.Builder value) {
       clearHidservRendRelayedCells();
       hidserv_rend_relayed_cellsBuilder = value;
       return this;
@@ -3604,7 +3604,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'hidserv_rend_relayed_cells' field.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearHidservRendRelayedCells() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearHidservRendRelayedCells() {
       hidserv_rend_relayed_cells = null;
       hidserv_rend_relayed_cellsBuilder = null;
       fieldSetFlags()[37] = false;
@@ -3615,7 +3615,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'hidserv_dir_onions_seen' field.
       * @return The value.
       */
-    public converTor.encoders.relayExtra.HidservDirOnionsSeen getHidservDirOnionsSeen() {
+    public convertor.encoders.relayExtra.HidservDirOnionsSeen getHidservDirOnionsSeen() {
       return hidserv_dir_onions_seen;
     }
 
@@ -3624,7 +3624,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'hidserv_dir_onions_seen'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setHidservDirOnionsSeen(converTor.encoders.relayExtra.HidservDirOnionsSeen value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setHidservDirOnionsSeen(convertor.encoders.relayExtra.HidservDirOnionsSeen value) {
       validate(fields()[38], value);
       this.hidserv_dir_onions_seenBuilder = null;
       this.hidserv_dir_onions_seen = value;
@@ -3644,12 +3644,12 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
      * Gets the Builder instance for the 'hidserv_dir_onions_seen' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public converTor.encoders.relayExtra.HidservDirOnionsSeen.Builder getHidservDirOnionsSeenBuilder() {
+    public convertor.encoders.relayExtra.HidservDirOnionsSeen.Builder getHidservDirOnionsSeenBuilder() {
       if (hidserv_dir_onions_seenBuilder == null) {
         if (hasHidservDirOnionsSeen()) {
-          setHidservDirOnionsSeenBuilder(converTor.encoders.relayExtra.HidservDirOnionsSeen.newBuilder(hidserv_dir_onions_seen));
+          setHidservDirOnionsSeenBuilder(convertor.encoders.relayExtra.HidservDirOnionsSeen.newBuilder(hidserv_dir_onions_seen));
         } else {
-          setHidservDirOnionsSeenBuilder(converTor.encoders.relayExtra.HidservDirOnionsSeen.newBuilder());
+          setHidservDirOnionsSeenBuilder(convertor.encoders.relayExtra.HidservDirOnionsSeen.newBuilder());
         }
       }
       return hidserv_dir_onions_seenBuilder;
@@ -3659,7 +3659,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
      * Sets the Builder instance for the 'hidserv_dir_onions_seen' field
      * @return This builder.
      */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setHidservDirOnionsSeenBuilder(converTor.encoders.relayExtra.HidservDirOnionsSeen.Builder value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setHidservDirOnionsSeenBuilder(convertor.encoders.relayExtra.HidservDirOnionsSeen.Builder value) {
       clearHidservDirOnionsSeen();
       hidserv_dir_onions_seenBuilder = value;
       return this;
@@ -3677,7 +3677,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'hidserv_dir_onions_seen' field.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearHidservDirOnionsSeen() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearHidservDirOnionsSeen() {
       hidserv_dir_onions_seen = null;
       hidserv_dir_onions_seenBuilder = null;
       fieldSetFlags()[38] = false;
@@ -3699,7 +3699,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'transport'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setTransport(java.util.List<java.lang.String> value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setTransport(java.util.List<java.lang.String> value) {
       validate(fields()[39], value);
       this.transport = value;
       fieldSetFlags()[39] = true;
@@ -3721,7 +3721,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: List<String> getTransports()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearTransport() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearTransport() {
       transport = null;
       fieldSetFlags()[39] = false;
       return this;
@@ -3742,7 +3742,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'router_sig_ed25519'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setRouterSigEd25519(java.lang.Boolean value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setRouterSigEd25519(java.lang.Boolean value) {
       validate(fields()[40], value);
       this.router_sig_ed25519 = value;
       fieldSetFlags()[40] = true;
@@ -3764,7 +3764,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: String getRouterSignatureEd25519()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearRouterSigEd25519() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearRouterSigEd25519() {
       router_sig_ed25519 = null;
       fieldSetFlags()[40] = false;
       return this;
@@ -3785,7 +3785,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'router_signature'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setRouterSignature(java.lang.Boolean value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setRouterSignature(java.lang.Boolean value) {
       validate(fields()[41], value);
       this.router_signature = value;
       fieldSetFlags()[41] = true;
@@ -3807,7 +3807,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: String getRouterSignature()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearRouterSignature() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearRouterSignature() {
       router_signature = null;
       fieldSetFlags()[41] = false;
       return this;
@@ -3828,7 +3828,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'extra_info_digest'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setExtraInfoDigest(java.lang.String value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setExtraInfoDigest(java.lang.String value) {
       validate(fields()[42], value);
       this.extra_info_digest = value;
       fieldSetFlags()[42] = true;
@@ -3850,7 +3850,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigest()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearExtraInfoDigest() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearExtraInfoDigest() {
       extra_info_digest = null;
       fieldSetFlags()[42] = false;
       return this;
@@ -3871,7 +3871,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'extra_info_digest_sha256'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setExtraInfoDigestSha256(java.lang.String value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setExtraInfoDigestSha256(java.lang.String value) {
       validate(fields()[43], value);
       this.extra_info_digest_sha256 = value;
       fieldSetFlags()[43] = true;
@@ -3893,7 +3893,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: String getExtraInfoDigestSha256()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearExtraInfoDigestSha256() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearExtraInfoDigestSha256() {
       extra_info_digest_sha256 = null;
       fieldSetFlags()[43] = false;
       return this;
@@ -3914,7 +3914,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'master_key_ed25519'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder setMasterKeyEd25519(java.lang.String value) {
+    public convertor.encoders.relayExtra.RelayExtra.Builder setMasterKeyEd25519(java.lang.String value) {
       validate(fields()[44], value);
       this.master_key_ed25519 = value;
       fieldSetFlags()[44] = true;
@@ -3936,7 +3936,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
       * metrics-lib/ExtraInfoDescriptor: String getMasterKeyEd25519()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.RelayExtra.Builder clearMasterKeyEd25519() {
+    public convertor.encoders.relayExtra.RelayExtra.Builder clearMasterKeyEd25519() {
       master_key_ed25519 = null;
       fieldSetFlags()[44] = false;
       return this;
@@ -3950,19 +3950,19 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
         if (extra_infoBuilder != null) {
           record.extra_info = this.extra_infoBuilder.build();
         } else {
-          record.extra_info = fieldSetFlags()[1] ? this.extra_info : (converTor.encoders.relayExtra.ExtraInfo) defaultValue(fields()[1]);
+          record.extra_info = fieldSetFlags()[1] ? this.extra_info : (convertor.encoders.relayExtra.ExtraInfo) defaultValue(fields()[1]);
         }
         record.identity_ed25519 = fieldSetFlags()[2] ? this.identity_ed25519 : (java.lang.Boolean) defaultValue(fields()[2]);
         record.published = fieldSetFlags()[3] ? this.published : (java.lang.Long) defaultValue(fields()[3]);
         if (read_historyBuilder != null) {
           record.read_history = this.read_historyBuilder.build();
         } else {
-          record.read_history = fieldSetFlags()[4] ? this.read_history : (converTor.encoders.relayExtra.ReadHistory) defaultValue(fields()[4]);
+          record.read_history = fieldSetFlags()[4] ? this.read_history : (convertor.encoders.relayExtra.ReadHistory) defaultValue(fields()[4]);
         }
         if (write_historyBuilder != null) {
           record.write_history = this.write_historyBuilder.build();
         } else {
-          record.write_history = fieldSetFlags()[5] ? this.write_history : (converTor.encoders.relayExtra.WriteHistory) defaultValue(fields()[5]);
+          record.write_history = fieldSetFlags()[5] ? this.write_history : (convertor.encoders.relayExtra.WriteHistory) defaultValue(fields()[5]);
         }
         record.geoip_db_digest = fieldSetFlags()[6] ? this.geoip_db_digest : (java.lang.String) defaultValue(fields()[6]);
         record.geoip6_db_digest = fieldSetFlags()[7] ? this.geoip6_db_digest : (java.lang.String) defaultValue(fields()[7]);
@@ -3970,7 +3970,7 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
         if (dirreq_stats_endBuilder != null) {
           record.dirreq_stats_end = this.dirreq_stats_endBuilder.build();
         } else {
-          record.dirreq_stats_end = fieldSetFlags()[9] ? this.dirreq_stats_end : (converTor.encoders.relayExtra.DirreqStats) defaultValue(fields()[9]);
+          record.dirreq_stats_end = fieldSetFlags()[9] ? this.dirreq_stats_end : (convertor.encoders.relayExtra.DirreqStats) defaultValue(fields()[9]);
         }
         record.dirreq_v2_ips = fieldSetFlags()[10] ? this.dirreq_v2_ips : (java.util.Map<java.lang.String,java.lang.Integer>) defaultValue(fields()[10]);
         record.dirreq_v3_ips = fieldSetFlags()[11] ? this.dirreq_v3_ips : (java.util.Map<java.lang.String,java.lang.Integer>) defaultValue(fields()[11]);
@@ -3987,23 +3987,23 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
         if (dirreq_read_historyBuilder != null) {
           record.dirreq_read_history = this.dirreq_read_historyBuilder.build();
         } else {
-          record.dirreq_read_history = fieldSetFlags()[22] ? this.dirreq_read_history : (converTor.encoders.relayExtra.DirreqReadHistory) defaultValue(fields()[22]);
+          record.dirreq_read_history = fieldSetFlags()[22] ? this.dirreq_read_history : (convertor.encoders.relayExtra.DirreqReadHistory) defaultValue(fields()[22]);
         }
         if (dirreq_write_historyBuilder != null) {
           record.dirreq_write_history = this.dirreq_write_historyBuilder.build();
         } else {
-          record.dirreq_write_history = fieldSetFlags()[23] ? this.dirreq_write_history : (converTor.encoders.relayExtra.DirreqWriteHistory) defaultValue(fields()[23]);
+          record.dirreq_write_history = fieldSetFlags()[23] ? this.dirreq_write_history : (convertor.encoders.relayExtra.DirreqWriteHistory) defaultValue(fields()[23]);
         }
         if (entry_stats_endBuilder != null) {
           record.entry_stats_end = this.entry_stats_endBuilder.build();
         } else {
-          record.entry_stats_end = fieldSetFlags()[24] ? this.entry_stats_end : (converTor.encoders.relayExtra.EntryStats) defaultValue(fields()[24]);
+          record.entry_stats_end = fieldSetFlags()[24] ? this.entry_stats_end : (convertor.encoders.relayExtra.EntryStats) defaultValue(fields()[24]);
         }
         record.entry_ips = fieldSetFlags()[25] ? this.entry_ips : (java.util.Map<java.lang.String,java.lang.Integer>) defaultValue(fields()[25]);
         if (cell_stats_endBuilder != null) {
           record.cell_stats_end = this.cell_stats_endBuilder.build();
         } else {
-          record.cell_stats_end = fieldSetFlags()[26] ? this.cell_stats_end : (converTor.encoders.relayExtra.CellStats) defaultValue(fields()[26]);
+          record.cell_stats_end = fieldSetFlags()[26] ? this.cell_stats_end : (convertor.encoders.relayExtra.CellStats) defaultValue(fields()[26]);
         }
         record.cell_processed_cells = fieldSetFlags()[27] ? this.cell_processed_cells : (java.util.List<java.lang.Integer>) defaultValue(fields()[27]);
         record.cell_queued_cells = fieldSetFlags()[28] ? this.cell_queued_cells : (java.util.List<java.lang.Double>) defaultValue(fields()[28]);
@@ -4012,12 +4012,12 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
         if (conn_bi_directBuilder != null) {
           record.conn_bi_direct = this.conn_bi_directBuilder.build();
         } else {
-          record.conn_bi_direct = fieldSetFlags()[31] ? this.conn_bi_direct : (converTor.encoders.relayExtra.ConnBiDirect) defaultValue(fields()[31]);
+          record.conn_bi_direct = fieldSetFlags()[31] ? this.conn_bi_direct : (convertor.encoders.relayExtra.ConnBiDirect) defaultValue(fields()[31]);
         }
         if (exit_stats_endBuilder != null) {
           record.exit_stats_end = this.exit_stats_endBuilder.build();
         } else {
-          record.exit_stats_end = fieldSetFlags()[32] ? this.exit_stats_end : (converTor.encoders.relayExtra.ExitStats) defaultValue(fields()[32]);
+          record.exit_stats_end = fieldSetFlags()[32] ? this.exit_stats_end : (convertor.encoders.relayExtra.ExitStats) defaultValue(fields()[32]);
         }
         record.exit_kibibytes_written = fieldSetFlags()[33] ? this.exit_kibibytes_written : (java.util.Map<java.lang.String,java.lang.Long>) defaultValue(fields()[33]);
         record.exit_kibibytes_read = fieldSetFlags()[34] ? this.exit_kibibytes_read : (java.util.Map<java.lang.String,java.lang.Long>) defaultValue(fields()[34]);
@@ -4025,17 +4025,17 @@ public class RelayExtra extends org.apache.avro.specific.SpecificRecordBase impl
         if (hidserv_stats_endBuilder != null) {
           record.hidserv_stats_end = this.hidserv_stats_endBuilder.build();
         } else {
-          record.hidserv_stats_end = fieldSetFlags()[36] ? this.hidserv_stats_end : (converTor.encoders.relayExtra.HidservStats) defaultValue(fields()[36]);
+          record.hidserv_stats_end = fieldSetFlags()[36] ? this.hidserv_stats_end : (convertor.encoders.relayExtra.HidservStats) defaultValue(fields()[36]);
         }
         if (hidserv_rend_relayed_cellsBuilder != null) {
           record.hidserv_rend_relayed_cells = this.hidserv_rend_relayed_cellsBuilder.build();
         } else {
-          record.hidserv_rend_relayed_cells = fieldSetFlags()[37] ? this.hidserv_rend_relayed_cells : (converTor.encoders.relayExtra.HidservRendRelayedCells) defaultValue(fields()[37]);
+          record.hidserv_rend_relayed_cells = fieldSetFlags()[37] ? this.hidserv_rend_relayed_cells : (convertor.encoders.relayExtra.HidservRendRelayedCells) defaultValue(fields()[37]);
         }
         if (hidserv_dir_onions_seenBuilder != null) {
           record.hidserv_dir_onions_seen = this.hidserv_dir_onions_seenBuilder.build();
         } else {
-          record.hidserv_dir_onions_seen = fieldSetFlags()[38] ? this.hidserv_dir_onions_seen : (converTor.encoders.relayExtra.HidservDirOnionsSeen) defaultValue(fields()[38]);
+          record.hidserv_dir_onions_seen = fieldSetFlags()[38] ? this.hidserv_dir_onions_seen : (convertor.encoders.relayExtra.HidservDirOnionsSeen) defaultValue(fields()[38]);
         }
         record.transport = fieldSetFlags()[39] ? this.transport : (java.util.List<java.lang.String>) defaultValue(fields()[39]);
         record.router_sig_ed25519 = fieldSetFlags()[40] ? this.router_sig_ed25519 : (java.lang.Boolean) defaultValue(fields()[40]);

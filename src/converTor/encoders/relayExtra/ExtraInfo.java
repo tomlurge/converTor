@@ -3,12 +3,12 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.encoders.relayExtra;  
+package convertor.encoders.relayExtra;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -30923868134923975L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ExtraInfo\",\"namespace\":\"converTor.encoders.relayExtra\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getNickname()\"},{\"name\":\"fingerprint\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getFingerprint()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ExtraInfo\",\"namespace\":\"convertor.encoders.relayExtra\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getNickname()\"},{\"name\":\"fingerprint\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getFingerprint()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/ExtraInfoDescriptor: String getNickname() */
   @Deprecated public java.lang.String nickname;
@@ -89,8 +89,8 @@ public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase imple
    * Creates a new ExtraInfo RecordBuilder.
    * @return A new ExtraInfo RecordBuilder
    */
-  public static converTor.encoders.relayExtra.ExtraInfo.Builder newBuilder() {
-    return new converTor.encoders.relayExtra.ExtraInfo.Builder();
+  public static convertor.encoders.relayExtra.ExtraInfo.Builder newBuilder() {
+    return new convertor.encoders.relayExtra.ExtraInfo.Builder();
   }
   
   /**
@@ -98,8 +98,8 @@ public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase imple
    * @param other The existing builder to copy.
    * @return A new ExtraInfo RecordBuilder
    */
-  public static converTor.encoders.relayExtra.ExtraInfo.Builder newBuilder(converTor.encoders.relayExtra.ExtraInfo.Builder other) {
-    return new converTor.encoders.relayExtra.ExtraInfo.Builder(other);
+  public static convertor.encoders.relayExtra.ExtraInfo.Builder newBuilder(convertor.encoders.relayExtra.ExtraInfo.Builder other) {
+    return new convertor.encoders.relayExtra.ExtraInfo.Builder(other);
   }
   
   /**
@@ -107,8 +107,8 @@ public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase imple
    * @param other The existing instance to copy.
    * @return A new ExtraInfo RecordBuilder
    */
-  public static converTor.encoders.relayExtra.ExtraInfo.Builder newBuilder(converTor.encoders.relayExtra.ExtraInfo other) {
-    return new converTor.encoders.relayExtra.ExtraInfo.Builder(other);
+  public static convertor.encoders.relayExtra.ExtraInfo.Builder newBuilder(convertor.encoders.relayExtra.ExtraInfo other) {
+    return new convertor.encoders.relayExtra.ExtraInfo.Builder(other);
   }
   
   /**
@@ -124,14 +124,14 @@ public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase imple
 
     /** Creates a new Builder */
     private Builder() {
-      super(converTor.encoders.relayExtra.ExtraInfo.SCHEMA$);
+      super(convertor.encoders.relayExtra.ExtraInfo.SCHEMA$);
     }
     
     /**
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(converTor.encoders.relayExtra.ExtraInfo.Builder other) {
+    private Builder(convertor.encoders.relayExtra.ExtraInfo.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.nickname)) {
         this.nickname = data().deepCopy(fields()[0].schema(), other.nickname);
@@ -147,8 +147,8 @@ public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase imple
      * Creates a Builder by copying an existing ExtraInfo instance
      * @param other The existing instance to copy.
      */
-    private Builder(converTor.encoders.relayExtra.ExtraInfo other) {
-            super(converTor.encoders.relayExtra.ExtraInfo.SCHEMA$);
+    private Builder(convertor.encoders.relayExtra.ExtraInfo other) {
+            super(convertor.encoders.relayExtra.ExtraInfo.SCHEMA$);
       if (isValidValue(fields()[0], other.nickname)) {
         this.nickname = data().deepCopy(fields()[0].schema(), other.nickname);
         fieldSetFlags()[0] = true;
@@ -174,7 +174,7 @@ public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'nickname'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.ExtraInfo.Builder setNickname(java.lang.String value) {
+    public convertor.encoders.relayExtra.ExtraInfo.Builder setNickname(java.lang.String value) {
       validate(fields()[0], value);
       this.nickname = value;
       fieldSetFlags()[0] = true;
@@ -196,7 +196,7 @@ public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/ExtraInfoDescriptor: String getNickname()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.ExtraInfo.Builder clearNickname() {
+    public convertor.encoders.relayExtra.ExtraInfo.Builder clearNickname() {
       nickname = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -217,7 +217,7 @@ public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'fingerprint'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.ExtraInfo.Builder setFingerprint(java.lang.String value) {
+    public convertor.encoders.relayExtra.ExtraInfo.Builder setFingerprint(java.lang.String value) {
       validate(fields()[1], value);
       this.fingerprint = value;
       fieldSetFlags()[1] = true;
@@ -239,7 +239,7 @@ public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/ExtraInfoDescriptor: String getFingerprint()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.ExtraInfo.Builder clearFingerprint() {
+    public convertor.encoders.relayExtra.ExtraInfo.Builder clearFingerprint() {
       fingerprint = null;
       fieldSetFlags()[1] = false;
       return this;

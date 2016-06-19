@@ -1,10 +1,10 @@
-package converTor;
+package convertor;
 
 import java.util.ArrayList;
 import org.torproject.descriptor.BandwidthHistory;
 import org.torproject.descriptor.Descriptor;
 import org.torproject.descriptor.BridgeExtraInfoDescriptor;
-import converTor.encoders.bridgeExtra.*;
+import convertor.encoders.bridgeExtra.*;
 
 
 class ConvertBridgeExtra extends Convert {

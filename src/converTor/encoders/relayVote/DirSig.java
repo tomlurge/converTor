@@ -3,12 +3,12 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.encoders.relayVote;  
+package convertor.encoders.relayVote;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class DirSig extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -7860666098513874364L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DirSig\",\"namespace\":\"converTor.encoders.relayVote\",\"fields\":[{\"name\":\"algorithm\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getAlgorithm()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getIdentity()\"},{\"name\":\"signing_key_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getSigningKeyDigest()\"},{\"name\":\"signature\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/DirectorySignature: String getSignature()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DirSig\",\"namespace\":\"convertor.encoders.relayVote\",\"fields\":[{\"name\":\"algorithm\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getAlgorithm()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getIdentity()\"},{\"name\":\"signing_key_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getSigningKeyDigest()\"},{\"name\":\"signature\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/DirectorySignature: String getSignature()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/DirectorySignature: String getAlgorithm() */
   @Deprecated public java.lang.String algorithm;
@@ -135,8 +135,8 @@ public class DirSig extends org.apache.avro.specific.SpecificRecordBase implemen
    * Creates a new DirSig RecordBuilder.
    * @return A new DirSig RecordBuilder
    */
-  public static converTor.encoders.relayVote.DirSig.Builder newBuilder() {
-    return new converTor.encoders.relayVote.DirSig.Builder();
+  public static convertor.encoders.relayVote.DirSig.Builder newBuilder() {
+    return new convertor.encoders.relayVote.DirSig.Builder();
   }
   
   /**
@@ -144,8 +144,8 @@ public class DirSig extends org.apache.avro.specific.SpecificRecordBase implemen
    * @param other The existing builder to copy.
    * @return A new DirSig RecordBuilder
    */
-  public static converTor.encoders.relayVote.DirSig.Builder newBuilder(converTor.encoders.relayVote.DirSig.Builder other) {
-    return new converTor.encoders.relayVote.DirSig.Builder(other);
+  public static convertor.encoders.relayVote.DirSig.Builder newBuilder(convertor.encoders.relayVote.DirSig.Builder other) {
+    return new convertor.encoders.relayVote.DirSig.Builder(other);
   }
   
   /**
@@ -153,8 +153,8 @@ public class DirSig extends org.apache.avro.specific.SpecificRecordBase implemen
    * @param other The existing instance to copy.
    * @return A new DirSig RecordBuilder
    */
-  public static converTor.encoders.relayVote.DirSig.Builder newBuilder(converTor.encoders.relayVote.DirSig other) {
-    return new converTor.encoders.relayVote.DirSig.Builder(other);
+  public static convertor.encoders.relayVote.DirSig.Builder newBuilder(convertor.encoders.relayVote.DirSig other) {
+    return new convertor.encoders.relayVote.DirSig.Builder(other);
   }
   
   /**
@@ -174,14 +174,14 @@ public class DirSig extends org.apache.avro.specific.SpecificRecordBase implemen
 
     /** Creates a new Builder */
     private Builder() {
-      super(converTor.encoders.relayVote.DirSig.SCHEMA$);
+      super(convertor.encoders.relayVote.DirSig.SCHEMA$);
     }
     
     /**
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(converTor.encoders.relayVote.DirSig.Builder other) {
+    private Builder(convertor.encoders.relayVote.DirSig.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.algorithm)) {
         this.algorithm = data().deepCopy(fields()[0].schema(), other.algorithm);
@@ -205,8 +205,8 @@ public class DirSig extends org.apache.avro.specific.SpecificRecordBase implemen
      * Creates a Builder by copying an existing DirSig instance
      * @param other The existing instance to copy.
      */
-    private Builder(converTor.encoders.relayVote.DirSig other) {
-            super(converTor.encoders.relayVote.DirSig.SCHEMA$);
+    private Builder(convertor.encoders.relayVote.DirSig other) {
+            super(convertor.encoders.relayVote.DirSig.SCHEMA$);
       if (isValidValue(fields()[0], other.algorithm)) {
         this.algorithm = data().deepCopy(fields()[0].schema(), other.algorithm);
         fieldSetFlags()[0] = true;
@@ -240,7 +240,7 @@ public class DirSig extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'algorithm'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.DirSig.Builder setAlgorithm(java.lang.String value) {
+    public convertor.encoders.relayVote.DirSig.Builder setAlgorithm(java.lang.String value) {
       validate(fields()[0], value);
       this.algorithm = value;
       fieldSetFlags()[0] = true;
@@ -262,7 +262,7 @@ public class DirSig extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/DirectorySignature: String getAlgorithm()
       * @return This builder.
       */
-    public converTor.encoders.relayVote.DirSig.Builder clearAlgorithm() {
+    public convertor.encoders.relayVote.DirSig.Builder clearAlgorithm() {
       algorithm = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -283,7 +283,7 @@ public class DirSig extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'identity'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.DirSig.Builder setIdentity(java.lang.String value) {
+    public convertor.encoders.relayVote.DirSig.Builder setIdentity(java.lang.String value) {
       validate(fields()[1], value);
       this.identity = value;
       fieldSetFlags()[1] = true;
@@ -305,7 +305,7 @@ public class DirSig extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/DirectorySignature: String getIdentity()
       * @return This builder.
       */
-    public converTor.encoders.relayVote.DirSig.Builder clearIdentity() {
+    public convertor.encoders.relayVote.DirSig.Builder clearIdentity() {
       identity = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -326,7 +326,7 @@ public class DirSig extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'signing_key_digest'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.DirSig.Builder setSigningKeyDigest(java.lang.String value) {
+    public convertor.encoders.relayVote.DirSig.Builder setSigningKeyDigest(java.lang.String value) {
       validate(fields()[2], value);
       this.signing_key_digest = value;
       fieldSetFlags()[2] = true;
@@ -348,7 +348,7 @@ public class DirSig extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/DirectorySignature: String getSigningKeyDigest()
       * @return This builder.
       */
-    public converTor.encoders.relayVote.DirSig.Builder clearSigningKeyDigest() {
+    public convertor.encoders.relayVote.DirSig.Builder clearSigningKeyDigest() {
       signing_key_digest = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -369,7 +369,7 @@ public class DirSig extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'signature'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.DirSig.Builder setSignature(java.lang.Boolean value) {
+    public convertor.encoders.relayVote.DirSig.Builder setSignature(java.lang.Boolean value) {
       validate(fields()[3], value);
       this.signature = value;
       fieldSetFlags()[3] = true;
@@ -391,7 +391,7 @@ public class DirSig extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/DirectorySignature: String getSignature()
       * @return This builder.
       */
-    public converTor.encoders.relayVote.DirSig.Builder clearSignature() {
+    public convertor.encoders.relayVote.DirSig.Builder clearSignature() {
       signature = null;
       fieldSetFlags()[3] = false;
       return this;

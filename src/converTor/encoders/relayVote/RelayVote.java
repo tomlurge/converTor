@@ -3,12 +3,12 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.encoders.relayVote;  
+package convertor.encoders.relayVote;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class RelayVote extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = 6487475780120889939L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"RelayVote\",\"namespace\":\"converTor.encoders.relayVote\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"metrics-lib/RelayNetworkStatusVote:\",\"default\":\"network-status-vote-3 1.0\"},{\"name\":\"network_status_version\",\"type\":\"int\",\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getNetworkStatusVersion()\",\"default\":3},{\"name\":\"vote_status\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"\\\"vote\\\" per definition, no getter\",\"default\":\"vote\"},{\"name\":\"consensus_methods\",\"type\":{\"type\":\"array\",\"items\":\"int\"},\"doc\":\"metrics-lib/RelayNetworkStatusVote:\\n        List<Integer> getConsensusMethods()\"},{\"name\":\"published\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getPublishedMillis()\"},{\"name\":\"valid_after\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getValidAfterMillis()\"},{\"name\":\"flag_tresholds\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"FlagTresholds\",\"fields\":[{\"name\":\"stable_uptime\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getStableUptime()\"},{\"name\":\"stable_mtbf\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getStableMtbf()\"},{\"name\":\"enough_mtbf\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getEnoughMtbfInfo()\"},{\"name\":\"fast_speed\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getFastBandwidth()\"},{\"name\":\"guard_wfu\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: double getGuardWfu()\"},{\"name\":\"guard_tk\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getGuardTk()\"},{\"name\":\"guard_bw_inc_exits\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote:\\n        long getGuardBandwidthIncludingExits()\"},{\"name\":\"guard_bw_exc_exits\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote:\\n        long getGuardBandwidthExcludingExits()\"},{\"name\":\"ignoring_advertised_bws\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getIgnoringAdvertisedBws()\"}]}],\"doc\":\"see above\"},{\"name\":\"fresh_until\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getFreshUntilMillis()\"},{\"name\":\"valid_until\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getValidUntilMillis()\"},{\"name\":\"voting_delay\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Vote\",\"fields\":[{\"name\":\"vote_seconds\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getVoteSeconds()\"},{\"name\":\"dist_seconds\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getDistSeconds()\"}]}],\"doc\":\"see above\"},{\"name\":\"client_versions\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/RelayNetworkStatusVote:\\n        List<String> getRecommendedClientVersions()\"},{\"name\":\"server_versions\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/RelayNetworkStatusVote:\\n        List<String> getRecommendedServerVersions()\"},{\"name\":\"known_flags\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: SortedSet<String> getKnownFlags()\"},{\"name\":\"params\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote:\\n        SortedMap<String, Integer> getConsensusParams()\"},{\"name\":\"dir_source\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirSource\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getIdentity(\"},{\"name\":\"hostname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getHostname()\"},{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getAddress()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getDirport()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getOrport()\"}]}],\"doc\":\"see above\"},{\"name\":\"contact\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getContactLine()\"},{\"name\":\"legacy_dir_key\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getLegacyDirKey()\"},{\"name\":\"directory_key\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirKey\",\"fields\":[{\"name\":\"version\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getDirKeyCertificateVersion()\"},{\"name\":\"dir_key_published\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getDirKeyPublishedMillis()\"},{\"name\":\"dir_key_expires\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getDirKeyExpiresMillis()\"}]}],\"doc\":\"see above\"},{\"name\":\"status\",\"type\":[\"null\",{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"Status\",\"fields\":[{\"name\":\"r\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"R\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getFingerprint()\"},{\"name\":\"digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDescriptor()\"},{\"name\":\"publication\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getPublishedMillis()\"},{\"name\":\"ip\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getOrPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getDirPort()\"}]}]},{\"name\":\"a\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"OrAddress\",\"fields\":[{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"implementation specific, see actual converter\"},{\"name\":\"port\",\"type\":[\"null\",\"int\"],\"doc\":\"implementation specific, see actual converter\"}]}}]},{\"name\":\"s\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags()\"},{\"name\":\"v\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getVersion()\"},{\"name\":\"w\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"W\",\"fields\":[{\"name\":\"bandwidth\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getBandwidth()\"},{\"name\":\"measured\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getMeasured()\"},{\"name\":\"unmeasured\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/NetworkStatusEntry: boolean getUnmeasured()\"}]}],\"doc\":\"see above\"},{\"name\":\"p\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Policy\",\"fields\":[{\"name\":\"default_policy\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDefaultPolicy()\"},{\"name\":\"port_summary\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getPortList()\"}]}],\"doc\":\"see above\"},{\"name\":\"id\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ID\",\"fields\":[{\"name\":\"ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getMasterKeyEd25519()\"}]}],\"doc\":\"see above\"}]},\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote:\\n        SortedMap<String, NetworkStatusEntry> getStatusEntries()\"},{\"name\":\"directory_footer\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirFooter\",\"fields\":[{\"name\":\"directory_signature\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirSig\",\"fields\":[{\"name\":\"algorithm\",\"type\":[\"null\",{\"typ","e\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getAlgorithm()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getIdentity()\"},{\"name\":\"signing_key_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getSigningKeyDigest()\"},{\"name\":\"signature\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/DirectorySignature: String getSignature()\"}]}],\"doc\":\"metrics-lib/RelayNetworkStatusVote:\\n        SortedMap<String, DirectorySignature> getDirectorySignatures()\"}]}],\"doc\":\"see above\"},{\"name\":\"signing_key_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getSigningKeyDigest()\"}],\"aliases\":[\"relay_network_status_vote_3\"]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"RelayVote\",\"namespace\":\"convertor.encoders.relayVote\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"metrics-lib/RelayNetworkStatusVote:\",\"default\":\"network-status-vote-3 1.0\"},{\"name\":\"network_status_version\",\"type\":\"int\",\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getNetworkStatusVersion()\",\"default\":3},{\"name\":\"vote_status\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"\\\"vote\\\" per definition, no getter\",\"default\":\"vote\"},{\"name\":\"consensus_methods\",\"type\":{\"type\":\"array\",\"items\":\"int\"},\"doc\":\"metrics-lib/RelayNetworkStatusVote:\\n        List<Integer> getConsensusMethods()\"},{\"name\":\"published\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getPublishedMillis()\"},{\"name\":\"valid_after\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getValidAfterMillis()\"},{\"name\":\"flag_tresholds\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"FlagTresholds\",\"fields\":[{\"name\":\"stable_uptime\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getStableUptime()\"},{\"name\":\"stable_mtbf\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getStableMtbf()\"},{\"name\":\"enough_mtbf\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getEnoughMtbfInfo()\"},{\"name\":\"fast_speed\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getFastBandwidth()\"},{\"name\":\"guard_wfu\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: double getGuardWfu()\"},{\"name\":\"guard_tk\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getGuardTk()\"},{\"name\":\"guard_bw_inc_exits\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote:\\n        long getGuardBandwidthIncludingExits()\"},{\"name\":\"guard_bw_exc_exits\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote:\\n        long getGuardBandwidthExcludingExits()\"},{\"name\":\"ignoring_advertised_bws\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getIgnoringAdvertisedBws()\"}]}],\"doc\":\"see above\"},{\"name\":\"fresh_until\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getFreshUntilMillis()\"},{\"name\":\"valid_until\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getValidUntilMillis()\"},{\"name\":\"voting_delay\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Vote\",\"fields\":[{\"name\":\"vote_seconds\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getVoteSeconds()\"},{\"name\":\"dist_seconds\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getDistSeconds()\"}]}],\"doc\":\"see above\"},{\"name\":\"client_versions\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/RelayNetworkStatusVote:\\n        List<String> getRecommendedClientVersions()\"},{\"name\":\"server_versions\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/RelayNetworkStatusVote:\\n        List<String> getRecommendedServerVersions()\"},{\"name\":\"known_flags\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: SortedSet<String> getKnownFlags()\"},{\"name\":\"params\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote:\\n        SortedMap<String, Integer> getConsensusParams()\"},{\"name\":\"dir_source\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirSource\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getIdentity(\"},{\"name\":\"hostname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getHostname()\"},{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getAddress()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getDirport()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getOrport()\"}]}],\"doc\":\"see above\"},{\"name\":\"contact\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getContactLine()\"},{\"name\":\"legacy_dir_key\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getLegacyDirKey()\"},{\"name\":\"directory_key\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirKey\",\"fields\":[{\"name\":\"version\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getDirKeyCertificateVersion()\"},{\"name\":\"dir_key_published\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getDirKeyPublishedMillis()\"},{\"name\":\"dir_key_expires\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getDirKeyExpiresMillis()\"}]}],\"doc\":\"see above\"},{\"name\":\"status\",\"type\":[\"null\",{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"Status\",\"fields\":[{\"name\":\"r\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"R\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getFingerprint()\"},{\"name\":\"digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDescriptor()\"},{\"name\":\"publication\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getPublishedMillis()\"},{\"name\":\"ip\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getOrPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getDirPort()\"}]}]},{\"name\":\"a\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"OrAddress\",\"fields\":[{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"implementation specific, see actual converter\"},{\"name\":\"port\",\"type\":[\"null\",\"int\"],\"doc\":\"implementation specific, see actual converter\"}]}}]},{\"name\":\"s\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags()\"},{\"name\":\"v\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getVersion()\"},{\"name\":\"w\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"W\",\"fields\":[{\"name\":\"bandwidth\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getBandwidth()\"},{\"name\":\"measured\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getMeasured()\"},{\"name\":\"unmeasured\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/NetworkStatusEntry: boolean getUnmeasured()\"}]}],\"doc\":\"see above\"},{\"name\":\"p\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Policy\",\"fields\":[{\"name\":\"default_policy\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDefaultPolicy()\"},{\"name\":\"port_summary\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getPortList()\"}]}],\"doc\":\"see above\"},{\"name\":\"id\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ID\",\"fields\":[{\"name\":\"ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getMasterKeyEd25519()\"}]}],\"doc\":\"see above\"}]},\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote:\\n        SortedMap<String, NetworkStatusEntry> getStatusEntries()\"},{\"name\":\"directory_footer\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirFooter\",\"fields\":[{\"name\":\"directory_signature\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirSig\",\"fields\":[{\"name\":\"algorithm\",\"type\":[\"null\",{\"typ","e\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getAlgorithm()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getIdentity()\"},{\"name\":\"signing_key_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getSigningKeyDigest()\"},{\"name\":\"signature\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/DirectorySignature: String getSignature()\"}]}],\"doc\":\"metrics-lib/RelayNetworkStatusVote:\\n        SortedMap<String, DirectorySignature> getDirectorySignatures()\"}]}],\"doc\":\"see above\"},{\"name\":\"signing_key_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getSigningKeyDigest()\"}],\"aliases\":[\"relay_network_status_vote_3\"]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/RelayNetworkStatusVote: */
   @Deprecated public java.lang.String descriptor_type;
@@ -24,13 +24,13 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
   /** metrics-lib/RelayNetworkStatusVote: long getValidAfterMillis() */
   @Deprecated public java.lang.Long valid_after;
   /** see above */
-  @Deprecated public converTor.encoders.relayVote.FlagTresholds flag_tresholds;
+  @Deprecated public convertor.encoders.relayVote.FlagTresholds flag_tresholds;
   /** metrics-lib/RelayNetworkStatusVote: long getFreshUntilMillis() */
   @Deprecated public java.lang.Long fresh_until;
   /** metrics-lib/RelayNetworkStatusVote: long getValidUntilMillis() */
   @Deprecated public java.lang.Long valid_until;
   /** see above */
-  @Deprecated public converTor.encoders.relayVote.Vote voting_delay;
+  @Deprecated public convertor.encoders.relayVote.Vote voting_delay;
   /** metrics-lib/RelayNetworkStatusVote:
         List<String> getRecommendedClientVersions() */
   @Deprecated public java.util.List<java.lang.String> client_versions;
@@ -43,18 +43,18 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
         SortedMap<String, Integer> getConsensusParams() */
   @Deprecated public java.util.Map<java.lang.String,java.lang.Integer> params;
   /** see above */
-  @Deprecated public converTor.encoders.relayVote.DirSource dir_source;
+  @Deprecated public convertor.encoders.relayVote.DirSource dir_source;
   /** metrics-lib/RelayNetworkStatusVote: String getContactLine() */
   @Deprecated public java.lang.String contact;
   /** metrics-lib/RelayNetworkStatusVote: String getLegacyDirKey() */
   @Deprecated public java.lang.String legacy_dir_key;
   /** see above */
-  @Deprecated public converTor.encoders.relayVote.DirKey directory_key;
+  @Deprecated public convertor.encoders.relayVote.DirKey directory_key;
   /** metrics-lib/RelayNetworkStatusVote:
         SortedMap<String, NetworkStatusEntry> getStatusEntries() */
-  @Deprecated public java.util.Map<java.lang.String,converTor.encoders.relayVote.Status> status;
+  @Deprecated public java.util.Map<java.lang.String, convertor.encoders.relayVote.Status> status;
   /** see above */
-  @Deprecated public converTor.encoders.relayVote.DirFooter directory_footer;
+  @Deprecated public convertor.encoders.relayVote.DirFooter directory_footer;
   /** metrics-lib/RelayNetworkStatusVote: String getSigningKeyDigest() */
   @Deprecated public java.lang.String signing_key_digest;
 
@@ -94,7 +94,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * @param directory_footer see above
    * @param signing_key_digest metrics-lib/RelayNetworkStatusVote: String getSigningKeyDigest()
    */
-  public RelayVote(java.lang.String descriptor_type, java.lang.Integer network_status_version, java.lang.String vote_status, java.util.List<java.lang.Integer> consensus_methods, java.lang.Long published, java.lang.Long valid_after, converTor.encoders.relayVote.FlagTresholds flag_tresholds, java.lang.Long fresh_until, java.lang.Long valid_until, converTor.encoders.relayVote.Vote voting_delay, java.util.List<java.lang.String> client_versions, java.util.List<java.lang.String> server_versions, java.util.List<java.lang.String> known_flags, java.util.Map<java.lang.String,java.lang.Integer> params, converTor.encoders.relayVote.DirSource dir_source, java.lang.String contact, java.lang.String legacy_dir_key, converTor.encoders.relayVote.DirKey directory_key, java.util.Map<java.lang.String,converTor.encoders.relayVote.Status> status, converTor.encoders.relayVote.DirFooter directory_footer, java.lang.String signing_key_digest) {
+  public RelayVote(java.lang.String descriptor_type, java.lang.Integer network_status_version, java.lang.String vote_status, java.util.List<java.lang.Integer> consensus_methods, java.lang.Long published, java.lang.Long valid_after, convertor.encoders.relayVote.FlagTresholds flag_tresholds, java.lang.Long fresh_until, java.lang.Long valid_until, convertor.encoders.relayVote.Vote voting_delay, java.util.List<java.lang.String> client_versions, java.util.List<java.lang.String> server_versions, java.util.List<java.lang.String> known_flags, java.util.Map<java.lang.String,java.lang.Integer> params, convertor.encoders.relayVote.DirSource dir_source, java.lang.String contact, java.lang.String legacy_dir_key, convertor.encoders.relayVote.DirKey directory_key, java.util.Map<java.lang.String, convertor.encoders.relayVote.Status> status, convertor.encoders.relayVote.DirFooter directory_footer, java.lang.String signing_key_digest) {
     this.descriptor_type = descriptor_type;
     this.network_status_version = network_status_version;
     this.vote_status = vote_status;
@@ -156,20 +156,20 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
     case 3: consensus_methods = (java.util.List<java.lang.Integer>)value$; break;
     case 4: published = (java.lang.Long)value$; break;
     case 5: valid_after = (java.lang.Long)value$; break;
-    case 6: flag_tresholds = (converTor.encoders.relayVote.FlagTresholds)value$; break;
+    case 6: flag_tresholds = (convertor.encoders.relayVote.FlagTresholds)value$; break;
     case 7: fresh_until = (java.lang.Long)value$; break;
     case 8: valid_until = (java.lang.Long)value$; break;
-    case 9: voting_delay = (converTor.encoders.relayVote.Vote)value$; break;
+    case 9: voting_delay = (convertor.encoders.relayVote.Vote)value$; break;
     case 10: client_versions = (java.util.List<java.lang.String>)value$; break;
     case 11: server_versions = (java.util.List<java.lang.String>)value$; break;
     case 12: known_flags = (java.util.List<java.lang.String>)value$; break;
     case 13: params = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
-    case 14: dir_source = (converTor.encoders.relayVote.DirSource)value$; break;
+    case 14: dir_source = (convertor.encoders.relayVote.DirSource)value$; break;
     case 15: contact = (java.lang.String)value$; break;
     case 16: legacy_dir_key = (java.lang.String)value$; break;
-    case 17: directory_key = (converTor.encoders.relayVote.DirKey)value$; break;
-    case 18: status = (java.util.Map<java.lang.String,converTor.encoders.relayVote.Status>)value$; break;
-    case 19: directory_footer = (converTor.encoders.relayVote.DirFooter)value$; break;
+    case 17: directory_key = (convertor.encoders.relayVote.DirKey)value$; break;
+    case 18: status = (java.util.Map<java.lang.String, convertor.encoders.relayVote.Status>)value$; break;
+    case 19: directory_footer = (convertor.encoders.relayVote.DirFooter)value$; break;
     case 20: signing_key_digest = (java.lang.String)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
@@ -283,7 +283,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * Gets the value of the 'flag_tresholds' field.
    * @return see above
    */
-  public converTor.encoders.relayVote.FlagTresholds getFlagTresholds() {
+  public convertor.encoders.relayVote.FlagTresholds getFlagTresholds() {
     return flag_tresholds;
   }
 
@@ -292,7 +292,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * see above
    * @param value the value to set.
    */
-  public void setFlagTresholds(converTor.encoders.relayVote.FlagTresholds value) {
+  public void setFlagTresholds(convertor.encoders.relayVote.FlagTresholds value) {
     this.flag_tresholds = value;
   }
 
@@ -334,7 +334,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * Gets the value of the 'voting_delay' field.
    * @return see above
    */
-  public converTor.encoders.relayVote.Vote getVotingDelay() {
+  public convertor.encoders.relayVote.Vote getVotingDelay() {
     return voting_delay;
   }
 
@@ -343,7 +343,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * see above
    * @param value the value to set.
    */
-  public void setVotingDelay(converTor.encoders.relayVote.Vote value) {
+  public void setVotingDelay(convertor.encoders.relayVote.Vote value) {
     this.voting_delay = value;
   }
 
@@ -425,7 +425,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * Gets the value of the 'dir_source' field.
    * @return see above
    */
-  public converTor.encoders.relayVote.DirSource getDirSource() {
+  public convertor.encoders.relayVote.DirSource getDirSource() {
     return dir_source;
   }
 
@@ -434,7 +434,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * see above
    * @param value the value to set.
    */
-  public void setDirSource(converTor.encoders.relayVote.DirSource value) {
+  public void setDirSource(convertor.encoders.relayVote.DirSource value) {
     this.dir_source = value;
   }
 
@@ -476,7 +476,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * Gets the value of the 'directory_key' field.
    * @return see above
    */
-  public converTor.encoders.relayVote.DirKey getDirectoryKey() {
+  public convertor.encoders.relayVote.DirKey getDirectoryKey() {
     return directory_key;
   }
 
@@ -485,7 +485,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * see above
    * @param value the value to set.
    */
-  public void setDirectoryKey(converTor.encoders.relayVote.DirKey value) {
+  public void setDirectoryKey(convertor.encoders.relayVote.DirKey value) {
     this.directory_key = value;
   }
 
@@ -494,7 +494,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * @return metrics-lib/RelayNetworkStatusVote:
         SortedMap<String, NetworkStatusEntry> getStatusEntries()
    */
-  public java.util.Map<java.lang.String,converTor.encoders.relayVote.Status> getStatus() {
+  public java.util.Map<java.lang.String, convertor.encoders.relayVote.Status> getStatus() {
     return status;
   }
 
@@ -504,7 +504,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
         SortedMap<String, NetworkStatusEntry> getStatusEntries()
    * @param value the value to set.
    */
-  public void setStatus(java.util.Map<java.lang.String,converTor.encoders.relayVote.Status> value) {
+  public void setStatus(java.util.Map<java.lang.String, convertor.encoders.relayVote.Status> value) {
     this.status = value;
   }
 
@@ -512,7 +512,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * Gets the value of the 'directory_footer' field.
    * @return see above
    */
-  public converTor.encoders.relayVote.DirFooter getDirectoryFooter() {
+  public convertor.encoders.relayVote.DirFooter getDirectoryFooter() {
     return directory_footer;
   }
 
@@ -521,7 +521,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * see above
    * @param value the value to set.
    */
-  public void setDirectoryFooter(converTor.encoders.relayVote.DirFooter value) {
+  public void setDirectoryFooter(convertor.encoders.relayVote.DirFooter value) {
     this.directory_footer = value;
   }
 
@@ -546,8 +546,8 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * Creates a new RelayVote RecordBuilder.
    * @return A new RelayVote RecordBuilder
    */
-  public static converTor.encoders.relayVote.RelayVote.Builder newBuilder() {
-    return new converTor.encoders.relayVote.RelayVote.Builder();
+  public static convertor.encoders.relayVote.RelayVote.Builder newBuilder() {
+    return new convertor.encoders.relayVote.RelayVote.Builder();
   }
   
   /**
@@ -555,8 +555,8 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * @param other The existing builder to copy.
    * @return A new RelayVote RecordBuilder
    */
-  public static converTor.encoders.relayVote.RelayVote.Builder newBuilder(converTor.encoders.relayVote.RelayVote.Builder other) {
-    return new converTor.encoders.relayVote.RelayVote.Builder(other);
+  public static convertor.encoders.relayVote.RelayVote.Builder newBuilder(convertor.encoders.relayVote.RelayVote.Builder other) {
+    return new convertor.encoders.relayVote.RelayVote.Builder(other);
   }
   
   /**
@@ -564,8 +564,8 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * @param other The existing instance to copy.
    * @return A new RelayVote RecordBuilder
    */
-  public static converTor.encoders.relayVote.RelayVote.Builder newBuilder(converTor.encoders.relayVote.RelayVote other) {
-    return new converTor.encoders.relayVote.RelayVote.Builder(other);
+  public static convertor.encoders.relayVote.RelayVote.Builder newBuilder(convertor.encoders.relayVote.RelayVote other) {
+    return new convertor.encoders.relayVote.RelayVote.Builder(other);
   }
   
   /**
@@ -588,15 +588,15 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
     /** metrics-lib/RelayNetworkStatusVote: long getValidAfterMillis() */
     private java.lang.Long valid_after;
     /** see above */
-    private converTor.encoders.relayVote.FlagTresholds flag_tresholds;
-    private converTor.encoders.relayVote.FlagTresholds.Builder flag_tresholdsBuilder;
+    private convertor.encoders.relayVote.FlagTresholds flag_tresholds;
+    private convertor.encoders.relayVote.FlagTresholds.Builder flag_tresholdsBuilder;
     /** metrics-lib/RelayNetworkStatusVote: long getFreshUntilMillis() */
     private java.lang.Long fresh_until;
     /** metrics-lib/RelayNetworkStatusVote: long getValidUntilMillis() */
     private java.lang.Long valid_until;
     /** see above */
-    private converTor.encoders.relayVote.Vote voting_delay;
-    private converTor.encoders.relayVote.Vote.Builder voting_delayBuilder;
+    private convertor.encoders.relayVote.Vote voting_delay;
+    private convertor.encoders.relayVote.Vote.Builder voting_delayBuilder;
     /** metrics-lib/RelayNetworkStatusVote:
         List<String> getRecommendedClientVersions() */
     private java.util.List<java.lang.String> client_versions;
@@ -609,34 +609,34 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
         SortedMap<String, Integer> getConsensusParams() */
     private java.util.Map<java.lang.String,java.lang.Integer> params;
     /** see above */
-    private converTor.encoders.relayVote.DirSource dir_source;
-    private converTor.encoders.relayVote.DirSource.Builder dir_sourceBuilder;
+    private convertor.encoders.relayVote.DirSource dir_source;
+    private convertor.encoders.relayVote.DirSource.Builder dir_sourceBuilder;
     /** metrics-lib/RelayNetworkStatusVote: String getContactLine() */
     private java.lang.String contact;
     /** metrics-lib/RelayNetworkStatusVote: String getLegacyDirKey() */
     private java.lang.String legacy_dir_key;
     /** see above */
-    private converTor.encoders.relayVote.DirKey directory_key;
-    private converTor.encoders.relayVote.DirKey.Builder directory_keyBuilder;
+    private convertor.encoders.relayVote.DirKey directory_key;
+    private convertor.encoders.relayVote.DirKey.Builder directory_keyBuilder;
     /** metrics-lib/RelayNetworkStatusVote:
         SortedMap<String, NetworkStatusEntry> getStatusEntries() */
-    private java.util.Map<java.lang.String,converTor.encoders.relayVote.Status> status;
+    private java.util.Map<java.lang.String, convertor.encoders.relayVote.Status> status;
     /** see above */
-    private converTor.encoders.relayVote.DirFooter directory_footer;
-    private converTor.encoders.relayVote.DirFooter.Builder directory_footerBuilder;
+    private convertor.encoders.relayVote.DirFooter directory_footer;
+    private convertor.encoders.relayVote.DirFooter.Builder directory_footerBuilder;
     /** metrics-lib/RelayNetworkStatusVote: String getSigningKeyDigest() */
     private java.lang.String signing_key_digest;
 
     /** Creates a new Builder */
     private Builder() {
-      super(converTor.encoders.relayVote.RelayVote.SCHEMA$);
+      super(convertor.encoders.relayVote.RelayVote.SCHEMA$);
     }
     
     /**
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(converTor.encoders.relayVote.RelayVote.Builder other) {
+    private Builder(convertor.encoders.relayVote.RelayVote.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.descriptor_type)) {
         this.descriptor_type = data().deepCopy(fields()[0].schema(), other.descriptor_type);
@@ -667,7 +667,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
         fieldSetFlags()[6] = true;
       }
       if (other.hasFlagTresholdsBuilder()) {
-        this.flag_tresholdsBuilder = converTor.encoders.relayVote.FlagTresholds.newBuilder(other.getFlagTresholdsBuilder());
+        this.flag_tresholdsBuilder = convertor.encoders.relayVote.FlagTresholds.newBuilder(other.getFlagTresholdsBuilder());
       }
       if (isValidValue(fields()[7], other.fresh_until)) {
         this.fresh_until = data().deepCopy(fields()[7].schema(), other.fresh_until);
@@ -682,7 +682,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
         fieldSetFlags()[9] = true;
       }
       if (other.hasVotingDelayBuilder()) {
-        this.voting_delayBuilder = converTor.encoders.relayVote.Vote.newBuilder(other.getVotingDelayBuilder());
+        this.voting_delayBuilder = convertor.encoders.relayVote.Vote.newBuilder(other.getVotingDelayBuilder());
       }
       if (isValidValue(fields()[10], other.client_versions)) {
         this.client_versions = data().deepCopy(fields()[10].schema(), other.client_versions);
@@ -705,7 +705,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
         fieldSetFlags()[14] = true;
       }
       if (other.hasDirSourceBuilder()) {
-        this.dir_sourceBuilder = converTor.encoders.relayVote.DirSource.newBuilder(other.getDirSourceBuilder());
+        this.dir_sourceBuilder = convertor.encoders.relayVote.DirSource.newBuilder(other.getDirSourceBuilder());
       }
       if (isValidValue(fields()[15], other.contact)) {
         this.contact = data().deepCopy(fields()[15].schema(), other.contact);
@@ -720,7 +720,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
         fieldSetFlags()[17] = true;
       }
       if (other.hasDirectoryKeyBuilder()) {
-        this.directory_keyBuilder = converTor.encoders.relayVote.DirKey.newBuilder(other.getDirectoryKeyBuilder());
+        this.directory_keyBuilder = convertor.encoders.relayVote.DirKey.newBuilder(other.getDirectoryKeyBuilder());
       }
       if (isValidValue(fields()[18], other.status)) {
         this.status = data().deepCopy(fields()[18].schema(), other.status);
@@ -731,7 +731,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
         fieldSetFlags()[19] = true;
       }
       if (other.hasDirectoryFooterBuilder()) {
-        this.directory_footerBuilder = converTor.encoders.relayVote.DirFooter.newBuilder(other.getDirectoryFooterBuilder());
+        this.directory_footerBuilder = convertor.encoders.relayVote.DirFooter.newBuilder(other.getDirectoryFooterBuilder());
       }
       if (isValidValue(fields()[20], other.signing_key_digest)) {
         this.signing_key_digest = data().deepCopy(fields()[20].schema(), other.signing_key_digest);
@@ -743,8 +743,8 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
      * Creates a Builder by copying an existing RelayVote instance
      * @param other The existing instance to copy.
      */
-    private Builder(converTor.encoders.relayVote.RelayVote other) {
-            super(converTor.encoders.relayVote.RelayVote.SCHEMA$);
+    private Builder(convertor.encoders.relayVote.RelayVote other) {
+            super(convertor.encoders.relayVote.RelayVote.SCHEMA$);
       if (isValidValue(fields()[0], other.descriptor_type)) {
         this.descriptor_type = data().deepCopy(fields()[0].schema(), other.descriptor_type);
         fieldSetFlags()[0] = true;
@@ -851,7 +851,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'descriptor_type'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder setDescriptorType(java.lang.String value) {
+    public convertor.encoders.relayVote.RelayVote.Builder setDescriptorType(java.lang.String value) {
       validate(fields()[0], value);
       this.descriptor_type = value;
       fieldSetFlags()[0] = true;
@@ -873,7 +873,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/RelayNetworkStatusVote:
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder clearDescriptorType() {
+    public convertor.encoders.relayVote.RelayVote.Builder clearDescriptorType() {
       descriptor_type = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -894,7 +894,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'network_status_version'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder setNetworkStatusVersion(int value) {
+    public convertor.encoders.relayVote.RelayVote.Builder setNetworkStatusVersion(int value) {
       validate(fields()[1], value);
       this.network_status_version = value;
       fieldSetFlags()[1] = true;
@@ -916,7 +916,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/RelayNetworkStatusVote: int getNetworkStatusVersion()
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder clearNetworkStatusVersion() {
+    public convertor.encoders.relayVote.RelayVote.Builder clearNetworkStatusVersion() {
       fieldSetFlags()[1] = false;
       return this;
     }
@@ -936,7 +936,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'vote_status'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder setVoteStatus(java.lang.String value) {
+    public convertor.encoders.relayVote.RelayVote.Builder setVoteStatus(java.lang.String value) {
       validate(fields()[2], value);
       this.vote_status = value;
       fieldSetFlags()[2] = true;
@@ -958,7 +958,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * "vote" per definition, no getter
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder clearVoteStatus() {
+    public convertor.encoders.relayVote.RelayVote.Builder clearVoteStatus() {
       vote_status = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -981,7 +981,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'consensus_methods'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder setConsensusMethods(java.util.List<java.lang.Integer> value) {
+    public convertor.encoders.relayVote.RelayVote.Builder setConsensusMethods(java.util.List<java.lang.Integer> value) {
       validate(fields()[3], value);
       this.consensus_methods = value;
       fieldSetFlags()[3] = true;
@@ -1005,7 +1005,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
         List<Integer> getConsensusMethods()
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder clearConsensusMethods() {
+    public convertor.encoders.relayVote.RelayVote.Builder clearConsensusMethods() {
       consensus_methods = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -1026,7 +1026,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'published'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder setPublished(java.lang.Long value) {
+    public convertor.encoders.relayVote.RelayVote.Builder setPublished(java.lang.Long value) {
       validate(fields()[4], value);
       this.published = value;
       fieldSetFlags()[4] = true;
@@ -1048,7 +1048,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/RelayNetworkStatusVote: long getPublishedMillis()
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder clearPublished() {
+    public convertor.encoders.relayVote.RelayVote.Builder clearPublished() {
       published = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -1069,7 +1069,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'valid_after'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder setValidAfter(java.lang.Long value) {
+    public convertor.encoders.relayVote.RelayVote.Builder setValidAfter(java.lang.Long value) {
       validate(fields()[5], value);
       this.valid_after = value;
       fieldSetFlags()[5] = true;
@@ -1091,7 +1091,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/RelayNetworkStatusVote: long getValidAfterMillis()
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder clearValidAfter() {
+    public convertor.encoders.relayVote.RelayVote.Builder clearValidAfter() {
       valid_after = null;
       fieldSetFlags()[5] = false;
       return this;
@@ -1102,7 +1102,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * see above
       * @return The value.
       */
-    public converTor.encoders.relayVote.FlagTresholds getFlagTresholds() {
+    public convertor.encoders.relayVote.FlagTresholds getFlagTresholds() {
       return flag_tresholds;
     }
 
@@ -1112,7 +1112,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'flag_tresholds'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder setFlagTresholds(converTor.encoders.relayVote.FlagTresholds value) {
+    public convertor.encoders.relayVote.RelayVote.Builder setFlagTresholds(convertor.encoders.relayVote.FlagTresholds value) {
       validate(fields()[6], value);
       this.flag_tresholdsBuilder = null;
       this.flag_tresholds = value;
@@ -1134,12 +1134,12 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
      * see above
      * @return This builder.
      */
-    public converTor.encoders.relayVote.FlagTresholds.Builder getFlagTresholdsBuilder() {
+    public convertor.encoders.relayVote.FlagTresholds.Builder getFlagTresholdsBuilder() {
       if (flag_tresholdsBuilder == null) {
         if (hasFlagTresholds()) {
-          setFlagTresholdsBuilder(converTor.encoders.relayVote.FlagTresholds.newBuilder(flag_tresholds));
+          setFlagTresholdsBuilder(convertor.encoders.relayVote.FlagTresholds.newBuilder(flag_tresholds));
         } else {
-          setFlagTresholdsBuilder(converTor.encoders.relayVote.FlagTresholds.newBuilder());
+          setFlagTresholdsBuilder(convertor.encoders.relayVote.FlagTresholds.newBuilder());
         }
       }
       return flag_tresholdsBuilder;
@@ -1150,7 +1150,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
      * see above
      * @return This builder.
      */
-    public converTor.encoders.relayVote.RelayVote.Builder setFlagTresholdsBuilder(converTor.encoders.relayVote.FlagTresholds.Builder value) {
+    public convertor.encoders.relayVote.RelayVote.Builder setFlagTresholdsBuilder(convertor.encoders.relayVote.FlagTresholds.Builder value) {
       clearFlagTresholds();
       flag_tresholdsBuilder = value;
       return this;
@@ -1170,7 +1170,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * see above
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder clearFlagTresholds() {
+    public convertor.encoders.relayVote.RelayVote.Builder clearFlagTresholds() {
       flag_tresholds = null;
       flag_tresholdsBuilder = null;
       fieldSetFlags()[6] = false;
@@ -1192,7 +1192,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'fresh_until'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder setFreshUntil(java.lang.Long value) {
+    public convertor.encoders.relayVote.RelayVote.Builder setFreshUntil(java.lang.Long value) {
       validate(fields()[7], value);
       this.fresh_until = value;
       fieldSetFlags()[7] = true;
@@ -1214,7 +1214,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/RelayNetworkStatusVote: long getFreshUntilMillis()
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder clearFreshUntil() {
+    public convertor.encoders.relayVote.RelayVote.Builder clearFreshUntil() {
       fresh_until = null;
       fieldSetFlags()[7] = false;
       return this;
@@ -1235,7 +1235,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'valid_until'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder setValidUntil(java.lang.Long value) {
+    public convertor.encoders.relayVote.RelayVote.Builder setValidUntil(java.lang.Long value) {
       validate(fields()[8], value);
       this.valid_until = value;
       fieldSetFlags()[8] = true;
@@ -1257,7 +1257,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/RelayNetworkStatusVote: long getValidUntilMillis()
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder clearValidUntil() {
+    public convertor.encoders.relayVote.RelayVote.Builder clearValidUntil() {
       valid_until = null;
       fieldSetFlags()[8] = false;
       return this;
@@ -1268,7 +1268,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * see above
       * @return The value.
       */
-    public converTor.encoders.relayVote.Vote getVotingDelay() {
+    public convertor.encoders.relayVote.Vote getVotingDelay() {
       return voting_delay;
     }
 
@@ -1278,7 +1278,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'voting_delay'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder setVotingDelay(converTor.encoders.relayVote.Vote value) {
+    public convertor.encoders.relayVote.RelayVote.Builder setVotingDelay(convertor.encoders.relayVote.Vote value) {
       validate(fields()[9], value);
       this.voting_delayBuilder = null;
       this.voting_delay = value;
@@ -1300,12 +1300,12 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
      * see above
      * @return This builder.
      */
-    public converTor.encoders.relayVote.Vote.Builder getVotingDelayBuilder() {
+    public convertor.encoders.relayVote.Vote.Builder getVotingDelayBuilder() {
       if (voting_delayBuilder == null) {
         if (hasVotingDelay()) {
-          setVotingDelayBuilder(converTor.encoders.relayVote.Vote.newBuilder(voting_delay));
+          setVotingDelayBuilder(convertor.encoders.relayVote.Vote.newBuilder(voting_delay));
         } else {
-          setVotingDelayBuilder(converTor.encoders.relayVote.Vote.newBuilder());
+          setVotingDelayBuilder(convertor.encoders.relayVote.Vote.newBuilder());
         }
       }
       return voting_delayBuilder;
@@ -1316,7 +1316,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
      * see above
      * @return This builder.
      */
-    public converTor.encoders.relayVote.RelayVote.Builder setVotingDelayBuilder(converTor.encoders.relayVote.Vote.Builder value) {
+    public convertor.encoders.relayVote.RelayVote.Builder setVotingDelayBuilder(convertor.encoders.relayVote.Vote.Builder value) {
       clearVotingDelay();
       voting_delayBuilder = value;
       return this;
@@ -1336,7 +1336,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * see above
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder clearVotingDelay() {
+    public convertor.encoders.relayVote.RelayVote.Builder clearVotingDelay() {
       voting_delay = null;
       voting_delayBuilder = null;
       fieldSetFlags()[9] = false;
@@ -1360,7 +1360,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'client_versions'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder setClientVersions(java.util.List<java.lang.String> value) {
+    public convertor.encoders.relayVote.RelayVote.Builder setClientVersions(java.util.List<java.lang.String> value) {
       validate(fields()[10], value);
       this.client_versions = value;
       fieldSetFlags()[10] = true;
@@ -1384,7 +1384,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
         List<String> getRecommendedClientVersions()
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder clearClientVersions() {
+    public convertor.encoders.relayVote.RelayVote.Builder clearClientVersions() {
       client_versions = null;
       fieldSetFlags()[10] = false;
       return this;
@@ -1407,7 +1407,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'server_versions'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder setServerVersions(java.util.List<java.lang.String> value) {
+    public convertor.encoders.relayVote.RelayVote.Builder setServerVersions(java.util.List<java.lang.String> value) {
       validate(fields()[11], value);
       this.server_versions = value;
       fieldSetFlags()[11] = true;
@@ -1431,7 +1431,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
         List<String> getRecommendedServerVersions()
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder clearServerVersions() {
+    public convertor.encoders.relayVote.RelayVote.Builder clearServerVersions() {
       server_versions = null;
       fieldSetFlags()[11] = false;
       return this;
@@ -1452,7 +1452,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'known_flags'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder setKnownFlags(java.util.List<java.lang.String> value) {
+    public convertor.encoders.relayVote.RelayVote.Builder setKnownFlags(java.util.List<java.lang.String> value) {
       validate(fields()[12], value);
       this.known_flags = value;
       fieldSetFlags()[12] = true;
@@ -1474,7 +1474,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/RelayNetworkStatusVote: SortedSet<String> getKnownFlags()
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder clearKnownFlags() {
+    public convertor.encoders.relayVote.RelayVote.Builder clearKnownFlags() {
       known_flags = null;
       fieldSetFlags()[12] = false;
       return this;
@@ -1497,7 +1497,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'params'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder setParams(java.util.Map<java.lang.String,java.lang.Integer> value) {
+    public convertor.encoders.relayVote.RelayVote.Builder setParams(java.util.Map<java.lang.String,java.lang.Integer> value) {
       validate(fields()[13], value);
       this.params = value;
       fieldSetFlags()[13] = true;
@@ -1521,7 +1521,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
         SortedMap<String, Integer> getConsensusParams()
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder clearParams() {
+    public convertor.encoders.relayVote.RelayVote.Builder clearParams() {
       params = null;
       fieldSetFlags()[13] = false;
       return this;
@@ -1532,7 +1532,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * see above
       * @return The value.
       */
-    public converTor.encoders.relayVote.DirSource getDirSource() {
+    public convertor.encoders.relayVote.DirSource getDirSource() {
       return dir_source;
     }
 
@@ -1542,7 +1542,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'dir_source'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder setDirSource(converTor.encoders.relayVote.DirSource value) {
+    public convertor.encoders.relayVote.RelayVote.Builder setDirSource(convertor.encoders.relayVote.DirSource value) {
       validate(fields()[14], value);
       this.dir_sourceBuilder = null;
       this.dir_source = value;
@@ -1564,12 +1564,12 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
      * see above
      * @return This builder.
      */
-    public converTor.encoders.relayVote.DirSource.Builder getDirSourceBuilder() {
+    public convertor.encoders.relayVote.DirSource.Builder getDirSourceBuilder() {
       if (dir_sourceBuilder == null) {
         if (hasDirSource()) {
-          setDirSourceBuilder(converTor.encoders.relayVote.DirSource.newBuilder(dir_source));
+          setDirSourceBuilder(convertor.encoders.relayVote.DirSource.newBuilder(dir_source));
         } else {
-          setDirSourceBuilder(converTor.encoders.relayVote.DirSource.newBuilder());
+          setDirSourceBuilder(convertor.encoders.relayVote.DirSource.newBuilder());
         }
       }
       return dir_sourceBuilder;
@@ -1580,7 +1580,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
      * see above
      * @return This builder.
      */
-    public converTor.encoders.relayVote.RelayVote.Builder setDirSourceBuilder(converTor.encoders.relayVote.DirSource.Builder value) {
+    public convertor.encoders.relayVote.RelayVote.Builder setDirSourceBuilder(convertor.encoders.relayVote.DirSource.Builder value) {
       clearDirSource();
       dir_sourceBuilder = value;
       return this;
@@ -1600,7 +1600,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * see above
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder clearDirSource() {
+    public convertor.encoders.relayVote.RelayVote.Builder clearDirSource() {
       dir_source = null;
       dir_sourceBuilder = null;
       fieldSetFlags()[14] = false;
@@ -1622,7 +1622,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'contact'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder setContact(java.lang.String value) {
+    public convertor.encoders.relayVote.RelayVote.Builder setContact(java.lang.String value) {
       validate(fields()[15], value);
       this.contact = value;
       fieldSetFlags()[15] = true;
@@ -1644,7 +1644,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/RelayNetworkStatusVote: String getContactLine()
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder clearContact() {
+    public convertor.encoders.relayVote.RelayVote.Builder clearContact() {
       contact = null;
       fieldSetFlags()[15] = false;
       return this;
@@ -1665,7 +1665,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'legacy_dir_key'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder setLegacyDirKey(java.lang.String value) {
+    public convertor.encoders.relayVote.RelayVote.Builder setLegacyDirKey(java.lang.String value) {
       validate(fields()[16], value);
       this.legacy_dir_key = value;
       fieldSetFlags()[16] = true;
@@ -1687,7 +1687,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/RelayNetworkStatusVote: String getLegacyDirKey()
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder clearLegacyDirKey() {
+    public convertor.encoders.relayVote.RelayVote.Builder clearLegacyDirKey() {
       legacy_dir_key = null;
       fieldSetFlags()[16] = false;
       return this;
@@ -1698,7 +1698,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * see above
       * @return The value.
       */
-    public converTor.encoders.relayVote.DirKey getDirectoryKey() {
+    public convertor.encoders.relayVote.DirKey getDirectoryKey() {
       return directory_key;
     }
 
@@ -1708,7 +1708,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'directory_key'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder setDirectoryKey(converTor.encoders.relayVote.DirKey value) {
+    public convertor.encoders.relayVote.RelayVote.Builder setDirectoryKey(convertor.encoders.relayVote.DirKey value) {
       validate(fields()[17], value);
       this.directory_keyBuilder = null;
       this.directory_key = value;
@@ -1730,12 +1730,12 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
      * see above
      * @return This builder.
      */
-    public converTor.encoders.relayVote.DirKey.Builder getDirectoryKeyBuilder() {
+    public convertor.encoders.relayVote.DirKey.Builder getDirectoryKeyBuilder() {
       if (directory_keyBuilder == null) {
         if (hasDirectoryKey()) {
-          setDirectoryKeyBuilder(converTor.encoders.relayVote.DirKey.newBuilder(directory_key));
+          setDirectoryKeyBuilder(convertor.encoders.relayVote.DirKey.newBuilder(directory_key));
         } else {
-          setDirectoryKeyBuilder(converTor.encoders.relayVote.DirKey.newBuilder());
+          setDirectoryKeyBuilder(convertor.encoders.relayVote.DirKey.newBuilder());
         }
       }
       return directory_keyBuilder;
@@ -1746,7 +1746,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
      * see above
      * @return This builder.
      */
-    public converTor.encoders.relayVote.RelayVote.Builder setDirectoryKeyBuilder(converTor.encoders.relayVote.DirKey.Builder value) {
+    public convertor.encoders.relayVote.RelayVote.Builder setDirectoryKeyBuilder(convertor.encoders.relayVote.DirKey.Builder value) {
       clearDirectoryKey();
       directory_keyBuilder = value;
       return this;
@@ -1766,7 +1766,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * see above
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder clearDirectoryKey() {
+    public convertor.encoders.relayVote.RelayVote.Builder clearDirectoryKey() {
       directory_key = null;
       directory_keyBuilder = null;
       fieldSetFlags()[17] = false;
@@ -1779,7 +1779,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
         SortedMap<String, NetworkStatusEntry> getStatusEntries()
       * @return The value.
       */
-    public java.util.Map<java.lang.String,converTor.encoders.relayVote.Status> getStatus() {
+    public java.util.Map<java.lang.String, convertor.encoders.relayVote.Status> getStatus() {
       return status;
     }
 
@@ -1790,7 +1790,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'status'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder setStatus(java.util.Map<java.lang.String,converTor.encoders.relayVote.Status> value) {
+    public convertor.encoders.relayVote.RelayVote.Builder setStatus(java.util.Map<java.lang.String, convertor.encoders.relayVote.Status> value) {
       validate(fields()[18], value);
       this.status = value;
       fieldSetFlags()[18] = true;
@@ -1814,7 +1814,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
         SortedMap<String, NetworkStatusEntry> getStatusEntries()
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder clearStatus() {
+    public convertor.encoders.relayVote.RelayVote.Builder clearStatus() {
       status = null;
       fieldSetFlags()[18] = false;
       return this;
@@ -1825,7 +1825,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * see above
       * @return The value.
       */
-    public converTor.encoders.relayVote.DirFooter getDirectoryFooter() {
+    public convertor.encoders.relayVote.DirFooter getDirectoryFooter() {
       return directory_footer;
     }
 
@@ -1835,7 +1835,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'directory_footer'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder setDirectoryFooter(converTor.encoders.relayVote.DirFooter value) {
+    public convertor.encoders.relayVote.RelayVote.Builder setDirectoryFooter(convertor.encoders.relayVote.DirFooter value) {
       validate(fields()[19], value);
       this.directory_footerBuilder = null;
       this.directory_footer = value;
@@ -1857,12 +1857,12 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
      * see above
      * @return This builder.
      */
-    public converTor.encoders.relayVote.DirFooter.Builder getDirectoryFooterBuilder() {
+    public convertor.encoders.relayVote.DirFooter.Builder getDirectoryFooterBuilder() {
       if (directory_footerBuilder == null) {
         if (hasDirectoryFooter()) {
-          setDirectoryFooterBuilder(converTor.encoders.relayVote.DirFooter.newBuilder(directory_footer));
+          setDirectoryFooterBuilder(convertor.encoders.relayVote.DirFooter.newBuilder(directory_footer));
         } else {
-          setDirectoryFooterBuilder(converTor.encoders.relayVote.DirFooter.newBuilder());
+          setDirectoryFooterBuilder(convertor.encoders.relayVote.DirFooter.newBuilder());
         }
       }
       return directory_footerBuilder;
@@ -1873,7 +1873,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
      * see above
      * @return This builder.
      */
-    public converTor.encoders.relayVote.RelayVote.Builder setDirectoryFooterBuilder(converTor.encoders.relayVote.DirFooter.Builder value) {
+    public convertor.encoders.relayVote.RelayVote.Builder setDirectoryFooterBuilder(convertor.encoders.relayVote.DirFooter.Builder value) {
       clearDirectoryFooter();
       directory_footerBuilder = value;
       return this;
@@ -1893,7 +1893,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * see above
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder clearDirectoryFooter() {
+    public convertor.encoders.relayVote.RelayVote.Builder clearDirectoryFooter() {
       directory_footer = null;
       directory_footerBuilder = null;
       fieldSetFlags()[19] = false;
@@ -1915,7 +1915,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'signing_key_digest'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder setSigningKeyDigest(java.lang.String value) {
+    public convertor.encoders.relayVote.RelayVote.Builder setSigningKeyDigest(java.lang.String value) {
       validate(fields()[20], value);
       this.signing_key_digest = value;
       fieldSetFlags()[20] = true;
@@ -1937,7 +1937,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/RelayNetworkStatusVote: String getSigningKeyDigest()
       * @return This builder.
       */
-    public converTor.encoders.relayVote.RelayVote.Builder clearSigningKeyDigest() {
+    public convertor.encoders.relayVote.RelayVote.Builder clearSigningKeyDigest() {
       signing_key_digest = null;
       fieldSetFlags()[20] = false;
       return this;
@@ -1956,14 +1956,14 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
         if (flag_tresholdsBuilder != null) {
           record.flag_tresholds = this.flag_tresholdsBuilder.build();
         } else {
-          record.flag_tresholds = fieldSetFlags()[6] ? this.flag_tresholds : (converTor.encoders.relayVote.FlagTresholds) defaultValue(fields()[6]);
+          record.flag_tresholds = fieldSetFlags()[6] ? this.flag_tresholds : (convertor.encoders.relayVote.FlagTresholds) defaultValue(fields()[6]);
         }
         record.fresh_until = fieldSetFlags()[7] ? this.fresh_until : (java.lang.Long) defaultValue(fields()[7]);
         record.valid_until = fieldSetFlags()[8] ? this.valid_until : (java.lang.Long) defaultValue(fields()[8]);
         if (voting_delayBuilder != null) {
           record.voting_delay = this.voting_delayBuilder.build();
         } else {
-          record.voting_delay = fieldSetFlags()[9] ? this.voting_delay : (converTor.encoders.relayVote.Vote) defaultValue(fields()[9]);
+          record.voting_delay = fieldSetFlags()[9] ? this.voting_delay : (convertor.encoders.relayVote.Vote) defaultValue(fields()[9]);
         }
         record.client_versions = fieldSetFlags()[10] ? this.client_versions : (java.util.List<java.lang.String>) defaultValue(fields()[10]);
         record.server_versions = fieldSetFlags()[11] ? this.server_versions : (java.util.List<java.lang.String>) defaultValue(fields()[11]);
@@ -1972,20 +1972,20 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
         if (dir_sourceBuilder != null) {
           record.dir_source = this.dir_sourceBuilder.build();
         } else {
-          record.dir_source = fieldSetFlags()[14] ? this.dir_source : (converTor.encoders.relayVote.DirSource) defaultValue(fields()[14]);
+          record.dir_source = fieldSetFlags()[14] ? this.dir_source : (convertor.encoders.relayVote.DirSource) defaultValue(fields()[14]);
         }
         record.contact = fieldSetFlags()[15] ? this.contact : (java.lang.String) defaultValue(fields()[15]);
         record.legacy_dir_key = fieldSetFlags()[16] ? this.legacy_dir_key : (java.lang.String) defaultValue(fields()[16]);
         if (directory_keyBuilder != null) {
           record.directory_key = this.directory_keyBuilder.build();
         } else {
-          record.directory_key = fieldSetFlags()[17] ? this.directory_key : (converTor.encoders.relayVote.DirKey) defaultValue(fields()[17]);
+          record.directory_key = fieldSetFlags()[17] ? this.directory_key : (convertor.encoders.relayVote.DirKey) defaultValue(fields()[17]);
         }
-        record.status = fieldSetFlags()[18] ? this.status : (java.util.Map<java.lang.String,converTor.encoders.relayVote.Status>) defaultValue(fields()[18]);
+        record.status = fieldSetFlags()[18] ? this.status : (java.util.Map<java.lang.String, convertor.encoders.relayVote.Status>) defaultValue(fields()[18]);
         if (directory_footerBuilder != null) {
           record.directory_footer = this.directory_footerBuilder.build();
         } else {
-          record.directory_footer = fieldSetFlags()[19] ? this.directory_footer : (converTor.encoders.relayVote.DirFooter) defaultValue(fields()[19]);
+          record.directory_footer = fieldSetFlags()[19] ? this.directory_footer : (convertor.encoders.relayVote.DirFooter) defaultValue(fields()[19]);
         }
         record.signing_key_digest = fieldSetFlags()[20] ? this.signing_key_digest : (java.lang.String) defaultValue(fields()[20]);
         return record;

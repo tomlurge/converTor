@@ -1,4 +1,4 @@
-package converTor;
+package convertor;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -91,7 +91,7 @@ public enum Args {
     }
     if(cmd.hasOption("h")) {
       HelpFormatter formatter = new HelpFormatter();
-      formatter.printHelp( "converTor\n", options );
+      formatter.printHelp("convertor\n", options );
       System.exit(0);
     }
     if(cmd.hasOption("i") && cmd.getOptionValue("i") != null) {

@@ -3,12 +3,12 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.encoders.torperf;  
+package convertor.encoders.torperf;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Torperf extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = 685383906981689307L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Torperf\",\"namespace\":\"converTor.encoders.torperf\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"torperf 1.0\"},{\"name\":\"source\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/TorperfResult: String getSource()\"},{\"name\":\"filesize\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getFileSize()\"},{\"name\":\"start\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getStartMillis()\"},{\"name\":\"socket\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getSocketMillis()\"},{\"name\":\"connect\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getConnectMillis()\"},{\"name\":\"negotiate\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getNegotiateMillis()\"},{\"name\":\"request\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getRequestMillis()\"},{\"name\":\"response\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getResponseMillis()\"},{\"name\":\"datarequest\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getDataRequestMillis()\"},{\"name\":\"dataresponse\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getDataResponseMillis()\"},{\"name\":\"datacomplete\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getDataCompleteMillis()\"},{\"name\":\"writebytes\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getWriteBytes()\"},{\"name\":\"readbytes\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getReadBytes()\"},{\"name\":\"didtimeout\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/TorperfResult: Boolean didTimeout()\"},{\"name\":\"dataperc10\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(10)\"},{\"name\":\"dataperc20\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(20)\"},{\"name\":\"dataperc30\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(30)\"},{\"name\":\"dataperc40\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(40)\"},{\"name\":\"dataperc50\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(50)\"},{\"name\":\"dataperc60\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(60)\"},{\"name\":\"dataperc70\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(70)\"},{\"name\":\"dataperc80\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(80)\"},{\"name\":\"dataperc90\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(90)\"},{\"name\":\"launch\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getLaunchMillis()()\"},{\"name\":\"used_at\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getUsedAtMillis()\"},{\"name\":\"path\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/TorperfResult: List<String> getPath()\"},{\"name\":\"buildtimes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/TorperfResult: List<Long> getBuildTimes()\"},{\"name\":\"timeout\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getTimeout()\"},{\"name\":\"quantile\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/TorperfResult: double getQuantile()\"},{\"name\":\"circ_id\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getCircId()\"},{\"name\":\"used_by\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getUsedBy()\"}],\"aliases\":[\"torperfResult\"]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Torperf\",\"namespace\":\"convertor.encoders.torperf\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"torperf 1.0\"},{\"name\":\"source\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/TorperfResult: String getSource()\"},{\"name\":\"filesize\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getFileSize()\"},{\"name\":\"start\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getStartMillis()\"},{\"name\":\"socket\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getSocketMillis()\"},{\"name\":\"connect\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getConnectMillis()\"},{\"name\":\"negotiate\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getNegotiateMillis()\"},{\"name\":\"request\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getRequestMillis()\"},{\"name\":\"response\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getResponseMillis()\"},{\"name\":\"datarequest\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getDataRequestMillis()\"},{\"name\":\"dataresponse\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getDataResponseMillis()\"},{\"name\":\"datacomplete\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getDataCompleteMillis()\"},{\"name\":\"writebytes\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getWriteBytes()\"},{\"name\":\"readbytes\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getReadBytes()\"},{\"name\":\"didtimeout\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/TorperfResult: Boolean didTimeout()\"},{\"name\":\"dataperc10\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(10)\"},{\"name\":\"dataperc20\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(20)\"},{\"name\":\"dataperc30\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(30)\"},{\"name\":\"dataperc40\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(40)\"},{\"name\":\"dataperc50\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(50)\"},{\"name\":\"dataperc60\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(60)\"},{\"name\":\"dataperc70\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(70)\"},{\"name\":\"dataperc80\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(80)\"},{\"name\":\"dataperc90\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(90)\"},{\"name\":\"launch\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getLaunchMillis()()\"},{\"name\":\"used_at\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getUsedAtMillis()\"},{\"name\":\"path\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/TorperfResult: List<String> getPath()\"},{\"name\":\"buildtimes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/TorperfResult: List<Long> getBuildTimes()\"},{\"name\":\"timeout\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getTimeout()\"},{\"name\":\"quantile\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/TorperfResult: double getQuantile()\"},{\"name\":\"circ_id\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getCircId()\"},{\"name\":\"used_by\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getUsedBy()\"}],\"aliases\":[\"torperfResult\"]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   @Deprecated public java.lang.String descriptor_type;
   /** metrics-lib/TorperfResult: String getSource() */
@@ -775,8 +775,8 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
    * Creates a new Torperf RecordBuilder.
    * @return A new Torperf RecordBuilder
    */
-  public static converTor.encoders.torperf.Torperf.Builder newBuilder() {
-    return new converTor.encoders.torperf.Torperf.Builder();
+  public static convertor.encoders.torperf.Torperf.Builder newBuilder() {
+    return new convertor.encoders.torperf.Torperf.Builder();
   }
   
   /**
@@ -784,8 +784,8 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
    * @param other The existing builder to copy.
    * @return A new Torperf RecordBuilder
    */
-  public static converTor.encoders.torperf.Torperf.Builder newBuilder(converTor.encoders.torperf.Torperf.Builder other) {
-    return new converTor.encoders.torperf.Torperf.Builder(other);
+  public static convertor.encoders.torperf.Torperf.Builder newBuilder(convertor.encoders.torperf.Torperf.Builder other) {
+    return new convertor.encoders.torperf.Torperf.Builder(other);
   }
   
   /**
@@ -793,8 +793,8 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
    * @param other The existing instance to copy.
    * @return A new Torperf RecordBuilder
    */
-  public static converTor.encoders.torperf.Torperf.Builder newBuilder(converTor.encoders.torperf.Torperf other) {
-    return new converTor.encoders.torperf.Torperf.Builder(other);
+  public static convertor.encoders.torperf.Torperf.Builder newBuilder(convertor.encoders.torperf.Torperf other) {
+    return new convertor.encoders.torperf.Torperf.Builder(other);
   }
   
   /**
@@ -869,14 +869,14 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
     /** Creates a new Builder */
     private Builder() {
-      super(converTor.encoders.torperf.Torperf.SCHEMA$);
+      super(convertor.encoders.torperf.Torperf.SCHEMA$);
     }
     
     /**
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(converTor.encoders.torperf.Torperf.Builder other) {
+    private Builder(convertor.encoders.torperf.Torperf.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.descriptor_type)) {
         this.descriptor_type = data().deepCopy(fields()[0].schema(), other.descriptor_type);
@@ -1012,8 +1012,8 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
      * Creates a Builder by copying an existing Torperf instance
      * @param other The existing instance to copy.
      */
-    private Builder(converTor.encoders.torperf.Torperf other) {
-            super(converTor.encoders.torperf.Torperf.SCHEMA$);
+    private Builder(convertor.encoders.torperf.Torperf other) {
+            super(convertor.encoders.torperf.Torperf.SCHEMA$);
       if (isValidValue(fields()[0], other.descriptor_type)) {
         this.descriptor_type = data().deepCopy(fields()[0].schema(), other.descriptor_type);
         fieldSetFlags()[0] = true;
@@ -1157,7 +1157,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'descriptor_type'.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder setDescriptorType(java.lang.String value) {
+    public convertor.encoders.torperf.Torperf.Builder setDescriptorType(java.lang.String value) {
       validate(fields()[0], value);
       this.descriptor_type = value;
       fieldSetFlags()[0] = true;
@@ -1177,7 +1177,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'descriptor_type' field.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder clearDescriptorType() {
+    public convertor.encoders.torperf.Torperf.Builder clearDescriptorType() {
       descriptor_type = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -1198,7 +1198,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'source'.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder setSource(java.lang.String value) {
+    public convertor.encoders.torperf.Torperf.Builder setSource(java.lang.String value) {
       validate(fields()[1], value);
       this.source = value;
       fieldSetFlags()[1] = true;
@@ -1220,7 +1220,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: String getSource()
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder clearSource() {
+    public convertor.encoders.torperf.Torperf.Builder clearSource() {
       source = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -1241,7 +1241,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'filesize'.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder setFilesize(java.lang.Integer value) {
+    public convertor.encoders.torperf.Torperf.Builder setFilesize(java.lang.Integer value) {
       validate(fields()[2], value);
       this.filesize = value;
       fieldSetFlags()[2] = true;
@@ -1263,7 +1263,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: int getFileSize()
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder clearFilesize() {
+    public convertor.encoders.torperf.Torperf.Builder clearFilesize() {
       filesize = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -1284,7 +1284,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'start'.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder setStart(java.lang.Long value) {
+    public convertor.encoders.torperf.Torperf.Builder setStart(java.lang.Long value) {
       validate(fields()[3], value);
       this.start = value;
       fieldSetFlags()[3] = true;
@@ -1306,7 +1306,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: long getStartMillis()
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder clearStart() {
+    public convertor.encoders.torperf.Torperf.Builder clearStart() {
       start = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -1327,7 +1327,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'socket'.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder setSocket(java.lang.Long value) {
+    public convertor.encoders.torperf.Torperf.Builder setSocket(java.lang.Long value) {
       validate(fields()[4], value);
       this.socket = value;
       fieldSetFlags()[4] = true;
@@ -1349,7 +1349,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: long getSocketMillis()
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder clearSocket() {
+    public convertor.encoders.torperf.Torperf.Builder clearSocket() {
       socket = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -1370,7 +1370,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'connect'.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder setConnect(java.lang.Long value) {
+    public convertor.encoders.torperf.Torperf.Builder setConnect(java.lang.Long value) {
       validate(fields()[5], value);
       this.connect = value;
       fieldSetFlags()[5] = true;
@@ -1392,7 +1392,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: long getConnectMillis()
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder clearConnect() {
+    public convertor.encoders.torperf.Torperf.Builder clearConnect() {
       connect = null;
       fieldSetFlags()[5] = false;
       return this;
@@ -1413,7 +1413,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'negotiate'.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder setNegotiate(java.lang.Long value) {
+    public convertor.encoders.torperf.Torperf.Builder setNegotiate(java.lang.Long value) {
       validate(fields()[6], value);
       this.negotiate = value;
       fieldSetFlags()[6] = true;
@@ -1435,7 +1435,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: long getNegotiateMillis()
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder clearNegotiate() {
+    public convertor.encoders.torperf.Torperf.Builder clearNegotiate() {
       negotiate = null;
       fieldSetFlags()[6] = false;
       return this;
@@ -1456,7 +1456,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'request'.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder setRequest(java.lang.Long value) {
+    public convertor.encoders.torperf.Torperf.Builder setRequest(java.lang.Long value) {
       validate(fields()[7], value);
       this.request = value;
       fieldSetFlags()[7] = true;
@@ -1478,7 +1478,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: long getRequestMillis()
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder clearRequest() {
+    public convertor.encoders.torperf.Torperf.Builder clearRequest() {
       request = null;
       fieldSetFlags()[7] = false;
       return this;
@@ -1499,7 +1499,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'response'.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder setResponse(java.lang.Long value) {
+    public convertor.encoders.torperf.Torperf.Builder setResponse(java.lang.Long value) {
       validate(fields()[8], value);
       this.response = value;
       fieldSetFlags()[8] = true;
@@ -1521,7 +1521,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: long getResponseMillis()
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder clearResponse() {
+    public convertor.encoders.torperf.Torperf.Builder clearResponse() {
       response = null;
       fieldSetFlags()[8] = false;
       return this;
@@ -1542,7 +1542,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'datarequest'.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder setDatarequest(java.lang.Long value) {
+    public convertor.encoders.torperf.Torperf.Builder setDatarequest(java.lang.Long value) {
       validate(fields()[9], value);
       this.datarequest = value;
       fieldSetFlags()[9] = true;
@@ -1564,7 +1564,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: long getDataRequestMillis()
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder clearDatarequest() {
+    public convertor.encoders.torperf.Torperf.Builder clearDatarequest() {
       datarequest = null;
       fieldSetFlags()[9] = false;
       return this;
@@ -1585,7 +1585,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'dataresponse'.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder setDataresponse(java.lang.Long value) {
+    public convertor.encoders.torperf.Torperf.Builder setDataresponse(java.lang.Long value) {
       validate(fields()[10], value);
       this.dataresponse = value;
       fieldSetFlags()[10] = true;
@@ -1607,7 +1607,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: long getDataResponseMillis()
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder clearDataresponse() {
+    public convertor.encoders.torperf.Torperf.Builder clearDataresponse() {
       dataresponse = null;
       fieldSetFlags()[10] = false;
       return this;
@@ -1628,7 +1628,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'datacomplete'.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder setDatacomplete(java.lang.Long value) {
+    public convertor.encoders.torperf.Torperf.Builder setDatacomplete(java.lang.Long value) {
       validate(fields()[11], value);
       this.datacomplete = value;
       fieldSetFlags()[11] = true;
@@ -1650,7 +1650,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: long getDataCompleteMillis()
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder clearDatacomplete() {
+    public convertor.encoders.torperf.Torperf.Builder clearDatacomplete() {
       datacomplete = null;
       fieldSetFlags()[11] = false;
       return this;
@@ -1671,7 +1671,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'writebytes'.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder setWritebytes(java.lang.Integer value) {
+    public convertor.encoders.torperf.Torperf.Builder setWritebytes(java.lang.Integer value) {
       validate(fields()[12], value);
       this.writebytes = value;
       fieldSetFlags()[12] = true;
@@ -1693,7 +1693,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: int getWriteBytes()
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder clearWritebytes() {
+    public convertor.encoders.torperf.Torperf.Builder clearWritebytes() {
       writebytes = null;
       fieldSetFlags()[12] = false;
       return this;
@@ -1714,7 +1714,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'readbytes'.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder setReadbytes(java.lang.Integer value) {
+    public convertor.encoders.torperf.Torperf.Builder setReadbytes(java.lang.Integer value) {
       validate(fields()[13], value);
       this.readbytes = value;
       fieldSetFlags()[13] = true;
@@ -1736,7 +1736,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: int getReadBytes()
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder clearReadbytes() {
+    public convertor.encoders.torperf.Torperf.Builder clearReadbytes() {
       readbytes = null;
       fieldSetFlags()[13] = false;
       return this;
@@ -1757,7 +1757,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'didtimeout'.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder setDidtimeout(java.lang.Boolean value) {
+    public convertor.encoders.torperf.Torperf.Builder setDidtimeout(java.lang.Boolean value) {
       validate(fields()[14], value);
       this.didtimeout = value;
       fieldSetFlags()[14] = true;
@@ -1779,7 +1779,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: Boolean didTimeout()
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder clearDidtimeout() {
+    public convertor.encoders.torperf.Torperf.Builder clearDidtimeout() {
       didtimeout = null;
       fieldSetFlags()[14] = false;
       return this;
@@ -1800,7 +1800,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'dataperc10'.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder setDataperc10(java.lang.Long value) {
+    public convertor.encoders.torperf.Torperf.Builder setDataperc10(java.lang.Long value) {
       validate(fields()[15], value);
       this.dataperc10 = value;
       fieldSetFlags()[15] = true;
@@ -1822,7 +1822,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(10)
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder clearDataperc10() {
+    public convertor.encoders.torperf.Torperf.Builder clearDataperc10() {
       dataperc10 = null;
       fieldSetFlags()[15] = false;
       return this;
@@ -1843,7 +1843,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'dataperc20'.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder setDataperc20(java.lang.Long value) {
+    public convertor.encoders.torperf.Torperf.Builder setDataperc20(java.lang.Long value) {
       validate(fields()[16], value);
       this.dataperc20 = value;
       fieldSetFlags()[16] = true;
@@ -1865,7 +1865,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(20)
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder clearDataperc20() {
+    public convertor.encoders.torperf.Torperf.Builder clearDataperc20() {
       dataperc20 = null;
       fieldSetFlags()[16] = false;
       return this;
@@ -1886,7 +1886,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'dataperc30'.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder setDataperc30(java.lang.Long value) {
+    public convertor.encoders.torperf.Torperf.Builder setDataperc30(java.lang.Long value) {
       validate(fields()[17], value);
       this.dataperc30 = value;
       fieldSetFlags()[17] = true;
@@ -1908,7 +1908,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(30)
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder clearDataperc30() {
+    public convertor.encoders.torperf.Torperf.Builder clearDataperc30() {
       dataperc30 = null;
       fieldSetFlags()[17] = false;
       return this;
@@ -1929,7 +1929,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'dataperc40'.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder setDataperc40(java.lang.Long value) {
+    public convertor.encoders.torperf.Torperf.Builder setDataperc40(java.lang.Long value) {
       validate(fields()[18], value);
       this.dataperc40 = value;
       fieldSetFlags()[18] = true;
@@ -1951,7 +1951,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(40)
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder clearDataperc40() {
+    public convertor.encoders.torperf.Torperf.Builder clearDataperc40() {
       dataperc40 = null;
       fieldSetFlags()[18] = false;
       return this;
@@ -1972,7 +1972,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'dataperc50'.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder setDataperc50(java.lang.Long value) {
+    public convertor.encoders.torperf.Torperf.Builder setDataperc50(java.lang.Long value) {
       validate(fields()[19], value);
       this.dataperc50 = value;
       fieldSetFlags()[19] = true;
@@ -1994,7 +1994,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(50)
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder clearDataperc50() {
+    public convertor.encoders.torperf.Torperf.Builder clearDataperc50() {
       dataperc50 = null;
       fieldSetFlags()[19] = false;
       return this;
@@ -2015,7 +2015,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'dataperc60'.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder setDataperc60(java.lang.Long value) {
+    public convertor.encoders.torperf.Torperf.Builder setDataperc60(java.lang.Long value) {
       validate(fields()[20], value);
       this.dataperc60 = value;
       fieldSetFlags()[20] = true;
@@ -2037,7 +2037,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(60)
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder clearDataperc60() {
+    public convertor.encoders.torperf.Torperf.Builder clearDataperc60() {
       dataperc60 = null;
       fieldSetFlags()[20] = false;
       return this;
@@ -2058,7 +2058,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'dataperc70'.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder setDataperc70(java.lang.Long value) {
+    public convertor.encoders.torperf.Torperf.Builder setDataperc70(java.lang.Long value) {
       validate(fields()[21], value);
       this.dataperc70 = value;
       fieldSetFlags()[21] = true;
@@ -2080,7 +2080,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(70)
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder clearDataperc70() {
+    public convertor.encoders.torperf.Torperf.Builder clearDataperc70() {
       dataperc70 = null;
       fieldSetFlags()[21] = false;
       return this;
@@ -2101,7 +2101,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'dataperc80'.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder setDataperc80(java.lang.Long value) {
+    public convertor.encoders.torperf.Torperf.Builder setDataperc80(java.lang.Long value) {
       validate(fields()[22], value);
       this.dataperc80 = value;
       fieldSetFlags()[22] = true;
@@ -2123,7 +2123,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(80)
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder clearDataperc80() {
+    public convertor.encoders.torperf.Torperf.Builder clearDataperc80() {
       dataperc80 = null;
       fieldSetFlags()[22] = false;
       return this;
@@ -2144,7 +2144,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'dataperc90'.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder setDataperc90(java.lang.Long value) {
+    public convertor.encoders.torperf.Torperf.Builder setDataperc90(java.lang.Long value) {
       validate(fields()[23], value);
       this.dataperc90 = value;
       fieldSetFlags()[23] = true;
@@ -2166,7 +2166,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(90)
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder clearDataperc90() {
+    public convertor.encoders.torperf.Torperf.Builder clearDataperc90() {
       dataperc90 = null;
       fieldSetFlags()[23] = false;
       return this;
@@ -2187,7 +2187,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'launch'.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder setLaunch(java.lang.Long value) {
+    public convertor.encoders.torperf.Torperf.Builder setLaunch(java.lang.Long value) {
       validate(fields()[24], value);
       this.launch = value;
       fieldSetFlags()[24] = true;
@@ -2209,7 +2209,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: long getLaunchMillis()()
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder clearLaunch() {
+    public convertor.encoders.torperf.Torperf.Builder clearLaunch() {
       launch = null;
       fieldSetFlags()[24] = false;
       return this;
@@ -2230,7 +2230,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'used_at'.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder setUsedAt(java.lang.Long value) {
+    public convertor.encoders.torperf.Torperf.Builder setUsedAt(java.lang.Long value) {
       validate(fields()[25], value);
       this.used_at = value;
       fieldSetFlags()[25] = true;
@@ -2252,7 +2252,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: long getUsedAtMillis()
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder clearUsedAt() {
+    public convertor.encoders.torperf.Torperf.Builder clearUsedAt() {
       used_at = null;
       fieldSetFlags()[25] = false;
       return this;
@@ -2273,7 +2273,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'path'.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder setPath(java.util.List<java.lang.String> value) {
+    public convertor.encoders.torperf.Torperf.Builder setPath(java.util.List<java.lang.String> value) {
       validate(fields()[26], value);
       this.path = value;
       fieldSetFlags()[26] = true;
@@ -2295,7 +2295,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: List<String> getPath()
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder clearPath() {
+    public convertor.encoders.torperf.Torperf.Builder clearPath() {
       path = null;
       fieldSetFlags()[26] = false;
       return this;
@@ -2316,7 +2316,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'buildtimes'.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder setBuildtimes(java.util.List<java.lang.Long> value) {
+    public convertor.encoders.torperf.Torperf.Builder setBuildtimes(java.util.List<java.lang.Long> value) {
       validate(fields()[27], value);
       this.buildtimes = value;
       fieldSetFlags()[27] = true;
@@ -2338,7 +2338,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: List<Long> getBuildTimes()
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder clearBuildtimes() {
+    public convertor.encoders.torperf.Torperf.Builder clearBuildtimes() {
       buildtimes = null;
       fieldSetFlags()[27] = false;
       return this;
@@ -2359,7 +2359,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'timeout'.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder setTimeout(java.lang.Long value) {
+    public convertor.encoders.torperf.Torperf.Builder setTimeout(java.lang.Long value) {
       validate(fields()[28], value);
       this.timeout = value;
       fieldSetFlags()[28] = true;
@@ -2381,7 +2381,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: long getTimeout()
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder clearTimeout() {
+    public convertor.encoders.torperf.Torperf.Builder clearTimeout() {
       timeout = null;
       fieldSetFlags()[28] = false;
       return this;
@@ -2402,7 +2402,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'quantile'.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder setQuantile(java.lang.Double value) {
+    public convertor.encoders.torperf.Torperf.Builder setQuantile(java.lang.Double value) {
       validate(fields()[29], value);
       this.quantile = value;
       fieldSetFlags()[29] = true;
@@ -2424,7 +2424,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: double getQuantile()
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder clearQuantile() {
+    public convertor.encoders.torperf.Torperf.Builder clearQuantile() {
       quantile = null;
       fieldSetFlags()[29] = false;
       return this;
@@ -2445,7 +2445,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'circ_id'.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder setCircId(java.lang.Integer value) {
+    public convertor.encoders.torperf.Torperf.Builder setCircId(java.lang.Integer value) {
       validate(fields()[30], value);
       this.circ_id = value;
       fieldSetFlags()[30] = true;
@@ -2467,7 +2467,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: int getCircId()
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder clearCircId() {
+    public convertor.encoders.torperf.Torperf.Builder clearCircId() {
       circ_id = null;
       fieldSetFlags()[30] = false;
       return this;
@@ -2488,7 +2488,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'used_by'.
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder setUsedBy(java.lang.Integer value) {
+    public convertor.encoders.torperf.Torperf.Builder setUsedBy(java.lang.Integer value) {
       validate(fields()[31], value);
       this.used_by = value;
       fieldSetFlags()[31] = true;
@@ -2510,7 +2510,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * metrics-lib/TorperfResult: int getUsedBy()
       * @return This builder.
       */
-    public converTor.encoders.torperf.Torperf.Builder clearUsedBy() {
+    public convertor.encoders.torperf.Torperf.Builder clearUsedBy() {
       used_by = null;
       fieldSetFlags()[31] = false;
       return this;

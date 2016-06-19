@@ -3,12 +3,12 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.encoders.bridge;  
+package convertor.encoders.bridge;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class ReadHistory extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = 7892784253353069079L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ReadHistory\",\"namespace\":\"converTor.encoders.bridge\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ReadHistory\",\"namespace\":\"convertor.encoders.bridge\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/BandwidthHistory: long getHistoryEndMillis() */
   @Deprecated public java.lang.Long date;
@@ -112,8 +112,8 @@ public class ReadHistory extends org.apache.avro.specific.SpecificRecordBase imp
    * Creates a new ReadHistory RecordBuilder.
    * @return A new ReadHistory RecordBuilder
    */
-  public static converTor.encoders.bridge.ReadHistory.Builder newBuilder() {
-    return new converTor.encoders.bridge.ReadHistory.Builder();
+  public static convertor.encoders.bridge.ReadHistory.Builder newBuilder() {
+    return new convertor.encoders.bridge.ReadHistory.Builder();
   }
   
   /**
@@ -121,8 +121,8 @@ public class ReadHistory extends org.apache.avro.specific.SpecificRecordBase imp
    * @param other The existing builder to copy.
    * @return A new ReadHistory RecordBuilder
    */
-  public static converTor.encoders.bridge.ReadHistory.Builder newBuilder(converTor.encoders.bridge.ReadHistory.Builder other) {
-    return new converTor.encoders.bridge.ReadHistory.Builder(other);
+  public static convertor.encoders.bridge.ReadHistory.Builder newBuilder(convertor.encoders.bridge.ReadHistory.Builder other) {
+    return new convertor.encoders.bridge.ReadHistory.Builder(other);
   }
   
   /**
@@ -130,8 +130,8 @@ public class ReadHistory extends org.apache.avro.specific.SpecificRecordBase imp
    * @param other The existing instance to copy.
    * @return A new ReadHistory RecordBuilder
    */
-  public static converTor.encoders.bridge.ReadHistory.Builder newBuilder(converTor.encoders.bridge.ReadHistory other) {
-    return new converTor.encoders.bridge.ReadHistory.Builder(other);
+  public static convertor.encoders.bridge.ReadHistory.Builder newBuilder(convertor.encoders.bridge.ReadHistory other) {
+    return new convertor.encoders.bridge.ReadHistory.Builder(other);
   }
   
   /**
@@ -149,14 +149,14 @@ public class ReadHistory extends org.apache.avro.specific.SpecificRecordBase imp
 
     /** Creates a new Builder */
     private Builder() {
-      super(converTor.encoders.bridge.ReadHistory.SCHEMA$);
+      super(convertor.encoders.bridge.ReadHistory.SCHEMA$);
     }
     
     /**
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(converTor.encoders.bridge.ReadHistory.Builder other) {
+    private Builder(convertor.encoders.bridge.ReadHistory.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.date)) {
         this.date = data().deepCopy(fields()[0].schema(), other.date);
@@ -176,8 +176,8 @@ public class ReadHistory extends org.apache.avro.specific.SpecificRecordBase imp
      * Creates a Builder by copying an existing ReadHistory instance
      * @param other The existing instance to copy.
      */
-    private Builder(converTor.encoders.bridge.ReadHistory other) {
-            super(converTor.encoders.bridge.ReadHistory.SCHEMA$);
+    private Builder(convertor.encoders.bridge.ReadHistory other) {
+            super(convertor.encoders.bridge.ReadHistory.SCHEMA$);
       if (isValidValue(fields()[0], other.date)) {
         this.date = data().deepCopy(fields()[0].schema(), other.date);
         fieldSetFlags()[0] = true;
@@ -207,7 +207,7 @@ public class ReadHistory extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'date'.
       * @return This builder.
       */
-    public converTor.encoders.bridge.ReadHistory.Builder setDate(java.lang.Long value) {
+    public convertor.encoders.bridge.ReadHistory.Builder setDate(java.lang.Long value) {
       validate(fields()[0], value);
       this.date = value;
       fieldSetFlags()[0] = true;
@@ -229,7 +229,7 @@ public class ReadHistory extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/BandwidthHistory: long getHistoryEndMillis()
       * @return This builder.
       */
-    public converTor.encoders.bridge.ReadHistory.Builder clearDate() {
+    public convertor.encoders.bridge.ReadHistory.Builder clearDate() {
       date = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -250,7 +250,7 @@ public class ReadHistory extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'interval'.
       * @return This builder.
       */
-    public converTor.encoders.bridge.ReadHistory.Builder setInterval(java.lang.Long value) {
+    public convertor.encoders.bridge.ReadHistory.Builder setInterval(java.lang.Long value) {
       validate(fields()[1], value);
       this.interval = value;
       fieldSetFlags()[1] = true;
@@ -272,7 +272,7 @@ public class ReadHistory extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/BandwidthHistory: long getIntervalLength()
       * @return This builder.
       */
-    public converTor.encoders.bridge.ReadHistory.Builder clearInterval() {
+    public convertor.encoders.bridge.ReadHistory.Builder clearInterval() {
       interval = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -293,7 +293,7 @@ public class ReadHistory extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'bytes'.
       * @return This builder.
       */
-    public converTor.encoders.bridge.ReadHistory.Builder setBytes(java.util.List<java.lang.Long> value) {
+    public convertor.encoders.bridge.ReadHistory.Builder setBytes(java.util.List<java.lang.Long> value) {
       validate(fields()[2], value);
       this.bytes = value;
       fieldSetFlags()[2] = true;
@@ -315,7 +315,7 @@ public class ReadHistory extends org.apache.avro.specific.SpecificRecordBase imp
       * metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()
       * @return This builder.
       */
-    public converTor.encoders.bridge.ReadHistory.Builder clearBytes() {
+    public convertor.encoders.bridge.ReadHistory.Builder clearBytes() {
       bytes = null;
       fieldSetFlags()[2] = false;
       return this;

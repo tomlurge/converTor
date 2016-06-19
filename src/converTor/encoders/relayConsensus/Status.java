@@ -3,21 +3,21 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.encoders.relayConsensus;  
+package convertor.encoders.relayConsensus;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Status extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -1596188783715038301L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Status\",\"namespace\":\"converTor.encoders.relayConsensus\",\"fields\":[{\"name\":\"r\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"R\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getFingerprint()\"},{\"name\":\"digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDescriptor();\"},{\"name\":\"publication\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getPublishedMillis()\"},{\"name\":\"ip\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getOrPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getDirPort()\"}]}]},{\"name\":\"a\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"OrAddress\",\"fields\":[{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"implementation specific, see actual converter\"},{\"name\":\"port\",\"type\":[\"null\",\"int\"],\"doc\":\"implementation specific, see actual converter\"}]}}]},{\"name\":\"s\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags()\"},{\"name\":\"v\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getVersion()\"},{\"name\":\"w\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"W\",\"fields\":[{\"name\":\"bandwidth\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getBandwidth()\"},{\"name\":\"measured\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getMeasured()\"},{\"name\":\"unmeasured\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/NetworkStatusEntry: boolean getUnmeasured()\"}]}]},{\"name\":\"p\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Policy\",\"fields\":[{\"name\":\"default_policy\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDefaultPolicy()\"},{\"name\":\"port_summary\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getPortList()\"}]}]}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Status\",\"namespace\":\"convertor.encoders.relayConsensus\",\"fields\":[{\"name\":\"r\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"R\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getFingerprint()\"},{\"name\":\"digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDescriptor();\"},{\"name\":\"publication\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getPublishedMillis()\"},{\"name\":\"ip\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getOrPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getDirPort()\"}]}]},{\"name\":\"a\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"OrAddress\",\"fields\":[{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"implementation specific, see actual converter\"},{\"name\":\"port\",\"type\":[\"null\",\"int\"],\"doc\":\"implementation specific, see actual converter\"}]}}]},{\"name\":\"s\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags()\"},{\"name\":\"v\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getVersion()\"},{\"name\":\"w\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"W\",\"fields\":[{\"name\":\"bandwidth\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getBandwidth()\"},{\"name\":\"measured\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getMeasured()\"},{\"name\":\"unmeasured\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/NetworkStatusEntry: boolean getUnmeasured()\"}]}]},{\"name\":\"p\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Policy\",\"fields\":[{\"name\":\"default_policy\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDefaultPolicy()\"},{\"name\":\"port_summary\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getPortList()\"}]}]}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
-  @Deprecated public converTor.encoders.relayConsensus.R r;
-  @Deprecated public java.util.List<converTor.encoders.relayConsensus.OrAddress> a;
+  @Deprecated public convertor.encoders.relayConsensus.R r;
+  @Deprecated public java.util.List<convertor.encoders.relayConsensus.OrAddress> a;
   /** metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags() */
   @Deprecated public java.util.List<java.lang.String> s;
   /** metrics-lib/NetworkStatusEntry: String getVersion() */
   @Deprecated public java.lang.String v;
-  @Deprecated public converTor.encoders.relayConsensus.W w;
-  @Deprecated public converTor.encoders.relayConsensus.Policy p;
+  @Deprecated public convertor.encoders.relayConsensus.W w;
+  @Deprecated public convertor.encoders.relayConsensus.Policy p;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -31,7 +31,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
    * @param s metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags()
    * @param v metrics-lib/NetworkStatusEntry: String getVersion()
    */
-  public Status(converTor.encoders.relayConsensus.R r, java.util.List<converTor.encoders.relayConsensus.OrAddress> a, java.util.List<java.lang.String> s, java.lang.String v, converTor.encoders.relayConsensus.W w, converTor.encoders.relayConsensus.Policy p) {
+  public Status(convertor.encoders.relayConsensus.R r, java.util.List<convertor.encoders.relayConsensus.OrAddress> a, java.util.List<java.lang.String> s, java.lang.String v, convertor.encoders.relayConsensus.W w, convertor.encoders.relayConsensus.Policy p) {
     this.r = r;
     this.a = a;
     this.s = s;
@@ -57,12 +57,12 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: r = (converTor.encoders.relayConsensus.R)value$; break;
-    case 1: a = (java.util.List<converTor.encoders.relayConsensus.OrAddress>)value$; break;
+    case 0: r = (convertor.encoders.relayConsensus.R)value$; break;
+    case 1: a = (java.util.List<convertor.encoders.relayConsensus.OrAddress>)value$; break;
     case 2: s = (java.util.List<java.lang.String>)value$; break;
     case 3: v = (java.lang.String)value$; break;
-    case 4: w = (converTor.encoders.relayConsensus.W)value$; break;
-    case 5: p = (converTor.encoders.relayConsensus.Policy)value$; break;
+    case 4: w = (convertor.encoders.relayConsensus.W)value$; break;
+    case 5: p = (convertor.encoders.relayConsensus.Policy)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -70,7 +70,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
   /**
    * Gets the value of the 'r' field.
    */
-  public converTor.encoders.relayConsensus.R getR() {
+  public convertor.encoders.relayConsensus.R getR() {
     return r;
   }
 
@@ -78,14 +78,14 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
    * Sets the value of the 'r' field.
    * @param value the value to set.
    */
-  public void setR(converTor.encoders.relayConsensus.R value) {
+  public void setR(convertor.encoders.relayConsensus.R value) {
     this.r = value;
   }
 
   /**
    * Gets the value of the 'a' field.
    */
-  public java.util.List<converTor.encoders.relayConsensus.OrAddress> getA() {
+  public java.util.List<convertor.encoders.relayConsensus.OrAddress> getA() {
     return a;
   }
 
@@ -93,7 +93,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
    * Sets the value of the 'a' field.
    * @param value the value to set.
    */
-  public void setA(java.util.List<converTor.encoders.relayConsensus.OrAddress> value) {
+  public void setA(java.util.List<convertor.encoders.relayConsensus.OrAddress> value) {
     this.a = value;
   }
 
@@ -134,7 +134,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
   /**
    * Gets the value of the 'w' field.
    */
-  public converTor.encoders.relayConsensus.W getW() {
+  public convertor.encoders.relayConsensus.W getW() {
     return w;
   }
 
@@ -142,14 +142,14 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
    * Sets the value of the 'w' field.
    * @param value the value to set.
    */
-  public void setW(converTor.encoders.relayConsensus.W value) {
+  public void setW(convertor.encoders.relayConsensus.W value) {
     this.w = value;
   }
 
   /**
    * Gets the value of the 'p' field.
    */
-  public converTor.encoders.relayConsensus.Policy getP() {
+  public convertor.encoders.relayConsensus.Policy getP() {
     return p;
   }
 
@@ -157,7 +157,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
    * Sets the value of the 'p' field.
    * @param value the value to set.
    */
-  public void setP(converTor.encoders.relayConsensus.Policy value) {
+  public void setP(convertor.encoders.relayConsensus.Policy value) {
     this.p = value;
   }
 
@@ -165,8 +165,8 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
    * Creates a new Status RecordBuilder.
    * @return A new Status RecordBuilder
    */
-  public static converTor.encoders.relayConsensus.Status.Builder newBuilder() {
-    return new converTor.encoders.relayConsensus.Status.Builder();
+  public static convertor.encoders.relayConsensus.Status.Builder newBuilder() {
+    return new convertor.encoders.relayConsensus.Status.Builder();
   }
   
   /**
@@ -174,8 +174,8 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
    * @param other The existing builder to copy.
    * @return A new Status RecordBuilder
    */
-  public static converTor.encoders.relayConsensus.Status.Builder newBuilder(converTor.encoders.relayConsensus.Status.Builder other) {
-    return new converTor.encoders.relayConsensus.Status.Builder(other);
+  public static convertor.encoders.relayConsensus.Status.Builder newBuilder(convertor.encoders.relayConsensus.Status.Builder other) {
+    return new convertor.encoders.relayConsensus.Status.Builder(other);
   }
   
   /**
@@ -183,8 +183,8 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
    * @param other The existing instance to copy.
    * @return A new Status RecordBuilder
    */
-  public static converTor.encoders.relayConsensus.Status.Builder newBuilder(converTor.encoders.relayConsensus.Status other) {
-    return new converTor.encoders.relayConsensus.Status.Builder(other);
+  public static convertor.encoders.relayConsensus.Status.Builder newBuilder(convertor.encoders.relayConsensus.Status other) {
+    return new convertor.encoders.relayConsensus.Status.Builder(other);
   }
   
   /**
@@ -193,35 +193,35 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Status>
     implements org.apache.avro.data.RecordBuilder<Status> {
 
-    private converTor.encoders.relayConsensus.R r;
-    private converTor.encoders.relayConsensus.R.Builder rBuilder;
-    private java.util.List<converTor.encoders.relayConsensus.OrAddress> a;
+    private convertor.encoders.relayConsensus.R r;
+    private convertor.encoders.relayConsensus.R.Builder rBuilder;
+    private java.util.List<convertor.encoders.relayConsensus.OrAddress> a;
     /** metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags() */
     private java.util.List<java.lang.String> s;
     /** metrics-lib/NetworkStatusEntry: String getVersion() */
     private java.lang.String v;
-    private converTor.encoders.relayConsensus.W w;
-    private converTor.encoders.relayConsensus.W.Builder wBuilder;
-    private converTor.encoders.relayConsensus.Policy p;
-    private converTor.encoders.relayConsensus.Policy.Builder pBuilder;
+    private convertor.encoders.relayConsensus.W w;
+    private convertor.encoders.relayConsensus.W.Builder wBuilder;
+    private convertor.encoders.relayConsensus.Policy p;
+    private convertor.encoders.relayConsensus.Policy.Builder pBuilder;
 
     /** Creates a new Builder */
     private Builder() {
-      super(converTor.encoders.relayConsensus.Status.SCHEMA$);
+      super(convertor.encoders.relayConsensus.Status.SCHEMA$);
     }
     
     /**
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(converTor.encoders.relayConsensus.Status.Builder other) {
+    private Builder(convertor.encoders.relayConsensus.Status.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.r)) {
         this.r = data().deepCopy(fields()[0].schema(), other.r);
         fieldSetFlags()[0] = true;
       }
       if (other.hasRBuilder()) {
-        this.rBuilder = converTor.encoders.relayConsensus.R.newBuilder(other.getRBuilder());
+        this.rBuilder = convertor.encoders.relayConsensus.R.newBuilder(other.getRBuilder());
       }
       if (isValidValue(fields()[1], other.a)) {
         this.a = data().deepCopy(fields()[1].schema(), other.a);
@@ -240,14 +240,14 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
         fieldSetFlags()[4] = true;
       }
       if (other.hasWBuilder()) {
-        this.wBuilder = converTor.encoders.relayConsensus.W.newBuilder(other.getWBuilder());
+        this.wBuilder = convertor.encoders.relayConsensus.W.newBuilder(other.getWBuilder());
       }
       if (isValidValue(fields()[5], other.p)) {
         this.p = data().deepCopy(fields()[5].schema(), other.p);
         fieldSetFlags()[5] = true;
       }
       if (other.hasPBuilder()) {
-        this.pBuilder = converTor.encoders.relayConsensus.Policy.newBuilder(other.getPBuilder());
+        this.pBuilder = convertor.encoders.relayConsensus.Policy.newBuilder(other.getPBuilder());
       }
     }
     
@@ -255,8 +255,8 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
      * Creates a Builder by copying an existing Status instance
      * @param other The existing instance to copy.
      */
-    private Builder(converTor.encoders.relayConsensus.Status other) {
-            super(converTor.encoders.relayConsensus.Status.SCHEMA$);
+    private Builder(convertor.encoders.relayConsensus.Status other) {
+            super(convertor.encoders.relayConsensus.Status.SCHEMA$);
       if (isValidValue(fields()[0], other.r)) {
         this.r = data().deepCopy(fields()[0].schema(), other.r);
         fieldSetFlags()[0] = true;
@@ -290,7 +290,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * Gets the value of the 'r' field.
       * @return The value.
       */
-    public converTor.encoders.relayConsensus.R getR() {
+    public convertor.encoders.relayConsensus.R getR() {
       return r;
     }
 
@@ -299,7 +299,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'r'.
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.Status.Builder setR(converTor.encoders.relayConsensus.R value) {
+    public convertor.encoders.relayConsensus.Status.Builder setR(convertor.encoders.relayConsensus.R value) {
       validate(fields()[0], value);
       this.rBuilder = null;
       this.r = value;
@@ -319,12 +319,12 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
      * Gets the Builder instance for the 'r' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public converTor.encoders.relayConsensus.R.Builder getRBuilder() {
+    public convertor.encoders.relayConsensus.R.Builder getRBuilder() {
       if (rBuilder == null) {
         if (hasR()) {
-          setRBuilder(converTor.encoders.relayConsensus.R.newBuilder(r));
+          setRBuilder(convertor.encoders.relayConsensus.R.newBuilder(r));
         } else {
-          setRBuilder(converTor.encoders.relayConsensus.R.newBuilder());
+          setRBuilder(convertor.encoders.relayConsensus.R.newBuilder());
         }
       }
       return rBuilder;
@@ -334,7 +334,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
      * Sets the Builder instance for the 'r' field
      * @return This builder.
      */
-    public converTor.encoders.relayConsensus.Status.Builder setRBuilder(converTor.encoders.relayConsensus.R.Builder value) {
+    public convertor.encoders.relayConsensus.Status.Builder setRBuilder(convertor.encoders.relayConsensus.R.Builder value) {
       clearR();
       rBuilder = value;
       return this;
@@ -352,7 +352,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * Clears the value of the 'r' field.
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.Status.Builder clearR() {
+    public convertor.encoders.relayConsensus.Status.Builder clearR() {
       r = null;
       rBuilder = null;
       fieldSetFlags()[0] = false;
@@ -363,7 +363,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * Gets the value of the 'a' field.
       * @return The value.
       */
-    public java.util.List<converTor.encoders.relayConsensus.OrAddress> getA() {
+    public java.util.List<convertor.encoders.relayConsensus.OrAddress> getA() {
       return a;
     }
 
@@ -372,7 +372,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'a'.
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.Status.Builder setA(java.util.List<converTor.encoders.relayConsensus.OrAddress> value) {
+    public convertor.encoders.relayConsensus.Status.Builder setA(java.util.List<convertor.encoders.relayConsensus.OrAddress> value) {
       validate(fields()[1], value);
       this.a = value;
       fieldSetFlags()[1] = true;
@@ -392,7 +392,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * Clears the value of the 'a' field.
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.Status.Builder clearA() {
+    public convertor.encoders.relayConsensus.Status.Builder clearA() {
       a = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -413,7 +413,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 's'.
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.Status.Builder setS(java.util.List<java.lang.String> value) {
+    public convertor.encoders.relayConsensus.Status.Builder setS(java.util.List<java.lang.String> value) {
       validate(fields()[2], value);
       this.s = value;
       fieldSetFlags()[2] = true;
@@ -435,7 +435,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags()
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.Status.Builder clearS() {
+    public convertor.encoders.relayConsensus.Status.Builder clearS() {
       s = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -456,7 +456,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'v'.
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.Status.Builder setV(java.lang.String value) {
+    public convertor.encoders.relayConsensus.Status.Builder setV(java.lang.String value) {
       validate(fields()[3], value);
       this.v = value;
       fieldSetFlags()[3] = true;
@@ -478,7 +478,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/NetworkStatusEntry: String getVersion()
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.Status.Builder clearV() {
+    public convertor.encoders.relayConsensus.Status.Builder clearV() {
       v = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -488,7 +488,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * Gets the value of the 'w' field.
       * @return The value.
       */
-    public converTor.encoders.relayConsensus.W getW() {
+    public convertor.encoders.relayConsensus.W getW() {
       return w;
     }
 
@@ -497,7 +497,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'w'.
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.Status.Builder setW(converTor.encoders.relayConsensus.W value) {
+    public convertor.encoders.relayConsensus.Status.Builder setW(convertor.encoders.relayConsensus.W value) {
       validate(fields()[4], value);
       this.wBuilder = null;
       this.w = value;
@@ -517,12 +517,12 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
      * Gets the Builder instance for the 'w' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public converTor.encoders.relayConsensus.W.Builder getWBuilder() {
+    public convertor.encoders.relayConsensus.W.Builder getWBuilder() {
       if (wBuilder == null) {
         if (hasW()) {
-          setWBuilder(converTor.encoders.relayConsensus.W.newBuilder(w));
+          setWBuilder(convertor.encoders.relayConsensus.W.newBuilder(w));
         } else {
-          setWBuilder(converTor.encoders.relayConsensus.W.newBuilder());
+          setWBuilder(convertor.encoders.relayConsensus.W.newBuilder());
         }
       }
       return wBuilder;
@@ -532,7 +532,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
      * Sets the Builder instance for the 'w' field
      * @return This builder.
      */
-    public converTor.encoders.relayConsensus.Status.Builder setWBuilder(converTor.encoders.relayConsensus.W.Builder value) {
+    public convertor.encoders.relayConsensus.Status.Builder setWBuilder(convertor.encoders.relayConsensus.W.Builder value) {
       clearW();
       wBuilder = value;
       return this;
@@ -550,7 +550,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * Clears the value of the 'w' field.
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.Status.Builder clearW() {
+    public convertor.encoders.relayConsensus.Status.Builder clearW() {
       w = null;
       wBuilder = null;
       fieldSetFlags()[4] = false;
@@ -561,7 +561,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * Gets the value of the 'p' field.
       * @return The value.
       */
-    public converTor.encoders.relayConsensus.Policy getP() {
+    public convertor.encoders.relayConsensus.Policy getP() {
       return p;
     }
 
@@ -570,7 +570,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'p'.
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.Status.Builder setP(converTor.encoders.relayConsensus.Policy value) {
+    public convertor.encoders.relayConsensus.Status.Builder setP(convertor.encoders.relayConsensus.Policy value) {
       validate(fields()[5], value);
       this.pBuilder = null;
       this.p = value;
@@ -590,12 +590,12 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
      * Gets the Builder instance for the 'p' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public converTor.encoders.relayConsensus.Policy.Builder getPBuilder() {
+    public convertor.encoders.relayConsensus.Policy.Builder getPBuilder() {
       if (pBuilder == null) {
         if (hasP()) {
-          setPBuilder(converTor.encoders.relayConsensus.Policy.newBuilder(p));
+          setPBuilder(convertor.encoders.relayConsensus.Policy.newBuilder(p));
         } else {
-          setPBuilder(converTor.encoders.relayConsensus.Policy.newBuilder());
+          setPBuilder(convertor.encoders.relayConsensus.Policy.newBuilder());
         }
       }
       return pBuilder;
@@ -605,7 +605,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
      * Sets the Builder instance for the 'p' field
      * @return This builder.
      */
-    public converTor.encoders.relayConsensus.Status.Builder setPBuilder(converTor.encoders.relayConsensus.Policy.Builder value) {
+    public convertor.encoders.relayConsensus.Status.Builder setPBuilder(convertor.encoders.relayConsensus.Policy.Builder value) {
       clearP();
       pBuilder = value;
       return this;
@@ -623,7 +623,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * Clears the value of the 'p' field.
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.Status.Builder clearP() {
+    public convertor.encoders.relayConsensus.Status.Builder clearP() {
       p = null;
       pBuilder = null;
       fieldSetFlags()[5] = false;
@@ -637,20 +637,20 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
         if (rBuilder != null) {
           record.r = this.rBuilder.build();
         } else {
-          record.r = fieldSetFlags()[0] ? this.r : (converTor.encoders.relayConsensus.R) defaultValue(fields()[0]);
+          record.r = fieldSetFlags()[0] ? this.r : (convertor.encoders.relayConsensus.R) defaultValue(fields()[0]);
         }
-        record.a = fieldSetFlags()[1] ? this.a : (java.util.List<converTor.encoders.relayConsensus.OrAddress>) defaultValue(fields()[1]);
+        record.a = fieldSetFlags()[1] ? this.a : (java.util.List<convertor.encoders.relayConsensus.OrAddress>) defaultValue(fields()[1]);
         record.s = fieldSetFlags()[2] ? this.s : (java.util.List<java.lang.String>) defaultValue(fields()[2]);
         record.v = fieldSetFlags()[3] ? this.v : (java.lang.String) defaultValue(fields()[3]);
         if (wBuilder != null) {
           record.w = this.wBuilder.build();
         } else {
-          record.w = fieldSetFlags()[4] ? this.w : (converTor.encoders.relayConsensus.W) defaultValue(fields()[4]);
+          record.w = fieldSetFlags()[4] ? this.w : (convertor.encoders.relayConsensus.W) defaultValue(fields()[4]);
         }
         if (pBuilder != null) {
           record.p = this.pBuilder.build();
         } else {
-          record.p = fieldSetFlags()[5] ? this.p : (converTor.encoders.relayConsensus.Policy) defaultValue(fields()[5]);
+          record.p = fieldSetFlags()[5] ? this.p : (convertor.encoders.relayConsensus.Policy) defaultValue(fields()[5]);
         }
         return record;
       } catch (Exception e) {

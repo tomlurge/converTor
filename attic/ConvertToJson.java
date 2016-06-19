@@ -1,4 +1,4 @@
-package converTor.stuff;
+package convertor.stuff;
 
 import java.io.*;
 import java.text.DateFormat;

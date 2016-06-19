@@ -1,11 +1,11 @@
-package converTor;
+package convertor;
 
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
 import org.torproject.descriptor.*;
-import converTor.encoders.relayConsensus.*;
+import convertor.encoders.relayConsensus.*;
 
 
 class ConvertRelayConsensus extends Convert {

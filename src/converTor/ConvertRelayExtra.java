@@ -1,10 +1,10 @@
-package converTor;
+package convertor;
 
 import java.util.ArrayList;
 import org.torproject.descriptor.BandwidthHistory;
 import org.torproject.descriptor.Descriptor;
 import org.torproject.descriptor.RelayExtraInfoDescriptor;
-import converTor.encoders.relayExtra.*;
+import convertor.encoders.relayExtra.*;
 
 
 class ConvertRelayExtra extends Convert {

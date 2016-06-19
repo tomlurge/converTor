@@ -1,4 +1,4 @@
-package converTor;
+package convertor;
 
 import java.io.File;
 import java.io.IOException;

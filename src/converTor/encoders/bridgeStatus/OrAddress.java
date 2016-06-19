@@ -3,12 +3,12 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.encoders.bridgeStatus;  
+package convertor.encoders.bridgeStatus;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class OrAddress extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = 4090452677816222773L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"OrAddress\",\"namespace\":\"converTor.encoders.bridgeStatus\",\"fields\":[{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"implementation specific, see actual converter\"},{\"name\":\"port\",\"type\":[\"null\",\"int\"],\"doc\":\"implementation specific, see actual converter\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"OrAddress\",\"namespace\":\"convertor.encoders.bridgeStatus\",\"fields\":[{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"implementation specific, see actual converter\"},{\"name\":\"port\",\"type\":[\"null\",\"int\"],\"doc\":\"implementation specific, see actual converter\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** implementation specific, see actual converter */
   @Deprecated public java.lang.String address;
@@ -89,8 +89,8 @@ public class OrAddress extends org.apache.avro.specific.SpecificRecordBase imple
    * Creates a new OrAddress RecordBuilder.
    * @return A new OrAddress RecordBuilder
    */
-  public static converTor.encoders.bridgeStatus.OrAddress.Builder newBuilder() {
-    return new converTor.encoders.bridgeStatus.OrAddress.Builder();
+  public static convertor.encoders.bridgeStatus.OrAddress.Builder newBuilder() {
+    return new convertor.encoders.bridgeStatus.OrAddress.Builder();
   }
   
   /**
@@ -98,8 +98,8 @@ public class OrAddress extends org.apache.avro.specific.SpecificRecordBase imple
    * @param other The existing builder to copy.
    * @return A new OrAddress RecordBuilder
    */
-  public static converTor.encoders.bridgeStatus.OrAddress.Builder newBuilder(converTor.encoders.bridgeStatus.OrAddress.Builder other) {
-    return new converTor.encoders.bridgeStatus.OrAddress.Builder(other);
+  public static convertor.encoders.bridgeStatus.OrAddress.Builder newBuilder(convertor.encoders.bridgeStatus.OrAddress.Builder other) {
+    return new convertor.encoders.bridgeStatus.OrAddress.Builder(other);
   }
   
   /**
@@ -107,8 +107,8 @@ public class OrAddress extends org.apache.avro.specific.SpecificRecordBase imple
    * @param other The existing instance to copy.
    * @return A new OrAddress RecordBuilder
    */
-  public static converTor.encoders.bridgeStatus.OrAddress.Builder newBuilder(converTor.encoders.bridgeStatus.OrAddress other) {
-    return new converTor.encoders.bridgeStatus.OrAddress.Builder(other);
+  public static convertor.encoders.bridgeStatus.OrAddress.Builder newBuilder(convertor.encoders.bridgeStatus.OrAddress other) {
+    return new convertor.encoders.bridgeStatus.OrAddress.Builder(other);
   }
   
   /**
@@ -124,14 +124,14 @@ public class OrAddress extends org.apache.avro.specific.SpecificRecordBase imple
 
     /** Creates a new Builder */
     private Builder() {
-      super(converTor.encoders.bridgeStatus.OrAddress.SCHEMA$);
+      super(convertor.encoders.bridgeStatus.OrAddress.SCHEMA$);
     }
     
     /**
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(converTor.encoders.bridgeStatus.OrAddress.Builder other) {
+    private Builder(convertor.encoders.bridgeStatus.OrAddress.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.address)) {
         this.address = data().deepCopy(fields()[0].schema(), other.address);
@@ -147,8 +147,8 @@ public class OrAddress extends org.apache.avro.specific.SpecificRecordBase imple
      * Creates a Builder by copying an existing OrAddress instance
      * @param other The existing instance to copy.
      */
-    private Builder(converTor.encoders.bridgeStatus.OrAddress other) {
-            super(converTor.encoders.bridgeStatus.OrAddress.SCHEMA$);
+    private Builder(convertor.encoders.bridgeStatus.OrAddress other) {
+            super(convertor.encoders.bridgeStatus.OrAddress.SCHEMA$);
       if (isValidValue(fields()[0], other.address)) {
         this.address = data().deepCopy(fields()[0].schema(), other.address);
         fieldSetFlags()[0] = true;
@@ -174,7 +174,7 @@ public class OrAddress extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'address'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeStatus.OrAddress.Builder setAddress(java.lang.String value) {
+    public convertor.encoders.bridgeStatus.OrAddress.Builder setAddress(java.lang.String value) {
       validate(fields()[0], value);
       this.address = value;
       fieldSetFlags()[0] = true;
@@ -196,7 +196,7 @@ public class OrAddress extends org.apache.avro.specific.SpecificRecordBase imple
       * implementation specific, see actual converter
       * @return This builder.
       */
-    public converTor.encoders.bridgeStatus.OrAddress.Builder clearAddress() {
+    public convertor.encoders.bridgeStatus.OrAddress.Builder clearAddress() {
       address = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -217,7 +217,7 @@ public class OrAddress extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'port'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeStatus.OrAddress.Builder setPort(java.lang.Integer value) {
+    public convertor.encoders.bridgeStatus.OrAddress.Builder setPort(java.lang.Integer value) {
       validate(fields()[1], value);
       this.port = value;
       fieldSetFlags()[1] = true;
@@ -239,7 +239,7 @@ public class OrAddress extends org.apache.avro.specific.SpecificRecordBase imple
       * implementation specific, see actual converter
       * @return This builder.
       */
-    public converTor.encoders.bridgeStatus.OrAddress.Builder clearPort() {
+    public convertor.encoders.bridgeStatus.OrAddress.Builder clearPort() {
       port = null;
       fieldSetFlags()[1] = false;
       return this;

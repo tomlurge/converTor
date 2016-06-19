@@ -3,12 +3,12 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.encoders.relayConsensus;  
+package convertor.encoders.relayConsensus;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class DirSource extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -8586976140990815185L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DirSource\",\"namespace\":\"converTor.encoders.relayConsensus\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getIdentity()\"},{\"name\":\"hostname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getHostname()\"},{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getIp()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/DirSourceEntry: int getDirPort()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/DirSourceEntry: int getOrPort()\"},{\"name\":\"is_legacy\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/DirSourceEntry: boolean isLegacy()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DirSource\",\"namespace\":\"convertor.encoders.relayConsensus\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getIdentity()\"},{\"name\":\"hostname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getHostname()\"},{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getIp()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/DirSourceEntry: int getDirPort()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/DirSourceEntry: int getOrPort()\"},{\"name\":\"is_legacy\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/DirSourceEntry: boolean isLegacy()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/DirSourceEntry: String getNickname() */
   @Deprecated public java.lang.String nickname;
@@ -204,8 +204,8 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
    * Creates a new DirSource RecordBuilder.
    * @return A new DirSource RecordBuilder
    */
-  public static converTor.encoders.relayConsensus.DirSource.Builder newBuilder() {
-    return new converTor.encoders.relayConsensus.DirSource.Builder();
+  public static convertor.encoders.relayConsensus.DirSource.Builder newBuilder() {
+    return new convertor.encoders.relayConsensus.DirSource.Builder();
   }
   
   /**
@@ -213,8 +213,8 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
    * @param other The existing builder to copy.
    * @return A new DirSource RecordBuilder
    */
-  public static converTor.encoders.relayConsensus.DirSource.Builder newBuilder(converTor.encoders.relayConsensus.DirSource.Builder other) {
-    return new converTor.encoders.relayConsensus.DirSource.Builder(other);
+  public static convertor.encoders.relayConsensus.DirSource.Builder newBuilder(convertor.encoders.relayConsensus.DirSource.Builder other) {
+    return new convertor.encoders.relayConsensus.DirSource.Builder(other);
   }
   
   /**
@@ -222,8 +222,8 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
    * @param other The existing instance to copy.
    * @return A new DirSource RecordBuilder
    */
-  public static converTor.encoders.relayConsensus.DirSource.Builder newBuilder(converTor.encoders.relayConsensus.DirSource other) {
-    return new converTor.encoders.relayConsensus.DirSource.Builder(other);
+  public static convertor.encoders.relayConsensus.DirSource.Builder newBuilder(convertor.encoders.relayConsensus.DirSource other) {
+    return new convertor.encoders.relayConsensus.DirSource.Builder(other);
   }
   
   /**
@@ -249,14 +249,14 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
 
     /** Creates a new Builder */
     private Builder() {
-      super(converTor.encoders.relayConsensus.DirSource.SCHEMA$);
+      super(convertor.encoders.relayConsensus.DirSource.SCHEMA$);
     }
     
     /**
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(converTor.encoders.relayConsensus.DirSource.Builder other) {
+    private Builder(convertor.encoders.relayConsensus.DirSource.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.nickname)) {
         this.nickname = data().deepCopy(fields()[0].schema(), other.nickname);
@@ -292,8 +292,8 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
      * Creates a Builder by copying an existing DirSource instance
      * @param other The existing instance to copy.
      */
-    private Builder(converTor.encoders.relayConsensus.DirSource other) {
-            super(converTor.encoders.relayConsensus.DirSource.SCHEMA$);
+    private Builder(convertor.encoders.relayConsensus.DirSource other) {
+            super(convertor.encoders.relayConsensus.DirSource.SCHEMA$);
       if (isValidValue(fields()[0], other.nickname)) {
         this.nickname = data().deepCopy(fields()[0].schema(), other.nickname);
         fieldSetFlags()[0] = true;
@@ -339,7 +339,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'nickname'.
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.DirSource.Builder setNickname(java.lang.String value) {
+    public convertor.encoders.relayConsensus.DirSource.Builder setNickname(java.lang.String value) {
       validate(fields()[0], value);
       this.nickname = value;
       fieldSetFlags()[0] = true;
@@ -361,7 +361,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/DirSourceEntry: String getNickname()
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.DirSource.Builder clearNickname() {
+    public convertor.encoders.relayConsensus.DirSource.Builder clearNickname() {
       nickname = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -382,7 +382,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'identity'.
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.DirSource.Builder setIdentity(java.lang.String value) {
+    public convertor.encoders.relayConsensus.DirSource.Builder setIdentity(java.lang.String value) {
       validate(fields()[1], value);
       this.identity = value;
       fieldSetFlags()[1] = true;
@@ -404,7 +404,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/DirSourceEntry: String getIdentity()
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.DirSource.Builder clearIdentity() {
+    public convertor.encoders.relayConsensus.DirSource.Builder clearIdentity() {
       identity = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -425,7 +425,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'hostname'.
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.DirSource.Builder setHostname(java.lang.String value) {
+    public convertor.encoders.relayConsensus.DirSource.Builder setHostname(java.lang.String value) {
       validate(fields()[2], value);
       this.hostname = value;
       fieldSetFlags()[2] = true;
@@ -447,7 +447,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/DirSourceEntry: String getHostname()
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.DirSource.Builder clearHostname() {
+    public convertor.encoders.relayConsensus.DirSource.Builder clearHostname() {
       hostname = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -468,7 +468,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'address'.
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.DirSource.Builder setAddress(java.lang.String value) {
+    public convertor.encoders.relayConsensus.DirSource.Builder setAddress(java.lang.String value) {
       validate(fields()[3], value);
       this.address = value;
       fieldSetFlags()[3] = true;
@@ -490,7 +490,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/DirSourceEntry: String getIp()
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.DirSource.Builder clearAddress() {
+    public convertor.encoders.relayConsensus.DirSource.Builder clearAddress() {
       address = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -511,7 +511,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'dir_port'.
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.DirSource.Builder setDirPort(java.lang.Integer value) {
+    public convertor.encoders.relayConsensus.DirSource.Builder setDirPort(java.lang.Integer value) {
       validate(fields()[4], value);
       this.dir_port = value;
       fieldSetFlags()[4] = true;
@@ -533,7 +533,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/DirSourceEntry: int getDirPort()
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.DirSource.Builder clearDirPort() {
+    public convertor.encoders.relayConsensus.DirSource.Builder clearDirPort() {
       dir_port = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -554,7 +554,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'or_port'.
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.DirSource.Builder setOrPort(java.lang.Integer value) {
+    public convertor.encoders.relayConsensus.DirSource.Builder setOrPort(java.lang.Integer value) {
       validate(fields()[5], value);
       this.or_port = value;
       fieldSetFlags()[5] = true;
@@ -576,7 +576,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/DirSourceEntry: int getOrPort()
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.DirSource.Builder clearOrPort() {
+    public convertor.encoders.relayConsensus.DirSource.Builder clearOrPort() {
       or_port = null;
       fieldSetFlags()[5] = false;
       return this;
@@ -597,7 +597,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'is_legacy'.
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.DirSource.Builder setIsLegacy(java.lang.Boolean value) {
+    public convertor.encoders.relayConsensus.DirSource.Builder setIsLegacy(java.lang.Boolean value) {
       validate(fields()[6], value);
       this.is_legacy = value;
       fieldSetFlags()[6] = true;
@@ -619,7 +619,7 @@ public class DirSource extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/DirSourceEntry: boolean isLegacy()
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.DirSource.Builder clearIsLegacy() {
+    public convertor.encoders.relayConsensus.DirSource.Builder clearIsLegacy() {
       is_legacy = null;
       fieldSetFlags()[6] = false;
       return this;

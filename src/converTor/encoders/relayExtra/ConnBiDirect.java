@@ -3,12 +3,12 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.encoders.relayExtra;  
+package convertor.encoders.relayExtra;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = 8443299928781134552L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ConnBiDirect\",\"namespace\":\"converTor.encoders.relayExtra\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsIntervalLength()\"},{\"name\":\"below\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBelow()\"},{\"name\":\"read\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectRead()\"},{\"name\":\"write\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectWrite()\"},{\"name\":\"both\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBoth()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ConnBiDirect\",\"namespace\":\"convertor.encoders.relayExtra\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsIntervalLength()\"},{\"name\":\"below\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBelow()\"},{\"name\":\"read\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectRead()\"},{\"name\":\"write\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectWrite()\"},{\"name\":\"both\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBoth()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis() */
   @Deprecated public java.lang.Long date;
@@ -181,8 +181,8 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
    * Creates a new ConnBiDirect RecordBuilder.
    * @return A new ConnBiDirect RecordBuilder
    */
-  public static converTor.encoders.relayExtra.ConnBiDirect.Builder newBuilder() {
-    return new converTor.encoders.relayExtra.ConnBiDirect.Builder();
+  public static convertor.encoders.relayExtra.ConnBiDirect.Builder newBuilder() {
+    return new convertor.encoders.relayExtra.ConnBiDirect.Builder();
   }
   
   /**
@@ -190,8 +190,8 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
    * @param other The existing builder to copy.
    * @return A new ConnBiDirect RecordBuilder
    */
-  public static converTor.encoders.relayExtra.ConnBiDirect.Builder newBuilder(converTor.encoders.relayExtra.ConnBiDirect.Builder other) {
-    return new converTor.encoders.relayExtra.ConnBiDirect.Builder(other);
+  public static convertor.encoders.relayExtra.ConnBiDirect.Builder newBuilder(convertor.encoders.relayExtra.ConnBiDirect.Builder other) {
+    return new convertor.encoders.relayExtra.ConnBiDirect.Builder(other);
   }
   
   /**
@@ -199,8 +199,8 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
    * @param other The existing instance to copy.
    * @return A new ConnBiDirect RecordBuilder
    */
-  public static converTor.encoders.relayExtra.ConnBiDirect.Builder newBuilder(converTor.encoders.relayExtra.ConnBiDirect other) {
-    return new converTor.encoders.relayExtra.ConnBiDirect.Builder(other);
+  public static convertor.encoders.relayExtra.ConnBiDirect.Builder newBuilder(convertor.encoders.relayExtra.ConnBiDirect other) {
+    return new convertor.encoders.relayExtra.ConnBiDirect.Builder(other);
   }
   
   /**
@@ -224,14 +224,14 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
 
     /** Creates a new Builder */
     private Builder() {
-      super(converTor.encoders.relayExtra.ConnBiDirect.SCHEMA$);
+      super(convertor.encoders.relayExtra.ConnBiDirect.SCHEMA$);
     }
     
     /**
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(converTor.encoders.relayExtra.ConnBiDirect.Builder other) {
+    private Builder(convertor.encoders.relayExtra.ConnBiDirect.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.date)) {
         this.date = data().deepCopy(fields()[0].schema(), other.date);
@@ -263,8 +263,8 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
      * Creates a Builder by copying an existing ConnBiDirect instance
      * @param other The existing instance to copy.
      */
-    private Builder(converTor.encoders.relayExtra.ConnBiDirect other) {
-            super(converTor.encoders.relayExtra.ConnBiDirect.SCHEMA$);
+    private Builder(convertor.encoders.relayExtra.ConnBiDirect other) {
+            super(convertor.encoders.relayExtra.ConnBiDirect.SCHEMA$);
       if (isValidValue(fields()[0], other.date)) {
         this.date = data().deepCopy(fields()[0].schema(), other.date);
         fieldSetFlags()[0] = true;
@@ -306,7 +306,7 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
       * @param value The value of 'date'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.ConnBiDirect.Builder setDate(java.lang.Long value) {
+    public convertor.encoders.relayExtra.ConnBiDirect.Builder setDate(java.lang.Long value) {
       validate(fields()[0], value);
       this.date = value;
       fieldSetFlags()[0] = true;
@@ -328,7 +328,7 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
       * metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.ConnBiDirect.Builder clearDate() {
+    public convertor.encoders.relayExtra.ConnBiDirect.Builder clearDate() {
       date = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -349,7 +349,7 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
       * @param value The value of 'interval'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.ConnBiDirect.Builder setInterval(java.lang.Long value) {
+    public convertor.encoders.relayExtra.ConnBiDirect.Builder setInterval(java.lang.Long value) {
       validate(fields()[1], value);
       this.interval = value;
       fieldSetFlags()[1] = true;
@@ -371,7 +371,7 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
       * metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsIntervalLength()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.ConnBiDirect.Builder clearInterval() {
+    public convertor.encoders.relayExtra.ConnBiDirect.Builder clearInterval() {
       interval = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -392,7 +392,7 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
       * @param value The value of 'below'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.ConnBiDirect.Builder setBelow(java.lang.Integer value) {
+    public convertor.encoders.relayExtra.ConnBiDirect.Builder setBelow(java.lang.Integer value) {
       validate(fields()[2], value);
       this.below = value;
       fieldSetFlags()[2] = true;
@@ -414,7 +414,7 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
       * metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBelow()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.ConnBiDirect.Builder clearBelow() {
+    public convertor.encoders.relayExtra.ConnBiDirect.Builder clearBelow() {
       below = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -435,7 +435,7 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
       * @param value The value of 'read'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.ConnBiDirect.Builder setRead(java.lang.Integer value) {
+    public convertor.encoders.relayExtra.ConnBiDirect.Builder setRead(java.lang.Integer value) {
       validate(fields()[3], value);
       this.read = value;
       fieldSetFlags()[3] = true;
@@ -457,7 +457,7 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
       * metrics-lib/ExtraInfoDescriptor: int getConnBiDirectRead()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.ConnBiDirect.Builder clearRead() {
+    public convertor.encoders.relayExtra.ConnBiDirect.Builder clearRead() {
       read = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -478,7 +478,7 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
       * @param value The value of 'write'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.ConnBiDirect.Builder setWrite(java.lang.Integer value) {
+    public convertor.encoders.relayExtra.ConnBiDirect.Builder setWrite(java.lang.Integer value) {
       validate(fields()[4], value);
       this.write = value;
       fieldSetFlags()[4] = true;
@@ -500,7 +500,7 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
       * metrics-lib/ExtraInfoDescriptor: int getConnBiDirectWrite()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.ConnBiDirect.Builder clearWrite() {
+    public convertor.encoders.relayExtra.ConnBiDirect.Builder clearWrite() {
       write = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -521,7 +521,7 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
       * @param value The value of 'both'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.ConnBiDirect.Builder setBoth(java.lang.Integer value) {
+    public convertor.encoders.relayExtra.ConnBiDirect.Builder setBoth(java.lang.Integer value) {
       validate(fields()[5], value);
       this.both = value;
       fieldSetFlags()[5] = true;
@@ -543,7 +543,7 @@ public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase im
       * metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBoth()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.ConnBiDirect.Builder clearBoth() {
+    public convertor.encoders.relayExtra.ConnBiDirect.Builder clearBoth() {
       both = null;
       fieldSetFlags()[5] = false;
       return this;

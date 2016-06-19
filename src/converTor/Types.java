@@ -1,4 +1,4 @@
-package converTor;
+package convertor;
 
 import java.io.File;
 import java.io.IOException;
@@ -59,7 +59,7 @@ enum Types {
          but the converter works nonetheless. */
     }
     try {
-      String convert = "converTor.Convert";
+      String convert = "convertor.Convert";
       this.converter =
           (Class<? extends Convert>) Class.forName(convert + this.name);
     } catch (ClassNotFoundException e) {

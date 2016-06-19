@@ -3,12 +3,12 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.encoders.relay;  
+package convertor.encoders.relay;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class WriteHistory extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -7470091209289218353L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"WriteHistory\",\"namespace\":\"converTor.encoders.relay\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"WriteHistory\",\"namespace\":\"convertor.encoders.relay\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/BandwidthHistory: long getHistoryEndMillis() */
   @Deprecated public java.lang.Long date;
@@ -112,8 +112,8 @@ public class WriteHistory extends org.apache.avro.specific.SpecificRecordBase im
    * Creates a new WriteHistory RecordBuilder.
    * @return A new WriteHistory RecordBuilder
    */
-  public static converTor.encoders.relay.WriteHistory.Builder newBuilder() {
-    return new converTor.encoders.relay.WriteHistory.Builder();
+  public static convertor.encoders.relay.WriteHistory.Builder newBuilder() {
+    return new convertor.encoders.relay.WriteHistory.Builder();
   }
   
   /**
@@ -121,8 +121,8 @@ public class WriteHistory extends org.apache.avro.specific.SpecificRecordBase im
    * @param other The existing builder to copy.
    * @return A new WriteHistory RecordBuilder
    */
-  public static converTor.encoders.relay.WriteHistory.Builder newBuilder(converTor.encoders.relay.WriteHistory.Builder other) {
-    return new converTor.encoders.relay.WriteHistory.Builder(other);
+  public static convertor.encoders.relay.WriteHistory.Builder newBuilder(convertor.encoders.relay.WriteHistory.Builder other) {
+    return new convertor.encoders.relay.WriteHistory.Builder(other);
   }
   
   /**
@@ -130,8 +130,8 @@ public class WriteHistory extends org.apache.avro.specific.SpecificRecordBase im
    * @param other The existing instance to copy.
    * @return A new WriteHistory RecordBuilder
    */
-  public static converTor.encoders.relay.WriteHistory.Builder newBuilder(converTor.encoders.relay.WriteHistory other) {
-    return new converTor.encoders.relay.WriteHistory.Builder(other);
+  public static convertor.encoders.relay.WriteHistory.Builder newBuilder(convertor.encoders.relay.WriteHistory other) {
+    return new convertor.encoders.relay.WriteHistory.Builder(other);
   }
   
   /**
@@ -149,14 +149,14 @@ public class WriteHistory extends org.apache.avro.specific.SpecificRecordBase im
 
     /** Creates a new Builder */
     private Builder() {
-      super(converTor.encoders.relay.WriteHistory.SCHEMA$);
+      super(convertor.encoders.relay.WriteHistory.SCHEMA$);
     }
     
     /**
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(converTor.encoders.relay.WriteHistory.Builder other) {
+    private Builder(convertor.encoders.relay.WriteHistory.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.date)) {
         this.date = data().deepCopy(fields()[0].schema(), other.date);
@@ -176,8 +176,8 @@ public class WriteHistory extends org.apache.avro.specific.SpecificRecordBase im
      * Creates a Builder by copying an existing WriteHistory instance
      * @param other The existing instance to copy.
      */
-    private Builder(converTor.encoders.relay.WriteHistory other) {
-            super(converTor.encoders.relay.WriteHistory.SCHEMA$);
+    private Builder(convertor.encoders.relay.WriteHistory other) {
+            super(convertor.encoders.relay.WriteHistory.SCHEMA$);
       if (isValidValue(fields()[0], other.date)) {
         this.date = data().deepCopy(fields()[0].schema(), other.date);
         fieldSetFlags()[0] = true;
@@ -207,7 +207,7 @@ public class WriteHistory extends org.apache.avro.specific.SpecificRecordBase im
       * @param value The value of 'date'.
       * @return This builder.
       */
-    public converTor.encoders.relay.WriteHistory.Builder setDate(java.lang.Long value) {
+    public convertor.encoders.relay.WriteHistory.Builder setDate(java.lang.Long value) {
       validate(fields()[0], value);
       this.date = value;
       fieldSetFlags()[0] = true;
@@ -229,7 +229,7 @@ public class WriteHistory extends org.apache.avro.specific.SpecificRecordBase im
       * metrics-lib/BandwidthHistory: long getHistoryEndMillis()
       * @return This builder.
       */
-    public converTor.encoders.relay.WriteHistory.Builder clearDate() {
+    public convertor.encoders.relay.WriteHistory.Builder clearDate() {
       date = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -250,7 +250,7 @@ public class WriteHistory extends org.apache.avro.specific.SpecificRecordBase im
       * @param value The value of 'interval'.
       * @return This builder.
       */
-    public converTor.encoders.relay.WriteHistory.Builder setInterval(java.lang.Long value) {
+    public convertor.encoders.relay.WriteHistory.Builder setInterval(java.lang.Long value) {
       validate(fields()[1], value);
       this.interval = value;
       fieldSetFlags()[1] = true;
@@ -272,7 +272,7 @@ public class WriteHistory extends org.apache.avro.specific.SpecificRecordBase im
       * metrics-lib/BandwidthHistory: long getIntervalLength()
       * @return This builder.
       */
-    public converTor.encoders.relay.WriteHistory.Builder clearInterval() {
+    public convertor.encoders.relay.WriteHistory.Builder clearInterval() {
       interval = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -293,7 +293,7 @@ public class WriteHistory extends org.apache.avro.specific.SpecificRecordBase im
       * @param value The value of 'bytes'.
       * @return This builder.
       */
-    public converTor.encoders.relay.WriteHistory.Builder setBytes(java.util.List<java.lang.Long> value) {
+    public convertor.encoders.relay.WriteHistory.Builder setBytes(java.util.List<java.lang.Long> value) {
       validate(fields()[2], value);
       this.bytes = value;
       fieldSetFlags()[2] = true;
@@ -315,7 +315,7 @@ public class WriteHistory extends org.apache.avro.specific.SpecificRecordBase im
       * metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()
       * @return This builder.
       */
-    public converTor.encoders.relay.WriteHistory.Builder clearBytes() {
+    public convertor.encoders.relay.WriteHistory.Builder clearBytes() {
       bytes = null;
       fieldSetFlags()[2] = false;
       return this;

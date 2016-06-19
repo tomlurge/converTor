@@ -3,14 +3,14 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.encoders.relayConsensus;  
+package convertor.encoders.relayConsensus;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Authority extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = 4194772394477941954L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Authority\",\"namespace\":\"converTor.encoders.relayConsensus\",\"fields\":[{\"name\":\"dir_source\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirSource\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getIdentity()\"},{\"name\":\"hostname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getHostname()\"},{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getIp()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/DirSourceEntry: int getDirPort()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/DirSourceEntry: int getOrPort()\"},{\"name\":\"is_legacy\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/DirSourceEntry: boolean isLegacy()\"}]}]},{\"name\":\"contact\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getContactLine()\"},{\"name\":\"vote_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getVoteDigest()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Authority\",\"namespace\":\"convertor.encoders.relayConsensus\",\"fields\":[{\"name\":\"dir_source\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirSource\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getIdentity()\"},{\"name\":\"hostname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getHostname()\"},{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getIp()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/DirSourceEntry: int getDirPort()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/DirSourceEntry: int getOrPort()\"},{\"name\":\"is_legacy\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/DirSourceEntry: boolean isLegacy()\"}]}]},{\"name\":\"contact\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getContactLine()\"},{\"name\":\"vote_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getVoteDigest()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
-  @Deprecated public converTor.encoders.relayConsensus.DirSource dir_source;
+  @Deprecated public convertor.encoders.relayConsensus.DirSource dir_source;
   /** metrics-lib/DirSourceEntry: String getContactLine() */
   @Deprecated public java.lang.String contact;
   /** metrics-lib/DirSourceEntry: String getVoteDigest() */
@@ -28,7 +28,7 @@ public class Authority extends org.apache.avro.specific.SpecificRecordBase imple
    * @param contact metrics-lib/DirSourceEntry: String getContactLine()
    * @param vote_digest metrics-lib/DirSourceEntry: String getVoteDigest()
    */
-  public Authority(converTor.encoders.relayConsensus.DirSource dir_source, java.lang.String contact, java.lang.String vote_digest) {
+  public Authority(convertor.encoders.relayConsensus.DirSource dir_source, java.lang.String contact, java.lang.String vote_digest) {
     this.dir_source = dir_source;
     this.contact = contact;
     this.vote_digest = vote_digest;
@@ -48,7 +48,7 @@ public class Authority extends org.apache.avro.specific.SpecificRecordBase imple
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: dir_source = (converTor.encoders.relayConsensus.DirSource)value$; break;
+    case 0: dir_source = (convertor.encoders.relayConsensus.DirSource)value$; break;
     case 1: contact = (java.lang.String)value$; break;
     case 2: vote_digest = (java.lang.String)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
@@ -58,7 +58,7 @@ public class Authority extends org.apache.avro.specific.SpecificRecordBase imple
   /**
    * Gets the value of the 'dir_source' field.
    */
-  public converTor.encoders.relayConsensus.DirSource getDirSource() {
+  public convertor.encoders.relayConsensus.DirSource getDirSource() {
     return dir_source;
   }
 
@@ -66,7 +66,7 @@ public class Authority extends org.apache.avro.specific.SpecificRecordBase imple
    * Sets the value of the 'dir_source' field.
    * @param value the value to set.
    */
-  public void setDirSource(converTor.encoders.relayConsensus.DirSource value) {
+  public void setDirSource(convertor.encoders.relayConsensus.DirSource value) {
     this.dir_source = value;
   }
 
@@ -108,8 +108,8 @@ public class Authority extends org.apache.avro.specific.SpecificRecordBase imple
    * Creates a new Authority RecordBuilder.
    * @return A new Authority RecordBuilder
    */
-  public static converTor.encoders.relayConsensus.Authority.Builder newBuilder() {
-    return new converTor.encoders.relayConsensus.Authority.Builder();
+  public static convertor.encoders.relayConsensus.Authority.Builder newBuilder() {
+    return new convertor.encoders.relayConsensus.Authority.Builder();
   }
   
   /**
@@ -117,8 +117,8 @@ public class Authority extends org.apache.avro.specific.SpecificRecordBase imple
    * @param other The existing builder to copy.
    * @return A new Authority RecordBuilder
    */
-  public static converTor.encoders.relayConsensus.Authority.Builder newBuilder(converTor.encoders.relayConsensus.Authority.Builder other) {
-    return new converTor.encoders.relayConsensus.Authority.Builder(other);
+  public static convertor.encoders.relayConsensus.Authority.Builder newBuilder(convertor.encoders.relayConsensus.Authority.Builder other) {
+    return new convertor.encoders.relayConsensus.Authority.Builder(other);
   }
   
   /**
@@ -126,8 +126,8 @@ public class Authority extends org.apache.avro.specific.SpecificRecordBase imple
    * @param other The existing instance to copy.
    * @return A new Authority RecordBuilder
    */
-  public static converTor.encoders.relayConsensus.Authority.Builder newBuilder(converTor.encoders.relayConsensus.Authority other) {
-    return new converTor.encoders.relayConsensus.Authority.Builder(other);
+  public static convertor.encoders.relayConsensus.Authority.Builder newBuilder(convertor.encoders.relayConsensus.Authority other) {
+    return new convertor.encoders.relayConsensus.Authority.Builder(other);
   }
   
   /**
@@ -136,8 +136,8 @@ public class Authority extends org.apache.avro.specific.SpecificRecordBase imple
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Authority>
     implements org.apache.avro.data.RecordBuilder<Authority> {
 
-    private converTor.encoders.relayConsensus.DirSource dir_source;
-    private converTor.encoders.relayConsensus.DirSource.Builder dir_sourceBuilder;
+    private convertor.encoders.relayConsensus.DirSource dir_source;
+    private convertor.encoders.relayConsensus.DirSource.Builder dir_sourceBuilder;
     /** metrics-lib/DirSourceEntry: String getContactLine() */
     private java.lang.String contact;
     /** metrics-lib/DirSourceEntry: String getVoteDigest() */
@@ -145,21 +145,21 @@ public class Authority extends org.apache.avro.specific.SpecificRecordBase imple
 
     /** Creates a new Builder */
     private Builder() {
-      super(converTor.encoders.relayConsensus.Authority.SCHEMA$);
+      super(convertor.encoders.relayConsensus.Authority.SCHEMA$);
     }
     
     /**
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(converTor.encoders.relayConsensus.Authority.Builder other) {
+    private Builder(convertor.encoders.relayConsensus.Authority.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.dir_source)) {
         this.dir_source = data().deepCopy(fields()[0].schema(), other.dir_source);
         fieldSetFlags()[0] = true;
       }
       if (other.hasDirSourceBuilder()) {
-        this.dir_sourceBuilder = converTor.encoders.relayConsensus.DirSource.newBuilder(other.getDirSourceBuilder());
+        this.dir_sourceBuilder = convertor.encoders.relayConsensus.DirSource.newBuilder(other.getDirSourceBuilder());
       }
       if (isValidValue(fields()[1], other.contact)) {
         this.contact = data().deepCopy(fields()[1].schema(), other.contact);
@@ -175,8 +175,8 @@ public class Authority extends org.apache.avro.specific.SpecificRecordBase imple
      * Creates a Builder by copying an existing Authority instance
      * @param other The existing instance to copy.
      */
-    private Builder(converTor.encoders.relayConsensus.Authority other) {
-            super(converTor.encoders.relayConsensus.Authority.SCHEMA$);
+    private Builder(convertor.encoders.relayConsensus.Authority other) {
+            super(convertor.encoders.relayConsensus.Authority.SCHEMA$);
       if (isValidValue(fields()[0], other.dir_source)) {
         this.dir_source = data().deepCopy(fields()[0].schema(), other.dir_source);
         fieldSetFlags()[0] = true;
@@ -196,7 +196,7 @@ public class Authority extends org.apache.avro.specific.SpecificRecordBase imple
       * Gets the value of the 'dir_source' field.
       * @return The value.
       */
-    public converTor.encoders.relayConsensus.DirSource getDirSource() {
+    public convertor.encoders.relayConsensus.DirSource getDirSource() {
       return dir_source;
     }
 
@@ -205,7 +205,7 @@ public class Authority extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'dir_source'.
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.Authority.Builder setDirSource(converTor.encoders.relayConsensus.DirSource value) {
+    public convertor.encoders.relayConsensus.Authority.Builder setDirSource(convertor.encoders.relayConsensus.DirSource value) {
       validate(fields()[0], value);
       this.dir_sourceBuilder = null;
       this.dir_source = value;
@@ -225,12 +225,12 @@ public class Authority extends org.apache.avro.specific.SpecificRecordBase imple
      * Gets the Builder instance for the 'dir_source' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public converTor.encoders.relayConsensus.DirSource.Builder getDirSourceBuilder() {
+    public convertor.encoders.relayConsensus.DirSource.Builder getDirSourceBuilder() {
       if (dir_sourceBuilder == null) {
         if (hasDirSource()) {
-          setDirSourceBuilder(converTor.encoders.relayConsensus.DirSource.newBuilder(dir_source));
+          setDirSourceBuilder(convertor.encoders.relayConsensus.DirSource.newBuilder(dir_source));
         } else {
-          setDirSourceBuilder(converTor.encoders.relayConsensus.DirSource.newBuilder());
+          setDirSourceBuilder(convertor.encoders.relayConsensus.DirSource.newBuilder());
         }
       }
       return dir_sourceBuilder;
@@ -240,7 +240,7 @@ public class Authority extends org.apache.avro.specific.SpecificRecordBase imple
      * Sets the Builder instance for the 'dir_source' field
      * @return This builder.
      */
-    public converTor.encoders.relayConsensus.Authority.Builder setDirSourceBuilder(converTor.encoders.relayConsensus.DirSource.Builder value) {
+    public convertor.encoders.relayConsensus.Authority.Builder setDirSourceBuilder(convertor.encoders.relayConsensus.DirSource.Builder value) {
       clearDirSource();
       dir_sourceBuilder = value;
       return this;
@@ -258,7 +258,7 @@ public class Authority extends org.apache.avro.specific.SpecificRecordBase imple
       * Clears the value of the 'dir_source' field.
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.Authority.Builder clearDirSource() {
+    public convertor.encoders.relayConsensus.Authority.Builder clearDirSource() {
       dir_source = null;
       dir_sourceBuilder = null;
       fieldSetFlags()[0] = false;
@@ -280,7 +280,7 @@ public class Authority extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'contact'.
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.Authority.Builder setContact(java.lang.String value) {
+    public convertor.encoders.relayConsensus.Authority.Builder setContact(java.lang.String value) {
       validate(fields()[1], value);
       this.contact = value;
       fieldSetFlags()[1] = true;
@@ -302,7 +302,7 @@ public class Authority extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/DirSourceEntry: String getContactLine()
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.Authority.Builder clearContact() {
+    public convertor.encoders.relayConsensus.Authority.Builder clearContact() {
       contact = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -323,7 +323,7 @@ public class Authority extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'vote_digest'.
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.Authority.Builder setVoteDigest(java.lang.String value) {
+    public convertor.encoders.relayConsensus.Authority.Builder setVoteDigest(java.lang.String value) {
       validate(fields()[2], value);
       this.vote_digest = value;
       fieldSetFlags()[2] = true;
@@ -345,7 +345,7 @@ public class Authority extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/DirSourceEntry: String getVoteDigest()
       * @return This builder.
       */
-    public converTor.encoders.relayConsensus.Authority.Builder clearVoteDigest() {
+    public convertor.encoders.relayConsensus.Authority.Builder clearVoteDigest() {
       vote_digest = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -358,7 +358,7 @@ public class Authority extends org.apache.avro.specific.SpecificRecordBase imple
         if (dir_sourceBuilder != null) {
           record.dir_source = this.dir_sourceBuilder.build();
         } else {
-          record.dir_source = fieldSetFlags()[0] ? this.dir_source : (converTor.encoders.relayConsensus.DirSource) defaultValue(fields()[0]);
+          record.dir_source = fieldSetFlags()[0] ? this.dir_source : (convertor.encoders.relayConsensus.DirSource) defaultValue(fields()[0]);
         }
         record.contact = fieldSetFlags()[1] ? this.contact : (java.lang.String) defaultValue(fields()[1]);
         record.vote_digest = fieldSetFlags()[2] ? this.vote_digest : (java.lang.String) defaultValue(fields()[2]);

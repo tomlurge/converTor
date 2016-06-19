@@ -3,12 +3,12 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.encoders.relayVote;  
+package convertor.encoders.relayVote;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class ID extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = 2920348887509736385L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ID\",\"namespace\":\"converTor.encoders.relayVote\",\"fields\":[{\"name\":\"ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getMasterKeyEd25519()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ID\",\"namespace\":\"convertor.encoders.relayVote\",\"fields\":[{\"name\":\"ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getMasterKeyEd25519()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/NetworkStatusEntry: String getMasterKeyEd25519() */
   @Deprecated public java.lang.Boolean ed25519;
@@ -66,8 +66,8 @@ public class ID extends org.apache.avro.specific.SpecificRecordBase implements o
    * Creates a new ID RecordBuilder.
    * @return A new ID RecordBuilder
    */
-  public static converTor.encoders.relayVote.ID.Builder newBuilder() {
-    return new converTor.encoders.relayVote.ID.Builder();
+  public static convertor.encoders.relayVote.ID.Builder newBuilder() {
+    return new convertor.encoders.relayVote.ID.Builder();
   }
   
   /**
@@ -75,8 +75,8 @@ public class ID extends org.apache.avro.specific.SpecificRecordBase implements o
    * @param other The existing builder to copy.
    * @return A new ID RecordBuilder
    */
-  public static converTor.encoders.relayVote.ID.Builder newBuilder(converTor.encoders.relayVote.ID.Builder other) {
-    return new converTor.encoders.relayVote.ID.Builder(other);
+  public static convertor.encoders.relayVote.ID.Builder newBuilder(convertor.encoders.relayVote.ID.Builder other) {
+    return new convertor.encoders.relayVote.ID.Builder(other);
   }
   
   /**
@@ -84,8 +84,8 @@ public class ID extends org.apache.avro.specific.SpecificRecordBase implements o
    * @param other The existing instance to copy.
    * @return A new ID RecordBuilder
    */
-  public static converTor.encoders.relayVote.ID.Builder newBuilder(converTor.encoders.relayVote.ID other) {
-    return new converTor.encoders.relayVote.ID.Builder(other);
+  public static convertor.encoders.relayVote.ID.Builder newBuilder(convertor.encoders.relayVote.ID other) {
+    return new convertor.encoders.relayVote.ID.Builder(other);
   }
   
   /**
@@ -99,14 +99,14 @@ public class ID extends org.apache.avro.specific.SpecificRecordBase implements o
 
     /** Creates a new Builder */
     private Builder() {
-      super(converTor.encoders.relayVote.ID.SCHEMA$);
+      super(convertor.encoders.relayVote.ID.SCHEMA$);
     }
     
     /**
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(converTor.encoders.relayVote.ID.Builder other) {
+    private Builder(convertor.encoders.relayVote.ID.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.ed25519)) {
         this.ed25519 = data().deepCopy(fields()[0].schema(), other.ed25519);
@@ -118,8 +118,8 @@ public class ID extends org.apache.avro.specific.SpecificRecordBase implements o
      * Creates a Builder by copying an existing ID instance
      * @param other The existing instance to copy.
      */
-    private Builder(converTor.encoders.relayVote.ID other) {
-            super(converTor.encoders.relayVote.ID.SCHEMA$);
+    private Builder(convertor.encoders.relayVote.ID other) {
+            super(convertor.encoders.relayVote.ID.SCHEMA$);
       if (isValidValue(fields()[0], other.ed25519)) {
         this.ed25519 = data().deepCopy(fields()[0].schema(), other.ed25519);
         fieldSetFlags()[0] = true;
@@ -141,7 +141,7 @@ public class ID extends org.apache.avro.specific.SpecificRecordBase implements o
       * @param value The value of 'ed25519'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.ID.Builder setEd25519(java.lang.Boolean value) {
+    public convertor.encoders.relayVote.ID.Builder setEd25519(java.lang.Boolean value) {
       validate(fields()[0], value);
       this.ed25519 = value;
       fieldSetFlags()[0] = true;
@@ -163,7 +163,7 @@ public class ID extends org.apache.avro.specific.SpecificRecordBase implements o
       * metrics-lib/NetworkStatusEntry: String getMasterKeyEd25519()
       * @return This builder.
       */
-    public converTor.encoders.relayVote.ID.Builder clearEd25519() {
+    public convertor.encoders.relayVote.ID.Builder clearEd25519() {
       ed25519 = null;
       fieldSetFlags()[0] = false;
       return this;

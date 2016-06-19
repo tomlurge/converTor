@@ -1,4 +1,4 @@
-package converTor;
+package convertor;
 
 import java.io.*;
 import org.apache.avro.Schema;

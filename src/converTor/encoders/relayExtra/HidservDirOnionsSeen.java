@@ -3,12 +3,12 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.encoders.relayExtra;  
+package convertor.encoders.relayExtra;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class HidservDirOnionsSeen extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = 5526702025728555705L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"HidservDirOnionsSeen\",\"namespace\":\"converTor.encoders.relayExtra\",\"fields\":[{\"name\":\"onions\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: Double getHidservDirOnionsSeen()\"},{\"name\":\"obfuscation\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"double\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservDirOnionsSeenParameters()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"HidservDirOnionsSeen\",\"namespace\":\"convertor.encoders.relayExtra\",\"fields\":[{\"name\":\"onions\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: Double getHidservDirOnionsSeen()\"},{\"name\":\"obfuscation\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"double\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservDirOnionsSeenParameters()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/ExtraInfoDescriptor: Double getHidservDirOnionsSeen() */
   @Deprecated public java.lang.Double onions;
@@ -89,8 +89,8 @@ public class HidservDirOnionsSeen extends org.apache.avro.specific.SpecificRecor
    * Creates a new HidservDirOnionsSeen RecordBuilder.
    * @return A new HidservDirOnionsSeen RecordBuilder
    */
-  public static converTor.encoders.relayExtra.HidservDirOnionsSeen.Builder newBuilder() {
-    return new converTor.encoders.relayExtra.HidservDirOnionsSeen.Builder();
+  public static convertor.encoders.relayExtra.HidservDirOnionsSeen.Builder newBuilder() {
+    return new convertor.encoders.relayExtra.HidservDirOnionsSeen.Builder();
   }
   
   /**
@@ -98,8 +98,8 @@ public class HidservDirOnionsSeen extends org.apache.avro.specific.SpecificRecor
    * @param other The existing builder to copy.
    * @return A new HidservDirOnionsSeen RecordBuilder
    */
-  public static converTor.encoders.relayExtra.HidservDirOnionsSeen.Builder newBuilder(converTor.encoders.relayExtra.HidservDirOnionsSeen.Builder other) {
-    return new converTor.encoders.relayExtra.HidservDirOnionsSeen.Builder(other);
+  public static convertor.encoders.relayExtra.HidservDirOnionsSeen.Builder newBuilder(convertor.encoders.relayExtra.HidservDirOnionsSeen.Builder other) {
+    return new convertor.encoders.relayExtra.HidservDirOnionsSeen.Builder(other);
   }
   
   /**
@@ -107,8 +107,8 @@ public class HidservDirOnionsSeen extends org.apache.avro.specific.SpecificRecor
    * @param other The existing instance to copy.
    * @return A new HidservDirOnionsSeen RecordBuilder
    */
-  public static converTor.encoders.relayExtra.HidservDirOnionsSeen.Builder newBuilder(converTor.encoders.relayExtra.HidservDirOnionsSeen other) {
-    return new converTor.encoders.relayExtra.HidservDirOnionsSeen.Builder(other);
+  public static convertor.encoders.relayExtra.HidservDirOnionsSeen.Builder newBuilder(convertor.encoders.relayExtra.HidservDirOnionsSeen other) {
+    return new convertor.encoders.relayExtra.HidservDirOnionsSeen.Builder(other);
   }
   
   /**
@@ -124,14 +124,14 @@ public class HidservDirOnionsSeen extends org.apache.avro.specific.SpecificRecor
 
     /** Creates a new Builder */
     private Builder() {
-      super(converTor.encoders.relayExtra.HidservDirOnionsSeen.SCHEMA$);
+      super(convertor.encoders.relayExtra.HidservDirOnionsSeen.SCHEMA$);
     }
     
     /**
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(converTor.encoders.relayExtra.HidservDirOnionsSeen.Builder other) {
+    private Builder(convertor.encoders.relayExtra.HidservDirOnionsSeen.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.onions)) {
         this.onions = data().deepCopy(fields()[0].schema(), other.onions);
@@ -147,8 +147,8 @@ public class HidservDirOnionsSeen extends org.apache.avro.specific.SpecificRecor
      * Creates a Builder by copying an existing HidservDirOnionsSeen instance
      * @param other The existing instance to copy.
      */
-    private Builder(converTor.encoders.relayExtra.HidservDirOnionsSeen other) {
-            super(converTor.encoders.relayExtra.HidservDirOnionsSeen.SCHEMA$);
+    private Builder(convertor.encoders.relayExtra.HidservDirOnionsSeen other) {
+            super(convertor.encoders.relayExtra.HidservDirOnionsSeen.SCHEMA$);
       if (isValidValue(fields()[0], other.onions)) {
         this.onions = data().deepCopy(fields()[0].schema(), other.onions);
         fieldSetFlags()[0] = true;
@@ -174,7 +174,7 @@ public class HidservDirOnionsSeen extends org.apache.avro.specific.SpecificRecor
       * @param value The value of 'onions'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.HidservDirOnionsSeen.Builder setOnions(java.lang.Double value) {
+    public convertor.encoders.relayExtra.HidservDirOnionsSeen.Builder setOnions(java.lang.Double value) {
       validate(fields()[0], value);
       this.onions = value;
       fieldSetFlags()[0] = true;
@@ -196,7 +196,7 @@ public class HidservDirOnionsSeen extends org.apache.avro.specific.SpecificRecor
       * metrics-lib/ExtraInfoDescriptor: Double getHidservDirOnionsSeen()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.HidservDirOnionsSeen.Builder clearOnions() {
+    public convertor.encoders.relayExtra.HidservDirOnionsSeen.Builder clearOnions() {
       onions = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -217,7 +217,7 @@ public class HidservDirOnionsSeen extends org.apache.avro.specific.SpecificRecor
       * @param value The value of 'obfuscation'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.HidservDirOnionsSeen.Builder setObfuscation(java.util.Map<java.lang.String,java.lang.Double> value) {
+    public convertor.encoders.relayExtra.HidservDirOnionsSeen.Builder setObfuscation(java.util.Map<java.lang.String,java.lang.Double> value) {
       validate(fields()[1], value);
       this.obfuscation = value;
       fieldSetFlags()[1] = true;
@@ -239,7 +239,7 @@ public class HidservDirOnionsSeen extends org.apache.avro.specific.SpecificRecor
       * metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservDirOnionsSeenParameters()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.HidservDirOnionsSeen.Builder clearObfuscation() {
+    public convertor.encoders.relayExtra.HidservDirOnionsSeen.Builder clearObfuscation() {
       obfuscation = null;
       fieldSetFlags()[1] = false;
       return this;

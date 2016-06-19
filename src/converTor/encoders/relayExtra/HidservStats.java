@@ -3,12 +3,12 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.encoders.relayExtra;  
+package convertor.encoders.relayExtra;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class HidservStats extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -2366695773118454719L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"HidservStats\",\"namespace\":\"converTor.encoders.relayExtra\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getHidservStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getHidservStatsIntervalLength()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"HidservStats\",\"namespace\":\"convertor.encoders.relayExtra\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getHidservStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getHidservStatsIntervalLength()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/ExtraInfoDescriptor: long getHidservStatsEndMillis() */
   @Deprecated public java.lang.Long date;
@@ -89,8 +89,8 @@ public class HidservStats extends org.apache.avro.specific.SpecificRecordBase im
    * Creates a new HidservStats RecordBuilder.
    * @return A new HidservStats RecordBuilder
    */
-  public static converTor.encoders.relayExtra.HidservStats.Builder newBuilder() {
-    return new converTor.encoders.relayExtra.HidservStats.Builder();
+  public static convertor.encoders.relayExtra.HidservStats.Builder newBuilder() {
+    return new convertor.encoders.relayExtra.HidservStats.Builder();
   }
   
   /**
@@ -98,8 +98,8 @@ public class HidservStats extends org.apache.avro.specific.SpecificRecordBase im
    * @param other The existing builder to copy.
    * @return A new HidservStats RecordBuilder
    */
-  public static converTor.encoders.relayExtra.HidservStats.Builder newBuilder(converTor.encoders.relayExtra.HidservStats.Builder other) {
-    return new converTor.encoders.relayExtra.HidservStats.Builder(other);
+  public static convertor.encoders.relayExtra.HidservStats.Builder newBuilder(convertor.encoders.relayExtra.HidservStats.Builder other) {
+    return new convertor.encoders.relayExtra.HidservStats.Builder(other);
   }
   
   /**
@@ -107,8 +107,8 @@ public class HidservStats extends org.apache.avro.specific.SpecificRecordBase im
    * @param other The existing instance to copy.
    * @return A new HidservStats RecordBuilder
    */
-  public static converTor.encoders.relayExtra.HidservStats.Builder newBuilder(converTor.encoders.relayExtra.HidservStats other) {
-    return new converTor.encoders.relayExtra.HidservStats.Builder(other);
+  public static convertor.encoders.relayExtra.HidservStats.Builder newBuilder(convertor.encoders.relayExtra.HidservStats other) {
+    return new convertor.encoders.relayExtra.HidservStats.Builder(other);
   }
   
   /**
@@ -124,14 +124,14 @@ public class HidservStats extends org.apache.avro.specific.SpecificRecordBase im
 
     /** Creates a new Builder */
     private Builder() {
-      super(converTor.encoders.relayExtra.HidservStats.SCHEMA$);
+      super(convertor.encoders.relayExtra.HidservStats.SCHEMA$);
     }
     
     /**
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(converTor.encoders.relayExtra.HidservStats.Builder other) {
+    private Builder(convertor.encoders.relayExtra.HidservStats.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.date)) {
         this.date = data().deepCopy(fields()[0].schema(), other.date);
@@ -147,8 +147,8 @@ public class HidservStats extends org.apache.avro.specific.SpecificRecordBase im
      * Creates a Builder by copying an existing HidservStats instance
      * @param other The existing instance to copy.
      */
-    private Builder(converTor.encoders.relayExtra.HidservStats other) {
-            super(converTor.encoders.relayExtra.HidservStats.SCHEMA$);
+    private Builder(convertor.encoders.relayExtra.HidservStats other) {
+            super(convertor.encoders.relayExtra.HidservStats.SCHEMA$);
       if (isValidValue(fields()[0], other.date)) {
         this.date = data().deepCopy(fields()[0].schema(), other.date);
         fieldSetFlags()[0] = true;
@@ -174,7 +174,7 @@ public class HidservStats extends org.apache.avro.specific.SpecificRecordBase im
       * @param value The value of 'date'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.HidservStats.Builder setDate(java.lang.Long value) {
+    public convertor.encoders.relayExtra.HidservStats.Builder setDate(java.lang.Long value) {
       validate(fields()[0], value);
       this.date = value;
       fieldSetFlags()[0] = true;
@@ -196,7 +196,7 @@ public class HidservStats extends org.apache.avro.specific.SpecificRecordBase im
       * metrics-lib/ExtraInfoDescriptor: long getHidservStatsEndMillis()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.HidservStats.Builder clearDate() {
+    public convertor.encoders.relayExtra.HidservStats.Builder clearDate() {
       date = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -217,7 +217,7 @@ public class HidservStats extends org.apache.avro.specific.SpecificRecordBase im
       * @param value The value of 'interval'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.HidservStats.Builder setInterval(java.lang.Long value) {
+    public convertor.encoders.relayExtra.HidservStats.Builder setInterval(java.lang.Long value) {
       validate(fields()[1], value);
       this.interval = value;
       fieldSetFlags()[1] = true;
@@ -239,7 +239,7 @@ public class HidservStats extends org.apache.avro.specific.SpecificRecordBase im
       * metrics-lib/ExtraInfoDescriptor: long getHidservStatsIntervalLength()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.HidservStats.Builder clearInterval() {
+    public convertor.encoders.relayExtra.HidservStats.Builder clearInterval() {
       interval = null;
       fieldSetFlags()[1] = false;
       return this;

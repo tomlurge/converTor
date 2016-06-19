@@ -3,22 +3,22 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.encoders.bridgeStatus;  
+package convertor.encoders.bridgeStatus;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Status extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = 117523613619643371L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Status\",\"namespace\":\"converTor.encoders.bridgeStatus\",\"fields\":[{\"name\":\"r\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"R\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getFingerprint()\"},{\"name\":\"digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDescriptor()\"},{\"name\":\"published\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getPublishedMillis()\"},{\"name\":\"ip\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getOrPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getDirPort()\"}]}]},{\"name\":\"a\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"OrAddress\",\"fields\":[{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"implementation specific, see actual converter\"},{\"name\":\"port\",\"type\":[\"null\",\"int\"],\"doc\":\"implementation specific, see actual converter\"}]}}],\"doc\":\"metrics-lib/NetworkStatusEntry: getOrAddresses()\"},{\"name\":\"s\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags()\"},{\"name\":\"v\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getVersion()\"},{\"name\":\"w\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"W\",\"fields\":[{\"name\":\"bandwidth\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getBandwidth()\"},{\"name\":\"measured\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getMeasured()\"},{\"name\":\"unmeasured\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/NetworkStatusEntry: boolean getUnmeasured()\"}]}]},{\"name\":\"p\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Policy\",\"fields\":[{\"name\":\"default_policy\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDefaultPolicy()\"},{\"name\":\"port_summary\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getPortList()\"}]}]}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Status\",\"namespace\":\"convertor.encoders.bridgeStatus\",\"fields\":[{\"name\":\"r\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"R\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getFingerprint()\"},{\"name\":\"digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDescriptor()\"},{\"name\":\"published\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getPublishedMillis()\"},{\"name\":\"ip\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getOrPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getDirPort()\"}]}]},{\"name\":\"a\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"OrAddress\",\"fields\":[{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"implementation specific, see actual converter\"},{\"name\":\"port\",\"type\":[\"null\",\"int\"],\"doc\":\"implementation specific, see actual converter\"}]}}],\"doc\":\"metrics-lib/NetworkStatusEntry: getOrAddresses()\"},{\"name\":\"s\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags()\"},{\"name\":\"v\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getVersion()\"},{\"name\":\"w\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"W\",\"fields\":[{\"name\":\"bandwidth\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getBandwidth()\"},{\"name\":\"measured\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getMeasured()\"},{\"name\":\"unmeasured\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/NetworkStatusEntry: boolean getUnmeasured()\"}]}]},{\"name\":\"p\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Policy\",\"fields\":[{\"name\":\"default_policy\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDefaultPolicy()\"},{\"name\":\"port_summary\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getPortList()\"}]}]}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
-  @Deprecated public converTor.encoders.bridgeStatus.R r;
+  @Deprecated public convertor.encoders.bridgeStatus.R r;
   /** metrics-lib/NetworkStatusEntry: getOrAddresses() */
-  @Deprecated public java.util.List<converTor.encoders.bridgeStatus.OrAddress> a;
+  @Deprecated public java.util.List<convertor.encoders.bridgeStatus.OrAddress> a;
   /** metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags() */
   @Deprecated public java.util.List<java.lang.String> s;
   /** metrics-lib/NetworkStatusEntry: String getVersion() */
   @Deprecated public java.lang.String v;
-  @Deprecated public converTor.encoders.bridgeStatus.W w;
-  @Deprecated public converTor.encoders.bridgeStatus.Policy p;
+  @Deprecated public convertor.encoders.bridgeStatus.W w;
+  @Deprecated public convertor.encoders.bridgeStatus.Policy p;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -33,7 +33,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
    * @param s metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags()
    * @param v metrics-lib/NetworkStatusEntry: String getVersion()
    */
-  public Status(converTor.encoders.bridgeStatus.R r, java.util.List<converTor.encoders.bridgeStatus.OrAddress> a, java.util.List<java.lang.String> s, java.lang.String v, converTor.encoders.bridgeStatus.W w, converTor.encoders.bridgeStatus.Policy p) {
+  public Status(convertor.encoders.bridgeStatus.R r, java.util.List<convertor.encoders.bridgeStatus.OrAddress> a, java.util.List<java.lang.String> s, java.lang.String v, convertor.encoders.bridgeStatus.W w, convertor.encoders.bridgeStatus.Policy p) {
     this.r = r;
     this.a = a;
     this.s = s;
@@ -59,12 +59,12 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: r = (converTor.encoders.bridgeStatus.R)value$; break;
-    case 1: a = (java.util.List<converTor.encoders.bridgeStatus.OrAddress>)value$; break;
+    case 0: r = (convertor.encoders.bridgeStatus.R)value$; break;
+    case 1: a = (java.util.List<convertor.encoders.bridgeStatus.OrAddress>)value$; break;
     case 2: s = (java.util.List<java.lang.String>)value$; break;
     case 3: v = (java.lang.String)value$; break;
-    case 4: w = (converTor.encoders.bridgeStatus.W)value$; break;
-    case 5: p = (converTor.encoders.bridgeStatus.Policy)value$; break;
+    case 4: w = (convertor.encoders.bridgeStatus.W)value$; break;
+    case 5: p = (convertor.encoders.bridgeStatus.Policy)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -72,7 +72,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
   /**
    * Gets the value of the 'r' field.
    */
-  public converTor.encoders.bridgeStatus.R getR() {
+  public convertor.encoders.bridgeStatus.R getR() {
     return r;
   }
 
@@ -80,7 +80,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
    * Sets the value of the 'r' field.
    * @param value the value to set.
    */
-  public void setR(converTor.encoders.bridgeStatus.R value) {
+  public void setR(convertor.encoders.bridgeStatus.R value) {
     this.r = value;
   }
 
@@ -88,7 +88,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
    * Gets the value of the 'a' field.
    * @return metrics-lib/NetworkStatusEntry: getOrAddresses()
    */
-  public java.util.List<converTor.encoders.bridgeStatus.OrAddress> getA() {
+  public java.util.List<convertor.encoders.bridgeStatus.OrAddress> getA() {
     return a;
   }
 
@@ -97,7 +97,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
    * metrics-lib/NetworkStatusEntry: getOrAddresses()
    * @param value the value to set.
    */
-  public void setA(java.util.List<converTor.encoders.bridgeStatus.OrAddress> value) {
+  public void setA(java.util.List<convertor.encoders.bridgeStatus.OrAddress> value) {
     this.a = value;
   }
 
@@ -138,7 +138,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
   /**
    * Gets the value of the 'w' field.
    */
-  public converTor.encoders.bridgeStatus.W getW() {
+  public convertor.encoders.bridgeStatus.W getW() {
     return w;
   }
 
@@ -146,14 +146,14 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
    * Sets the value of the 'w' field.
    * @param value the value to set.
    */
-  public void setW(converTor.encoders.bridgeStatus.W value) {
+  public void setW(convertor.encoders.bridgeStatus.W value) {
     this.w = value;
   }
 
   /**
    * Gets the value of the 'p' field.
    */
-  public converTor.encoders.bridgeStatus.Policy getP() {
+  public convertor.encoders.bridgeStatus.Policy getP() {
     return p;
   }
 
@@ -161,7 +161,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
    * Sets the value of the 'p' field.
    * @param value the value to set.
    */
-  public void setP(converTor.encoders.bridgeStatus.Policy value) {
+  public void setP(convertor.encoders.bridgeStatus.Policy value) {
     this.p = value;
   }
 
@@ -169,8 +169,8 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
    * Creates a new Status RecordBuilder.
    * @return A new Status RecordBuilder
    */
-  public static converTor.encoders.bridgeStatus.Status.Builder newBuilder() {
-    return new converTor.encoders.bridgeStatus.Status.Builder();
+  public static convertor.encoders.bridgeStatus.Status.Builder newBuilder() {
+    return new convertor.encoders.bridgeStatus.Status.Builder();
   }
   
   /**
@@ -178,8 +178,8 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
    * @param other The existing builder to copy.
    * @return A new Status RecordBuilder
    */
-  public static converTor.encoders.bridgeStatus.Status.Builder newBuilder(converTor.encoders.bridgeStatus.Status.Builder other) {
-    return new converTor.encoders.bridgeStatus.Status.Builder(other);
+  public static convertor.encoders.bridgeStatus.Status.Builder newBuilder(convertor.encoders.bridgeStatus.Status.Builder other) {
+    return new convertor.encoders.bridgeStatus.Status.Builder(other);
   }
   
   /**
@@ -187,8 +187,8 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
    * @param other The existing instance to copy.
    * @return A new Status RecordBuilder
    */
-  public static converTor.encoders.bridgeStatus.Status.Builder newBuilder(converTor.encoders.bridgeStatus.Status other) {
-    return new converTor.encoders.bridgeStatus.Status.Builder(other);
+  public static convertor.encoders.bridgeStatus.Status.Builder newBuilder(convertor.encoders.bridgeStatus.Status other) {
+    return new convertor.encoders.bridgeStatus.Status.Builder(other);
   }
   
   /**
@@ -197,36 +197,36 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Status>
     implements org.apache.avro.data.RecordBuilder<Status> {
 
-    private converTor.encoders.bridgeStatus.R r;
-    private converTor.encoders.bridgeStatus.R.Builder rBuilder;
+    private convertor.encoders.bridgeStatus.R r;
+    private convertor.encoders.bridgeStatus.R.Builder rBuilder;
     /** metrics-lib/NetworkStatusEntry: getOrAddresses() */
-    private java.util.List<converTor.encoders.bridgeStatus.OrAddress> a;
+    private java.util.List<convertor.encoders.bridgeStatus.OrAddress> a;
     /** metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags() */
     private java.util.List<java.lang.String> s;
     /** metrics-lib/NetworkStatusEntry: String getVersion() */
     private java.lang.String v;
-    private converTor.encoders.bridgeStatus.W w;
-    private converTor.encoders.bridgeStatus.W.Builder wBuilder;
-    private converTor.encoders.bridgeStatus.Policy p;
-    private converTor.encoders.bridgeStatus.Policy.Builder pBuilder;
+    private convertor.encoders.bridgeStatus.W w;
+    private convertor.encoders.bridgeStatus.W.Builder wBuilder;
+    private convertor.encoders.bridgeStatus.Policy p;
+    private convertor.encoders.bridgeStatus.Policy.Builder pBuilder;
 
     /** Creates a new Builder */
     private Builder() {
-      super(converTor.encoders.bridgeStatus.Status.SCHEMA$);
+      super(convertor.encoders.bridgeStatus.Status.SCHEMA$);
     }
     
     /**
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(converTor.encoders.bridgeStatus.Status.Builder other) {
+    private Builder(convertor.encoders.bridgeStatus.Status.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.r)) {
         this.r = data().deepCopy(fields()[0].schema(), other.r);
         fieldSetFlags()[0] = true;
       }
       if (other.hasRBuilder()) {
-        this.rBuilder = converTor.encoders.bridgeStatus.R.newBuilder(other.getRBuilder());
+        this.rBuilder = convertor.encoders.bridgeStatus.R.newBuilder(other.getRBuilder());
       }
       if (isValidValue(fields()[1], other.a)) {
         this.a = data().deepCopy(fields()[1].schema(), other.a);
@@ -245,14 +245,14 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
         fieldSetFlags()[4] = true;
       }
       if (other.hasWBuilder()) {
-        this.wBuilder = converTor.encoders.bridgeStatus.W.newBuilder(other.getWBuilder());
+        this.wBuilder = convertor.encoders.bridgeStatus.W.newBuilder(other.getWBuilder());
       }
       if (isValidValue(fields()[5], other.p)) {
         this.p = data().deepCopy(fields()[5].schema(), other.p);
         fieldSetFlags()[5] = true;
       }
       if (other.hasPBuilder()) {
-        this.pBuilder = converTor.encoders.bridgeStatus.Policy.newBuilder(other.getPBuilder());
+        this.pBuilder = convertor.encoders.bridgeStatus.Policy.newBuilder(other.getPBuilder());
       }
     }
     
@@ -260,8 +260,8 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
      * Creates a Builder by copying an existing Status instance
      * @param other The existing instance to copy.
      */
-    private Builder(converTor.encoders.bridgeStatus.Status other) {
-            super(converTor.encoders.bridgeStatus.Status.SCHEMA$);
+    private Builder(convertor.encoders.bridgeStatus.Status other) {
+            super(convertor.encoders.bridgeStatus.Status.SCHEMA$);
       if (isValidValue(fields()[0], other.r)) {
         this.r = data().deepCopy(fields()[0].schema(), other.r);
         fieldSetFlags()[0] = true;
@@ -295,7 +295,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * Gets the value of the 'r' field.
       * @return The value.
       */
-    public converTor.encoders.bridgeStatus.R getR() {
+    public convertor.encoders.bridgeStatus.R getR() {
       return r;
     }
 
@@ -304,7 +304,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'r'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeStatus.Status.Builder setR(converTor.encoders.bridgeStatus.R value) {
+    public convertor.encoders.bridgeStatus.Status.Builder setR(convertor.encoders.bridgeStatus.R value) {
       validate(fields()[0], value);
       this.rBuilder = null;
       this.r = value;
@@ -324,12 +324,12 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
      * Gets the Builder instance for the 'r' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public converTor.encoders.bridgeStatus.R.Builder getRBuilder() {
+    public convertor.encoders.bridgeStatus.R.Builder getRBuilder() {
       if (rBuilder == null) {
         if (hasR()) {
-          setRBuilder(converTor.encoders.bridgeStatus.R.newBuilder(r));
+          setRBuilder(convertor.encoders.bridgeStatus.R.newBuilder(r));
         } else {
-          setRBuilder(converTor.encoders.bridgeStatus.R.newBuilder());
+          setRBuilder(convertor.encoders.bridgeStatus.R.newBuilder());
         }
       }
       return rBuilder;
@@ -339,7 +339,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
      * Sets the Builder instance for the 'r' field
      * @return This builder.
      */
-    public converTor.encoders.bridgeStatus.Status.Builder setRBuilder(converTor.encoders.bridgeStatus.R.Builder value) {
+    public convertor.encoders.bridgeStatus.Status.Builder setRBuilder(convertor.encoders.bridgeStatus.R.Builder value) {
       clearR();
       rBuilder = value;
       return this;
@@ -357,7 +357,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * Clears the value of the 'r' field.
       * @return This builder.
       */
-    public converTor.encoders.bridgeStatus.Status.Builder clearR() {
+    public convertor.encoders.bridgeStatus.Status.Builder clearR() {
       r = null;
       rBuilder = null;
       fieldSetFlags()[0] = false;
@@ -369,7 +369,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/NetworkStatusEntry: getOrAddresses()
       * @return The value.
       */
-    public java.util.List<converTor.encoders.bridgeStatus.OrAddress> getA() {
+    public java.util.List<convertor.encoders.bridgeStatus.OrAddress> getA() {
       return a;
     }
 
@@ -379,7 +379,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'a'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeStatus.Status.Builder setA(java.util.List<converTor.encoders.bridgeStatus.OrAddress> value) {
+    public convertor.encoders.bridgeStatus.Status.Builder setA(java.util.List<convertor.encoders.bridgeStatus.OrAddress> value) {
       validate(fields()[1], value);
       this.a = value;
       fieldSetFlags()[1] = true;
@@ -401,7 +401,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/NetworkStatusEntry: getOrAddresses()
       * @return This builder.
       */
-    public converTor.encoders.bridgeStatus.Status.Builder clearA() {
+    public convertor.encoders.bridgeStatus.Status.Builder clearA() {
       a = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -422,7 +422,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 's'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeStatus.Status.Builder setS(java.util.List<java.lang.String> value) {
+    public convertor.encoders.bridgeStatus.Status.Builder setS(java.util.List<java.lang.String> value) {
       validate(fields()[2], value);
       this.s = value;
       fieldSetFlags()[2] = true;
@@ -444,7 +444,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags()
       * @return This builder.
       */
-    public converTor.encoders.bridgeStatus.Status.Builder clearS() {
+    public convertor.encoders.bridgeStatus.Status.Builder clearS() {
       s = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -465,7 +465,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'v'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeStatus.Status.Builder setV(java.lang.String value) {
+    public convertor.encoders.bridgeStatus.Status.Builder setV(java.lang.String value) {
       validate(fields()[3], value);
       this.v = value;
       fieldSetFlags()[3] = true;
@@ -487,7 +487,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * metrics-lib/NetworkStatusEntry: String getVersion()
       * @return This builder.
       */
-    public converTor.encoders.bridgeStatus.Status.Builder clearV() {
+    public convertor.encoders.bridgeStatus.Status.Builder clearV() {
       v = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -497,7 +497,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * Gets the value of the 'w' field.
       * @return The value.
       */
-    public converTor.encoders.bridgeStatus.W getW() {
+    public convertor.encoders.bridgeStatus.W getW() {
       return w;
     }
 
@@ -506,7 +506,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'w'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeStatus.Status.Builder setW(converTor.encoders.bridgeStatus.W value) {
+    public convertor.encoders.bridgeStatus.Status.Builder setW(convertor.encoders.bridgeStatus.W value) {
       validate(fields()[4], value);
       this.wBuilder = null;
       this.w = value;
@@ -526,12 +526,12 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
      * Gets the Builder instance for the 'w' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public converTor.encoders.bridgeStatus.W.Builder getWBuilder() {
+    public convertor.encoders.bridgeStatus.W.Builder getWBuilder() {
       if (wBuilder == null) {
         if (hasW()) {
-          setWBuilder(converTor.encoders.bridgeStatus.W.newBuilder(w));
+          setWBuilder(convertor.encoders.bridgeStatus.W.newBuilder(w));
         } else {
-          setWBuilder(converTor.encoders.bridgeStatus.W.newBuilder());
+          setWBuilder(convertor.encoders.bridgeStatus.W.newBuilder());
         }
       }
       return wBuilder;
@@ -541,7 +541,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
      * Sets the Builder instance for the 'w' field
      * @return This builder.
      */
-    public converTor.encoders.bridgeStatus.Status.Builder setWBuilder(converTor.encoders.bridgeStatus.W.Builder value) {
+    public convertor.encoders.bridgeStatus.Status.Builder setWBuilder(convertor.encoders.bridgeStatus.W.Builder value) {
       clearW();
       wBuilder = value;
       return this;
@@ -559,7 +559,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * Clears the value of the 'w' field.
       * @return This builder.
       */
-    public converTor.encoders.bridgeStatus.Status.Builder clearW() {
+    public convertor.encoders.bridgeStatus.Status.Builder clearW() {
       w = null;
       wBuilder = null;
       fieldSetFlags()[4] = false;
@@ -570,7 +570,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * Gets the value of the 'p' field.
       * @return The value.
       */
-    public converTor.encoders.bridgeStatus.Policy getP() {
+    public convertor.encoders.bridgeStatus.Policy getP() {
       return p;
     }
 
@@ -579,7 +579,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'p'.
       * @return This builder.
       */
-    public converTor.encoders.bridgeStatus.Status.Builder setP(converTor.encoders.bridgeStatus.Policy value) {
+    public convertor.encoders.bridgeStatus.Status.Builder setP(convertor.encoders.bridgeStatus.Policy value) {
       validate(fields()[5], value);
       this.pBuilder = null;
       this.p = value;
@@ -599,12 +599,12 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
      * Gets the Builder instance for the 'p' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public converTor.encoders.bridgeStatus.Policy.Builder getPBuilder() {
+    public convertor.encoders.bridgeStatus.Policy.Builder getPBuilder() {
       if (pBuilder == null) {
         if (hasP()) {
-          setPBuilder(converTor.encoders.bridgeStatus.Policy.newBuilder(p));
+          setPBuilder(convertor.encoders.bridgeStatus.Policy.newBuilder(p));
         } else {
-          setPBuilder(converTor.encoders.bridgeStatus.Policy.newBuilder());
+          setPBuilder(convertor.encoders.bridgeStatus.Policy.newBuilder());
         }
       }
       return pBuilder;
@@ -614,7 +614,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
      * Sets the Builder instance for the 'p' field
      * @return This builder.
      */
-    public converTor.encoders.bridgeStatus.Status.Builder setPBuilder(converTor.encoders.bridgeStatus.Policy.Builder value) {
+    public convertor.encoders.bridgeStatus.Status.Builder setPBuilder(convertor.encoders.bridgeStatus.Policy.Builder value) {
       clearP();
       pBuilder = value;
       return this;
@@ -632,7 +632,7 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
       * Clears the value of the 'p' field.
       * @return This builder.
       */
-    public converTor.encoders.bridgeStatus.Status.Builder clearP() {
+    public convertor.encoders.bridgeStatus.Status.Builder clearP() {
       p = null;
       pBuilder = null;
       fieldSetFlags()[5] = false;
@@ -646,20 +646,20 @@ public class Status extends org.apache.avro.specific.SpecificRecordBase implemen
         if (rBuilder != null) {
           record.r = this.rBuilder.build();
         } else {
-          record.r = fieldSetFlags()[0] ? this.r : (converTor.encoders.bridgeStatus.R) defaultValue(fields()[0]);
+          record.r = fieldSetFlags()[0] ? this.r : (convertor.encoders.bridgeStatus.R) defaultValue(fields()[0]);
         }
-        record.a = fieldSetFlags()[1] ? this.a : (java.util.List<converTor.encoders.bridgeStatus.OrAddress>) defaultValue(fields()[1]);
+        record.a = fieldSetFlags()[1] ? this.a : (java.util.List<convertor.encoders.bridgeStatus.OrAddress>) defaultValue(fields()[1]);
         record.s = fieldSetFlags()[2] ? this.s : (java.util.List<java.lang.String>) defaultValue(fields()[2]);
         record.v = fieldSetFlags()[3] ? this.v : (java.lang.String) defaultValue(fields()[3]);
         if (wBuilder != null) {
           record.w = this.wBuilder.build();
         } else {
-          record.w = fieldSetFlags()[4] ? this.w : (converTor.encoders.bridgeStatus.W) defaultValue(fields()[4]);
+          record.w = fieldSetFlags()[4] ? this.w : (convertor.encoders.bridgeStatus.W) defaultValue(fields()[4]);
         }
         if (pBuilder != null) {
           record.p = this.pBuilder.build();
         } else {
-          record.p = fieldSetFlags()[5] ? this.p : (converTor.encoders.bridgeStatus.Policy) defaultValue(fields()[5]);
+          record.p = fieldSetFlags()[5] ? this.p : (convertor.encoders.bridgeStatus.Policy) defaultValue(fields()[5]);
         }
         return record;
       } catch (Exception e) {

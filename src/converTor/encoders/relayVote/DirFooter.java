@@ -3,16 +3,16 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.encoders.relayVote;  
+package convertor.encoders.relayVote;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class DirFooter extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -3760534116751302342L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DirFooter\",\"namespace\":\"converTor.encoders.relayVote\",\"fields\":[{\"name\":\"directory_signature\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirSig\",\"fields\":[{\"name\":\"algorithm\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getAlgorithm()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getIdentity()\"},{\"name\":\"signing_key_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getSigningKeyDigest()\"},{\"name\":\"signature\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/DirectorySignature: String getSignature()\"}]}],\"doc\":\"metrics-lib/RelayNetworkStatusVote:\\n        SortedMap<String, DirectorySignature> getDirectorySignatures()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DirFooter\",\"namespace\":\"convertor.encoders.relayVote\",\"fields\":[{\"name\":\"directory_signature\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirSig\",\"fields\":[{\"name\":\"algorithm\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getAlgorithm()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getIdentity()\"},{\"name\":\"signing_key_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getSigningKeyDigest()\"},{\"name\":\"signature\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/DirectorySignature: String getSignature()\"}]}],\"doc\":\"metrics-lib/RelayNetworkStatusVote:\\n        SortedMap<String, DirectorySignature> getDirectorySignatures()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/RelayNetworkStatusVote:
         SortedMap<String, DirectorySignature> getDirectorySignatures() */
-  @Deprecated public converTor.encoders.relayVote.DirSig directory_signature;
+  @Deprecated public convertor.encoders.relayVote.DirSig directory_signature;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -26,7 +26,7 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
    * @param directory_signature metrics-lib/RelayNetworkStatusVote:
         SortedMap<String, DirectorySignature> getDirectorySignatures()
    */
-  public DirFooter(converTor.encoders.relayVote.DirSig directory_signature) {
+  public DirFooter(convertor.encoders.relayVote.DirSig directory_signature) {
     this.directory_signature = directory_signature;
   }
 
@@ -42,7 +42,7 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: directory_signature = (converTor.encoders.relayVote.DirSig)value$; break;
+    case 0: directory_signature = (convertor.encoders.relayVote.DirSig)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -52,7 +52,7 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
    * @return metrics-lib/RelayNetworkStatusVote:
         SortedMap<String, DirectorySignature> getDirectorySignatures()
    */
-  public converTor.encoders.relayVote.DirSig getDirectorySignature() {
+  public convertor.encoders.relayVote.DirSig getDirectorySignature() {
     return directory_signature;
   }
 
@@ -62,7 +62,7 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
         SortedMap<String, DirectorySignature> getDirectorySignatures()
    * @param value the value to set.
    */
-  public void setDirectorySignature(converTor.encoders.relayVote.DirSig value) {
+  public void setDirectorySignature(convertor.encoders.relayVote.DirSig value) {
     this.directory_signature = value;
   }
 
@@ -70,8 +70,8 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
    * Creates a new DirFooter RecordBuilder.
    * @return A new DirFooter RecordBuilder
    */
-  public static converTor.encoders.relayVote.DirFooter.Builder newBuilder() {
-    return new converTor.encoders.relayVote.DirFooter.Builder();
+  public static convertor.encoders.relayVote.DirFooter.Builder newBuilder() {
+    return new convertor.encoders.relayVote.DirFooter.Builder();
   }
   
   /**
@@ -79,8 +79,8 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
    * @param other The existing builder to copy.
    * @return A new DirFooter RecordBuilder
    */
-  public static converTor.encoders.relayVote.DirFooter.Builder newBuilder(converTor.encoders.relayVote.DirFooter.Builder other) {
-    return new converTor.encoders.relayVote.DirFooter.Builder(other);
+  public static convertor.encoders.relayVote.DirFooter.Builder newBuilder(convertor.encoders.relayVote.DirFooter.Builder other) {
+    return new convertor.encoders.relayVote.DirFooter.Builder(other);
   }
   
   /**
@@ -88,8 +88,8 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
    * @param other The existing instance to copy.
    * @return A new DirFooter RecordBuilder
    */
-  public static converTor.encoders.relayVote.DirFooter.Builder newBuilder(converTor.encoders.relayVote.DirFooter other) {
-    return new converTor.encoders.relayVote.DirFooter.Builder(other);
+  public static convertor.encoders.relayVote.DirFooter.Builder newBuilder(convertor.encoders.relayVote.DirFooter other) {
+    return new convertor.encoders.relayVote.DirFooter.Builder(other);
   }
   
   /**
@@ -100,26 +100,26 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
 
     /** metrics-lib/RelayNetworkStatusVote:
         SortedMap<String, DirectorySignature> getDirectorySignatures() */
-    private converTor.encoders.relayVote.DirSig directory_signature;
-    private converTor.encoders.relayVote.DirSig.Builder directory_signatureBuilder;
+    private convertor.encoders.relayVote.DirSig directory_signature;
+    private convertor.encoders.relayVote.DirSig.Builder directory_signatureBuilder;
 
     /** Creates a new Builder */
     private Builder() {
-      super(converTor.encoders.relayVote.DirFooter.SCHEMA$);
+      super(convertor.encoders.relayVote.DirFooter.SCHEMA$);
     }
     
     /**
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(converTor.encoders.relayVote.DirFooter.Builder other) {
+    private Builder(convertor.encoders.relayVote.DirFooter.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.directory_signature)) {
         this.directory_signature = data().deepCopy(fields()[0].schema(), other.directory_signature);
         fieldSetFlags()[0] = true;
       }
       if (other.hasDirectorySignatureBuilder()) {
-        this.directory_signatureBuilder = converTor.encoders.relayVote.DirSig.newBuilder(other.getDirectorySignatureBuilder());
+        this.directory_signatureBuilder = convertor.encoders.relayVote.DirSig.newBuilder(other.getDirectorySignatureBuilder());
       }
     }
     
@@ -127,8 +127,8 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
      * Creates a Builder by copying an existing DirFooter instance
      * @param other The existing instance to copy.
      */
-    private Builder(converTor.encoders.relayVote.DirFooter other) {
-            super(converTor.encoders.relayVote.DirFooter.SCHEMA$);
+    private Builder(convertor.encoders.relayVote.DirFooter other) {
+            super(convertor.encoders.relayVote.DirFooter.SCHEMA$);
       if (isValidValue(fields()[0], other.directory_signature)) {
         this.directory_signature = data().deepCopy(fields()[0].schema(), other.directory_signature);
         fieldSetFlags()[0] = true;
@@ -142,7 +142,7 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
         SortedMap<String, DirectorySignature> getDirectorySignatures()
       * @return The value.
       */
-    public converTor.encoders.relayVote.DirSig getDirectorySignature() {
+    public convertor.encoders.relayVote.DirSig getDirectorySignature() {
       return directory_signature;
     }
 
@@ -153,7 +153,7 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'directory_signature'.
       * @return This builder.
       */
-    public converTor.encoders.relayVote.DirFooter.Builder setDirectorySignature(converTor.encoders.relayVote.DirSig value) {
+    public convertor.encoders.relayVote.DirFooter.Builder setDirectorySignature(convertor.encoders.relayVote.DirSig value) {
       validate(fields()[0], value);
       this.directory_signatureBuilder = null;
       this.directory_signature = value;
@@ -177,12 +177,12 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
         SortedMap<String, DirectorySignature> getDirectorySignatures()
      * @return This builder.
      */
-    public converTor.encoders.relayVote.DirSig.Builder getDirectorySignatureBuilder() {
+    public convertor.encoders.relayVote.DirSig.Builder getDirectorySignatureBuilder() {
       if (directory_signatureBuilder == null) {
         if (hasDirectorySignature()) {
-          setDirectorySignatureBuilder(converTor.encoders.relayVote.DirSig.newBuilder(directory_signature));
+          setDirectorySignatureBuilder(convertor.encoders.relayVote.DirSig.newBuilder(directory_signature));
         } else {
-          setDirectorySignatureBuilder(converTor.encoders.relayVote.DirSig.newBuilder());
+          setDirectorySignatureBuilder(convertor.encoders.relayVote.DirSig.newBuilder());
         }
       }
       return directory_signatureBuilder;
@@ -194,7 +194,7 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
         SortedMap<String, DirectorySignature> getDirectorySignatures()
      * @return This builder.
      */
-    public converTor.encoders.relayVote.DirFooter.Builder setDirectorySignatureBuilder(converTor.encoders.relayVote.DirSig.Builder value) {
+    public convertor.encoders.relayVote.DirFooter.Builder setDirectorySignatureBuilder(convertor.encoders.relayVote.DirSig.Builder value) {
       clearDirectorySignature();
       directory_signatureBuilder = value;
       return this;
@@ -216,7 +216,7 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
         SortedMap<String, DirectorySignature> getDirectorySignatures()
       * @return This builder.
       */
-    public converTor.encoders.relayVote.DirFooter.Builder clearDirectorySignature() {
+    public convertor.encoders.relayVote.DirFooter.Builder clearDirectorySignature() {
       directory_signature = null;
       directory_signatureBuilder = null;
       fieldSetFlags()[0] = false;
@@ -230,7 +230,7 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
         if (directory_signatureBuilder != null) {
           record.directory_signature = this.directory_signatureBuilder.build();
         } else {
-          record.directory_signature = fieldSetFlags()[0] ? this.directory_signature : (converTor.encoders.relayVote.DirSig) defaultValue(fields()[0]);
+          record.directory_signature = fieldSetFlags()[0] ? this.directory_signature : (convertor.encoders.relayVote.DirSig) defaultValue(fields()[0]);
         }
         return record;
       } catch (Exception e) {

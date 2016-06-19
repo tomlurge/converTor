@@ -3,12 +3,12 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.encoders.relayExtra;  
+package convertor.encoders.relayExtra;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class ExitStats extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -1799534543698769579L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ExitStats\",\"namespace\":\"converTor.encoders.relayExtra\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getExitStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getExitStatsIntervalLength()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ExitStats\",\"namespace\":\"convertor.encoders.relayExtra\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getExitStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getExitStatsIntervalLength()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/ExtraInfoDescriptor: long getExitStatsEndMillis() */
   @Deprecated public java.lang.Long date;
@@ -89,8 +89,8 @@ public class ExitStats extends org.apache.avro.specific.SpecificRecordBase imple
    * Creates a new ExitStats RecordBuilder.
    * @return A new ExitStats RecordBuilder
    */
-  public static converTor.encoders.relayExtra.ExitStats.Builder newBuilder() {
-    return new converTor.encoders.relayExtra.ExitStats.Builder();
+  public static convertor.encoders.relayExtra.ExitStats.Builder newBuilder() {
+    return new convertor.encoders.relayExtra.ExitStats.Builder();
   }
   
   /**
@@ -98,8 +98,8 @@ public class ExitStats extends org.apache.avro.specific.SpecificRecordBase imple
    * @param other The existing builder to copy.
    * @return A new ExitStats RecordBuilder
    */
-  public static converTor.encoders.relayExtra.ExitStats.Builder newBuilder(converTor.encoders.relayExtra.ExitStats.Builder other) {
-    return new converTor.encoders.relayExtra.ExitStats.Builder(other);
+  public static convertor.encoders.relayExtra.ExitStats.Builder newBuilder(convertor.encoders.relayExtra.ExitStats.Builder other) {
+    return new convertor.encoders.relayExtra.ExitStats.Builder(other);
   }
   
   /**
@@ -107,8 +107,8 @@ public class ExitStats extends org.apache.avro.specific.SpecificRecordBase imple
    * @param other The existing instance to copy.
    * @return A new ExitStats RecordBuilder
    */
-  public static converTor.encoders.relayExtra.ExitStats.Builder newBuilder(converTor.encoders.relayExtra.ExitStats other) {
-    return new converTor.encoders.relayExtra.ExitStats.Builder(other);
+  public static convertor.encoders.relayExtra.ExitStats.Builder newBuilder(convertor.encoders.relayExtra.ExitStats other) {
+    return new convertor.encoders.relayExtra.ExitStats.Builder(other);
   }
   
   /**
@@ -124,14 +124,14 @@ public class ExitStats extends org.apache.avro.specific.SpecificRecordBase imple
 
     /** Creates a new Builder */
     private Builder() {
-      super(converTor.encoders.relayExtra.ExitStats.SCHEMA$);
+      super(convertor.encoders.relayExtra.ExitStats.SCHEMA$);
     }
     
     /**
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(converTor.encoders.relayExtra.ExitStats.Builder other) {
+    private Builder(convertor.encoders.relayExtra.ExitStats.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.date)) {
         this.date = data().deepCopy(fields()[0].schema(), other.date);
@@ -147,8 +147,8 @@ public class ExitStats extends org.apache.avro.specific.SpecificRecordBase imple
      * Creates a Builder by copying an existing ExitStats instance
      * @param other The existing instance to copy.
      */
-    private Builder(converTor.encoders.relayExtra.ExitStats other) {
-            super(converTor.encoders.relayExtra.ExitStats.SCHEMA$);
+    private Builder(convertor.encoders.relayExtra.ExitStats other) {
+            super(convertor.encoders.relayExtra.ExitStats.SCHEMA$);
       if (isValidValue(fields()[0], other.date)) {
         this.date = data().deepCopy(fields()[0].schema(), other.date);
         fieldSetFlags()[0] = true;
@@ -174,7 +174,7 @@ public class ExitStats extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'date'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.ExitStats.Builder setDate(java.lang.Long value) {
+    public convertor.encoders.relayExtra.ExitStats.Builder setDate(java.lang.Long value) {
       validate(fields()[0], value);
       this.date = value;
       fieldSetFlags()[0] = true;
@@ -196,7 +196,7 @@ public class ExitStats extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/ExtraInfoDescriptor: long getExitStatsEndMillis()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.ExitStats.Builder clearDate() {
+    public convertor.encoders.relayExtra.ExitStats.Builder clearDate() {
       date = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -217,7 +217,7 @@ public class ExitStats extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'interval'.
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.ExitStats.Builder setInterval(java.lang.Long value) {
+    public convertor.encoders.relayExtra.ExitStats.Builder setInterval(java.lang.Long value) {
       validate(fields()[1], value);
       this.interval = value;
       fieldSetFlags()[1] = true;
@@ -239,7 +239,7 @@ public class ExitStats extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/ExtraInfoDescriptor: long getExitStatsIntervalLength()
       * @return This builder.
       */
-    public converTor.encoders.relayExtra.ExitStats.Builder clearInterval() {
+    public convertor.encoders.relayExtra.ExitStats.Builder clearInterval() {
       interval = null;
       fieldSetFlags()[1] = false;
       return this;

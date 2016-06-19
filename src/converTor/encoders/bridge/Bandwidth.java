@@ -3,12 +3,12 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.encoders.bridge;  
+package convertor.encoders.bridge;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Bandwidth extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = 4827203292412539543L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Bandwidth\",\"namespace\":\"converTor.encoders.bridge\",\"fields\":[{\"name\":\"avg\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getBandwidthRate()\"},{\"name\":\"burst\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getBandwidthBurst()\"},{\"name\":\"observed\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getBandwidthObserved()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Bandwidth\",\"namespace\":\"convertor.encoders.bridge\",\"fields\":[{\"name\":\"avg\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getBandwidthRate()\"},{\"name\":\"burst\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getBandwidthBurst()\"},{\"name\":\"observed\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getBandwidthObserved()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/ServerDescriptor: int getBandwidthRate() */
   @Deprecated public java.lang.Integer avg;
@@ -112,8 +112,8 @@ public class Bandwidth extends org.apache.avro.specific.SpecificRecordBase imple
    * Creates a new Bandwidth RecordBuilder.
    * @return A new Bandwidth RecordBuilder
    */
-  public static converTor.encoders.bridge.Bandwidth.Builder newBuilder() {
-    return new converTor.encoders.bridge.Bandwidth.Builder();
+  public static convertor.encoders.bridge.Bandwidth.Builder newBuilder() {
+    return new convertor.encoders.bridge.Bandwidth.Builder();
   }
   
   /**
@@ -121,8 +121,8 @@ public class Bandwidth extends org.apache.avro.specific.SpecificRecordBase imple
    * @param other The existing builder to copy.
    * @return A new Bandwidth RecordBuilder
    */
-  public static converTor.encoders.bridge.Bandwidth.Builder newBuilder(converTor.encoders.bridge.Bandwidth.Builder other) {
-    return new converTor.encoders.bridge.Bandwidth.Builder(other);
+  public static convertor.encoders.bridge.Bandwidth.Builder newBuilder(convertor.encoders.bridge.Bandwidth.Builder other) {
+    return new convertor.encoders.bridge.Bandwidth.Builder(other);
   }
   
   /**
@@ -130,8 +130,8 @@ public class Bandwidth extends org.apache.avro.specific.SpecificRecordBase imple
    * @param other The existing instance to copy.
    * @return A new Bandwidth RecordBuilder
    */
-  public static converTor.encoders.bridge.Bandwidth.Builder newBuilder(converTor.encoders.bridge.Bandwidth other) {
-    return new converTor.encoders.bridge.Bandwidth.Builder(other);
+  public static convertor.encoders.bridge.Bandwidth.Builder newBuilder(convertor.encoders.bridge.Bandwidth other) {
+    return new convertor.encoders.bridge.Bandwidth.Builder(other);
   }
   
   /**
@@ -149,14 +149,14 @@ public class Bandwidth extends org.apache.avro.specific.SpecificRecordBase imple
 
     /** Creates a new Builder */
     private Builder() {
-      super(converTor.encoders.bridge.Bandwidth.SCHEMA$);
+      super(convertor.encoders.bridge.Bandwidth.SCHEMA$);
     }
     
     /**
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(converTor.encoders.bridge.Bandwidth.Builder other) {
+    private Builder(convertor.encoders.bridge.Bandwidth.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.avg)) {
         this.avg = data().deepCopy(fields()[0].schema(), other.avg);
@@ -176,8 +176,8 @@ public class Bandwidth extends org.apache.avro.specific.SpecificRecordBase imple
      * Creates a Builder by copying an existing Bandwidth instance
      * @param other The existing instance to copy.
      */
-    private Builder(converTor.encoders.bridge.Bandwidth other) {
-            super(converTor.encoders.bridge.Bandwidth.SCHEMA$);
+    private Builder(convertor.encoders.bridge.Bandwidth other) {
+            super(convertor.encoders.bridge.Bandwidth.SCHEMA$);
       if (isValidValue(fields()[0], other.avg)) {
         this.avg = data().deepCopy(fields()[0].schema(), other.avg);
         fieldSetFlags()[0] = true;
@@ -207,7 +207,7 @@ public class Bandwidth extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'avg'.
       * @return This builder.
       */
-    public converTor.encoders.bridge.Bandwidth.Builder setAvg(java.lang.Integer value) {
+    public convertor.encoders.bridge.Bandwidth.Builder setAvg(java.lang.Integer value) {
       validate(fields()[0], value);
       this.avg = value;
       fieldSetFlags()[0] = true;
@@ -229,7 +229,7 @@ public class Bandwidth extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/ServerDescriptor: int getBandwidthRate()
       * @return This builder.
       */
-    public converTor.encoders.bridge.Bandwidth.Builder clearAvg() {
+    public convertor.encoders.bridge.Bandwidth.Builder clearAvg() {
       avg = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -250,7 +250,7 @@ public class Bandwidth extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'burst'.
       * @return This builder.
       */
-    public converTor.encoders.bridge.Bandwidth.Builder setBurst(java.lang.Integer value) {
+    public convertor.encoders.bridge.Bandwidth.Builder setBurst(java.lang.Integer value) {
       validate(fields()[1], value);
       this.burst = value;
       fieldSetFlags()[1] = true;
@@ -272,7 +272,7 @@ public class Bandwidth extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/ServerDescriptor: int getBandwidthBurst()
       * @return This builder.
       */
-    public converTor.encoders.bridge.Bandwidth.Builder clearBurst() {
+    public convertor.encoders.bridge.Bandwidth.Builder clearBurst() {
       burst = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -293,7 +293,7 @@ public class Bandwidth extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'observed'.
       * @return This builder.
       */
-    public converTor.encoders.bridge.Bandwidth.Builder setObserved(java.lang.Integer value) {
+    public convertor.encoders.bridge.Bandwidth.Builder setObserved(java.lang.Integer value) {
       validate(fields()[2], value);
       this.observed = value;
       fieldSetFlags()[2] = true;
@@ -315,7 +315,7 @@ public class Bandwidth extends org.apache.avro.specific.SpecificRecordBase imple
       * metrics-lib/ServerDescriptor: int getBandwidthObserved()
       * @return This builder.
       */
-    public converTor.encoders.bridge.Bandwidth.Builder clearObserved() {
+    public convertor.encoders.bridge.Bandwidth.Builder clearObserved() {
       observed = null;
       fieldSetFlags()[2] = false;
       return this;

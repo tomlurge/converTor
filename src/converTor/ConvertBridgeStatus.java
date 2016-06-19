@@ -1,4 +1,4 @@
-package converTor;
+package convertor;
 
 import java.util.HashMap;
 import java.util.List;
@@ -7,7 +7,7 @@ import java.util.Map;
 import org.torproject.descriptor.Descriptor;
 import org.torproject.descriptor.BridgeNetworkStatus;
 import org.torproject.descriptor.NetworkStatusEntry;
-import converTor.encoders.bridgeStatus.*;
+import convertor.encoders.bridgeStatus.*;
 
 
 class ConvertBridgeStatus extends Convert {

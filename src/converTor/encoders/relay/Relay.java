@@ -3,25 +3,25 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package converTor.encoders.relay;  
+package convertor.encoders.relay;
 @SuppressWarnings("all")
 /** server-descriptor 1.0 - same as bridge but additional field 'router_signature' */
 @org.apache.avro.specific.AvroGenerated
 public class Relay extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = 7132609995737537733L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Relay\",\"namespace\":\"converTor.encoders.relay\",\"doc\":\"server-descriptor 1.0 - same as bridge but additional field 'router_signature'\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"server-descriptor 1.0\"},{\"name\":\"server_descriptor_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getServerDescriptorDigest()\"},{\"name\":\"server_descriptor_sha256\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getServerDescriptorDigestSha256()\"},{\"name\":\"router\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Router\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getNickname()\"},{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getOrPort()\"},{\"name\":\"socks_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getSocksPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getDirPort()\"}]}]},{\"name\":\"identity_ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getIdentityEd25519()\"},{\"name\":\"master_key_ed25519\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getMasterKeyEd25519()\"},{\"name\":\"bandwidth\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Bandwidth\",\"fields\":[{\"name\":\"avg\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getBandwidthRate()\"},{\"name\":\"burst\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getBandwidthBurst()\"},{\"name\":\"observed\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getBandwidthObserved()\"}]}]},{\"name\":\"platform\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getPlatform()\"},{\"name\":\"published\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ServerDescriptor: long getPublishedMillis()\"},{\"name\":\"fingerprint\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getFingerprint()\"},{\"name\":\"hibernating\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: boolean isHibernating()\"},{\"name\":\"uptime\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ServerDescriptor: Long getUptime()\"},{\"name\":\"onion_key\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getOnionKey()\"},{\"name\":\"onion_key_crosscert\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getOnionKeyCrosscert()\"},{\"name\":\"ntor_onion_key\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getNtorOnionKey()\"},{\"name\":\"ntor_onion_key_crosscert\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getNtorOnionKeyCrosscert()\"},{\"name\":\"signing_key\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getSigningKey()\"},{\"name\":\"exit_policy\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/ServerDescriptor: List<String> getExitPolicyLines()\"},{\"name\":\"ipv6_policy\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getIpv6DefaultPolicy()\"},{\"name\":\"ipv6_portlist\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getIpv6PortList()\"},{\"name\":\"router_sig_ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getRouterSignatureEd25519()\"},{\"name\":\"router_signature\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getRouterSignature()\"},{\"name\":\"contact\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getContact()\"},{\"name\":\"family\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/ServerDescriptor: List<String> getFamilyEntries()\"},{\"name\":\"read_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ReadHistory\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ServerDescriptor: BandwidthHistory getReadHistory()\"},{\"name\":\"write_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"WriteHistory\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ServerDescriptor: BandwidthHistory getWriteHistory()\"},{\"name\":\"eventdns\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: boolean getUsesEnhancedDnsLogic()\"},{\"name\":\"caches_extra_info\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: boolean getCachesExtraInfo()\"},{\"name\":\"extra_info_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getExtraInfoDigest()\"},{\"name\":\"extra_info_digest_sha256\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getExtraInfoDigestSha256()\"},{\"name\":\"hidden_service_dir\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}],\"doc\":\"metrics-lib/ServerDescriptor: List<Integer> getHiddenServiceDirVersions()\"},{\"name\":\"link_protocol_versions\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}],\"doc\":\"metrics-lib/ServerDescriptor: List<Integer> getLinkProtocolVersions()\"},{\"name\":\"circuit_protocol_versions\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}],\"doc\":\"metrics-lib/ServerDescriptor: List<Integer> getCircuitProtocolVersions()\"},{\"name\":\"allow_single_hop_exits\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: boolean getAllowSingleHopExits()\"},{\"name\":\"or_address\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"OrAddress\",\"fields\":[{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"implementation specific\"},{\"name\":\"port\",\"type\":[\"null\",\"int\"],\"doc\":\"implementation specific\"}]}}],\"doc\":\"metrics-lib/ServerDescriptor: List<String> getOrAddresses()\"}],\"aliases\":[\"relay_server\"]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Relay\",\"namespace\":\"convertor.encoders.relay\",\"doc\":\"server-descriptor 1.0 - same as bridge but additional field 'router_signature'\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"server-descriptor 1.0\"},{\"name\":\"server_descriptor_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getServerDescriptorDigest()\"},{\"name\":\"server_descriptor_sha256\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getServerDescriptorDigestSha256()\"},{\"name\":\"router\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Router\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getNickname()\"},{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getOrPort()\"},{\"name\":\"socks_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getSocksPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getDirPort()\"}]}]},{\"name\":\"identity_ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getIdentityEd25519()\"},{\"name\":\"master_key_ed25519\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getMasterKeyEd25519()\"},{\"name\":\"bandwidth\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Bandwidth\",\"fields\":[{\"name\":\"avg\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getBandwidthRate()\"},{\"name\":\"burst\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getBandwidthBurst()\"},{\"name\":\"observed\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getBandwidthObserved()\"}]}]},{\"name\":\"platform\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getPlatform()\"},{\"name\":\"published\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ServerDescriptor: long getPublishedMillis()\"},{\"name\":\"fingerprint\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getFingerprint()\"},{\"name\":\"hibernating\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: boolean isHibernating()\"},{\"name\":\"uptime\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ServerDescriptor: Long getUptime()\"},{\"name\":\"onion_key\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getOnionKey()\"},{\"name\":\"onion_key_crosscert\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getOnionKeyCrosscert()\"},{\"name\":\"ntor_onion_key\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getNtorOnionKey()\"},{\"name\":\"ntor_onion_key_crosscert\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getNtorOnionKeyCrosscert()\"},{\"name\":\"signing_key\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getSigningKey()\"},{\"name\":\"exit_policy\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/ServerDescriptor: List<String> getExitPolicyLines()\"},{\"name\":\"ipv6_policy\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getIpv6DefaultPolicy()\"},{\"name\":\"ipv6_portlist\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getIpv6PortList()\"},{\"name\":\"router_sig_ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getRouterSignatureEd25519()\"},{\"name\":\"router_signature\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: String getRouterSignature()\"},{\"name\":\"contact\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getContact()\"},{\"name\":\"family\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/ServerDescriptor: List<String> getFamilyEntries()\"},{\"name\":\"read_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ReadHistory\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ServerDescriptor: BandwidthHistory getReadHistory()\"},{\"name\":\"write_history\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"WriteHistory\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}],\"doc\":\"metrics-lib/ServerDescriptor: BandwidthHistory getWriteHistory()\"},{\"name\":\"eventdns\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: boolean getUsesEnhancedDnsLogic()\"},{\"name\":\"caches_extra_info\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: boolean getCachesExtraInfo()\"},{\"name\":\"extra_info_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getExtraInfoDigest()\"},{\"name\":\"extra_info_digest_sha256\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getExtraInfoDigestSha256()\"},{\"name\":\"hidden_service_dir\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}],\"doc\":\"metrics-lib/ServerDescriptor: List<Integer> getHiddenServiceDirVersions()\"},{\"name\":\"link_protocol_versions\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}],\"doc\":\"metrics-lib/ServerDescriptor: List<Integer> getLinkProtocolVersions()\"},{\"name\":\"circuit_protocol_versions\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}],\"doc\":\"metrics-lib/ServerDescriptor: List<Integer> getCircuitProtocolVersions()\"},{\"name\":\"allow_single_hop_exits\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/ServerDescriptor: boolean getAllowSingleHopExits()\"},{\"name\":\"or_address\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"OrAddress\",\"fields\":[{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"implementation specific\"},{\"name\":\"port\",\"type\":[\"null\",\"int\"],\"doc\":\"implementation specific\"}]}}],\"doc\":\"metrics-lib/ServerDescriptor: List<String> getOrAddresses()\"}],\"aliases\":[\"relay_server\"]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   @Deprecated public java.lang.String descriptor_type;
   /** metrics-lib/ServerDescriptor: String getServerDescriptorDigest() */
   @Deprecated public java.lang.String server_descriptor_digest;
   /** metrics-lib/ServerDescriptor: String getServerDescriptorDigestSha256() */
   @Deprecated public java.lang.String server_descriptor_sha256;
-  @Deprecated public converTor.encoders.relay.Router router;
+  @Deprecated public convertor.encoders.relay.Router router;
   /** metrics-lib/ServerDescriptor: String getIdentityEd25519() */
   @Deprecated public java.lang.Boolean identity_ed25519;
   /** metrics-lib/ServerDescriptor: String getMasterKeyEd25519() */
   @Deprecated public java.lang.String master_key_ed25519;
-  @Deprecated public converTor.encoders.relay.Bandwidth bandwidth;
+  @Deprecated public convertor.encoders.relay.Bandwidth bandwidth;
   /** metrics-lib/ServerDescriptor: String getPlatform() */
   @Deprecated public java.lang.String platform;
   /** metrics-lib/ServerDescriptor: long getPublishedMillis() */
@@ -57,9 +57,9 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
   /** metrics-lib/ServerDescriptor: List<String> getFamilyEntries() */
   @Deprecated public java.util.List<java.lang.String> family;
   /** metrics-lib/ServerDescriptor: BandwidthHistory getReadHistory() */
-  @Deprecated public converTor.encoders.relay.ReadHistory read_history;
+  @Deprecated public convertor.encoders.relay.ReadHistory read_history;
   /** metrics-lib/ServerDescriptor: BandwidthHistory getWriteHistory() */
-  @Deprecated public converTor.encoders.relay.WriteHistory write_history;
+  @Deprecated public convertor.encoders.relay.WriteHistory write_history;
   /** metrics-lib/ServerDescriptor: boolean getUsesEnhancedDnsLogic() */
   @Deprecated public java.lang.Boolean eventdns;
   /** metrics-lib/ServerDescriptor: boolean getCachesExtraInfo() */
@@ -77,7 +77,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
   /** metrics-lib/ServerDescriptor: boolean getAllowSingleHopExits() */
   @Deprecated public java.lang.Boolean allow_single_hop_exits;
   /** metrics-lib/ServerDescriptor: List<String> getOrAddresses() */
-  @Deprecated public java.util.List<converTor.encoders.relay.OrAddress> or_address;
+  @Deprecated public java.util.List<convertor.encoders.relay.OrAddress> or_address;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -121,7 +121,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
    * @param allow_single_hop_exits metrics-lib/ServerDescriptor: boolean getAllowSingleHopExits()
    * @param or_address metrics-lib/ServerDescriptor: List<String> getOrAddresses()
    */
-  public Relay(java.lang.String descriptor_type, java.lang.String server_descriptor_digest, java.lang.String server_descriptor_sha256, converTor.encoders.relay.Router router, java.lang.Boolean identity_ed25519, java.lang.String master_key_ed25519, converTor.encoders.relay.Bandwidth bandwidth, java.lang.String platform, java.lang.Long published, java.lang.String fingerprint, java.lang.Boolean hibernating, java.lang.Long uptime, java.lang.Boolean onion_key, java.lang.Boolean onion_key_crosscert, java.lang.Boolean ntor_onion_key, java.lang.Boolean ntor_onion_key_crosscert, java.lang.Boolean signing_key, java.util.List<java.lang.String> exit_policy, java.lang.String ipv6_policy, java.lang.String ipv6_portlist, java.lang.Boolean router_sig_ed25519, java.lang.Boolean router_signature, java.lang.String contact, java.util.List<java.lang.String> family, converTor.encoders.relay.ReadHistory read_history, converTor.encoders.relay.WriteHistory write_history, java.lang.Boolean eventdns, java.lang.Boolean caches_extra_info, java.lang.String extra_info_digest, java.lang.String extra_info_digest_sha256, java.util.List<java.lang.Integer> hidden_service_dir, java.util.List<java.lang.Integer> link_protocol_versions, java.util.List<java.lang.Integer> circuit_protocol_versions, java.lang.Boolean allow_single_hop_exits, java.util.List<converTor.encoders.relay.OrAddress> or_address) {
+  public Relay(java.lang.String descriptor_type, java.lang.String server_descriptor_digest, java.lang.String server_descriptor_sha256, convertor.encoders.relay.Router router, java.lang.Boolean identity_ed25519, java.lang.String master_key_ed25519, convertor.encoders.relay.Bandwidth bandwidth, java.lang.String platform, java.lang.Long published, java.lang.String fingerprint, java.lang.Boolean hibernating, java.lang.Long uptime, java.lang.Boolean onion_key, java.lang.Boolean onion_key_crosscert, java.lang.Boolean ntor_onion_key, java.lang.Boolean ntor_onion_key_crosscert, java.lang.Boolean signing_key, java.util.List<java.lang.String> exit_policy, java.lang.String ipv6_policy, java.lang.String ipv6_portlist, java.lang.Boolean router_sig_ed25519, java.lang.Boolean router_signature, java.lang.String contact, java.util.List<java.lang.String> family, convertor.encoders.relay.ReadHistory read_history, convertor.encoders.relay.WriteHistory write_history, java.lang.Boolean eventdns, java.lang.Boolean caches_extra_info, java.lang.String extra_info_digest, java.lang.String extra_info_digest_sha256, java.util.List<java.lang.Integer> hidden_service_dir, java.util.List<java.lang.Integer> link_protocol_versions, java.util.List<java.lang.Integer> circuit_protocol_versions, java.lang.Boolean allow_single_hop_exits, java.util.List<convertor.encoders.relay.OrAddress> or_address) {
     this.descriptor_type = descriptor_type;
     this.server_descriptor_digest = server_descriptor_digest;
     this.server_descriptor_sha256 = server_descriptor_sha256;
@@ -208,10 +208,10 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
     case 0: descriptor_type = (java.lang.String)value$; break;
     case 1: server_descriptor_digest = (java.lang.String)value$; break;
     case 2: server_descriptor_sha256 = (java.lang.String)value$; break;
-    case 3: router = (converTor.encoders.relay.Router)value$; break;
+    case 3: router = (convertor.encoders.relay.Router)value$; break;
     case 4: identity_ed25519 = (java.lang.Boolean)value$; break;
     case 5: master_key_ed25519 = (java.lang.String)value$; break;
-    case 6: bandwidth = (converTor.encoders.relay.Bandwidth)value$; break;
+    case 6: bandwidth = (convertor.encoders.relay.Bandwidth)value$; break;
     case 7: platform = (java.lang.String)value$; break;
     case 8: published = (java.lang.Long)value$; break;
     case 9: fingerprint = (java.lang.String)value$; break;
@@ -229,8 +229,8 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
     case 21: router_signature = (java.lang.Boolean)value$; break;
     case 22: contact = (java.lang.String)value$; break;
     case 23: family = (java.util.List<java.lang.String>)value$; break;
-    case 24: read_history = (converTor.encoders.relay.ReadHistory)value$; break;
-    case 25: write_history = (converTor.encoders.relay.WriteHistory)value$; break;
+    case 24: read_history = (convertor.encoders.relay.ReadHistory)value$; break;
+    case 25: write_history = (convertor.encoders.relay.WriteHistory)value$; break;
     case 26: eventdns = (java.lang.Boolean)value$; break;
     case 27: caches_extra_info = (java.lang.Boolean)value$; break;
     case 28: extra_info_digest = (java.lang.String)value$; break;
@@ -239,7 +239,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
     case 31: link_protocol_versions = (java.util.List<java.lang.Integer>)value$; break;
     case 32: circuit_protocol_versions = (java.util.List<java.lang.Integer>)value$; break;
     case 33: allow_single_hop_exits = (java.lang.Boolean)value$; break;
-    case 34: or_address = (java.util.List<converTor.encoders.relay.OrAddress>)value$; break;
+    case 34: or_address = (java.util.List<convertor.encoders.relay.OrAddress>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -296,7 +296,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
   /**
    * Gets the value of the 'router' field.
    */
-  public converTor.encoders.relay.Router getRouter() {
+  public convertor.encoders.relay.Router getRouter() {
     return router;
   }
 
@@ -304,7 +304,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
    * Sets the value of the 'router' field.
    * @param value the value to set.
    */
-  public void setRouter(converTor.encoders.relay.Router value) {
+  public void setRouter(convertor.encoders.relay.Router value) {
     this.router = value;
   }
 
@@ -345,7 +345,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
   /**
    * Gets the value of the 'bandwidth' field.
    */
-  public converTor.encoders.relay.Bandwidth getBandwidth() {
+  public convertor.encoders.relay.Bandwidth getBandwidth() {
     return bandwidth;
   }
 
@@ -353,7 +353,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
    * Sets the value of the 'bandwidth' field.
    * @param value the value to set.
    */
-  public void setBandwidth(converTor.encoders.relay.Bandwidth value) {
+  public void setBandwidth(convertor.encoders.relay.Bandwidth value) {
     this.bandwidth = value;
   }
 
@@ -650,7 +650,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
    * Gets the value of the 'read_history' field.
    * @return metrics-lib/ServerDescriptor: BandwidthHistory getReadHistory()
    */
-  public converTor.encoders.relay.ReadHistory getReadHistory() {
+  public convertor.encoders.relay.ReadHistory getReadHistory() {
     return read_history;
   }
 
@@ -659,7 +659,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
    * metrics-lib/ServerDescriptor: BandwidthHistory getReadHistory()
    * @param value the value to set.
    */
-  public void setReadHistory(converTor.encoders.relay.ReadHistory value) {
+  public void setReadHistory(convertor.encoders.relay.ReadHistory value) {
     this.read_history = value;
   }
 
@@ -667,7 +667,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
    * Gets the value of the 'write_history' field.
    * @return metrics-lib/ServerDescriptor: BandwidthHistory getWriteHistory()
    */
-  public converTor.encoders.relay.WriteHistory getWriteHistory() {
+  public convertor.encoders.relay.WriteHistory getWriteHistory() {
     return write_history;
   }
 
@@ -676,7 +676,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
    * metrics-lib/ServerDescriptor: BandwidthHistory getWriteHistory()
    * @param value the value to set.
    */
-  public void setWriteHistory(converTor.encoders.relay.WriteHistory value) {
+  public void setWriteHistory(convertor.encoders.relay.WriteHistory value) {
     this.write_history = value;
   }
 
@@ -820,7 +820,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
    * Gets the value of the 'or_address' field.
    * @return metrics-lib/ServerDescriptor: List<String> getOrAddresses()
    */
-  public java.util.List<converTor.encoders.relay.OrAddress> getOrAddress() {
+  public java.util.List<convertor.encoders.relay.OrAddress> getOrAddress() {
     return or_address;
   }
 
@@ -829,7 +829,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
    * metrics-lib/ServerDescriptor: List<String> getOrAddresses()
    * @param value the value to set.
    */
-  public void setOrAddress(java.util.List<converTor.encoders.relay.OrAddress> value) {
+  public void setOrAddress(java.util.List<convertor.encoders.relay.OrAddress> value) {
     this.or_address = value;
   }
 
@@ -837,8 +837,8 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
    * Creates a new Relay RecordBuilder.
    * @return A new Relay RecordBuilder
    */
-  public static converTor.encoders.relay.Relay.Builder newBuilder() {
-    return new converTor.encoders.relay.Relay.Builder();
+  public static convertor.encoders.relay.Relay.Builder newBuilder() {
+    return new convertor.encoders.relay.Relay.Builder();
   }
   
   /**
@@ -846,8 +846,8 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
    * @param other The existing builder to copy.
    * @return A new Relay RecordBuilder
    */
-  public static converTor.encoders.relay.Relay.Builder newBuilder(converTor.encoders.relay.Relay.Builder other) {
-    return new converTor.encoders.relay.Relay.Builder(other);
+  public static convertor.encoders.relay.Relay.Builder newBuilder(convertor.encoders.relay.Relay.Builder other) {
+    return new convertor.encoders.relay.Relay.Builder(other);
   }
   
   /**
@@ -855,8 +855,8 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
    * @param other The existing instance to copy.
    * @return A new Relay RecordBuilder
    */
-  public static converTor.encoders.relay.Relay.Builder newBuilder(converTor.encoders.relay.Relay other) {
-    return new converTor.encoders.relay.Relay.Builder(other);
+  public static convertor.encoders.relay.Relay.Builder newBuilder(convertor.encoders.relay.Relay other) {
+    return new convertor.encoders.relay.Relay.Builder(other);
   }
   
   /**
@@ -870,14 +870,14 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
     private java.lang.String server_descriptor_digest;
     /** metrics-lib/ServerDescriptor: String getServerDescriptorDigestSha256() */
     private java.lang.String server_descriptor_sha256;
-    private converTor.encoders.relay.Router router;
-    private converTor.encoders.relay.Router.Builder routerBuilder;
+    private convertor.encoders.relay.Router router;
+    private convertor.encoders.relay.Router.Builder routerBuilder;
     /** metrics-lib/ServerDescriptor: String getIdentityEd25519() */
     private java.lang.Boolean identity_ed25519;
     /** metrics-lib/ServerDescriptor: String getMasterKeyEd25519() */
     private java.lang.String master_key_ed25519;
-    private converTor.encoders.relay.Bandwidth bandwidth;
-    private converTor.encoders.relay.Bandwidth.Builder bandwidthBuilder;
+    private convertor.encoders.relay.Bandwidth bandwidth;
+    private convertor.encoders.relay.Bandwidth.Builder bandwidthBuilder;
     /** metrics-lib/ServerDescriptor: String getPlatform() */
     private java.lang.String platform;
     /** metrics-lib/ServerDescriptor: long getPublishedMillis() */
@@ -913,11 +913,11 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
     /** metrics-lib/ServerDescriptor: List<String> getFamilyEntries() */
     private java.util.List<java.lang.String> family;
     /** metrics-lib/ServerDescriptor: BandwidthHistory getReadHistory() */
-    private converTor.encoders.relay.ReadHistory read_history;
-    private converTor.encoders.relay.ReadHistory.Builder read_historyBuilder;
+    private convertor.encoders.relay.ReadHistory read_history;
+    private convertor.encoders.relay.ReadHistory.Builder read_historyBuilder;
     /** metrics-lib/ServerDescriptor: BandwidthHistory getWriteHistory() */
-    private converTor.encoders.relay.WriteHistory write_history;
-    private converTor.encoders.relay.WriteHistory.Builder write_historyBuilder;
+    private convertor.encoders.relay.WriteHistory write_history;
+    private convertor.encoders.relay.WriteHistory.Builder write_historyBuilder;
     /** metrics-lib/ServerDescriptor: boolean getUsesEnhancedDnsLogic() */
     private java.lang.Boolean eventdns;
     /** metrics-lib/ServerDescriptor: boolean getCachesExtraInfo() */
@@ -935,18 +935,18 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
     /** metrics-lib/ServerDescriptor: boolean getAllowSingleHopExits() */
     private java.lang.Boolean allow_single_hop_exits;
     /** metrics-lib/ServerDescriptor: List<String> getOrAddresses() */
-    private java.util.List<converTor.encoders.relay.OrAddress> or_address;
+    private java.util.List<convertor.encoders.relay.OrAddress> or_address;
 
     /** Creates a new Builder */
     private Builder() {
-      super(converTor.encoders.relay.Relay.SCHEMA$);
+      super(convertor.encoders.relay.Relay.SCHEMA$);
     }
     
     /**
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(converTor.encoders.relay.Relay.Builder other) {
+    private Builder(convertor.encoders.relay.Relay.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.descriptor_type)) {
         this.descriptor_type = data().deepCopy(fields()[0].schema(), other.descriptor_type);
@@ -965,7 +965,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
         fieldSetFlags()[3] = true;
       }
       if (other.hasRouterBuilder()) {
-        this.routerBuilder = converTor.encoders.relay.Router.newBuilder(other.getRouterBuilder());
+        this.routerBuilder = convertor.encoders.relay.Router.newBuilder(other.getRouterBuilder());
       }
       if (isValidValue(fields()[4], other.identity_ed25519)) {
         this.identity_ed25519 = data().deepCopy(fields()[4].schema(), other.identity_ed25519);
@@ -980,7 +980,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
         fieldSetFlags()[6] = true;
       }
       if (other.hasBandwidthBuilder()) {
-        this.bandwidthBuilder = converTor.encoders.relay.Bandwidth.newBuilder(other.getBandwidthBuilder());
+        this.bandwidthBuilder = convertor.encoders.relay.Bandwidth.newBuilder(other.getBandwidthBuilder());
       }
       if (isValidValue(fields()[7], other.platform)) {
         this.platform = data().deepCopy(fields()[7].schema(), other.platform);
@@ -1055,14 +1055,14 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
         fieldSetFlags()[24] = true;
       }
       if (other.hasReadHistoryBuilder()) {
-        this.read_historyBuilder = converTor.encoders.relay.ReadHistory.newBuilder(other.getReadHistoryBuilder());
+        this.read_historyBuilder = convertor.encoders.relay.ReadHistory.newBuilder(other.getReadHistoryBuilder());
       }
       if (isValidValue(fields()[25], other.write_history)) {
         this.write_history = data().deepCopy(fields()[25].schema(), other.write_history);
         fieldSetFlags()[25] = true;
       }
       if (other.hasWriteHistoryBuilder()) {
-        this.write_historyBuilder = converTor.encoders.relay.WriteHistory.newBuilder(other.getWriteHistoryBuilder());
+        this.write_historyBuilder = convertor.encoders.relay.WriteHistory.newBuilder(other.getWriteHistoryBuilder());
       }
       if (isValidValue(fields()[26], other.eventdns)) {
         this.eventdns = data().deepCopy(fields()[26].schema(), other.eventdns);
@@ -1106,8 +1106,8 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
      * Creates a Builder by copying an existing Relay instance
      * @param other The existing instance to copy.
      */
-    private Builder(converTor.encoders.relay.Relay other) {
-            super(converTor.encoders.relay.Relay.SCHEMA$);
+    private Builder(convertor.encoders.relay.Relay other) {
+            super(convertor.encoders.relay.Relay.SCHEMA$);
       if (isValidValue(fields()[0], other.descriptor_type)) {
         this.descriptor_type = data().deepCopy(fields()[0].schema(), other.descriptor_type);
         fieldSetFlags()[0] = true;
@@ -1267,7 +1267,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'descriptor_type'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setDescriptorType(java.lang.String value) {
+    public convertor.encoders.relay.Relay.Builder setDescriptorType(java.lang.String value) {
       validate(fields()[0], value);
       this.descriptor_type = value;
       fieldSetFlags()[0] = true;
@@ -1287,7 +1287,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * Clears the value of the 'descriptor_type' field.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearDescriptorType() {
+    public convertor.encoders.relay.Relay.Builder clearDescriptorType() {
       descriptor_type = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -1308,7 +1308,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'server_descriptor_digest'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setServerDescriptorDigest(java.lang.String value) {
+    public convertor.encoders.relay.Relay.Builder setServerDescriptorDigest(java.lang.String value) {
       validate(fields()[1], value);
       this.server_descriptor_digest = value;
       fieldSetFlags()[1] = true;
@@ -1330,7 +1330,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: String getServerDescriptorDigest()
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearServerDescriptorDigest() {
+    public convertor.encoders.relay.Relay.Builder clearServerDescriptorDigest() {
       server_descriptor_digest = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -1351,7 +1351,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'server_descriptor_sha256'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setServerDescriptorSha256(java.lang.String value) {
+    public convertor.encoders.relay.Relay.Builder setServerDescriptorSha256(java.lang.String value) {
       validate(fields()[2], value);
       this.server_descriptor_sha256 = value;
       fieldSetFlags()[2] = true;
@@ -1373,7 +1373,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: String getServerDescriptorDigestSha256()
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearServerDescriptorSha256() {
+    public convertor.encoders.relay.Relay.Builder clearServerDescriptorSha256() {
       server_descriptor_sha256 = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -1383,7 +1383,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * Gets the value of the 'router' field.
       * @return The value.
       */
-    public converTor.encoders.relay.Router getRouter() {
+    public convertor.encoders.relay.Router getRouter() {
       return router;
     }
 
@@ -1392,7 +1392,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'router'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setRouter(converTor.encoders.relay.Router value) {
+    public convertor.encoders.relay.Relay.Builder setRouter(convertor.encoders.relay.Router value) {
       validate(fields()[3], value);
       this.routerBuilder = null;
       this.router = value;
@@ -1412,12 +1412,12 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
      * Gets the Builder instance for the 'router' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public converTor.encoders.relay.Router.Builder getRouterBuilder() {
+    public convertor.encoders.relay.Router.Builder getRouterBuilder() {
       if (routerBuilder == null) {
         if (hasRouter()) {
-          setRouterBuilder(converTor.encoders.relay.Router.newBuilder(router));
+          setRouterBuilder(convertor.encoders.relay.Router.newBuilder(router));
         } else {
-          setRouterBuilder(converTor.encoders.relay.Router.newBuilder());
+          setRouterBuilder(convertor.encoders.relay.Router.newBuilder());
         }
       }
       return routerBuilder;
@@ -1427,7 +1427,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
      * Sets the Builder instance for the 'router' field
      * @return This builder.
      */
-    public converTor.encoders.relay.Relay.Builder setRouterBuilder(converTor.encoders.relay.Router.Builder value) {
+    public convertor.encoders.relay.Relay.Builder setRouterBuilder(convertor.encoders.relay.Router.Builder value) {
       clearRouter();
       routerBuilder = value;
       return this;
@@ -1445,7 +1445,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * Clears the value of the 'router' field.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearRouter() {
+    public convertor.encoders.relay.Relay.Builder clearRouter() {
       router = null;
       routerBuilder = null;
       fieldSetFlags()[3] = false;
@@ -1467,7 +1467,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'identity_ed25519'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setIdentityEd25519(java.lang.Boolean value) {
+    public convertor.encoders.relay.Relay.Builder setIdentityEd25519(java.lang.Boolean value) {
       validate(fields()[4], value);
       this.identity_ed25519 = value;
       fieldSetFlags()[4] = true;
@@ -1489,7 +1489,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: String getIdentityEd25519()
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearIdentityEd25519() {
+    public convertor.encoders.relay.Relay.Builder clearIdentityEd25519() {
       identity_ed25519 = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -1510,7 +1510,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'master_key_ed25519'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setMasterKeyEd25519(java.lang.String value) {
+    public convertor.encoders.relay.Relay.Builder setMasterKeyEd25519(java.lang.String value) {
       validate(fields()[5], value);
       this.master_key_ed25519 = value;
       fieldSetFlags()[5] = true;
@@ -1532,7 +1532,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: String getMasterKeyEd25519()
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearMasterKeyEd25519() {
+    public convertor.encoders.relay.Relay.Builder clearMasterKeyEd25519() {
       master_key_ed25519 = null;
       fieldSetFlags()[5] = false;
       return this;
@@ -1542,7 +1542,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * Gets the value of the 'bandwidth' field.
       * @return The value.
       */
-    public converTor.encoders.relay.Bandwidth getBandwidth() {
+    public convertor.encoders.relay.Bandwidth getBandwidth() {
       return bandwidth;
     }
 
@@ -1551,7 +1551,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'bandwidth'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setBandwidth(converTor.encoders.relay.Bandwidth value) {
+    public convertor.encoders.relay.Relay.Builder setBandwidth(convertor.encoders.relay.Bandwidth value) {
       validate(fields()[6], value);
       this.bandwidthBuilder = null;
       this.bandwidth = value;
@@ -1571,12 +1571,12 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
      * Gets the Builder instance for the 'bandwidth' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public converTor.encoders.relay.Bandwidth.Builder getBandwidthBuilder() {
+    public convertor.encoders.relay.Bandwidth.Builder getBandwidthBuilder() {
       if (bandwidthBuilder == null) {
         if (hasBandwidth()) {
-          setBandwidthBuilder(converTor.encoders.relay.Bandwidth.newBuilder(bandwidth));
+          setBandwidthBuilder(convertor.encoders.relay.Bandwidth.newBuilder(bandwidth));
         } else {
-          setBandwidthBuilder(converTor.encoders.relay.Bandwidth.newBuilder());
+          setBandwidthBuilder(convertor.encoders.relay.Bandwidth.newBuilder());
         }
       }
       return bandwidthBuilder;
@@ -1586,7 +1586,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
      * Sets the Builder instance for the 'bandwidth' field
      * @return This builder.
      */
-    public converTor.encoders.relay.Relay.Builder setBandwidthBuilder(converTor.encoders.relay.Bandwidth.Builder value) {
+    public convertor.encoders.relay.Relay.Builder setBandwidthBuilder(convertor.encoders.relay.Bandwidth.Builder value) {
       clearBandwidth();
       bandwidthBuilder = value;
       return this;
@@ -1604,7 +1604,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * Clears the value of the 'bandwidth' field.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearBandwidth() {
+    public convertor.encoders.relay.Relay.Builder clearBandwidth() {
       bandwidth = null;
       bandwidthBuilder = null;
       fieldSetFlags()[6] = false;
@@ -1626,7 +1626,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'platform'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setPlatform(java.lang.String value) {
+    public convertor.encoders.relay.Relay.Builder setPlatform(java.lang.String value) {
       validate(fields()[7], value);
       this.platform = value;
       fieldSetFlags()[7] = true;
@@ -1648,7 +1648,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: String getPlatform()
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearPlatform() {
+    public convertor.encoders.relay.Relay.Builder clearPlatform() {
       platform = null;
       fieldSetFlags()[7] = false;
       return this;
@@ -1669,7 +1669,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'published'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setPublished(java.lang.Long value) {
+    public convertor.encoders.relay.Relay.Builder setPublished(java.lang.Long value) {
       validate(fields()[8], value);
       this.published = value;
       fieldSetFlags()[8] = true;
@@ -1691,7 +1691,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: long getPublishedMillis()
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearPublished() {
+    public convertor.encoders.relay.Relay.Builder clearPublished() {
       published = null;
       fieldSetFlags()[8] = false;
       return this;
@@ -1712,7 +1712,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'fingerprint'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setFingerprint(java.lang.String value) {
+    public convertor.encoders.relay.Relay.Builder setFingerprint(java.lang.String value) {
       validate(fields()[9], value);
       this.fingerprint = value;
       fieldSetFlags()[9] = true;
@@ -1734,7 +1734,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: String getFingerprint()
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearFingerprint() {
+    public convertor.encoders.relay.Relay.Builder clearFingerprint() {
       fingerprint = null;
       fieldSetFlags()[9] = false;
       return this;
@@ -1755,7 +1755,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'hibernating'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setHibernating(java.lang.Boolean value) {
+    public convertor.encoders.relay.Relay.Builder setHibernating(java.lang.Boolean value) {
       validate(fields()[10], value);
       this.hibernating = value;
       fieldSetFlags()[10] = true;
@@ -1777,7 +1777,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: boolean isHibernating()
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearHibernating() {
+    public convertor.encoders.relay.Relay.Builder clearHibernating() {
       hibernating = null;
       fieldSetFlags()[10] = false;
       return this;
@@ -1798,7 +1798,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'uptime'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setUptime(java.lang.Long value) {
+    public convertor.encoders.relay.Relay.Builder setUptime(java.lang.Long value) {
       validate(fields()[11], value);
       this.uptime = value;
       fieldSetFlags()[11] = true;
@@ -1820,7 +1820,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: Long getUptime()
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearUptime() {
+    public convertor.encoders.relay.Relay.Builder clearUptime() {
       uptime = null;
       fieldSetFlags()[11] = false;
       return this;
@@ -1841,7 +1841,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'onion_key'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setOnionKey(java.lang.Boolean value) {
+    public convertor.encoders.relay.Relay.Builder setOnionKey(java.lang.Boolean value) {
       validate(fields()[12], value);
       this.onion_key = value;
       fieldSetFlags()[12] = true;
@@ -1863,7 +1863,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: String getOnionKey()
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearOnionKey() {
+    public convertor.encoders.relay.Relay.Builder clearOnionKey() {
       onion_key = null;
       fieldSetFlags()[12] = false;
       return this;
@@ -1884,7 +1884,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'onion_key_crosscert'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setOnionKeyCrosscert(java.lang.Boolean value) {
+    public convertor.encoders.relay.Relay.Builder setOnionKeyCrosscert(java.lang.Boolean value) {
       validate(fields()[13], value);
       this.onion_key_crosscert = value;
       fieldSetFlags()[13] = true;
@@ -1906,7 +1906,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: String getOnionKeyCrosscert()
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearOnionKeyCrosscert() {
+    public convertor.encoders.relay.Relay.Builder clearOnionKeyCrosscert() {
       onion_key_crosscert = null;
       fieldSetFlags()[13] = false;
       return this;
@@ -1927,7 +1927,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'ntor_onion_key'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setNtorOnionKey(java.lang.Boolean value) {
+    public convertor.encoders.relay.Relay.Builder setNtorOnionKey(java.lang.Boolean value) {
       validate(fields()[14], value);
       this.ntor_onion_key = value;
       fieldSetFlags()[14] = true;
@@ -1949,7 +1949,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: String getNtorOnionKey()
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearNtorOnionKey() {
+    public convertor.encoders.relay.Relay.Builder clearNtorOnionKey() {
       ntor_onion_key = null;
       fieldSetFlags()[14] = false;
       return this;
@@ -1970,7 +1970,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'ntor_onion_key_crosscert'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setNtorOnionKeyCrosscert(java.lang.Boolean value) {
+    public convertor.encoders.relay.Relay.Builder setNtorOnionKeyCrosscert(java.lang.Boolean value) {
       validate(fields()[15], value);
       this.ntor_onion_key_crosscert = value;
       fieldSetFlags()[15] = true;
@@ -1992,7 +1992,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: String getNtorOnionKeyCrosscert()
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearNtorOnionKeyCrosscert() {
+    public convertor.encoders.relay.Relay.Builder clearNtorOnionKeyCrosscert() {
       ntor_onion_key_crosscert = null;
       fieldSetFlags()[15] = false;
       return this;
@@ -2013,7 +2013,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'signing_key'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setSigningKey(java.lang.Boolean value) {
+    public convertor.encoders.relay.Relay.Builder setSigningKey(java.lang.Boolean value) {
       validate(fields()[16], value);
       this.signing_key = value;
       fieldSetFlags()[16] = true;
@@ -2035,7 +2035,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: String getSigningKey()
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearSigningKey() {
+    public convertor.encoders.relay.Relay.Builder clearSigningKey() {
       signing_key = null;
       fieldSetFlags()[16] = false;
       return this;
@@ -2056,7 +2056,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'exit_policy'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setExitPolicy(java.util.List<java.lang.String> value) {
+    public convertor.encoders.relay.Relay.Builder setExitPolicy(java.util.List<java.lang.String> value) {
       validate(fields()[17], value);
       this.exit_policy = value;
       fieldSetFlags()[17] = true;
@@ -2078,7 +2078,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: List<String> getExitPolicyLines()
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearExitPolicy() {
+    public convertor.encoders.relay.Relay.Builder clearExitPolicy() {
       exit_policy = null;
       fieldSetFlags()[17] = false;
       return this;
@@ -2099,7 +2099,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'ipv6_policy'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setIpv6Policy(java.lang.String value) {
+    public convertor.encoders.relay.Relay.Builder setIpv6Policy(java.lang.String value) {
       validate(fields()[18], value);
       this.ipv6_policy = value;
       fieldSetFlags()[18] = true;
@@ -2121,7 +2121,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: String getIpv6DefaultPolicy()
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearIpv6Policy() {
+    public convertor.encoders.relay.Relay.Builder clearIpv6Policy() {
       ipv6_policy = null;
       fieldSetFlags()[18] = false;
       return this;
@@ -2142,7 +2142,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'ipv6_portlist'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setIpv6Portlist(java.lang.String value) {
+    public convertor.encoders.relay.Relay.Builder setIpv6Portlist(java.lang.String value) {
       validate(fields()[19], value);
       this.ipv6_portlist = value;
       fieldSetFlags()[19] = true;
@@ -2164,7 +2164,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: String getIpv6PortList()
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearIpv6Portlist() {
+    public convertor.encoders.relay.Relay.Builder clearIpv6Portlist() {
       ipv6_portlist = null;
       fieldSetFlags()[19] = false;
       return this;
@@ -2185,7 +2185,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'router_sig_ed25519'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setRouterSigEd25519(java.lang.Boolean value) {
+    public convertor.encoders.relay.Relay.Builder setRouterSigEd25519(java.lang.Boolean value) {
       validate(fields()[20], value);
       this.router_sig_ed25519 = value;
       fieldSetFlags()[20] = true;
@@ -2207,7 +2207,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: String getRouterSignatureEd25519()
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearRouterSigEd25519() {
+    public convertor.encoders.relay.Relay.Builder clearRouterSigEd25519() {
       router_sig_ed25519 = null;
       fieldSetFlags()[20] = false;
       return this;
@@ -2228,7 +2228,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'router_signature'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setRouterSignature(java.lang.Boolean value) {
+    public convertor.encoders.relay.Relay.Builder setRouterSignature(java.lang.Boolean value) {
       validate(fields()[21], value);
       this.router_signature = value;
       fieldSetFlags()[21] = true;
@@ -2250,7 +2250,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: String getRouterSignature()
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearRouterSignature() {
+    public convertor.encoders.relay.Relay.Builder clearRouterSignature() {
       router_signature = null;
       fieldSetFlags()[21] = false;
       return this;
@@ -2271,7 +2271,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'contact'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setContact(java.lang.String value) {
+    public convertor.encoders.relay.Relay.Builder setContact(java.lang.String value) {
       validate(fields()[22], value);
       this.contact = value;
       fieldSetFlags()[22] = true;
@@ -2293,7 +2293,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: String getContact()
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearContact() {
+    public convertor.encoders.relay.Relay.Builder clearContact() {
       contact = null;
       fieldSetFlags()[22] = false;
       return this;
@@ -2314,7 +2314,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'family'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setFamily(java.util.List<java.lang.String> value) {
+    public convertor.encoders.relay.Relay.Builder setFamily(java.util.List<java.lang.String> value) {
       validate(fields()[23], value);
       this.family = value;
       fieldSetFlags()[23] = true;
@@ -2336,7 +2336,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: List<String> getFamilyEntries()
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearFamily() {
+    public convertor.encoders.relay.Relay.Builder clearFamily() {
       family = null;
       fieldSetFlags()[23] = false;
       return this;
@@ -2347,7 +2347,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: BandwidthHistory getReadHistory()
       * @return The value.
       */
-    public converTor.encoders.relay.ReadHistory getReadHistory() {
+    public convertor.encoders.relay.ReadHistory getReadHistory() {
       return read_history;
     }
 
@@ -2357,7 +2357,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'read_history'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setReadHistory(converTor.encoders.relay.ReadHistory value) {
+    public convertor.encoders.relay.Relay.Builder setReadHistory(convertor.encoders.relay.ReadHistory value) {
       validate(fields()[24], value);
       this.read_historyBuilder = null;
       this.read_history = value;
@@ -2379,12 +2379,12 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
      * metrics-lib/ServerDescriptor: BandwidthHistory getReadHistory()
      * @return This builder.
      */
-    public converTor.encoders.relay.ReadHistory.Builder getReadHistoryBuilder() {
+    public convertor.encoders.relay.ReadHistory.Builder getReadHistoryBuilder() {
       if (read_historyBuilder == null) {
         if (hasReadHistory()) {
-          setReadHistoryBuilder(converTor.encoders.relay.ReadHistory.newBuilder(read_history));
+          setReadHistoryBuilder(convertor.encoders.relay.ReadHistory.newBuilder(read_history));
         } else {
-          setReadHistoryBuilder(converTor.encoders.relay.ReadHistory.newBuilder());
+          setReadHistoryBuilder(convertor.encoders.relay.ReadHistory.newBuilder());
         }
       }
       return read_historyBuilder;
@@ -2395,7 +2395,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
      * metrics-lib/ServerDescriptor: BandwidthHistory getReadHistory()
      * @return This builder.
      */
-    public converTor.encoders.relay.Relay.Builder setReadHistoryBuilder(converTor.encoders.relay.ReadHistory.Builder value) {
+    public convertor.encoders.relay.Relay.Builder setReadHistoryBuilder(convertor.encoders.relay.ReadHistory.Builder value) {
       clearReadHistory();
       read_historyBuilder = value;
       return this;
@@ -2415,7 +2415,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: BandwidthHistory getReadHistory()
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearReadHistory() {
+    public convertor.encoders.relay.Relay.Builder clearReadHistory() {
       read_history = null;
       read_historyBuilder = null;
       fieldSetFlags()[24] = false;
@@ -2427,7 +2427,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: BandwidthHistory getWriteHistory()
       * @return The value.
       */
-    public converTor.encoders.relay.WriteHistory getWriteHistory() {
+    public convertor.encoders.relay.WriteHistory getWriteHistory() {
       return write_history;
     }
 
@@ -2437,7 +2437,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'write_history'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setWriteHistory(converTor.encoders.relay.WriteHistory value) {
+    public convertor.encoders.relay.Relay.Builder setWriteHistory(convertor.encoders.relay.WriteHistory value) {
       validate(fields()[25], value);
       this.write_historyBuilder = null;
       this.write_history = value;
@@ -2459,12 +2459,12 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
      * metrics-lib/ServerDescriptor: BandwidthHistory getWriteHistory()
      * @return This builder.
      */
-    public converTor.encoders.relay.WriteHistory.Builder getWriteHistoryBuilder() {
+    public convertor.encoders.relay.WriteHistory.Builder getWriteHistoryBuilder() {
       if (write_historyBuilder == null) {
         if (hasWriteHistory()) {
-          setWriteHistoryBuilder(converTor.encoders.relay.WriteHistory.newBuilder(write_history));
+          setWriteHistoryBuilder(convertor.encoders.relay.WriteHistory.newBuilder(write_history));
         } else {
-          setWriteHistoryBuilder(converTor.encoders.relay.WriteHistory.newBuilder());
+          setWriteHistoryBuilder(convertor.encoders.relay.WriteHistory.newBuilder());
         }
       }
       return write_historyBuilder;
@@ -2475,7 +2475,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
      * metrics-lib/ServerDescriptor: BandwidthHistory getWriteHistory()
      * @return This builder.
      */
-    public converTor.encoders.relay.Relay.Builder setWriteHistoryBuilder(converTor.encoders.relay.WriteHistory.Builder value) {
+    public convertor.encoders.relay.Relay.Builder setWriteHistoryBuilder(convertor.encoders.relay.WriteHistory.Builder value) {
       clearWriteHistory();
       write_historyBuilder = value;
       return this;
@@ -2495,7 +2495,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: BandwidthHistory getWriteHistory()
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearWriteHistory() {
+    public convertor.encoders.relay.Relay.Builder clearWriteHistory() {
       write_history = null;
       write_historyBuilder = null;
       fieldSetFlags()[25] = false;
@@ -2517,7 +2517,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'eventdns'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setEventdns(java.lang.Boolean value) {
+    public convertor.encoders.relay.Relay.Builder setEventdns(java.lang.Boolean value) {
       validate(fields()[26], value);
       this.eventdns = value;
       fieldSetFlags()[26] = true;
@@ -2539,7 +2539,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: boolean getUsesEnhancedDnsLogic()
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearEventdns() {
+    public convertor.encoders.relay.Relay.Builder clearEventdns() {
       eventdns = null;
       fieldSetFlags()[26] = false;
       return this;
@@ -2560,7 +2560,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'caches_extra_info'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setCachesExtraInfo(java.lang.Boolean value) {
+    public convertor.encoders.relay.Relay.Builder setCachesExtraInfo(java.lang.Boolean value) {
       validate(fields()[27], value);
       this.caches_extra_info = value;
       fieldSetFlags()[27] = true;
@@ -2582,7 +2582,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: boolean getCachesExtraInfo()
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearCachesExtraInfo() {
+    public convertor.encoders.relay.Relay.Builder clearCachesExtraInfo() {
       caches_extra_info = null;
       fieldSetFlags()[27] = false;
       return this;
@@ -2603,7 +2603,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'extra_info_digest'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setExtraInfoDigest(java.lang.String value) {
+    public convertor.encoders.relay.Relay.Builder setExtraInfoDigest(java.lang.String value) {
       validate(fields()[28], value);
       this.extra_info_digest = value;
       fieldSetFlags()[28] = true;
@@ -2625,7 +2625,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: String getExtraInfoDigest()
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearExtraInfoDigest() {
+    public convertor.encoders.relay.Relay.Builder clearExtraInfoDigest() {
       extra_info_digest = null;
       fieldSetFlags()[28] = false;
       return this;
@@ -2646,7 +2646,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'extra_info_digest_sha256'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setExtraInfoDigestSha256(java.lang.String value) {
+    public convertor.encoders.relay.Relay.Builder setExtraInfoDigestSha256(java.lang.String value) {
       validate(fields()[29], value);
       this.extra_info_digest_sha256 = value;
       fieldSetFlags()[29] = true;
@@ -2668,7 +2668,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: String getExtraInfoDigestSha256()
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearExtraInfoDigestSha256() {
+    public convertor.encoders.relay.Relay.Builder clearExtraInfoDigestSha256() {
       extra_info_digest_sha256 = null;
       fieldSetFlags()[29] = false;
       return this;
@@ -2689,7 +2689,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'hidden_service_dir'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setHiddenServiceDir(java.util.List<java.lang.Integer> value) {
+    public convertor.encoders.relay.Relay.Builder setHiddenServiceDir(java.util.List<java.lang.Integer> value) {
       validate(fields()[30], value);
       this.hidden_service_dir = value;
       fieldSetFlags()[30] = true;
@@ -2711,7 +2711,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: List<Integer> getHiddenServiceDirVersions()
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearHiddenServiceDir() {
+    public convertor.encoders.relay.Relay.Builder clearHiddenServiceDir() {
       hidden_service_dir = null;
       fieldSetFlags()[30] = false;
       return this;
@@ -2732,7 +2732,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'link_protocol_versions'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setLinkProtocolVersions(java.util.List<java.lang.Integer> value) {
+    public convertor.encoders.relay.Relay.Builder setLinkProtocolVersions(java.util.List<java.lang.Integer> value) {
       validate(fields()[31], value);
       this.link_protocol_versions = value;
       fieldSetFlags()[31] = true;
@@ -2754,7 +2754,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: List<Integer> getLinkProtocolVersions()
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearLinkProtocolVersions() {
+    public convertor.encoders.relay.Relay.Builder clearLinkProtocolVersions() {
       link_protocol_versions = null;
       fieldSetFlags()[31] = false;
       return this;
@@ -2775,7 +2775,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'circuit_protocol_versions'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setCircuitProtocolVersions(java.util.List<java.lang.Integer> value) {
+    public convertor.encoders.relay.Relay.Builder setCircuitProtocolVersions(java.util.List<java.lang.Integer> value) {
       validate(fields()[32], value);
       this.circuit_protocol_versions = value;
       fieldSetFlags()[32] = true;
@@ -2797,7 +2797,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: List<Integer> getCircuitProtocolVersions()
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearCircuitProtocolVersions() {
+    public convertor.encoders.relay.Relay.Builder clearCircuitProtocolVersions() {
       circuit_protocol_versions = null;
       fieldSetFlags()[32] = false;
       return this;
@@ -2818,7 +2818,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'allow_single_hop_exits'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setAllowSingleHopExits(java.lang.Boolean value) {
+    public convertor.encoders.relay.Relay.Builder setAllowSingleHopExits(java.lang.Boolean value) {
       validate(fields()[33], value);
       this.allow_single_hop_exits = value;
       fieldSetFlags()[33] = true;
@@ -2840,7 +2840,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: boolean getAllowSingleHopExits()
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearAllowSingleHopExits() {
+    public convertor.encoders.relay.Relay.Builder clearAllowSingleHopExits() {
       allow_single_hop_exits = null;
       fieldSetFlags()[33] = false;
       return this;
@@ -2851,7 +2851,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: List<String> getOrAddresses()
       * @return The value.
       */
-    public java.util.List<converTor.encoders.relay.OrAddress> getOrAddress() {
+    public java.util.List<convertor.encoders.relay.OrAddress> getOrAddress() {
       return or_address;
     }
 
@@ -2861,7 +2861,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'or_address'.
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder setOrAddress(java.util.List<converTor.encoders.relay.OrAddress> value) {
+    public convertor.encoders.relay.Relay.Builder setOrAddress(java.util.List<convertor.encoders.relay.OrAddress> value) {
       validate(fields()[34], value);
       this.or_address = value;
       fieldSetFlags()[34] = true;
@@ -2883,7 +2883,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
       * metrics-lib/ServerDescriptor: List<String> getOrAddresses()
       * @return This builder.
       */
-    public converTor.encoders.relay.Relay.Builder clearOrAddress() {
+    public convertor.encoders.relay.Relay.Builder clearOrAddress() {
       or_address = null;
       fieldSetFlags()[34] = false;
       return this;
@@ -2899,14 +2899,14 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
         if (routerBuilder != null) {
           record.router = this.routerBuilder.build();
         } else {
-          record.router = fieldSetFlags()[3] ? this.router : (converTor.encoders.relay.Router) defaultValue(fields()[3]);
+          record.router = fieldSetFlags()[3] ? this.router : (convertor.encoders.relay.Router) defaultValue(fields()[3]);
         }
         record.identity_ed25519 = fieldSetFlags()[4] ? this.identity_ed25519 : (java.lang.Boolean) defaultValue(fields()[4]);
         record.master_key_ed25519 = fieldSetFlags()[5] ? this.master_key_ed25519 : (java.lang.String) defaultValue(fields()[5]);
         if (bandwidthBuilder != null) {
           record.bandwidth = this.bandwidthBuilder.build();
         } else {
-          record.bandwidth = fieldSetFlags()[6] ? this.bandwidth : (converTor.encoders.relay.Bandwidth) defaultValue(fields()[6]);
+          record.bandwidth = fieldSetFlags()[6] ? this.bandwidth : (convertor.encoders.relay.Bandwidth) defaultValue(fields()[6]);
         }
         record.platform = fieldSetFlags()[7] ? this.platform : (java.lang.String) defaultValue(fields()[7]);
         record.published = fieldSetFlags()[8] ? this.published : (java.lang.Long) defaultValue(fields()[8]);
@@ -2928,12 +2928,12 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
         if (read_historyBuilder != null) {
           record.read_history = this.read_historyBuilder.build();
         } else {
-          record.read_history = fieldSetFlags()[24] ? this.read_history : (converTor.encoders.relay.ReadHistory) defaultValue(fields()[24]);
+          record.read_history = fieldSetFlags()[24] ? this.read_history : (convertor.encoders.relay.ReadHistory) defaultValue(fields()[24]);
         }
         if (write_historyBuilder != null) {
           record.write_history = this.write_historyBuilder.build();
         } else {
-          record.write_history = fieldSetFlags()[25] ? this.write_history : (converTor.encoders.relay.WriteHistory) defaultValue(fields()[25]);
+          record.write_history = fieldSetFlags()[25] ? this.write_history : (convertor.encoders.relay.WriteHistory) defaultValue(fields()[25]);
         }
         record.eventdns = fieldSetFlags()[26] ? this.eventdns : (java.lang.Boolean) defaultValue(fields()[26]);
         record.caches_extra_info = fieldSetFlags()[27] ? this.caches_extra_info : (java.lang.Boolean) defaultValue(fields()[27]);
@@ -2943,7 +2943,7 @@ public class Relay extends org.apache.avro.specific.SpecificRecordBase implement
         record.link_protocol_versions = fieldSetFlags()[31] ? this.link_protocol_versions : (java.util.List<java.lang.Integer>) defaultValue(fields()[31]);
         record.circuit_protocol_versions = fieldSetFlags()[32] ? this.circuit_protocol_versions : (java.util.List<java.lang.Integer>) defaultValue(fields()[32]);
         record.allow_single_hop_exits = fieldSetFlags()[33] ? this.allow_single_hop_exits : (java.lang.Boolean) defaultValue(fields()[33]);
-        record.or_address = fieldSetFlags()[34] ? this.or_address : (java.util.List<converTor.encoders.relay.OrAddress>) defaultValue(fields()[34]);
+        record.or_address = fieldSetFlags()[34] ? this.or_address : (java.util.List<convertor.encoders.relay.OrAddress>) defaultValue(fields()[34]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

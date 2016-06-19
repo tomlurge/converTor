@@ -1,8 +1,8 @@
-package converTor;
+package convertor;
 
 import org.torproject.descriptor.Descriptor;
 import org.torproject.descriptor.TorperfResult;
-import converTor.encoders.torperf.Torperf;
+import convertor.encoders.torperf.Torperf;
 
 
 class ConvertTorperf extends Convert {
