@@ -81,7 +81,7 @@ class Base {
         fh = new FileHandler(
             args.getLogsPath() + "converTor.log",
             100000000,  // 100 MB
-            100,
+            10,
             true
         );
         logger.addHandler(fh);
