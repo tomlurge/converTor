@@ -3,6 +3,9 @@
 build
 out
 data
+attic
+specs
+notes
 
 # file types
 *.pdf
