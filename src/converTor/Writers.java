@@ -41,14 +41,13 @@ enum Writers {
     if (writersMap.get(writerID) == null) {
       Writer writer = null;
       try {
-
         /* create writer according to format setting */
-        switch (Args.INSTANCE.getFormat()) {
-          case ("avro") : writer = new WriterAvro(type, date); break;
-          case ("parquet") : writer = new WriterParquet(type, date); break;
-          case ("json") : writer = new WriterJson(type, date); break;
-        }
-
+        if (Args.INSTANCE.isAvro())
+          writer = new WriterAvro(type, date);
+        else if (Args.INSTANCE.isParquet())
+          writer = new WriterParquet(type, date);
+        else
+          writer = new WriterJson(type, date);
       } catch (IOException e1) {
         System.out.println("IOException when trying to create a writer:");
         e1.printStackTrace();

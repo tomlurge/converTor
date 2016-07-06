@@ -23,9 +23,9 @@ public enum Args {
   private boolean zip = false;
   private boolean snappy = false;
   private boolean pretty = false;
-  private boolean json = false;
+  private boolean json = true;
   private boolean avro = false;
-  private boolean parquet = true;
+  private boolean parquet = false;
   private String format = "json";
   private String inPath = "";
   private String outPath = "";
@@ -108,22 +108,14 @@ public enum Args {
       if (formatArgument.equals("avro")) {
         setAvro(true);
         setJson(false);
-        setParquet(false);
-        setFormat(formatArgument);
-      }
-      else if (formatArgument.equals("json")) {
-        setAvro(false);
-        setJson(true);
-        setParquet(false);
         setFormat(formatArgument);
       }
       else if (formatArgument.equals("parquet")) {
-        setAvro(false);
         setJson(false);
         setParquet(true);
         setFormat(formatArgument);
       }
-      else  {
+      else if ( ! formatArgument.equals("json")) {
         HelpFormatter formatter = new HelpFormatter();
         formatter.printHelp( "ConverTor\n\n" +
             cmd.getOptionValue("f") + " is not a valid format.\n\n", options );
