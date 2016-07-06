@@ -53,29 +53,9 @@ class Base {
     this.writers = Writers.INSTANCE;
 
     /* logging */
-    String argz = "";
-    for (String arg : commandLineArguments) {argz = argz.concat(arg) + " ";}
-    String message =
-        "      Conversion with arguments: " + argz + "\n" +
-        "\n" +
-        "      Current parameters:\n" +
-        "      -f    --format     <arg>    default: json, optional: parquet, avro   " + args.getFormat() + "\n" +
-        "      -s    --suffix                                                       " + args.getSuffix() + "\n" +
-        "      -i    --inPath     <arg>    default: current working directory       " + args.getInPath() + "\n" +
-        "      -o    --outPath    <arg>    default: current working directory       " + args.getOutPath() + "\n" +
-        "      -l    --logsPath   <arg>    default: current working directory       " + args.getLogsPath() + "\n" +
-        "      -cs   --snappy                                                       " + args.isSnappy() + "\n" +
-        "      -cz   --zip                 Avro as BZip2, Parquet & JSON as GZip    " + args.isZip() + "\n" +
-        "      -p    --pretty              pretty printed JSON                      " + args.isPretty() + "\n" +
-        "      -m    --maxFiles   <arg>    default: 20                              " + args.getMaxFiles() + "\n" +
-        "      -d    --debug               print JSON descriptors to console        " + args.isDebug() + "\n" +
-        "      -g    --log                 log to file 'converTor.log'              " + args.isLog() + "\n" +
-        "\n";
-
     if (args.isLog()) {
       logger = Logger.getLogger("ConversionLog");
       FileHandler fh;
-
       try {
         // Configure the logger with handler and formatter
         fh = new FileHandler(
@@ -87,15 +67,26 @@ class Base {
         logger.addHandler(fh);
         SimpleFormatter formatter = new SimpleFormatter();
         fh.setFormatter(formatter);
-
-        logger.info("\n" + message);
+        logger.info("\n" +
+            "      Now running with parameters:\n" +
+            "      -f    --format     <arg>    default: json, optional: parquet, avro   " + args.getFormat() + "\n" +
+            "      -s    --suffix                                                       " + args.getSuffix() + "\n" +
+            "      -i    --inPath     <arg>    default: current working directory       " + args.getInPath() + "\n" +
+            "      -o    --outPath    <arg>    default: current working directory       " + args.getOutPath() + "\n" +
+            "      -l    --logsPath   <arg>    default: current working directory       " + args.getLogsPath() + "\n" +
+            "      -cs   --snappy                                                       " + args.isSnappy() + "\n" +
+            "      -cz   --zip                 Avro as BZip2, Parquet & JSON as GZip    " + args.isZip() + "\n" +
+            "      -p    --pretty              pretty printed JSON                      " + args.isPretty() + "\n" +
+            "      -m    --maxFiles   <arg>    default: 20                              " + args.getMaxFiles() + "\n" +
+            "      -d    --debug               print JSON descriptors to console        " + args.isDebug() + "\n" +
+            "      -g    --log                 log to file 'converTor.log'              " + args.isLog() + "\n" +
+            "\n"
+        );
       } catch (SecurityException e) {
         e.printStackTrace();
       } catch (IOException e) {
         e.printStackTrace();
       }
-    } else {
-      System.out.println(message);
     }
 
   }
