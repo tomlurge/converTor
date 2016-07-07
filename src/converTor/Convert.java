@@ -2,8 +2,10 @@ package convertor;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.*;
-
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.TimeZone;
 import org.apache.avro.specific.SpecificRecordBase;
 import org.torproject.descriptor.Descriptor;
 import org.torproject.descriptor.DescriptorFile;

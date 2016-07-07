@@ -3,9 +3,9 @@ package convertor;
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.FileHandler;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
-
 import org.torproject.descriptor.*;
 
 /**
@@ -34,7 +34,7 @@ class Base {
     try {
       base.runConversion();
     } catch (IOException e) {
-      if (Args.INSTANCE.isLog()) logger.warning(e.getMessage());
+      if (Args.INSTANCE.isLog()) logger.log(Level.WARNING, e.getMessage(), e);
       else e.printStackTrace();
     }
 
@@ -87,8 +87,9 @@ class Base {
             "\n"
         );
       } catch (SecurityException | IOException e) {
-        logger.warning(e.getMessage());
+        logger.log(Level.WARNING, e.getMessage(), e);
       }
+
     }
 
   }
@@ -120,7 +121,7 @@ class Base {
         try {
           converter = type.converter.newInstance();
         } catch (InstantiationException|IllegalAccessException e) {
-          if (args.isLog()) logger.warning(e.getMessage());
+          if (args.isLog()) logger.log(Level.WARNING, e.getMessage(), e);
           else e.printStackTrace();
         }
 
@@ -142,7 +143,7 @@ class Base {
             logger.warning("Exception in descriptor of type " + converter.type
               + " at date " + converter.date + ":");
             logger.warning(converter.load.toString());
-            logger.warning(e.toString());
+            logger.log(Level.WARNING, e.getMessage(), e);
           } else {
             System.out.println("Exception in descriptor of type "
                 + converter.type + " at date " + converter.date + ":");

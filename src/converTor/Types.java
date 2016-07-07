@@ -2,6 +2,7 @@ package convertor;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.logging.Level;
 import org.apache.avro.Schema;
 import org.torproject.descriptor.*;
 
@@ -56,9 +57,8 @@ enum Types {
       );
     } catch (IOException e) {
       if (Args.INSTANCE.isLog()) {
-        Base.logger.warning(
-          "Failed to load schema file: \n" + e.getMessage()
-        );
+        Base.logger.log(Level.WARNING,
+            "Failed to load schema file: \n" + e.getMessage(), e);
       }
       else {
         System.err.println("Failed to load schema file: ");
@@ -72,13 +72,13 @@ enum Types {
           (Class<? extends Convert>) Class.forName(convert + this.name);
     } catch (ClassNotFoundException e) {
       if (Args.INSTANCE.isLog()) {
-        Base.logger.warning(
-            "ClassNotFoundException for converter class:\n" + e.getMessage()
+        Base.logger.log(Level.WARNING,
+            "ClassNotFoundException for converter class:\n" + e.getMessage(), e
         );
       }
       else {
         System.err.println("ClassNotFoundException for converter class:");
-        System.err.println(e.getMessage());
+        System.err.println(e.getMessage() + e);
       }
     }
     try {
@@ -114,9 +114,9 @@ enum Types {
       }
     } catch (ClassNotFoundException e) {
       if (Args.INSTANCE.isLog()) {
-        Base.logger.warning(
-            "ClassNotFoundException for metrics-lib class:\n" + e.getMessage()
-        );
+        Base.logger.log(Level.WARNING,
+            "ClassNotFoundException for metrics-lib class: \n" + e.getMessage(),
+          e);
       }
       else {
         System.err.println("ClassNotFoundException for metrics-lib class:");

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
 
 
 enum Writers {
@@ -49,9 +50,10 @@ enum Writers {
         else
           writer = new WriterJson(type, date);
       } catch (IOException e) {
-        if (Args.INSTANCE.isLog()) Base.logger.warning(
-          "IOException when trying to create a writer: \n" + e.getMessage()
-        );
+        if (Args.INSTANCE.isLog())
+          Base.logger.log(Level.WARNING,
+              "IOException when trying to create writer: \n" + e.getMessage(), e
+          );
         else {
           System.out.println("IOException when trying to create a writer:");
           e.printStackTrace();
