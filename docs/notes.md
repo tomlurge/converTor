@@ -1,39 +1,48 @@
 # TODO
 
-make new aggregator project
-  unix
-    check ram usage
-    check directory sizes and disk space usage
+split projects consequently
+  move everything that belongs to analytics server 
+  but not explicitly to converTor 
+  somewhere else (mteam, aggregaTor)
+  
+new round of conversion, depending on
+  - when will the new metrics-lib version be released?
+  - when will bridge descriptors be ready?
+
+replace RelayNetworkStatusVote's getDirectorySignatures() with
+getDirectorySignature() and update metrics-lib dependency
+Ticket URL: <https://trac.torproject.org/projects/tor/ticket/18875#comment:11>
+
+use checkstyle
+
+add support for logging levels
+  https://docs.oracle.com/javase/7/docs/api/java/util/logging/LogManager.html
 
 identity
   how to establish identity on converted descriptors
     
-    relay         type + fingerprint + published
-    relayExtra    type + fingerprint + published
-    relayVote     type + identity + published
-    relayConsens  type + valid-after
-    bridge        type + fingerprint + published
-    bridgeExtra   type + fingerprint + published
-    bridgeStatus  type + published
-    torperf       type + start
-    tordnsel      type + downloaded
-    
-sizes
-  data converted on the server seems very big - 10 to 20 time the collector data
-  check again, compare to local conversion
+    relay           type + published + fingerprint   (could as well be digest)
+    bridgeExtra     type + published + fingerprint   (could as well be digest)
+    relayExtra      type + published + fingerprint   (could as well be digest) 
+    bridge          type + published + fingerprint   (could as well be digest)
+    relayConsensus  type + valid-after 
+    bridgeStatus    type + valid-after
+    relayVote       type + valid-after + identity
+    tordnsel        type + downloaded 
+    torperf         type + start + source + filesize
 
 
 readme
   add caveats about underlying data, accuracy
   hint
     pretty printed JSON is primarily for debugging
-    eg spark can't ingest it, although mongodb won't complain
+    eg spark can't ingest it, but mongodb won't complain
   
-document where arrays would need to be flattened for use with SQL
+document where arrays would need to be flattened for use with Drill SQL
 
 add option to have dates human readable instead of millis
   maybe just for pretty printed json?
-
+  BUT - not possible without breaking the schema (or schema validation)
 handle updates on conversion results (files)
   writer initialization should check if file already exists 
   and, if yes, open it
@@ -48,7 +57,8 @@ write documentation
   rationale
   tools used
   inner workings
-
+  move everything that doesn't belong to ConverTor to mteam
+  
 repair hdfs on server
 
   

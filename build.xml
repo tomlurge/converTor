@@ -15,16 +15,19 @@
     <property name="main-class" value="convertor.Base" />
     <property name="source-and-target-java-version" value="1.7" />
 
-    <!-- external libraries classpath, we don't need sources and javadoc -->
+    <!-- External libraries classpath.
+         Exclude test frameworks, sources and javadoc -->
     <path id="classpath">
         <fileset dir="${basedir}/">
             <include name="${lib.dir}/*.jar" />
+            <exclude name="${lib.dir}/hamcrest*.jar"/>
+            <exclude name="${lib.dir}/junit*.jar"/>
             <exclude name="${lib.dir}/*sources.jar"/>
             <exclude name="${lib.dir}/*javadoc.jar"/>
         </fileset>
     </path>
 
-    <!-- constructs the external libraries classpath name -->
+    <!-- Construct the external libraries classpath name -->
     <pathconvert property="classpath.name" pathsep=" ">
         <path refid="classpath" />
         <mapper>
@@ -36,7 +39,7 @@
     </pathconvert>
 
 
-    <!-- targets -->
+    <!-- Targets -->
 
     <target name="init">
         <mkdir dir="${build.dir}" />
@@ -84,7 +87,7 @@
     </target>
 
 
-    <!-- jar it, and declare the ext libraries in manifest.mf file -->
+    <!-- jar it, and declare external libraries in manifest.mf file -->
     <target name="jar"
             depends="compile, copy-schemata, copy-doc, copy-dependencies"
             description="package, output to JAR">
