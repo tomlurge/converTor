@@ -242,6 +242,7 @@ class ConvertRelayVote extends Convert {
       con.setIdentity(entry.getValue().getIdentity());
       con.setSigningKeyDigest(entry.getValue().getSigningKeyDigest());
       con.setSignature(entry.getValue().getSignature() != null);
+      //  TODO    update to new metric-lib method getDirectorySignature()
       if (desc.getDirectorySignatures().size() > 1) {
         System.out.println(
           "RelayVote descriptor contains more than 1 Directory Signature:\n    "
