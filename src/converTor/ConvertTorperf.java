@@ -29,8 +29,8 @@ class ConvertTorperf extends Convert {
     conversion.setWritebytes(desc.getWriteBytes());
     conversion.setReadbytes(desc.getReadBytes());
     conversion.setDidtimeout(desc.didTimeout());
-    if (desc.getDataPercentiles() != null &&
-        !desc.getDataPercentiles().isEmpty()) {
+    if (desc.getDataPercentiles() != null
+        && !desc.getDataPercentiles().isEmpty()) {
       conversion.setDataperc10(desc.getDataPercentiles().get(10));
       conversion.setDataperc20(desc.getDataPercentiles().get(20));
       conversion.setDataperc30(desc.getDataPercentiles().get(30));
@@ -65,7 +65,7 @@ class ConvertTorperf extends Convert {
     }
 
     this.type = Types.TORPERF;
-    this.date = dateTimeFormat.format(desc.getStartMillis()).substring(0,7);
+    this.date = dateTimeFormat.format(desc.getStartMillis()).substring(0, 7);
     this.load = conversion;
 
     if (desc.getUnrecognizedKeys() != null) {

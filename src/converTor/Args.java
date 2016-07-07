@@ -8,17 +8,17 @@ import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.HelpFormatter;
 
 /**
- * Evaluates command line arguments
+ * Evaluates command line arguments.
  */
 public enum Args {
 
   /**
-   * Initializes Singleton with CLI arguments
+   * Initializes Singleton with CLI arguments.
    */
   INSTANCE(Base.commandLineArguments);
 
   /**
-   * Provide argument defaults
+   * Provide argument defaults.
    */
   private boolean zip = false;
   private boolean snappy = false;
@@ -38,7 +38,7 @@ public enum Args {
 
 
   /**
-   * Evaluates command line arguments
+   * Evaluates command line arguments.
    * see https://commons.apache.org/proper/commons-cli/usage.html
    */
   Args(String[] commandLineArguments) {
@@ -50,7 +50,7 @@ public enum Args {
         "To which serialization format to convert.\n" +
         "Possible values are 'avro', 'parquet' and 'json'.\n" +
         "Default: 'json'.\n" +
-        "e.g. '-f=parquet'" );
+        "e.g. '-f=parquet'");
     options.addOption("s", "suffix", true,
         "Any string that might be helpful.\n" +
         "e.g. '-s=_Suffix'\n\n");
@@ -110,13 +110,11 @@ public enum Args {
         setAvro(true);
         setJson(false);
         setFormat(formatArgument);
-      }
-      else if (formatArgument.equals("parquet")) {
+      } else if (formatArgument.equals("parquet")) {
         setJson(false);
         setParquet(true);
         setFormat(formatArgument);
-      }
-      else if ( ! formatArgument.equals("json")) {
+      } else if ( ! formatArgument.equals("json")) {
         HelpFormatter formatter = new HelpFormatter();
         formatter.printHelp( "ConverTor\n\n" +
             "\'" + cmd.getOptionValue("f") + "\' is not a valid format.\n\n",
@@ -124,21 +122,21 @@ public enum Args {
         System.exit(1);
       }
     }
-    if(cmd.hasOption("s") && cmd.getOptionValue("s") != null) {
+    if (cmd.hasOption("s") && cmd.getOptionValue("s") != null) {
       setSuffix(cmd.getOptionValue("s"));
     }
-    if(cmd.hasOption("p")) {
+    if (cmd.hasOption("p")) {
       setPretty(true);
     }
-    if(cmd.hasOption("cs")) {
+    if (cmd.hasOption("cs")) {
       setSnappy(true);
       setZip(false);
     }
-    if(cmd.hasOption("cz")) {
+    if (cmd.hasOption("cz")) {
       setZip(true);
       setSnappy(false);
     }
-    if(cmd.hasOption("m")) {
+    if (cmd.hasOption("m")) {
       try {
         setMaxFiles(Integer.parseInt(cmd.getOptionValue("m")));
       } catch (NumberFormatException e) {
@@ -146,13 +144,14 @@ public enum Args {
         System.exit(1);
       }
     }
-    if(cmd.hasOption("d")) {
+    if (cmd.hasOption("d")) {
       setDebug(true);
     }
-    if(cmd.hasOption("g")) {
+    if (cmd.hasOption("g")) {
       setLog(true);
     }
-    setOutputFileEnding(getSuffix()
+    setOutputFileEnding(
+        getSuffix()
         + "."
         + getFormat()
         + ( isSnappy() ? ".snappy" : "")
