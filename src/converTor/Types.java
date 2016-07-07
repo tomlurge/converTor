@@ -55,8 +55,16 @@ enum Types {
           new File("schema/" + this.name + ".avsc")
       );
     } catch (IOException e) {
-      /* (Not sure why...) an IOException is always thrown for all schemata
-         but the converter works nonetheless. */
+      if (Args.INSTANCE.isLog()) {
+        Base.logger.warning(
+          "Failed to load schema file: \n" + e.getMessage()
+        );
+      }
+      else {
+        System.err.println("Failed to load schema file: ");
+        System.err.println(e.getMessage());
+      }
+
     }
     try {
       String convert = "convertor.Convert";
