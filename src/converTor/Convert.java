@@ -43,10 +43,11 @@ abstract class Convert<C> {
     if (!descriptor.getUnrecognizedLines().isEmpty()) {
       if (Args.INSTANCE.isLog()) {
         Base.logger.warning(
-            "Unrecognized lines in " + descriptorFile.getFileName() + ":\n" +
-            descriptor.getUnrecognizedLines()
+          "Unrecognized lines in " + descriptorFile.getFileName() + ":\n" +
+          descriptor.getUnrecognizedLines()
         );
-      } else {
+      }
+      else {
         System.err.println("Unrecognized lines in "
             + descriptorFile.getFileName() + ":");
         System.err.println(descriptor.getUnrecognizedLines());

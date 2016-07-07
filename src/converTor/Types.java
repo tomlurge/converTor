@@ -63,8 +63,15 @@ enum Types {
       this.converter =
           (Class<? extends Convert>) Class.forName(convert + this.name);
     } catch (ClassNotFoundException e) {
-      System.err.println("ClassNotFoundException for converter class :");
-      System.err.println(e.getMessage());
+      if (Args.INSTANCE.isLog()) {
+        Base.logger.warning(
+            "ClassNotFoundException for converter class:\n" + e.getMessage()
+        );
+      }
+      else {
+        System.err.println("ClassNotFoundException for converter class:");
+        System.err.println(e.getMessage());
+      }
     }
     try {
       String metrics = "org.torproject.descriptor.";
@@ -98,8 +105,15 @@ enum Types {
           break;
       }
     } catch (ClassNotFoundException e) {
-      System.err.println("ClassNotFoundException for metrics-lib descriptor:");
-      System.err.println(e.getMessage());
+      if (Args.INSTANCE.isLog()) {
+        Base.logger.warning(
+            "ClassNotFoundException for metrics-lib class:\n" + e.getMessage()
+        );
+      }
+      else {
+        System.err.println("ClassNotFoundException for metrics-lib class:");
+        System.err.println(e.getMessage());
+      }
     }
   }
 

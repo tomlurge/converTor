@@ -60,7 +60,8 @@ class WriterJson implements Writer {
       try {
         scriptEngine.eval("result = JSON.stringify(JSON.parse(jsonString), null, 2)");
       } catch (ScriptException e) {
-        e.printStackTrace();
+        if (Args.INSTANCE.isLog()) Base.logger.warning(e.getMessage());
+        else e.printStackTrace();
       }
       String prettyLoad = (String) scriptEngine.get("result");
       fileWriter.write(prettyLoad + "\n");

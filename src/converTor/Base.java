@@ -34,7 +34,8 @@ class Base {
     try {
       base.runConversion();
     } catch (IOException e) {
-      e.printStackTrace();
+      if (Args.INSTANCE.isLog()) logger.warning(e.getMessage());
+      else e.printStackTrace();
     }
 
   }
@@ -67,25 +68,26 @@ class Base {
         logger.addHandler(fh);
         SimpleFormatter formatter = new SimpleFormatter();
         fh.setFormatter(formatter);
-        logger.info("\n" +
-            "      Now running with parameters:\n" +
-            "      -f    --format     <arg>    default: json, optional: parquet, avro   " + args.getFormat() + "\n" +
-            "      -s    --suffix                                                       " + args.getSuffix() + "\n" +
-            "      -i    --inPath     <arg>    default: current working directory       " + args.getInPath() + "\n" +
-            "      -o    --outPath    <arg>    default: current working directory       " + args.getOutPath() + "\n" +
-            "      -l    --logsPath   <arg>    default: current working directory       " + args.getLogsPath() + "\n" +
-            "      -cs   --snappy                                                       " + args.isSnappy() + "\n" +
-            "      -cz   --zip                 Avro as BZip2, Parquet & JSON as GZip    " + args.isZip() + "\n" +
-            "      -p    --pretty              pretty printed JSON                      " + args.isPretty() + "\n" +
-            "      -m    --maxFiles   <arg>    default: 20                              " + args.getMaxFiles() + "\n" +
-            "      -d    --debug               print JSON descriptors to console        " + args.isDebug() + "\n" +
-            "      -g    --log                 log to file 'converTor.log'              " + args.isLog() + "\n" +
+        String argz = "";
+        for (String arg : commandLineArguments) {argz = argz.concat(arg) + " ";}
+        logger.info(
+            "Converter from Tor CollecTor data to JSON, Parquet or Avro.\n" +
+            "      Now running with parameters: " + argz + "\n\n" +
+            "      -f    --format     <arg>     default: json, optional: parquet, avro   " + args.getFormat() + "\n" +
+            "      -s    --suffix                                                        " + args.getSuffix() + "\n" +
+            "      -i    --inPath     <arg>     default: current working directory       " + args.getInPath() + "\n" +
+            "      -o    --outPath    <arg>     default: current working directory       " + args.getOutPath() + "\n" +
+            "      -l    --logsPath   <arg>     default: current working directory       " + args.getLogsPath() + "\n" +
+            "      -cs   --snappy                                                        " + args.isSnappy() + "\n" +
+            "      -cz   --zip                  Avro as BZip2, Parquet & JSON as GZip    " + args.isZip() + "\n" +
+            "      -p    --pretty               pretty printed JSON                      " + args.isPretty() + "\n" +
+            "      -m    --maxFiles   <arg>     default: 20                              " + args.getMaxFiles() + "\n" +
+            "      -d    --debug                print JSON descriptors to console        " + args.isDebug() + "\n" +
+            "      -g    --log                  log to file 'converTor.log'              " + args.isLog() + "\n" +
             "\n"
         );
-      } catch (SecurityException e) {
-        e.printStackTrace();
-      } catch (IOException e) {
-        e.printStackTrace();
+      } catch (SecurityException | IOException e) {
+        logger.warning(e.getMessage());
       }
     }
 
@@ -118,7 +120,8 @@ class Base {
         try {
           converter = type.converter.newInstance();
         } catch (InstantiationException|IllegalAccessException e) {
-          e.printStackTrace();
+          if (args.isLog()) logger.warning(e.getMessage());
+          else e.printStackTrace();
         }
 
         /* convert descriptor */
@@ -138,8 +141,8 @@ class Base {
           if (args.isLog()) {
             logger.warning("Exception in descriptor of type " + converter.type
               + " at date " + converter.date + ":");
-            logger.info(converter.load.toString());
-            logger.info(e.toString());
+            logger.warning(converter.load.toString());
+            logger.warning(e.toString());
           } else {
             System.out.println("Exception in descriptor of type "
                 + converter.type + " at date " + converter.date + ":");
@@ -159,13 +162,12 @@ class Base {
     closeAllWriters();
     if (args.isLog()) {
       logger.info( counter + " descriptor" +
-          (counter < 1 || counter > 1 ? "s" : "") + " converted");
-    } else {
-      System.out.println(
-          counter + " descriptor" +
-              (counter < 1 || counter > 1 ? "s" : "") + " converted"
-      );
+          (counter < 1 || counter > 1 ? "s" : "") + " converted\n\n\n");
     }
+    System.out.println(
+        counter + " descriptor" +
+        (counter < 1 || counter > 1 ? "s" : "") + " converted"
+    );
     java.awt.Toolkit.getDefaultToolkit().beep();
     System.exit(0);
 
@@ -191,8 +193,17 @@ class Base {
       DescriptorFile nextFile = descriptorFiles.next();
       /* check for exceptions */
       if (null != nextFile.getException()) {
-        System.err.print(nextFile.getException()
-            + "\n    in " + nextFile.getFileName() + "\n");
+        if (args.isLog()) {
+          logger.warning(
+            nextFile.getException() +
+            "\n    in " + nextFile.getFileName() + "\n"
+          );
+        } else {
+          System.err.print(
+            nextFile.getException()
+            + "\n    in " + nextFile.getFileName() + "\n"
+          );
+        }
       }
       return nextFile;
     }

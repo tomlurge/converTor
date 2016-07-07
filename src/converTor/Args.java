@@ -87,6 +87,7 @@ public enum Args {
     try {
       cmd = parser.parse(options,commandLineArguments);
     } catch (ParseException e) {
+      System.out.println("ParseException when parsing command line arguments:");
       e.printStackTrace();
     }
     if(cmd.hasOption("h")) {
@@ -118,7 +119,8 @@ public enum Args {
       else if ( ! formatArgument.equals("json")) {
         HelpFormatter formatter = new HelpFormatter();
         formatter.printHelp( "ConverTor\n\n" +
-            cmd.getOptionValue("f") + " is not a valid format.\n\n", options );
+            "\'" + cmd.getOptionValue("f") + "\' is not a valid format.\n\n",
+            options );
         System.exit(1);
       }
     }

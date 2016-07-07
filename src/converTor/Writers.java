@@ -48,9 +48,14 @@ enum Writers {
           writer = new WriterParquet(type, date);
         else
           writer = new WriterJson(type, date);
-      } catch (IOException e1) {
-        System.out.println("IOException when trying to create a writer:");
-        e1.printStackTrace();
+      } catch (IOException e) {
+        if (Args.INSTANCE.isLog()) Base.logger.warning(
+          "IOException when trying to create a writer: \n" + e.getMessage()
+        );
+        else {
+          System.out.println("IOException when trying to create a writer:");
+          e.printStackTrace();
+        }
       }
       writersMap.put(writerID, writer);
     }
