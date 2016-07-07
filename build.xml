@@ -12,7 +12,7 @@
     <property name="dist.schema.dir" location="dist/schema" />
     <property name="dist.docs.dir" location="dist/docs" />
     <property name="lib.dir" value="lib" />
-    <property name="main-class" value="renamingIssue.Base" />
+    <property name="main-class" value="convertor.Base" />
     <property name="source-and-target-java-version" value="1.7" />
 
     <!-- External libraries classpath.
