@@ -77,7 +77,7 @@ SINGLETON
   when the enum BitCheck class is loaded, you have no way to pass any arguments
   to the constructor."
   
-  It's not totally clear what the last sentence means. It is possible to pass 
+  It's not clear to me what the last sentence means. It is possible to pass 
   arguments to an Enum constructor. It just can't be arguments that refer to a 
   field (even a static one) in the enum class since they won't be initialized
   when the enum get's ininitialized, because: "The first entry in an enum class 

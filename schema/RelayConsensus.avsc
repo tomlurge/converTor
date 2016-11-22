@@ -156,7 +156,7 @@
             }, {
               "name" : "digest",
               "type" : [ "null", "string" ],
-              "doc" : "metrics-lib/NetworkStatusEntry: String getDescriptor();"
+              "doc" : "metrics-lib/NetworkStatusEntry: String getDescriptor()"
             }, {
               "name" : "publication",
               "type" : [ "null", "long" ],

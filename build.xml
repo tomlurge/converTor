@@ -159,7 +159,7 @@
 
 
     <!-- Default, run this -->
-    <target name="main" depends="clean, compile, jar" />
+    <target name="main" depends="clean, bundle" />
 
 
 </project>

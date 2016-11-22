@@ -25,7 +25,7 @@ class Base {
 
     System.out.println(
         "\nConverter from Tor CollecTor data to JSON, Parquet or Avro.\n" +
-        "Call with parameter '-h' for help and more options.\n"
+        "Call with parameter '-h' for help about more options.\n"
     );
 
     Base base = new Base(args);
