@@ -61,7 +61,7 @@ public enum Args {
     options.addOption("o", "outPath", true,
         "To which directory to write the converted data.\n" +
         "Default: current working directory.\n" +
-        "e.g. '-outPath=/my/data/out/format'" );
+        "e.g. '-outPath=/my/data/out/format/' (note the trailing slash)" );
     options.addOption("l", "logsPath", true,
         "To which directory to write log files.\n" +
         "Default: current working directory.\n" +
@@ -74,7 +74,7 @@ public enum Args {
         "Pretty printed JSON output.");
     options.addOption("m", "maxFiles", true,
         "Maximum file readers to open.\n" +
-        "Default: 20" +
+        "Default: 20.\n" +
         "e.g. '-m=5'\n" );
     options.addOption("d", "debug", false,
         "Prints JSON representation of each converted descriptor to terminal.");

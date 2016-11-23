@@ -12,9 +12,14 @@ class ConvertTorperf extends Convert {
     TorperfResult desc = (TorperfResult) descriptor;
     Torperf conversion = new Torperf();
 
+    /*
+    // Only the first descriptor in a Torperf file has a type. All following
+    // descriptors get 'type: null'
     for (String annotation : desc.getAnnotations()) {
       conversion.setDescriptorType(annotation.substring("@type ".length()));
     }
+    */
+    conversion.setDescriptorType("torperf 1.0");
     conversion.setSource(desc.getSource());
     conversion.setFilesize(desc.getFileSize());
     conversion.setStart(desc.getStartMillis());
