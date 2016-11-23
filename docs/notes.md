@@ -1,25 +1,7 @@
-# TODO
+# NOTES
 
-split projects consequently
-  move everything that belongs to analytics server 
-  but not explicitly to converTor 
-  somewhere else (mteam, aggregaTor)
-  
-new round of conversion, depending on
-  - when will the new metrics-lib version be released?
-  - when will bridge descriptors be ready?
 
-replace RelayNetworkStatusVote's getDirectorySignatures() with
-getDirectorySignature() and update metrics-lib dependency
-Ticket URL: <https://trac.torproject.org/projects/tor/ticket/18875#comment:11>
-
-use checkstyle
-
-add support for logging levels
-  https://docs.oracle.com/javase/7/docs/api/java/util/logging/LogManager.html
-
-identity
-  how to establish identity on converted descriptors
+## identity - how to establish identity on converted descriptors
     
     relay           type + published + fingerprint   (could as well be digest)
     bridgeExtra     type + published + fingerprint   (could as well be digest)
@@ -30,173 +12,30 @@ identity
     relayVote       type + valid-after + identity
     tordnsel        type + downloaded 
     torperf         type + start + source + filesize
-
-
-readme
-  add caveats about underlying data, accuracy
-  hint
-    pretty printed JSON is primarily for debugging
-    eg spark can't ingest it, but mongodb won't complain
-  
-document where arrays would need to be flattened for use with Drill SQL
-
-add option to have dates human readable instead of millis
-  maybe just for pretty printed json?
-  BUT - not possible without breaking the schema (or schema validation)
-handle updates on conversion results (files)
-  writer initialization should check if file already exists 
-  and, if yes, open it
-
-better handling of falsy command line arguments
-
-logging
-  what's wrong with sl4j and do we need it?
-  how to exclude .DS_Store warning on mac
-
-write documentation
-  rationale
-  tools used
-  inner workings
-  move everything that doesn't belong to ConverTor to mteam
-  
-repair hdfs on server
-
-  
-  
-parquet
-  parquet chokes on non-empty output directories if they are not HDFS
-  but it is possible to have HDFS on mac.
-  install HDFS on mac (and document how to do that)
-
-aggregation
-      https://metrics.torproject.org/bandwidth-data.html
-      https://metrics.torproject.org/servers-data.html
-      visionion
-      karstens use case
-spark
-hbase
-drill
-
-
-
-
-# PROBLEMS      
-
-
-wrong dates
-  the following tarballs have descriptors published in different months than 
-  what the tarball name implies:
-  
-   - `extra-infos-2010-04.tar.xz` and earlier months,
-   - `server-descriptors-2010-04.tar.xz` and earlier months, and
-   - `statuses-2009-02.tar.xz` and some but not all earlier months.
-
-  how date is computed
-      collecTor (from wrongMonth)
     
-      if (descriptor instanceof BridgeNetworkStatus) {
-        publishedMillis = ((BridgeNetworkStatus) descriptor)
-            .getPublishedMillis();
-      } else if (descriptor instanceof BridgeServerDescriptor) {
-        publishedMillis = ((BridgeServerDescriptor) descriptor)
-            .getPublishedMillis();
-      } else if (descriptor instanceof BridgeExtraInfoDescriptor) {
-        publishedMillis = ((BridgeExtraInfoDescriptor) descriptor)
-            .getPublishedMillis();
-      } else if (descriptor instanceof BridgePoolAssignment) {
-        publishedMillis = ((BridgePoolAssignment) descriptor)
-            .getPublishedMillis();
-      } else if (descriptor instanceof RelayNetworkStatusConsensus) {
-        publishedMillis = ((RelayNetworkStatusConsensus) descriptor)
-            .getValidAfterMillis();
-      } else if (descriptor instanceof ExitList) {
-        publishedMillis = ((ExitList) descriptor)
-            .getDownloadedMillis();
-      } else if (descriptor instanceof RelayExtraInfoDescriptor) {
-        publishedMillis = ((RelayExtraInfoDescriptor) descriptor)
-            .getPublishedMillis();
-      } else if (descriptor instanceof RelayServerDescriptor) {
-        publishedMillis = ((RelayServerDescriptor) descriptor)
-            .getPublishedMillis();
-      } else if (descriptor instanceof RelayNetworkStatus) {
-        publishedMillis = ((RelayNetworkStatus) descriptor)
-            .getPublishedMillis();
-      } else if (descriptor instanceof RelayDirectory) {
-        publishedMillis = ((BridgePoolAssignment) descriptor)
-            .getPublishedMillis();
-      } else if (descriptor instanceof TorperfResult) {
-        publishedMillis = ((TorperfResult) descriptor)
-            .getStartMillis();
-      } else if (descriptor instanceof RelayNetworkStatusVote) {
-        publishedMillis = ((RelayNetworkStatusVote) descriptor)
-            .getValidAfterMillis();       
+## date - how date is computed
+  
+      BridgeNetworkStatus               getPublishedMillis();
+      BridgeServerDescriptor            getPublishedMillis();
+      BridgeExtraInfoDescriptor         getPublishedMillis();
+      BridgePoolAssignment              getPublishedMillis();
+      RelayNetworkStatusConsensus       getValidAfterMillis();
+      ExitList                          getDownloadedMillis();
+      RelayExtraInfoDescriptor          getPublishedMillis();
+      RelayServerDescriptor             getPublishedMillis();
+      RelayNetworkStatus                getPublishedMillis();
+      BridgePoolAssignment              getPublishedMillis();
+      TorperfResult                     getStartMillis();
+      RelayNetworkStatusVote            getValidAfterMillis();       
       
+## digest is always a hash
 
-# PROJECTS
-       
-
-* ingestion  
-    mass ingestion
-    periodic ingestion  
-
-* write tests
-  + that would involve writing test descriptors too i guess
-  + which would mean learning how to write collector data
-  + well well well
-  
-* usecase
-  [c] https://blog.torproject.org/blog/did-fbi-pay-university-attack-tor-users     
-  [c] f. hat mich um 2 uhr morgens geweckt, kurz nachdem er den angriff entdeckt hat.
-  [c] war gerade dev meeting in paris.
-  [c] und er hat einen der relays beim angriff entdeckt.
-  [c] jetzt ging es darum möglichst alles über diesen relay und ähnliche relays im netzwerk herauszufinden.
-  [c] seit wann sind die da,
-  [c] wie viele sind es,
-  [c] welche ip-präfixe,
-  [c] wie viele andere gibt es in diesen ip-präfixen.
-  [c] wie schnell sind die, sind es exits,
-  [c] contacts?
-  [c] platforms?
-  [c] versions?
-  [c] alles.
-  [c] angenommen f. hätte so eine datenbank gehabt,
-  [c] was hätte er machen können?
-  
-
-# NOTES
-
-* digest is always a hash
-
-* problems with JSON number conversion? see: 
+## problems with JSON number conversion? see: 
     https://docs.oracle.com/cd/E26161_02/html/GettingStartedGuide/jsonbinding-overview.html
 
-* verbosity
-  removed option for verbose output ("flattened" instead of "jagged" arrays, 
-  suitable for Drill).
-  realizing this option would require to modify the schemata and break the way 
-  how they currently nicely document the spec. this and the added complexity 
-  seems not to be worth the effort. "Drill-able" arrays will have to be created 
-  later on when need arises.
+## compression
     
-* defaults
-  it is possible to have defaults with Avro, but they have to be declared 
-  explicitly and the corresponding type has to be the first in the union.
-    see:
-    https://avro.apache.org/docs/current/spec.html#Unions
-      Unions, as mentioned above, are represented using JSON arrays. For 
-      example, ["null", "string"] declares a schema which may be either a null 
-      or string.
-      (Note that when a default value is specified for a record field whose type 
-      is a union, the type of the default value must match the first element of 
-      the union. Thus, for unions containing "null", the "null" is usually 
-      listed first, since the default value of such unions is typically null.)
-    https://avro.apache.org/docs/current/spec.html#schema_record
-      Default values for union fields correspond to the first schema in the 
-      union.
-      
-* compression
-    
-      avro        (1) deflate snappy      (6)               bzip2       xz
+      avro        (1) deflate snappy (6)                    bzip2       xz
       parquet-mr  (2)         snappy      gzip  lzo
       json        (3)         snappy (4)  gzip        zip   bzip2 (5)
 
@@ -303,11 +142,8 @@ wrong dates
       }
       // role model -->
 
-## MISC
 
-
-  
-  ENUM
+## ENUM
   
   nice example of a switch with enums in proEE design patterns p.67
   
@@ -321,9 +157,55 @@ wrong dates
         case ESPRESSO: coffee = new Espresso();
         case LATTE: coffee = new Latte(); }
     return coffee; }
+   
     
-    
-# conversion
-
-t@mteam:~/converTor$ java -jar converTor.jar -i=/mnt/hdd1/data/in/torperf -o=/mnt/hdd1/data/out/json/torperf/ -l=/mnt/hdd1/data/log/torperf/ -cz -g &> logTorperf.txt
-    
+## HOW 2 BUILD
+        
+       annoying java.lang.SecurityException: 
+         Invalid signature file digest for Manifest main attributes
+         https://stackoverflow.com/questions/1274879/ant-exclude-files-from-merged-jar-file
+           answer #2 (alberto) looks helpful
+         but in the end i deleted the signature files by hand
+           unzip descriptor.jar
+             in META-INF directory delete files 'KARSTEN.RSA' and 'KARSTEN.SF'
+           re-zip with the following command
+             jar cvfm descriptor-1.5.0.jar MANIFEST.MF -C desc/ .
+             (after copying the original MANIFEST.MF to your working directory)  
+           
+   
+   
+       building metrics-lib
+           add a directory <root-dir>/lib alongside <root>/src
+           download and add all dependencies mentioned in build.xml to /lib
+           in the shell go to <root-dir> and invoke 'ant jar'
+           enjoy the <root-dir>/descriptor-1.1.0-dev.jar (or similar version)
+   
+   
+       building from IntelliJ
+         IntelliJ doesn't know how to handle long classpaths,
+         messes them up when building the MANIFEST.MF
+         therefor, after building artifacts
+         - decompress the jar
+         - edit the MANIFEST.MF to correct IntelliJs garbage
+         - run "jar cmf META-INF/MANIFEST.MF convertToJson.jar lib mteam"
+         see https://docs.oracle.com/javase/tutorial/deployment/jar/build.html 
+         and https://youtrack.jetbrains.com/issue/IDEA-148005
+         
+         
+       mail von K von nov/dez 2015
+         > 1) wie mache ich mit der ConvertToJson einen probelauf?
+         > kompilieren? dann irgendein mystisches shell-kommando?
+         
+         mkdir mteamdev
+         cd mteamdev
+         mkdir mteam
+         # copy ConvertToJson.java to mteam/
+         mkdir in
+         # copy uncompressed bridge descriptor tarball to in/
+         wget https://people.torproject.org/~karsten/volatile/descriptor.jar
+         javac -cp descriptor.jar mteam/*.java
+         java -cp descriptor.jar:mteam/ ConverToJson
+         
+         Das wird nicht ganz klappen. Du wirst noch gson-2.1.jar und
+         commons-compress-1.4.1.jar im Classpath (-cp, getrennt mit :)
+         brauchen. Die findest du im Netz.

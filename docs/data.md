@@ -1,37 +1,33 @@
   
   
-  TODO  most of the times only the flattend version is shown
-          only relay and bridge document show both flattened and jagged versions      
-        no defaults
-        no mandatory/optional
-        not always a reference to the metrics-lib method
-        remove all ..Entry
+    TODO  most JSON examples below only show the flattend version
+            only relay and bridge document show both flattened and jagged versions
+            in the end only the jagged versions were implemented
+            flattened versions might be added at a later time
+            
+          during development the Avro schemata superseded these JSON sketches
+          the Avro schemata are authoritative
+          the sketches below need some updates 
+          besides they have the following problems 
+              no defaults
+              no mandatory/optional
+              not always a reference to the metrics-lib method
+              remove all ..Entry
+          so use them with caution, regard them as "illustrative"
         
-  
         
 # data
 
-The aim is to load as much raw data as possible into the analytics server. 
-The data should be structured to be easily queryable and aggregateable. 
-Pre-aggregated versions for common usecases may be added.
+Following are a few notes about CollecTor data and examples descriptors of each 
+type and sketches of the corresponding JSON serialization.
 
 ## size
-- the server has to ingest all the raw data that collecTor aggregates
-- maybe there's even more in other places?
-- collecTor data for 09/2015 is 1 GB compressed, 24 GB uncompressed
-- 24 GB x 12 months x 10 years = 2.880 GB of uncompressed.   
-  This is exaggerated, since we only have data since 2007 (8 years) and earlier 
-  years contain less data. So we are on the save side here.    
-  2.800 GB do fit on our 2 x 2 TB HDDs = 4.000 GB.  
-  Since either HBase or Parquet will compress data, the whole dataset should 
-  fit snuggly on one HDD, leaving the second 2 TB HDD available for user 
-  data. The sceond 240 GB SSD stays completely at the disposal of Hadoop to speed 
-  up operations.
-
+- collecTor data from 2007 until summer 2016 is about 300 GB compressed and 1 TB 
+uncompressed
+- the same data converted to Parquet is about 3x as much, JSON 7x as much.
+ 
 
 ## structure
-
-
 
 ### types
 
@@ -44,7 +40,7 @@ See also the two parsers:
 - [metrics-lib](https://gitweb.torproject.org/metrics-lib.git) (Java)
 - [Stem](https://stem.torproject.org/) (Python)
 
-Most of the documents have nested data structures. Some get quite large.
+Most of the types contain deeply nested data structures. Some get quite large.
 
                                       
 	name                                 json spec
@@ -52,7 +48,7 @@ Most of the documents have nested data structures. Some get quite large.
 	server-descriptor                    x    v3 2.1.1. Sever description format
 	extra-info                           x    v3 2.1.2. Extra-info document format  
 	network-status-vote                  x    v3 3.4.1.
-  network-status-consensus             x    v3 3.4.1. 
+	network-status-consensus             x    v3 3.4.1. 
 	dir-key-certificate                  x    v3 3.1.   Creating key certificates
 	network-status-microdesc-consensus   x    v3 3.9.2. Microsescriptor consensus
 	bridge-network-status                x    v2 3.0    Network Status Format
@@ -76,7 +72,7 @@ and common attributes (from which to construct a key in HBase, eventually)
 	server-descriptor            x |   |   |   |  ServerDescriptor       | x         | x                      
 	extra-info                   x |   |   |   |  ExtraInfoDescriptor    | x         | x                          
 	network-status-vote          x |   |   |   |  RelayNetworkStatusVote | x         | x                       
-  network-status-consensus     x |   |   |   |  RelayNetworkStatusCons.| -         | -                       
+	network-status-consensus     x |   |   |   |  RelayNetworkStatusCons.| -         | -                       
 	dir-key-certificate            |   | x |   |                         | x         | x                        
 	network-status-microdesc-c.    |   |   |x  |                         |           |        
 	microdescriptor                |   |   |x  |                         |           |  
@@ -118,10 +114,12 @@ CollecTor provides 12 types of documents. The following examples each contain
 There's no guarantee that these examples cover all possible cases. They should
 rather be considered a cursory overview.
 
-The following descriptive texts are copied from the collector [formats](https://collector.torproject.org/formats.html)
-page. When it speaks about documents  "in archive" or "in recent" the original 
-text links to directories containing those documents. Please check the [formats](https://collector.torproject.org/formats.html)
-page if you want to retrieve them.
+The following descriptive texts are copied from the collector [formats]
+(https://collector.torproject.org/formats.html) page. When it speaks about 
+documents  "in archive" or "in recent" the original text links to directories 
+containing those documents. Please check the [formats]
+(https://collector.torproject.org/formats.html) page if you want to retrieve 
+them.
 
 Relays and directory authorities publish relay descriptors, so that clients can 
 select relays for their paths through the Tor network. All these relay 
@@ -253,7 +251,7 @@ JSON SERIALIZATION
 
 Bridge server descriptors follow the same format as relay server descriptors, 
 except for the sanitizing steps mentioned above.   
-The format has changed over time to accomodate changes to the sanitizing 
+The format has changed over time to accommodate changes to the sanitizing 
 process, with earlier versions being:
 
 - @type bridge-server-descriptor 1.0 was the first version.

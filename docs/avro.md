@@ -1,67 +1,71 @@
-most wanted
+# HOW 2 USE IT
 
-    extract JSON schema(ta) from an Avro IDL file
-      java -jar avro-tools-*.jar idl2schemata descriptor.avdl .
-            generates a complete JSON schema for the the IDL schema
-            under the same name, with different ending
-            and also one schema per nested record in the IDL schema
-            those nested schemata can be deleted - we dont need them 
-            
-    compile (generate classes from) a schema
-      java -jar avro-tools-*.jar compile -string schema descriptor.avsc .
-            generates one class per schema and any nested record
-            we need all those classes
-            it generates the classpath as indicated in the @namespace
-            attribute at the top of the IDL. tha namepace attribute has to 
-            reflect the actual project structure or things will fall apart
-            
-            
-    verbose description of how to compile java classes from IDL schemata
-            copy all IDLs to a working directory together with avro-tools.jar
-            in that directory execute
-                
-                ash:work t$ java -jar atools.jar idl2schemata bridge.avdl schemata
-                ash:work t$ java -jar atools.jar idl2schemata bridgeExtra.avdl schemata
-                ash:work t$ java -jar atools.jar idl2schemata bridgeStatus.avdl schemata
-                ash:work t$ java -jar atools.jar idl2schemata relay.avdl schemata
-                ash:work t$ java -jar atools.jar idl2schemata relayExtra.avdl schemata
-                ash:work t$ java -jar atools.jar idl2schemata relayVote.avdl schemata
-                ash:work t$ java -jar atools.jar idl2schemata relayConsensus.avdl schemata
-                ash:work t$ java -jar atools.jar idl2schemata tordnsel.avdl schemata
-                ash:work t$ java -jar atools.jar idl2schemata torperf.avdl schemata
-                
-            this will generate JSON schemata from the IDL schemata in teh folder 'schemata'
-                one for each IDL, named the same, but with ending .avsc instead of .avdl
-                and a lot of .avdl-files for each nested record in the IDLs.
-                copy only the main .avsc files to the root directory
-                and to the src/encoders/json directory (for reference)
-                delete the nested record .avsc files, the folder 'schemata' and the avdl-files
-                
-            from the working directory, that now should only contain the avro-tools.jar
-            and the 9 avsc schema files generate the avro java classes
-            
-                ash:work t$ java -jar atools.jar compile -string schema relay.avsc .
-                ash:work t$ java -jar atools.jar compile -string schema relayExtra.avsc .
-                ash:work t$ java -jar atools.jar compile -string schema relayVote.avsc .
-                ash:work t$ java -jar atools.jar compile -string schema relayConsensus.avsc .
-                ash:work t$ java -jar atools.jar compile -string schema bridge.avsc .
-                ash:work t$ java -jar atools.jar compile -string schema bridgeExtra.avsc .
-                ash:work t$ java -jar atools.jar compile -string schema bridgeStatus.avsc .
-                ash:work t$ java -jar atools.jar compile -string schema tordnsel.avsc .
-                ash:work t$ java -jar atools.jar compile -string schema torperf.avsc .
+## extract JSON schema(ta) from an Avro IDL file
 
-             now you've got 'converTor.encoders.classes' folder with subfolders for each
-             descriptor type. copy those to the same path in teh /src directory. enjoy.
+    java -jar avro-tools-*.jar idl2schemata descriptor.avdl .
+          generates a complete JSON schema for the IDL schema
+          under the same name, with different ending
+          and also one schema per nested record in the IDL schema
+          those nested schemata can be deleted - we dont need them 
             
+## compile (generate classes from) a schema
+   
+    java -jar avro-tools-*.jar compile -string schema descriptor.avsc .
+          generates one class per schema and any nested record
+          we need all those classes
+          it generates the classpath as indicated in the @namespace
+          attribute at the top of the IDL. tha namepace attribute has to 
+          reflect the actual project structure or things will fall apart
+            
+## verbose description of how to compile java classes from IDL schemata
+
+    copy all IDLs to a working directory together with avro-tools.jar
+    in that directory execute
+        
+        ash:work t$ java -jar atools.jar idl2schemata bridge.avdl schemata
+        ash:work t$ java -jar atools.jar idl2schemata bridgeExtra.avdl schemata
+        ash:work t$ java -jar atools.jar idl2schemata bridgeStatus.avdl schemata
+        ash:work t$ java -jar atools.jar idl2schemata relay.avdl schemata
+        ash:work t$ java -jar atools.jar idl2schemata relayExtra.avdl schemata
+        ash:work t$ java -jar atools.jar idl2schemata relayVote.avdl schemata
+        ash:work t$ java -jar atools.jar idl2schemata relayConsensus.avdl schemata
+        ash:work t$ java -jar atools.jar idl2schemata tordnsel.avdl schemata
+        ash:work t$ java -jar atools.jar idl2schemata torperf.avdl schemata
+        
+    this will generate JSON schemata from the IDL schemata in the folder 'schemata'
+        one for each IDL, named the same, but with ending .avsc instead of .avdl
+        and a lot of .avdl-files for each nested record in the IDLs.
+        copy only the main .avsc files to the root directory
+        and to the src/encoders/json directory (for reference)
+        delete the nested record .avsc files, the folder 'schemata' and the avdl-files
+        
+    from the working directory, that now should only contain the avro-tools.jar
+    and the 9 avsc schema files generate the avro java classes
+    
+        ash:work t$ java -jar atools.jar compile -string schema relay.avsc .
+        ash:work t$ java -jar atools.jar compile -string schema relayExtra.avsc .
+        ash:work t$ java -jar atools.jar compile -string schema relayVote.avsc .
+        ash:work t$ java -jar atools.jar compile -string schema relayConsensus.avsc .
+        ash:work t$ java -jar atools.jar compile -string schema bridge.avsc .
+        ash:work t$ java -jar atools.jar compile -string schema bridgeExtra.avsc .
+        ash:work t$ java -jar atools.jar compile -string schema bridgeStatus.avsc .
+        ash:work t$ java -jar atools.jar compile -string schema tordnsel.avsc .
+        ash:work t$ java -jar atools.jar compile -string schema torperf.avsc .
+  
+     now you've got a 'converTor.encoders.classes' folder with subfolders for each
+     descriptor type. copy those to the same path in the /src directory. enjoy.
+    
             
     convert .avro to JSON
       java -jar avro-tools-*.jar tojson myFile.avro > myFile.json
       
     get schema from avro file
       java -jar avro-tools-*.jar getschema torperf_2015-11.avro
+ 
     
+# BACKGROUNDS
     
-intro
+## SOME INTRODUCTORY DOCUMENTATION
 
     DOCS - 1.8.0 at the time of writing
       intro https://avro.apache.org/docs/current/gettingstartedjava.html
@@ -70,10 +74,12 @@ intro
     MORE
       json  https://docs.oracle.com/cd/E26161_02/html/GettingStartedGuide/jsonbinding-overview.html
       avro+json+parquet   https://gist.github.com/hammer/76996fb8426a0ada233e
+      good example of a complex schema: https://stackoverflow.com/questions/28163225/how-to-define-avro-schema-for-complex-json-document    
+
       
       
-      
-    IMPORTS
+## IMPORTS
+
     import org.apache.avro.file.DataFileReader;
     import org.apache.avro.file.DataFileWriter;
     import org.apache.avro.io.DatumReader;
@@ -82,19 +88,15 @@ intro
     import org.apache.avro.specific.SpecificDatumWriter;
 
 
-spec: https://avro.apache.org/docs/1.8.1/spec.html  
-intro: https://avro.apache.org/docs/current/gettingstartedjava.html    
-good example of a complex schema: https://stackoverflow.com/questions/28163225/how-to-define-avro-schema-for-complex-json-document    
-
-
-good to know:
+## good to know:
 
  a schema file can only contain a single schema definition   
  eg {"name": "favorite_number",  "type": ["int", "null"]}
    favorite_number can either be an int or null, essentially making it an optional field. 
    
 
-MAPPINGS
+## Avro MAPPINGS
+
   generic
     a dynamic mapping, can be used even when the schema is not known ahead of runtime
   specific
@@ -104,7 +106,7 @@ MAPPINGS
     maps Avro types onto preexisting Java types using reflection
     
     
-TYPES
+## Avro TYPES
 
     null
     boolean
@@ -204,28 +206,22 @@ serialize record to output stream
 
 ##  Schemata + Avro TOOLS commands
 
-    avro tools offer plenty of features, but are badly documented - use google!
+    avro tools offer plenty of features, but they are badly documented - use google!
    
     defining a schema for avro is possible in two ways
       JSON  verbose, cumbersome
       IDL   concise, tidy, lucid
     obviously IDL is the way to go
     but automatic building of the Java classes neede to use the schemata 
-      only works with JSON schemata
+      and only works with JSON schemata
     avro-tools has an option to convert IDL to JSON: idl2schemata
     so the workflow for initial development of schemata is:
       define schemata in IDL (eg schema.avdl)
-      convert IDL to JSON RPC format (eg java -jar avro-tools-1.7.7.jar idl schema.avdl schema.avpr)
-      tweak schema according to spec (then save as <schema>.avsc)
-      generate builder classes (eg java -jar avro-tools-1.7.7.jar schema -string compile schema.avsc .)
-
-    extract JSON schemata of the types from an Avro IDL file
-    % java -jar avro-tools-*.jar idl2schemata ~/descriptor.idl .
-      //  this is much more handy than the 'idl' argument because it doesn't
-      //  generate a protocol definition but the actual schemata that we need
+      extract JSON schemata of the types from an Avro IDL file
+      % java -jar avro-tools-*.jar idl2schemata ~/descriptor.idl .
      
     compile (generate classes from) a schema
-    % java -jar avro-tools-*.jar compile -string schema ~/descriptor.avsc .
+      % java -jar avro-tools-*.jar compile -string schema ~/descriptor.avsc .
       //  the -string option is important because otherwise in some places 
       //  we get type charset instead of string
     
@@ -233,7 +229,7 @@ serialize record to output stream
     % java -jar avro-tools-*.jar tojson myFile.avro > myFile.json
       //  note the ">" - it's not in the docs, but nonetheless mandatory
       //  optional --pretty
-      //  don't use zotext, use tojson
+      //  don't use totext, use tojson
       
     get schema from avro file
      java -jar avro-tools-*.jar getschema torperf_2015-11.avro
@@ -428,7 +424,7 @@ Conclusion: **constructor**s provide better performance and simpler code but
     
     
     //  SPECIFIC with CONSTRUCTOR
-    class ConvertTorperf extends ConvertCommons { //  TODO  replace with interface
+    class ConvertTorperf extends ConvertCommons {
     
       static Converted convert(TorperfResult desc) {
     
@@ -583,4 +579,21 @@ Conclusion: **constructor**s provide better performance and simpler code but
     }
 
     
-    
+## MISC
+ 
+ 
+* defaults
+  it is possible to have defaults with Avro, but they have to be declared 
+  explicitly and the corresponding type has to be the first in the union.
+    see:
+    https://avro.apache.org/docs/current/spec.html#Unions
+      Unions, as mentioned above, are represented using JSON arrays. For 
+      example, ["null", "string"] declares a schema which may be either a null 
+      or string.
+      (Note that when a default value is specified for a record field whose type 
+      is a union, the type of the default value must match the first element of 
+      the union. Thus, for unions containing "null", the "null" is usually 
+      listed first, since the default value of such unions is typically null.)
+    https://avro.apache.org/docs/current/spec.html#schema_record
+      Default values for union fields correspond to the first schema in the 
+      union.
