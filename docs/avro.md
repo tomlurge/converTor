@@ -93,7 +93,12 @@
  a schema file can only contain a single schema definition   
  eg {"name": "favorite_number",  "type": ["int", "null"]}
    favorite_number can either be an int or null, essentially making it an optional field. 
-   
+
+ IDL schemata have to be build up from the back
+    since they support no forward referencing, it's not possible to start the 
+    schema with the top/outer most element and work towards the details.
+    so start reading (and writing) them from the end.
+    
 
 ## Avro MAPPINGS
 
@@ -578,6 +583,49 @@ Conclusion: **constructor**s provide better performance and simpler code but
       }
     }
 
+##  An example protocol in Avro IDL
+ 
+@namespace("org.apache.avro.test")
+protocol Simple {
+
+    @aliases(["org.foo.KindOf"])
+    enum Kind {
+        FOO,
+        BAR, // the bar enum value
+        BAZ
+    }
+
+    fixed MD5(16);
+
+    record TestRecord {
+        @order("ignore")
+        string name;
+
+        @order("descending")
+        Kind kind;
+
+        MD5 hash;
+
+        union { MD5, null} @aliases(["hash"]) nullableHash;
+
+        array<long> arrayOfLongs;
+    }
+
+    error TestError {
+        string message;
+    }
+
+    string hello(string greeting);
+    TestRecord echo(TestRecord `record`);
+    int add(int arg1, int arg2);
+    bytes echoBytes(bytes data);
+    void `error`() throws TestError;
+    void ping() oneway;
+}
+
+    
+    
+    
     
 ## MISC
  
