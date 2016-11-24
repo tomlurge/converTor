@@ -53,7 +53,7 @@ enum Types {
     try {
       Schema.Parser parser = new Schema.Parser();
       this.avsc = parser.parse(
-          new File("schema/" + this.name + ".avsc")
+          this.getClass().getResourceAsStream("schema/" + this.name + ".avsc")
       );
     } catch (IOException e) {
       if (Args.INSTANCE.isLog()) {
