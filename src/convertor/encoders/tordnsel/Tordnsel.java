@@ -3,14 +3,16 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package convertor.encoders.tordnsel;
+package convertor.encoders.tordnsel;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 4918008985824344009L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Tordnsel\",\"namespace\":\"convertor.encoders.tordnsel\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"tordnsel 1.0\"},{\"name\":\"downloaded\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExitList: long getDownloadedMillis()\"},{\"name\":\"exit_nodes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"ExitNode\",\"fields\":[{\"name\":\"fingerprint\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExitList.Entry: String getFingerprint()\"},{\"name\":\"published\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExitList.Entry: long getPublishedMillis()\"},{\"name\":\"last_status\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExitList.Entry: long getLastStatusMillis()\"},{\"name\":\"exit_adresses\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"long\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExitList.Entry: Map<String, Long> getExitAddresses()\"}]}}],\"doc\":\"metrics-lib/ExitList: Set<ExitList.Entry> getEntries()\"}],\"aliases\":[\"exitList\"]}");
+  private static final long serialVersionUID = -2502891545470482056L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Tordnsel\",\"namespace\":\"convertor.encoders.tordnsel\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"tordnsel 1.0\"},{\"name\":\"src_date\",\"type\":[\"null\",\"long\"],\"doc\":\"file creation date, in milliseconds, of the data source to this conversion\"},{\"name\":\"downloaded\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExitList: long getDownloadedMillis()\"},{\"name\":\"exit_nodes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"ExitNode\",\"fields\":[{\"name\":\"fingerprint\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExitList.Entry: String getFingerprint()\"},{\"name\":\"published\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExitList.Entry: long getPublishedMillis()\"},{\"name\":\"last_status\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExitList.Entry: long getLastStatusMillis()\"},{\"name\":\"exit_adresses\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"long\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExitList.Entry: Map<String, Long> getExitAddresses()\"}]}}],\"doc\":\"metrics-lib/ExitList: Set<ExitList.Entry> getEntries()\"}],\"aliases\":[\"exitList\"]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   @Deprecated public java.lang.String descriptor_type;
+  /** file creation date, in milliseconds, of the data source to this conversion */
+  @Deprecated public java.lang.Long src_date;
   /** metrics-lib/ExitList: long getDownloadedMillis() */
   @Deprecated public java.lang.Long downloaded;
   /** metrics-lib/ExitList: Set<ExitList.Entry> getEntries() */
@@ -25,11 +27,13 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
 
   /**
    * All-args constructor.
+   * @param src_date file creation date, in milliseconds, of the data source to this conversion
    * @param downloaded metrics-lib/ExitList: long getDownloadedMillis()
    * @param exit_nodes metrics-lib/ExitList: Set<ExitList.Entry> getEntries()
    */
-  public Tordnsel(java.lang.String descriptor_type, java.lang.Long downloaded, java.util.List<convertor.encoders.tordnsel.ExitNode> exit_nodes) {
+  public Tordnsel(java.lang.String descriptor_type, java.lang.Long src_date, java.lang.Long downloaded, java.util.List<convertor.encoders.tordnsel.ExitNode> exit_nodes) {
     this.descriptor_type = descriptor_type;
+    this.src_date = src_date;
     this.downloaded = downloaded;
     this.exit_nodes = exit_nodes;
   }
@@ -39,8 +43,9 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
   public java.lang.Object get(int field$) {
     switch (field$) {
     case 0: return descriptor_type;
-    case 1: return downloaded;
-    case 2: return exit_nodes;
+    case 1: return src_date;
+    case 2: return downloaded;
+    case 3: return exit_nodes;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -49,8 +54,9 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
     case 0: descriptor_type = (java.lang.String)value$; break;
-    case 1: downloaded = (java.lang.Long)value$; break;
-    case 2: exit_nodes = (java.util.List<convertor.encoders.tordnsel.ExitNode>)value$; break;
+    case 1: src_date = (java.lang.Long)value$; break;
+    case 2: downloaded = (java.lang.Long)value$; break;
+    case 3: exit_nodes = (java.util.List<convertor.encoders.tordnsel.ExitNode>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -68,6 +74,23 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
    */
   public void setDescriptorType(java.lang.String value) {
     this.descriptor_type = value;
+  }
+
+  /**
+   * Gets the value of the 'src_date' field.
+   * @return file creation date, in milliseconds, of the data source to this conversion
+   */
+  public java.lang.Long getSrcDate() {
+    return src_date;
+  }
+
+  /**
+   * Sets the value of the 'src_date' field.
+   * file creation date, in milliseconds, of the data source to this conversion
+   * @param value the value to set.
+   */
+  public void setSrcDate(java.lang.Long value) {
+    this.src_date = value;
   }
 
   /**
@@ -137,6 +160,8 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
     implements org.apache.avro.data.RecordBuilder<Tordnsel> {
 
     private java.lang.String descriptor_type;
+    /** file creation date, in milliseconds, of the data source to this conversion */
+    private java.lang.Long src_date;
     /** metrics-lib/ExitList: long getDownloadedMillis() */
     private java.lang.Long downloaded;
     /** metrics-lib/ExitList: Set<ExitList.Entry> getEntries() */
@@ -157,13 +182,17 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
         this.descriptor_type = data().deepCopy(fields()[0].schema(), other.descriptor_type);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.downloaded)) {
-        this.downloaded = data().deepCopy(fields()[1].schema(), other.downloaded);
+      if (isValidValue(fields()[1], other.src_date)) {
+        this.src_date = data().deepCopy(fields()[1].schema(), other.src_date);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.exit_nodes)) {
-        this.exit_nodes = data().deepCopy(fields()[2].schema(), other.exit_nodes);
+      if (isValidValue(fields()[2], other.downloaded)) {
+        this.downloaded = data().deepCopy(fields()[2].schema(), other.downloaded);
         fieldSetFlags()[2] = true;
+      }
+      if (isValidValue(fields()[3], other.exit_nodes)) {
+        this.exit_nodes = data().deepCopy(fields()[3].schema(), other.exit_nodes);
+        fieldSetFlags()[3] = true;
       }
     }
     
@@ -177,13 +206,17 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
         this.descriptor_type = data().deepCopy(fields()[0].schema(), other.descriptor_type);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.downloaded)) {
-        this.downloaded = data().deepCopy(fields()[1].schema(), other.downloaded);
+      if (isValidValue(fields()[1], other.src_date)) {
+        this.src_date = data().deepCopy(fields()[1].schema(), other.src_date);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.exit_nodes)) {
-        this.exit_nodes = data().deepCopy(fields()[2].schema(), other.exit_nodes);
+      if (isValidValue(fields()[2], other.downloaded)) {
+        this.downloaded = data().deepCopy(fields()[2].schema(), other.downloaded);
         fieldSetFlags()[2] = true;
+      }
+      if (isValidValue(fields()[3], other.exit_nodes)) {
+        this.exit_nodes = data().deepCopy(fields()[3].schema(), other.exit_nodes);
+        fieldSetFlags()[3] = true;
       }
     }
 
@@ -227,6 +260,49 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
     }
 
     /**
+      * Gets the value of the 'src_date' field.
+      * file creation date, in milliseconds, of the data source to this conversion
+      * @return The value.
+      */
+    public java.lang.Long getSrcDate() {
+      return src_date;
+    }
+
+    /**
+      * Sets the value of the 'src_date' field.
+      * file creation date, in milliseconds, of the data source to this conversion
+      * @param value The value of 'src_date'.
+      * @return This builder.
+      */
+    public convertor.encoders.tordnsel.Tordnsel.Builder setSrcDate(java.lang.Long value) {
+      validate(fields()[1], value);
+      this.src_date = value;
+      fieldSetFlags()[1] = true;
+      return this; 
+    }
+
+    /**
+      * Checks whether the 'src_date' field has been set.
+      * file creation date, in milliseconds, of the data source to this conversion
+      * @return True if the 'src_date' field has been set, false otherwise.
+      */
+    public boolean hasSrcDate() {
+      return fieldSetFlags()[1];
+    }
+
+
+    /**
+      * Clears the value of the 'src_date' field.
+      * file creation date, in milliseconds, of the data source to this conversion
+      * @return This builder.
+      */
+    public convertor.encoders.tordnsel.Tordnsel.Builder clearSrcDate() {
+      src_date = null;
+      fieldSetFlags()[1] = false;
+      return this;
+    }
+
+    /**
       * Gets the value of the 'downloaded' field.
       * metrics-lib/ExitList: long getDownloadedMillis()
       * @return The value.
@@ -242,9 +318,9 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
       * @return This builder.
       */
     public convertor.encoders.tordnsel.Tordnsel.Builder setDownloaded(java.lang.Long value) {
-      validate(fields()[1], value);
+      validate(fields()[2], value);
       this.downloaded = value;
-      fieldSetFlags()[1] = true;
+      fieldSetFlags()[2] = true;
       return this; 
     }
 
@@ -254,7 +330,7 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
       * @return True if the 'downloaded' field has been set, false otherwise.
       */
     public boolean hasDownloaded() {
-      return fieldSetFlags()[1];
+      return fieldSetFlags()[2];
     }
 
 
@@ -265,7 +341,7 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
       */
     public convertor.encoders.tordnsel.Tordnsel.Builder clearDownloaded() {
       downloaded = null;
-      fieldSetFlags()[1] = false;
+      fieldSetFlags()[2] = false;
       return this;
     }
 
@@ -285,9 +361,9 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
       * @return This builder.
       */
     public convertor.encoders.tordnsel.Tordnsel.Builder setExitNodes(java.util.List<convertor.encoders.tordnsel.ExitNode> value) {
-      validate(fields()[2], value);
+      validate(fields()[3], value);
       this.exit_nodes = value;
-      fieldSetFlags()[2] = true;
+      fieldSetFlags()[3] = true;
       return this; 
     }
 
@@ -297,7 +373,7 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
       * @return True if the 'exit_nodes' field has been set, false otherwise.
       */
     public boolean hasExitNodes() {
-      return fieldSetFlags()[2];
+      return fieldSetFlags()[3];
     }
 
 
@@ -308,7 +384,7 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
       */
     public convertor.encoders.tordnsel.Tordnsel.Builder clearExitNodes() {
       exit_nodes = null;
-      fieldSetFlags()[2] = false;
+      fieldSetFlags()[3] = false;
       return this;
     }
 
@@ -317,8 +393,9 @@ public class Tordnsel extends org.apache.avro.specific.SpecificRecordBase implem
       try {
         Tordnsel record = new Tordnsel();
         record.descriptor_type = fieldSetFlags()[0] ? this.descriptor_type : (java.lang.String) defaultValue(fields()[0]);
-        record.downloaded = fieldSetFlags()[1] ? this.downloaded : (java.lang.Long) defaultValue(fields()[1]);
-        record.exit_nodes = fieldSetFlags()[2] ? this.exit_nodes : (java.util.List<convertor.encoders.tordnsel.ExitNode>) defaultValue(fields()[2]);
+        record.src_date = fieldSetFlags()[1] ? this.src_date : (java.lang.Long) defaultValue(fields()[1]);
+        record.downloaded = fieldSetFlags()[2] ? this.downloaded : (java.lang.Long) defaultValue(fields()[2]);
+        record.exit_nodes = fieldSetFlags()[3] ? this.exit_nodes : (java.util.List<convertor.encoders.tordnsel.ExitNode>) defaultValue(fields()[3]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

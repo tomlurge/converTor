@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package convertor.encoders.relayExtra;
+package convertor.encoders.relayExtra;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class CellStats extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -4382454477598619445L;
+  private static final long serialVersionUID = -266659018043434551L;
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"CellStats\",\"namespace\":\"convertor.encoders.relayExtra\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getCellStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getCellStatsIntervalLength()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/ExtraInfoDescriptor: long getCellStatsEndMillis() */

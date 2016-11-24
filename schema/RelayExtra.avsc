@@ -7,6 +7,10 @@
     "type" : "string",
     "default" : "extra-info 1.0"
   }, {
+    "name" : "src_date",
+    "type" : [ "null", "long" ],
+    "doc" : "file creation date, in milliseconds, of the data source to this conversion"
+  }, {
     "name" : "extra_info",
     "type" : [ "null", {
       "type" : "record",

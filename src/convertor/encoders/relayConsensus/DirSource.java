@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package convertor.encoders.relayConsensus;
+package convertor.encoders.relayConsensus;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class DirSource extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -8586976140990815185L;
+  private static final long serialVersionUID = 5423910335762519625L;
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DirSource\",\"namespace\":\"convertor.encoders.relayConsensus\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getIdentity()\"},{\"name\":\"hostname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getHostname()\"},{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getIp()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/DirSourceEntry: int getDirPort()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/DirSourceEntry: int getOrPort()\"},{\"name\":\"is_legacy\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/DirSourceEntry: boolean isLegacy()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/DirSourceEntry: String getNickname() */

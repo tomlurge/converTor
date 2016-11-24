@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package convertor.encoders.relayVote;
+package convertor.encoders.relayVote;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class R extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 1585771845026029156L;
+  private static final long serialVersionUID = -956724756309510942L;
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"R\",\"namespace\":\"convertor.encoders.relayVote\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getFingerprint()\"},{\"name\":\"digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDescriptor()\"},{\"name\":\"publication\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getPublishedMillis()\"},{\"name\":\"ip\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getOrPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getDirPort()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/NetworkStatusEntry: String getNickname() */

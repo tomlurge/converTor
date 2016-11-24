@@ -10,7 +10,7 @@ import convertor.encoders.relay.*;
 
 class ConvertRelay extends Convert {
 
-  void convert(Descriptor descriptor) {
+  void convert(Descriptor descriptor, Long srcDate) {
 
     RelayServerDescriptor desc = (RelayServerDescriptor) descriptor;
     Relay conversion = new Relay();
@@ -18,6 +18,7 @@ class ConvertRelay extends Convert {
     for (String annotation : desc.getAnnotations()) {
       conversion.setDescriptorType(annotation.substring("@type ".length()));
     }
+    conversion.setSrcDate(srcDate);
     conversion.setServerDescriptorDigest(
         desc.getServerDescriptorDigest().toUpperCase()
     );
@@ -104,6 +105,7 @@ class ConvertRelay extends Convert {
           convertOrAdresses(desc.getOrAddresses())
       );
     }
+    conversion.setTunneledDirServer(desc.getTunnelledDirServer());
 
     this.type = Types.RELAY;
     this.date = dateTimeFormat.format(desc.getPublishedMillis()).substring(0,7);

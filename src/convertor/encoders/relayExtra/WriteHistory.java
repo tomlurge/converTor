@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package convertor.encoders.relayExtra;
+package convertor.encoders.relayExtra;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class WriteHistory extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -8095666589795311098L;
+  private static final long serialVersionUID = 2128995609948998377L;
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"WriteHistory\",\"namespace\":\"convertor.encoders.relayExtra\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getHistoryEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BandwidthHistory: long getIntervalLength()\"},{\"name\":\"bytes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/BandwidthHistory: Collection<Long> getBandwidthValues().values()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/BandwidthHistory: long getHistoryEndMillis() */

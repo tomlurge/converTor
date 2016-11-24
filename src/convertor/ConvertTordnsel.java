@@ -10,7 +10,7 @@ import convertor.encoders.tordnsel.*;
 /* Tordnsel == ExitList */
 class ConvertTordnsel extends Convert {
 
-  void convert(Descriptor descriptor) {
+  void convert(Descriptor descriptor, Long srcDate) {
 
     ExitList desc = (ExitList) descriptor;
     Tordnsel conversion = new Tordnsel();
@@ -18,6 +18,7 @@ class ConvertTordnsel extends Convert {
     for (String annotation : desc.getAnnotations()) {
       conversion.setDescriptorType(annotation.substring("@type ".length()));
     }
+    conversion.setSrcDate(srcDate);
     conversion.setDownloaded(desc.getDownloadedMillis());
     conversion.setExitNodes(convertExitNodesList(desc));
 

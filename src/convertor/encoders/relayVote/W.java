@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package convertor.encoders.relayVote;
+package convertor.encoders.relayVote;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class W extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 8164873962954956729L;
+  private static final long serialVersionUID = -4448605941586310498L;
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"W\",\"namespace\":\"convertor.encoders.relayVote\",\"fields\":[{\"name\":\"bandwidth\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getBandwidth()\"},{\"name\":\"measured\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getMeasured()\"},{\"name\":\"unmeasured\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/NetworkStatusEntry: boolean getUnmeasured()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/NetworkStatusEntry: long getBandwidth() */

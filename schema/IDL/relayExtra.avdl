@@ -112,6 +112,8 @@ protocol relay_extra_info_descriptor {
   @aliases(["relay_extra_info"])
   record RelayExtra {
     string descriptor_type = "extra-info 1.0";
+    /** file creation date, in milliseconds, of the data source to this conversion */
+    union { null, long } src_date;
     // see above
     union { null, ExtraInfo } extra_info;
     /** metrics-lib/ExtraInfoDescriptor: String getIdentityEd25519(); */

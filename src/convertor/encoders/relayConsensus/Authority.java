@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package convertor.encoders.relayConsensus;
+package convertor.encoders.relayConsensus;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Authority extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 4194772394477941954L;
+  private static final long serialVersionUID = -5151803949600885839L;
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Authority\",\"namespace\":\"convertor.encoders.relayConsensus\",\"fields\":[{\"name\":\"dir_source\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirSource\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getIdentity()\"},{\"name\":\"hostname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getHostname()\"},{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getIp()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/DirSourceEntry: int getDirPort()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/DirSourceEntry: int getOrPort()\"},{\"name\":\"is_legacy\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/DirSourceEntry: boolean isLegacy()\"}]}]},{\"name\":\"contact\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getContactLine()\"},{\"name\":\"vote_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirSourceEntry: String getVoteDigest()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   @Deprecated public convertor.encoders.relayConsensus.DirSource dir_source;

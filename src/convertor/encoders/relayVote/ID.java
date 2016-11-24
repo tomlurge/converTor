@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package convertor.encoders.relayVote;
+package convertor.encoders.relayVote;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class ID extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 2920348887509736385L;
+  private static final long serialVersionUID = 8590623026818643136L;
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ID\",\"namespace\":\"convertor.encoders.relayVote\",\"fields\":[{\"name\":\"ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getMasterKeyEd25519()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/NetworkStatusEntry: String getMasterKeyEd25519() */

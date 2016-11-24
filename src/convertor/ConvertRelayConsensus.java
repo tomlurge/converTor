@@ -10,7 +10,7 @@ import convertor.encoders.relayConsensus.*;
 
 class ConvertRelayConsensus extends Convert {
 
-  void convert(Descriptor descriptor) {
+  void convert(Descriptor descriptor, Long srcDate) {
 
     RelayNetworkStatusConsensus desc = (RelayNetworkStatusConsensus) descriptor;
     RelayConsensus conversion = new RelayConsensus();
@@ -18,6 +18,7 @@ class ConvertRelayConsensus extends Convert {
     for (String annotation : desc.getAnnotations()) {
       conversion.setDescriptorType(annotation.substring("@type ".length()));
     }
+    conversion.setSrcDate(srcDate);
     conversion.setNetworkStatusVersion(desc.getNetworkStatusVersion());
     conversion.setVoteStatus("consensus");
     conversion.setConsensusMethod(desc.getConsensusMethod());
@@ -33,6 +34,10 @@ class ConvertRelayConsensus extends Convert {
     if (desc.getRecommendedServerVersions() != null &&
         !desc.getRecommendedServerVersions().isEmpty()) {
       conversion.setServerVersions(desc.getRecommendedServerVersions());
+    }
+    if (desc.getPackageLines() != null &&
+        !desc.getPackageLines().isEmpty()) {
+      conversion.setPackage$(desc.getPackageLines());
     }
     if (desc.getKnownFlags() != null && !desc.getKnownFlags().isEmpty()) {
       conversion.setKnownFlags(new ArrayList<>(desc.getKnownFlags()));

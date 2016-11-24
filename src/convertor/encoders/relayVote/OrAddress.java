@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package convertor.encoders.relayVote;
+package convertor.encoders.relayVote;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class OrAddress extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 4151025993041721826L;
+  private static final long serialVersionUID = 2067829318019856780L;
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"OrAddress\",\"namespace\":\"convertor.encoders.relayVote\",\"fields\":[{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"implementation specific, see actual converter\"},{\"name\":\"port\",\"type\":[\"null\",\"int\"],\"doc\":\"implementation specific, see actual converter\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** implementation specific, see actual converter */

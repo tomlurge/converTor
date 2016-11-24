@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package convertor.encoders.relay;
+package convertor.encoders.relay;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Bandwidth extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 6305207891337118129L;
+  private static final long serialVersionUID = -1788654962468142310L;
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Bandwidth\",\"namespace\":\"convertor.encoders.relay\",\"fields\":[{\"name\":\"avg\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getBandwidthRate()\"},{\"name\":\"burst\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getBandwidthBurst()\"},{\"name\":\"observed\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getBandwidthObserved()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/ServerDescriptor: int getBandwidthRate() */

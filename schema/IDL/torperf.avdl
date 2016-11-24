@@ -4,6 +4,8 @@ protocol torperf_descriptor {
   @aliases(["torperfResult"])
   record Torperf {
     string descriptor_type = "torperf 1.0";
+    /** file creation date, in milliseconds, of the data source to this conversion */
+    union { null, long } src_date;
     /** metrics-lib/TorperfResult: String getSource() */
     union { null, string } source;
     /** metrics-lib/TorperfResult: int getFileSize() */

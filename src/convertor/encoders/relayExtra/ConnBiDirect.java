@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package convertor.encoders.relayExtra;
+package convertor.encoders.relayExtra;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class ConnBiDirect extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 8443299928781134552L;
+  private static final long serialVersionUID = -713238325700057976L;
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ConnBiDirect\",\"namespace\":\"convertor.encoders.relayExtra\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsIntervalLength()\"},{\"name\":\"below\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBelow()\"},{\"name\":\"read\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectRead()\"},{\"name\":\"write\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectWrite()\"},{\"name\":\"both\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: int getConnBiDirectBoth()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/ExtraInfoDescriptor: long getConnBiDirectStatsEndMillis() */

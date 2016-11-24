@@ -119,6 +119,8 @@ protocol bridge_extra_info_descriptor {
   @aliases(["bridge_extra_info"])
   record BridgeExtra {
     string descriptor_type = "bridge-extra-info 1.3";
+    /** file creation date, in milliseconds, of the data source to this conversion */
+    union { null, long } src_date;
     // see above
     union { null, ExtraInfo } extra_info;
     /** metrics-lib/ExtraInfoDescriptor: String getIdentityEd25519(); */

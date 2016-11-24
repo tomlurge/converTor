@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package convertor.encoders.relayVote;
+package convertor.encoders.relayVote;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class DirKey extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 4331860813463028289L;
+  private static final long serialVersionUID = -5685306251013563724L;
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DirKey\",\"namespace\":\"convertor.encoders.relayVote\",\"fields\":[{\"name\":\"version\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getDirKeyCertificateVersion()\"},{\"name\":\"dir_key_published\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getDirKeyPublishedMillis()\"},{\"name\":\"dir_key_expires\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getDirKeyExpiresMillis()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/RelayNetworkStatusVote: int getDirKeyCertificateVersion() */

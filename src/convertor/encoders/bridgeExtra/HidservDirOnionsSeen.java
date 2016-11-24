@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package convertor.encoders.bridgeExtra;
+package convertor.encoders.bridgeExtra;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class HidservDirOnionsSeen extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 346777076743013065L;
+  private static final long serialVersionUID = 5984571852009431232L;
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"HidservDirOnionsSeen\",\"namespace\":\"convertor.encoders.bridgeExtra\",\"fields\":[{\"name\":\"onions\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: Double getHidservDirOnionsSeen()\"},{\"name\":\"obfuscation\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"double\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservDirOnionsSeenParameters()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/ExtraInfoDescriptor: Double getHidservDirOnionsSeen() */

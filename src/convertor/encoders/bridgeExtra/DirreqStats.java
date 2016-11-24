@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package convertor.encoders.bridgeExtra;
+package convertor.encoders.bridgeExtra;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class DirreqStats extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -3956994441638737221L;
+  private static final long serialVersionUID = 5088664619886014945L;
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DirreqStats\",\"namespace\":\"convertor.encoders.bridgeExtra\",\"fields\":[{\"name\":\"date\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getDirreqStatsEndMillis()\"},{\"name\":\"interval\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: long getDirreqStatsIntervalLength()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/ExtraInfoDescriptor: long getDirreqStatsEndMillis() */

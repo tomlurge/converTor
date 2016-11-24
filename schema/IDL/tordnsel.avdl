@@ -16,6 +16,8 @@ protocol tordnsel_descriptor {
   @aliases(["exitList"])
   record Tordnsel {
     string descriptor_type = "tordnsel 1.0";
+    /** file creation date, in milliseconds, of the data source to this conversion */
+    union { null, long } src_date;
     /** metrics-lib/ExitList: long getDownloadedMillis() */
     union { null, long } downloaded;
     /** metrics-lib/ExitList: Set<ExitList.Entry> getEntries() */

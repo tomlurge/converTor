@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package convertor.encoders.bridgeStatus;
+package convertor.encoders.bridgeStatus;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 7279500201496188871L;
+  private static final long serialVersionUID = -8380063381343095126L;
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FlagTresholds\",\"namespace\":\"convertor.encoders.bridgeStatus\",\"fields\":[{\"name\":\"stable_uptime\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getStableUptime()\"},{\"name\":\"stable_mtbf\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getStableMtbf()\"},{\"name\":\"enough_mtbf\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: int getEnoughMtbfInfo()\"},{\"name\":\"fast_speed\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getFastBandwidth()\"},{\"name\":\"guard_wfu\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: double getGuardWfu()\"},{\"name\":\"guard_tk\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getGuardTk()\"},{\"name\":\"guard_bw_inc_exits\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getGuardBandwidthIncludingExits()\"},{\"name\":\"guard_bw_exc_exits\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: long getGuardBandwidthExcludingExits()\"},{\"name\":\"ignoring_advertised_bws\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/BridgeNetworkStatus: int getIgnoringAdvertisedBws()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/BridgeNetworkStatus: long getStableUptime() */

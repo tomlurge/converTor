@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package convertor.encoders.relayVote;
+package convertor.encoders.relayVote;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class DirSig extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -7860666098513874364L;
+  private static final long serialVersionUID = -479180894894023272L;
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DirSig\",\"namespace\":\"convertor.encoders.relayVote\",\"fields\":[{\"name\":\"algorithm\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getAlgorithm()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getIdentity()\"},{\"name\":\"signing_key_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getSigningKeyDigest()\"},{\"name\":\"signature\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/DirectorySignature: String getSignature()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/DirectorySignature: String getAlgorithm() */

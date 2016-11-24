@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package convertor.encoders.bridgeStatus;
+package convertor.encoders.bridgeStatus;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Policy extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 3999498540705533589L;
+  private static final long serialVersionUID = 3183845149243397648L;
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Policy\",\"namespace\":\"convertor.encoders.bridgeStatus\",\"fields\":[{\"name\":\"default_policy\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDefaultPolicy()\"},{\"name\":\"port_summary\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getPortList()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/NetworkStatusEntry: String getDefaultPolicy() */

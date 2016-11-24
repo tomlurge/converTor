@@ -35,7 +35,7 @@ abstract class Convert<C> {
    * Abstract convert method
    * @param descriptor   incoming descriptor
    */
-  abstract void convert(Descriptor descriptor);
+  abstract void convert(Descriptor descriptor, Long srcDate);
 
 
   /**

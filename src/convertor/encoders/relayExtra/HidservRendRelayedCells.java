@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package convertor.encoders.relayExtra;
+package convertor.encoders.relayExtra;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class HidservRendRelayedCells extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -255400723932672575L;
+  private static final long serialVersionUID = 3883989661270100514L;
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"HidservRendRelayedCells\",\"namespace\":\"convertor.encoders.relayExtra\",\"fields\":[{\"name\":\"cells\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/ExtraInfoDescriptor: Double getHidservRendRelayedCells()\"},{\"name\":\"obfuscation\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"double\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: Map<String, Double> getHidservRendRelayedCellsParameters()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/ExtraInfoDescriptor: Double getHidservRendRelayedCells() */

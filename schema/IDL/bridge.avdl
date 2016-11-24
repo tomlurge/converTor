@@ -53,6 +53,8 @@ protocol bridge_server_descriptor {
   @aliases(["bridge_server"])
   record Bridge {
     string descriptor_type = "bridge-server-descriptor 1.1";
+    /** file creation date, in milliseconds, of the data source to this conversion */
+    union { null, long } src_date;
     /** metrics-lib/ServerDescriptor: String getServerDescriptorDigest() */
     union { null, string } server_descriptor_digest;
     /** metrics-lib/ServerDescriptor: String getServerDescriptorDigestSha256() */
@@ -117,6 +119,8 @@ protocol bridge_server_descriptor {
     union { null, boolean } allow_single_hop_exits;
     /** metrics-lib/ServerDescriptor: List<String> getOrAddresses() */
     union { null, array<OrAddress> } or_address;
+    /** metrics-lib/ServerDescriptor: boolean getTunnelledDirServer() */
+    union { null, boolean } tunneled_dir_server;
   }
 
 }

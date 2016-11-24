@@ -7,19 +7,15 @@ import convertor.encoders.torperf.Torperf;
 
 class ConvertTorperf extends Convert {
 
-  void convert(Descriptor descriptor) {
+  void convert(Descriptor descriptor, Long srcDate) {
 
     TorperfResult desc = (TorperfResult) descriptor;
     Torperf conversion = new Torperf();
 
-    /*
-    // Only the first descriptor in a Torperf file has a type. All following
-    // descriptors get 'type: null'
     for (String annotation : desc.getAnnotations()) {
       conversion.setDescriptorType(annotation.substring("@type ".length()));
     }
-    */
-    conversion.setDescriptorType("torperf 1.0");
+    conversion.setSrcDate(srcDate);
     conversion.setSource(desc.getSource());
     conversion.setFilesize(desc.getFileSize());
     conversion.setStart(desc.getStartMillis());

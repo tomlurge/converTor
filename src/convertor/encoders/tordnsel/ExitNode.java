@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package convertor.encoders.tordnsel;
+package convertor.encoders.tordnsel;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class ExitNode extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 7561811580665961897L;
+  private static final long serialVersionUID = 2425525860963165230L;
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ExitNode\",\"namespace\":\"convertor.encoders.tordnsel\",\"fields\":[{\"name\":\"fingerprint\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExitList.Entry: String getFingerprint()\"},{\"name\":\"published\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExitList.Entry: long getPublishedMillis()\"},{\"name\":\"last_status\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/ExitList.Entry: long getLastStatusMillis()\"},{\"name\":\"exit_adresses\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"long\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExitList.Entry: Map<String, Long> getExitAddresses()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/ExitList.Entry: String getFingerprint() */

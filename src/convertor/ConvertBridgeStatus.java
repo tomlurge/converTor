@@ -12,7 +12,7 @@ import convertor.encoders.bridgeStatus.*;
 
 class ConvertBridgeStatus extends Convert {
 
-  void convert(Descriptor descriptor) {
+  void convert(Descriptor descriptor, Long srcDate) {
 
     BridgeNetworkStatus desc = (BridgeNetworkStatus) descriptor;
     BridgeStatus conversion = new BridgeStatus();
@@ -20,6 +20,7 @@ class ConvertBridgeStatus extends Convert {
     for (String annotation : desc.getAnnotations()) {
       conversion.setDescriptorType(annotation.substring("@type ".length()));
     }
+    conversion.setSrcDate(srcDate);
     conversion.setPublished(desc.getPublishedMillis());
     conversion.setFlagTresholds(convertFlagTresholds(desc));
     if (desc.getStatusEntries() != null && !desc.getStatusEntries().isEmpty()) {

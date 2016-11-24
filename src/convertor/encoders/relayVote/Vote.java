@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package convertor.encoders.relayVote;
+package convertor.encoders.relayVote;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Vote extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -4386631226835491419L;
+  private static final long serialVersionUID = 9069471317061332653L;
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Vote\",\"namespace\":\"convertor.encoders.relayVote\",\"fields\":[{\"name\":\"vote_seconds\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getVoteSeconds()\"},{\"name\":\"dist_seconds\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getDistSeconds()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/RelayNetworkStatusVote: long getVoteSeconds() */

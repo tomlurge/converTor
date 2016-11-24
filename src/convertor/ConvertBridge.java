@@ -10,7 +10,7 @@ import convertor.encoders.bridge.*;
 
 class ConvertBridge extends Convert {
 
-  void convert(Descriptor descriptor) {
+  void convert(Descriptor descriptor, Long srcDate) {
 
     BridgeServerDescriptor desc = (BridgeServerDescriptor) descriptor;
     Bridge conversion = new Bridge();
@@ -18,6 +18,7 @@ class ConvertBridge extends Convert {
     for (String annotation : desc.getAnnotations()) {
       conversion.setDescriptorType(annotation.substring("@type ".length()));
     }
+    conversion.setSrcDate(srcDate);
     conversion.setServerDescriptorDigest(
       desc.getServerDescriptorDigest().toUpperCase()
     );
@@ -88,6 +89,7 @@ class ConvertBridge extends Convert {
           convertOrAdresses(desc.getOrAddresses())
       );
     }
+    conversion.setTunneledDirServer(desc.getTunnelledDirServer());
 
     this.type = Types.BRIDGE;
     this.date = dateTimeFormat.format(desc.getPublishedMillis()).substring(0,7);

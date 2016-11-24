@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package convertor.encoders.relayConsensus;
+package convertor.encoders.relayConsensus;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Vote extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 3944124812019016387L;
+  private static final long serialVersionUID = 4925960764564072865L;
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Vote\",\"namespace\":\"convertor.encoders.relayConsensus\",\"fields\":[{\"name\":\"vote_seconds\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: long getVoteSeconds()\"},{\"name\":\"dist_seconds\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: long getDistSeconds()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/RelayNetworkStatusConsensus: long getVoteSeconds() */

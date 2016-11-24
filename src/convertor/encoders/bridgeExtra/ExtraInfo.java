@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package convertor.encoders.bridgeExtra;
+package convertor.encoders.bridgeExtra;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class ExtraInfo extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 8986140238220991377L;
+  private static final long serialVersionUID = 1545598011338242379L;
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ExtraInfo\",\"namespace\":\"convertor.encoders.bridgeExtra\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getNickname()\"},{\"name\":\"fingerprint\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ExtraInfoDescriptor: String getFingerprint()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/ExtraInfoDescriptor: String getNickname() */

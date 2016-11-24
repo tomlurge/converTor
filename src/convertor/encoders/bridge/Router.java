@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package convertor.encoders.bridge;
+package convertor.encoders.bridge;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Router extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -4927943107412603452L;
+  private static final long serialVersionUID = -6431257389350790726L;
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Router\",\"namespace\":\"convertor.encoders.bridge\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getNickname()\"},{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/ServerDescriptor: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getOrPort()\"},{\"name\":\"socks_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getSocksPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/ServerDescriptor: int getDirPort()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/ServerDescriptor: String getNickname() */

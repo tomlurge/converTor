@@ -3,15 +3,14 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package convertor.encoders.relayVote;
+package convertor.encoders.relayVote;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class DirFooter extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -3760534116751302342L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DirFooter\",\"namespace\":\"convertor.encoders.relayVote\",\"fields\":[{\"name\":\"directory_signature\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirSig\",\"fields\":[{\"name\":\"algorithm\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getAlgorithm()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getIdentity()\"},{\"name\":\"signing_key_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getSigningKeyDigest()\"},{\"name\":\"signature\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/DirectorySignature: String getSignature()\"}]}],\"doc\":\"metrics-lib/RelayNetworkStatusVote:\\n        SortedMap<String, DirectorySignature> getDirectorySignatures()\"}]}");
+  private static final long serialVersionUID = 5622387854269582971L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DirFooter\",\"namespace\":\"convertor.encoders.relayVote\",\"fields\":[{\"name\":\"directory_signature\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirSig\",\"fields\":[{\"name\":\"algorithm\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getAlgorithm()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getIdentity()\"},{\"name\":\"signing_key_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getSigningKeyDigest()\"},{\"name\":\"signature\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/DirectorySignature: String getSignature()\"}]}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: SortedMap<String, DirectorySignature> getDirectorySignatures()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
-  /** metrics-lib/RelayNetworkStatusVote:
-        SortedMap<String, DirectorySignature> getDirectorySignatures() */
+  /** metrics-lib/RelayNetworkStatusVote: SortedMap<String, DirectorySignature> getDirectorySignatures() */
   @Deprecated public convertor.encoders.relayVote.DirSig directory_signature;
 
   /**
@@ -23,8 +22,7 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * All-args constructor.
-   * @param directory_signature metrics-lib/RelayNetworkStatusVote:
-        SortedMap<String, DirectorySignature> getDirectorySignatures()
+   * @param directory_signature metrics-lib/RelayNetworkStatusVote: SortedMap<String, DirectorySignature> getDirectorySignatures()
    */
   public DirFooter(convertor.encoders.relayVote.DirSig directory_signature) {
     this.directory_signature = directory_signature;
@@ -49,8 +47,7 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Gets the value of the 'directory_signature' field.
-   * @return metrics-lib/RelayNetworkStatusVote:
-        SortedMap<String, DirectorySignature> getDirectorySignatures()
+   * @return metrics-lib/RelayNetworkStatusVote: SortedMap<String, DirectorySignature> getDirectorySignatures()
    */
   public convertor.encoders.relayVote.DirSig getDirectorySignature() {
     return directory_signature;
@@ -58,8 +55,7 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Sets the value of the 'directory_signature' field.
-   * metrics-lib/RelayNetworkStatusVote:
-        SortedMap<String, DirectorySignature> getDirectorySignatures()
+   * metrics-lib/RelayNetworkStatusVote: SortedMap<String, DirectorySignature> getDirectorySignatures()
    * @param value the value to set.
    */
   public void setDirectorySignature(convertor.encoders.relayVote.DirSig value) {
@@ -98,8 +94,7 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<DirFooter>
     implements org.apache.avro.data.RecordBuilder<DirFooter> {
 
-    /** metrics-lib/RelayNetworkStatusVote:
-        SortedMap<String, DirectorySignature> getDirectorySignatures() */
+    /** metrics-lib/RelayNetworkStatusVote: SortedMap<String, DirectorySignature> getDirectorySignatures() */
     private convertor.encoders.relayVote.DirSig directory_signature;
     private convertor.encoders.relayVote.DirSig.Builder directory_signatureBuilder;
 
@@ -138,8 +133,7 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
 
     /**
       * Gets the value of the 'directory_signature' field.
-      * metrics-lib/RelayNetworkStatusVote:
-        SortedMap<String, DirectorySignature> getDirectorySignatures()
+      * metrics-lib/RelayNetworkStatusVote: SortedMap<String, DirectorySignature> getDirectorySignatures()
       * @return The value.
       */
     public convertor.encoders.relayVote.DirSig getDirectorySignature() {
@@ -148,8 +142,7 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
 
     /**
       * Sets the value of the 'directory_signature' field.
-      * metrics-lib/RelayNetworkStatusVote:
-        SortedMap<String, DirectorySignature> getDirectorySignatures()
+      * metrics-lib/RelayNetworkStatusVote: SortedMap<String, DirectorySignature> getDirectorySignatures()
       * @param value The value of 'directory_signature'.
       * @return This builder.
       */
@@ -163,8 +156,7 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
 
     /**
       * Checks whether the 'directory_signature' field has been set.
-      * metrics-lib/RelayNetworkStatusVote:
-        SortedMap<String, DirectorySignature> getDirectorySignatures()
+      * metrics-lib/RelayNetworkStatusVote: SortedMap<String, DirectorySignature> getDirectorySignatures()
       * @return True if the 'directory_signature' field has been set, false otherwise.
       */
     public boolean hasDirectorySignature() {
@@ -173,8 +165,7 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
 
     /**
      * Gets the Builder instance for the 'directory_signature' field and creates one if it doesn't exist yet.
-     * metrics-lib/RelayNetworkStatusVote:
-        SortedMap<String, DirectorySignature> getDirectorySignatures()
+     * metrics-lib/RelayNetworkStatusVote: SortedMap<String, DirectorySignature> getDirectorySignatures()
      * @return This builder.
      */
     public convertor.encoders.relayVote.DirSig.Builder getDirectorySignatureBuilder() {
@@ -190,8 +181,7 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
 
     /**
      * Sets the Builder instance for the 'directory_signature' field
-     * metrics-lib/RelayNetworkStatusVote:
-        SortedMap<String, DirectorySignature> getDirectorySignatures()
+     * metrics-lib/RelayNetworkStatusVote: SortedMap<String, DirectorySignature> getDirectorySignatures()
      * @return This builder.
      */
     public convertor.encoders.relayVote.DirFooter.Builder setDirectorySignatureBuilder(convertor.encoders.relayVote.DirSig.Builder value) {
@@ -202,8 +192,7 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
 
     /**
      * Checks whether the 'directory_signature' field has an active Builder instance
-     * metrics-lib/RelayNetworkStatusVote:
-        SortedMap<String, DirectorySignature> getDirectorySignatures()
+     * metrics-lib/RelayNetworkStatusVote: SortedMap<String, DirectorySignature> getDirectorySignatures()
      * @return True if the 'directory_signature' field has an active Builder instance
      */
     public boolean hasDirectorySignatureBuilder() {
@@ -212,8 +201,7 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
 
     /**
       * Clears the value of the 'directory_signature' field.
-      * metrics-lib/RelayNetworkStatusVote:
-        SortedMap<String, DirectorySignature> getDirectorySignatures()
+      * metrics-lib/RelayNetworkStatusVote: SortedMap<String, DirectorySignature> getDirectorySignatures()
       * @return This builder.
       */
     public convertor.encoders.relayVote.DirFooter.Builder clearDirectorySignature() {

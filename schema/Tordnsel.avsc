@@ -7,6 +7,10 @@
     "type" : "string",
     "default" : "tordnsel 1.0"
   }, {
+    "name" : "src_date",
+    "type" : [ "null", "long" ],
+    "doc" : "file creation date, in milliseconds, of the data source to this conversion"
+  }, {
     "name" : "downloaded",
     "type" : [ "null", "long" ],
     "doc" : "metrics-lib/ExitList: long getDownloadedMillis()"

@@ -9,7 +9,7 @@ import convertor.encoders.bridgeExtra.*;
 
 class ConvertBridgeExtra extends Convert {
 
-  void convert(Descriptor descriptor) {
+  void convert(Descriptor descriptor, Long srcDate) {
 
     BridgeExtraInfoDescriptor desc = (BridgeExtraInfoDescriptor) descriptor;
     BridgeExtra conversion = new BridgeExtra();
@@ -17,6 +17,7 @@ class ConvertBridgeExtra extends Convert {
     for (String annotation : desc.getAnnotations()) {
       conversion.setDescriptorType(annotation.substring("@type ".length()));
     }
+    conversion.setSrcDate(srcDate);
     conversion.setExtraInfo(convertExtraInfo(desc));
     conversion.setIdentityEd25519(desc.getIdentityEd25519() != null);
     conversion.setPublished(desc.getPublishedMillis());

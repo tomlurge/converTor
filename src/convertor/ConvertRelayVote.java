@@ -13,7 +13,7 @@ import convertor.encoders.relayVote.*;
 
 class ConvertRelayVote extends Convert {
 
-  void convert(Descriptor descriptor) {
+  void convert(Descriptor descriptor, Long srcDate) {
 
     RelayNetworkStatusVote desc = (RelayNetworkStatusVote) descriptor;
     RelayVote conversion = new RelayVote();
@@ -21,6 +21,7 @@ class ConvertRelayVote extends Convert {
     for (String annotation : desc.getAnnotations()) {
       conversion.setDescriptorType(annotation.substring("@type ".length()));
     }
+    conversion.setSrcDate(srcDate);
     conversion.setNetworkStatusVersion(desc.getNetworkStatusVersion());
     conversion.setVoteStatus("vote");
     if (desc.getConsensusMethods() != null && !desc.getConsensusMethods().isEmpty()) {
@@ -39,6 +40,10 @@ class ConvertRelayVote extends Convert {
     if (desc.getRecommendedServerVersions() != null &&
         !desc.getRecommendedServerVersions().isEmpty()) {
       conversion.setServerVersions(desc.getRecommendedServerVersions());
+    }
+    if (desc.getPackageLines() != null &&
+        !desc.getPackageLines().isEmpty()) {
+      conversion.setPackage$(desc.getPackageLines());
     }
     if (desc.getKnownFlags() != null && !desc.getKnownFlags().isEmpty()) {
       conversion.setKnownFlags(new ArrayList<>(desc.getKnownFlags()));
@@ -140,7 +145,7 @@ class ConvertRelayVote extends Convert {
         con.setA(convertOrAdresses(entry.getValue().getOrAddresses()));
       }
       if (entry.getValue().getFlags() != null && !entry.getValue().getFlags().isEmpty()) {
-        con.setS(new ArrayList<String>(entry.getValue().getFlags()));
+        con.setS(new ArrayList<>(entry.getValue().getFlags()));
       }
       con.setV(entry.getValue().getVersion());
       con.setW(convertW(entry.getValue()));
@@ -242,7 +247,7 @@ class ConvertRelayVote extends Convert {
       con.setIdentity(entry.getValue().getIdentity());
       con.setSigningKeyDigest(entry.getValue().getSigningKeyDigest());
       con.setSignature(entry.getValue().getSignature() != null);
-      //  TODO    update to new metric-lib method getDirectorySignature()
+      //  TODO    update to new metrics-lib method getDirectorySignature()
       if (desc.getDirectorySignatures().size() > 1) {
         System.out.println(
           "RelayVote descriptor contains more than 1 Directory Signature:\n    "

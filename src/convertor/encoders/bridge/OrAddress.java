@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package convertor.encoders.bridge;
+package convertor.encoders.bridge;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class OrAddress extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 3568592949571022628L;
+  private static final long serialVersionUID = -2343896681665782816L;
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"OrAddress\",\"namespace\":\"convertor.encoders.bridge\",\"fields\":[{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"implementation specific, see actual converter\"},{\"name\":\"port\",\"type\":[\"null\",\"int\"],\"doc\":\"implementation specific, see actual converter\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** implementation specific, see actual converter */

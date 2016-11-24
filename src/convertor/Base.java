@@ -110,6 +110,8 @@ class Base {
 
       DescriptorFile currentFile = walker.getNextFile();
 
+      Long srcDate = currentFile.getLastModified();
+
       /* iterate over descriptors in each input file */
       for (Descriptor descriptor : currentFile.getDescriptors()) {
 
@@ -126,7 +128,7 @@ class Base {
         }
 
         /* convert descriptor */
-        converter.convert(descriptor);
+        converter.convert(descriptor, srcDate);
         if (args.isDebug()) {
           System.out.println(converter.load);
         }

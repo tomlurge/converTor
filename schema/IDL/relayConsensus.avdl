@@ -102,13 +102,11 @@ protocol relay_network_status_consensus_3_descriptor {
   }
 
   record DirFooter {
-    /** metrics-lib/RelayNetworkStatusConsensus:
-        SortedMap<String, Integer> getBandwidthWeights() */
+    /** metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, Integer> getBandwidthWeights() */
     union { null, map<int> } bandwidth_weights;
     /** metrics-lib/RelayNetworkStatusConsensus: String getConsensusDigest() */
     union { null, string } consensus_digest;
-    /** metrics-lib/RelayNetworkStatusConsensus:
-        SortedMap<String, DirectorySignature> getDirectorySignatures() */
+    /** metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, DirectorySignature> getDirectorySignatures() */
     union { null, map<DirSig> } directory_signature;
   }
 
@@ -116,6 +114,8 @@ protocol relay_network_status_consensus_3_descriptor {
   @aliases(["relay_network_status_consensus_3"])
   record RelayConsensus {
     string descriptor_type = "network-status-consensus-3 1.0";
+    /** file creation date, in milliseconds, of the data source to this conversion */
+    union { null, long } src_date;
     /** metrics-lib/RelayNetworkStatusConsensus: int getNetworkStatusVersion() */
     int network_status_version = 3;
     /** "consensus" per definition, no getter */
@@ -132,27 +132,23 @@ protocol relay_network_status_consensus_3_descriptor {
     union { null, long } valid_until;
     // see above
     union { null, Vote } voting_delay;
-    /** metrics-lib/RelayNetworkStatusConsensus:
-        List<String> getRecommendedClientVersions()*/
+    /** metrics-lib/RelayNetworkStatusConsensus: List<String> getRecommendedClientVersions()*/
     union { null, array<string> } client_versions;
-    /** metrics-lib/RelayNetworkStatusConsensus:
-        List<String> getRecommendedServerVersions() */
+    /** metrics-lib/RelayNetworkStatusConsensus: List<String> getRecommendedServerVersions() */
     union { null, array<string> } server_versions;
-    /** metrics-lib/RelayNetworkStatusConsensus:
-        SortedSet<String> getKnownFlags() */
+    /** metrics-lib/RelayNetworkStatusConsensus: List<String> getPackageLines() */
+    union { null, array<string> } package;
+    /** metrics-lib/RelayNetworkStatusConsensus: SortedSet<String> getKnownFlags() */
     union { null, array<string> } known_flags;
-    /** metrics-lib/RelayNetworkStatusConsensus:
-        SortedMap<String, Integer> getConsensusParams() */
+    /** metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, Integer> getConsensusParams() */
     union { null, map<int> } params;
 
-    /** metrics-lib/RelayNetworkStatusConsensus:
-        SortedMap<String, DirSourceEntry> getDirSourceEntries()
+    /** metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, DirSourceEntry> getDirSourceEntries()
         dir-source entries representing the directories of which votes are
         contained in this consensus */
     union { null, map<Authority> } authorities;
 
-    /** metrics-lib/RelayNetworkStatusConsensus:
-        SortedMap<String, NetworkStatusEntry> getStatusEntries()
+    /** metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, NetworkStatusEntry> getStatusEntries()
         status entries, one for each contained relay */
     union { null, map<Status> } status;
 

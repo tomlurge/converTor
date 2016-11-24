@@ -3,14 +3,16 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package convertor.encoders.torperf;
+package convertor.encoders.torperf;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Torperf extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 685383906981689307L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Torperf\",\"namespace\":\"convertor.encoders.torperf\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"torperf 1.0\"},{\"name\":\"source\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/TorperfResult: String getSource()\"},{\"name\":\"filesize\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getFileSize()\"},{\"name\":\"start\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getStartMillis()\"},{\"name\":\"socket\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getSocketMillis()\"},{\"name\":\"connect\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getConnectMillis()\"},{\"name\":\"negotiate\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getNegotiateMillis()\"},{\"name\":\"request\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getRequestMillis()\"},{\"name\":\"response\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getResponseMillis()\"},{\"name\":\"datarequest\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getDataRequestMillis()\"},{\"name\":\"dataresponse\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getDataResponseMillis()\"},{\"name\":\"datacomplete\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getDataCompleteMillis()\"},{\"name\":\"writebytes\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getWriteBytes()\"},{\"name\":\"readbytes\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getReadBytes()\"},{\"name\":\"didtimeout\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/TorperfResult: Boolean didTimeout()\"},{\"name\":\"dataperc10\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(10)\"},{\"name\":\"dataperc20\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(20)\"},{\"name\":\"dataperc30\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(30)\"},{\"name\":\"dataperc40\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(40)\"},{\"name\":\"dataperc50\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(50)\"},{\"name\":\"dataperc60\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(60)\"},{\"name\":\"dataperc70\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(70)\"},{\"name\":\"dataperc80\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(80)\"},{\"name\":\"dataperc90\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(90)\"},{\"name\":\"launch\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getLaunchMillis()()\"},{\"name\":\"used_at\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getUsedAtMillis()\"},{\"name\":\"path\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/TorperfResult: List<String> getPath()\"},{\"name\":\"buildtimes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/TorperfResult: List<Long> getBuildTimes()\"},{\"name\":\"timeout\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getTimeout()\"},{\"name\":\"quantile\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/TorperfResult: double getQuantile()\"},{\"name\":\"circ_id\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getCircId()\"},{\"name\":\"used_by\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getUsedBy()\"}],\"aliases\":[\"torperfResult\"]}");
+  private static final long serialVersionUID = 3535635639082686588L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Torperf\",\"namespace\":\"convertor.encoders.torperf\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"torperf 1.0\"},{\"name\":\"src_date\",\"type\":[\"null\",\"long\"],\"doc\":\"file creation date, in milliseconds, of the data source to this conversion\"},{\"name\":\"source\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/TorperfResult: String getSource()\"},{\"name\":\"filesize\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getFileSize()\"},{\"name\":\"start\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getStartMillis()\"},{\"name\":\"socket\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getSocketMillis()\"},{\"name\":\"connect\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getConnectMillis()\"},{\"name\":\"negotiate\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getNegotiateMillis()\"},{\"name\":\"request\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getRequestMillis()\"},{\"name\":\"response\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getResponseMillis()\"},{\"name\":\"datarequest\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getDataRequestMillis()\"},{\"name\":\"dataresponse\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getDataResponseMillis()\"},{\"name\":\"datacomplete\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getDataCompleteMillis()\"},{\"name\":\"writebytes\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getWriteBytes()\"},{\"name\":\"readbytes\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getReadBytes()\"},{\"name\":\"didtimeout\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/TorperfResult: Boolean didTimeout()\"},{\"name\":\"dataperc10\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(10)\"},{\"name\":\"dataperc20\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(20)\"},{\"name\":\"dataperc30\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(30)\"},{\"name\":\"dataperc40\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(40)\"},{\"name\":\"dataperc50\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(50)\"},{\"name\":\"dataperc60\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(60)\"},{\"name\":\"dataperc70\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(70)\"},{\"name\":\"dataperc80\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(80)\"},{\"name\":\"dataperc90\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long SortedMap<Integer, Long> getDataPercentiles().get(90)\"},{\"name\":\"launch\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getLaunchMillis()()\"},{\"name\":\"used_at\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getUsedAtMillis()\"},{\"name\":\"path\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/TorperfResult: List<String> getPath()\"},{\"name\":\"buildtimes\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}],\"doc\":\"metrics-lib/TorperfResult: List<Long> getBuildTimes()\"},{\"name\":\"timeout\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/TorperfResult: long getTimeout()\"},{\"name\":\"quantile\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/TorperfResult: double getQuantile()\"},{\"name\":\"circ_id\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getCircId()\"},{\"name\":\"used_by\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/TorperfResult: int getUsedBy()\"}],\"aliases\":[\"torperfResult\"]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   @Deprecated public java.lang.String descriptor_type;
+  /** file creation date, in milliseconds, of the data source to this conversion */
+  @Deprecated public java.lang.Long src_date;
   /** metrics-lib/TorperfResult: String getSource() */
   @Deprecated public java.lang.String source;
   /** metrics-lib/TorperfResult: int getFileSize() */
@@ -83,6 +85,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * All-args constructor.
+   * @param src_date file creation date, in milliseconds, of the data source to this conversion
    * @param source metrics-lib/TorperfResult: String getSource()
    * @param filesize metrics-lib/TorperfResult: int getFileSize()
    * @param start metrics-lib/TorperfResult: long getStartMillis()
@@ -115,8 +118,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
    * @param circ_id metrics-lib/TorperfResult: int getCircId()
    * @param used_by metrics-lib/TorperfResult: int getUsedBy()
    */
-  public Torperf(java.lang.String descriptor_type, java.lang.String source, java.lang.Integer filesize, java.lang.Long start, java.lang.Long socket, java.lang.Long connect, java.lang.Long negotiate, java.lang.Long request, java.lang.Long response, java.lang.Long datarequest, java.lang.Long dataresponse, java.lang.Long datacomplete, java.lang.Integer writebytes, java.lang.Integer readbytes, java.lang.Boolean didtimeout, java.lang.Long dataperc10, java.lang.Long dataperc20, java.lang.Long dataperc30, java.lang.Long dataperc40, java.lang.Long dataperc50, java.lang.Long dataperc60, java.lang.Long dataperc70, java.lang.Long dataperc80, java.lang.Long dataperc90, java.lang.Long launch, java.lang.Long used_at, java.util.List<java.lang.String> path, java.util.List<java.lang.Long> buildtimes, java.lang.Long timeout, java.lang.Double quantile, java.lang.Integer circ_id, java.lang.Integer used_by) {
+  public Torperf(java.lang.String descriptor_type, java.lang.Long src_date, java.lang.String source, java.lang.Integer filesize, java.lang.Long start, java.lang.Long socket, java.lang.Long connect, java.lang.Long negotiate, java.lang.Long request, java.lang.Long response, java.lang.Long datarequest, java.lang.Long dataresponse, java.lang.Long datacomplete, java.lang.Integer writebytes, java.lang.Integer readbytes, java.lang.Boolean didtimeout, java.lang.Long dataperc10, java.lang.Long dataperc20, java.lang.Long dataperc30, java.lang.Long dataperc40, java.lang.Long dataperc50, java.lang.Long dataperc60, java.lang.Long dataperc70, java.lang.Long dataperc80, java.lang.Long dataperc90, java.lang.Long launch, java.lang.Long used_at, java.util.List<java.lang.String> path, java.util.List<java.lang.Long> buildtimes, java.lang.Long timeout, java.lang.Double quantile, java.lang.Integer circ_id, java.lang.Integer used_by) {
     this.descriptor_type = descriptor_type;
+    this.src_date = src_date;
     this.source = source;
     this.filesize = filesize;
     this.start = start;
@@ -155,37 +159,38 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
   public java.lang.Object get(int field$) {
     switch (field$) {
     case 0: return descriptor_type;
-    case 1: return source;
-    case 2: return filesize;
-    case 3: return start;
-    case 4: return socket;
-    case 5: return connect;
-    case 6: return negotiate;
-    case 7: return request;
-    case 8: return response;
-    case 9: return datarequest;
-    case 10: return dataresponse;
-    case 11: return datacomplete;
-    case 12: return writebytes;
-    case 13: return readbytes;
-    case 14: return didtimeout;
-    case 15: return dataperc10;
-    case 16: return dataperc20;
-    case 17: return dataperc30;
-    case 18: return dataperc40;
-    case 19: return dataperc50;
-    case 20: return dataperc60;
-    case 21: return dataperc70;
-    case 22: return dataperc80;
-    case 23: return dataperc90;
-    case 24: return launch;
-    case 25: return used_at;
-    case 26: return path;
-    case 27: return buildtimes;
-    case 28: return timeout;
-    case 29: return quantile;
-    case 30: return circ_id;
-    case 31: return used_by;
+    case 1: return src_date;
+    case 2: return source;
+    case 3: return filesize;
+    case 4: return start;
+    case 5: return socket;
+    case 6: return connect;
+    case 7: return negotiate;
+    case 8: return request;
+    case 9: return response;
+    case 10: return datarequest;
+    case 11: return dataresponse;
+    case 12: return datacomplete;
+    case 13: return writebytes;
+    case 14: return readbytes;
+    case 15: return didtimeout;
+    case 16: return dataperc10;
+    case 17: return dataperc20;
+    case 18: return dataperc30;
+    case 19: return dataperc40;
+    case 20: return dataperc50;
+    case 21: return dataperc60;
+    case 22: return dataperc70;
+    case 23: return dataperc80;
+    case 24: return dataperc90;
+    case 25: return launch;
+    case 26: return used_at;
+    case 27: return path;
+    case 28: return buildtimes;
+    case 29: return timeout;
+    case 30: return quantile;
+    case 31: return circ_id;
+    case 32: return used_by;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -194,37 +199,38 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
     case 0: descriptor_type = (java.lang.String)value$; break;
-    case 1: source = (java.lang.String)value$; break;
-    case 2: filesize = (java.lang.Integer)value$; break;
-    case 3: start = (java.lang.Long)value$; break;
-    case 4: socket = (java.lang.Long)value$; break;
-    case 5: connect = (java.lang.Long)value$; break;
-    case 6: negotiate = (java.lang.Long)value$; break;
-    case 7: request = (java.lang.Long)value$; break;
-    case 8: response = (java.lang.Long)value$; break;
-    case 9: datarequest = (java.lang.Long)value$; break;
-    case 10: dataresponse = (java.lang.Long)value$; break;
-    case 11: datacomplete = (java.lang.Long)value$; break;
-    case 12: writebytes = (java.lang.Integer)value$; break;
-    case 13: readbytes = (java.lang.Integer)value$; break;
-    case 14: didtimeout = (java.lang.Boolean)value$; break;
-    case 15: dataperc10 = (java.lang.Long)value$; break;
-    case 16: dataperc20 = (java.lang.Long)value$; break;
-    case 17: dataperc30 = (java.lang.Long)value$; break;
-    case 18: dataperc40 = (java.lang.Long)value$; break;
-    case 19: dataperc50 = (java.lang.Long)value$; break;
-    case 20: dataperc60 = (java.lang.Long)value$; break;
-    case 21: dataperc70 = (java.lang.Long)value$; break;
-    case 22: dataperc80 = (java.lang.Long)value$; break;
-    case 23: dataperc90 = (java.lang.Long)value$; break;
-    case 24: launch = (java.lang.Long)value$; break;
-    case 25: used_at = (java.lang.Long)value$; break;
-    case 26: path = (java.util.List<java.lang.String>)value$; break;
-    case 27: buildtimes = (java.util.List<java.lang.Long>)value$; break;
-    case 28: timeout = (java.lang.Long)value$; break;
-    case 29: quantile = (java.lang.Double)value$; break;
-    case 30: circ_id = (java.lang.Integer)value$; break;
-    case 31: used_by = (java.lang.Integer)value$; break;
+    case 1: src_date = (java.lang.Long)value$; break;
+    case 2: source = (java.lang.String)value$; break;
+    case 3: filesize = (java.lang.Integer)value$; break;
+    case 4: start = (java.lang.Long)value$; break;
+    case 5: socket = (java.lang.Long)value$; break;
+    case 6: connect = (java.lang.Long)value$; break;
+    case 7: negotiate = (java.lang.Long)value$; break;
+    case 8: request = (java.lang.Long)value$; break;
+    case 9: response = (java.lang.Long)value$; break;
+    case 10: datarequest = (java.lang.Long)value$; break;
+    case 11: dataresponse = (java.lang.Long)value$; break;
+    case 12: datacomplete = (java.lang.Long)value$; break;
+    case 13: writebytes = (java.lang.Integer)value$; break;
+    case 14: readbytes = (java.lang.Integer)value$; break;
+    case 15: didtimeout = (java.lang.Boolean)value$; break;
+    case 16: dataperc10 = (java.lang.Long)value$; break;
+    case 17: dataperc20 = (java.lang.Long)value$; break;
+    case 18: dataperc30 = (java.lang.Long)value$; break;
+    case 19: dataperc40 = (java.lang.Long)value$; break;
+    case 20: dataperc50 = (java.lang.Long)value$; break;
+    case 21: dataperc60 = (java.lang.Long)value$; break;
+    case 22: dataperc70 = (java.lang.Long)value$; break;
+    case 23: dataperc80 = (java.lang.Long)value$; break;
+    case 24: dataperc90 = (java.lang.Long)value$; break;
+    case 25: launch = (java.lang.Long)value$; break;
+    case 26: used_at = (java.lang.Long)value$; break;
+    case 27: path = (java.util.List<java.lang.String>)value$; break;
+    case 28: buildtimes = (java.util.List<java.lang.Long>)value$; break;
+    case 29: timeout = (java.lang.Long)value$; break;
+    case 30: quantile = (java.lang.Double)value$; break;
+    case 31: circ_id = (java.lang.Integer)value$; break;
+    case 32: used_by = (java.lang.Integer)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -242,6 +248,23 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
    */
   public void setDescriptorType(java.lang.String value) {
     this.descriptor_type = value;
+  }
+
+  /**
+   * Gets the value of the 'src_date' field.
+   * @return file creation date, in milliseconds, of the data source to this conversion
+   */
+  public java.lang.Long getSrcDate() {
+    return src_date;
+  }
+
+  /**
+   * Sets the value of the 'src_date' field.
+   * file creation date, in milliseconds, of the data source to this conversion
+   * @param value the value to set.
+   */
+  public void setSrcDate(java.lang.Long value) {
+    this.src_date = value;
   }
 
   /**
@@ -804,6 +827,8 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
     implements org.apache.avro.data.RecordBuilder<Torperf> {
 
     private java.lang.String descriptor_type;
+    /** file creation date, in milliseconds, of the data source to this conversion */
+    private java.lang.Long src_date;
     /** metrics-lib/TorperfResult: String getSource() */
     private java.lang.String source;
     /** metrics-lib/TorperfResult: int getFileSize() */
@@ -882,129 +907,133 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
         this.descriptor_type = data().deepCopy(fields()[0].schema(), other.descriptor_type);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.source)) {
-        this.source = data().deepCopy(fields()[1].schema(), other.source);
+      if (isValidValue(fields()[1], other.src_date)) {
+        this.src_date = data().deepCopy(fields()[1].schema(), other.src_date);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.filesize)) {
-        this.filesize = data().deepCopy(fields()[2].schema(), other.filesize);
+      if (isValidValue(fields()[2], other.source)) {
+        this.source = data().deepCopy(fields()[2].schema(), other.source);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.start)) {
-        this.start = data().deepCopy(fields()[3].schema(), other.start);
+      if (isValidValue(fields()[3], other.filesize)) {
+        this.filesize = data().deepCopy(fields()[3].schema(), other.filesize);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.socket)) {
-        this.socket = data().deepCopy(fields()[4].schema(), other.socket);
+      if (isValidValue(fields()[4], other.start)) {
+        this.start = data().deepCopy(fields()[4].schema(), other.start);
         fieldSetFlags()[4] = true;
       }
-      if (isValidValue(fields()[5], other.connect)) {
-        this.connect = data().deepCopy(fields()[5].schema(), other.connect);
+      if (isValidValue(fields()[5], other.socket)) {
+        this.socket = data().deepCopy(fields()[5].schema(), other.socket);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.negotiate)) {
-        this.negotiate = data().deepCopy(fields()[6].schema(), other.negotiate);
+      if (isValidValue(fields()[6], other.connect)) {
+        this.connect = data().deepCopy(fields()[6].schema(), other.connect);
         fieldSetFlags()[6] = true;
       }
-      if (isValidValue(fields()[7], other.request)) {
-        this.request = data().deepCopy(fields()[7].schema(), other.request);
+      if (isValidValue(fields()[7], other.negotiate)) {
+        this.negotiate = data().deepCopy(fields()[7].schema(), other.negotiate);
         fieldSetFlags()[7] = true;
       }
-      if (isValidValue(fields()[8], other.response)) {
-        this.response = data().deepCopy(fields()[8].schema(), other.response);
+      if (isValidValue(fields()[8], other.request)) {
+        this.request = data().deepCopy(fields()[8].schema(), other.request);
         fieldSetFlags()[8] = true;
       }
-      if (isValidValue(fields()[9], other.datarequest)) {
-        this.datarequest = data().deepCopy(fields()[9].schema(), other.datarequest);
+      if (isValidValue(fields()[9], other.response)) {
+        this.response = data().deepCopy(fields()[9].schema(), other.response);
         fieldSetFlags()[9] = true;
       }
-      if (isValidValue(fields()[10], other.dataresponse)) {
-        this.dataresponse = data().deepCopy(fields()[10].schema(), other.dataresponse);
+      if (isValidValue(fields()[10], other.datarequest)) {
+        this.datarequest = data().deepCopy(fields()[10].schema(), other.datarequest);
         fieldSetFlags()[10] = true;
       }
-      if (isValidValue(fields()[11], other.datacomplete)) {
-        this.datacomplete = data().deepCopy(fields()[11].schema(), other.datacomplete);
+      if (isValidValue(fields()[11], other.dataresponse)) {
+        this.dataresponse = data().deepCopy(fields()[11].schema(), other.dataresponse);
         fieldSetFlags()[11] = true;
       }
-      if (isValidValue(fields()[12], other.writebytes)) {
-        this.writebytes = data().deepCopy(fields()[12].schema(), other.writebytes);
+      if (isValidValue(fields()[12], other.datacomplete)) {
+        this.datacomplete = data().deepCopy(fields()[12].schema(), other.datacomplete);
         fieldSetFlags()[12] = true;
       }
-      if (isValidValue(fields()[13], other.readbytes)) {
-        this.readbytes = data().deepCopy(fields()[13].schema(), other.readbytes);
+      if (isValidValue(fields()[13], other.writebytes)) {
+        this.writebytes = data().deepCopy(fields()[13].schema(), other.writebytes);
         fieldSetFlags()[13] = true;
       }
-      if (isValidValue(fields()[14], other.didtimeout)) {
-        this.didtimeout = data().deepCopy(fields()[14].schema(), other.didtimeout);
+      if (isValidValue(fields()[14], other.readbytes)) {
+        this.readbytes = data().deepCopy(fields()[14].schema(), other.readbytes);
         fieldSetFlags()[14] = true;
       }
-      if (isValidValue(fields()[15], other.dataperc10)) {
-        this.dataperc10 = data().deepCopy(fields()[15].schema(), other.dataperc10);
+      if (isValidValue(fields()[15], other.didtimeout)) {
+        this.didtimeout = data().deepCopy(fields()[15].schema(), other.didtimeout);
         fieldSetFlags()[15] = true;
       }
-      if (isValidValue(fields()[16], other.dataperc20)) {
-        this.dataperc20 = data().deepCopy(fields()[16].schema(), other.dataperc20);
+      if (isValidValue(fields()[16], other.dataperc10)) {
+        this.dataperc10 = data().deepCopy(fields()[16].schema(), other.dataperc10);
         fieldSetFlags()[16] = true;
       }
-      if (isValidValue(fields()[17], other.dataperc30)) {
-        this.dataperc30 = data().deepCopy(fields()[17].schema(), other.dataperc30);
+      if (isValidValue(fields()[17], other.dataperc20)) {
+        this.dataperc20 = data().deepCopy(fields()[17].schema(), other.dataperc20);
         fieldSetFlags()[17] = true;
       }
-      if (isValidValue(fields()[18], other.dataperc40)) {
-        this.dataperc40 = data().deepCopy(fields()[18].schema(), other.dataperc40);
+      if (isValidValue(fields()[18], other.dataperc30)) {
+        this.dataperc30 = data().deepCopy(fields()[18].schema(), other.dataperc30);
         fieldSetFlags()[18] = true;
       }
-      if (isValidValue(fields()[19], other.dataperc50)) {
-        this.dataperc50 = data().deepCopy(fields()[19].schema(), other.dataperc50);
+      if (isValidValue(fields()[19], other.dataperc40)) {
+        this.dataperc40 = data().deepCopy(fields()[19].schema(), other.dataperc40);
         fieldSetFlags()[19] = true;
       }
-      if (isValidValue(fields()[20], other.dataperc60)) {
-        this.dataperc60 = data().deepCopy(fields()[20].schema(), other.dataperc60);
+      if (isValidValue(fields()[20], other.dataperc50)) {
+        this.dataperc50 = data().deepCopy(fields()[20].schema(), other.dataperc50);
         fieldSetFlags()[20] = true;
       }
-      if (isValidValue(fields()[21], other.dataperc70)) {
-        this.dataperc70 = data().deepCopy(fields()[21].schema(), other.dataperc70);
+      if (isValidValue(fields()[21], other.dataperc60)) {
+        this.dataperc60 = data().deepCopy(fields()[21].schema(), other.dataperc60);
         fieldSetFlags()[21] = true;
       }
-      if (isValidValue(fields()[22], other.dataperc80)) {
-        this.dataperc80 = data().deepCopy(fields()[22].schema(), other.dataperc80);
+      if (isValidValue(fields()[22], other.dataperc70)) {
+        this.dataperc70 = data().deepCopy(fields()[22].schema(), other.dataperc70);
         fieldSetFlags()[22] = true;
       }
-      if (isValidValue(fields()[23], other.dataperc90)) {
-        this.dataperc90 = data().deepCopy(fields()[23].schema(), other.dataperc90);
+      if (isValidValue(fields()[23], other.dataperc80)) {
+        this.dataperc80 = data().deepCopy(fields()[23].schema(), other.dataperc80);
         fieldSetFlags()[23] = true;
       }
-      if (isValidValue(fields()[24], other.launch)) {
-        this.launch = data().deepCopy(fields()[24].schema(), other.launch);
+      if (isValidValue(fields()[24], other.dataperc90)) {
+        this.dataperc90 = data().deepCopy(fields()[24].schema(), other.dataperc90);
         fieldSetFlags()[24] = true;
       }
-      if (isValidValue(fields()[25], other.used_at)) {
-        this.used_at = data().deepCopy(fields()[25].schema(), other.used_at);
+      if (isValidValue(fields()[25], other.launch)) {
+        this.launch = data().deepCopy(fields()[25].schema(), other.launch);
         fieldSetFlags()[25] = true;
       }
-      if (isValidValue(fields()[26], other.path)) {
-        this.path = data().deepCopy(fields()[26].schema(), other.path);
+      if (isValidValue(fields()[26], other.used_at)) {
+        this.used_at = data().deepCopy(fields()[26].schema(), other.used_at);
         fieldSetFlags()[26] = true;
       }
-      if (isValidValue(fields()[27], other.buildtimes)) {
-        this.buildtimes = data().deepCopy(fields()[27].schema(), other.buildtimes);
+      if (isValidValue(fields()[27], other.path)) {
+        this.path = data().deepCopy(fields()[27].schema(), other.path);
         fieldSetFlags()[27] = true;
       }
-      if (isValidValue(fields()[28], other.timeout)) {
-        this.timeout = data().deepCopy(fields()[28].schema(), other.timeout);
+      if (isValidValue(fields()[28], other.buildtimes)) {
+        this.buildtimes = data().deepCopy(fields()[28].schema(), other.buildtimes);
         fieldSetFlags()[28] = true;
       }
-      if (isValidValue(fields()[29], other.quantile)) {
-        this.quantile = data().deepCopy(fields()[29].schema(), other.quantile);
+      if (isValidValue(fields()[29], other.timeout)) {
+        this.timeout = data().deepCopy(fields()[29].schema(), other.timeout);
         fieldSetFlags()[29] = true;
       }
-      if (isValidValue(fields()[30], other.circ_id)) {
-        this.circ_id = data().deepCopy(fields()[30].schema(), other.circ_id);
+      if (isValidValue(fields()[30], other.quantile)) {
+        this.quantile = data().deepCopy(fields()[30].schema(), other.quantile);
         fieldSetFlags()[30] = true;
       }
-      if (isValidValue(fields()[31], other.used_by)) {
-        this.used_by = data().deepCopy(fields()[31].schema(), other.used_by);
+      if (isValidValue(fields()[31], other.circ_id)) {
+        this.circ_id = data().deepCopy(fields()[31].schema(), other.circ_id);
         fieldSetFlags()[31] = true;
+      }
+      if (isValidValue(fields()[32], other.used_by)) {
+        this.used_by = data().deepCopy(fields()[32].schema(), other.used_by);
+        fieldSetFlags()[32] = true;
       }
     }
     
@@ -1018,129 +1047,133 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
         this.descriptor_type = data().deepCopy(fields()[0].schema(), other.descriptor_type);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.source)) {
-        this.source = data().deepCopy(fields()[1].schema(), other.source);
+      if (isValidValue(fields()[1], other.src_date)) {
+        this.src_date = data().deepCopy(fields()[1].schema(), other.src_date);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.filesize)) {
-        this.filesize = data().deepCopy(fields()[2].schema(), other.filesize);
+      if (isValidValue(fields()[2], other.source)) {
+        this.source = data().deepCopy(fields()[2].schema(), other.source);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.start)) {
-        this.start = data().deepCopy(fields()[3].schema(), other.start);
+      if (isValidValue(fields()[3], other.filesize)) {
+        this.filesize = data().deepCopy(fields()[3].schema(), other.filesize);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.socket)) {
-        this.socket = data().deepCopy(fields()[4].schema(), other.socket);
+      if (isValidValue(fields()[4], other.start)) {
+        this.start = data().deepCopy(fields()[4].schema(), other.start);
         fieldSetFlags()[4] = true;
       }
-      if (isValidValue(fields()[5], other.connect)) {
-        this.connect = data().deepCopy(fields()[5].schema(), other.connect);
+      if (isValidValue(fields()[5], other.socket)) {
+        this.socket = data().deepCopy(fields()[5].schema(), other.socket);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.negotiate)) {
-        this.negotiate = data().deepCopy(fields()[6].schema(), other.negotiate);
+      if (isValidValue(fields()[6], other.connect)) {
+        this.connect = data().deepCopy(fields()[6].schema(), other.connect);
         fieldSetFlags()[6] = true;
       }
-      if (isValidValue(fields()[7], other.request)) {
-        this.request = data().deepCopy(fields()[7].schema(), other.request);
+      if (isValidValue(fields()[7], other.negotiate)) {
+        this.negotiate = data().deepCopy(fields()[7].schema(), other.negotiate);
         fieldSetFlags()[7] = true;
       }
-      if (isValidValue(fields()[8], other.response)) {
-        this.response = data().deepCopy(fields()[8].schema(), other.response);
+      if (isValidValue(fields()[8], other.request)) {
+        this.request = data().deepCopy(fields()[8].schema(), other.request);
         fieldSetFlags()[8] = true;
       }
-      if (isValidValue(fields()[9], other.datarequest)) {
-        this.datarequest = data().deepCopy(fields()[9].schema(), other.datarequest);
+      if (isValidValue(fields()[9], other.response)) {
+        this.response = data().deepCopy(fields()[9].schema(), other.response);
         fieldSetFlags()[9] = true;
       }
-      if (isValidValue(fields()[10], other.dataresponse)) {
-        this.dataresponse = data().deepCopy(fields()[10].schema(), other.dataresponse);
+      if (isValidValue(fields()[10], other.datarequest)) {
+        this.datarequest = data().deepCopy(fields()[10].schema(), other.datarequest);
         fieldSetFlags()[10] = true;
       }
-      if (isValidValue(fields()[11], other.datacomplete)) {
-        this.datacomplete = data().deepCopy(fields()[11].schema(), other.datacomplete);
+      if (isValidValue(fields()[11], other.dataresponse)) {
+        this.dataresponse = data().deepCopy(fields()[11].schema(), other.dataresponse);
         fieldSetFlags()[11] = true;
       }
-      if (isValidValue(fields()[12], other.writebytes)) {
-        this.writebytes = data().deepCopy(fields()[12].schema(), other.writebytes);
+      if (isValidValue(fields()[12], other.datacomplete)) {
+        this.datacomplete = data().deepCopy(fields()[12].schema(), other.datacomplete);
         fieldSetFlags()[12] = true;
       }
-      if (isValidValue(fields()[13], other.readbytes)) {
-        this.readbytes = data().deepCopy(fields()[13].schema(), other.readbytes);
+      if (isValidValue(fields()[13], other.writebytes)) {
+        this.writebytes = data().deepCopy(fields()[13].schema(), other.writebytes);
         fieldSetFlags()[13] = true;
       }
-      if (isValidValue(fields()[14], other.didtimeout)) {
-        this.didtimeout = data().deepCopy(fields()[14].schema(), other.didtimeout);
+      if (isValidValue(fields()[14], other.readbytes)) {
+        this.readbytes = data().deepCopy(fields()[14].schema(), other.readbytes);
         fieldSetFlags()[14] = true;
       }
-      if (isValidValue(fields()[15], other.dataperc10)) {
-        this.dataperc10 = data().deepCopy(fields()[15].schema(), other.dataperc10);
+      if (isValidValue(fields()[15], other.didtimeout)) {
+        this.didtimeout = data().deepCopy(fields()[15].schema(), other.didtimeout);
         fieldSetFlags()[15] = true;
       }
-      if (isValidValue(fields()[16], other.dataperc20)) {
-        this.dataperc20 = data().deepCopy(fields()[16].schema(), other.dataperc20);
+      if (isValidValue(fields()[16], other.dataperc10)) {
+        this.dataperc10 = data().deepCopy(fields()[16].schema(), other.dataperc10);
         fieldSetFlags()[16] = true;
       }
-      if (isValidValue(fields()[17], other.dataperc30)) {
-        this.dataperc30 = data().deepCopy(fields()[17].schema(), other.dataperc30);
+      if (isValidValue(fields()[17], other.dataperc20)) {
+        this.dataperc20 = data().deepCopy(fields()[17].schema(), other.dataperc20);
         fieldSetFlags()[17] = true;
       }
-      if (isValidValue(fields()[18], other.dataperc40)) {
-        this.dataperc40 = data().deepCopy(fields()[18].schema(), other.dataperc40);
+      if (isValidValue(fields()[18], other.dataperc30)) {
+        this.dataperc30 = data().deepCopy(fields()[18].schema(), other.dataperc30);
         fieldSetFlags()[18] = true;
       }
-      if (isValidValue(fields()[19], other.dataperc50)) {
-        this.dataperc50 = data().deepCopy(fields()[19].schema(), other.dataperc50);
+      if (isValidValue(fields()[19], other.dataperc40)) {
+        this.dataperc40 = data().deepCopy(fields()[19].schema(), other.dataperc40);
         fieldSetFlags()[19] = true;
       }
-      if (isValidValue(fields()[20], other.dataperc60)) {
-        this.dataperc60 = data().deepCopy(fields()[20].schema(), other.dataperc60);
+      if (isValidValue(fields()[20], other.dataperc50)) {
+        this.dataperc50 = data().deepCopy(fields()[20].schema(), other.dataperc50);
         fieldSetFlags()[20] = true;
       }
-      if (isValidValue(fields()[21], other.dataperc70)) {
-        this.dataperc70 = data().deepCopy(fields()[21].schema(), other.dataperc70);
+      if (isValidValue(fields()[21], other.dataperc60)) {
+        this.dataperc60 = data().deepCopy(fields()[21].schema(), other.dataperc60);
         fieldSetFlags()[21] = true;
       }
-      if (isValidValue(fields()[22], other.dataperc80)) {
-        this.dataperc80 = data().deepCopy(fields()[22].schema(), other.dataperc80);
+      if (isValidValue(fields()[22], other.dataperc70)) {
+        this.dataperc70 = data().deepCopy(fields()[22].schema(), other.dataperc70);
         fieldSetFlags()[22] = true;
       }
-      if (isValidValue(fields()[23], other.dataperc90)) {
-        this.dataperc90 = data().deepCopy(fields()[23].schema(), other.dataperc90);
+      if (isValidValue(fields()[23], other.dataperc80)) {
+        this.dataperc80 = data().deepCopy(fields()[23].schema(), other.dataperc80);
         fieldSetFlags()[23] = true;
       }
-      if (isValidValue(fields()[24], other.launch)) {
-        this.launch = data().deepCopy(fields()[24].schema(), other.launch);
+      if (isValidValue(fields()[24], other.dataperc90)) {
+        this.dataperc90 = data().deepCopy(fields()[24].schema(), other.dataperc90);
         fieldSetFlags()[24] = true;
       }
-      if (isValidValue(fields()[25], other.used_at)) {
-        this.used_at = data().deepCopy(fields()[25].schema(), other.used_at);
+      if (isValidValue(fields()[25], other.launch)) {
+        this.launch = data().deepCopy(fields()[25].schema(), other.launch);
         fieldSetFlags()[25] = true;
       }
-      if (isValidValue(fields()[26], other.path)) {
-        this.path = data().deepCopy(fields()[26].schema(), other.path);
+      if (isValidValue(fields()[26], other.used_at)) {
+        this.used_at = data().deepCopy(fields()[26].schema(), other.used_at);
         fieldSetFlags()[26] = true;
       }
-      if (isValidValue(fields()[27], other.buildtimes)) {
-        this.buildtimes = data().deepCopy(fields()[27].schema(), other.buildtimes);
+      if (isValidValue(fields()[27], other.path)) {
+        this.path = data().deepCopy(fields()[27].schema(), other.path);
         fieldSetFlags()[27] = true;
       }
-      if (isValidValue(fields()[28], other.timeout)) {
-        this.timeout = data().deepCopy(fields()[28].schema(), other.timeout);
+      if (isValidValue(fields()[28], other.buildtimes)) {
+        this.buildtimes = data().deepCopy(fields()[28].schema(), other.buildtimes);
         fieldSetFlags()[28] = true;
       }
-      if (isValidValue(fields()[29], other.quantile)) {
-        this.quantile = data().deepCopy(fields()[29].schema(), other.quantile);
+      if (isValidValue(fields()[29], other.timeout)) {
+        this.timeout = data().deepCopy(fields()[29].schema(), other.timeout);
         fieldSetFlags()[29] = true;
       }
-      if (isValidValue(fields()[30], other.circ_id)) {
-        this.circ_id = data().deepCopy(fields()[30].schema(), other.circ_id);
+      if (isValidValue(fields()[30], other.quantile)) {
+        this.quantile = data().deepCopy(fields()[30].schema(), other.quantile);
         fieldSetFlags()[30] = true;
       }
-      if (isValidValue(fields()[31], other.used_by)) {
-        this.used_by = data().deepCopy(fields()[31].schema(), other.used_by);
+      if (isValidValue(fields()[31], other.circ_id)) {
+        this.circ_id = data().deepCopy(fields()[31].schema(), other.circ_id);
         fieldSetFlags()[31] = true;
+      }
+      if (isValidValue(fields()[32], other.used_by)) {
+        this.used_by = data().deepCopy(fields()[32].schema(), other.used_by);
+        fieldSetFlags()[32] = true;
       }
     }
 
@@ -1184,6 +1217,49 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
     }
 
     /**
+      * Gets the value of the 'src_date' field.
+      * file creation date, in milliseconds, of the data source to this conversion
+      * @return The value.
+      */
+    public java.lang.Long getSrcDate() {
+      return src_date;
+    }
+
+    /**
+      * Sets the value of the 'src_date' field.
+      * file creation date, in milliseconds, of the data source to this conversion
+      * @param value The value of 'src_date'.
+      * @return This builder.
+      */
+    public convertor.encoders.torperf.Torperf.Builder setSrcDate(java.lang.Long value) {
+      validate(fields()[1], value);
+      this.src_date = value;
+      fieldSetFlags()[1] = true;
+      return this; 
+    }
+
+    /**
+      * Checks whether the 'src_date' field has been set.
+      * file creation date, in milliseconds, of the data source to this conversion
+      * @return True if the 'src_date' field has been set, false otherwise.
+      */
+    public boolean hasSrcDate() {
+      return fieldSetFlags()[1];
+    }
+
+
+    /**
+      * Clears the value of the 'src_date' field.
+      * file creation date, in milliseconds, of the data source to this conversion
+      * @return This builder.
+      */
+    public convertor.encoders.torperf.Torperf.Builder clearSrcDate() {
+      src_date = null;
+      fieldSetFlags()[1] = false;
+      return this;
+    }
+
+    /**
       * Gets the value of the 'source' field.
       * metrics-lib/TorperfResult: String getSource()
       * @return The value.
@@ -1199,9 +1275,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public convertor.encoders.torperf.Torperf.Builder setSource(java.lang.String value) {
-      validate(fields()[1], value);
+      validate(fields()[2], value);
       this.source = value;
-      fieldSetFlags()[1] = true;
+      fieldSetFlags()[2] = true;
       return this; 
     }
 
@@ -1211,7 +1287,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'source' field has been set, false otherwise.
       */
     public boolean hasSource() {
-      return fieldSetFlags()[1];
+      return fieldSetFlags()[2];
     }
 
 
@@ -1222,7 +1298,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       */
     public convertor.encoders.torperf.Torperf.Builder clearSource() {
       source = null;
-      fieldSetFlags()[1] = false;
+      fieldSetFlags()[2] = false;
       return this;
     }
 
@@ -1242,9 +1318,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public convertor.encoders.torperf.Torperf.Builder setFilesize(java.lang.Integer value) {
-      validate(fields()[2], value);
+      validate(fields()[3], value);
       this.filesize = value;
-      fieldSetFlags()[2] = true;
+      fieldSetFlags()[3] = true;
       return this; 
     }
 
@@ -1254,7 +1330,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'filesize' field has been set, false otherwise.
       */
     public boolean hasFilesize() {
-      return fieldSetFlags()[2];
+      return fieldSetFlags()[3];
     }
 
 
@@ -1265,7 +1341,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       */
     public convertor.encoders.torperf.Torperf.Builder clearFilesize() {
       filesize = null;
-      fieldSetFlags()[2] = false;
+      fieldSetFlags()[3] = false;
       return this;
     }
 
@@ -1285,9 +1361,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public convertor.encoders.torperf.Torperf.Builder setStart(java.lang.Long value) {
-      validate(fields()[3], value);
+      validate(fields()[4], value);
       this.start = value;
-      fieldSetFlags()[3] = true;
+      fieldSetFlags()[4] = true;
       return this; 
     }
 
@@ -1297,7 +1373,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'start' field has been set, false otherwise.
       */
     public boolean hasStart() {
-      return fieldSetFlags()[3];
+      return fieldSetFlags()[4];
     }
 
 
@@ -1308,7 +1384,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       */
     public convertor.encoders.torperf.Torperf.Builder clearStart() {
       start = null;
-      fieldSetFlags()[3] = false;
+      fieldSetFlags()[4] = false;
       return this;
     }
 
@@ -1328,9 +1404,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public convertor.encoders.torperf.Torperf.Builder setSocket(java.lang.Long value) {
-      validate(fields()[4], value);
+      validate(fields()[5], value);
       this.socket = value;
-      fieldSetFlags()[4] = true;
+      fieldSetFlags()[5] = true;
       return this; 
     }
 
@@ -1340,7 +1416,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'socket' field has been set, false otherwise.
       */
     public boolean hasSocket() {
-      return fieldSetFlags()[4];
+      return fieldSetFlags()[5];
     }
 
 
@@ -1351,7 +1427,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       */
     public convertor.encoders.torperf.Torperf.Builder clearSocket() {
       socket = null;
-      fieldSetFlags()[4] = false;
+      fieldSetFlags()[5] = false;
       return this;
     }
 
@@ -1371,9 +1447,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public convertor.encoders.torperf.Torperf.Builder setConnect(java.lang.Long value) {
-      validate(fields()[5], value);
+      validate(fields()[6], value);
       this.connect = value;
-      fieldSetFlags()[5] = true;
+      fieldSetFlags()[6] = true;
       return this; 
     }
 
@@ -1383,7 +1459,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'connect' field has been set, false otherwise.
       */
     public boolean hasConnect() {
-      return fieldSetFlags()[5];
+      return fieldSetFlags()[6];
     }
 
 
@@ -1394,7 +1470,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       */
     public convertor.encoders.torperf.Torperf.Builder clearConnect() {
       connect = null;
-      fieldSetFlags()[5] = false;
+      fieldSetFlags()[6] = false;
       return this;
     }
 
@@ -1414,9 +1490,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public convertor.encoders.torperf.Torperf.Builder setNegotiate(java.lang.Long value) {
-      validate(fields()[6], value);
+      validate(fields()[7], value);
       this.negotiate = value;
-      fieldSetFlags()[6] = true;
+      fieldSetFlags()[7] = true;
       return this; 
     }
 
@@ -1426,7 +1502,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'negotiate' field has been set, false otherwise.
       */
     public boolean hasNegotiate() {
-      return fieldSetFlags()[6];
+      return fieldSetFlags()[7];
     }
 
 
@@ -1437,7 +1513,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       */
     public convertor.encoders.torperf.Torperf.Builder clearNegotiate() {
       negotiate = null;
-      fieldSetFlags()[6] = false;
+      fieldSetFlags()[7] = false;
       return this;
     }
 
@@ -1457,9 +1533,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public convertor.encoders.torperf.Torperf.Builder setRequest(java.lang.Long value) {
-      validate(fields()[7], value);
+      validate(fields()[8], value);
       this.request = value;
-      fieldSetFlags()[7] = true;
+      fieldSetFlags()[8] = true;
       return this; 
     }
 
@@ -1469,7 +1545,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'request' field has been set, false otherwise.
       */
     public boolean hasRequest() {
-      return fieldSetFlags()[7];
+      return fieldSetFlags()[8];
     }
 
 
@@ -1480,7 +1556,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       */
     public convertor.encoders.torperf.Torperf.Builder clearRequest() {
       request = null;
-      fieldSetFlags()[7] = false;
+      fieldSetFlags()[8] = false;
       return this;
     }
 
@@ -1500,9 +1576,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public convertor.encoders.torperf.Torperf.Builder setResponse(java.lang.Long value) {
-      validate(fields()[8], value);
+      validate(fields()[9], value);
       this.response = value;
-      fieldSetFlags()[8] = true;
+      fieldSetFlags()[9] = true;
       return this; 
     }
 
@@ -1512,7 +1588,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'response' field has been set, false otherwise.
       */
     public boolean hasResponse() {
-      return fieldSetFlags()[8];
+      return fieldSetFlags()[9];
     }
 
 
@@ -1523,7 +1599,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       */
     public convertor.encoders.torperf.Torperf.Builder clearResponse() {
       response = null;
-      fieldSetFlags()[8] = false;
+      fieldSetFlags()[9] = false;
       return this;
     }
 
@@ -1543,9 +1619,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public convertor.encoders.torperf.Torperf.Builder setDatarequest(java.lang.Long value) {
-      validate(fields()[9], value);
+      validate(fields()[10], value);
       this.datarequest = value;
-      fieldSetFlags()[9] = true;
+      fieldSetFlags()[10] = true;
       return this; 
     }
 
@@ -1555,7 +1631,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'datarequest' field has been set, false otherwise.
       */
     public boolean hasDatarequest() {
-      return fieldSetFlags()[9];
+      return fieldSetFlags()[10];
     }
 
 
@@ -1566,7 +1642,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       */
     public convertor.encoders.torperf.Torperf.Builder clearDatarequest() {
       datarequest = null;
-      fieldSetFlags()[9] = false;
+      fieldSetFlags()[10] = false;
       return this;
     }
 
@@ -1586,9 +1662,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public convertor.encoders.torperf.Torperf.Builder setDataresponse(java.lang.Long value) {
-      validate(fields()[10], value);
+      validate(fields()[11], value);
       this.dataresponse = value;
-      fieldSetFlags()[10] = true;
+      fieldSetFlags()[11] = true;
       return this; 
     }
 
@@ -1598,7 +1674,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'dataresponse' field has been set, false otherwise.
       */
     public boolean hasDataresponse() {
-      return fieldSetFlags()[10];
+      return fieldSetFlags()[11];
     }
 
 
@@ -1609,7 +1685,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       */
     public convertor.encoders.torperf.Torperf.Builder clearDataresponse() {
       dataresponse = null;
-      fieldSetFlags()[10] = false;
+      fieldSetFlags()[11] = false;
       return this;
     }
 
@@ -1629,9 +1705,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public convertor.encoders.torperf.Torperf.Builder setDatacomplete(java.lang.Long value) {
-      validate(fields()[11], value);
+      validate(fields()[12], value);
       this.datacomplete = value;
-      fieldSetFlags()[11] = true;
+      fieldSetFlags()[12] = true;
       return this; 
     }
 
@@ -1641,7 +1717,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'datacomplete' field has been set, false otherwise.
       */
     public boolean hasDatacomplete() {
-      return fieldSetFlags()[11];
+      return fieldSetFlags()[12];
     }
 
 
@@ -1652,7 +1728,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       */
     public convertor.encoders.torperf.Torperf.Builder clearDatacomplete() {
       datacomplete = null;
-      fieldSetFlags()[11] = false;
+      fieldSetFlags()[12] = false;
       return this;
     }
 
@@ -1672,9 +1748,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public convertor.encoders.torperf.Torperf.Builder setWritebytes(java.lang.Integer value) {
-      validate(fields()[12], value);
+      validate(fields()[13], value);
       this.writebytes = value;
-      fieldSetFlags()[12] = true;
+      fieldSetFlags()[13] = true;
       return this; 
     }
 
@@ -1684,7 +1760,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'writebytes' field has been set, false otherwise.
       */
     public boolean hasWritebytes() {
-      return fieldSetFlags()[12];
+      return fieldSetFlags()[13];
     }
 
 
@@ -1695,7 +1771,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       */
     public convertor.encoders.torperf.Torperf.Builder clearWritebytes() {
       writebytes = null;
-      fieldSetFlags()[12] = false;
+      fieldSetFlags()[13] = false;
       return this;
     }
 
@@ -1715,9 +1791,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public convertor.encoders.torperf.Torperf.Builder setReadbytes(java.lang.Integer value) {
-      validate(fields()[13], value);
+      validate(fields()[14], value);
       this.readbytes = value;
-      fieldSetFlags()[13] = true;
+      fieldSetFlags()[14] = true;
       return this; 
     }
 
@@ -1727,7 +1803,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'readbytes' field has been set, false otherwise.
       */
     public boolean hasReadbytes() {
-      return fieldSetFlags()[13];
+      return fieldSetFlags()[14];
     }
 
 
@@ -1738,7 +1814,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       */
     public convertor.encoders.torperf.Torperf.Builder clearReadbytes() {
       readbytes = null;
-      fieldSetFlags()[13] = false;
+      fieldSetFlags()[14] = false;
       return this;
     }
 
@@ -1758,9 +1834,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public convertor.encoders.torperf.Torperf.Builder setDidtimeout(java.lang.Boolean value) {
-      validate(fields()[14], value);
+      validate(fields()[15], value);
       this.didtimeout = value;
-      fieldSetFlags()[14] = true;
+      fieldSetFlags()[15] = true;
       return this; 
     }
 
@@ -1770,7 +1846,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'didtimeout' field has been set, false otherwise.
       */
     public boolean hasDidtimeout() {
-      return fieldSetFlags()[14];
+      return fieldSetFlags()[15];
     }
 
 
@@ -1781,7 +1857,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       */
     public convertor.encoders.torperf.Torperf.Builder clearDidtimeout() {
       didtimeout = null;
-      fieldSetFlags()[14] = false;
+      fieldSetFlags()[15] = false;
       return this;
     }
 
@@ -1801,9 +1877,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public convertor.encoders.torperf.Torperf.Builder setDataperc10(java.lang.Long value) {
-      validate(fields()[15], value);
+      validate(fields()[16], value);
       this.dataperc10 = value;
-      fieldSetFlags()[15] = true;
+      fieldSetFlags()[16] = true;
       return this; 
     }
 
@@ -1813,7 +1889,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'dataperc10' field has been set, false otherwise.
       */
     public boolean hasDataperc10() {
-      return fieldSetFlags()[15];
+      return fieldSetFlags()[16];
     }
 
 
@@ -1824,7 +1900,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       */
     public convertor.encoders.torperf.Torperf.Builder clearDataperc10() {
       dataperc10 = null;
-      fieldSetFlags()[15] = false;
+      fieldSetFlags()[16] = false;
       return this;
     }
 
@@ -1844,9 +1920,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public convertor.encoders.torperf.Torperf.Builder setDataperc20(java.lang.Long value) {
-      validate(fields()[16], value);
+      validate(fields()[17], value);
       this.dataperc20 = value;
-      fieldSetFlags()[16] = true;
+      fieldSetFlags()[17] = true;
       return this; 
     }
 
@@ -1856,7 +1932,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'dataperc20' field has been set, false otherwise.
       */
     public boolean hasDataperc20() {
-      return fieldSetFlags()[16];
+      return fieldSetFlags()[17];
     }
 
 
@@ -1867,7 +1943,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       */
     public convertor.encoders.torperf.Torperf.Builder clearDataperc20() {
       dataperc20 = null;
-      fieldSetFlags()[16] = false;
+      fieldSetFlags()[17] = false;
       return this;
     }
 
@@ -1887,9 +1963,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public convertor.encoders.torperf.Torperf.Builder setDataperc30(java.lang.Long value) {
-      validate(fields()[17], value);
+      validate(fields()[18], value);
       this.dataperc30 = value;
-      fieldSetFlags()[17] = true;
+      fieldSetFlags()[18] = true;
       return this; 
     }
 
@@ -1899,7 +1975,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'dataperc30' field has been set, false otherwise.
       */
     public boolean hasDataperc30() {
-      return fieldSetFlags()[17];
+      return fieldSetFlags()[18];
     }
 
 
@@ -1910,7 +1986,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       */
     public convertor.encoders.torperf.Torperf.Builder clearDataperc30() {
       dataperc30 = null;
-      fieldSetFlags()[17] = false;
+      fieldSetFlags()[18] = false;
       return this;
     }
 
@@ -1930,9 +2006,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public convertor.encoders.torperf.Torperf.Builder setDataperc40(java.lang.Long value) {
-      validate(fields()[18], value);
+      validate(fields()[19], value);
       this.dataperc40 = value;
-      fieldSetFlags()[18] = true;
+      fieldSetFlags()[19] = true;
       return this; 
     }
 
@@ -1942,7 +2018,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'dataperc40' field has been set, false otherwise.
       */
     public boolean hasDataperc40() {
-      return fieldSetFlags()[18];
+      return fieldSetFlags()[19];
     }
 
 
@@ -1953,7 +2029,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       */
     public convertor.encoders.torperf.Torperf.Builder clearDataperc40() {
       dataperc40 = null;
-      fieldSetFlags()[18] = false;
+      fieldSetFlags()[19] = false;
       return this;
     }
 
@@ -1973,9 +2049,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public convertor.encoders.torperf.Torperf.Builder setDataperc50(java.lang.Long value) {
-      validate(fields()[19], value);
+      validate(fields()[20], value);
       this.dataperc50 = value;
-      fieldSetFlags()[19] = true;
+      fieldSetFlags()[20] = true;
       return this; 
     }
 
@@ -1985,7 +2061,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'dataperc50' field has been set, false otherwise.
       */
     public boolean hasDataperc50() {
-      return fieldSetFlags()[19];
+      return fieldSetFlags()[20];
     }
 
 
@@ -1996,7 +2072,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       */
     public convertor.encoders.torperf.Torperf.Builder clearDataperc50() {
       dataperc50 = null;
-      fieldSetFlags()[19] = false;
+      fieldSetFlags()[20] = false;
       return this;
     }
 
@@ -2016,9 +2092,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public convertor.encoders.torperf.Torperf.Builder setDataperc60(java.lang.Long value) {
-      validate(fields()[20], value);
+      validate(fields()[21], value);
       this.dataperc60 = value;
-      fieldSetFlags()[20] = true;
+      fieldSetFlags()[21] = true;
       return this; 
     }
 
@@ -2028,7 +2104,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'dataperc60' field has been set, false otherwise.
       */
     public boolean hasDataperc60() {
-      return fieldSetFlags()[20];
+      return fieldSetFlags()[21];
     }
 
 
@@ -2039,7 +2115,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       */
     public convertor.encoders.torperf.Torperf.Builder clearDataperc60() {
       dataperc60 = null;
-      fieldSetFlags()[20] = false;
+      fieldSetFlags()[21] = false;
       return this;
     }
 
@@ -2059,9 +2135,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public convertor.encoders.torperf.Torperf.Builder setDataperc70(java.lang.Long value) {
-      validate(fields()[21], value);
+      validate(fields()[22], value);
       this.dataperc70 = value;
-      fieldSetFlags()[21] = true;
+      fieldSetFlags()[22] = true;
       return this; 
     }
 
@@ -2071,7 +2147,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'dataperc70' field has been set, false otherwise.
       */
     public boolean hasDataperc70() {
-      return fieldSetFlags()[21];
+      return fieldSetFlags()[22];
     }
 
 
@@ -2082,7 +2158,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       */
     public convertor.encoders.torperf.Torperf.Builder clearDataperc70() {
       dataperc70 = null;
-      fieldSetFlags()[21] = false;
+      fieldSetFlags()[22] = false;
       return this;
     }
 
@@ -2102,9 +2178,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public convertor.encoders.torperf.Torperf.Builder setDataperc80(java.lang.Long value) {
-      validate(fields()[22], value);
+      validate(fields()[23], value);
       this.dataperc80 = value;
-      fieldSetFlags()[22] = true;
+      fieldSetFlags()[23] = true;
       return this; 
     }
 
@@ -2114,7 +2190,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'dataperc80' field has been set, false otherwise.
       */
     public boolean hasDataperc80() {
-      return fieldSetFlags()[22];
+      return fieldSetFlags()[23];
     }
 
 
@@ -2125,7 +2201,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       */
     public convertor.encoders.torperf.Torperf.Builder clearDataperc80() {
       dataperc80 = null;
-      fieldSetFlags()[22] = false;
+      fieldSetFlags()[23] = false;
       return this;
     }
 
@@ -2145,9 +2221,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public convertor.encoders.torperf.Torperf.Builder setDataperc90(java.lang.Long value) {
-      validate(fields()[23], value);
+      validate(fields()[24], value);
       this.dataperc90 = value;
-      fieldSetFlags()[23] = true;
+      fieldSetFlags()[24] = true;
       return this; 
     }
 
@@ -2157,7 +2233,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'dataperc90' field has been set, false otherwise.
       */
     public boolean hasDataperc90() {
-      return fieldSetFlags()[23];
+      return fieldSetFlags()[24];
     }
 
 
@@ -2168,7 +2244,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       */
     public convertor.encoders.torperf.Torperf.Builder clearDataperc90() {
       dataperc90 = null;
-      fieldSetFlags()[23] = false;
+      fieldSetFlags()[24] = false;
       return this;
     }
 
@@ -2188,9 +2264,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public convertor.encoders.torperf.Torperf.Builder setLaunch(java.lang.Long value) {
-      validate(fields()[24], value);
+      validate(fields()[25], value);
       this.launch = value;
-      fieldSetFlags()[24] = true;
+      fieldSetFlags()[25] = true;
       return this; 
     }
 
@@ -2200,7 +2276,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'launch' field has been set, false otherwise.
       */
     public boolean hasLaunch() {
-      return fieldSetFlags()[24];
+      return fieldSetFlags()[25];
     }
 
 
@@ -2211,7 +2287,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       */
     public convertor.encoders.torperf.Torperf.Builder clearLaunch() {
       launch = null;
-      fieldSetFlags()[24] = false;
+      fieldSetFlags()[25] = false;
       return this;
     }
 
@@ -2231,9 +2307,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public convertor.encoders.torperf.Torperf.Builder setUsedAt(java.lang.Long value) {
-      validate(fields()[25], value);
+      validate(fields()[26], value);
       this.used_at = value;
-      fieldSetFlags()[25] = true;
+      fieldSetFlags()[26] = true;
       return this; 
     }
 
@@ -2243,7 +2319,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'used_at' field has been set, false otherwise.
       */
     public boolean hasUsedAt() {
-      return fieldSetFlags()[25];
+      return fieldSetFlags()[26];
     }
 
 
@@ -2254,7 +2330,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       */
     public convertor.encoders.torperf.Torperf.Builder clearUsedAt() {
       used_at = null;
-      fieldSetFlags()[25] = false;
+      fieldSetFlags()[26] = false;
       return this;
     }
 
@@ -2274,9 +2350,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public convertor.encoders.torperf.Torperf.Builder setPath(java.util.List<java.lang.String> value) {
-      validate(fields()[26], value);
+      validate(fields()[27], value);
       this.path = value;
-      fieldSetFlags()[26] = true;
+      fieldSetFlags()[27] = true;
       return this; 
     }
 
@@ -2286,7 +2362,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'path' field has been set, false otherwise.
       */
     public boolean hasPath() {
-      return fieldSetFlags()[26];
+      return fieldSetFlags()[27];
     }
 
 
@@ -2297,7 +2373,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       */
     public convertor.encoders.torperf.Torperf.Builder clearPath() {
       path = null;
-      fieldSetFlags()[26] = false;
+      fieldSetFlags()[27] = false;
       return this;
     }
 
@@ -2317,9 +2393,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public convertor.encoders.torperf.Torperf.Builder setBuildtimes(java.util.List<java.lang.Long> value) {
-      validate(fields()[27], value);
+      validate(fields()[28], value);
       this.buildtimes = value;
-      fieldSetFlags()[27] = true;
+      fieldSetFlags()[28] = true;
       return this; 
     }
 
@@ -2329,7 +2405,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'buildtimes' field has been set, false otherwise.
       */
     public boolean hasBuildtimes() {
-      return fieldSetFlags()[27];
+      return fieldSetFlags()[28];
     }
 
 
@@ -2340,7 +2416,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       */
     public convertor.encoders.torperf.Torperf.Builder clearBuildtimes() {
       buildtimes = null;
-      fieldSetFlags()[27] = false;
+      fieldSetFlags()[28] = false;
       return this;
     }
 
@@ -2360,9 +2436,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public convertor.encoders.torperf.Torperf.Builder setTimeout(java.lang.Long value) {
-      validate(fields()[28], value);
+      validate(fields()[29], value);
       this.timeout = value;
-      fieldSetFlags()[28] = true;
+      fieldSetFlags()[29] = true;
       return this; 
     }
 
@@ -2372,7 +2448,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'timeout' field has been set, false otherwise.
       */
     public boolean hasTimeout() {
-      return fieldSetFlags()[28];
+      return fieldSetFlags()[29];
     }
 
 
@@ -2383,7 +2459,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       */
     public convertor.encoders.torperf.Torperf.Builder clearTimeout() {
       timeout = null;
-      fieldSetFlags()[28] = false;
+      fieldSetFlags()[29] = false;
       return this;
     }
 
@@ -2403,9 +2479,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public convertor.encoders.torperf.Torperf.Builder setQuantile(java.lang.Double value) {
-      validate(fields()[29], value);
+      validate(fields()[30], value);
       this.quantile = value;
-      fieldSetFlags()[29] = true;
+      fieldSetFlags()[30] = true;
       return this; 
     }
 
@@ -2415,7 +2491,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'quantile' field has been set, false otherwise.
       */
     public boolean hasQuantile() {
-      return fieldSetFlags()[29];
+      return fieldSetFlags()[30];
     }
 
 
@@ -2426,7 +2502,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       */
     public convertor.encoders.torperf.Torperf.Builder clearQuantile() {
       quantile = null;
-      fieldSetFlags()[29] = false;
+      fieldSetFlags()[30] = false;
       return this;
     }
 
@@ -2446,9 +2522,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public convertor.encoders.torperf.Torperf.Builder setCircId(java.lang.Integer value) {
-      validate(fields()[30], value);
+      validate(fields()[31], value);
       this.circ_id = value;
-      fieldSetFlags()[30] = true;
+      fieldSetFlags()[31] = true;
       return this; 
     }
 
@@ -2458,7 +2534,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'circ_id' field has been set, false otherwise.
       */
     public boolean hasCircId() {
-      return fieldSetFlags()[30];
+      return fieldSetFlags()[31];
     }
 
 
@@ -2469,7 +2545,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       */
     public convertor.encoders.torperf.Torperf.Builder clearCircId() {
       circ_id = null;
-      fieldSetFlags()[30] = false;
+      fieldSetFlags()[31] = false;
       return this;
     }
 
@@ -2489,9 +2565,9 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public convertor.encoders.torperf.Torperf.Builder setUsedBy(java.lang.Integer value) {
-      validate(fields()[31], value);
+      validate(fields()[32], value);
       this.used_by = value;
-      fieldSetFlags()[31] = true;
+      fieldSetFlags()[32] = true;
       return this; 
     }
 
@@ -2501,7 +2577,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'used_by' field has been set, false otherwise.
       */
     public boolean hasUsedBy() {
-      return fieldSetFlags()[31];
+      return fieldSetFlags()[32];
     }
 
 
@@ -2512,7 +2588,7 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       */
     public convertor.encoders.torperf.Torperf.Builder clearUsedBy() {
       used_by = null;
-      fieldSetFlags()[31] = false;
+      fieldSetFlags()[32] = false;
       return this;
     }
 
@@ -2521,37 +2597,38 @@ public class Torperf extends org.apache.avro.specific.SpecificRecordBase impleme
       try {
         Torperf record = new Torperf();
         record.descriptor_type = fieldSetFlags()[0] ? this.descriptor_type : (java.lang.String) defaultValue(fields()[0]);
-        record.source = fieldSetFlags()[1] ? this.source : (java.lang.String) defaultValue(fields()[1]);
-        record.filesize = fieldSetFlags()[2] ? this.filesize : (java.lang.Integer) defaultValue(fields()[2]);
-        record.start = fieldSetFlags()[3] ? this.start : (java.lang.Long) defaultValue(fields()[3]);
-        record.socket = fieldSetFlags()[4] ? this.socket : (java.lang.Long) defaultValue(fields()[4]);
-        record.connect = fieldSetFlags()[5] ? this.connect : (java.lang.Long) defaultValue(fields()[5]);
-        record.negotiate = fieldSetFlags()[6] ? this.negotiate : (java.lang.Long) defaultValue(fields()[6]);
-        record.request = fieldSetFlags()[7] ? this.request : (java.lang.Long) defaultValue(fields()[7]);
-        record.response = fieldSetFlags()[8] ? this.response : (java.lang.Long) defaultValue(fields()[8]);
-        record.datarequest = fieldSetFlags()[9] ? this.datarequest : (java.lang.Long) defaultValue(fields()[9]);
-        record.dataresponse = fieldSetFlags()[10] ? this.dataresponse : (java.lang.Long) defaultValue(fields()[10]);
-        record.datacomplete = fieldSetFlags()[11] ? this.datacomplete : (java.lang.Long) defaultValue(fields()[11]);
-        record.writebytes = fieldSetFlags()[12] ? this.writebytes : (java.lang.Integer) defaultValue(fields()[12]);
-        record.readbytes = fieldSetFlags()[13] ? this.readbytes : (java.lang.Integer) defaultValue(fields()[13]);
-        record.didtimeout = fieldSetFlags()[14] ? this.didtimeout : (java.lang.Boolean) defaultValue(fields()[14]);
-        record.dataperc10 = fieldSetFlags()[15] ? this.dataperc10 : (java.lang.Long) defaultValue(fields()[15]);
-        record.dataperc20 = fieldSetFlags()[16] ? this.dataperc20 : (java.lang.Long) defaultValue(fields()[16]);
-        record.dataperc30 = fieldSetFlags()[17] ? this.dataperc30 : (java.lang.Long) defaultValue(fields()[17]);
-        record.dataperc40 = fieldSetFlags()[18] ? this.dataperc40 : (java.lang.Long) defaultValue(fields()[18]);
-        record.dataperc50 = fieldSetFlags()[19] ? this.dataperc50 : (java.lang.Long) defaultValue(fields()[19]);
-        record.dataperc60 = fieldSetFlags()[20] ? this.dataperc60 : (java.lang.Long) defaultValue(fields()[20]);
-        record.dataperc70 = fieldSetFlags()[21] ? this.dataperc70 : (java.lang.Long) defaultValue(fields()[21]);
-        record.dataperc80 = fieldSetFlags()[22] ? this.dataperc80 : (java.lang.Long) defaultValue(fields()[22]);
-        record.dataperc90 = fieldSetFlags()[23] ? this.dataperc90 : (java.lang.Long) defaultValue(fields()[23]);
-        record.launch = fieldSetFlags()[24] ? this.launch : (java.lang.Long) defaultValue(fields()[24]);
-        record.used_at = fieldSetFlags()[25] ? this.used_at : (java.lang.Long) defaultValue(fields()[25]);
-        record.path = fieldSetFlags()[26] ? this.path : (java.util.List<java.lang.String>) defaultValue(fields()[26]);
-        record.buildtimes = fieldSetFlags()[27] ? this.buildtimes : (java.util.List<java.lang.Long>) defaultValue(fields()[27]);
-        record.timeout = fieldSetFlags()[28] ? this.timeout : (java.lang.Long) defaultValue(fields()[28]);
-        record.quantile = fieldSetFlags()[29] ? this.quantile : (java.lang.Double) defaultValue(fields()[29]);
-        record.circ_id = fieldSetFlags()[30] ? this.circ_id : (java.lang.Integer) defaultValue(fields()[30]);
-        record.used_by = fieldSetFlags()[31] ? this.used_by : (java.lang.Integer) defaultValue(fields()[31]);
+        record.src_date = fieldSetFlags()[1] ? this.src_date : (java.lang.Long) defaultValue(fields()[1]);
+        record.source = fieldSetFlags()[2] ? this.source : (java.lang.String) defaultValue(fields()[2]);
+        record.filesize = fieldSetFlags()[3] ? this.filesize : (java.lang.Integer) defaultValue(fields()[3]);
+        record.start = fieldSetFlags()[4] ? this.start : (java.lang.Long) defaultValue(fields()[4]);
+        record.socket = fieldSetFlags()[5] ? this.socket : (java.lang.Long) defaultValue(fields()[5]);
+        record.connect = fieldSetFlags()[6] ? this.connect : (java.lang.Long) defaultValue(fields()[6]);
+        record.negotiate = fieldSetFlags()[7] ? this.negotiate : (java.lang.Long) defaultValue(fields()[7]);
+        record.request = fieldSetFlags()[8] ? this.request : (java.lang.Long) defaultValue(fields()[8]);
+        record.response = fieldSetFlags()[9] ? this.response : (java.lang.Long) defaultValue(fields()[9]);
+        record.datarequest = fieldSetFlags()[10] ? this.datarequest : (java.lang.Long) defaultValue(fields()[10]);
+        record.dataresponse = fieldSetFlags()[11] ? this.dataresponse : (java.lang.Long) defaultValue(fields()[11]);
+        record.datacomplete = fieldSetFlags()[12] ? this.datacomplete : (java.lang.Long) defaultValue(fields()[12]);
+        record.writebytes = fieldSetFlags()[13] ? this.writebytes : (java.lang.Integer) defaultValue(fields()[13]);
+        record.readbytes = fieldSetFlags()[14] ? this.readbytes : (java.lang.Integer) defaultValue(fields()[14]);
+        record.didtimeout = fieldSetFlags()[15] ? this.didtimeout : (java.lang.Boolean) defaultValue(fields()[15]);
+        record.dataperc10 = fieldSetFlags()[16] ? this.dataperc10 : (java.lang.Long) defaultValue(fields()[16]);
+        record.dataperc20 = fieldSetFlags()[17] ? this.dataperc20 : (java.lang.Long) defaultValue(fields()[17]);
+        record.dataperc30 = fieldSetFlags()[18] ? this.dataperc30 : (java.lang.Long) defaultValue(fields()[18]);
+        record.dataperc40 = fieldSetFlags()[19] ? this.dataperc40 : (java.lang.Long) defaultValue(fields()[19]);
+        record.dataperc50 = fieldSetFlags()[20] ? this.dataperc50 : (java.lang.Long) defaultValue(fields()[20]);
+        record.dataperc60 = fieldSetFlags()[21] ? this.dataperc60 : (java.lang.Long) defaultValue(fields()[21]);
+        record.dataperc70 = fieldSetFlags()[22] ? this.dataperc70 : (java.lang.Long) defaultValue(fields()[22]);
+        record.dataperc80 = fieldSetFlags()[23] ? this.dataperc80 : (java.lang.Long) defaultValue(fields()[23]);
+        record.dataperc90 = fieldSetFlags()[24] ? this.dataperc90 : (java.lang.Long) defaultValue(fields()[24]);
+        record.launch = fieldSetFlags()[25] ? this.launch : (java.lang.Long) defaultValue(fields()[25]);
+        record.used_at = fieldSetFlags()[26] ? this.used_at : (java.lang.Long) defaultValue(fields()[26]);
+        record.path = fieldSetFlags()[27] ? this.path : (java.util.List<java.lang.String>) defaultValue(fields()[27]);
+        record.buildtimes = fieldSetFlags()[28] ? this.buildtimes : (java.util.List<java.lang.Long>) defaultValue(fields()[28]);
+        record.timeout = fieldSetFlags()[29] ? this.timeout : (java.lang.Long) defaultValue(fields()[29]);
+        record.quantile = fieldSetFlags()[30] ? this.quantile : (java.lang.Double) defaultValue(fields()[30]);
+        record.circ_id = fieldSetFlags()[31] ? this.circ_id : (java.lang.Integer) defaultValue(fields()[31]);
+        record.used_by = fieldSetFlags()[32] ? this.used_by : (java.lang.Integer) defaultValue(fields()[32]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

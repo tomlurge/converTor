@@ -3,18 +3,18 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package convertor.encoders.relayConsensus;
+package convertor.encoders.relayConsensus;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class R extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 833160249950555155L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"R\",\"namespace\":\"convertor.encoders.relayConsensus\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getFingerprint()\"},{\"name\":\"digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDescriptor();\"},{\"name\":\"publication\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getPublishedMillis()\"},{\"name\":\"ip\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getOrPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getDirPort()\"}]}");
+  private static final long serialVersionUID = -3910729053277108847L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"R\",\"namespace\":\"convertor.encoders.relayConsensus\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getFingerprint()\"},{\"name\":\"digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDescriptor()\"},{\"name\":\"publication\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getPublishedMillis()\"},{\"name\":\"ip\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getOrPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getDirPort()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/NetworkStatusEntry: String getNickname() */
   @Deprecated public java.lang.String nickname;
   /** metrics-lib/NetworkStatusEntry: String getFingerprint() */
   @Deprecated public java.lang.String identity;
-  /** metrics-lib/NetworkStatusEntry: String getDescriptor(); */
+  /** metrics-lib/NetworkStatusEntry: String getDescriptor() */
   @Deprecated public java.lang.String digest;
   /** metrics-lib/NetworkStatusEntry: long getPublishedMillis() */
   @Deprecated public java.lang.Long publication;
@@ -36,7 +36,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
    * All-args constructor.
    * @param nickname metrics-lib/NetworkStatusEntry: String getNickname()
    * @param identity metrics-lib/NetworkStatusEntry: String getFingerprint()
-   * @param digest metrics-lib/NetworkStatusEntry: String getDescriptor();
+   * @param digest metrics-lib/NetworkStatusEntry: String getDescriptor()
    * @param publication metrics-lib/NetworkStatusEntry: long getPublishedMillis()
    * @param ip metrics-lib/NetworkStatusEntry: String getAddress()
    * @param or_port metrics-lib/NetworkStatusEntry: int getOrPort()
@@ -117,7 +117,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
 
   /**
    * Gets the value of the 'digest' field.
-   * @return metrics-lib/NetworkStatusEntry: String getDescriptor();
+   * @return metrics-lib/NetworkStatusEntry: String getDescriptor()
    */
   public java.lang.String getDigest() {
     return digest;
@@ -125,7 +125,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
 
   /**
    * Sets the value of the 'digest' field.
-   * metrics-lib/NetworkStatusEntry: String getDescriptor();
+   * metrics-lib/NetworkStatusEntry: String getDescriptor()
    * @param value the value to set.
    */
   public void setDigest(java.lang.String value) {
@@ -236,7 +236,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
     private java.lang.String nickname;
     /** metrics-lib/NetworkStatusEntry: String getFingerprint() */
     private java.lang.String identity;
-    /** metrics-lib/NetworkStatusEntry: String getDescriptor(); */
+    /** metrics-lib/NetworkStatusEntry: String getDescriptor() */
     private java.lang.String digest;
     /** metrics-lib/NetworkStatusEntry: long getPublishedMillis() */
     private java.lang.Long publication;
@@ -412,7 +412,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
 
     /**
       * Gets the value of the 'digest' field.
-      * metrics-lib/NetworkStatusEntry: String getDescriptor();
+      * metrics-lib/NetworkStatusEntry: String getDescriptor()
       * @return The value.
       */
     public java.lang.String getDigest() {
@@ -421,7 +421,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
 
     /**
       * Sets the value of the 'digest' field.
-      * metrics-lib/NetworkStatusEntry: String getDescriptor();
+      * metrics-lib/NetworkStatusEntry: String getDescriptor()
       * @param value The value of 'digest'.
       * @return This builder.
       */
@@ -434,7 +434,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
 
     /**
       * Checks whether the 'digest' field has been set.
-      * metrics-lib/NetworkStatusEntry: String getDescriptor();
+      * metrics-lib/NetworkStatusEntry: String getDescriptor()
       * @return True if the 'digest' field has been set, false otherwise.
       */
     public boolean hasDigest() {
@@ -444,7 +444,7 @@ public class R extends org.apache.avro.specific.SpecificRecordBase implements or
 
     /**
       * Clears the value of the 'digest' field.
-      * metrics-lib/NetworkStatusEntry: String getDescriptor();
+      * metrics-lib/NetworkStatusEntry: String getDescriptor()
       * @return This builder.
       */
     public convertor.encoders.relayConsensus.R.Builder clearDigest() {
