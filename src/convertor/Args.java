@@ -7,6 +7,8 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.HelpFormatter;
 
+import java.nio.file.Paths;
+
 /**
  * Evaluates command line arguments.
  */
@@ -27,9 +29,9 @@ public enum Args {
   private boolean avro = false;
   private boolean parquet = false;
   private String format = "json";
-  private String inPath = "";
-  private String outPath = "";
-  private String logsPath = "";
+  private String inPath = Paths.get(".").toAbsolutePath().normalize().toString() + "/";
+  private String outPath = Paths.get(".").toAbsolutePath().normalize().toString() + "/";
+  private String logsPath = Paths.get(".").toAbsolutePath().normalize().toString() + "/";
   private String suffix = "";
   private boolean log = false;
   private boolean debug = false;
