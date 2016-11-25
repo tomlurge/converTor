@@ -7,6 +7,10 @@
     "type" : "string",
     "default" : "network-status-consensus-3 1.0"
   }, {
+    "name" : "src_date",
+    "type" : [ "null", "long" ],
+    "doc" : "file creation date, in milliseconds, of the data source to this conversion"
+  }, {
     "name" : "network_status_version",
     "type" : "int",
     "doc" : "metrics-lib/RelayNetworkStatusConsensus: int getNetworkStatusVersion()",
@@ -57,28 +61,35 @@
       "type" : "array",
       "items" : "string"
     } ],
-    "doc" : "metrics-lib/RelayNetworkStatusConsensus:\n        List<String> getRecommendedClientVersions()"
+    "doc" : "metrics-lib/RelayNetworkStatusConsensus: List<String> getRecommendedClientVersions()"
   }, {
     "name" : "server_versions",
     "type" : [ "null", {
       "type" : "array",
       "items" : "string"
     } ],
-    "doc" : "metrics-lib/RelayNetworkStatusConsensus:\n        List<String> getRecommendedServerVersions()"
+    "doc" : "metrics-lib/RelayNetworkStatusConsensus: List<String> getRecommendedServerVersions()"
+  }, {
+    "name" : "package",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "doc" : "metrics-lib/RelayNetworkStatusConsensus: List<String> getPackageLines()"
   }, {
     "name" : "known_flags",
     "type" : [ "null", {
       "type" : "array",
       "items" : "string"
     } ],
-    "doc" : "metrics-lib/RelayNetworkStatusConsensus:\n        SortedSet<String> getKnownFlags()"
+    "doc" : "metrics-lib/RelayNetworkStatusConsensus: SortedSet<String> getKnownFlags()"
   }, {
     "name" : "params",
     "type" : [ "null", {
       "type" : "map",
       "values" : "int"
     } ],
-    "doc" : "metrics-lib/RelayNetworkStatusConsensus:\n        SortedMap<String, Integer> getConsensusParams()"
+    "doc" : "metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, Integer> getConsensusParams()"
   }, {
     "name" : "authorities",
     "type" : [ "null", {
@@ -132,7 +143,7 @@
         } ]
       }
     } ],
-    "doc" : "metrics-lib/RelayNetworkStatusConsensus:\n        SortedMap<String, DirSourceEntry> getDirSourceEntries()\n        dir-source entries representing the directories of which votes are\n        contained in this consensus"
+    "doc" : "metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, DirSourceEntry> getDirSourceEntries()\n        dir-source entries representing the directories of which votes are\n        contained in this consensus"
   }, {
     "name" : "status",
     "type" : [ "null", {
@@ -156,7 +167,7 @@
             }, {
               "name" : "digest",
               "type" : [ "null", "string" ],
-              "doc" : "metrics-lib/NetworkStatusEntry: String getDescriptor()"
+              "doc" : "metrics-lib/NetworkStatusEntry: String getDescriptor();"
             }, {
               "name" : "publication",
               "type" : [ "null", "long" ],
@@ -241,7 +252,7 @@
         } ]
       }
     } ],
-    "doc" : "metrics-lib/RelayNetworkStatusConsensus:\n        SortedMap<String, NetworkStatusEntry> getStatusEntries()\n        status entries, one for each contained relay"
+    "doc" : "metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, NetworkStatusEntry> getStatusEntries()"
   }, {
     "name" : "directory_footer",
     "type" : [ "null", {
@@ -253,7 +264,7 @@
           "type" : "map",
           "values" : "int"
         } ],
-        "doc" : "metrics-lib/RelayNetworkStatusConsensus:\n        SortedMap<String, Integer> getBandwidthWeights()"
+        "doc" : "metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, Integer> getBandwidthWeights()"
       }, {
         "name" : "consensus_digest",
         "type" : [ "null", "string" ],
@@ -261,8 +272,8 @@
       }, {
         "name" : "directory_signature",
         "type" : [ "null", {
-          "type" : "map",
-          "values" : {
+          "type" : "array",
+          "items" : {
             "type" : "record",
             "name" : "DirSig",
             "fields" : [ {
@@ -285,7 +296,7 @@
             } ]
           }
         } ],
-        "doc" : "metrics-lib/RelayNetworkStatusConsensus:\n        SortedMap<String, DirectorySignature> getDirectorySignatures()"
+        "doc" : "metrics-lib/RelayNetworkStatusConsensus: List<DirectorySignature> getSignatures()"
       } ]
     } ]
   } ],

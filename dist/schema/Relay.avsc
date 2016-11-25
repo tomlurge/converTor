@@ -8,6 +8,10 @@
     "type" : "string",
     "default" : "server-descriptor 1.0"
   }, {
+    "name" : "src_date",
+    "type" : [ "null", "long" ],
+    "doc" : "file creation date, in milliseconds, of the data source to this conversion"
+  }, {
     "name" : "server_descriptor_digest",
     "type" : [ "null", "string" ],
     "doc" : "metrics-lib/ServerDescriptor: String getServerDescriptorDigest()"
@@ -249,6 +253,10 @@
       }
     } ],
     "doc" : "metrics-lib/ServerDescriptor: List<String> getOrAddresses()"
+  }, {
+    "name" : "tunneled_dir_server",
+    "type" : [ "null", "boolean" ],
+    "doc" : "metrics-lib/ServerDescriptor: boolean getTunnelledDirServer()"
   } ],
   "aliases" : [ "relay_server" ]
 }

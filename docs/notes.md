@@ -8,7 +8,7 @@
     relayExtra      type + published + fingerprint   (could as well be digest) 
     bridge          type + published + fingerprint   (could as well be digest)
     relayConsensus  type + valid-after 
-    bridgeStatus    type + valid-after
+    bridgeStatus    type + valid-after  ???
     relayVote       type + valid-after + identity
     tordnsel        type + downloaded 
     torperf         type + start + source + filesize

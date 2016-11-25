@@ -7,6 +7,10 @@
     "type" : "string",
     "default" : "bridge-network-status 1.0"
   }, {
+    "name" : "src_date",
+    "type" : [ "null", "long" ],
+    "doc" : "file creation date, in milliseconds, of the data source to this conversion"
+  }, {
     "name" : "published",
     "type" : [ "null", "long" ],
     "doc" : "metrics-lib/BridgeNetworkStatus: long getPublishedMillis()"
@@ -163,7 +167,7 @@
         } ]
       }
     } ],
-    "doc" : "metrics-lib/BridgeNetworkStatus: SortedMap<String, NetworkStatusEntry> getStatusEntries()\n     status entries, one for each contained bridge"
+    "doc" : "metrics-lib/BridgeNetworkStatus: SortedMap<String, NetworkStatusEntry> getStatusEntries()"
   } ],
   "aliases" : [ "bridge_network_status" ]
 }

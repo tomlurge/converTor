@@ -167,7 +167,7 @@
         } ]
       }
     } ],
-    "doc" : "metrics-lib/BridgeNetworkStatus: SortedMap<String, NetworkStatusEntry> getStatusEntries()\n     status entries, one for each contained bridge"
+    "doc" : "metrics-lib/BridgeNetworkStatus: SortedMap<String, NetworkStatusEntry> getStatusEntries()"
   } ],
   "aliases" : [ "bridge_network_status" ]
 }

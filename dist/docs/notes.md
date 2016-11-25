@@ -8,7 +8,7 @@
     relayExtra      type + published + fingerprint   (could as well be digest) 
     bridge          type + published + fingerprint   (could as well be digest)
     relayConsensus  type + valid-after 
-    bridgeStatus    type + valid-after
+    bridgeStatus    type + valid-after  ???
     relayVote       type + valid-after + identity
     tordnsel        type + downloaded 
     torperf         type + start + source + filesize
@@ -72,7 +72,16 @@
   (avro). that should give something for everybody.
    
    
-  
+## when a new attribute comes in
+ 
+ say descriptor version 12.7 fancies to support a hitherto neglected attribute
+ - check data.md for which spec documents that descriptor
+ - look up that spec to see where and how that attribute fits in
+ - edit the corresponding avro IDL
+ - generate avro avsc (json serialization) and classes (see avro.md for a howto)
+ - add those to the source
+ - add the attribute to the converter class (ConvertXxxx)
+ - build and test
    
 # CONSTRUCTION MATERIALS
 
