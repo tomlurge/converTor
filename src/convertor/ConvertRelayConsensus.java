@@ -4,6 +4,17 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
+
+import convertor.encoders.relayConsensus.DirFooter;
+import convertor.encoders.relayConsensus.DirSig;
+import convertor.encoders.relayConsensus.DirSource;
+import convertor.encoders.relayConsensus.OrAddress;
+import convertor.encoders.relayConsensus.Policy;
+import convertor.encoders.relayConsensus.R;
+import convertor.encoders.relayConsensus.Status;
+import convertor.encoders.relayConsensus.Vote;
+import convertor.encoders.relayConsensus.W;
+import convertor.encoders.relayVote.*;
 import org.torproject.descriptor.*;
 import convertor.encoders.relayConsensus.*;
 
@@ -188,27 +199,24 @@ class ConvertRelayConsensus extends Convert {
     DirFooter con = new DirFooter();
     con.setBandwidthWeights(desc.getBandwidthWeights());
     con.setConsensusDigest(desc.getConsensusDigest());
-    if (desc.getDirectorySignatures() != null && !desc.getDirectorySignatures().isEmpty()) {
+    if (desc.getSignatures() != null && !desc.getSignatures().isEmpty()) {
       con.setDirectorySignature(convertDirSig(desc));
     }
     return con;
   }
 
 
-  private Map<String,DirSig> convertDirSig(RelayNetworkStatusConsensus desc) {
-    Map<String,DirSig> conMap = new HashMap<>();
-    for(
-        Map.Entry<String,DirectorySignature> entry :
-        desc.getDirectorySignatures().entrySet()
-        ) {
+  private List<DirSig> convertDirSig(RelayNetworkStatusConsensus desc) {
+    List<DirSig> conList = new ArrayList<>();
+    for ( DirectorySignature dirSig : desc.getSignatures()) {
       DirSig con = new DirSig();
-      con.setAlgorithm(entry.getValue().getAlgorithm());
-      con.setIdentity(entry.getValue().getIdentity());
-      con.setSigningKeyDigest(entry.getValue().getSigningKeyDigest());
-      con.setSignature(entry.getValue().getSignature() != null);
-      conMap.put(entry.getKey(),con);
+      con.setAlgorithm(dirSig.getAlgorithm());
+      con.setIdentity(dirSig.getIdentity());
+      con.setSigningKeyDigest(dirSig.getSigningKeyDigest());
+      con.setSignature(dirSig.getSignature() != null);
+      conList.add(con);
     }
-    return conMap;
+    return conList;
   }
 
 }

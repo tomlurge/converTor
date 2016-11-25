@@ -8,7 +8,7 @@ package convertor.encoders.relayVote;
 @org.apache.avro.specific.AvroGenerated
 public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -2757049430060362421L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FlagTresholds\",\"namespace\":\"convertor.encoders.relayVote\",\"fields\":[{\"name\":\"stable_uptime\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getStableUptime()\"},{\"name\":\"stable_mtbf\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getStableMtbf()\"},{\"name\":\"enough_mtbf\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getEnoughMtbfInfo()\"},{\"name\":\"fast_speed\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getFastBandwidth()\"},{\"name\":\"guard_wfu\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: double getGuardWfu()\"},{\"name\":\"guard_tk\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getGuardTk()\"},{\"name\":\"guard_bw_inc_exits\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthIncludingExits()\"},{\"name\":\"guard_bw_exc_exits\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthExcludingExits()\"},{\"name\":\"ignoring_advertised_bws\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getIgnoringAdvertisedBws()\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FlagTresholds\",\"namespace\":\"convertor.encoders.relayVote\",\"fields\":[{\"name\":\"stable_uptime\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getStableUptime()\"},{\"name\":\"stable_mtbf\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getStableMtbf()\"},{\"name\":\"enough_mtbf\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getEnoughMtbfInfo()\"},{\"name\":\"fast_speed\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getFastBandwidth()\"},{\"name\":\"guard_wfu\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: double getGuardWfu()\"},{\"name\":\"guard_tk\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getGuardTk()\"},{\"name\":\"guard_bw_inc_exits\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote:\\n        long getGuardBandwidthIncludingExits()\"},{\"name\":\"guard_bw_exc_exits\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote:\\n        long getGuardBandwidthExcludingExits()\"},{\"name\":\"ignoring_advertised_bws\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getIgnoringAdvertisedBws()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/RelayNetworkStatusVote: long getStableUptime() */
   @Deprecated public java.lang.Long stable_uptime;
@@ -22,9 +22,11 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
   @Deprecated public java.lang.Double guard_wfu;
   /** metrics-lib/RelayNetworkStatusVote: long getGuardTk() */
   @Deprecated public java.lang.Long guard_tk;
-  /** metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthIncludingExits() */
+  /** metrics-lib/RelayNetworkStatusVote:
+        long getGuardBandwidthIncludingExits() */
   @Deprecated public java.lang.Long guard_bw_inc_exits;
-  /** metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthExcludingExits() */
+  /** metrics-lib/RelayNetworkStatusVote:
+        long getGuardBandwidthExcludingExits() */
   @Deprecated public java.lang.Long guard_bw_exc_exits;
   /** metrics-lib/RelayNetworkStatusVote: int getIgnoringAdvertisedBws() */
   @Deprecated public java.lang.Integer ignoring_advertised_bws;
@@ -44,8 +46,10 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
    * @param fast_speed metrics-lib/RelayNetworkStatusVote: long getFastBandwidth()
    * @param guard_wfu metrics-lib/RelayNetworkStatusVote: double getGuardWfu()
    * @param guard_tk metrics-lib/RelayNetworkStatusVote: long getGuardTk()
-   * @param guard_bw_inc_exits metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthIncludingExits()
-   * @param guard_bw_exc_exits metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthExcludingExits()
+   * @param guard_bw_inc_exits metrics-lib/RelayNetworkStatusVote:
+        long getGuardBandwidthIncludingExits()
+   * @param guard_bw_exc_exits metrics-lib/RelayNetworkStatusVote:
+        long getGuardBandwidthExcludingExits()
    * @param ignoring_advertised_bws metrics-lib/RelayNetworkStatusVote: int getIgnoringAdvertisedBws()
    */
   public FlagTresholds(java.lang.Long stable_uptime, java.lang.Long stable_mtbf, java.lang.Integer enough_mtbf, java.lang.Long fast_speed, java.lang.Double guard_wfu, java.lang.Long guard_tk, java.lang.Long guard_bw_inc_exits, java.lang.Long guard_bw_exc_exits, java.lang.Integer ignoring_advertised_bws) {
@@ -197,7 +201,8 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
 
   /**
    * Gets the value of the 'guard_bw_inc_exits' field.
-   * @return metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthIncludingExits()
+   * @return metrics-lib/RelayNetworkStatusVote:
+        long getGuardBandwidthIncludingExits()
    */
   public java.lang.Long getGuardBwIncExits() {
     return guard_bw_inc_exits;
@@ -205,7 +210,8 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
 
   /**
    * Sets the value of the 'guard_bw_inc_exits' field.
-   * metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthIncludingExits()
+   * metrics-lib/RelayNetworkStatusVote:
+        long getGuardBandwidthIncludingExits()
    * @param value the value to set.
    */
   public void setGuardBwIncExits(java.lang.Long value) {
@@ -214,7 +220,8 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
 
   /**
    * Gets the value of the 'guard_bw_exc_exits' field.
-   * @return metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthExcludingExits()
+   * @return metrics-lib/RelayNetworkStatusVote:
+        long getGuardBandwidthExcludingExits()
    */
   public java.lang.Long getGuardBwExcExits() {
     return guard_bw_exc_exits;
@@ -222,7 +229,8 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
 
   /**
    * Sets the value of the 'guard_bw_exc_exits' field.
-   * metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthExcludingExits()
+   * metrics-lib/RelayNetworkStatusVote:
+        long getGuardBandwidthExcludingExits()
    * @param value the value to set.
    */
   public void setGuardBwExcExits(java.lang.Long value) {
@@ -290,9 +298,11 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
     private java.lang.Double guard_wfu;
     /** metrics-lib/RelayNetworkStatusVote: long getGuardTk() */
     private java.lang.Long guard_tk;
-    /** metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthIncludingExits() */
+    /** metrics-lib/RelayNetworkStatusVote:
+        long getGuardBandwidthIncludingExits() */
     private java.lang.Long guard_bw_inc_exits;
-    /** metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthExcludingExits() */
+    /** metrics-lib/RelayNetworkStatusVote:
+        long getGuardBandwidthExcludingExits() */
     private java.lang.Long guard_bw_exc_exits;
     /** metrics-lib/RelayNetworkStatusVote: int getIgnoringAdvertisedBws() */
     private java.lang.Integer ignoring_advertised_bws;
@@ -650,7 +660,8 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
 
     /**
       * Gets the value of the 'guard_bw_inc_exits' field.
-      * metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthIncludingExits()
+      * metrics-lib/RelayNetworkStatusVote:
+        long getGuardBandwidthIncludingExits()
       * @return The value.
       */
     public java.lang.Long getGuardBwIncExits() {
@@ -659,7 +670,8 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
 
     /**
       * Sets the value of the 'guard_bw_inc_exits' field.
-      * metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthIncludingExits()
+      * metrics-lib/RelayNetworkStatusVote:
+        long getGuardBandwidthIncludingExits()
       * @param value The value of 'guard_bw_inc_exits'.
       * @return This builder.
       */
@@ -672,7 +684,8 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
 
     /**
       * Checks whether the 'guard_bw_inc_exits' field has been set.
-      * metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthIncludingExits()
+      * metrics-lib/RelayNetworkStatusVote:
+        long getGuardBandwidthIncludingExits()
       * @return True if the 'guard_bw_inc_exits' field has been set, false otherwise.
       */
     public boolean hasGuardBwIncExits() {
@@ -682,7 +695,8 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
 
     /**
       * Clears the value of the 'guard_bw_inc_exits' field.
-      * metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthIncludingExits()
+      * metrics-lib/RelayNetworkStatusVote:
+        long getGuardBandwidthIncludingExits()
       * @return This builder.
       */
     public convertor.encoders.relayVote.FlagTresholds.Builder clearGuardBwIncExits() {
@@ -693,7 +707,8 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
 
     /**
       * Gets the value of the 'guard_bw_exc_exits' field.
-      * metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthExcludingExits()
+      * metrics-lib/RelayNetworkStatusVote:
+        long getGuardBandwidthExcludingExits()
       * @return The value.
       */
     public java.lang.Long getGuardBwExcExits() {
@@ -702,7 +717,8 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
 
     /**
       * Sets the value of the 'guard_bw_exc_exits' field.
-      * metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthExcludingExits()
+      * metrics-lib/RelayNetworkStatusVote:
+        long getGuardBandwidthExcludingExits()
       * @param value The value of 'guard_bw_exc_exits'.
       * @return This builder.
       */
@@ -715,7 +731,8 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
 
     /**
       * Checks whether the 'guard_bw_exc_exits' field has been set.
-      * metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthExcludingExits()
+      * metrics-lib/RelayNetworkStatusVote:
+        long getGuardBandwidthExcludingExits()
       * @return True if the 'guard_bw_exc_exits' field has been set, false otherwise.
       */
     public boolean hasGuardBwExcExits() {
@@ -725,7 +742,8 @@ public class FlagTresholds extends org.apache.avro.specific.SpecificRecordBase i
 
     /**
       * Clears the value of the 'guard_bw_exc_exits' field.
-      * metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthExcludingExits()
+      * metrics-lib/RelayNetworkStatusVote:
+        long getGuardBandwidthExcludingExits()
       * @return This builder.
       */
     public convertor.encoders.relayVote.FlagTresholds.Builder clearGuardBwExcExits() {

@@ -58,10 +58,9 @@ class ConvertRelayVote extends Convert {
     if (desc.getStatusEntries() != null && !desc.getStatusEntries().isEmpty()) {
       conversion.setStatus(convertStatus(desc));
     }
-    if (desc.getDirectorySignatures() != null && !desc.getDirectorySignatures().isEmpty()) {
+    if (desc.getSignatures() != null && !desc.getSignatures().isEmpty()) {
       conversion.setDirectoryFooter(convertDirFooter(desc));
     }
-    conversion.setSigningKeyDigest(desc.getSigningKeyDigest());
 
     this.type = Types.RELAY_VOTE;
     this.date = dateTimeFormat.format(desc.getValidAfterMillis()).substring(0,7);
@@ -144,7 +143,8 @@ class ConvertRelayVote extends Convert {
           !entry.getValue().getOrAddresses().isEmpty()) {
         con.setA(convertOrAdresses(entry.getValue().getOrAddresses()));
       }
-      if (entry.getValue().getFlags() != null && !entry.getValue().getFlags().isEmpty()) {
+      if (entry.getValue().getFlags() != null
+          && !entry.getValue().getFlags().isEmpty()) {
         con.setS(new ArrayList<>(entry.getValue().getFlags()));
       }
       con.setV(entry.getValue().getVersion());
@@ -230,34 +230,17 @@ class ConvertRelayVote extends Convert {
   }
 
 
-  private DirSig convertDirSig(RelayNetworkStatusVote desc) {
-    DirSig con = new DirSig();
-    /*  The spec says that a vote can contain at most 1 Directory Signature
-     *  but metrics.lib RelayNetworkStatusVote's getDirectorySignatures()
-     *  returns a map. See:
-     *  https://trac.torproject.org/projects/tor/ticket/18875
-     *  As a workaround we always use the first entry but check the length of
-     *  the map and print a warning to the console if there are more than one.
-     */
-    for (
-        Map.Entry<String, DirectorySignature> entry :
-        desc.getDirectorySignatures().entrySet()
-        ) {
-      con.setAlgorithm(entry.getValue().getAlgorithm());
-      con.setIdentity(entry.getValue().getIdentity());
-      con.setSigningKeyDigest(entry.getValue().getSigningKeyDigest());
-      con.setSignature(entry.getValue().getSignature() != null);
-      //  TODO    update to new metrics-lib method getDirectorySignature()
-      if (desc.getDirectorySignatures().size() > 1) {
-        System.out.println(
-          "RelayVote descriptor contains more than 1 Directory Signature:\n    "
-          + desc.getValidAfterMillis() + "\n    " + desc.getIdentity() +
-          "\nOmitting all Directory Signatures but the first one."
-        );
-      }
-      break;
+  private List<DirSig> convertDirSig(RelayNetworkStatusVote desc) {
+    List<DirSig> conList = new ArrayList<>();
+    for ( DirectorySignature dirSig : desc.getSignatures()) {
+      DirSig con = new DirSig();
+      con.setAlgorithm(dirSig.getAlgorithm());
+      con.setIdentity(dirSig.getIdentity());
+      con.setSigningKeyDigest(dirSig.getSigningKeyDigest());
+      con.setSignature(dirSig.getSignature() != null);
+      conList.add(con);
     }
-    return con;
+    return conList;
   }
 
 }

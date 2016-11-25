@@ -7,15 +7,15 @@ package convertor.encoders.relayConsensus;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class DirFooter extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -2573347005817158582L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DirFooter\",\"namespace\":\"convertor.encoders.relayConsensus\",\"fields\":[{\"name\":\"bandwidth_weights\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, Integer> getBandwidthWeights()\"},{\"name\":\"consensus_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: String getConsensusDigest()\"},{\"name\":\"directory_signature\",\"type\":[\"null\",{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"DirSig\",\"fields\":[{\"name\":\"algorithm\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getAlgorithm()\",\"default\":\"sha1\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getIdentity()\"},{\"name\":\"signing_key_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getSigningKeyDigest()\"},{\"name\":\"signature\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/DirectorySignature: String getSignature()\"}]},\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, DirectorySignature> getDirectorySignatures()\"}]}");
+  private static final long serialVersionUID = 4242954384223697240L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DirFooter\",\"namespace\":\"convertor.encoders.relayConsensus\",\"fields\":[{\"name\":\"bandwidth_weights\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, Integer> getBandwidthWeights()\"},{\"name\":\"consensus_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: String getConsensusDigest()\"},{\"name\":\"directory_signature\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"DirSig\",\"fields\":[{\"name\":\"algorithm\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getAlgorithm()\",\"default\":\"sha1\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getIdentity()\"},{\"name\":\"signing_key_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getSigningKeyDigest()\"},{\"name\":\"signature\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/DirectorySignature: String getSignature()\"}]}}],\"doc\":\"metrics-lib/RelayNetworkStatusConsensus: List<DirectorySignature> getSignatures()\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, Integer> getBandwidthWeights() */
   @Deprecated public java.util.Map<java.lang.String,java.lang.Integer> bandwidth_weights;
   /** metrics-lib/RelayNetworkStatusConsensus: String getConsensusDigest() */
   @Deprecated public java.lang.String consensus_digest;
-  /** metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, DirectorySignature> getDirectorySignatures() */
-  @Deprecated public java.util.Map<java.lang.String,convertor.encoders.relayConsensus.DirSig> directory_signature;
+  /** metrics-lib/RelayNetworkStatusConsensus: List<DirectorySignature> getSignatures() */
+  @Deprecated public java.util.List<convertor.encoders.relayConsensus.DirSig> directory_signature;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -28,9 +28,9 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
    * All-args constructor.
    * @param bandwidth_weights metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, Integer> getBandwidthWeights()
    * @param consensus_digest metrics-lib/RelayNetworkStatusConsensus: String getConsensusDigest()
-   * @param directory_signature metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, DirectorySignature> getDirectorySignatures()
+   * @param directory_signature metrics-lib/RelayNetworkStatusConsensus: List<DirectorySignature> getSignatures()
    */
-  public DirFooter(java.util.Map<java.lang.String,java.lang.Integer> bandwidth_weights, java.lang.String consensus_digest, java.util.Map<java.lang.String,convertor.encoders.relayConsensus.DirSig> directory_signature) {
+  public DirFooter(java.util.Map<java.lang.String,java.lang.Integer> bandwidth_weights, java.lang.String consensus_digest, java.util.List<convertor.encoders.relayConsensus.DirSig> directory_signature) {
     this.bandwidth_weights = bandwidth_weights;
     this.consensus_digest = consensus_digest;
     this.directory_signature = directory_signature;
@@ -52,7 +52,7 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
     switch (field$) {
     case 0: bandwidth_weights = (java.util.Map<java.lang.String,java.lang.Integer>)value$; break;
     case 1: consensus_digest = (java.lang.String)value$; break;
-    case 2: directory_signature = (java.util.Map<java.lang.String,convertor.encoders.relayConsensus.DirSig>)value$; break;
+    case 2: directory_signature = (java.util.List<convertor.encoders.relayConsensus.DirSig>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -93,18 +93,18 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Gets the value of the 'directory_signature' field.
-   * @return metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, DirectorySignature> getDirectorySignatures()
+   * @return metrics-lib/RelayNetworkStatusConsensus: List<DirectorySignature> getSignatures()
    */
-  public java.util.Map<java.lang.String,convertor.encoders.relayConsensus.DirSig> getDirectorySignature() {
+  public java.util.List<convertor.encoders.relayConsensus.DirSig> getDirectorySignature() {
     return directory_signature;
   }
 
   /**
    * Sets the value of the 'directory_signature' field.
-   * metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, DirectorySignature> getDirectorySignatures()
+   * metrics-lib/RelayNetworkStatusConsensus: List<DirectorySignature> getSignatures()
    * @param value the value to set.
    */
-  public void setDirectorySignature(java.util.Map<java.lang.String,convertor.encoders.relayConsensus.DirSig> value) {
+  public void setDirectorySignature(java.util.List<convertor.encoders.relayConsensus.DirSig> value) {
     this.directory_signature = value;
   }
 
@@ -144,8 +144,8 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
     private java.util.Map<java.lang.String,java.lang.Integer> bandwidth_weights;
     /** metrics-lib/RelayNetworkStatusConsensus: String getConsensusDigest() */
     private java.lang.String consensus_digest;
-    /** metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, DirectorySignature> getDirectorySignatures() */
-    private java.util.Map<java.lang.String,convertor.encoders.relayConsensus.DirSig> directory_signature;
+    /** metrics-lib/RelayNetworkStatusConsensus: List<DirectorySignature> getSignatures() */
+    private java.util.List<convertor.encoders.relayConsensus.DirSig> directory_signature;
 
     /** Creates a new Builder */
     private Builder() {
@@ -280,20 +280,20 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
 
     /**
       * Gets the value of the 'directory_signature' field.
-      * metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, DirectorySignature> getDirectorySignatures()
+      * metrics-lib/RelayNetworkStatusConsensus: List<DirectorySignature> getSignatures()
       * @return The value.
       */
-    public java.util.Map<java.lang.String,convertor.encoders.relayConsensus.DirSig> getDirectorySignature() {
+    public java.util.List<convertor.encoders.relayConsensus.DirSig> getDirectorySignature() {
       return directory_signature;
     }
 
     /**
       * Sets the value of the 'directory_signature' field.
-      * metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, DirectorySignature> getDirectorySignatures()
+      * metrics-lib/RelayNetworkStatusConsensus: List<DirectorySignature> getSignatures()
       * @param value The value of 'directory_signature'.
       * @return This builder.
       */
-    public convertor.encoders.relayConsensus.DirFooter.Builder setDirectorySignature(java.util.Map<java.lang.String,convertor.encoders.relayConsensus.DirSig> value) {
+    public convertor.encoders.relayConsensus.DirFooter.Builder setDirectorySignature(java.util.List<convertor.encoders.relayConsensus.DirSig> value) {
       validate(fields()[2], value);
       this.directory_signature = value;
       fieldSetFlags()[2] = true;
@@ -302,7 +302,7 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
 
     /**
       * Checks whether the 'directory_signature' field has been set.
-      * metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, DirectorySignature> getDirectorySignatures()
+      * metrics-lib/RelayNetworkStatusConsensus: List<DirectorySignature> getSignatures()
       * @return True if the 'directory_signature' field has been set, false otherwise.
       */
     public boolean hasDirectorySignature() {
@@ -312,7 +312,7 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
 
     /**
       * Clears the value of the 'directory_signature' field.
-      * metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, DirectorySignature> getDirectorySignatures()
+      * metrics-lib/RelayNetworkStatusConsensus: List<DirectorySignature> getSignatures()
       * @return This builder.
       */
     public convertor.encoders.relayConsensus.DirFooter.Builder clearDirectorySignature() {
@@ -327,7 +327,7 @@ public class DirFooter extends org.apache.avro.specific.SpecificRecordBase imple
         DirFooter record = new DirFooter();
         record.bandwidth_weights = fieldSetFlags()[0] ? this.bandwidth_weights : (java.util.Map<java.lang.String,java.lang.Integer>) defaultValue(fields()[0]);
         record.consensus_digest = fieldSetFlags()[1] ? this.consensus_digest : (java.lang.String) defaultValue(fields()[1]);
-        record.directory_signature = fieldSetFlags()[2] ? this.directory_signature : (java.util.Map<java.lang.String,convertor.encoders.relayConsensus.DirSig>) defaultValue(fields()[2]);
+        record.directory_signature = fieldSetFlags()[2] ? this.directory_signature : (java.util.List<convertor.encoders.relayConsensus.DirSig>) defaultValue(fields()[2]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

@@ -167,7 +167,7 @@
             }, {
               "name" : "digest",
               "type" : [ "null", "string" ],
-              "doc" : "metrics-lib/NetworkStatusEntry: String getDescriptor()"
+              "doc" : "metrics-lib/NetworkStatusEntry: String getDescriptor();"
             }, {
               "name" : "publication",
               "type" : [ "null", "long" ],
@@ -252,7 +252,7 @@
         } ]
       }
     } ],
-    "doc" : "metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, NetworkStatusEntry> getStatusEntries()\n        status entries, one for each contained relay"
+    "doc" : "metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, NetworkStatusEntry> getStatusEntries()"
   }, {
     "name" : "directory_footer",
     "type" : [ "null", {
@@ -272,8 +272,8 @@
       }, {
         "name" : "directory_signature",
         "type" : [ "null", {
-          "type" : "map",
-          "values" : {
+          "type" : "array",
+          "items" : {
             "type" : "record",
             "name" : "DirSig",
             "fields" : [ {
@@ -296,7 +296,7 @@
             } ]
           }
         } ],
-        "doc" : "metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, DirectorySignature> getDirectorySignatures()"
+        "doc" : "metrics-lib/RelayNetworkStatusConsensus: List<DirectorySignature> getSignatures()"
       } ]
     } ]
   } ],

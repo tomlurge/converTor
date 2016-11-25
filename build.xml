@@ -2,17 +2,25 @@
 <project basedir="." default="main" name="convertor">
     <property name="projectName" value="convertor" />
     <property name="release.version" value="0.2-dev" />
+
     <property name="root.dir" location="" />
+
     <property name="src.dir" location="src" />
     <property name="src.schema.dir" location="schema" />
+    <property name="src.lib.dir" location="lib" />
     <property name="src.docs.dir" location="docs" />
+
+    <property name="lib.dir" value="lib" />
+
+    <property name="schema.dir" location="schema" />
+
     <property name="build.dir" location="build" />
+    
     <property name="dist.dir" location="dist" />
     <property name="dist.lib.dir" location="dist/lib" />
     <property name="dist.schema.dir" location="dist/schema" />
     <property name="dist.docs.dir" location="dist/docs" />
-    <property name="lib.dir" value="lib" />
-    <property name="schema.dir" location="schema" />
+
     <property name="main-class" value="convertor.Base" />
     <property name="source-and-target-java-version" value="1.7" />
 

@@ -106,8 +106,8 @@ protocol relay_network_status_consensus_3_descriptor {
     union { null, map<int> } bandwidth_weights;
     /** metrics-lib/RelayNetworkStatusConsensus: String getConsensusDigest() */
     union { null, string } consensus_digest;
-    /** metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, DirectorySignature> getDirectorySignatures() */
-    union { null, map<DirSig> } directory_signature;
+    /** metrics-lib/RelayNetworkStatusConsensus: List<DirectorySignature> getSignatures() */
+    union { null, array<DirSig> } directory_signature;
   }
 
 
@@ -142,16 +142,10 @@ protocol relay_network_status_consensus_3_descriptor {
     union { null, array<string> } known_flags;
     /** metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, Integer> getConsensusParams() */
     union { null, map<int> } params;
-
-    /** metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, DirSourceEntry> getDirSourceEntries()
-        dir-source entries representing the directories of which votes are
-        contained in this consensus */
+    /** metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, DirSourceEntry> getDirSourceEntries() */
     union { null, map<Authority> } authorities;
-
-    /** metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, NetworkStatusEntry> getStatusEntries()
-        status entries, one for each contained relay */
+    /** metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, NetworkStatusEntry> getStatusEntries() */
     union { null, map<Status> } status;
-
     // see above
     union { null, DirFooter } directory_footer;
   }

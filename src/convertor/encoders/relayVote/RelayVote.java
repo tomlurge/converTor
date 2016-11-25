@@ -7,8 +7,8 @@ package convertor.encoders.relayVote;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class RelayVote extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 4010707921451966181L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"RelayVote\",\"namespace\":\"convertor.encoders.relayVote\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"metrics-lib/RelayNetworkStatusVote:\",\"default\":\"network-status-vote-3 1.0\"},{\"name\":\"src_date\",\"type\":[\"null\",\"long\"],\"doc\":\"file creation date, in milliseconds, of the data source to this conversion\"},{\"name\":\"network_status_version\",\"type\":\"int\",\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getNetworkStatusVersion()\",\"default\":3},{\"name\":\"vote_status\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"\\\"vote\\\" per definition, no getter\",\"default\":\"vote\"},{\"name\":\"consensus_methods\",\"type\":{\"type\":\"array\",\"items\":\"int\"},\"doc\":\"metrics-lib/RelayNetworkStatusVote: List<Integer> getConsensusMethods()\"},{\"name\":\"published\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getPublishedMillis()\"},{\"name\":\"valid_after\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getValidAfterMillis()\"},{\"name\":\"flag_tresholds\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"FlagTresholds\",\"fields\":[{\"name\":\"stable_uptime\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getStableUptime()\"},{\"name\":\"stable_mtbf\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getStableMtbf()\"},{\"name\":\"enough_mtbf\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getEnoughMtbfInfo()\"},{\"name\":\"fast_speed\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getFastBandwidth()\"},{\"name\":\"guard_wfu\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: double getGuardWfu()\"},{\"name\":\"guard_tk\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getGuardTk()\"},{\"name\":\"guard_bw_inc_exits\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthIncludingExits()\"},{\"name\":\"guard_bw_exc_exits\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthExcludingExits()\"},{\"name\":\"ignoring_advertised_bws\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getIgnoringAdvertisedBws()\"}]}],\"doc\":\"see above\"},{\"name\":\"fresh_until\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getFreshUntilMillis()\"},{\"name\":\"valid_until\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getValidUntilMillis()\"},{\"name\":\"voting_delay\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Vote\",\"fields\":[{\"name\":\"vote_seconds\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getVoteSeconds()\"},{\"name\":\"dist_seconds\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getDistSeconds()\"}]}],\"doc\":\"see above\"},{\"name\":\"client_versions\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/RelayNetworkStatusVote:  List<String> getRecommendedClientVersions()\"},{\"name\":\"server_versions\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedServerVersions()\"},{\"name\":\"package\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: List<String> getPackageLines()\"},{\"name\":\"known_flags\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: SortedSet<String> getKnownFlags()\"},{\"name\":\"params\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: SortedMap<String, Integer> getConsensusParams()\"},{\"name\":\"dir_source\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirSource\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getIdentity(\"},{\"name\":\"hostname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getHostname()\"},{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getAddress()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getDirport()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getOrport()\"}]}],\"doc\":\"see above\"},{\"name\":\"contact\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getContactLine()\"},{\"name\":\"legacy_dir_key\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getLegacyDirKey()\"},{\"name\":\"directory_key\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirKey\",\"fields\":[{\"name\":\"version\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getDirKeyCertificateVersion()\"},{\"name\":\"dir_key_published\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getDirKeyPublishedMillis()\"},{\"name\":\"dir_key_expires\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getDirKeyExpiresMillis()\"}]}],\"doc\":\"see above\"},{\"name\":\"status\",\"type\":[\"null\",{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"Status\",\"fields\":[{\"name\":\"r\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"R\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getFingerprint()\"},{\"name\":\"digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDescriptor()\"},{\"name\":\"publication\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getPublishedMillis()\"},{\"name\":\"ip\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getOrPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getDirPort()\"}]}]},{\"name\":\"a\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"OrAddress\",\"fields\":[{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"implementation specific, see actual converter\"},{\"name\":\"port\",\"type\":[\"null\",\"int\"],\"doc\":\"implementation specific, see actual converter\"}]}}]},{\"name\":\"s\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags()\"},{\"name\":\"v\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getVersion()\"},{\"name\":\"w\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"W\",\"fields\":[{\"name\":\"bandwidth\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getBandwidth()\"},{\"name\":\"measured\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getMeasured()\"},{\"name\":\"unmeasured\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/NetworkStatusEntry: boolean getUnmeasured()\"}]}],\"doc\":\"see above\"},{\"name\":\"p\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Policy\",\"fields\":[{\"name\":\"default_policy\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDefaultPolicy()\"},{\"name\":\"port_summary\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getPortList()\"}]}],\"doc\":\"see above\"},{\"name\":\"id\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ID\",\"fields\":[{\"name\":\"ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getMasterKeyEd25519()\"}]}],\"doc\":\"see above\"}]},\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: SortedMap<String, NetworkStatu","sEntry> getStatusEntries()\"},{\"name\":\"directory_footer\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirFooter\",\"fields\":[{\"name\":\"directory_signature\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirSig\",\"fields\":[{\"name\":\"algorithm\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getAlgorithm()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getIdentity()\"},{\"name\":\"signing_key_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getSigningKeyDigest()\"},{\"name\":\"signature\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/DirectorySignature: String getSignature()\"}]}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: SortedMap<String, DirectorySignature> getDirectorySignatures()\"}]}],\"doc\":\"see above\"},{\"name\":\"signing_key_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getSigningKeyDigest()\"}],\"aliases\":[\"relay_network_status_vote_3\"]}");
+  private static final long serialVersionUID = -6524455647101792465L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"RelayVote\",\"namespace\":\"convertor.encoders.relayVote\",\"fields\":[{\"name\":\"descriptor_type\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"metrics-lib/RelayNetworkStatusVote:\",\"default\":\"network-status-vote-3 1.0\"},{\"name\":\"src_date\",\"type\":[\"null\",\"long\"],\"doc\":\"file creation date, in milliseconds, of the data source to this conversion\"},{\"name\":\"network_status_version\",\"type\":\"int\",\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getNetworkStatusVersion()\",\"default\":3},{\"name\":\"vote_status\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"\\\"vote\\\" per definition, no getter\",\"default\":\"vote\"},{\"name\":\"consensus_methods\",\"type\":{\"type\":\"array\",\"items\":\"int\"},\"doc\":\"metrics-lib/RelayNetworkStatusVote: List<Integer> getConsensusMethods()\"},{\"name\":\"published\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getPublishedMillis()\"},{\"name\":\"valid_after\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getValidAfterMillis()\"},{\"name\":\"flag_tresholds\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"FlagTresholds\",\"fields\":[{\"name\":\"stable_uptime\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getStableUptime()\"},{\"name\":\"stable_mtbf\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getStableMtbf()\"},{\"name\":\"enough_mtbf\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getEnoughMtbfInfo()\"},{\"name\":\"fast_speed\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getFastBandwidth()\"},{\"name\":\"guard_wfu\",\"type\":[\"null\",\"double\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: double getGuardWfu()\"},{\"name\":\"guard_tk\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getGuardTk()\"},{\"name\":\"guard_bw_inc_exits\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote:\\n        long getGuardBandwidthIncludingExits()\"},{\"name\":\"guard_bw_exc_exits\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote:\\n        long getGuardBandwidthExcludingExits()\"},{\"name\":\"ignoring_advertised_bws\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getIgnoringAdvertisedBws()\"}]}],\"doc\":\"see above\"},{\"name\":\"fresh_until\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getFreshUntilMillis()\"},{\"name\":\"valid_until\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getValidUntilMillis()\"},{\"name\":\"voting_delay\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Vote\",\"fields\":[{\"name\":\"vote_seconds\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getVoteSeconds()\"},{\"name\":\"dist_seconds\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getDistSeconds()\"}]}],\"doc\":\"see above\"},{\"name\":\"client_versions\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedClientVersions()\"},{\"name\":\"server_versions\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedServerVersions()\"},{\"name\":\"package\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: List<String> getPackageLines()\"},{\"name\":\"known_flags\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: SortedSet<String> getKnownFlags()\"},{\"name\":\"params\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"int\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: SortedMap<String, Integer> getConsensusParams()\"},{\"name\":\"dir_source\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirSource\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getIdentity(\"},{\"name\":\"hostname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getHostname()\"},{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getAddress()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getDirport()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getOrport()\"}]}],\"doc\":\"see above\"},{\"name\":\"contact\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getContactLine()\"},{\"name\":\"legacy_dir_key\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getLegacyDirKey()\"},{\"name\":\"directory_key\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirKey\",\"fields\":[{\"name\":\"version\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: int getDirKeyCertificateVersion()\"},{\"name\":\"dir_key_published\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getDirKeyPublishedMillis()\"},{\"name\":\"dir_key_expires\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/RelayNetworkStatusVote: long getDirKeyExpiresMillis()\"}]}],\"doc\":\"see above\"},{\"name\":\"status\",\"type\":[\"null\",{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"Status\",\"fields\":[{\"name\":\"r\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"R\",\"fields\":[{\"name\":\"nickname\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getNickname()\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getFingerprint()\"},{\"name\":\"digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDescriptor()\"},{\"name\":\"publication\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getPublishedMillis()\"},{\"name\":\"ip\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getAddress()\"},{\"name\":\"or_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getOrPort()\"},{\"name\":\"dir_port\",\"type\":[\"null\",\"int\"],\"doc\":\"metrics-lib/NetworkStatusEntry: int getDirPort()\"}]}]},{\"name\":\"a\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"OrAddress\",\"fields\":[{\"name\":\"address\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"implementation specific, see actual converter\"},{\"name\":\"port\",\"type\":[\"null\",\"int\"],\"doc\":\"implementation specific, see actual converter\"}]}}]},{\"name\":\"s\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"metrics-lib/NetworkStatusEntry: SortedSet<String> getFlags()\"},{\"name\":\"v\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getVersion()\"},{\"name\":\"w\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"W\",\"fields\":[{\"name\":\"bandwidth\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getBandwidth()\"},{\"name\":\"measured\",\"type\":[\"null\",\"long\"],\"doc\":\"metrics-lib/NetworkStatusEntry: long getMeasured()\"},{\"name\":\"unmeasured\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/NetworkStatusEntry: boolean getUnmeasured()\"}]}],\"doc\":\"see above\"},{\"name\":\"p\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Policy\",\"fields\":[{\"name\":\"default_policy\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getDefaultPolicy()\"},{\"name\":\"port_summary\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/NetworkStatusEntry: String getPortList()\"}]}],\"doc\":\"see above\"},{\"name\":\"id\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"ID\",\"fields\":[{\"name\":\"ed25519\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/NetworkStatusEntry: String getMasterKeyEd25519()\"}]}],\"doc\":\"see above\"}]},\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote:\\n        SortedMap<Str","ing, NetworkStatusEntry> getStatusEntries()\"},{\"name\":\"directory_footer\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DirFooter\",\"fields\":[{\"name\":\"directory_signature\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"DirSig\",\"fields\":[{\"name\":\"algorithm\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getAlgorithm()\",\"default\":\"sha1\"},{\"name\":\"identity\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getIdentity()\"},{\"name\":\"signing_key_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/DirectorySignature: String getSigningKeyDigest()\"},{\"name\":\"signature\",\"type\":[\"null\",\"boolean\"],\"doc\":\"metrics-lib/DirectorySignature: String getSignature()\"}]}}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: List<DirectorySignature> getSignatures()\"}]}],\"doc\":\"see above\"},{\"name\":\"signing_key_digest\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"metrics-lib/RelayNetworkStatusVote: String getSigningKeyDigest()\"}],\"aliases\":[\"relay_network_status_vote_3\"]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** metrics-lib/RelayNetworkStatusVote: */
   @Deprecated public java.lang.String descriptor_type;
@@ -32,7 +32,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
   @Deprecated public java.lang.Long valid_until;
   /** see above */
   @Deprecated public convertor.encoders.relayVote.Vote voting_delay;
-  /** metrics-lib/RelayNetworkStatusVote:  List<String> getRecommendedClientVersions() */
+  /** metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedClientVersions() */
   @Deprecated public java.util.List<java.lang.String> client_versions;
   /** metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedServerVersions() */
   @Deprecated public java.util.List<java.lang.String> server_versions;
@@ -50,7 +50,8 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
   @Deprecated public java.lang.String legacy_dir_key;
   /** see above */
   @Deprecated public convertor.encoders.relayVote.DirKey directory_key;
-  /** metrics-lib/RelayNetworkStatusVote: SortedMap<String, NetworkStatusEntry> getStatusEntries() */
+  /** metrics-lib/RelayNetworkStatusVote:
+        SortedMap<String, NetworkStatusEntry> getStatusEntries() */
   @Deprecated public java.util.Map<java.lang.String,convertor.encoders.relayVote.Status> status;
   /** see above */
   @Deprecated public convertor.encoders.relayVote.DirFooter directory_footer;
@@ -77,7 +78,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * @param fresh_until metrics-lib/RelayNetworkStatusVote: long getFreshUntilMillis()
    * @param valid_until metrics-lib/RelayNetworkStatusVote: long getValidUntilMillis()
    * @param voting_delay see above
-   * @param client_versions metrics-lib/RelayNetworkStatusVote:  List<String> getRecommendedClientVersions()
+   * @param client_versions metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedClientVersions()
    * @param server_versions metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedServerVersions()
    * @param package$ metrics-lib/RelayNetworkStatusVote: List<String> getPackageLines()
    * @param known_flags metrics-lib/RelayNetworkStatusVote: SortedSet<String> getKnownFlags()
@@ -86,7 +87,8 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
    * @param contact metrics-lib/RelayNetworkStatusVote: String getContactLine()
    * @param legacy_dir_key metrics-lib/RelayNetworkStatusVote: String getLegacyDirKey()
    * @param directory_key see above
-   * @param status metrics-lib/RelayNetworkStatusVote: SortedMap<String, NetworkStatusEntry> getStatusEntries()
+   * @param status metrics-lib/RelayNetworkStatusVote:
+        SortedMap<String, NetworkStatusEntry> getStatusEntries()
    * @param directory_footer see above
    * @param signing_key_digest metrics-lib/RelayNetworkStatusVote: String getSigningKeyDigest()
    */
@@ -366,7 +368,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Gets the value of the 'client_versions' field.
-   * @return metrics-lib/RelayNetworkStatusVote:  List<String> getRecommendedClientVersions()
+   * @return metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedClientVersions()
    */
   public java.util.List<java.lang.String> getClientVersions() {
     return client_versions;
@@ -374,7 +376,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Sets the value of the 'client_versions' field.
-   * metrics-lib/RelayNetworkStatusVote:  List<String> getRecommendedClientVersions()
+   * metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedClientVersions()
    * @param value the value to set.
    */
   public void setClientVersions(java.util.List<java.lang.String> value) {
@@ -519,7 +521,8 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Gets the value of the 'status' field.
-   * @return metrics-lib/RelayNetworkStatusVote: SortedMap<String, NetworkStatusEntry> getStatusEntries()
+   * @return metrics-lib/RelayNetworkStatusVote:
+        SortedMap<String, NetworkStatusEntry> getStatusEntries()
    */
   public java.util.Map<java.lang.String,convertor.encoders.relayVote.Status> getStatus() {
     return status;
@@ -527,7 +530,8 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Sets the value of the 'status' field.
-   * metrics-lib/RelayNetworkStatusVote: SortedMap<String, NetworkStatusEntry> getStatusEntries()
+   * metrics-lib/RelayNetworkStatusVote:
+        SortedMap<String, NetworkStatusEntry> getStatusEntries()
    * @param value the value to set.
    */
   public void setStatus(java.util.Map<java.lang.String,convertor.encoders.relayVote.Status> value) {
@@ -624,7 +628,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
     /** see above */
     private convertor.encoders.relayVote.Vote voting_delay;
     private convertor.encoders.relayVote.Vote.Builder voting_delayBuilder;
-    /** metrics-lib/RelayNetworkStatusVote:  List<String> getRecommendedClientVersions() */
+    /** metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedClientVersions() */
     private java.util.List<java.lang.String> client_versions;
     /** metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedServerVersions() */
     private java.util.List<java.lang.String> server_versions;
@@ -644,7 +648,8 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
     /** see above */
     private convertor.encoders.relayVote.DirKey directory_key;
     private convertor.encoders.relayVote.DirKey.Builder directory_keyBuilder;
-    /** metrics-lib/RelayNetworkStatusVote: SortedMap<String, NetworkStatusEntry> getStatusEntries() */
+    /** metrics-lib/RelayNetworkStatusVote:
+        SortedMap<String, NetworkStatusEntry> getStatusEntries() */
     private java.util.Map<java.lang.String,convertor.encoders.relayVote.Status> status;
     /** see above */
     private convertor.encoders.relayVote.DirFooter directory_footer;
@@ -1425,7 +1430,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
 
     /**
       * Gets the value of the 'client_versions' field.
-      * metrics-lib/RelayNetworkStatusVote:  List<String> getRecommendedClientVersions()
+      * metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedClientVersions()
       * @return The value.
       */
     public java.util.List<java.lang.String> getClientVersions() {
@@ -1434,7 +1439,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
 
     /**
       * Sets the value of the 'client_versions' field.
-      * metrics-lib/RelayNetworkStatusVote:  List<String> getRecommendedClientVersions()
+      * metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedClientVersions()
       * @param value The value of 'client_versions'.
       * @return This builder.
       */
@@ -1447,7 +1452,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
 
     /**
       * Checks whether the 'client_versions' field has been set.
-      * metrics-lib/RelayNetworkStatusVote:  List<String> getRecommendedClientVersions()
+      * metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedClientVersions()
       * @return True if the 'client_versions' field has been set, false otherwise.
       */
     public boolean hasClientVersions() {
@@ -1457,7 +1462,7 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
 
     /**
       * Clears the value of the 'client_versions' field.
-      * metrics-lib/RelayNetworkStatusVote:  List<String> getRecommendedClientVersions()
+      * metrics-lib/RelayNetworkStatusVote: List<String> getRecommendedClientVersions()
       * @return This builder.
       */
     public convertor.encoders.relayVote.RelayVote.Builder clearClientVersions() {
@@ -1886,7 +1891,8 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
 
     /**
       * Gets the value of the 'status' field.
-      * metrics-lib/RelayNetworkStatusVote: SortedMap<String, NetworkStatusEntry> getStatusEntries()
+      * metrics-lib/RelayNetworkStatusVote:
+        SortedMap<String, NetworkStatusEntry> getStatusEntries()
       * @return The value.
       */
     public java.util.Map<java.lang.String,convertor.encoders.relayVote.Status> getStatus() {
@@ -1895,7 +1901,8 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
 
     /**
       * Sets the value of the 'status' field.
-      * metrics-lib/RelayNetworkStatusVote: SortedMap<String, NetworkStatusEntry> getStatusEntries()
+      * metrics-lib/RelayNetworkStatusVote:
+        SortedMap<String, NetworkStatusEntry> getStatusEntries()
       * @param value The value of 'status'.
       * @return This builder.
       */
@@ -1908,7 +1915,8 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
 
     /**
       * Checks whether the 'status' field has been set.
-      * metrics-lib/RelayNetworkStatusVote: SortedMap<String, NetworkStatusEntry> getStatusEntries()
+      * metrics-lib/RelayNetworkStatusVote:
+        SortedMap<String, NetworkStatusEntry> getStatusEntries()
       * @return True if the 'status' field has been set, false otherwise.
       */
     public boolean hasStatus() {
@@ -1918,7 +1926,8 @@ public class RelayVote extends org.apache.avro.specific.SpecificRecordBase imple
 
     /**
       * Clears the value of the 'status' field.
-      * metrics-lib/RelayNetworkStatusVote: SortedMap<String, NetworkStatusEntry> getStatusEntries()
+      * metrics-lib/RelayNetworkStatusVote:
+        SortedMap<String, NetworkStatusEntry> getStatusEntries()
       * @return This builder.
       */
     public convertor.encoders.relayVote.RelayVote.Builder clearStatus() {
