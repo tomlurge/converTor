@@ -15,7 +15,7 @@
     <property name="schema.dir" location="schema" />
 
     <property name="build.dir" location="build" />
-    
+
     <property name="dist.dir" location="dist" />
     <property name="dist.lib.dir" location="dist/lib" />
     <property name="dist.schema.dir" location="dist/schema" />

@@ -2,7 +2,7 @@
 
 ## extract JSON schema(ta) from an Avro IDL file
 
-    java -jar avro-tools-*.jar idl2schemata descriptor.avdl .
+    java -jar avro-tools-*.jar idl2schemata <descriptor>.avdl .
           generates a complete JSON schema for the IDL schema
           under the same name, with different ending
           and also one schema per nested record in the IDL schema
@@ -10,7 +10,7 @@
             
 ## compile (generate classes from) a schema
    
-    java -jar avro-tools-*.jar compile -string schema descriptor.avsc .
+    java -jar avro-tools-*.jar compile -string schema <descriptor>.avsc .
           generates one class per schema and any nested record
           we need all those classes
           it generates the classpath as indicated in the @namespace
@@ -19,8 +19,8 @@
             
 ## verbose description of how to compile java classes from IDL schemata
 
-    copy all IDLs to a working directory together with avro-tools.jar
-    in that directory execute
+    copy all IDLs to a working directory together with avro-tools-*.jar
+    in that directory execute (I renamed avro-tools-*.jar to atools.jar)
         
         ash:work t$ java -jar atools.jar idl2schemata bridge.avdl schemata
         ash:work t$ java -jar atools.jar idl2schemata bridgeExtra.avdl schemata

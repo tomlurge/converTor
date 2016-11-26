@@ -54,7 +54,7 @@ public enum Args {
         "Default: 'json'.\n" +
         "e.g. '-f=parquet'");
     options.addOption("s", "suffix", true,
-        "Any string that might be helpful.\n" +
+        "A suffix to the file name.\n" +
         "e.g. '-s=_Suffix'\n\n");
     options.addOption("i", "inPath", true,
         "From which directory to read data.\n" +
@@ -69,7 +69,7 @@ public enum Args {
         "Default: current working directory.\n" +
         "e.g. '-l=/my/data/logs/'");
     options.addOption("cs", "snappy", false,
-        "Compresses output with 'snappy' codec.");
+        "Compresses output with 'snappy' codec, popular with Parquet.");
     options.addOption("cz", "zip", false,
         "Compresses output with GZip codec (Parquet and JSON) or BZip2 codec (Avro).");
     options.addOption("p", "pretty", false,
@@ -82,6 +82,7 @@ public enum Args {
         "Prints JSON representation of each converted descriptor to terminal.");
     options.addOption("g", "log", false,
         "Prints logging statements to 'converTor.log'.");
+
 
     /* Parse arguments, set parameters */
     CommandLineParser parser = new DefaultParser();

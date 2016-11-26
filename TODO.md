@@ -58,3 +58,16 @@
       BUT - not possible without breaking the schema (or schema validation)
       MAYBE - schema validation can be turned of?  
     
+    add support for flattened data structure
+      flatten nested records that are not arrays or maps into the main structure
+      BUT 1 this is a massive task
+            that needs modified schemata, encoders and classes 
+      BUT 2 there's no clear way on how to do it
+            arrays nested within arrays 
+            as well as maps that would need to be converted to arrays
+            need to be modeled in different ways
+            the best model would probably depend on the task/situation
+            so no best general solution
+            so maybe better to tackle this problem during aggregation
+            but not before
+      could be combined with CSV output

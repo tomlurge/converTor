@@ -29,11 +29,7 @@ How to build
 ============
 On the shell navigate to the project directory (same level as build.xml).  
 For building an executable jar complete with merged dependencies and schemata 
-just enter:
-    
-    ant
- 
-Look into ./dist for the result. To get everything enter:
+just enter `ant`. Look into ./dist for the result. To get everything enter:
 
     ant clean jar bundle
 
@@ -51,17 +47,35 @@ look like this:
     
 Note the addition of `&> log.txt` which writes error messages to a file.
 
+A reasonable setup could be a working directory - let's call it `work` - in 
+which you put `convertor.jar` and 2 subdirectories, `in`with the descriptors to 
+convert and `out` for the converted descriptors.  
+Maybe you need them as JSON, pretty printed (because you want to have a look at 
+them yourself) and you could do:
+
+    java -jar converTor.jar -i=in/ -o=out/ -p
+    
+If you want to start working with them in MomgoDB right away, you've got to omit
+the pretty printing and are well advised to use compression, e.g. like this:
+
+    java -jar converTor.jar -i=in/ -o=out/ -cz
+    
+Or you need them all as compressed Parquet files to work on them with Spark, 
+plus logging enabled to make sure you don't miss anything:
+
+    java -jar converTor.jar -i=in/ -o=out/ -f=parquet --snappy --log
+
 Possible parameters are:
 
     -f    --format     <arg>    default: json, optional: parquet, avro
-    -s    --suffix                                                    
+    -s    --suffix              a suffix to the file name                                     
     -i    --inPath     <arg>    default: current working directory    
     -o    --outPath    <arg>    default: current working directory    
     -l    --logsPath   <arg>    default: current working directory    
-    -cs   --snappy                                                    
-    -cz   --zip                 Avro as BZip2, Parquet & JSON as GZip 
+    -cs   --snappy              a compression format popular with Parquet
+    -cz   --zip                 compressing Avro as BZip2, Parquet & JSON as GZip 
     -p    --pretty              pretty printed JSON                   
-    -m    --maxFiles   <arg>    default: 20                           
+    -m    --maxFiles   <arg>    max files to be opened, default: 20                           
     -d    --debug               print JSON descriptors to console     
     -g    --log                 log to file 'converTor.log'           
     

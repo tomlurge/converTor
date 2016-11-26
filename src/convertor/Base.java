@@ -73,17 +73,17 @@ class Base {
         logger.info(
             "Converter from Tor CollecTor data to JSON, Parquet or Avro.\n" +
             "      Now running with parameters: " + argz + "\n\n" +
-            "      -f    --format     <arg>     default: json, optional: parquet, avro   " + args.getFormat() + "\n" +
-            "      -s    --suffix                                                        " + args.getSuffix() + "\n" +
-            "      -i    --inPath     <arg>     default: current working directory       " + args.getInPath() + "\n" +
-            "      -o    --outPath    <arg>     default: current working directory       " + args.getOutPath() + "\n" +
-            "      -l    --logsPath   <arg>     default: current working directory       " + args.getLogsPath() + "\n" +
-            "      -cs   --snappy                                                        " + args.isSnappy() + "\n" +
-            "      -cz   --zip                  Avro as BZip2, Parquet & JSON as GZip    " + args.isZip() + "\n" +
-            "      -p    --pretty               pretty printed JSON                      " + args.isPretty() + "\n" +
-            "      -m    --maxFiles   <arg>     default: 20                              " + args.getMaxFiles() + "\n" +
-            "      -d    --debug                print JSON descriptors to console        " + args.isDebug() + "\n" +
-            "      -g    --log                  log to file 'converTor.log'              " + args.isLog() + "\n" +
+            "      -f    --format     <arg>     default: json, optional: parquet, avro               " + args.getFormat() + "\n" +
+            "      -s    --suffix               a suffix to the file name                            " + args.getSuffix() + "\n" +
+            "      -i    --inPath     <arg>     default: current working directory                   " + args.getInPath() + "\n" +
+            "      -o    --outPath    <arg>     default: current working directory                   " + args.getOutPath() + "\n" +
+            "      -l    --logsPath   <arg>     default: current working directory                   " + args.getLogsPath() + "\n" +
+            "      -cs   --snappy               a compression format popular with Parquet            " + args.isSnappy() + "\n" +
+            "      -cz   --zip                  compressing Avro as BZip2, Parquet & JSON as GZip    " + args.isZip() + "\n" +
+            "      -p    --pretty               pretty printed JSON                                  " + args.isPretty() + "\n" +
+            "      -m    --maxFiles   <arg>     max files to be opened, default: 20                  " + args.getMaxFiles() + "\n" +
+            "      -d    --debug                print JSON descriptors to console                    " + args.isDebug() + "\n" +
+            "      -g    --log                  log to file 'converTor.log'                          " + args.isLog() + "\n" +
             "\n"
         );
       } catch (SecurityException | IOException e) {
