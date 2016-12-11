@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project basedir="." default="main" name="convertor">
     <property name="projectName" value="convertor" />
-    <property name="release.version" value="0.2-dev" />
+    <property name="release.version" value="0.2.1" />
 
     <property name="root.dir" location="" />
 

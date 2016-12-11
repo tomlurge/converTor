@@ -2,9 +2,32 @@
 
 ## now
 
+    tag the state of the project as 0.2.1
+
+## next
+
+    begin work on 0.3 which will add support for flattened serializations, 
+      without multi-level nested arrays or maps.
+      this is necessary because tools like Spark and Drill have trouble
+      accessing deeply nested complex structures. an array or a map are okay,
+      but e.g. a map _within_ an array is not.
+      probably needs new schemata, new ConvertXxxx, and one more control level
+      in the Base logic (because now it's not only Types, but needs to be 
+      Types+Nesting)
+
+    avro schema documentation
+      how strongly do the schemata determine the structure of the resulting 
+      parquet/avro files? could the structure be changed in the ConvertXxxx
+      classes (if the datatypes would be kept intact and no new fields were 
+      added)?
 
 
+      
+      
 ## later
+
+    converting a single descriptor archive
+      converTor only accepts directories as input parameter
     
     documentation
       can always be better...
@@ -15,24 +38,20 @@
         this needs handmade descriptors as test dummys
         since actual descriptors are only sparsely populated
       
-    add option to export flattened files with max one level deep nested arrays
-      that would be useful for some column stores like HBase and Druid
-      and maybe in general be easier to work with despite deviating from the spec
-      
     add option to export csv
       
-    incorporate changes in descriptor 1.5
+    incorporate changes from descriptor 1.5
        - Make the DescriptorCollector implementation that uses CollecTor's
          index.json file to determine which descriptor files to fetch the
          new default.  Applications must provide gson-2.2.4.jar or higher
          as dependency.
          [??? does this concern us ??? see org.torproject.descriptor.index]
     
-    incorporate changes in descriptor 1.2
+    incorporate changes from descriptor 1.2
        - In Torperf results, recognize all percentiles of expected bytes
          read for 0 <= x <= 100 rather than just x = { 10, 20, ..., 90 }.
-         [??? does this concern us? not seeing any changes in descriptors (09/2016)]
-       - Parse crypto parts in network status votes. [??? does this concern us ???]
+         [does this concern us? not seeing any changes in descriptors (09/2016)]
+       - Parse crypto parts in network status votes. [does this concern us ?]
     
     use checkstyle
     
@@ -58,16 +77,3 @@
       BUT - not possible without breaking the schema (or schema validation)
       MAYBE - schema validation can be turned of?  
     
-    add support for flattened data structure
-      flatten nested records that are not arrays or maps into the main structure
-      BUT 1 this is a massive task
-            that needs modified schemata, encoders and classes 
-      BUT 2 there's no clear way on how to do it
-            arrays nested within arrays 
-            as well as maps that would need to be converted to arrays
-            need to be modeled in different ways
-            the best model would probably depend on the task/situation
-            so no best general solution
-            so maybe better to tackle this problem during aggregation
-            but not before
-      could be combined with CSV output

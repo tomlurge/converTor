@@ -1,8 +1,8 @@
 # NOTES
 
-## conversion of 09-2016 takes about 40 minutes 
+## conversion of 09-2016 to parquet.snappy takes about 40 minutes 
     
-    on a MacBook Pro 2015 2,8 GHz Core i7, 16GB, 1TB SSD
+    on a MacBook Pro 2015 2,8 GHz Core i7, 16GB RAM, 1TB SSD
 
 
 ## identity - how to establish identity on converted descriptors
