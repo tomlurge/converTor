@@ -1,7 +1,7 @@
 {
   "type" : "record",
   "name" : "RelayVote",
-  "namespace" : "convertor.encoders.relayVote",
+  "namespace" : "trans.encoders.relayVote",
   "fields" : [ {
     "name" : "descriptor_type",
     "type" : "string",
@@ -68,11 +68,11 @@
       }, {
         "name" : "guard_bw_inc_exits",
         "type" : [ "null", "long" ],
-        "doc" : "metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthIncludingExits()"
+        "doc" : "metrics-lib/RelayNetworkStatusVote:\n        long getGuardBandwidthIncludingExits()"
       }, {
         "name" : "guard_bw_exc_exits",
         "type" : [ "null", "long" ],
-        "doc" : "metrics-lib/RelayNetworkStatusVote: long getGuardBandwidthExcludingExits()"
+        "doc" : "metrics-lib/RelayNetworkStatusVote:\n        long getGuardBandwidthExcludingExits()"
       }, {
         "name" : "ignoring_advertised_bws",
         "type" : [ "null", "int" ],

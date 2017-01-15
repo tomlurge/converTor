@@ -9,7 +9,7 @@
 ## next
 
     add support for time frames
-      currently ConverTor exports data in monthly junks/files. 
+      currently *trans* exports data in monthly junks/files. 
       this is insuficient as e.g. Spark only works on single files, not on
       directories.
       we need support for arbitrary time frames (everything in the -in dir is 
@@ -31,15 +31,15 @@
 ## later
 
     slimming down output
-      it's quite easy to comment out unneded parts of the data in convertor 
+      it's quite easy to comment out unneded parts of the data in *trans* 
       classes to slim down the outputted files. especially JSON output could
       profit from this. should be documented.
     
     converting a single descriptor archive
-      converTor only accepts directories as input parameter
+      *trans* only accepts directories as input parameter
       
     check -i option on startup
-      when started without -i parameter ConverTor tries to convert everything
+      when started without -i parameter *trans* tries to convert everything
       in the current working directory which can be annoying. but what to do?
     
     documentation

@@ -52,7 +52,7 @@
         ash:work t$ java -jar atools.jar compile -string schema tordnsel.avsc .
         ash:work t$ java -jar atools.jar compile -string schema torperf.avsc .
   
-     now you've got a 'converTor.encoders.classes' folder with subfolders for each
+     now you've got a 'trans.encoders.classes' folder with subfolders for each
      descriptor type. copy those to the same path in the /src directory. enjoy.
     
             

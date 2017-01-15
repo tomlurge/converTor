@@ -1,7 +1,7 @@
 
 ## HOW 2 BUILD
         
-    to build convertor run the following command in the project root dir:
+    to build *trans* run the following command in the project root dir:
     
       ant clean jar bundle
     

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project basedir="." default="main" name="convertor">
-    <property name="projectName" value="convertor" />
-    <property name="release.version" value="0.2-dev" />
+<project basedir="." default="main" name="trans">
+    <property name="projectName" value="trans" />
+    <property name="release.version" value="0.2.1" />
 
     <property name="root.dir" location="" />
 
@@ -21,7 +21,7 @@
     <property name="dist.schema.dir" location="dist/schema" />
     <property name="dist.docs.dir" location="dist/docs" />
 
-    <property name="main-class" value="convertor.Base" />
+    <property name="main-class" value="trans.Base" />
     <property name="source-and-target-java-version" value="1.7" />
 
     <!-- External libraries classpath.
@@ -117,7 +117,7 @@
         <jar basedir="${build.dir}"
              jarfile="${dist.dir}/${projectName}-${release.version}.jar"><!-- -${git.revision} -->
             <manifest>
-                <attribute name="Implementation-Title" value="converTor"/>
+                <attribute name="Implementation-Title" value="trans"/>
                 <attribute name="Created-By"
                            value="Thomas Lörtsch" />
                 <attribute name="Implementation-Version"
@@ -149,10 +149,10 @@
 
             <zipgroupfileset dir="lib" includes="*.jar"/>
 
-            <zipfileset dir="schema" prefix="convertor/schema" includes="*.avsc"/>
+            <zipfileset dir="schema" prefix="trans/schema" includes="*.avsc"/>
 
             <manifest>
-                <attribute name="Implementation-Title" value="converTor"/>
+                <attribute name="Implementation-Title" value="trans"/>
                 <attribute name="Created-By"
                            value="Thomas Lörtsch" />
                 <attribute name="Implementation-Version"

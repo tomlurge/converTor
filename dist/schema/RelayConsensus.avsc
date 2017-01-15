@@ -1,7 +1,7 @@
 {
   "type" : "record",
   "name" : "RelayConsensus",
-  "namespace" : "convertor.encoders.relayConsensus",
+  "namespace" : "trans.encoders.relayConsensus",
   "fields" : [ {
     "name" : "descriptor_type",
     "type" : "string",
@@ -143,7 +143,7 @@
         } ]
       }
     } ],
-    "doc" : "metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, DirSourceEntry> getDirSourceEntries()\n        dir-source entries representing the directories of which votes are\n        contained in this consensus"
+    "doc" : "metrics-lib/RelayNetworkStatusConsensus: SortedMap<String, DirSourceEntry> getDirSourceEntries()"
   }, {
     "name" : "status",
     "type" : [ "null", {

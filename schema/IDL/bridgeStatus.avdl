@@ -1,4 +1,4 @@
-@namespace("convertor.encoders.bridgeStatus")
+@namespace("trans.encoders.bridgeStatus")
 protocol bridge_network_status_descriptor {
 
   record FlagTresholds {

@@ -1,4 +1,4 @@
-@namespace("convertor.encoders.torperf")
+@namespace("trans.encoders.torperf")
 protocol torperf_descriptor {
 
   @aliases(["torperfResult"])

@@ -1,7 +1,7 @@
 {
   "type" : "record",
   "name" : "RelayExtra",
-  "namespace" : "convertor.encoders.relayExtra",
+  "namespace" : "trans.encoders.relayExtra",
   "fields" : [ {
     "name" : "descriptor_type",
     "type" : "string",
