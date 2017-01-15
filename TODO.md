@@ -1,12 +1,25 @@
 # TODO
 
+
 ## now
 
-    tag the state of the project as 0.2.1
+    avro schema documentation
+      how strongly do the schemata determine the structure of the resulting 
+      parquet/avro files? could the structure be changed in the ConvertXxxx
+      classes if the datatypes would be kept intact and no new fields were 
+      added?
+
 
 ## next
 
-    begin work on 0.3 which will add support for flattened serializations, 
+    add support for time frames
+      currently ConverTor exports data in monthly junks/files. 
+      this is insuficient as e.g. Spark only works on single files, not on
+      directories.
+      we need support for arbitrary time frames (everything in the -in dir is 
+      converted into one -out file) and maybe also hourly, daily, yearly files.
+
+    add support for flattened serializations, 
       without multi-level nested arrays or maps.
       this is necessary because tools like Spark and Drill have trouble
       accessing deeply nested complex structures. an array or a map are okay,
@@ -14,20 +27,24 @@
       probably needs new schemata, new ConvertXxxx, and one more control level
       in the Base logic (because now it's not only Types, but needs to be 
       Types+Nesting)
+      while on it a flattened version could also do away with all nested structs
+      which are included to mimic the structure of the spec but are not strictly
+      necessary and may or may not be helpful when working with the data.
 
-    avro schema documentation
-      how strongly do the schemata determine the structure of the resulting 
-      parquet/avro files? could the structure be changed in the ConvertXxxx
-      classes (if the datatypes would be kept intact and no new fields were 
-      added)?
-
-
-      
       
 ## later
 
+    slimming down output
+      it's quite easy to comment out unneded parts of the data in convertor 
+      classes to slim down the outputted files. especially JSON output could
+      profit from this. should be documented.
+    
     converting a single descriptor archive
       converTor only accepts directories as input parameter
+      
+    check -i option on startup
+      when started without -i parameter ConverTor tries to convert everything
+      in the current working directory which can be annoying. but what to do?
     
     documentation
       can always be better...
@@ -62,7 +79,8 @@
       something is wrong with sl4j
         SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
         SLF4J: Defaulting to no-operation (NOP) logger implementation
-        SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+        SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further
+        details.
       how to exclude .DS_Store warning on mac
       
     better handling of falsy command line arguments

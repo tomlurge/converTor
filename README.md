@@ -38,7 +38,7 @@ How to use
 ==========
 On the shell enter:
 
-    java -jar converTor.jar
+    java -jar converTor.jar -h
     
 to get a rundwon of available options. A call to convert some descriptors might
 look like this:
@@ -51,7 +51,7 @@ A reasonable setup could be a working directory - let's call it `work` - in
 which you put `convertor.jar` and 2 subdirectories, `in`with the descriptors to 
 convert and `out` for the converted descriptors.  
 Maybe you need them as JSON, pretty printed (because you want to have a look at 
-them yourself) and you could do:
+them yourself), so run:
 
     java -jar converTor.jar -i=in/ -o=out/ -p
     
@@ -93,13 +93,13 @@ can't ingest it, but MongoDB won't complain).
 TODO
 ====
 
-- incorporate recent metrics-lib/DescripTor updates
+The most important issues: 
+
+- make the timespan that converted data files cover configurable
+- a flattened version, less faithful to the structure of the spec
 - tests (dependend on test descriptors from the Tor metrics team)
-- a flattened version, less faithful to the structure of the spec (maybe as CSV)
 
-
-These are only the most important issues. For a complete overview see [TODO.md]
-(TODO.md).
+For a complete overview see [TODO.md](TODO.md).
 
 
 Code overview

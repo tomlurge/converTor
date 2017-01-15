@@ -211,19 +211,18 @@ serialize record to output stream
 
 ##  Schemata + Avro TOOLS commands
 
-    avro tools offer plenty of features, but they are badly documented - use google!
+    avro tools offer plenty of features, but is badly documented - use google!
    
     defining a schema for avro is possible in two ways
       JSON  verbose, cumbersome
       IDL   concise, tidy, lucid
     obviously IDL is the way to go
-    but automatic building of the Java classes neede to use the schemata 
-      and only works with JSON schemata
+    but automatic building of the Java classes only works with JSON schemata
     avro-tools has an option to convert IDL to JSON: idl2schemata
     so the workflow for initial development of schemata is:
       define schemata in IDL (eg schema.avdl)
       extract JSON schemata of the types from an Avro IDL file
-      % java -jar avro-tools-*.jar idl2schemata ~/descriptor.idl .
+      % java -jar avro-tools-*.jar idl2schemata ~/schema.avdl .
      
     compile (generate classes from) a schema
       % java -jar avro-tools-*.jar compile -string schema ~/descriptor.avsc .
