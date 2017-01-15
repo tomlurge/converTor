@@ -3,12 +3,8 @@
 
 ## now
 
-    avro schema documentation
-      how strongly do the schemata determine the structure of the resulting 
-      parquet/avro files? could the structure be changed in the ConvertXxxx
-      classes if the datatypes would be kept intact and no new fields were 
-      added?
-
+    rename project from 'ConverTor' to 'trans'
+      see `docs/rename.md`
 
 ## next
 
