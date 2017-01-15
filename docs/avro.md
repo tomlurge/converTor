@@ -90,25 +90,25 @@
 
 ## good to know:
 
- a schema file can only contain a single schema definition   
- eg {"name": "favorite_number",  "type": ["int", "null"]}
-   favorite_number can either be an int or null, essentially making it an optional field. 
+    a schema file can only contain a single schema definition   
+    eg {"name": "favorite_number",  "type": ["int", "null"]}
+      favorite_number can either be an int or null, essentially making it an optional field. 
 
- IDL schemata have to be build up from the back
-    since they support no forward referencing, it's not possible to start the 
-    schema with the top/outer most element and work towards the details.
-    so start reading (and writing) them from the end.
+    IDL schemata have to be build up from the back
+       since they support no forward referencing, it's not possible to start the 
+       schema with the top/outer most element and work towards the details.
+       so start reading (and writing) them from the end.
     
 
 ## Avro MAPPINGS
 
-  generic
-    a dynamic mapping, can be used even when the schema is not known ahead of runtime
-  specific
-    when you have a copy of the schema before you read or write data
-    generated classes also provide a more domain-oriented API for user code than Generic ones.
-  reflective
-    maps Avro types onto preexisting Java types using reflection
+    generic
+      a dynamic mapping, can be used even when the schema is not known ahead of runtime
+    specific
+      when you have a copy of the schema before you read or write data
+      generated classes also provide a more domain-oriented API for user code than Generic ones.
+    reflective
+      maps Avro types onto preexisting Java types using reflection
     
     
 ## Avro TYPES
@@ -629,18 +629,19 @@ protocol Simple {
 ## MISC
  
  
-* defaults
-  it is possible to have defaults with Avro, but they have to be declared 
-  explicitly and the corresponding type has to be the first in the union.
-    see:
-    https://avro.apache.org/docs/current/spec.html#Unions
-      Unions, as mentioned above, are represented using JSON arrays. For 
-      example, ["null", "string"] declares a schema which may be either a null 
-      or string.
-      (Note that when a default value is specified for a record field whose type 
-      is a union, the type of the default value must match the first element of 
-      the union. Thus, for unions containing "null", the "null" is usually 
-      listed first, since the default value of such unions is typically null.)
-    https://avro.apache.org/docs/current/spec.html#schema_record
-      Default values for union fields correspond to the first schema in the 
-      union.
+defaults
+
+    it is possible to have defaults with Avro, but they have to be declared 
+    explicitly and the corresponding type has to be the first in the union.
+      see:
+      https://avro.apache.org/docs/current/spec.html#Unions
+        Unions, as mentioned above, are represented using JSON arrays. For 
+        example, ["null", "string"] declares a schema which may be either a null 
+        or string.
+        (Note that when a default value is specified for a record field whose type 
+        is a union, the type of the default value must match the first element of 
+        the union. Thus, for unions containing "null", the "null" is usually 
+        listed first, since the default value of such unions is typically null.)
+      https://avro.apache.org/docs/current/spec.html#schema_record
+        Default values for union fields correspond to the first schema in the 
+        union.
